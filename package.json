@@ -1,0 +1,38 @@
+{
+  "name": "iherk-hell-factory",
+  "version": "0.1.0",
+  "description": "Gamified 2:1 Isometric Pixel-Art AI Agent Office Live Monitor for Claude and Gemini",
+  "type": "module",
+  "bin": {
+    "hell-factory": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build:server": "tsc -p tsconfig.json",
+    "build:client": "tsx scripts/build-client.ts",
+    "build:assets": "tsx src/cli/index.ts build-assets",
+    "build": "npm run build:server && npm run build:client && npm run build:assets",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dev": "tsx src/cli/index.ts start",
+    "start": "node dist/cli/index.js start"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "pngjs": "^7.0.0",
+    "ws": "^8.18.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/pngjs": "^6.0.5",
+    "@types/ws": "^8.18.0",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
+  }
+}
