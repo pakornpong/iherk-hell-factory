@@ -1,0 +1,789 @@
+import crypto from "node:crypto";
+import { EventEmitter } from "node:events";
+import path from "node:path";
+import {
+  AgentTelemetryEventSchema,
+  type ActivityLogEntry,
+  type AgentTelemetryEvent,
+  type CatalogEntry,
+  type ComputedCampus,
+  type Direction,
+  type EmployeeRecord,
+  type FurnitureInstance,
+  type OfficeSnapshotPayload,
+  type OfficeState,
+  type ProjectBayRecord,
+  type Provider,
+  type ThemeMode,
+  type ToolCategory,
+  type ZoneId,
+} from "../shared/types.js";
+import {
+  BAYS_PER_ROW,
+  computeCampusLayout,
+  createDefaultBayFurniture,
+  createDefaultCommonWing,
+  createExtraBayWorkstations,
+  resolveWorldToZone,
+  validateFurniturePlacement,
+} from "./layout-engine.js";
+import type { OfficeStore } from "./store.js";
+
+const BAY_ACCENT_PALETTE = [
+  "#38bdf8",
+  "#d97757",
+  "#a78bfa",
+  "#34d399",
+  "#f59e0b",
+  "#f472b6",
+  "#60a5fa",
+  "#fb7185",
+];
+
+const STALE_ACTIVITY_TIMEOUT_MS = 120_000;
+
+function normalizeProjectPath(raw: string): string {
+  const resolved = path.resolve(raw);
+  return resolved.length > 1 && resolved.endsWith(path.sep) ? resolved.slice(0, -1) : resolved;
+}
+
+function classifyToolCategory(toolName?: string): ToolCategory {
+  if (!toolName) return "code";
+  const t = toolName.toLowerCase();
+  if (
+    t.includes("edit") ||
+    t.includes("write") ||
+    t.includes("notebook") ||
+    t.includes("patch")
+  ) {
+    return "code";
+  }
+  if (t.includes("bash") || t.includes("command") || t.includes("exec") || t.includes("shell")) {
+    return "shell";
+  }
+  if (
+    t.includes("read") ||
+    t.includes("grep") ||
+    t.includes("glob") ||
+    t.includes("search") ||
+    t.includes("web") ||
+    t.includes("lsp") ||
+    t.includes("list") ||
+    t.includes("find")
+  ) {
+    return "search";
+  }
+  return "code";
+}
+
+function isMeetingTool(toolName?: string): boolean {
+  if (!toolName) return false;
+  const t = toolName.toLowerCase();
+  return t === "swarm" || t === "ask_question" || t.includes("brainstorm") || t.includes("plan");
+}
+
+function isAssignTool(toolName?: string): boolean {
+  if (!toolName) return false;
+  const t = toolName.toLowerCase();
+  return t === "agent" || t === "invoke_subagent" || t === "task";
+}
+
+export class OfficeEngine extends EventEmitter {
+  private state: OfficeState;
+  private campus: ComputedCampus;
+  private readonly store: OfficeStore;
+  private catalogById: Map<string, CatalogEntry>;
+  private readonly now: () => number;
+  private readonly restCooldownMs: number;
+  private readonly assignDurationMs: number;
+  private demoBackupState: OfficeState | null = null;
+  private demoMode = false;
+
+  constructor(opts: {
+    store: OfficeStore;
+    catalogById: Map<string, CatalogEntry>;
+    now?: () => number;
+    restCooldownMs?: number;
+    assignDurationMs?: number;
+  }) {
+    super();
+    this.store = opts.store;
+    this.catalogById = new Map(opts.catalogById);
+    this.now = opts.now ?? (() => Date.now());
+    this.restCooldownMs = opts.restCooldownMs ?? 15_000;
+    this.assignDurationMs = opts.assignDurationMs ?? 2_500;
+    this.state = this.createFreshState();
+    this.campus = computeCampusLayout(this.state.bays, this.state.commonWings, this.catalogById);
+  }
+
+  private createFreshState(): OfficeState {
+    const ts = this.now();
+    const starterBayId = "bay-0";
+    return {
+      version: 1,
+      theme: "night",
+      commonWings: [createDefaultCommonWing(0)],
+      bays: [
+        {
+          id: starterBayId,
+          projectPath: null,
+          displayName: "Starter Studio",
+          accentColor: BAY_ACCENT_PALETTE[0],
+          archived: false,
+          deskSlots: 2,
+          furniture: createDefaultBayFurniture(starterBayId),
+          createdAt: ts,
+          lastActiveAt: ts,
+        },
+      ],
+      employees: [
+        {
+          id: "emp-starter-0",
+          bayId: starterBayId,
+          spriteId: "agent-starter",
+          displayName: "Starter Dev",
+          role: "Lead",
+          isEphemeral: false,
+          deskIndex: 0,
+          visualState: "resting",
+          toolCategory: "idle",
+          detail: "Waiting for first project...",
+          lastUpdatedAt: ts,
+        },
+      ],
+      activityLog: [],
+    };
+  }
+
+  async init(): Promise<void> {
+    const loaded = await this.store.load();
+    if (loaded && loaded.bays.length > 0) {
+      // Remove any leftover ephemeral subagents from a previous crash
+      loaded.employees = loaded.employees.filter((e) => !e.isEphemeral);
+      this.state = loaded;
+    } else {
+      this.state = this.createFreshState();
+      await this.store.save(this.state);
+    }
+    this.ensureCommonWingsForActiveRows();
+    this.recomputeCampus();
+  }
+
+  updateCatalog(catalog: CatalogEntry[]): void {
+    this.catalogById = new Map(catalog.map((c) => [c.id, c]));
+    this.recomputeCampus();
+    this.emitSnapshot();
+  }
+
+  getCatalog(): CatalogEntry[] {
+    return [...this.catalogById.values()];
+  }
+
+  isDemoMode(): boolean {
+    return this.demoMode;
+  }
+
+  async enterDemoMode(): Promise<void> {
+    if (this.demoMode) return;
+    this.demoBackupState = structuredClone(this.state);
+    this.demoMode = true;
+    this.state = this.createFreshState();
+    this.recomputeCampus();
+    this.emitSnapshot();
+  }
+
+  async exitDemoMode(): Promise<void> {
+    if (!this.demoMode) return;
+    this.demoMode = false;
+    if (this.demoBackupState) {
+      this.state = this.demoBackupState;
+      this.demoBackupState = null;
+    }
+    this.ensureCommonWingsForActiveRows();
+    this.recomputeCampus();
+    this.emitSnapshot();
+  }
+
+  getSnapshot(): OfficeSnapshotPayload {
+    return {
+      state: structuredClone(this.state),
+      campus: structuredClone(this.campus),
+      demoMode: this.demoMode,
+    };
+  }
+
+  private recomputeCampus(): void {
+    this.campus = computeCampusLayout(this.state.bays, this.state.commonWings, this.catalogById);
+  }
+
+  private ensureCommonWingsForActiveRows(): void {
+    const activeCount = Math.max(1, this.state.bays.filter((b) => !b.archived).length);
+    const neededRows = Math.max(1, Math.ceil(activeCount / BAYS_PER_ROW));
+    for (let row = 0; row < neededRows; row++) {
+      if (!this.state.commonWings.some((w) => w.row === row)) {
+        this.state.commonWings.push(createDefaultCommonWing(row));
+      }
+    }
+  }
+
+  private async persist(): Promise<void> {
+    if (this.demoMode) return;
+    await this.store.save(this.state);
+  }
+
+  private emitSnapshot(): void {
+    this.emit("snapshot", this.getSnapshot());
+  }
+
+  private providerBaseSprite(provider: Provider): string {
+    return provider === "claude" ? "agent-claude" : "agent-gemini";
+  }
+
+  private providerVariantSprite(provider: Provider, variantIdx: number): string {
+    const base = this.providerBaseSprite(provider);
+    if (variantIdx <= 0) return base;
+    return `${base}-v${((variantIdx - 1) % 3) + 1}`;
+  }
+
+  private getOrCreateBayForProject(projectPath: string, projectName: string | undefined, ts: number): { bay: ProjectBayRecord; expanded: boolean } {
+    const existing = this.state.bays.find((b) => b.projectPath === projectPath);
+    if (existing) {
+      const wasArchived = existing.archived;
+      existing.archived = false;
+      existing.lastActiveAt = ts;
+      if (wasArchived) {
+        this.ensureCommonWingsForActiveRows();
+      }
+      return { bay: existing, expanded: wasArchived };
+    }
+
+    // Claim unclaimed Starter Bay 0 if available
+    const starterBay = this.state.bays.find((b) => b.projectPath === null);
+    const displayName = projectName?.trim() || path.basename(projectPath) || "Project";
+    if (starterBay) {
+      starterBay.projectPath = projectPath;
+      starterBay.displayName = displayName;
+      starterBay.archived = false;
+      starterBay.lastActiveAt = ts;
+      return { bay: starterBay, expanded: false };
+    }
+
+    // Expand a brand-new project bay
+    const nextIndex = this.state.bays.length;
+    const bayId = `bay-${nextIndex}-${crypto.randomBytes(2).toString("hex")}`;
+    const newBay: ProjectBayRecord = {
+      id: bayId,
+      projectPath,
+      displayName,
+      accentColor: BAY_ACCENT_PALETTE[nextIndex % BAY_ACCENT_PALETTE.length],
+      archived: false,
+      deskSlots: 2,
+      furniture: createDefaultBayFurniture(bayId),
+      createdAt: ts,
+      lastActiveAt: ts,
+    };
+    this.state.bays.push(newBay);
+    this.ensureCommonWingsForActiveRows();
+    return { bay: newBay, expanded: true };
+  }
+
+  private resolveOrSpawnEmployee(bay: ProjectBayRecord, ev: AgentTelemetryEvent, ts: number): EmployeeRecord | null {
+    const bayEmployees = this.state.employees.filter((e) => e.bayId === bay.id);
+
+    // Ephemeral subagent
+    if (ev.agentId) {
+      const subId = `sub:${bay.id}:${ev.provider}:${ev.agentId}`;
+      const existingSub = this.state.employees.find((e) => e.id === subId);
+      if (existingSub) {
+        existingSub.sessionId = ev.sessionId;
+        existingSub.lastUpdatedAt = ts;
+        return existingSub;
+      }
+      if (ev.eventType === "subagent_stop" || ev.eventType === "session_end") {
+        return null; // Idempotent ignore for unknown/already-cleaned subagent
+      }
+      const variantIdx = bayEmployees.filter((e) => e.provider === ev.provider).length;
+      const emp: EmployeeRecord = {
+        id: subId,
+        bayId: bay.id,
+        provider: ev.provider,
+        spriteId: this.providerVariantSprite(ev.provider, Math.max(1, variantIdx)),
+        displayName: ev.agentRole
+          ? `${ev.provider === "claude" ? "Claude" : "Gemini"} · ${ev.agentRole}`
+          : `${ev.provider === "claude" ? "Claude" : "Gemini"} Sub`,
+        role: ev.agentRole ?? "Subagent",
+        sessionId: ev.sessionId,
+        agentId: ev.agentId,
+        parentAgentId: ev.parentAgentId,
+        isEphemeral: true,
+        deskIndex: bayEmployees.length,
+        visualState: "assigning",
+        toolCategory: "idle",
+        lastUpdatedAt: ts,
+      };
+      this.state.employees.push(emp);
+      this.ensureBayDesksForTeam(bay);
+      return emp;
+    }
+
+    // Bind unbound starter employee on first real project claim
+    const unboundStarter = bayEmployees.find((e) => !e.provider && e.spriteId === "agent-starter");
+    if (unboundStarter) {
+      unboundStarter.provider = ev.provider;
+      unboundStarter.spriteId = this.providerBaseSprite(ev.provider);
+      unboundStarter.displayName = ev.provider === "claude" ? "Claude Lead" : "Gemini Lead";
+      unboundStarter.sessionId = ev.sessionId;
+      unboundStarter.lastUpdatedAt = ts;
+      return unboundStarter;
+    }
+
+    // Primary persistent employee for (bay, provider)
+    const primary = bayEmployees.find((e) => !e.isEphemeral && e.provider === ev.provider);
+    if (primary) {
+      primary.sessionId = ev.sessionId;
+      primary.lastUpdatedAt = ts;
+      return primary;
+    }
+
+    // Spawn persistent lead for this provider in this bay
+    const emp: EmployeeRecord = {
+      id: `emp:${bay.id}:${ev.provider}`,
+      bayId: bay.id,
+      provider: ev.provider,
+      spriteId: this.providerBaseSprite(ev.provider),
+      displayName: ev.provider === "claude" ? "Claude Lead" : "Gemini Lead",
+      role: ev.agentRole ?? "Lead",
+      sessionId: ev.sessionId,
+      isEphemeral: false,
+      deskIndex: bayEmployees.length,
+      visualState: "assigning",
+      toolCategory: "idle",
+      lastUpdatedAt: ts,
+    };
+    this.state.employees.push(emp);
+    this.ensureBayDesksForTeam(bay);
+    return emp;
+  }
+
+  private ensureBayDesksForTeam(bay: ProjectBayRecord): void {
+    const teamSize = this.state.employees.filter((e) => e.bayId === bay.id).length;
+    const desired = Math.min(4, Math.max(bay.deskSlots, teamSize));
+    if (desired > bay.deskSlots) {
+      bay.deskSlots = desired;
+      const added = createExtraBayWorkstations(bay.id, desired, bay.furniture);
+      for (const f of added) {
+        // Only add if spot is currently free (respects user/Gemini custom furniture!)
+        const check = validateFurniturePlacement(this.campus, bay.furniture, f, this.catalogById);
+        if (check.ok) bay.furniture.push(f);
+      }
+    }
+  }
+
+  private reconcileBayTeamwork(bayId: string): void {
+    const members = this.state.employees.filter((e) => e.bayId === bayId);
+    const activeWorkers = members.filter(
+      (e) => e.visualState === "working" || e.visualState === "teamwork",
+    );
+    if (activeWorkers.length >= 2) {
+      for (const w of activeWorkers) {
+        w.visualState = "teamwork";
+      }
+    } else if (activeWorkers.length === 1 && activeWorkers[0].visualState === "teamwork") {
+      activeWorkers[0].visualState = "working";
+    }
+  }
+
+  async ingestEvent(raw: AgentTelemetryEvent): Promise<void> {
+    const ev = AgentTelemetryEventSchema.parse(raw);
+    const ts = ev.timestamp ?? this.now();
+    const normalizedPath = normalizeProjectPath(ev.projectPath);
+
+    // Handle subagent_stop on unknown bay/subagent cleanly without expanding a bay
+    if (ev.eventType === "subagent_stop" && ev.agentId) {
+      const existingBay = this.state.bays.find((b) => b.projectPath === normalizedPath);
+      if (!existingBay) return;
+      const subId = `sub:${existingBay.id}:${ev.provider}:${ev.agentId}`;
+      const idx = this.state.employees.findIndex((e) => e.id === subId);
+      if (idx !== -1) {
+        this.state.employees.splice(idx, 1);
+        this.reconcileBayTeamwork(existingBay.id);
+        this.recomputeCampus();
+        await this.persist();
+        this.emitSnapshot();
+      }
+      return;
+    }
+
+    const { bay, expanded } = this.getOrCreateBayForProject(normalizedPath, ev.projectName, ts);
+    const emp = this.resolveOrSpawnEmployee(bay, ev, ts);
+    if (!emp) return;
+
+    emp.lastUpdatedAt = ts;
+    if (ev.detail) emp.detail = ev.detail;
+    if (ev.toolName) emp.toolName = ev.toolName;
+
+    switch (ev.eventType) {
+      case "session_start": {
+        emp.restAt = undefined;
+        if (emp.visualState === "resting") {
+          emp.visualState = "assigning";
+          emp.assignUntil = ts + this.assignDurationMs;
+          emp.detail = ev.detail ?? "Clocking in";
+        }
+        break;
+      }
+      case "prompt_submit": {
+        emp.restAt = undefined;
+        emp.visualState = "assigning";
+        emp.assignUntil = ts + this.assignDurationMs;
+        emp.toolCategory = "idle";
+        emp.detail = ev.detail ?? "New task assigned";
+        break;
+      }
+      case "subagent_start": {
+        emp.restAt = undefined;
+        emp.visualState = "assigning";
+        emp.assignUntil = ts + this.assignDurationMs;
+        emp.detail = ev.detail ?? `Joined ${bay.displayName}`;
+        // Lead also briefly shows assigning animation
+        const lead = this.state.employees.find(
+          (e) => e.bayId === bay.id && !e.isEphemeral && e.provider === ev.provider,
+        );
+        if (lead && lead.id !== emp.id) {
+          lead.visualState = "assigning";
+          lead.assignUntil = ts + this.assignDurationMs;
+          lead.detail = `Delegating to ${emp.role}`;
+          lead.restAt = undefined;
+        }
+        break;
+      }
+      case "tool_start": {
+        emp.restAt = undefined;
+        emp.assignUntil = undefined;
+        if (isMeetingTool(ev.toolName)) {
+          emp.visualState = "meeting";
+          emp.toolCategory = "search";
+          emp.detail = ev.detail ?? `Discussing (${ev.toolName})`;
+        } else if (isAssignTool(ev.toolName)) {
+          emp.visualState = "assigning";
+          emp.assignUntil = ts + this.assignDurationMs;
+          emp.detail = ev.detail ?? `Delegating (${ev.toolName})`;
+        } else {
+          emp.visualState = "working";
+          emp.toolCategory = classifyToolCategory(ev.toolName);
+          emp.detail = ev.detail ?? `Running ${ev.toolName ?? "tool"}`;
+          // If a subagent starts working after handoff, finish the delegating lead's assigning animation
+          if (emp.isEphemeral) {
+            const lead = this.state.employees.find(
+              (e) =>
+                e.bayId === bay.id &&
+                !e.isEphemeral &&
+                e.provider === ev.provider &&
+                e.visualState === "assigning",
+            );
+            if (lead) {
+              lead.visualState = "working";
+              lead.assignUntil = undefined;
+            }
+          }
+        }
+        break;
+      }
+      case "tool_end": {
+        if (emp.visualState === "working" || emp.visualState === "teamwork") {
+          emp.detail = ev.detail ?? `Finished ${ev.toolName ?? "tool"}`;
+        }
+        break;
+      }
+      case "tool_error": {
+        emp.restAt = undefined;
+        emp.visualState = "working";
+        emp.toolCategory = "error";
+        emp.errorUntil = ts + 4_000;
+        emp.detail = ev.detail ?? `${ev.toolName ?? "Tool"} failed`;
+        break;
+      }
+      case "waiting_user": {
+        emp.restAt = undefined;
+        emp.assignUntil = undefined;
+        emp.visualState = "meeting";
+        emp.toolCategory = "idle";
+        emp.detail = ev.detail ?? "Waiting for your review";
+        break;
+      }
+      case "turn_stop":
+      case "session_end": {
+        if (emp.isEphemeral) {
+          this.state.employees = this.state.employees.filter((e) => e.id !== emp.id);
+        } else {
+          emp.assignUntil = undefined;
+          emp.restAt = ts + this.restCooldownMs;
+          emp.detail = ev.detail ?? "Wrapping up";
+        }
+        break;
+      }
+    }
+
+    this.reconcileBayTeamwork(bay.id);
+
+    const logEntry: ActivityLogEntry = {
+      id: `act-${ts}-${crypto.randomBytes(3).toString("hex")}`,
+      timestamp: ts,
+      bayId: bay.id,
+      employeeId: emp.id,
+      provider: ev.provider,
+      eventType: ev.eventType,
+      toolName: ev.toolName,
+      detail: emp.detail,
+    };
+    this.state.activityLog.unshift(logEntry);
+    if (this.state.activityLog.length > 100) {
+      this.state.activityLog.length = 100;
+    }
+
+    this.recomputeCampus();
+    await this.persist();
+    if (expanded) {
+      this.emit("bay_expanded", { bayId: bay.id, displayName: bay.displayName });
+    }
+    this.emit("activity", logEntry);
+    this.emitSnapshot();
+  }
+
+  async tick(): Promise<void> {
+    const ts = this.now();
+    let changed = false;
+    const touchedBays = new Set<string>();
+
+    for (const emp of this.state.employees) {
+      if (emp.assignUntil && ts >= emp.assignUntil && emp.visualState === "assigning") {
+        emp.assignUntil = undefined;
+        emp.visualState = "working";
+        emp.toolCategory = emp.toolCategory === "idle" ? "code" : emp.toolCategory;
+        touchedBays.add(emp.bayId);
+        changed = true;
+      }
+      if (emp.errorUntil && ts >= emp.errorUntil && emp.toolCategory === "error") {
+        emp.errorUntil = undefined;
+        emp.toolCategory = "code";
+        changed = true;
+      }
+      if (emp.restAt && ts >= emp.restAt && emp.visualState !== "resting") {
+        emp.restAt = undefined;
+        emp.visualState = "resting";
+        emp.toolCategory = "idle";
+        emp.detail = "Taking a break";
+        touchedBays.add(emp.bayId);
+        changed = true;
+      }
+      // Guard against stale zombie sessions where no stop hook ever arrived
+      if (
+        emp.visualState !== "resting" &&
+        !emp.restAt &&
+        ts - emp.lastUpdatedAt >= STALE_ACTIVITY_TIMEOUT_MS
+      ) {
+        if (emp.isEphemeral) {
+          emp.restAt = ts; // cleaned below
+        } else {
+          emp.visualState = "resting";
+          emp.toolCategory = "idle";
+          emp.detail = "Idle — taking a break";
+          touchedBays.add(emp.bayId);
+          changed = true;
+        }
+      }
+    }
+
+    const beforeLen = this.state.employees.length;
+    this.state.employees = this.state.employees.filter(
+      (e) => !(e.isEphemeral && ts - e.lastUpdatedAt >= STALE_ACTIVITY_TIMEOUT_MS),
+    );
+    if (this.state.employees.length !== beforeLen) {
+      changed = true;
+      for (const b of this.state.bays) touchedBays.add(b.id);
+    }
+
+    for (const bayId of touchedBays) {
+      this.reconcileBayTeamwork(bayId);
+    }
+
+    if (changed) {
+      this.recomputeCampus();
+      await this.persist();
+      this.emitSnapshot();
+    }
+  }
+
+  private getZoneFurnitureArray(zoneId: ZoneId): FurnitureInstance[] | null {
+    if (zoneId.startsWith("common:")) {
+      const wing = this.state.commonWings.find((w) => w.zoneId === zoneId);
+      return wing ? wing.furniture : null;
+    }
+    if (zoneId.startsWith("bay:")) {
+      const bayId = zoneId.slice(4);
+      const bay = this.state.bays.find((b) => b.id === bayId);
+      return bay ? bay.furniture : null;
+    }
+    return null;
+  }
+
+  private resolveTargetZoneCoord(input: {
+    zoneId?: string;
+    lx?: number;
+    ly?: number;
+    tx?: number;
+    ty?: number;
+  }): { zoneId: ZoneId; lx: number; ly: number } {
+    if (input.zoneId !== undefined && input.lx !== undefined && input.ly !== undefined) {
+      return { zoneId: input.zoneId as ZoneId, lx: input.lx, ly: input.ly };
+    }
+    if (input.tx !== undefined && input.ty !== undefined) {
+      const resolved = resolveWorldToZone(this.campus, input.tx, input.ty);
+      if (!resolved) {
+        throw new Error(`World tile (${input.tx}, ${input.ty}) is outside any placeable zone (corridor or out of bounds)`);
+      }
+      return resolved;
+    }
+    throw new Error("Must provide either (zoneId, lx, ly) or world (tx, ty)");
+  }
+
+  async placeFurniture(input: {
+    zoneId?: string;
+    tx?: number;
+    ty?: number;
+    lx?: number;
+    ly?: number;
+    assetId: string;
+    direction: Direction;
+    placedBy: "user" | "gemini";
+  }): Promise<FurnitureInstance> {
+    const { zoneId, lx, ly } = this.resolveTargetZoneCoord(input);
+    const list = this.getZoneFurnitureArray(zoneId);
+    if (!list) throw new Error(`Unknown zone "${zoneId}"`);
+
+    const check = validateFurniturePlacement(
+      this.campus,
+      list,
+      { zoneId, lx, ly, assetId: input.assetId, direction: input.direction },
+      this.catalogById,
+    );
+    if (!check.ok) throw new Error(check.reason);
+
+    const cat = this.catalogById.get(input.assetId)!;
+    const instance: FurnitureInstance = {
+      id: `furn-${Date.now()}-${crypto.randomBytes(3).toString("hex")}`,
+      zoneId,
+      lx,
+      ly,
+      assetId: input.assetId,
+      direction: input.direction,
+      layer: cat.layer,
+      placedBy: input.placedBy,
+    };
+    list.push(instance);
+    this.recomputeCampus();
+    await this.persist();
+    this.emitSnapshot();
+    return instance;
+  }
+
+  async moveFurniture(
+    instanceId: string,
+    input: { zoneId?: string; tx?: number; ty?: number; lx?: number; ly?: number; direction?: Direction },
+  ): Promise<FurnitureInstance> {
+    const found = this.findFurnitureById(instanceId);
+    if (!found) throw new Error(`Furniture instance "${instanceId}" not found`);
+
+    const targetCoord =
+      input.zoneId !== undefined || input.tx !== undefined
+        ? this.resolveTargetZoneCoord(input)
+        : { zoneId: found.item.zoneId, lx: input.lx ?? found.item.lx, ly: input.ly ?? found.item.ly };
+    const nextDir = input.direction ?? found.item.direction;
+
+    const targetList = this.getZoneFurnitureArray(targetCoord.zoneId);
+    if (!targetList) throw new Error(`Unknown zone "${targetCoord.zoneId}"`);
+
+    const check = validateFurniturePlacement(
+      this.campus,
+      targetList,
+      {
+        zoneId: targetCoord.zoneId,
+        lx: targetCoord.lx,
+        ly: targetCoord.ly,
+        assetId: found.item.assetId,
+        direction: nextDir,
+        ignoreInstanceId: found.item.zoneId === targetCoord.zoneId ? instanceId : undefined,
+      },
+      this.catalogById,
+    );
+    if (!check.ok) throw new Error(check.reason);
+
+    if (found.list !== targetList) {
+      found.list.splice(found.index, 1);
+      targetList.push(found.item);
+    }
+    found.item.zoneId = targetCoord.zoneId;
+    found.item.lx = targetCoord.lx;
+    found.item.ly = targetCoord.ly;
+    found.item.direction = nextDir;
+
+    this.recomputeCampus();
+    await this.persist();
+    this.emitSnapshot();
+    return structuredClone(found.item);
+  }
+
+  async removeFurniture(instanceId: string): Promise<void> {
+    const found = this.findFurnitureById(instanceId);
+    if (!found) throw new Error(`Furniture instance "${instanceId}" not found`);
+    found.list.splice(found.index, 1);
+    this.recomputeCampus();
+    await this.persist();
+    this.emitSnapshot();
+  }
+
+  private findFurnitureById(
+    instanceId: string,
+  ): { item: FurnitureInstance; list: FurnitureInstance[]; index: number } | null {
+    for (const w of this.state.commonWings) {
+      const idx = w.furniture.findIndex((f) => f.id === instanceId);
+      if (idx !== -1) return { item: w.furniture[idx], list: w.furniture, index: idx };
+    }
+    for (const b of this.state.bays) {
+      const idx = b.furniture.findIndex((f) => f.id === instanceId);
+      if (idx !== -1) return { item: b.furniture[idx], list: b.furniture, index: idx };
+    }
+    return null;
+  }
+
+  async manageBay(
+    bayId: string,
+    patch: { displayName?: string; accentColor?: string; archived?: boolean },
+  ): Promise<ProjectBayRecord> {
+    const bay = this.state.bays.find((b) => b.id === bayId);
+    if (!bay) throw new Error(`Bay "${bayId}" not found`);
+    if (patch.displayName !== undefined) bay.displayName = patch.displayName.slice(0, 128);
+    if (patch.accentColor !== undefined) {
+      if (!/^#[0-9a-fA-F]{6}$/.test(patch.accentColor)) {
+        throw new Error(`Invalid hex color "${patch.accentColor}"`);
+      }
+      bay.accentColor = patch.accentColor;
+    }
+    if (patch.archived !== undefined) {
+      bay.archived = patch.archived;
+      if (!patch.archived) {
+        this.ensureCommonWingsForActiveRows();
+      }
+    }
+    this.recomputeCampus();
+    await this.persist();
+    this.emitSnapshot();
+    return structuredClone(bay);
+  }
+
+  async setTheme(theme: ThemeMode): Promise<void> {
+    this.state.theme = theme;
+    await this.persist();
+    this.emitSnapshot();
+  }
+}
