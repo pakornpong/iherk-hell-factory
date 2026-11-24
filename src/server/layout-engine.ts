@@ -62,17 +62,18 @@ export function createDefaultCommonWing(row: number): CommonWingRecord {
       { id: `${zoneId}-sofa`, zoneId, lx: 4, ly: 4, assetId: "sofa-lounge", direction: "nw", layer: "object", placedBy: "system" },
       { id: `${zoneId}-vac`, zoneId, lx: 0, ly: 4, assetId: "robot-vacuum", direction: "se", layer: "object", placedBy: "system" },
       { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 5, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-cooler`, zoneId, lx: 5, ly: 2, assetId: "water-cooler", direction: "sw", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-cooler`, zoneId, lx: 5, ly: 5, assetId: "water-cooler", direction: "sw", layer: "object", placedBy: "system" },
     ],
   };
 }
 
 export function createDefaultBayFurniture(bayId: string, department: DepartmentId = "general"): FurnitureInstance[] {
   const zoneId: ZoneId = `bay:${bayId}`;
+  // Symmetric room layout with wide 2-tile central corridor (lx=2..3) and clear doorways on all 4 room sides
   const base: FurnitureInstance[] = [
-    { id: `${zoneId}-desk-0`, zoneId, lx: 1, ly: 0, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
+    { id: `${zoneId}-desk-0`, zoneId, lx: 0, ly: 0, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
     { id: `${zoneId}-chair-0`, zoneId, lx: 1, ly: 1, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
-    { id: `${zoneId}-desk-1`, zoneId, lx: 3, ly: 0, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
+    { id: `${zoneId}-desk-1`, zoneId, lx: 4, ly: 0, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
     { id: `${zoneId}-chair-1`, zoneId, lx: 4, ly: 1, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
     { id: `${zoneId}-sign`, zoneId, lx: 5, ly: 5, assetId: "bay-sign-post", direction: "se", layer: "object", placedBy: "system" },
   ];
@@ -81,38 +82,37 @@ export function createDefaultBayFurniture(bayId: string, department: DepartmentI
     case "iherk":
       return [
         ...base,
-        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 0, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-shelf`, zoneId, lx: 0, ly: 0, assetId: "bookshelf-wood", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 4, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-shelf`, zoneId, lx: 0, ly: 5, assetId: "bookshelf-wood", direction: "se", layer: "object", placedBy: "system" },
         { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-vac`, zoneId, lx: 5, ly: 4, assetId: "robot-vacuum", direction: "se", layer: "object", placedBy: "system" },
       ];
     case "dev":
       return [
         ...base,
-        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 0, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-printer`, zoneId, lx: 0, ly: 0, assetId: "printer-copier", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 4, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-printer`, zoneId, lx: 0, ly: 5, assetId: "printer-copier", direction: "se", layer: "object", placedBy: "system" },
         { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
       ];
     case "erp":
       return [
         ...base,
-        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 0, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-cabinet`, zoneId, lx: 0, ly: 0, assetId: "filing-cabinet", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 4, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-cabinet`, zoneId, lx: 0, ly: 5, assetId: "filing-cabinet", direction: "se", layer: "object", placedBy: "system" },
         { id: `${zoneId}-printer`, zoneId, lx: 0, ly: 4, assetId: "printer-copier", direction: "se", layer: "object", placedBy: "system" },
       ];
     case "accounting":
       return [
         ...base,
-        { id: `${zoneId}-cabinet-r`, zoneId, lx: 5, ly: 0, assetId: "filing-cabinet", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-cabinet-l`, zoneId, lx: 0, ly: 0, assetId: "filing-cabinet", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-cabinet-r`, zoneId, lx: 5, ly: 4, assetId: "filing-cabinet", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-cabinet-l`, zoneId, lx: 0, ly: 5, assetId: "filing-cabinet", direction: "se", layer: "object", placedBy: "system" },
         { id: `${zoneId}-printer`, zoneId, lx: 0, ly: 4, assetId: "printer-copier", direction: "se", layer: "object", placedBy: "system" },
       ];
     case "general":
     default:
       return [
         ...base,
-        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 0, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-shelf`, zoneId, lx: 0, ly: 0, assetId: "bookshelf-wood", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 4, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-shelf`, zoneId, lx: 0, ly: 5, assetId: "bookshelf-wood", direction: "se", layer: "object", placedBy: "system" },
         { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
       ];
   }
@@ -129,14 +129,14 @@ export function createExtraBayWorkstations(
 
   if (desiredDeskSlots >= 3 && !hasId(`${zoneId}-desk-2`)) {
     added.push(
-      { id: `${zoneId}-desk-2`, zoneId, lx: 1, ly: 2, assetId: "desk-security-ops", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-chair-2`, zoneId, lx: 1, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-desk-2`, zoneId, lx: 0, ly: 3, assetId: "desk-security-ops", direction: "se", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-chair-2`, zoneId, lx: 1, ly: 4, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
     );
   }
   if (desiredDeskSlots >= 4 && !hasId(`${zoneId}-desk-3`)) {
     added.push(
-      { id: `${zoneId}-desk-3`, zoneId, lx: 3, ly: 2, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-chair-3`, zoneId, lx: 4, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-desk-3`, zoneId, lx: 4, ly: 3, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-chair-3`, zoneId, lx: 4, ly: 4, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
     );
   }
   return added;
@@ -289,53 +289,164 @@ export function computeCampusLayout(
   const widthTiles = sideTiles;
   const depthTiles = sideTiles;
 
-  // 4. Low dividers along vertical/horizontal seams between occupied adjacent zones (leaves bottom walkway open!)
-  const dividerAssetId = theme === "office" ? "divider-cubicle-amber" : "divider-low-glass";
+  // 4. Full architectural interior room walls with 2-tile doorways + seamless corner/T/cross junctions
+  const cubicleDividerAssetId = theme === "office" ? "divider-cubicle-amber" : "divider-low-glass";
   const zoneAt = new Map<string, ZoneBounds>();
   for (const z of zones) zoneAt.set(`${z.col},${z.row}`, z);
 
+  // Track occupied wall coordinates so junction tiles auto-tile seamlessly with zero gaps
+  const wallTileSet = new Set<string>();
+  const addRoomWallTile = (
+    id: string,
+    zoneId: ZoneId,
+    tx: number,
+    ty: number,
+    assetId: string,
+    direction: Direction,
+  ) => {
+    const key = `${tx},${ty}`;
+    if (wallTileSet.has(key)) return;
+    wallTileSet.add(key);
+    worldFurniture.push({
+      id,
+      zoneId,
+      lx: 5,
+      ly: 5,
+      assetId,
+      direction,
+      layer: "object",
+      placedBy: "system",
+      tx,
+      ty,
+      footprintTiles: [1, 1],
+    });
+  };
+
+  const seamWallAsset = (a: ZoneBounds, b?: ZoneBounds): string => {
+    if (b && a.kind === "bay" && b.kind === "bay" && a.department && a.department === b.department) {
+      return cubicleDividerAssetId;
+    }
+    return "room-wall-glass";
+  };
+
   for (const z of zones) {
-    const right = zoneAt.get(`${z.col + 1},${z.row}`);
-    if (right) {
+    // Right vertical seam (tx = originX + 6)
+    if (z.col + 1 < maxGridSide) {
+      const right = zoneAt.get(`${z.col + 1},${z.row}`);
       const dividerTx = z.originX + ZONE_SIZE;
-      for (const offsetY of [0, 1]) {
-        worldFurniture.push({
-          id: `sys-div-v-${z.col}-${z.row}-${offsetY}`,
-          zoneId: z.zoneId,
-          lx: 5,
-          ly: offsetY,
-          assetId: dividerAssetId,
-          direction: "sw",
-          layer: "object",
-          placedBy: "system",
-          tx: dividerTx,
-          ty: z.originY + offsetY,
-          footprintTiles: [1, 1],
-        });
+      const offsets = right ? [0, 1, 4, 5] : [0, 1, 2, 3, 4, 5]; // 2-tile doorway at offset 2..3 when room exists
+      const wallAsset = seamWallAsset(z, right);
+      for (const offsetY of offsets) {
+        addRoomWallTile(
+          `sys-div-v-${z.col}-${z.row}-${offsetY}`,
+          z.zoneId,
+          dividerTx,
+          z.originY + offsetY,
+          wallAsset,
+          "sw",
+        );
       }
     }
-    const below = zoneAt.get(`${z.col},${z.row + 1}`);
-    if (below) {
+    // Left vertical seam bordering an empty slot (tx = originX - 1)
+    if (z.col > 0 && !zoneAt.has(`${z.col - 1},${z.row}`)) {
+      const dividerTx = z.originX - 1;
+      for (const offsetY of [0, 1, 2, 3, 4, 5]) {
+        addRoomWallTile(
+          `sys-div-vl-${z.col}-${z.row}-${offsetY}`,
+          z.zoneId,
+          dividerTx,
+          z.originY + offsetY,
+          "room-wall-glass",
+          "sw",
+        );
+      }
+    }
+    // Bottom horizontal seam (ty = originY + 6)
+    if (z.row + 1 < maxGridSide) {
+      const below = zoneAt.get(`${z.col},${z.row + 1}`);
       const dividerTy = z.originY + ZONE_SIZE;
-      for (const offsetX of [0, 1]) {
-        worldFurniture.push({
-          id: `sys-div-h-${z.col}-${z.row}-${offsetX}`,
-          zoneId: z.zoneId,
-          lx: offsetX,
-          ly: 5,
-          assetId: dividerAssetId,
-          direction: "se",
-          layer: "object",
-          placedBy: "system",
-          tx: z.originX + offsetX,
-          ty: dividerTy,
-          footprintTiles: [1, 1],
-        });
+      const offsets = below ? [0, 1, 4, 5] : [0, 1, 2, 3, 4, 5]; // 2-tile doorway at offset 2..3 when room exists
+      const wallAsset = seamWallAsset(z, below);
+      for (const offsetX of offsets) {
+        addRoomWallTile(
+          `sys-div-h-${z.col}-${z.row}-${offsetX}`,
+          z.zoneId,
+          z.originX + offsetX,
+          dividerTy,
+          wallAsset,
+          "se",
+        );
+      }
+    }
+    // Top horizontal seam bordering an empty slot (ty = originY - 1)
+    if (z.row > 0 && !zoneAt.has(`${z.col},${z.row - 1}`)) {
+      const dividerTy = z.originY - 1;
+      for (const offsetX of [0, 1, 2, 3, 4, 5]) {
+        addRoomWallTile(
+          `sys-div-ht-${z.col}-${z.row}-${offsetX}`,
+          z.zoneId,
+          z.originX + offsetX,
+          dividerTy,
+          "room-wall-glass",
+          "se",
+        );
       }
     }
   }
 
-  // 5. Seamless square floors with rug accents under Boss Office and Common Lounges
+  // Auto-tile seam junction pillars (+, T, L) at every room intersection (col*7 + 6, row*7 + 6)
+  for (let row = 0; row < maxGridSide - 1; row++) {
+    for (let col = 0; col < maxGridSide - 1; col++) {
+      const jx = col * MODULE_PITCH_X + ZONE_SIZE;
+      const jy = row * MODULE_PITCH_Y + ZONE_SIZE;
+      const negX = wallTileSet.has(`${jx - 1},${jy}`);
+      const posX = wallTileSet.has(`${jx + 1},${jy}`);
+      const negY = wallTileSet.has(`${jx},${jy - 1}`);
+      const posY = wallTileSet.has(`${jx},${jy + 1}`);
+      const count = (negX ? 1 : 0) + (posX ? 1 : 0) + (negY ? 1 : 0) + (posY ? 1 : 0);
+      if (count === 0) continue;
+
+      let assetId = "room-junction-cross";
+      let dir: Direction = "se";
+      if (count === 4) {
+        assetId = "room-junction-cross";
+        dir = "se";
+      } else if (count === 3) {
+        assetId = "room-junction-t";
+        if (!negY) dir = "se"; // (-X, +X, +Y)
+        else if (!posX) dir = "sw"; // (-Y, +Y, -X)
+        else if (!posY) dir = "nw"; // (+X, -X, -Y)
+        else dir = "ne"; // (+Y, -Y, +X)
+      } else if (count === 2) {
+        if (negX && posX) {
+          assetId = "room-wall-glass";
+          dir = "se";
+        } else if (negY && posY) {
+          assetId = "room-wall-glass";
+          dir = "sw";
+        } else {
+          assetId = "room-junction-corner";
+          if (posX && posY) dir = "se";
+          else if (posY && negX) dir = "sw";
+          else if (negX && negY) dir = "nw";
+          else dir = "ne";
+        }
+      } else {
+        assetId = "room-wall-glass";
+        dir = negX || posX ? "se" : "sw";
+      }
+
+      const ownerZone =
+        zoneAt.get(`${col},${row}`) ??
+        zoneAt.get(`${col + 1},${row}`) ??
+        zoneAt.get(`${col},${row + 1}`) ??
+        zoneAt.get(`${col + 1},${row + 1}`) ??
+        zones[0];
+      addRoomWallTile(`sys-div-j-${col}-${row}`, ownerZone.zoneId, jx, jy, assetId, dir);
+    }
+  }
+
+  // 5. Seamless square floors with architectural room borders/thresholds and rug accents
   const bossRugSet = new Set<string>();
   for (let y = 1; y <= 4; y++) {
     for (let x = 1; x <= 4; x++) {
@@ -359,11 +470,14 @@ export function computeCampusLayout(
   for (let ty = 0; ty < depthTiles; ty++) {
     for (let tx = 0; tx < widthTiles; tx++) {
       const key = `${tx},${ty}`;
-      const assetId = bossRugSet.has(key)
-        ? bossRugAsset
-        : loungeRugSet.has(key)
-          ? "floor-lounge-rug"
-          : baseFloorAsset;
+      const isRoomSeam = tx % MODULE_PITCH_X === ZONE_SIZE || ty % MODULE_PITCH_Y === ZONE_SIZE;
+      const assetId = isRoomSeam
+        ? "floor-corridor-tile"
+        : bossRugSet.has(key)
+          ? bossRugAsset
+          : loungeRugSet.has(key)
+            ? "floor-lounge-rug"
+            : baseFloorAsset;
       floors.push({
         tx,
         ty,
@@ -413,7 +527,8 @@ export function computeCampusLayout(
   ];
 
   for (let tx = 1; tx < widthTiles; tx++) {
-    const isWindow = tx % 4 === 2 && !decorBlockedTx.has(tx);
+    const hitsInteriorWall = tx % MODULE_PITCH_X === ZONE_SIZE;
+    const isWindow = tx % 4 === 2 && !decorBlockedTx.has(tx) && !hitsInteriorWall;
     walls.push({
       tx,
       ty: 0,
@@ -422,7 +537,8 @@ export function computeCampusLayout(
     });
   }
   for (let ty = 1; ty < depthTiles; ty++) {
-    const isWindow = ty % 4 === 2;
+    const hitsInteriorWall = ty % MODULE_PITCH_Y === ZONE_SIZE;
+    const isWindow = ty % 4 === 2 && !hitsInteriorWall;
     walls.push({
       tx: 0,
       ty,

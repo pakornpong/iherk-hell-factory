@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "room-junction-cross",
+  "category": "architecture",
+  "layer": "object",
+  "outlineMode": "top-only",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-night",
+  "materials": {
+    "wall_main": { "color": "#252e45", "kind": "matte" },
+    "wall_trim": { "color": "#33405e", "kind": "matte" },
+    "baseboard": { "color": "#1a2133", "kind": "wood" },
+    "cap_dark": { "color": "#171c26", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [0, 13, 0], "to": [31, 18, 2], "material": "baseboard", "part": "base_x" },
+    { "op": "box", "from": [13, 0, 0], "to": [18, 31, 2], "material": "baseboard", "part": "base_y" },
+    { "op": "box", "from": [12, 12, 0], "to": [19, 19, 2], "material": "baseboard", "part": "base_c" },
+    { "op": "box", "from": [0, 14, 3], "to": [31, 17, 23], "material": "wall_main", "part": "arm_x" },
+    { "op": "box", "from": [14, 0, 3], "to": [17, 31, 23], "material": "wall_main", "part": "arm_y" },
+    { "op": "box", "from": [13, 13, 3], "to": [18, 18, 23], "material": "wall_main", "part": "pillar" },
+    { "op": "box", "from": [0, 13, 13], "to": [31, 18, 14], "material": "wall_trim", "part": "trim_x" },
+    { "op": "box", "from": [13, 0, 13], "to": [18, 31, 14], "material": "wall_trim", "part": "trim_y" },
+    { "op": "box", "from": [0, 14, 24], "to": [31, 17, 26], "material": "cap_dark", "part": "cap_x" },
+    { "op": "box", "from": [14, 0, 24], "to": [17, 31, 26], "material": "cap_dark", "part": "cap_y" },
+    { "op": "box", "from": [13, 13, 24], "to": [18, 18, 26], "material": "cap_dark", "part": "cap_c" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "room-wall-glass",
+  "category": "architecture",
+  "layer": "object",
+  "outlineMode": "top-only",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-night",
+  "materials": {
+    "wall_main": { "color": "#252e45", "kind": "matte" },
+    "wall_trim": { "color": "#33405e", "kind": "matte" },
+    "baseboard": { "color": "#1a2133", "kind": "wood" },
+    "cap_dark": { "color": "#171c26", "kind": "matte" },
+    "frame": { "color": "#1d2432", "kind": "metal" },
+    "glass_pane": { "color": "#28548a", "kind": "glass" }
+  },
+  "ops": [
+    { "op": "box", "from": [0, 13, 0], "to": [31, 18, 2], "material": "baseboard", "part": "baseboard" },
+    { "op": "box", "from": [0, 14, 3], "to": [31, 17, 12], "material": "wall_main", "part": "lower_wall" },
+    { "op": "box", "from": [0, 13, 13], "to": [31, 18, 14], "material": "wall_trim", "part": "sill" },
+    { "op": "box", "from": [2, 15, 15], "to": [29, 16, 23], "material": "glass_pane", "part": "glass" },
+    { "op": "box", "from": [0, 14, 15], "to": [1, 17, 23], "material": "frame", "part": "mullion_l" },
+    { "op": "box", "from": [15, 14, 15], "to": [16, 17, 23], "material": "frame", "part": "mullion_c" },
+    { "op": "box", "from": [30, 14, 15], "to": [31, 17, 23], "material": "frame", "part": "mullion_r" },
+    { "op": "box", "from": [0, 14, 24], "to": [31, 17, 26], "material": "cap_dark", "part": "cap" }
+  ]
+}

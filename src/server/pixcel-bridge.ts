@@ -309,19 +309,27 @@ const OFFICE_HEX_REMAP: Record<string, string> = {
 
 export function remapAssetToDayTheme(asset: PixcelAssetLike): PixcelAssetLike {
   const cloned = structuredClone(asset);
+  const isWall = asset.layer === "wall" || asset.id.startsWith("wall-") || asset.id.startsWith("room-");
+  const isCorridorFloor = asset.id === "floor-corridor-tile";
   for (const [matName, mat] of Object.entries(cloned.materials)) {
     const key = mat.color.toLowerCase();
+    if (isCorridorFloor) {
+      if (matName === "stone_a") mat.color = "#cfc9be";
+      else if (matName === "stone_b") mat.color = "#dcd7cd";
+      else if (matName === "grout") mat.color = "#b5aea2";
+      continue;
+    }
     if (key in DAY_HEX_REMAP) {
       mat.color = DAY_HEX_REMAP[key];
-    } else if (
-      (asset.layer === "wall" || asset.id.startsWith("wall-")) &&
-      mat.kind !== "emissive" &&
-      mat.kind !== "glass"
-    ) {
-      if (/^#[0-3][0-9a-f][0-3][0-9a-f][0-5][0-9a-f]$/i.test(key)) {
+    } else if (isWall && mat.kind !== "emissive" && mat.kind !== "glass") {
+      if (matName.includes("cap") || matName === "frame") {
+        mat.color = "#948e82";
+      } else if (matName === "wall_trim" || matName === "baseboard") {
+        mat.color = "#cfc8b9";
+      } else if (/^#[0-3][0-9a-f][0-3][0-9a-f][0-5][0-9a-f]$/i.test(key)) {
         mat.color = "#dcd6c8";
       }
-    } else if (mat.kind === "glass" && asset.id.includes("window")) {
+    } else if (mat.kind === "glass" && (asset.id.includes("window") || asset.id.startsWith("room-"))) {
       mat.color = "#93c5fd";
     } else if (matName.includes("plank") && /^#[0-6]/.test(key)) {
       mat.color = "#b88a5b";
@@ -336,12 +344,20 @@ export function remapAssetToOfficeTheme(asset: PixcelAssetLike): PixcelAssetLike
     return cloned;
   }
 
-  const isWall = cloned.layer === "wall" || cloned.id.startsWith("wall-");
+  const isWall = cloned.layer === "wall" || cloned.id.startsWith("wall-") || cloned.id.startsWith("room-");
+  const isCorridorFloor = cloned.id === "floor-corridor-tile";
   const isDeskOrTable = cloned.id.startsWith("desk-") || cloned.id.startsWith("table-");
   const isCoffeeBar = cloned.id === "coffee-machine-bar";
 
   for (const [matName, mat] of Object.entries(cloned.materials)) {
     const key = mat.color.toLowerCase();
+
+    if (isCorridorFloor) {
+      if (matName === "stone_a") mat.color = "#94a3b8";
+      else if (matName === "stone_b") mat.color = "#aab7c6";
+      else if (matName === "grout") mat.color = "#64748b";
+      continue;
+    }
 
     if (isWall) {
       if (matName.includes("cap")) {

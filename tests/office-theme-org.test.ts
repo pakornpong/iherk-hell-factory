@@ -3,6 +3,7 @@ import os from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { nextThemeMode } from "../src/client/hud.js";
+import { buildWalkableGrid, findTilePath } from "../src/client/pathfinding.js";
 import { deltaToDir, OfficeSimulation } from "../src/client/sim.js";
 import { DEMO_SCRIPT } from "../src/server/demo-simulator.js";
 import {
@@ -248,9 +249,12 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
       [1, 2],
     ]);
 
-    // Office theme floors, boss rug, amber dividers, dept props, wall decor
+    // Office theme floors, room threshold strips, boss rug, architectural room walls, junctions & same-dept amber dividers
     expect(officeCampus.floors.some((f) => f.assetId === "floor-office-carpet")).toBe(true);
+    expect(officeCampus.floors.some((f) => f.assetId === "floor-corridor-tile")).toBe(true);
     expect(officeCampus.floors.some((f) => f.assetId === "floor-boss-rug")).toBe(true);
+    expect(officeCampus.worldFurniture.some((f) => f.assetId === "room-wall-glass")).toBe(true);
+    expect(officeCampus.worldFurniture.some((f) => f.assetId === "room-junction-cross")).toBe(true);
     expect(officeCampus.worldFurniture.some((f) => f.assetId === "divider-cubicle-amber")).toBe(true);
     expect(officeCampus.worldFurniture.some((f) => f.assetId === "filing-cabinet")).toBe(true);
     expect(officeCampus.worldFurniture.some((f) => f.assetId === "printer-copier")).toBe(true);
@@ -258,7 +262,23 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
     expect(officeCampus.wallDecor.some((d) => d.assetId === "wall-ac-unit")).toBe(true);
     expect(officeCampus.wallDecor.some((d) => d.assetId === "wall-corkboard")).toBe(true);
 
-    // Night theme still uses wood plank + low glass dividers
+    // Outer perimeter windows never collide with interior wall seams (tx % 7 === 6 or ty % 7 === 6)
+    expect(
+      officeCampus.walls.some(
+        (w) => w.assetId === "wall-night-window" && ((w.ty === 0 && w.tx % 7 === 6) || (w.tx === 0 && w.ty % 7 === 6)),
+      ),
+    ).toBe(false);
+
+    // Every occupied room must be reachable from Boss Office (2,4) through open 2-tile doorways via A*
+    const walkGrid = buildWalkableGrid(officeCampus);
+    for (const z of officeCampus.zones) {
+      const target: [number, number] = [z.originX + 2, z.originY + 2];
+      const path = findTilePath(walkGrid, [2, 4], target);
+      const end = path[path.length - 1];
+      expect(Math.abs(end[0] - target[0]) + Math.abs(end[1] - target[1]), `Room ${z.zoneId} reachable`).toBeLessThanOrEqual(1);
+    }
+
+    // Night theme still uses wood plank + architectural walls + low glass dividers between same-dept bays
     const nightCampus = computeCampusLayout(
       bays,
       [createDefaultCommonWing(0)],
@@ -267,6 +287,7 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
       "night",
     );
     expect(nightCampus.floors.some((f) => f.assetId === "floor-wood-plank")).toBe(true);
+    expect(nightCampus.worldFurniture.some((f) => f.assetId === "room-wall-glass")).toBe(true);
     expect(nightCampus.worldFurniture.some((f) => f.assetId === "divider-low-glass")).toBe(true);
   });
 
