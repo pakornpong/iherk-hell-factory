@@ -27,6 +27,14 @@
     "cap_dark": {
       "color": "#171c26",
       "kind": "matte"
+    },
+    "glass_pane": {
+      "color": "#28548a",
+      "kind": "glass"
+    },
+    "frame": {
+      "color": "#1d2432",
+      "kind": "metal"
     }
   },
   "ops": [
@@ -85,10 +93,25 @@
       "to": [
         31,
         17,
-        53
+        12
       ],
       "material": "wall_main",
       "part": "arm_x"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        15,
+        15
+      ],
+      "to": [
+        31,
+        16,
+        53
+      ],
+      "material": "glass_pane",
+      "part": "arm_x_glass"
     },
     {
       "op": "box",
@@ -100,10 +123,25 @@
       "to": [
         17,
         31,
-        53
+        12
       ],
       "material": "wall_main",
       "part": "arm_y"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        14,
+        15
+      ],
+      "to": [
+        16,
+        31,
+        53
+      ],
+      "material": "glass_pane",
+      "part": "arm_y_glass"
     },
     {
       "op": "box",
@@ -115,10 +153,25 @@
       "to": [
         18,
         18,
-        53
+        12
       ],
       "material": "wall_main",
       "part": "pillar"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        14,
+        15
+      ],
+      "to": [
+        17,
+        17,
+        53
+      ],
+      "material": "frame",
+      "part": "post"
     },
     {
       "op": "box",
