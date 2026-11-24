@@ -17,13 +17,13 @@
     "blossom": { "color": "#f472b6", "kind": "matte" }
   },
   "ops": [
-    { "op": "box", "from": [12, 12, 0], "to": [19, 19, 4], "material": "pot_terra", "part": "pot" },
-    { "op": "box", "from": [11, 11, 5], "to": [20, 20, 6], "material": "pot_rim", "part": "rim" },
-    { "op": "box", "from": [12, 12, 6], "to": [19, 19, 6], "material": "soil", "part": "soil" },
-    { "op": "box", "from": [13, 13, 7], "to": [18, 18, 12], "material": "leaf_dark", "part": "cactus_body" },
-    { "op": "box", "from": [14, 14, 12], "to": [17, 17, 14], "material": "leaf_light", "part": "cactus_top" },
-    { "op": "box", "from": [10, 14, 8], "to": [12, 17, 11], "material": "leaf_light", "part": "arm_l" },
-    { "op": "box", "from": [19, 14, 9], "to": [21, 17, 12], "material": "leaf_dark", "part": "arm_r" },
-    { "op": "box", "from": [15, 15, 15], "to": [16, 16, 16], "material": "blossom", "part": "flower" }
+    { "op": "box", "from": [13, 13, 0], "to": [18, 18, 3], "material": "pot_terra", "part": "pot" },
+    { "op": "box", "from": [13, 13, 4], "to": [18, 18, 4], "material": "pot_rim", "part": "rim" },
+    { "op": "box", "from": [14, 14, 4], "to": [17, 17, 4], "material": "soil", "part": "soil" },
+    { "op": "box", "from": [14, 14, 5], "to": [17, 17, 8], "material": "leaf_dark", "part": "cactus_body" },
+    { "op": "box", "from": [15, 15, 8], "to": [16, 16, 9], "material": "leaf_light", "part": "cactus_top" },
+    { "op": "box", "from": [12, 15, 6], "to": [13, 16, 7], "material": "leaf_light", "part": "arm_l" },
+    { "op": "box", "from": [18, 15, 6], "to": [19, 16, 8], "material": "leaf_dark", "part": "arm_r" },
+    { "op": "box", "from": [15, 15, 10], "to": [16, 16, 10], "material": "blossom", "part": "flower" }
   ]
 }

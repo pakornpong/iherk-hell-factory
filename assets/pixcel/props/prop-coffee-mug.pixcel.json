@@ -16,13 +16,12 @@
     "steam": { "color": "#e2e8f0", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.2 }
   },
   "ops": [
-    { "op": "box", "from": [11, 11, 0], "to": [20, 20, 0], "material": "coaster_wood", "part": "coaster" },
-    { "op": "box", "from": [12, 12, 1], "to": [19, 19, 7], "material": "mug_ceramic", "part": "cup" },
-    { "op": "box", "from": [12, 12, 3], "to": [19, 19, 4], "material": "mug_stripe", "part": "stripe" },
-    { "op": "box", "from": [13, 13, 7], "to": [18, 18, 7], "material": "coffee_dark", "part": "coffee" },
-    { "op": "box", "from": [20, 14, 2], "to": [22, 17, 6], "material": "mug_ceramic", "part": "handle" },
-    { "op": "box", "from": [20, 15, 3], "to": [21, 16, 5], "material": "coaster_wood", "part": "handle_gap" },
-    { "op": "voxel", "at": [15, 15, 9], "material": "steam" },
-    { "op": "voxel", "at": [16, 15, 11], "material": "steam" }
+    { "op": "box", "from": [13, 13, 0], "to": [18, 18, 0], "material": "coaster_wood", "part": "coaster" },
+    { "op": "box", "from": [14, 14, 1], "to": [17, 17, 5], "material": "mug_ceramic", "part": "cup" },
+    { "op": "box", "from": [14, 14, 2], "to": [17, 17, 3], "material": "mug_stripe", "part": "stripe" },
+    { "op": "box", "from": [15, 15, 5], "to": [16, 16, 5], "material": "coffee_dark", "part": "coffee" },
+    { "op": "box", "from": [18, 15, 2], "to": [19, 16, 4], "material": "mug_ceramic", "part": "handle" },
+    { "op": "voxel", "at": [15, 15, 7], "material": "steam" },
+    { "op": "voxel", "at": [16, 15, 9], "material": "steam" }
   ]
 }

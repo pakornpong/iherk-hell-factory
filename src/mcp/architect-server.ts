@@ -4,7 +4,12 @@ import { z } from "zod";
 import { OfficeEngine } from "../server/office-engine.js";
 import { PixcelBridge } from "../server/pixcel-bridge.js";
 import { OfficeStore } from "../server/store.js";
-import { DepartmentIdSchema, DirectionSchema } from "../shared/types.js";
+import {
+  DepartmentIdSchema,
+  DirectionSchema,
+  RenderLayerSchema,
+  TilePermissionSchema,
+} from "../shared/types.js";
 
 export interface ArchitectMcpOptions {
   serverUrl: string;
@@ -126,7 +131,7 @@ export function createArchitectMcpServer(opts: ArchitectMcpOptions): McpServer {
 
   server.tool(
     "move_furniture",
-    "Move or rotate an existing placed furniture instance by its instanceId.",
+    "Move, rotate, or override the elevation renderLayer (1-7) of an existing placed furniture instance by its instanceId.",
     {
       instanceId: z.string().min(1),
       zoneId: z.string().optional(),
@@ -135,6 +140,7 @@ export function createArchitectMcpServer(opts: ArchitectMcpOptions): McpServer {
       tx: z.number().int().optional(),
       ty: z.number().int().optional(),
       direction: DirectionSchema.optional(),
+      renderLayer: RenderLayerSchema.optional(),
     },
     async ({ instanceId, ...patch }) => {
       try {
@@ -263,6 +269,41 @@ export function createArchitectMcpServer(opts: ArchitectMcpOptions): McpServer {
         const data = remote.reached
           ? remote.data
           : { ok: true, bay: await withOfflineEngine((e) => e.manageBay(bayId, patch)) };
+        return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+      } catch (err) {
+        return {
+          isError: true,
+          content: [{ type: "text", text: err instanceof Error ? err.message : String(err) }],
+        };
+      }
+    },
+  );
+
+  server.tool(
+    "set_tile_permission",
+    "Set or clear a Pokémon GBA-style movement permission override on a world tile (0=blocked, 1=walkable, 2=seat, 3=door, null=auto) or resetAll=true.",
+    {
+      tx: z.number().int().optional(),
+      ty: z.number().int().optional(),
+      permission: TilePermissionSchema.nullable().optional(),
+      resetAll: z.boolean().optional(),
+    },
+    async ({ tx, ty, permission, resetAll }) => {
+      try {
+        if (resetAll) {
+          const remote = await callServer<unknown>("PATCH", "/api/architect/tile-permissions", { resetAll: true });
+          const data = remote.reached
+            ? remote.data
+            : { ok: true, overrides: await withOfflineEngine(async (e) => { await e.clearTilePermissionOverrides(); return {}; }) };
+          return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+        }
+        if (tx === undefined || ty === undefined || permission === undefined) {
+          throw new Error("Must provide either resetAll=true or (tx, ty, permission)");
+        }
+        const remote = await callServer<unknown>("PATCH", "/api/architect/tile-permissions", { tx, ty, permission });
+        const data = remote.reached
+          ? remote.data
+          : { ok: true, overrides: await withOfflineEngine((e) => e.setTilePermissionOverride(tx, ty, permission)) };
         return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
       } catch (err) {
         return {

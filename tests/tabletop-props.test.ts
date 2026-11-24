@@ -87,6 +87,16 @@ describe("Tabletop Props & Surface Placement", () => {
     expect(bossDesk.ty).toBe(2);
     expect(bossDesk.footprintTiles).toEqual([2, 1]);
 
+    // Boss Desk comes pre-decorated with default tabletop props (lamp + coffee mug)
+    const defaultLamp = snap0.campus.worldFurniture.find((f) => f.id === "boss:0-boss-lamp")!;
+    const defaultMug = snap0.campus.worldFurniture.find((f) => f.id === "boss:0-boss-mug")!;
+    expect(defaultLamp.renderLayer).toBe(RENDER_LAYER.TABLETOP);
+    expect(defaultLamp.surfaceOffsetY).toBe(17);
+    expect(defaultMug.renderLayer).toBe(RENDER_LAYER.TABLETOP);
+    // Clear the default tabletop items so we can test manual placement from scratch
+    await engine.removeFurniture(defaultLamp.id);
+    await engine.removeFurniture(defaultMug.id);
+
     // 1. Reject placing tabletop prop on bare floor (1, 3) or on a non-surface chair (2, 1)
     await expect(
       engine.placeFurniture({ zoneId: "boss:0", lx: 1, ly: 3, assetId: "prop-desk-lamp", direction: "se", placedBy: "user" }),

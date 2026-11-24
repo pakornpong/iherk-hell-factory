@@ -1,4 +1,4 @@
-import type { TilePermission } from "../shared/layers.js";
+import type { RenderLayer, TilePermission } from "../shared/layers.js";
 import {
   classifyDepartmentFromPath,
   AMENITY_THEME_META,
@@ -13,6 +13,7 @@ import {
   type ProjectBayRecord,
   type ThemeMode,
 } from "../shared/types.js";
+import type { AtlasManager } from "./atlas-loader.js";
 import type { DecorateController } from "./decorate.js";
 import type { LayerOverlayMode } from "./iso-renderer.js";
 import type { SimEmployeeVisual } from "./sim.js";
@@ -22,6 +23,7 @@ export type LayerBrush = "inspect" | "auto" | TilePermission;
 export interface LayerEditorState {
   mode: LayerOverlayMode;
   brush: LayerBrush;
+  selectedFurnitureId: string | null;
 }
 
 export interface HudCallbacks {
@@ -36,6 +38,7 @@ export interface HudCallbacks {
   onLayerOverlayChange?(mode: LayerOverlayMode): void;
   onLayerBrushChange?(brush: LayerBrush): void;
   onResetTilePermissions?(): void;
+  onSetFurnitureLayer?(instanceId: string, layer: RenderLayer): void;
 }
 
 const STATE_LABELS: Record<string, string> = {
@@ -69,6 +72,7 @@ export class OfficeHud {
   private minimapCanvas: HTMLCanvasElement;
   private minimapCtx: CanvasRenderingContext2D;
   private lastCampus: ComputedCampus | null = null;
+  private lastSelectedLayerFurnId: string | null = null;
 
   constructor(
     private readonly decorate: DecorateController,
@@ -143,6 +147,17 @@ export class OfficeHud {
 
     document.getElementById("btn-reset-perms")?.addEventListener("click", () => {
       this.cb.onResetTilePermissions?.();
+    });
+
+    const elevButtons = document.querySelectorAll<HTMLButtonElement>(".layer-elev-btn");
+    elevButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (!this.lastSelectedLayerFurnId) return;
+        const layerNum = Number(btn.dataset.layer) as RenderLayer;
+        if (layerNum >= 1 && layerNum <= 7) {
+          this.cb.onSetFurnitureLayer?.(this.lastSelectedLayerFurnId, layerNum);
+        }
+      });
     });
 
     const btnRotate = document.getElementById("btn-rotate") as HTMLButtonElement;
@@ -228,6 +243,7 @@ export class OfficeHud {
     selectedEmployeeId: string | null,
     currentZoom: number,
     layerState?: LayerEditorState,
+    atlas?: AtlasManager,
   ): void {
     this.lastCampus = snapshot.campus;
     const { state, demoMode } = snapshot;
@@ -256,6 +272,8 @@ export class OfficeHud {
 
     const layerMode: LayerOverlayMode = layerState?.mode ?? "off";
     const layerBrush: LayerBrush = layerState?.brush ?? "inspect";
+    const selectedLayerFurnId = layerState?.selectedFurnitureId ?? null;
+    this.lastSelectedLayerFurnId = selectedLayerFurnId;
     const layerOpen = layerMode !== "off";
     document.getElementById("btn-layers")?.classList.toggle("active", layerOpen);
     const layerPanel = document.getElementById("layer-panel");
@@ -264,6 +282,7 @@ export class OfficeHud {
       document.getElementById("layer-mode-permissions")?.classList.toggle("active", layerMode === "permissions");
       document.getElementById("layer-mode-layers")?.classList.toggle("active", layerMode === "layers");
       document.getElementById("layer-brush-section")?.classList.toggle("hidden", layerMode !== "permissions");
+      document.getElementById("layer-elev-section")?.classList.toggle("hidden", layerMode !== "layers");
       const brushButtons = layerPanel.querySelectorAll<HTMLButtonElement>(".layer-brush-btn");
       brushButtons.forEach((btn) => {
         btn.classList.toggle("active", btn.dataset.brush === String(layerBrush));
@@ -273,6 +292,23 @@ export class OfficeHud {
       if (resetBtn) {
         resetBtn.disabled = overrideCount === 0;
         resetBtn.textContent = `Reset Overrides (${overrideCount})`;
+      }
+
+      if (layerMode === "layers") {
+        const selectedFurn = selectedLayerFurnId
+          ? snapshot.campus.worldFurniture.find((f) => f.id === selectedLayerFurnId) ?? null
+          : null;
+        const targetEl = document.getElementById("layer-elev-target");
+        if (targetEl) {
+          targetEl.textContent = selectedFurn
+            ? `${selectedFurn.assetId} (${selectedFurn.zoneId} @ ${selectedFurn.tx},${selectedFurn.ty}) · current L${selectedFurn.renderLayer ?? 4}`
+            : "Click any furniture piece on the map to adjust its layer.";
+        }
+        const elevButtons = layerPanel.querySelectorAll<HTMLButtonElement>(".layer-elev-btn");
+        elevButtons.forEach((btn) => {
+          btn.disabled = !selectedFurn;
+          btn.classList.toggle("active", Boolean(selectedFurn && Number(btn.dataset.layer) === (selectedFurn.renderLayer ?? 4)));
+        });
       }
     }
 
@@ -443,8 +479,13 @@ export class OfficeHud {
       for (const item of filteredPlaceables) {
         const btn = document.createElement("button");
         btn.className = `cat-item ${this.decorate.selectedAssetId === item.id && this.decorate.tool === "place" ? "selected" : ""}`;
+        const thumbUrl = atlas?.getThumbnailDataUrl(state.theme, item.id, 30);
+        const thumbHtml = thumbUrl ? `<img class="cat-thumb" src="${thumbUrl}" alt="" />` : "";
         btn.innerHTML = `
-          <span>${escapeHtml(item.id)}</span>
+          <span class="cat-item-left">
+            ${thumbHtml}
+            <span class="cat-item-name">${escapeHtml(item.id)}</span>
+          </span>
           <span class="cat-tag">${item.source === "custom" ? "✨ Gemini" : item.layer === "tabletop" ? "💡 Top" : `${item.footprintTiles[0]}×${item.footprintTiles[1]}`}</span>
         `;
         btn.addEventListener("click", () => {

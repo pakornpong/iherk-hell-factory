@@ -17,13 +17,13 @@
     "code_bright": { "color": "#e0f2fe", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.45 }
   },
   "ops": [
-    { "op": "box", "from": [8, 10, 0], "to": [23, 22, 1], "material": "alu_body", "part": "chassis" },
-    { "op": "box", "from": [10, 12, 1], "to": [21, 18, 1], "material": "kbd_dark", "part": "keyboard" },
-    { "op": "box", "from": [13, 19, 1], "to": [18, 21, 1], "material": "alu_edge", "part": "trackpad" },
-    { "op": "box", "from": [8, 10, 2], "to": [23, 11, 11], "material": "alu_edge", "part": "lid_back" },
-    { "op": "box", "from": [9, 11, 2], "to": [22, 11, 10], "material": "bezel", "part": "screen_bezel" },
-    { "op": "box", "from": [10, 12, 3], "to": [21, 12, 9], "material": "screen_glow", "part": "screen" },
-    { "op": "box", "from": [11, 12, 7], "to": [17, 12, 7], "material": "code_bright", "part": "code_1" },
-    { "op": "box", "from": [11, 12, 5], "to": [19, 12, 5], "material": "code_bright", "part": "code_2" }
+    { "op": "box", "from": [10, 11, 0], "to": [21, 19, 0], "material": "alu_body", "part": "chassis" },
+    { "op": "box", "from": [11, 13, 0], "to": [20, 16, 0], "material": "kbd_dark", "part": "keyboard" },
+    { "op": "box", "from": [14, 17, 0], "to": [17, 18, 0], "material": "alu_edge", "part": "trackpad" },
+    { "op": "box", "from": [10, 11, 1], "to": [21, 11, 7], "material": "alu_edge", "part": "lid_back" },
+    { "op": "box", "from": [10, 12, 1], "to": [21, 12, 7], "material": "bezel", "part": "screen_bezel" },
+    { "op": "box", "from": [11, 12, 2], "to": [20, 12, 6], "material": "screen_glow", "part": "screen" },
+    { "op": "box", "from": [12, 12, 5], "to": [17, 12, 5], "material": "code_bright", "part": "code_1" },
+    { "op": "box", "from": [12, 12, 3], "to": [18, 12, 3], "material": "code_bright", "part": "code_2" }
   ]
 }

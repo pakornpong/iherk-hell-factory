@@ -4,6 +4,7 @@ import {
   isWalkablePermission,
   resolveAssetLayerConfig,
   surfaceVoxelsToWorldOffsetY,
+  type RenderLayer,
 } from "../shared/layers.js";
 import type {
   CatalogEntry,
@@ -55,7 +56,7 @@ async function bootstrap(): Promise<void> {
   let selectedEmployeeId: string | null = null;
   let hoverTile: [number, number] | null = null;
   let cameraInitialized = false;
-  const layerState: LayerEditorState = { mode: "off", brush: "inspect" };
+  const layerState: LayerEditorState = { mode: "off", brush: "inspect", selectedFurnitureId: null };
 
   const resize = () => {
     canvas.width = window.innerWidth;
@@ -88,7 +89,7 @@ async function bootstrap(): Promise<void> {
 
   const refreshHud = () => {
     if (!snapshot) return;
-    hud.renderHud(snapshot, catalog, selectedEmployeeId, camera.zoom, layerState);
+    hud.renderHud(snapshot, catalog, selectedEmployeeId, camera.zoom, layerState, atlas);
   };
 
   const hud = new OfficeHud(decorate, {
@@ -131,6 +132,7 @@ async function bootstrap(): Promise<void> {
     },
     onLayerOverlayChange(mode: LayerOverlayMode) {
       layerState.mode = mode;
+      if (mode !== "layers") layerState.selectedFurnitureId = null;
       refreshHud();
     },
     onLayerBrushChange(brush: LayerBrush) {
@@ -143,6 +145,14 @@ async function bootstrap(): Promise<void> {
         body: JSON.stringify({ resetAll: true }),
       })
         .then(() => hud.showToast("↺ Tile permission overrides cleared"))
+        .catch((e) => hud.showToast(e instanceof Error ? e.message : String(e), true));
+    },
+    onSetFurnitureLayer(instanceId: string, renderLayer: RenderLayer) {
+      void architectFetch(`/api/architect/furniture/${encodeURIComponent(instanceId)}`, {
+        method: "PATCH",
+        body: JSON.stringify({ renderLayer }),
+      })
+        .then(() => hud.showToast(`🗺️ Set renderLayer → L${renderLayer}`))
         .catch((e) => hud.showToast(e instanceof Error ? e.message : String(e), true));
     },
   });
@@ -292,6 +302,37 @@ async function bootstrap(): Promise<void> {
           body: JSON.stringify({ tx, ty, permission }),
         }).catch((err) => hud.showToast(err instanceof Error ? err.message : String(err), true));
       }
+      return;
+    }
+
+    if (layerState.mode === "layers" && hoverTile) {
+      const [tx, ty] = hoverTile;
+      const tileMatches = snapshot.campus.worldFurniture.filter(
+        (f) =>
+          isEditableFurniture(f) &&
+          tx >= f.tx &&
+          tx < f.tx + f.footprintTiles[0] &&
+          ty >= f.ty &&
+          ty < f.ty + f.footprintTiles[1],
+      );
+      let picked =
+        tileMatches.find((f) => isTabletopAsset(f.assetId, f.layer, catalogById.get(f.assetId))) ??
+        tileMatches[0];
+      if (!picked) {
+        for (let i = renderer.lastHitBoxes.length - 1; i >= 0; i--) {
+          const box = renderer.lastHitBoxes[i];
+          if (box.kind !== "furniture") continue;
+          if (sx >= box.x && sx <= box.x + box.w && sy >= box.y && sy <= box.y + box.h) {
+            const hit = snapshot.campus.worldFurniture.find((f) => f.id === box.id && isEditableFurniture(f));
+            if (hit) {
+              picked = hit;
+              break;
+            }
+          }
+        }
+      }
+      layerState.selectedFurnitureId = picked?.id ?? null;
+      refreshHud();
       return;
     }
 
@@ -548,6 +589,7 @@ async function bootstrap(): Promise<void> {
       syncPackets: simStep.syncPackets,
       selectedEmployeeId,
       movingFurnitureId: decorate.movingItem?.item.id ?? null,
+      selectedLayerFurnitureId: layerState.mode === "layers" ? layerState.selectedFurnitureId : null,
       bayPopAnimations: sim.getBayPopAnimations(),
       ghost,
       layerOverlayMode: layerState.mode,

@@ -4,6 +4,7 @@
  * every chair / doorway / stand spot reachable). Bays have 3 variants per department and lounges 2, and
  * any layout may be mirrored across the lx/ly diagonal, so neighbouring rooms rarely look alike.
  */
+import { isTabletopAsset } from "./layers.js";
 import type { DepartmentId, Direction, FurnitureInstance, ZoneId } from "./types.js";
 
 export interface RoomLayoutItem {
@@ -35,6 +36,8 @@ export const ROOM_LAYOUTS: Record<string, RoomLayout> = {
       { key: "bin", lx: 3, ly: 1, assetId: "trash-bin-office", direction: "se" },
       { key: "ext", lx: 5, ly: 1, assetId: "fire-extinguisher", direction: "sw" },
       { key: "boss-desk", lx: 2, ly: 2, assetId: "desk-dev-dual", direction: "nw" },
+      { key: "boss-lamp", lx: 2, ly: 2, assetId: "prop-desk-lamp", direction: "se" },
+      { key: "boss-mug", lx: 3, ly: 2, assetId: "prop-coffee-mug", direction: "se" },
       { key: "visitor-0", lx: 2, ly: 3, assetId: "chair-office-swivel", direction: "nw" },
       { key: "visitor-1", lx: 3, ly: 3, assetId: "chair-office-swivel", direction: "nw" },
       { key: "sofa", lx: 0, ly: 4, assetId: "sofa-lounge", direction: "ne" },
@@ -52,6 +55,9 @@ export const ROOM_LAYOUTS: Record<string, RoomLayout> = {
       { key: "vending", lx: 5, ly: 0, assetId: "office-vending-machine", direction: "se" },
       { key: "ext", lx: 5, ly: 1, assetId: "fire-extinguisher", direction: "sw" },
       { key: "conf", lx: 2, ly: 2, assetId: "table-conference", direction: "se" },
+      { key: "conf-laptop", lx: 2, ly: 2, assetId: "prop-laptop", direction: "se" },
+      { key: "conf-books", lx: 3, ly: 3, assetId: "prop-book-stack", direction: "nw" },
+      { key: "conf-mug", lx: 2, ly: 3, assetId: "prop-coffee-mug", direction: "se" },
       { key: "c1", lx: 2, ly: 1, assetId: "chair-office-swivel", direction: "se" },
       { key: "c2", lx: 3, ly: 1, assetId: "chair-office-swivel", direction: "se" },
       { key: "c3", lx: 1, ly: 2, assetId: "chair-office-swivel", direction: "ne" },
@@ -70,6 +76,8 @@ export const ROOM_LAYOUTS: Record<string, RoomLayout> = {
       { key: "coffee", lx: 4, ly: 0, assetId: "coffee-machine-bar", direction: "se" },
       { key: "cooler", lx: 5, ly: 1, assetId: "water-cooler", direction: "sw" },
       { key: "conf", lx: 2, ly: 2, assetId: "table-conference", direction: "se" },
+      { key: "conf-laptop", lx: 3, ly: 2, assetId: "prop-laptop", direction: "sw" },
+      { key: "conf-plant", lx: 2, ly: 3, assetId: "prop-mini-plant", direction: "se" },
       { key: "c1", lx: 4, ly: 2, assetId: "chair-office-swivel", direction: "sw" },
       { key: "c2", lx: 4, ly: 3, assetId: "chair-office-swivel", direction: "sw" },
       { key: "c3", lx: 2, ly: 4, assetId: "chair-office-swivel", direction: "nw" },
@@ -88,6 +96,10 @@ export const ROOM_LAYOUTS: Record<string, RoomLayout> = {
       { key: "desk-b", lx: 3, ly: 2, assetId: "desk-dev-dual", direction: "nw" },
       { key: "desk-c", lx: 1, ly: 3, assetId: "desk-dev-dual", direction: "se" },
       { key: "desk-d", lx: 3, ly: 3, assetId: "desk-dev-dual", direction: "se" },
+      { key: "top-lamp", lx: 1, ly: 2, assetId: "prop-desk-lamp", direction: "se" },
+      { key: "top-mug", lx: 4, ly: 2, assetId: "prop-coffee-mug", direction: "nw" },
+      { key: "top-books", lx: 1, ly: 3, assetId: "prop-book-stack", direction: "se" },
+      { key: "top-plant", lx: 4, ly: 3, assetId: "prop-mini-plant", direction: "nw" },
       { key: "seat-0", lx: 1, ly: 1, assetId: "chair-office-swivel", direction: "se" },
       { key: "seat-1", lx: 2, ly: 1, assetId: "chair-office-swivel", direction: "se" },
       { key: "seat-2", lx: 3, ly: 1, assetId: "chair-office-swivel", direction: "se" },
@@ -107,8 +119,11 @@ export const ROOM_LAYOUTS: Record<string, RoomLayout> = {
   "bay-iherk-v0": {
     items: [
       { key: "desk-0", lx: 0, ly: 0, assetId: "desk-dev-dual", direction: "se" },
+      { key: "top-lamp", lx: 0, ly: 0, assetId: "prop-desk-lamp", direction: "se" },
+      { key: "top-mug", lx: 1, ly: 0, assetId: "prop-coffee-mug", direction: "se" },
       { key: "chair-0", lx: 1, ly: 1, assetId: "chair-office-swivel", direction: "nw" },
       { key: "desk-1", lx: 4, ly: 0, assetId: "desk-drafting", direction: "se" },
+      { key: "top-books", lx: 4, ly: 0, assetId: "prop-book-stack", direction: "se" },
       { key: "chair-1", lx: 4, ly: 1, assetId: "chair-office-swivel", direction: "nw" },
       { key: "sign", lx: 1, ly: 5, assetId: "bay-sign-post", direction: "se" },
       { key: "shelf", lx: 0, ly: 1, assetId: "bookshelf-wood", direction: "ne" },
@@ -574,7 +589,7 @@ export function toFurniture(zoneId: ZoneId, items: RoomLayoutItem[]): FurnitureI
     ly: it.ly,
     assetId: it.assetId,
     direction: it.direction,
-    layer: "object" as const,
+    layer: isTabletopAsset(it.assetId) ? ("tabletop" as const) : ("object" as const),
     placedBy: "system" as const,
   }));
 }

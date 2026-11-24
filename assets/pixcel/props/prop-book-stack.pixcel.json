@@ -17,13 +17,13 @@
     "pen_dark": { "color": "#334155", "kind": "metal" }
   },
   "ops": [
-    { "op": "box", "from": [9, 9, 0], "to": [22, 21, 2], "material": "book_navy", "part": "book_bottom" },
-    { "op": "box", "from": [10, 10, 1], "to": [22, 20, 1], "material": "pages_cream", "part": "pages_1" },
-    { "op": "box", "from": [10, 10, 3], "to": [21, 22, 5], "material": "book_crimson", "part": "book_mid" },
-    { "op": "box", "from": [11, 11, 4], "to": [21, 21, 4], "material": "pages_cream", "part": "pages_2" },
-    { "op": "box", "from": [9, 11, 6], "to": [20, 20, 8], "material": "book_emerald", "part": "book_top" },
-    { "op": "box", "from": [10, 12, 7], "to": [20, 19, 7], "material": "pages_cream", "part": "pages_3" },
-    { "op": "box", "from": [19, 14, 4], "to": [23, 16, 4], "material": "bookmark_gold", "part": "bookmark" },
-    { "op": "box", "from": [11, 15, 9], "to": [19, 16, 9], "material": "pen_dark", "part": "pen" }
+    { "op": "box", "from": [11, 12, 0], "to": [19, 19, 1], "material": "book_navy", "part": "book_bottom" },
+    { "op": "box", "from": [12, 13, 0], "to": [19, 18, 0], "material": "pages_cream", "part": "pages_1" },
+    { "op": "box", "from": [12, 12, 2], "to": [19, 18, 3], "material": "book_crimson", "part": "book_mid" },
+    { "op": "box", "from": [13, 13, 2], "to": [19, 17, 2], "material": "pages_cream", "part": "pages_2" },
+    { "op": "box", "from": [11, 13, 4], "to": [18, 18, 5], "material": "book_emerald", "part": "book_top" },
+    { "op": "box", "from": [12, 14, 4], "to": [18, 17, 4], "material": "pages_cream", "part": "pages_3" },
+    { "op": "box", "from": [18, 15, 2], "to": [20, 16, 2], "material": "bookmark_gold", "part": "bookmark" },
+    { "op": "box", "from": [12, 15, 6], "to": [17, 16, 6], "material": "pen_dark", "part": "pen" }
   ]
 }

@@ -73,8 +73,11 @@ Manual overrides persist in `OfficeState.tilePermissionOverrides` (keyed by `"tx
 - **Permissions mode**: draws isometric tile diamonds with color-coded `0 / 1 / 2 / 3` labels, white
   borders on user-overridden tiles, red bars on `blockedW`/`blockedN` wall edges, and interactive brush
   painting (`👁️ Inspect`, `0 Blocked`, `1 Walkable`, `2 Seat`, `3 Door`, `↺ Auto`, `Reset Overrides`).
-- **Elevation mode**: displays `L1`–`L6` / `👤4` badges on live entities so layer ordering is directly
-  verifiable.
+- **Elevation mode**: displays `L1`–`L7` / `👤4` badges on live entities and provides an interactive
+  **Edit Object Elevation** panel — click any furniture piece on the map (highlighted with `★L#`) and
+  click `L1`–`L7` to update its `renderLayer` live via `PATCH /api/architect/furniture/:id`.
+- **Gemini Architect MCP (`src/mcp/architect-server.ts`)**: exposes `set_tile_permission` (set/clear
+  per-tile movement permissions or `resetAll: true`) and `renderLayer` override on `move_furniture`.
 
 ---
 
@@ -122,9 +125,14 @@ Manual overrides persist in `OfficeState.tilePermissionOverrides` (keyed by `"tx
     of a 2×1 desk).
   - Moving a host desk carries all hosted tabletop props along (remapped cleanly inside the desk's
     rotated footprint and new zone); deleting a host desk cleans up its hosted props so nothing floats.
-- **Decorate Mode UX (`hud.ts`, `main.ts`, `iso-renderer.ts`)**:
+- **Decorate Mode UX (`atlas-loader.ts`, `hud.ts`, `main.ts`, `iso-renderer.ts`)**:
+  - Pixel-art **sprite thumbnails** rendered directly from the loaded atlas (`getThumbnailDataUrl`)
+    beside every item in the Decorate catalog.
   - New `💡 Tabletop` category in the Decorate catalog (`💡 Top` badge); architecture wall pieces
     (`room-wall-*`, `room-junction-*`) filtered out of the furniture catalog.
+  - Default tabletop props pre-placed in `room-layouts.ts` for Boss Office (`boss`), Common Lounges
+    (`common-v0`, `common-v1`), Co-working (`cowork`), and `bay-iherk-v0` (validated in both normal
+    and mirrored orientations).
   - Ghost preview lifts by `surfaceOffsetY` directly onto the desk surface, and floor-furniture ghosts
     now also mirror the server's reachability (`seals off part of zone`) check so green/red accuracy is
     100%.

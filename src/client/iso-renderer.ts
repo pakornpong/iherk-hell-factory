@@ -73,6 +73,7 @@ export interface RenderSceneInput {
   syncPackets: SyncPacketVisual[];
   selectedEmployeeId?: string | null;
   movingFurnitureId?: string | null;
+  selectedLayerFurnitureId?: string | null;
   bayPopAnimations?: Map<string, number>; // bayId -> 0..1 progress
   ghost?: DecorateGhostInput | null;
   layerOverlayMode?: LayerOverlayMode;
@@ -1245,6 +1246,7 @@ export class IsoRenderer {
     input: RenderSceneInput,
     sortedEntities: Array<{
       kind: "furniture" | "foreground" | "employee";
+      furnitureId?: string;
       x: number;
       y: number;
       footprintX: number;
@@ -1336,23 +1338,26 @@ export class IsoRenderer {
       }
     }
 
-    // In "layers" mode, draw elevation badges (L1..L6) on visible furniture, foreground & characters
+    // In "layers" mode, draw elevation badges (L1..L7) on visible furniture, foreground & characters
     if (layerOverlayMode === "layers") {
       ctx.font = `700 ${Math.max(9, 5 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
       for (const item of sortedEntities) {
         const layer = (item.renderLayer ?? RENDER_LAYER.CHARACTER) as RenderLayer;
         const meta = RENDER_LAYER_META[layer] ?? RENDER_LAYER_META[RENDER_LAYER.CHARACTER];
-        const label = item.kind === "employee" ? `👤${layer}` : meta.badge;
+        const isSelected = Boolean(
+          input.selectedLayerFurnitureId && item.furnitureId === input.selectedLayerFurnitureId,
+        );
+        const label = item.kind === "employee" ? `👤${layer}` : isSelected ? `★${meta.badge}` : meta.badge;
         const yLift = item.kind === "employee" ? 26 : item.kind === "foreground" ? 18 : 12;
         const [sx, sy] = camera.worldToScreen(item.wx, item.wy - yLift);
         const bw = ctx.measureText(label).width + 8;
         const bh = Math.max(14, 7 * zoom);
-        ctx.fillStyle = "rgba(15, 23, 42, 0.88)";
+        ctx.fillStyle = isSelected ? "#0284c7" : "rgba(15, 23, 42, 0.88)";
         ctx.fillRect(Math.round(sx - bw / 2), Math.round(sy - bh / 2), Math.round(bw), Math.round(bh));
-        ctx.strokeStyle = meta.color;
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = isSelected ? "#ffffff" : meta.color;
+        ctx.lineWidth = isSelected ? 2 : 1;
         ctx.strokeRect(Math.round(sx - bw / 2), Math.round(sy - bh / 2), Math.round(bw), Math.round(bh));
-        ctx.fillStyle = meta.color;
+        ctx.fillStyle = isSelected ? "#ffffff" : meta.color;
         ctx.fillText(label, Math.round(sx), Math.round(sy));
       }
     }

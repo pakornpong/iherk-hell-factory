@@ -70,6 +70,7 @@ export class AtlasManager {
   private nightPack: LoadedAtlasPack | null = null;
   private dayPack: LoadedAtlasPack | null = null;
   private customPack: LoadedAtlasPack | null = null;
+  private thumbCache = new Map<string, string>();
 
   async loadAll(): Promise<void> {
     const [office, night, day, custom] = await Promise.all([
@@ -87,6 +88,7 @@ export class AtlasManager {
   async reloadCustom(): Promise<void> {
     try {
       this.customPack = await fetchAtlasPack("/runtime-assets/custom-atlas.json", Date.now());
+      this.thumbCache.clear();
     } catch {
       // keep previous pack if reload fails
     }
@@ -142,5 +144,46 @@ export class AtlasManager {
       this.findAnyFrameInPack(pack, `${assetId}/`) ??
       this.findAnyFrameInPack(this.customPack, `${assetId}/`)
     );
+  }
+
+  /** Renders and caches a crisp pixelated thumbnail data URL for a catalog asset. */
+  getThumbnailDataUrl(theme: ThemeMode, assetId: string, size = 34): string | null {
+    if (typeof document === "undefined") return null;
+    const cacheKey = `${theme}:${assetId}:${size}`;
+    const cached = this.thumbCache.get(cacheKey);
+    if (cached) return cached;
+
+    const sprite = this.getFrame(theme, assetId, "se", "default");
+    if (!sprite) return null;
+
+    const canvas = document.createElement("canvas");
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return null;
+    ctx.imageSmoothingEnabled = false;
+
+    const pad = 2;
+    const avail = size - pad * 2;
+    const scale = Math.min(avail / Math.max(1, sprite.frame.w), avail / Math.max(1, sprite.frame.h), 1.5);
+    const dw = Math.max(1, Math.round(sprite.frame.w * scale));
+    const dh = Math.max(1, Math.round(sprite.frame.h * scale));
+    const dx = Math.round((size - dw) / 2);
+    const dy = Math.round((size - dh) / 2);
+
+    ctx.drawImage(
+      sprite.image,
+      sprite.frame.x,
+      sprite.frame.y,
+      sprite.frame.w,
+      sprite.frame.h,
+      dx,
+      dy,
+      dw,
+      dh,
+    );
+    const url = canvas.toDataURL();
+    this.thumbCache.set(cacheKey, url);
+    return url;
   }
 }
