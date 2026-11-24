@@ -147,7 +147,13 @@ export function computeCampusLayout(
   const zones: ZoneBounds[] = [];
   const worldFurniture: WorldFurnitureInstance[] = [];
 
+  // Zones are first placed on a cell grid (col,row); their tile origins are assigned after packing,
+  // so furniture is queued and placed into world tiles at the end.
+  const pendingFurniture: Array<{ zone: ZoneBounds; items: FurnitureInstance[] }> = [];
   const pushFurniture = (zone: ZoneBounds, items: FurnitureInstance[]) => {
+    pendingFurniture.push({ zone, items });
+  };
+  const placeFurniture = (zone: ZoneBounds, items: FurnitureInstance[]) => {
     for (const item of items) {
       const cat = catalogById.get(item.assetId);
       const baseFootprint: [number, number] = cat?.footprintTiles ?? [1, 1];
@@ -183,7 +189,7 @@ export function computeCampusLayout(
     row: 1,
     col: 0,
     originX: 0,
-    originY: MODULE_PITCH_Y,
+    originY: 0, // assigned in 3c
     width: ZONE_SIZE,
     height: ZONE_SIZE,
   };
@@ -198,8 +204,8 @@ export function computeCampusLayout(
     lotId: "cowork",
     row: COWORK_SLOT.row,
     col: COWORK_SLOT.col,
-    originX: COWORK_SLOT.col * MODULE_PITCH_X,
-    originY: COWORK_SLOT.row * MODULE_PITCH_Y,
+    originX: 0, // assigned in 3c
+    originY: 0,
     width: ZONE_SIZE,
     height: ZONE_SIZE,
   };
@@ -303,8 +309,8 @@ export function computeCampusLayout(
         lotId: `dept:${dept}`,
         row,
         col,
-        originX: col * MODULE_PITCH_X,
-        originY: row * MODULE_PITCH_Y,
+        originX: 0, // assigned in 3c
+        originY: 0,
         width: ZONE_SIZE,
         height: ZONE_SIZE,
       };
@@ -320,8 +326,8 @@ export function computeCampusLayout(
       kind: "common",
       row: slot.row,
       col: slot.col,
-      originX: slot.col * MODULE_PITCH_X,
-      originY: slot.row * MODULE_PITCH_Y,
+      originX: 0, // assigned in 3c
+      originY: 0,
       width: ZONE_SIZE,
       height: ZONE_SIZE,
     };
@@ -338,8 +344,8 @@ export function computeCampusLayout(
       amenityTheme,
       row,
       col,
-      originX: col * MODULE_PITCH_X,
-      originY: row * MODULE_PITCH_Y,
+      originX: 0, // assigned in 3c
+      originY: 0,
       width: ZONE_SIZE,
       height: ZONE_SIZE,
     };
@@ -347,15 +353,67 @@ export function computeCampusLayout(
     pushFurniture(aZone, createAmenityFurniture(idx, amenityTheme));
   });
 
-  // Exact square overall campus dimensions (widthTiles === depthTiles)
-  const sideTiles = campusSideTiles(maxGridSide);
+  // 3c. Turn the cell grid into tiles. Each lot (a department block or a single room) becomes one block:
+  // projects inside a lot sit IN_LOT_GAP (1 tile: the low divider line) apart, while different lots keep
+  // a ZONE_GAP walkway (wall + 1 walkway tile + wall). Blocks are compacted toward the Boss Office corner,
+  // first along x, then along y, so the plan stays tight instead of following a fixed 9-tile grid.
+  const IN_LOT_GAP = 1;
+  type Block = { key: string; col: number; row: number; w: number; h: number; x: number; y: number; W: number; H: number };
+  const blocks = new Map<string, Block>();
+  const blockKeyOf = (z: ZoneBounds) => (z.kind === "bay" && z.lotId ? z.lotId : z.zoneId);
+  for (const z of zones) {
+    const key = blockKeyOf(z);
+    const b = blocks.get(key);
+    if (!b) {
+      blocks.set(key, { key, col: z.col, row: z.row, w: 1, h: 1, x: 0, y: 0, W: 0, H: 0 });
+    } else {
+      const c1 = Math.max(b.col + b.w, z.col + 1);
+      const r1 = Math.max(b.row + b.h, z.row + 1);
+      b.col = Math.min(b.col, z.col);
+      b.row = Math.min(b.row, z.row);
+      b.w = c1 - b.col;
+      b.h = r1 - b.row;
+    }
+  }
+  // Department lots keep their full packed rectangle (a spare cell stays part of the lot's floor footprint)
+  packed.lots.forEach((lot, i) => {
+    const b = blocks.get(`dept:${deptLots[i][0]}`);
+    if (b) Object.assign(b, { col: lot.col, row: lot.row, w: lot.w, h: lot.h });
+  });
+  const blockList = [...blocks.values()];
+  for (const b of blockList) {
+    b.W = b.w * ZONE_SIZE + (b.w - 1) * IN_LOT_GAP;
+    b.H = b.h * ZONE_SIZE + (b.h - 1) * IN_LOT_GAP;
+  }
+  const rowsOverlap = (a: Block, b: Block) => a.row < b.row + b.h && b.row < a.row + a.h;
+  for (const b of [...blockList].sort((p, q) => p.col - q.col || p.row - q.row)) {
+    b.x = 0;
+    for (const o of blockList) {
+      if (o !== b && o.col + o.w <= b.col && rowsOverlap(o, b)) b.x = Math.max(b.x, o.x + o.W + ZONE_GAP);
+    }
+  }
+  for (const b of [...blockList].sort((p, q) => p.row - q.row || p.col - q.col)) {
+    b.y = 0;
+    for (const o of blockList) {
+      const xClose = b.x < o.x + o.W + ZONE_GAP && o.x < b.x + b.W + ZONE_GAP;
+      if (o !== b && o.row + o.h <= b.row && xClose) b.y = Math.max(b.y, o.y + o.H + ZONE_GAP);
+    }
+  }
+  for (const z of zones) {
+    const b = blocks.get(blockKeyOf(z))!;
+    z.originX = b.x + (z.col - b.col) * (ZONE_SIZE + IN_LOT_GAP);
+    z.originY = b.y + (z.row - b.row) * (ZONE_SIZE + IN_LOT_GAP);
+  }
+  for (const { zone, items } of pendingFurniture) placeFurniture(zone, items);
+
+  // Square campus just large enough for every block
+  const sideTiles = Math.max(...blockList.map((b) => Math.max(b.x + b.W, b.y + b.H)));
   const widthTiles = sideTiles;
   const depthTiles = sideTiles;
 
   // 4. Rooms, corridors and walls are resolved per tile.
-  // Along each axis a module is [zone 0..5][gap 6..8] (pitch 9). A gap between two zones is:
-  //   - walkway when they belong to different lots (departments / zone types), so areas read as separate;
-  //   - shared open-plan floor with a low cubicle divider (at 7) when both are in the same lot.
+  // Floor that belongs to a zone: its 6x6 interior, plus the 1-tile seam to a neighbouring project of the
+  // same lot (where the low divider stands). Everything else is walkway.
   // Every lot (a department's projects, Boss Office, lounges, themed rooms) is a glass-walled room with a
   // 2-tile doorway at offset 2..3 of every outer side and corner posts closing each box. Only the
   // co-working area is open plan (face-to-face desk pods, no walls).
@@ -367,27 +425,24 @@ export function computeCampusLayout(
   // Every zone is a walled room except the co-working area, which is an open bench of face-to-face desks
   const isEnclosedKind = (z?: ZoneBounds): boolean => Boolean(z && z.kind !== "cowork");
 
-  const P = MODULE_PITCH_X;
-  /** Zone whose floor a tile belongs to (room interior or a merged same-department gap), else undefined. */
-  const interiorZoneAt = (tx: number, ty: number): ZoneBounds | undefined => {
-    if (tx < 0 || ty < 0 || tx >= widthTiles || ty >= depthTiles) return undefined;
-    const col = Math.floor(tx / P);
-    const row = Math.floor(ty / P);
-    const ox = tx % P;
-    const oy = ty % P;
-    const here = zoneAt.get(`${col},${row}`);
-    if (!here) return undefined;
-    const inGapX = isOutsideRoomOffset(ox);
-    const inGapY = isOutsideRoomOffset(oy);
-    if (!inGapX && !inGapY) return here;
-    const right = zoneAt.get(`${col + 1},${row}`);
-    const below = zoneAt.get(`${col},${row + 1}`);
-    if (inGapX && !inGapY) return sameDepartment(here, right) ? here : undefined;
-    if (inGapY && !inGapX) return sameDepartment(here, below) ? here : undefined;
-    // Gap crossing between four rooms: open only when all four are one department
-    const diag = zoneAt.get(`${col + 1},${row + 1}`);
-    return sameDepartment(here, right) && sameDepartment(here, below) && sameDepartment(here, diag) ? here : undefined;
-  };
+  const interiorTiles = new Map<string, ZoneBounds>();
+  for (const z of zones) {
+    for (let y = 0; y < ZONE_SIZE; y++) for (let x = 0; x < ZONE_SIZE; x++) interiorTiles.set(`${z.originX + x},${z.originY + y}`, z);
+    const right = zoneAt.get(`${z.col + 1},${z.row}`);
+    const below = zoneAt.get(`${z.col},${z.row + 1}`);
+    const diag = zoneAt.get(`${z.col + 1},${z.row + 1}`);
+    if (sameDepartment(z, right)) {
+      for (let y = 0; y < ZONE_SIZE; y++) interiorTiles.set(`${z.originX + ZONE_SIZE},${z.originY + y}`, z);
+    }
+    if (sameDepartment(z, below)) {
+      for (let x = 0; x < ZONE_SIZE; x++) interiorTiles.set(`${z.originX + x},${z.originY + ZONE_SIZE}`, z);
+    }
+    if (sameDepartment(z, right) && sameDepartment(z, below) && sameDepartment(z, diag)) {
+      interiorTiles.set(`${z.originX + ZONE_SIZE},${z.originY + ZONE_SIZE}`, z);
+    }
+  }
+  /** Zone whose floor a tile belongs to (room interior or a same-lot seam), else undefined (walkway). */
+  const interiorZoneAt = (tx: number, ty: number): ZoneBounds | undefined => interiorTiles.get(`${tx},${ty}`);
 
   const worldWallSet = new Set<string>();
   const addRoomWallTile = (
@@ -439,10 +494,10 @@ export function computeCampusLayout(
         addRoomWallTile(`sys-wall-${tx}-${ty}`, xSide.zoneId, tx, ty, "room-junction-corner", left && up ? "nw" : left ? "sw" : up ? "ne" : "se");
       } else if (xSide) {
         // Vertical wall (constant tx); doorway where the room side is at local offset 2..3
-        if (isDoorOffset(ty % P)) continue;
+        if (isDoorOffset(ty - xSide.originY)) continue;
         addRoomWallTile(`sys-wall-${tx}-${ty}`, xSide.zoneId, tx, ty, "room-wall-glass", "sw");
       } else if (ySide) {
-        if (isDoorOffset(tx % P)) continue;
+        if (isDoorOffset(tx - ySide.originX)) continue;
         addRoomWallTile(`sys-wall-${tx}-${ty}`, ySide.zoneId, tx, ty, "room-wall-glass", "se");
       }
     }
@@ -476,14 +531,14 @@ export function computeCampusLayout(
     if (sameDepartment(z, right)) {
       for (let o = 0; o < ZONE_SIZE; o++) {
         if (isDoorOffset(o)) continue;
-        addRoomWallTile(`sys-div-v-${z.col}-${z.row}-${o}`, z.zoneId, z.originX + ZONE_SIZE + 1, z.originY + o, cubicleDividerAssetId, "sw");
+        addRoomWallTile(`sys-div-v-${z.col}-${z.row}-${o}`, z.zoneId, z.originX + ZONE_SIZE, z.originY + o, cubicleDividerAssetId, "sw");
       }
     }
     const below = zoneAt.get(`${z.col},${z.row + 1}`);
     if (sameDepartment(z, below)) {
       for (let o = 0; o < ZONE_SIZE; o++) {
         if (isDoorOffset(o)) continue;
-        addRoomWallTile(`sys-div-h-${z.col}-${z.row}-${o}`, z.zoneId, z.originX + o, z.originY + ZONE_SIZE + 1, cubicleDividerAssetId, "se");
+        addRoomWallTile(`sys-div-h-${z.col}-${z.row}-${o}`, z.zoneId, z.originX + o, z.originY + ZONE_SIZE, cubicleDividerAssetId, "se");
       }
     }
   }
@@ -629,7 +684,7 @@ export function computeCampusLayout(
 
   for (let tx = 1; tx < widthTiles; tx++) {
     // Keep windows over room interiors; corridors/room walls meet the perimeter as plain wall
-    const hitsInteriorWall = isOutsideRoomOffset(tx % MODULE_PITCH_X);
+    const hitsInteriorWall = !interiorZoneAt(tx, 0);
     const isWindowSlot = tx % 4 === 2 && !hitsInteriorWall;
     const assetId = !isWindowSlot
       ? "wall-slate-plain"
@@ -644,7 +699,7 @@ export function computeCampusLayout(
     });
   }
   for (let ty = 1; ty < depthTiles; ty++) {
-    const hitsInteriorWall = isOutsideRoomOffset(ty % MODULE_PITCH_Y);
+    const hitsInteriorWall = !interiorZoneAt(0, ty);
     const isWindow = ty % 4 === 2 && !decorBlockedTy.has(ty) && !hitsInteriorWall;
     walls.push({
       tx: 0,

@@ -93,15 +93,17 @@ describe("Corridors between rooms & shared co-working room", () => {
     expect(glassOn("cowork")).toBe(false);
   });
 
-  it("joins projects of the same department into one lot with shared floor and a low divider", () => {
+  it("packs projects of one department tight: only a 1-tile low divider line between them", () => {
     const bays = campus.zones.filter((z) => z.kind === "bay");
     const a = bays.find((z) => bays.some((b) => b.col === z.col + 1 && b.row === z.row))!;
-    const gapX = a.originX + ZONE_SIZE;
-    expect(floorAt(gapX, a.originY)).not.toBe("floor-corridor-tile");
+    const b = bays.find((z) => z.col === a.col + 1 && z.row === a.row)!;
+    expect(b.originX - (a.originX + ZONE_SIZE)).toBe(1); // neighbouring project starts right after the divider
+    const seamX = a.originX + ZONE_SIZE;
+    expect(floorAt(seamX, a.originY)).not.toBe("floor-corridor-tile");
     expect(
-      campus.worldFurniture.some((f) => f.tx === gapX + 1 && f.ty === a.originY && f.assetId.startsWith("divider-")),
+      campus.worldFurniture.some((f) => f.tx === seamX && f.ty === a.originY && f.assetId.startsWith("divider-")),
     ).toBe(true);
-    expect(walkable(gapX + 1, a.originY + 2)).toBe(true); // pass-through between the two projects
+    expect(walkable(seamX, a.originY + 2)).toBe(true); // pass-through between the two projects
   });
 
   it("connects every room to every other room through doorways and corridors", () => {
