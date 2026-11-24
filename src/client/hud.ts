@@ -1,3 +1,4 @@
+import type { TilePermission } from "../shared/layers.js";
 import {
   classifyDepartmentFromPath,
   AMENITY_THEME_META,
@@ -13,7 +14,15 @@ import {
   type ThemeMode,
 } from "../shared/types.js";
 import type { DecorateController } from "./decorate.js";
+import type { LayerOverlayMode } from "./iso-renderer.js";
 import type { SimEmployeeVisual } from "./sim.js";
+
+export type LayerBrush = "inspect" | "auto" | TilePermission;
+
+export interface LayerEditorState {
+  mode: LayerOverlayMode;
+  brush: LayerBrush;
+}
 
 export interface HudCallbacks {
   onFocusBay(bayId: string): void;
@@ -24,6 +33,9 @@ export interface HudCallbacks {
   onSelectEmployee(id: string | null): void;
   onMinimapClick(tx: number, ty: number): void;
   onDecorateChanged(): void;
+  onLayerOverlayChange?(mode: LayerOverlayMode): void;
+  onLayerBrushChange?(brush: LayerBrush): void;
+  onResetTilePermissions?(): void;
 }
 
 const STATE_LABELS: Record<string, string> = {
@@ -90,7 +102,47 @@ export class OfficeHud {
     const btnDecorate = document.getElementById("btn-decorate") as HTMLButtonElement;
     btnDecorate.addEventListener("click", () => {
       this.decorate.toggle();
+      if (this.decorate.active) {
+        this.cb.onLayerOverlayChange?.("off");
+      }
       this.cb.onDecorateChanged();
+    });
+
+    const btnLayers = document.getElementById("btn-layers") as HTMLButtonElement | null;
+    btnLayers?.addEventListener("click", () => {
+      const panel = document.getElementById("layer-panel");
+      const isOpen = panel ? !panel.classList.contains("hidden") : false;
+      if (isOpen) {
+        this.cb.onLayerOverlayChange?.("off");
+      } else {
+        this.decorate.setActive(false);
+        this.cb.onLayerOverlayChange?.("permissions");
+      }
+      this.cb.onDecorateChanged();
+    });
+
+    document.getElementById("layer-mode-permissions")?.addEventListener("click", () => {
+      this.cb.onLayerOverlayChange?.("permissions");
+      this.cb.onDecorateChanged();
+    });
+    document.getElementById("layer-mode-layers")?.addEventListener("click", () => {
+      this.cb.onLayerOverlayChange?.("layers");
+      this.cb.onDecorateChanged();
+    });
+
+    const brushButtons = document.querySelectorAll<HTMLButtonElement>(".layer-brush-btn");
+    brushButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const raw = btn.dataset.brush ?? "inspect";
+        const brush: LayerBrush =
+          raw === "0" ? 0 : raw === "1" ? 1 : raw === "2" ? 2 : raw === "3" ? 3 : raw === "auto" ? "auto" : "inspect";
+        this.cb.onLayerBrushChange?.(brush);
+        this.cb.onDecorateChanged();
+      });
+    });
+
+    document.getElementById("btn-reset-perms")?.addEventListener("click", () => {
+      this.cb.onResetTilePermissions?.();
     });
 
     const btnRotate = document.getElementById("btn-rotate") as HTMLButtonElement;
@@ -175,6 +227,7 @@ export class OfficeHud {
     catalog: CatalogEntry[],
     selectedEmployeeId: string | null,
     currentZoom: number,
+    layerState?: LayerEditorState,
   ): void {
     this.lastCampus = snapshot.campus;
     const { state, demoMode } = snapshot;
@@ -201,10 +254,42 @@ export class OfficeHud {
     const btnDecorate = document.getElementById("btn-decorate") as HTMLButtonElement;
     btnDecorate.classList.toggle("active", this.decorate.active);
 
+    const layerMode: LayerOverlayMode = layerState?.mode ?? "off";
+    const layerBrush: LayerBrush = layerState?.brush ?? "inspect";
+    const layerOpen = layerMode !== "off";
+    document.getElementById("btn-layers")?.classList.toggle("active", layerOpen);
+    const layerPanel = document.getElementById("layer-panel");
+    if (layerPanel) {
+      layerPanel.classList.toggle("hidden", !layerOpen);
+      document.getElementById("layer-mode-permissions")?.classList.toggle("active", layerMode === "permissions");
+      document.getElementById("layer-mode-layers")?.classList.toggle("active", layerMode === "layers");
+      document.getElementById("layer-brush-section")?.classList.toggle("hidden", layerMode !== "permissions");
+      const brushButtons = layerPanel.querySelectorAll<HTMLButtonElement>(".layer-brush-btn");
+      brushButtons.forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.brush === String(layerBrush));
+      });
+      const overrideCount = Object.keys(state.tilePermissionOverrides ?? {}).length;
+      const resetBtn = document.getElementById("btn-reset-perms") as HTMLButtonElement | null;
+      if (resetBtn) {
+        resetBtn.disabled = overrideCount === 0;
+        resetBtn.textContent = `Reset Overrides (${overrideCount})`;
+      }
+    }
+
     const decoratePanel = document.getElementById("decorate-panel")!;
     decoratePanel.classList.toggle("hidden", !this.decorate.active);
     document.getElementById("btn-rotate")!.textContent = `↻ ${this.decorate.direction.toUpperCase()}`;
-    document.getElementById("btn-move")?.classList.toggle("active", this.decorate.tool === "move");
+    const btnMoveEl = document.getElementById("btn-move");
+    if (btnMoveEl) {
+      btnMoveEl.classList.toggle("active", this.decorate.tool === "move");
+      btnMoveEl.textContent = this.decorate.movingItem ? "✋ Drop…" : "✋ Move";
+    }
+    const hintEl = decoratePanel.querySelector<HTMLElement>(".hint");
+    if (hintEl) {
+      hintEl.textContent = this.decorate.movingItem
+        ? `Moving ${this.decorate.movingItem.item.assetId} · R: rotate · Esc: cancel`
+        : "R: rotate · Esc: exit";
+    }
     document.getElementById("btn-erase")!.classList.toggle("active", this.decorate.tool === "erase");
     (document.getElementById("btn-undo") as HTMLButtonElement).disabled = !this.decorate.canUndo();
     (document.getElementById("btn-redo") as HTMLButtonElement).disabled = !this.decorate.canRedo();

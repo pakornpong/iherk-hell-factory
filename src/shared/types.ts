@@ -120,8 +120,22 @@ export function classifyDepartmentFromPath(
   return "general";
 }
 
-export const AssetLayerSchema = z.enum(["floor", "wall", "wall-decor", "object"]);
+export const AssetLayerSchema = z.enum(["floor", "wall", "wall-decor", "object", "tabletop", "foreground"]);
 export type AssetLayer = z.infer<typeof AssetLayerSchema>;
+
+export const TilePermissionSchema = z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)]);
+export type TilePermissionValue = z.infer<typeof TilePermissionSchema>;
+
+export const RenderLayerSchema = z.union([
+  z.literal(1),
+  z.literal(2),
+  z.literal(3),
+  z.literal(4),
+  z.literal(5),
+  z.literal(6),
+  z.literal(7),
+]);
+export type RenderLayerValue = z.infer<typeof RenderLayerSchema>;
 
 export const ZoneIdSchema = z
   .string()
@@ -173,6 +187,10 @@ export const FurnitureInstanceSchema = z.object({
   assetId: z.string().min(1).max(128),
   direction: DirectionSchema.default("se"),
   layer: AssetLayerSchema.default("object"),
+  /** Optional explicit render elevation layer override (1=floor .. 4=character/object .. 5=tabletop .. 6=foreground). */
+  renderLayer: RenderLayerSchema.optional(),
+  /** For tabletop props: optional host furniture id this prop sits on. */
+  surfaceHostId: z.string().min(1).max(128).optional(),
   placedBy: z.enum(["system", "user", "gemini"]).default("system"),
 });
 export type FurnitureInstance = z.infer<typeof FurnitureInstanceSchema>;
@@ -249,6 +267,10 @@ export const OfficeStateSchema = z.object({
   commonWings: z.array(CommonWingRecordSchema).default([]),
   employees: z.array(EmployeeRecordSchema).default([]),
   activityLog: z.array(ActivityLogEntrySchema).max(100).default([]),
+  /** Optional Pokémon GBA-style per-tile movement permission overrides keyed by "tx,ty" (0=blocked, 1=walkable, 2=seat, 3=door). */
+  tilePermissionOverrides: z.record(z.string(), TilePermissionSchema).optional(),
+  /** Optional persisted furniture overrides for non-bay zones (e.g. "cowork:0", "amenity:0") once edited by user/architect. */
+  zoneOverrides: z.record(z.string(), z.array(FurnitureInstanceSchema)).optional(),
 });
 export type OfficeState = z.infer<typeof OfficeStateSchema>;
 
@@ -259,6 +281,10 @@ export const CatalogEntrySchema = z.object({
   footprintTiles: z.tuple([z.number().int().min(1), z.number().int().min(1)]),
   source: z.enum(["starter", "prop", "character", "custom"]),
   frames: z.array(z.string()).optional(),
+  renderLayer: RenderLayerSchema.optional(),
+  tilePermission: TilePermissionSchema.optional(),
+  surfaceHeightVoxels: z.number().int().min(0).max(64).optional(),
+  foregroundAssetId: z.string().min(1).max(128).optional(),
 });
 export type CatalogEntry = z.infer<typeof CatalogEntrySchema>;
 
@@ -314,6 +340,10 @@ export interface WorldFurnitureInstance extends FurnitureInstance {
   tx: number;
   ty: number;
   footprintTiles: [number, number];
+  /** Resolved render elevation layer (1=floor .. 4=character/object .. 5=tabletop .. 6=foreground). */
+  renderLayer?: RenderLayerValue;
+  /** Vertical world-pixel lift above floor (e.g. for tabletop props sitting on a desk). */
+  surfaceOffsetY?: number;
 }
 
 export interface ComputedCampus {
@@ -340,6 +370,11 @@ export interface ComputedCampus {
     blocks: { x: number; y: number; side: "w" | "n" } | null;
   }>;
   worldFurniture: WorldFurnitureInstance[];
+  /**
+   * Flat `widthTiles * depthTiles` array of resolved tile movement permissions
+   * (0=blocked, 1=walkable, 2=seat, 3=door) including user overrides.
+   */
+  tilePermissions?: TilePermissionValue[];
 }
 
 export interface OfficeSnapshotPayload {

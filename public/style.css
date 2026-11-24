@@ -346,6 +346,97 @@ button.active {
   color: #94a3b8;
 }
 
+.layer-panel {
+  position: fixed;
+  top: 64px;
+  right: 12px;
+  width: 250px;
+  max-height: calc(100vh - 210px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid #334155;
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
+  overflow-y: auto;
+  z-index: 16;
+}
+
+.layer-mode-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.layer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #1e293b;
+}
+
+.layer-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.04em;
+}
+
+.layer-brushes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.layer-brush-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  padding: 5px 7px;
+}
+
+.perm-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.layer-reset-btn {
+  width: 100%;
+  font-size: 11px;
+}
+
+.layer-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: #cbd5e1;
+}
+
+.layer-badge {
+  display: inline-block;
+  min-width: 24px;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-right: 6px;
+  padding: 0 3px;
+}
+
+.layer-note {
+  font-size: 10px;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
 .inspector {
   position: fixed;
   bottom: 12px;

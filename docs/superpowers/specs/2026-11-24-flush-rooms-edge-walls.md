@@ -36,32 +36,36 @@ A wall used to be a `WorldFurnitureInstance` occupying a whole tile. It is now a
 - `rx`/`ry` are **fractional render coordinates**, half a tile back from the tile the wall fronts, so the
   wall's centre band lands exactly on the line between two tiles.
 - `blocks` names the single step the wall closes for walking: `"w"` closes `(x-1,y) → (x,y)`,
-  `"n"` closes `(x,y-1) → (x,y)`. A low cubicle divider inside one department lot blocks nothing.
+  `"n"` closes `(x,y-1) → (x,y)`. Doorways and intra-lot dividers set `blocks: null`.
 - Segments are generated per boundary line, one pass for vertical lines and one for horizontal. Each room
-  side keeps a **1-tile doorway at offset 2**. A 2-tile opening on all four sides of a 6-tile room left
-  only two-tile stubs at the corners, so rooms read as free-standing X partitions rather than rooms.
+  side keeps a **1-tile doorway at offset 2**, rendered with `room-wall-door` (open walk-through below
+  `z = 43`, matching slim jambs, glass transom `z = 46..53`, and continuous top cap `z = 54..56`,
+  `blocks: null`) so wall top rails run continuously from corner to corner without floating breaks.
 - No segment is emitted on the campus outer boundary: the diorama's own rear walls already stand there
   and the front edges are the open cutaway. Emitting them produced a second partition hugging the rear
   wall.
 
-### 2.3 Junctions pick the piece that matches the crossing
+### 2.3 Junctions are slim corner mullion posts
 
-Where two wall lines cross, the arms meeting at that point are counted:
+Because flush straight wall segments (`0..31` voxels) already meet cleanly at every corner `(bx, by)`,
+the three junction pieces (`room-junction-cross`, `room-junction-t`, `room-junction-corner`) are slim
+full-height corner mullion posts (`12..19 × 12..19`, height `0..56`, matching baseboard, lower wall,
+sill, steel frame post, and top cap) with **no protruding 16-voxel glass arms**. This eliminates
+double-drawn semi-transparent glass blocks at corners and prevents fake 4th glass arms from sticking
+into T-junctions.
 
-- 3 or 4 arms → `room-junction-cross` (the full cross; the old quadrant piece covered one arm and left the
-  wall visibly broken on the other three once rooms were packed tight)
-- exactly 2 adjacent arms → `room-junction-corner`, rotated by the piece's own convention: its arms point
-  `+x`/`+y` at direction `"se"`, and each further step rotates 90° clockwise (`sw`, `nw`, `ne`)
-- 2 opposite arms → nothing; the two straight segments already meet
+### 2.4 Renderer: walls ride the unified depth sort as zero-thickness planes
 
-### 2.4 Renderer: walls ride the unified depth sort
+`iso-renderer.ts` pushes each segment into the same layered topological sort as furniture and characters,
+using **exact zero-thickness boundary planes** (plus a small `±0.1` sweep-line culling margin only):
 
-`iso-renderer.ts` pushes each segment into the same topological sort as furniture and characters, which
-already supports fractional positions. Its **sort box is a hair-thick plane starting exactly on the
-boundary line**, and a hair longer than a tile along the run. Starting on the line makes anything in the
-room behind end at or before the wall, so it sorts behind for certain — a two-tile desk would otherwise
-win the distance tiebreak and be drawn straight through the glass. Overhanging the run makes a neighbour
-in the room in front count as sitting inside the wall's box, so it draws after and occludes it.
+- Horizontal wall (`axis: "x"`, on `y = by`): `x: [tx, tx + 1]`, `y: [by, by]` (`footprintY = 0`)
+- Vertical wall (`axis: "y"`, on `x = bx`): `x: [bx, bx]`, `y: [ty, ty + 1]` (`footprintX = 0`)
+- Corner post (`axis: "point"`, at `(bx, by)`): `x: [bx, bx]`, `y: [by, by]` (`0 × 0`)
+
+Every entity in the room behind ends at or before the plane (`<= bx` / `<= by`), and every entity in the
+room in front starts at or after the plane (`>= bx` / `>= by`) — eliminating both overlap tiebreaks and
+`aInsideB` inversions at room corners (0 wall-vs-furniture depth-sort violations across the entire campus).
 
 ### 2.5 Pathfinding: edges block, not tiles
 
@@ -69,13 +73,14 @@ in the room in front count as sitting inside the wall's box, so it draws after a
 instead of the destination tile, so a wall standing on a line stops movement across that line while both
 tiles stay walkable.
 
-### 2.6 Partition walls raised to clear the furniture
+### 2.6 All partitions & dividers raised to 56 voxels to clear the furniture
 
 The room partition was 26 voxels tall while **69 of 95 props stand up to 45** (`cabinet-wood-tall` 45,
 `lab-cryo-tank` 43, `game-claw-machine` 42, …). With the gap removed, furniture lining both sides buried
-the wall completely — it rendered on screen every frame but was never visible. The glass section and
-corner posts of `room-wall-glass` and the three `room-junction-*` pieces were extended so the wall now
-stands 56 voxels tall and reads clearly above the tallest prop.
+the wall completely — it rendered on screen every frame but was never visible. `room-wall-glass`,
+`room-wall-door`, the three `room-junction-*` posts, and both intra-lot dividers (`divider-cubicle-amber`
+and `divider-low-glass`, keeping their amber/cyan lower panels with matching upper glass) now all stand
+56 voxels tall and read clearly above the tallest prop along every continuous boundary line.
 
 ### 2.7 Campus is no longer padded to a square
 
@@ -98,10 +103,11 @@ column is what measurement showed; the fix column is what shipped.
 | 6 | A second glass partition stood against the diorama's outer wall | Wall segments were generated on the campus perimeter too, where `campus.walls` already draws the rear wall | Emit nothing on the outer boundary: the back is the rear wall, the front is the open cutaway |
 | 7 | After packing rooms flush, **no walls were visible at all** | Not a rendering failure — 98 wall sprites were drawn on screen every frame. The partition is 26 voxels tall while **69 of 95 props stand up to 45**, so furniture lining both sides buried it | Raise `room-wall-glass` and the three `room-junction-*` pieces from 26 to 56 voxels |
 | 8 | Rooms read as free-standing X partitions rather than rooms | A 2-tile doorway on all four sides of a 6-tile room leaves only 2-tile stubs at the corners, and four corners make an X | Narrow the doorway to 1 tile at offset 2 |
-| 9 | Printers and monitors drawn straight through the glass | The wall's depth-sort box straddled the line, so furniture in the room behind failed the "is behind" test and fell through to the distance tiebreak, which a two-tile desk wins | Start the sort box exactly on the line, a hair thick, and a hair longer than a tile along the run |
-| 10 | A solid white block sat at every wall crossing, covering the rooms around it | The junction pieces were solid `wall_main` for their whole body, so raising them to 56 voxels turned each crossing into a tall opaque column | Glaze them like the straight wall: solid only to the sill, glass above, and a slim frame post at the centre |
-| 11 | Long desks, treadmills and sofas read as sticking through the glass | An isometric sprite is drawn up and to the left of the tiles it stands on, so a piece 2+ tiles long on a room's back edge reaches past the wall now standing on that edge | `placeFurniture` steps pieces of 2 tiles or more one tile off the two back edges when the room has room for it; 1-tile props still sit flush |
+| 9 | Printers and monitors drawn straight through the glass; walls & corner junctions drawn ON TOP OF desks, ring lights, green screens, and treadmills (10 violations) | A `thin = 0.05` sort box protruded into the front room, so corner posts `[bx, bx+0.05]×[by, by+0.05]` sat *inside* `(bx, by)` furniture (`aInsideB` drew the wall/post on top of the furniture) | Use exact zero-thickness boundary planes (`footprintY = 0` along x, `footprintX = 0` along y, `0×0` for corner posts) with a `±0.1` sweep-line culling margin → 0 violations across the entire campus |
+| 10 | Bright overlapping white glass blocks at every corner & fake 4th glass arm sticking into amber dividers | Junction pieces still had 32-voxel full arms (`0..31`) from the old `ZONE_GAP = 1` era, double-drawing semi-transparent glass over straight walls and projecting out of T-junctions | Trim `room-junction-{cross,t,corner}` to slim `12..19 × 12..19` corner mullion posts (height `0..56`) with zero protruding glass arms |
+| 11 | Moving wide furniture to `lx = 0` or `ly = 0` silently teleported it to `(1, 1)` and desynced collision state | An earlier workaround in `placeFurniture` shifted wide pieces off back edges only in `worldFurniture` while persisted state kept `(0, 0)` | Removed the silent coordinate shift once zero-thickness wall planes + slim corner posts eliminated wall bleed-through cleanly |
 | 12 | Four test files failed after the geometry change | They asserted the old model: pitch 7, `ZONE_GAP === 3`, walls as tile furniture, a corridor tile between zones | Rewrote those assertions against `wallSegments` and the new pitch; made the edge arrays on `WalkableGrid` optional so hand-built grids still work |
+| 13 | Intra-lot amber cubicle divider appeared as a single floating tile & doorway gaps broke top rails | `divider-cubicle-amber` (24 voxels) and `divider-low-glass` (18 voxels) were buried behind desks on 4 of 5 tiles, and doorways emitted no top transom | Raised both dividers to 56 voxels (lower amber/cyan panel + upper glass) and added `room-wall-door` (`blocks: null`) doorway transoms so every partition line runs unbroken from corner to corner |
 
 ### 3.1 Dead ends — approaches tried and dropped
 
@@ -127,9 +133,10 @@ before theorising about why it is missing.**
 ## 4. Verification
 
 - `npm run typecheck` clean for both the server and client configs
-- `npm test` — 85/85
-- Scripted checks on the computed campus: no tile left with 2+ wall arms but no wall of its own, zero
-  `floor-corridor-tile` inside the plan, and an A* path from every room to the Boss Office
+- `npm test` — 92/92 (17 test files)
+- Scripted checks on the computed campus: zero wall-vs-furniture depth-sort violations across all rooms,
+  zero `floor-corridor-tile` inside the plan, continuous partition lines with doorway transoms, and an A*
+  path from every room to the Boss Office
 
 ## 5. Consequences
 

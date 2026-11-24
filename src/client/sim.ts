@@ -67,7 +67,7 @@ export class OfficeSimulation {
   syncFromServer(state: OfficeState, campus: ComputedCampus): void {
     this.state = state;
     this.campus = campus;
-    this.grid = buildWalkableGrid(campus);
+    this.grid = buildWalkableGrid(campus, state.tilePermissionOverrides);
 
     const activeBayIds = new Set(campus.zones.filter((z) => z.kind === "bay" && z.bayId).map((z) => z.bayId!));
     const liveIds = new Set<string>();

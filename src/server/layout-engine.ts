@@ -1,4 +1,12 @@
 import {
+  buildTilePermissionMap,
+  isWalkablePermission,
+  RENDER_LAYER,
+  resolveAssetLayerConfig,
+  surfaceVoxelsToWorldOffsetY,
+  type TilePermission,
+} from "../shared/layers.js";
+import {
   AMENITY_THEME_ORDER,
   classifyDepartmentFromPath,
   DEPARTMENT_ORDER,
@@ -12,6 +20,7 @@ import {
   type FurnitureInstance,
   type ProjectBayRecord,
   type ThemeMode,
+  type TilePermissionValue,
   type WorldFurnitureInstance,
   type ZoneBounds,
   type ZoneId,
@@ -131,6 +140,8 @@ export function computeCampusLayout(
   catalogById: Map<string, CatalogEntry>,
   bossOffice?: BossOfficeRecord,
   theme: ThemeMode = "office",
+  tilePermissionOverrides?: Record<string, TilePermission>,
+  zoneOverrides?: Record<string, FurnitureInstance[]>,
 ): ComputedCampus {
   const deptRank = (bay: ProjectBayRecord): number => {
     const dept = bay.department ?? classifyDepartmentFromPath(bay.projectPath);
@@ -157,54 +168,34 @@ export function computeCampusLayout(
     const footOf = (item: FurnitureInstance): [number, number] =>
       getRotatedFootprint(catalogById.get(item.assetId)?.footprintTiles ?? [1, 1], item.direction);
 
-    // Walls now stand on the room's own edge, and an isometric sprite is drawn up and to the left of the
-    // tiles it stands on. A piece two or more tiles long therefore reaches past the wall behind it and
-    // reads as sticking through the glass. Step those pieces one tile off the two back edges when the
-    // room has space; small props still sit flush against the wall.
-    const occupied = new Set<string>();
-    const mark = (item: FurnitureInstance, lx: number, ly: number) => {
-      const [w, d] = footOf(item);
-      for (let y = 0; y < d; y++) for (let x = 0; x < w; x++) occupied.add(`${lx + x},${ly + y}`);
-    };
-    const freeAt = (item: FurnitureInstance, lx: number, ly: number): boolean => {
-      const [w, d] = footOf(item);
-      if (lx < 0 || ly < 0 || lx + w > ZONE_SIZE || ly + d > ZONE_SIZE) return false;
-      for (let y = 0; y < d; y++) {
-        for (let x = 0; x < w; x++) if (occupied.has(`${lx + x},${ly + y}`)) return false;
-      }
-      return true;
-    };
-    for (const item of items) mark(item, item.lx, item.ly);
-
-    const placed: Array<FurnitureInstance & { lx: number; ly: number }> = [];
+    // Track host surface heights in this zone so tabletop props lift automatically to sit on their host
+    const surfaceHeightByLocalTile = new Map<string, number>();
     for (const item of items) {
+      if (item.layer === "tabletop" || item.layer === "foreground") continue;
+      const cfg = resolveAssetLayerConfig(item.assetId, item.layer, catalogById.get(item.assetId));
+      if (!cfg.surfaceHeightVoxels) continue;
       const [w, d] = footOf(item);
-      let { lx, ly } = item;
-      if (w >= 2 || d >= 2) {
-        const clear = (x: number, y: number) => {
-          const [fw, fd] = footOf(item);
-          for (let yy = 0; yy < fd; yy++) for (let xx = 0; xx < fw; xx++) occupied.delete(`${x + xx},${y + yy}`);
-        };
-        if (lx === 0 || ly === 0) {
-          const nx = lx === 0 ? 1 : lx;
-          const ny = ly === 0 ? 1 : ly;
-          clear(lx, ly);
-          if (freeAt(item, nx, ny)) {
-            lx = nx;
-            ly = ny;
-          }
-          mark(item, lx, ly);
+      for (let yy = 0; yy < d; yy++) {
+        for (let xx = 0; xx < w; xx++) {
+          surfaceHeightByLocalTile.set(`${item.lx + xx},${item.ly + yy}`, cfg.surfaceHeightVoxels);
         }
       }
-      placed.push({ ...item, lx, ly });
     }
 
-    for (const item of placed) {
+    for (const item of items) {
+      const cfg = resolveAssetLayerConfig(item.assetId, item.layer, catalogById.get(item.assetId));
+      const resolvedLayer = item.renderLayer ?? cfg.renderLayer;
+      const hostVoxels =
+        resolvedLayer === RENDER_LAYER.TABLETOP
+          ? (surfaceHeightByLocalTile.get(`${item.lx},${item.ly}`) ?? 19)
+          : undefined;
       worldFurniture.push({
         ...item,
         tx: zone.originX + item.lx,
         ty: zone.originY + item.ly,
         footprintTiles: footOf(item),
+        renderLayer: resolvedLayer,
+        ...(hostVoxels !== undefined ? { surfaceOffsetY: surfaceVoxelsToWorldOffsetY(hostVoxels) } : {}),
       });
     }
   };
@@ -252,7 +243,7 @@ export function computeCampusLayout(
     height: ZONE_SIZE,
   };
   zones.push(coworkZone);
-  pushFurniture(coworkZone, createCoworkFurniture());
+  pushFurniture(coworkZone, zoneOverrides?.["cowork:0"] ?? createCoworkFurniture());
 
   // 3. Pack department "lots". Each department is ONE rectangular open-plan lot sized by how many projects
   // it has (1 -> 1x1, 2 -> 2x1, 3-4 -> 2x2, 5-6 -> 3x2, 7-9 -> 3x3, ...). Lots, extra lounges and themed rooms
@@ -393,7 +384,7 @@ export function computeCampusLayout(
       height: ZONE_SIZE,
     };
     zones.push(aZone);
-    pushFurniture(aZone, createAmenityFurniture(idx, amenityTheme));
+    pushFurniture(aZone, zoneOverrides?.[aZone.zoneId] ?? createAmenityFurniture(idx, amenityTheme));
   });
 
   // 3c. Turn the cell grid into tiles. Each lot (a department block or a single room) becomes one block:
@@ -498,18 +489,18 @@ export function computeCampusLayout(
       if (!left || !right) continue;
       const owner = enclosedAt(bx - 1, y) ?? enclosedAt(bx, y);
       if (!owner) continue;
-      if (isDoorOffset(y - owner.originY)) continue; // 2-tile doorway on every side
+      const isDoor = isDoorOffset(y - owner.originY);
       const sameLot = Boolean(left && right && left.lotId && left.lotId === right.lotId);
       wallSegments.push({
         id: `sys-wall-v-${bx}-${y}`,
         axis: "y",
         rx: bx - 0.5,
         ry: y,
-        assetId: sameLot ? cubicleDividerAssetId : "room-wall-glass",
+        assetId: isDoor ? "room-wall-door" : sameLot ? cubicleDividerAssetId : "room-wall-glass",
         direction: "sw",
-        blocks: sameLot ? null : { x: bx, y, side: "w" },
+        blocks: isDoor || sameLot ? null : { x: bx, y, side: "w" },
       });
-      if (!sameLot) vWallAt.add(`${bx},${y}`);
+      vWallAt.add(`${bx},${y}`);
     }
   }
   // Horizontal lines: y = by separates tile (x, by - 1) from (x, by).
@@ -521,18 +512,18 @@ export function computeCampusLayout(
       if (!up || !down) continue;
       const owner = enclosedAt(x, by - 1) ?? enclosedAt(x, by);
       if (!owner) continue;
-      if (isDoorOffset(x - owner.originX)) continue;
+      const isDoor = isDoorOffset(x - owner.originX);
       const sameLot = Boolean(up && down && up.lotId && up.lotId === down.lotId);
       wallSegments.push({
         id: `sys-wall-h-${x}-${by}`,
         axis: "x",
         rx: x,
         ry: by - 0.5,
-        assetId: sameLot ? cubicleDividerAssetId : "room-wall-glass",
+        assetId: isDoor ? "room-wall-door" : sameLot ? cubicleDividerAssetId : "room-wall-glass",
         direction: "se",
-        blocks: sameLot ? null : { x, y: by, side: "n" },
+        blocks: isDoor || sameLot ? null : { x, y: by, side: "n" },
       });
-      if (!sameLot) hWallAt.add(`${x},${by}`);
+      hWallAt.add(`${x},${by}`);
     }
   }
 
@@ -733,7 +724,14 @@ export function computeCampusLayout(
     });
   }
 
-  return { widthTiles, depthTiles, zones, floors, walls, wallDecor, wallSegments, worldFurniture };
+  const permMap = buildTilePermissionMap(
+    { widthTiles, depthTiles, zones, worldFurniture, wallSegments },
+    tilePermissionOverrides,
+    catalogById,
+  );
+  const tilePermissions = Array.from(permMap.permissions) as TilePermissionValue[];
+
+  return { widthTiles, depthTiles, zones, floors, walls, wallDecor, wallSegments, worldFurniture, tilePermissions };
 }
 
 export function resolveWorldToZone(
@@ -823,8 +821,9 @@ export function validateFurniturePlacement(
 
   const walkBlocked = new Set<string>();
   const addWalkBlock = (set: Set<string>, assetId: string, lx: number, ly: number, dir: Direction) => {
-    if (assetId === "chair-office-swivel") return;
     const c = catalogById.get(assetId);
+    const cfg = resolveAssetLayerConfig(assetId, c?.layer, c);
+    if (isWalkablePermission(cfg.tilePermission)) return;
     const [w, d] = getRotatedFootprint(c?.footprintTiles ?? [1, 1], dir);
     for (let dy = 0; dy < d; dy++) {
       for (let dx = 0; dx < w; dx++) {

@@ -1,4 +1,4 @@
-import type { Direction, FurnitureInstance } from "../shared/types.js";
+import type { Direction, FurnitureInstance, WorldFurnitureInstance } from "../shared/types.js";
 
 const DIR_ORDER: Direction[] = ["se", "sw", "nw", "ne"];
 
@@ -60,6 +60,12 @@ export class DecorateController {
     this.movingItem = null;
   }
 
+  cancelMove(): boolean {
+    if (!this.movingItem) return false;
+    this.movingItem = null;
+    return true;
+  }
+
   selectAsset(assetId: string): void {
     this.selectedAssetId = assetId;
     this.tool = "place";
@@ -79,13 +85,20 @@ export class DecorateController {
     return this.redoStack.length > 0;
   }
 
-  async handleTileClick(tx: number, ty: number, existingInstance?: FurnitureInstance): Promise<void> {
+  async handleTileClick(
+    tx: number,
+    ty: number,
+    existingInstance?: FurnitureInstance | WorldFurnitureInstance,
+  ): Promise<void> {
     if (!this.active) return;
+
+    const itemOriginTx = (existingInstance as Partial<WorldFurnitureInstance> | undefined)?.tx ?? tx;
+    const itemOriginTy = (existingInstance as Partial<WorldFurnitureInstance> | undefined)?.ty ?? ty;
 
     if (this.tool === "erase") {
       if (!isEditableFurniture(existingInstance)) return;
       await this.api.removeFurniture(existingInstance.id);
-      this.undoStack.push({ kind: "remove", item: existingInstance, tx, ty });
+      this.undoStack.push({ kind: "remove", item: existingInstance, tx: itemOriginTx, ty: itemOriginTy });
       this.redoStack.length = 0;
       return;
     }
@@ -93,7 +106,7 @@ export class DecorateController {
     if (this.tool === "move") {
       if (!this.movingItem) {
         if (!isEditableFurniture(existingInstance)) return;
-        this.movingItem = { item: existingInstance, originTx: tx, originTy: ty };
+        this.movingItem = { item: existingInstance, originTx: itemOriginTx, originTy: itemOriginTy };
         this.direction = existingInstance.direction;
         return;
       }

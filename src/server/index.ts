@@ -9,7 +9,9 @@ import {
   AgentTelemetryEventSchema,
   DepartmentIdSchema,
   DirectionSchema,
+  RenderLayerSchema,
   ThemeModeSchema,
+  TilePermissionSchema,
   type WsServerMessage,
 } from "../shared/types.js";
 import { AntigravityWatcher } from "./antigravity-watcher.js";
@@ -59,7 +61,19 @@ const MoveFurnitureBodySchema = z.object({
   tx: z.number().int().optional(),
   ty: z.number().int().optional(),
   direction: DirectionSchema.optional(),
+  renderLayer: RenderLayerSchema.optional(),
 });
+
+const TilePermissionBodySchema = z.union([
+  z.object({
+    resetAll: z.literal(true),
+  }),
+  z.object({
+    tx: z.number().int(),
+    ty: z.number().int(),
+    permission: TilePermissionSchema.nullable(),
+  }),
+]);
 
 const ManageBayBodySchema = z.object({
   displayName: z.string().min(1).max(128).optional(),
@@ -333,6 +347,18 @@ export async function createHellFactoryServer(opts: {
           const body = ThemeBodySchema.parse(await readJsonBody(req));
           await opts.engine.setTheme(body.theme);
           sendJson(res, 200, { ok: true, theme: body.theme });
+          return;
+        }
+
+        if (method === "PATCH" && pathname === "/api/architect/tile-permissions") {
+          const body = TilePermissionBodySchema.parse(await readJsonBody(req));
+          if ("resetAll" in body) {
+            await opts.engine.clearTilePermissionOverrides();
+            sendJson(res, 200, { ok: true, overrides: {} });
+            return;
+          }
+          const overrides = await opts.engine.setTilePermissionOverride(body.tx, body.ty, body.permission);
+          sendJson(res, 200, { ok: true, overrides });
           return;
         }
 

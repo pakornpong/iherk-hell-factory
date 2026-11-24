@@ -1,7 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import type { CatalogEntry, Direction, ThemeMode } from "../shared/types.js";
+import { resolveAssetLayerConfig } from "../shared/layers.js";
+import type { AssetLayer, CatalogEntry, Direction, ThemeMode } from "../shared/types.js";
 
 export const CHARACTER_CLIPS = [
   "idle_0",
@@ -203,7 +204,7 @@ export interface PixcelAssetLike {
   schemaVersion: 1;
   id: string;
   category: string;
-  layer: "floor" | "wall" | "wall-decor" | "object";
+  layer: AssetLayer;
   outlineMode: "silhouette" | "none" | "top-only";
   tilePreset: "64x32" | "64x31" | "32x16";
   voxelsPerTile: 16 | 32;
@@ -248,7 +249,7 @@ interface PixcelCoreModules {
       direction: Direction;
       frameName: string;
       durationMs: number;
-      layer: "floor" | "wall" | "wall-decor" | "object";
+      layer: AssetLayer;
       footprintTiles: [number, number];
       anchor: { x: number; y: number };
       image: RGBAImageLike;
@@ -584,14 +585,21 @@ export class PixcelBridge {
   }
 
   private toCatalogEntries(items: Array<{ asset: PixcelAssetLike; source: CatalogEntry["source"] }>): CatalogEntry[] {
-    return items.map(({ asset, source }) => ({
-      id: asset.id,
-      category: asset.category,
-      layer: asset.layer,
-      footprintTiles: asset.footprintTiles,
-      source,
-      frames: frameNames(asset),
-    }));
+    return items.map(({ asset, source }) => {
+      const cfg = resolveAssetLayerConfig(asset.id, asset.layer);
+      return {
+        id: asset.id,
+        category: asset.category,
+        layer: asset.layer,
+        footprintTiles: asset.footprintTiles,
+        source,
+        frames: frameNames(asset),
+        renderLayer: cfg.renderLayer,
+        tilePermission: cfg.tilePermission,
+        ...(cfg.surfaceHeightVoxels !== undefined ? { surfaceHeightVoxels: cfg.surfaceHeightVoxels } : {}),
+        ...(cfg.foregroundAssetId ? { foregroundAssetId: cfg.foregroundAssetId } : {}),
+      };
+    });
   }
 
   async listCatalog(): Promise<CatalogEntry[]> {
@@ -804,6 +812,7 @@ export class PixcelBridge {
     await fs.rename(tmpPath, filePath);
 
     const { atlasPath } = await this.rebuildCustomAtlas();
+    const cfg = resolveAssetLayerConfig(asset.id, asset.layer);
     const catalogEntry: CatalogEntry = {
       id: asset.id,
       category: asset.category,
@@ -811,6 +820,10 @@ export class PixcelBridge {
       footprintTiles: asset.footprintTiles,
       source: "custom",
       frames: frameNames(asset),
+      renderLayer: cfg.renderLayer,
+      tilePermission: cfg.tilePermission,
+      ...(cfg.surfaceHeightVoxels !== undefined ? { surfaceHeightVoxels: cfg.surfaceHeightVoxels } : {}),
+      ...(cfg.foregroundAssetId ? { foregroundAssetId: cfg.foregroundAssetId } : {}),
     };
 
     return {

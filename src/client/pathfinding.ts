@@ -1,45 +1,44 @@
-import type { ComputedCampus } from "../shared/types.js";
+import { buildTilePermissionMap, TILE_PERM, type TilePermission } from "../shared/layers.js";
+import type { CatalogEntry, ComputedCampus } from "../shared/types.js";
 
 export interface WalkableGrid {
   width: number;
   height: number;
   blocked: Uint8Array;
+  /** Per-tile Pokémon GBA-style movement permission (0=blocked, 1=walkable, 2=seat, 3=door). */
+  permissions?: Uint8Array;
   /** Wall on a tile boundary: blockedW[y * width + x] closes the step between (x - 1, y) and (x, y). */
   blockedW?: Uint8Array;
   /** Wall on a tile boundary: blockedN[y * width + x] closes the step between (x, y - 1) and (x, y). */
   blockedN?: Uint8Array;
 }
 
-const PASSABLE_INTERACTION_ASSETS = new Set(["chair-office-swivel"]);
-
-export function buildWalkableGrid(campus: ComputedCampus): WalkableGrid {
+export function buildWalkableGrid(
+  campus: ComputedCampus,
+  overrides?: Record<string, TilePermission>,
+  catalogById?: Map<string, CatalogEntry>,
+): WalkableGrid {
   const width = Math.max(1, campus.widthTiles);
   const height = Math.max(1, campus.depthTiles);
-  const blocked = new Uint8Array(width * height);
 
-  for (const f of campus.worldFurniture) {
-    if (f.layer !== "object") continue;
-    if (PASSABLE_INTERACTION_ASSETS.has(f.assetId)) continue;
-    const [fw, fd] = f.footprintTiles;
-    for (let dy = 0; dy < fd; dy++) {
-      for (let dx = 0; dx < fw; dx++) {
-        const tx = f.tx + dx;
-        const ty = f.ty + dy;
-        if (tx >= 0 && tx < width && ty >= 0 && ty < height) {
-          blocked[ty * width + tx] = 1;
-        }
-      }
+  if (!overrides && campus.tilePermissions && campus.tilePermissions.length === width * height) {
+    const permissions = Uint8Array.from(campus.tilePermissions);
+    const blocked = new Uint8Array(width * height);
+    for (let i = 0; i < permissions.length; i++) {
+      blocked[i] = permissions[i] === TILE_PERM.BLOCKED ? 1 : 0;
     }
+    const blockedW = new Uint8Array(width * height);
+    const blockedN = new Uint8Array(width * height);
+    for (const w of campus.wallSegments ?? []) {
+      if (!w.blocks) continue;
+      const { x, y, side } = w.blocks;
+      if (x < 0 || x >= width || y < 0 || y >= height) continue;
+      (side === "w" ? blockedW : blockedN)[y * width + x] = 1;
+    }
+    return { width, height, blocked, permissions, blockedW, blockedN };
   }
-  const blockedW = new Uint8Array(width * height);
-  const blockedN = new Uint8Array(width * height);
-  for (const w of campus.wallSegments ?? []) {
-    if (!w.blocks) continue;
-    const { x, y, side } = w.blocks;
-    if (x < 0 || x >= width || y < 0 || y >= height) continue;
-    (side === "w" ? blockedW : blockedN)[y * width + x] = 1;
-  }
-  return { width, height, blocked, blockedW, blockedN };
+
+  return buildTilePermissionMap(campus, overrides, catalogById);
 }
 
 export function findTilePath(

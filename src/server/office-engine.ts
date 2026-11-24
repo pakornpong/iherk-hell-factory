@@ -1,6 +1,7 @@
 import crypto from "node:crypto";
 import { EventEmitter } from "node:events";
 import path from "node:path";
+import { toTileKey, type RenderLayer, type TilePermission } from "../shared/layers.js";
 import {
   AgentTelemetryEventSchema,
   classifyDepartmentFromPath,
@@ -23,10 +24,13 @@ import {
 } from "../shared/types.js";
 import {
   computeCampusLayout,
+  createAmenityFurniture,
+  createCoworkFurniture,
   createDefaultBayFurniture,
   createDefaultBossOffice,
   createDefaultCommonWing,
   createExtraBayWorkstations,
+  getAmenityTheme,
   resolveWorldToZone,
   validateFurniturePlacement,
 } from "./layout-engine.js";
@@ -144,6 +148,8 @@ export class OfficeEngine extends EventEmitter {
       this.catalogById,
       this.state.bossOffice,
       this.state.theme,
+      this.state.tilePermissionOverrides,
+      this.state.zoneOverrides,
     );
   }
 
@@ -280,6 +286,8 @@ export class OfficeEngine extends EventEmitter {
       this.catalogById,
       this.state.bossOffice,
       this.state.theme,
+      this.state.tilePermissionOverrides,
+      this.state.zoneOverrides,
     );
   }
 
@@ -801,6 +809,24 @@ export class OfficeEngine extends EventEmitter {
       const bay = this.state.bays.find((b) => b.id === bayId);
       return bay ? bay.furniture : null;
     }
+    if (zoneId === "cowork:0") {
+      if (!this.state.zoneOverrides) this.state.zoneOverrides = {};
+      if (!this.state.zoneOverrides[zoneId]) {
+        this.state.zoneOverrides[zoneId] = createCoworkFurniture();
+      }
+      return this.state.zoneOverrides[zoneId];
+    }
+    if (zoneId.startsWith("amenity:")) {
+      const idx = Number(zoneId.slice("amenity:".length));
+      const exists = this.campus.zones.some((z) => z.zoneId === zoneId);
+      if (!exists || !Number.isInteger(idx) || idx < 0) return null;
+      if (!this.state.zoneOverrides) this.state.zoneOverrides = {};
+      if (!this.state.zoneOverrides[zoneId]) {
+        const zone = this.campus.zones.find((z) => z.zoneId === zoneId);
+        this.state.zoneOverrides[zoneId] = createAmenityFurniture(idx, zone?.amenityTheme ?? getAmenityTheme(idx));
+      }
+      return this.state.zoneOverrides[zoneId];
+    }
     return null;
   }
 
@@ -869,7 +895,15 @@ export class OfficeEngine extends EventEmitter {
 
   async moveFurniture(
     instanceId: string,
-    input: { zoneId?: string; tx?: number; ty?: number; lx?: number; ly?: number; direction?: Direction },
+    input: {
+      zoneId?: string;
+      tx?: number;
+      ty?: number;
+      lx?: number;
+      ly?: number;
+      direction?: Direction;
+      renderLayer?: RenderLayer;
+    },
   ): Promise<FurnitureInstance> {
     return this.runSerialized(async () => {
       this.assertNotDemoMode();
@@ -908,11 +942,58 @@ export class OfficeEngine extends EventEmitter {
       found.item.lx = targetCoord.lx;
       found.item.ly = targetCoord.ly;
       found.item.direction = nextDir;
+      if (input.renderLayer !== undefined) {
+        found.item.renderLayer = input.renderLayer;
+      }
 
       this.recomputeCampus();
       await this.persist();
       this.emitSnapshot();
       return structuredClone(found.item);
+    });
+  }
+
+  async setTilePermissionOverride(
+    tx: number,
+    ty: number,
+    permission: TilePermission | null,
+  ): Promise<Record<string, TilePermission>> {
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      if (
+        !Number.isInteger(tx) ||
+        !Number.isInteger(ty) ||
+        tx < 0 ||
+        ty < 0 ||
+        tx >= this.campus.widthTiles ||
+        ty >= this.campus.depthTiles
+      ) {
+        throw new Error(
+          `Tile (${tx}, ${ty}) is outside campus bounds (${this.campus.widthTiles}x${this.campus.depthTiles})`,
+        );
+      }
+      const key = toTileKey(tx, ty);
+      const next: Record<string, TilePermission> = { ...(this.state.tilePermissionOverrides ?? {}) };
+      if (permission === null) {
+        delete next[key];
+      } else {
+        next[key] = permission;
+      }
+      this.state.tilePermissionOverrides = Object.keys(next).length > 0 ? next : undefined;
+      this.recomputeCampus();
+      await this.persist();
+      this.emitSnapshot();
+      return structuredClone(this.state.tilePermissionOverrides ?? {});
+    });
+  }
+
+  async clearTilePermissionOverrides(): Promise<void> {
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      this.state.tilePermissionOverrides = undefined;
+      this.recomputeCampus();
+      await this.persist();
+      this.emitSnapshot();
     });
   }
 
@@ -944,6 +1025,21 @@ export class OfficeEngine extends EventEmitter {
     for (const b of this.state.bays) {
       const idx = b.furniture.findIndex((f) => f.id === instanceId);
       if (idx !== -1) return { item: b.furniture[idx], list: b.furniture, index: idx };
+    }
+    if (this.state.zoneOverrides) {
+      for (const list of Object.values(this.state.zoneOverrides)) {
+        const idx = list.findIndex((f) => f.id === instanceId);
+        if (idx !== -1) return { item: list[idx], list, index: idx };
+      }
+    }
+    // Lazily materialize cowork / amenity zones into state.zoneOverrides when editing one of their default items
+    const worldHit = this.campus.worldFurniture.find((f) => f.id === instanceId);
+    if (worldHit && (worldHit.zoneId === "cowork:0" || worldHit.zoneId.startsWith("amenity:"))) {
+      const list = this.getZoneFurnitureArray(worldHit.zoneId);
+      if (list) {
+        const idx = list.findIndex((f) => f.id === instanceId);
+        if (idx !== -1) return { item: list[idx], list, index: idx };
+      }
     }
     return null;
   }

@@ -1,4 +1,4 @@
-import type { Direction, ThemeMode } from "../shared/types.js";
+import type { AssetLayer, Direction, ThemeMode } from "../shared/types.js";
 
 export interface RawAtlasFrame {
   frame: { x: number; y: number; w: number; h: number };
@@ -7,7 +7,7 @@ export interface RawAtlasFrame {
     direction: Direction;
     frameName: string;
     durationMs: number;
-    layer: "floor" | "wall" | "wall-decor" | "object";
+    layer: AssetLayer;
     footprintTiles: [number, number];
     anchor: { x: number; y: number };
   };

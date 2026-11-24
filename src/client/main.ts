@@ -7,8 +7,8 @@ import type {
 import { AtlasManager } from "./atlas-loader.js";
 import { IsoCamera } from "./camera.js";
 import { DecorateController, isEditableFurniture } from "./decorate.js";
-import { OfficeHud } from "./hud.js";
-import { IsoRenderer } from "./iso-renderer.js";
+import { OfficeHud, type LayerBrush, type LayerEditorState } from "./hud.js";
+import { IsoRenderer, type LayerOverlayMode } from "./iso-renderer.js";
 import { OfficeSimulation } from "./sim.js";
 
 declare global {
@@ -48,6 +48,7 @@ async function bootstrap(): Promise<void> {
   let selectedEmployeeId: string | null = null;
   let hoverTile: [number, number] | null = null;
   let cameraInitialized = false;
+  const layerState: LayerEditorState = { mode: "off", brush: "inspect" };
 
   const resize = () => {
     canvas.width = window.innerWidth;
@@ -80,7 +81,7 @@ async function bootstrap(): Promise<void> {
 
   const refreshHud = () => {
     if (!snapshot) return;
-    hud.renderHud(snapshot, catalog, selectedEmployeeId, camera.zoom);
+    hud.renderHud(snapshot, catalog, selectedEmployeeId, camera.zoom, layerState);
   };
 
   const hud = new OfficeHud(decorate, {
@@ -120,6 +121,22 @@ async function bootstrap(): Promise<void> {
     },
     onDecorateChanged() {
       refreshHud();
+    },
+    onLayerOverlayChange(mode: LayerOverlayMode) {
+      layerState.mode = mode;
+      refreshHud();
+    },
+    onLayerBrushChange(brush: LayerBrush) {
+      layerState.brush = brush;
+      refreshHud();
+    },
+    onResetTilePermissions() {
+      void architectFetch("/api/architect/tile-permissions", {
+        method: "PATCH",
+        body: JSON.stringify({ resetAll: true }),
+      })
+        .then(() => hud.showToast("↺ Tile permission overrides cleared"))
+        .catch((e) => hud.showToast(e instanceof Error ? e.message : String(e), true));
     },
   });
 
@@ -217,7 +234,8 @@ async function bootstrap(): Promise<void> {
 
     if (decorate.active && hoverTile) {
       const [tx, ty] = hoverTile;
-      const existing = snapshot.campus.worldFurniture.find(
+      const isPicking = decorate.tool === "erase" || (decorate.tool === "move" && !decorate.movingItem);
+      let existing = snapshot.campus.worldFurniture.find(
         (f) =>
           isEditableFurniture(f) &&
           tx >= f.tx &&
@@ -225,10 +243,44 @@ async function bootstrap(): Promise<void> {
           ty >= f.ty &&
           ty < f.ty + f.footprintTiles[1],
       );
+      // Fallback to visual sprite hitbox when picking tall furniture in Move/Erase mode
+      if (!existing && isPicking) {
+        for (let i = renderer.lastHitBoxes.length - 1; i >= 0; i--) {
+          const box = renderer.lastHitBoxes[i];
+          if (box.kind !== "furniture") continue;
+          if (sx >= box.x && sx <= box.x + box.w && sy >= box.y && sy <= box.y + box.h) {
+            const hitFurn = snapshot.campus.worldFurniture.find(
+              (f) => f.id === box.id && isEditableFurniture(f),
+            );
+            if (hitFurn) {
+              existing = hitFurn;
+              break;
+            }
+          }
+        }
+      }
+      const wasHolding = Boolean(decorate.movingItem);
       void decorate
         .handleTileClick(tx, ty, existing)
-        .then(() => refreshHud())
+        .then(() => {
+          if (!wasHolding && decorate.movingItem) {
+            hud.showToast(`✋ Picked up ${decorate.movingItem.item.assetId} — click tile to place (R: rotate · Esc: cancel)`);
+          }
+          refreshHud();
+        })
         .catch((err) => hud.showToast(err instanceof Error ? err.message : String(err), true));
+      return;
+    }
+
+    if (layerState.mode === "permissions" && layerState.brush !== "inspect" && hoverTile) {
+      const [tx, ty] = hoverTile;
+      if (tx >= 0 && ty >= 0 && tx < snapshot.campus.widthTiles && ty < snapshot.campus.depthTiles) {
+        const permission = layerState.brush === "auto" ? null : layerState.brush;
+        void architectFetch("/api/architect/tile-permissions", {
+          method: "PATCH",
+          body: JSON.stringify({ tx, ty, permission }),
+        }).catch((err) => hud.showToast(err instanceof Error ? err.message : String(err), true));
+      }
       return;
     }
 
@@ -273,9 +325,23 @@ async function bootstrap(): Promise<void> {
         decorate.rotateCw();
         refreshHud();
       }
+    } else if (ev.key === "l" || ev.key === "L") {
+      if (decorate.active) decorate.setActive(false);
+      layerState.mode =
+        layerState.mode === "off"
+          ? "permissions"
+          : layerState.mode === "permissions"
+            ? "layers"
+            : "off";
+      refreshHud();
     } else if (ev.key === "Escape") {
       if (decorate.active) {
-        decorate.setActive(false);
+        if (!decorate.cancelMove()) {
+          decorate.setActive(false);
+        }
+        refreshHud();
+      } else if (layerState.mode !== "off") {
+        layerState.mode = "off";
         refreshHud();
       } else if (selectedEmployeeId) {
         selectedEmployeeId = null;
@@ -306,7 +372,7 @@ async function bootstrap(): Promise<void> {
     const simStep = sim.step(dt);
     lastFrameTs = now;
 
-    const targetFps = camMoving || dragging || decorate.active ? 30 : simStep.targetFps;
+    const targetFps = camMoving || dragging || decorate.active || layerState.mode !== "off" ? 30 : simStep.targetFps;
     const minInterval = 1000 / targetFps;
     if (now - lastDrawTs < minInterval) return;
     lastDrawTs = now;
@@ -333,16 +399,31 @@ async function bootstrap(): Promise<void> {
         const ly = ty - zone.originY;
         const inBounds = lx >= 0 && ly >= 0 && lx + fw <= zone.width && ly + fd <= zone.height;
         const ignoreId = decorate.movingItem?.item.id;
-        const collides = snapshot.campus.worldFurniture.some((f) => {
-          if (f.id === ignoreId || f.zoneId !== zone.zoneId || f.id.startsWith("sys-div-")) return false;
-          return (
+        const zoneFurn = snapshot.campus.worldFurniture.filter(
+          (f) => f.id !== ignoreId && f.zoneId === zone.zoneId && !f.id.startsWith("sys-div-"),
+        );
+        const collides = zoneFurn.some(
+          (f) =>
             tx < f.tx + f.footprintTiles[0] &&
             tx + fw > f.tx &&
             ty < f.ty + f.footprintTiles[1] &&
-            ty + fd > f.ty
-          );
-        });
-        valid = inBounds && !collides;
+            ty + fd > f.ty,
+        );
+        const occ = new Set<string>();
+        for (const f of zoneFurn) {
+          for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
+            for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
+              occ.add(`${f.tx - zone.originX + dx},${f.ty - zone.originY + dy}`);
+            }
+          }
+        }
+        for (let dy = 0; dy < fd; dy++) {
+          for (let dx = 0; dx < fw; dx++) {
+            occ.add(`${lx + dx},${ly + dy}`);
+          }
+        }
+        const entranceOpen = !occ.has("2,5") || !occ.has("3,5");
+        valid = inBounds && !collides && entranceOpen;
       }
       ghost = {
         tx,
@@ -362,8 +443,11 @@ async function bootstrap(): Promise<void> {
       employees: simStep.visuals,
       syncPackets: simStep.syncPackets,
       selectedEmployeeId,
+      movingFurnitureId: decorate.movingItem?.item.id ?? null,
       bayPopAnimations: sim.getBayPopAnimations(),
       ghost,
+      layerOverlayMode: layerState.mode,
+      hoverTile,
       timeMs: now,
     });
 

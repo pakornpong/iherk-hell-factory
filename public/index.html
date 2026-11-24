@@ -24,6 +24,7 @@
           <button id="zoom-4">4×</button>
         </div>
         <button id="btn-decorate">🪑 Decorate</button>
+        <button id="btn-layers" title="Toggle Layer & Permission Grid (L)">🗺️ Layers</button>
         <button id="btn-theme" data-theme="office">🏢 Office</button>
         <button id="btn-demo">▶ Demo Mode</button>
       </div>
@@ -60,6 +61,40 @@
       <input id="catalog-search" type="search" placeholder="Search props..." />
       <div id="catalog-filters" class="catalog-filters"></div>
       <div id="catalog-list" class="catalog-list"></div>
+    </aside>
+
+    <aside id="layer-panel" class="layer-panel hidden">
+      <div class="sidebar-header">
+        <span>MAP LAYERS</span>
+        <span class="hint">L: toggle · Esc: close</span>
+      </div>
+      <div class="layer-mode-tabs">
+        <button id="layer-mode-permissions" class="active" data-mode="permissions">Permissions (0–3)</button>
+        <button id="layer-mode-layers" data-mode="layers">Elevation (L1–L6)</button>
+      </div>
+      <div id="layer-brush-section" class="layer-section">
+        <div class="layer-section-title">PAINT TILE PERMISSION</div>
+        <div class="layer-brushes">
+          <button class="layer-brush-btn active" data-brush="inspect">👁️ Inspect</button>
+          <button class="layer-brush-btn" data-brush="0"><span class="perm-dot" style="background:#ef4444"></span>0 Blocked</button>
+          <button class="layer-brush-btn" data-brush="1"><span class="perm-dot" style="background:#22c55e"></span>1 Walkable</button>
+          <button class="layer-brush-btn" data-brush="2"><span class="perm-dot" style="background:#38bdf8"></span>2 Seat</button>
+          <button class="layer-brush-btn" data-brush="3"><span class="perm-dot" style="background:#f59e0b"></span>3 Door</button>
+          <button class="layer-brush-btn" data-brush="auto">↺ Auto</button>
+        </div>
+        <button id="btn-reset-perms" class="layer-reset-btn" disabled>Reset Overrides (0)</button>
+      </div>
+      <div class="layer-section">
+        <div class="layer-section-title">ELEVATION STACK</div>
+        <div class="layer-legend">
+          <div><span class="layer-badge" style="border-color:#22c55e;color:#22c55e">L1</span> Floor / Flat Mat</div>
+          <div><span class="layer-badge" style="border-color:#38bdf8;color:#38bdf8">L2</span> Seat / Low Base</div>
+          <div><span class="layer-badge" style="border-color:#a78bfa;color:#a78bfa">L4</span> Character · Object · Wall</div>
+          <div><span class="layer-badge" style="border-color:#f59e0b;color:#f59e0b">L5</span> Tabletop Surface</div>
+          <div><span class="layer-badge" style="border-color:#f472b6;color:#f472b6">L6</span> Foreground (Chair Back)</div>
+        </div>
+        <div class="layer-note">Red tile edges = boundary walls (blockedW / blockedN)</div>
+      </div>
     </aside>
 
     <section id="employee-inspector" class="inspector hidden">

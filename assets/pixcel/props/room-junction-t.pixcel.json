@@ -28,10 +28,6 @@
       "color": "#171c26",
       "kind": "matte"
     },
-    "glass_pane": {
-      "color": "#28548a",
-      "kind": "glass"
-    },
     "frame": {
       "color": "#1d2432",
       "kind": "metal"
@@ -40,213 +36,38 @@
   "ops": [
     {
       "op": "box",
-      "from": [
-        0,
-        13,
-        0
-      ],
-      "to": [
-        31,
-        18,
-        2
-      ],
+      "from": [12, 12, 0],
+      "to": [19, 19, 2],
       "material": "baseboard",
-      "part": "base_x"
+      "part": "post_base"
     },
     {
       "op": "box",
-      "from": [
-        13,
-        13,
-        0
-      ],
-      "to": [
-        18,
-        31,
-        2
-      ],
-      "material": "baseboard",
-      "part": "base_y"
-    },
-    {
-      "op": "box",
-      "from": [
-        12,
-        12,
-        0
-      ],
-      "to": [
-        19,
-        19,
-        2
-      ],
-      "material": "baseboard",
-      "part": "base_c"
-    },
-    {
-      "op": "box",
-      "from": [
-        0,
-        14,
-        3
-      ],
-      "to": [
-        31,
-        17,
-        12
-      ],
+      "from": [13, 13, 3],
+      "to": [18, 18, 12],
       "material": "wall_main",
-      "part": "arm_x"
+      "part": "post_lower"
     },
     {
       "op": "box",
-      "from": [
-        0,
-        15,
-        15
-      ],
-      "to": [
-        31,
-        16,
-        53
-      ],
-      "material": "glass_pane",
-      "part": "arm_x_glass"
+      "from": [12, 12, 13],
+      "to": [19, 19, 14],
+      "material": "wall_trim",
+      "part": "post_sill"
     },
     {
       "op": "box",
-      "from": [
-        14,
-        14,
-        3
-      ],
-      "to": [
-        17,
-        31,
-        12
-      ],
-      "material": "wall_main",
-      "part": "arm_y"
-    },
-    {
-      "op": "box",
-      "from": [
-        15,
-        14,
-        15
-      ],
-      "to": [
-        16,
-        31,
-        53
-      ],
-      "material": "glass_pane",
-      "part": "arm_y_glass"
-    },
-    {
-      "op": "box",
-      "from": [
-        13,
-        13,
-        3
-      ],
-      "to": [
-        18,
-        18,
-        12
-      ],
-      "material": "wall_main",
-      "part": "pillar"
-    },
-    {
-      "op": "box",
-      "from": [
-        14,
-        14,
-        15
-      ],
-      "to": [
-        17,
-        17,
-        53
-      ],
+      "from": [14, 14, 15],
+      "to": [17, 17, 53],
       "material": "frame",
-      "part": "post"
+      "part": "post_frame"
     },
     {
       "op": "box",
-      "from": [
-        0,
-        13,
-        13
-      ],
-      "to": [
-        31,
-        18,
-        14
-      ],
-      "material": "wall_trim",
-      "part": "trim_x"
-    },
-    {
-      "op": "box",
-      "from": [
-        13,
-        13,
-        13
-      ],
-      "to": [
-        18,
-        31,
-        14
-      ],
-      "material": "wall_trim",
-      "part": "trim_y"
-    },
-    {
-      "op": "box",
-      "from": [
-        0,
-        14,
-        54
-      ],
-      "to": [
-        31,
-        17,
-        56
-      ],
+      "from": [13, 13, 54],
+      "to": [18, 18, 56],
       "material": "cap_dark",
-      "part": "cap_x"
-    },
-    {
-      "op": "box",
-      "from": [
-        14,
-        14,
-        54
-      ],
-      "to": [
-        17,
-        31,
-        56
-      ],
-      "material": "cap_dark",
-      "part": "cap_y"
-    },
-    {
-      "op": "box",
-      "from": [
-        13,
-        13,
-        54
-      ],
-      "to": [
-        18,
-        18,
-        56
-      ],
-      "material": "cap_dark",
-      "part": "cap_c"
+      "part": "post_cap"
     }
   ]
 }
