@@ -24,6 +24,7 @@ const STATE_LABELS: Record<string, string> = {
   working: "💻 Working",
   teamwork: "🤝 Teamwork",
   meeting: "💬 Meeting",
+  reporting: "👑 Reporting to Boss",
   resting: "☕ Resting",
 };
 
@@ -280,9 +281,10 @@ export class OfficeHud {
     const scaleY = h / Math.max(1, campus.depthTiles);
 
     for (const z of campus.zones) {
-      ctx.fillStyle = z.kind === "common" ? "#1e3a5f" : "#1e293b";
+      ctx.fillStyle =
+        z.kind === "boss" ? "#92400e" : z.kind === "common" ? "#1e3a5f" : "#1e293b";
       ctx.fillRect(z.originX * scaleX, z.originY * scaleY, z.width * scaleX, z.height * scaleY);
-      ctx.strokeStyle = "#334155";
+      ctx.strokeStyle = z.kind === "boss" ? "#f59e0b" : "#334155";
       ctx.strokeRect(z.originX * scaleX, z.originY * scaleY, z.width * scaleX, z.height * scaleY);
     }
 

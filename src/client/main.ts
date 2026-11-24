@@ -139,7 +139,7 @@ async function bootstrap(): Promise<void> {
     sim.syncFromServer(next.state, next.campus);
     if (!cameraInitialized) {
       cameraInitialized = true;
-      camera.snapToTile(6, 3, canvas.width, canvas.height);
+      camera.snapToTile(next.campus.widthTiles / 2, next.campus.depthTiles / 2, canvas.width, canvas.height);
     }
     refreshHud();
   };

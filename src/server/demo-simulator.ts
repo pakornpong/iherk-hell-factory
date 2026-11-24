@@ -88,18 +88,30 @@ const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }> = [
     },
   },
   {
-    delayMs: 3200,
+    delayMs: 2400,
+    event: {
+      provider: "claude",
+      source: "simulator",
+      sessionId: "demo-c2",
+      projectPath: "/demo/iherk-notify",
+      eventType: "tool_start",
+      toolName: "Edit",
+      detail: "Adding webhook alert",
+    },
+  },
+  {
+    delayMs: 2800,
     event: {
       provider: "gemini",
       source: "simulator",
       sessionId: "demo-g1",
       projectPath: "/demo/iherk-pixcel",
       eventType: "waiting_user",
-      detail: "Review design mockup?",
+      detail: "Boss: approve sofa color?",
     },
   },
   {
-    delayMs: 3500,
+    delayMs: 3200,
     event: {
       provider: "gemini",
       source: "simulator",
@@ -111,7 +123,7 @@ const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }> = [
     },
   },
   {
-    delayMs: 3500,
+    delayMs: 3200,
     event: {
       provider: "claude",
       source: "simulator",
@@ -122,14 +134,14 @@ const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }> = [
     },
   },
   {
-    delayMs: 2500,
+    delayMs: 2600,
     event: {
       provider: "gemini",
       source: "simulator",
       sessionId: "demo-g2",
       projectPath: "/demo/iherk-api-gateway",
       eventType: "turn_stop",
-      detail: "Done — coffee break",
+      detail: "Report: gateway fixed!",
     },
   },
 ];

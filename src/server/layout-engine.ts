@@ -1,4 +1,5 @@
 import type {
+  BossOfficeRecord,
   CatalogEntry,
   CommonWingRecord,
   ComputedCampus,
@@ -11,9 +12,9 @@ import type {
 } from "../shared/types.js";
 
 export const ZONE_SIZE = 6;
-export const MODULE_PITCH_X = 7; // 6-tile zone + 1-tile vertical divider/aisle
-export const MODULE_PITCH_Y = 8; // 6-tile zone + 2-tile main horizontal corridor
-export const BAYS_PER_ROW = 3; // col 0 = common wing, cols 1..3 = project bays
+export const MODULE_PITCH_X = 7; // 6-tile zone + 1-tile aisle
+export const MODULE_PITCH_Y = 7; // 6-tile zone + 1-tile aisle -> exact square S*7 - 1
+export const BAYS_PER_ROW = 3; // kept exported for compatibility
 
 export function getRotatedFootprint(
   base: [number, number],
@@ -23,6 +24,24 @@ export function getRotatedFootprint(
     return [base[1], base[0]];
   }
   return [base[0], base[1]];
+}
+
+export function createDefaultBossOffice(): BossOfficeRecord {
+  const zoneId = "boss:0" as const;
+  return {
+    zoneId,
+    displayName: "BOSS OFFICE",
+    furniture: [
+      { id: `${zoneId}-shelf`, zoneId, lx: 0, ly: 0, assetId: "bookshelf-wood", direction: "se", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-plant-r`, zoneId, lx: 5, ly: 0, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-boss-chair`, zoneId, lx: 2, ly: 1, assetId: "chair-office-swivel", direction: "se", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-boss-desk`, zoneId, lx: 2, ly: 2, assetId: "desk-dev-dual", direction: "nw", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-visitor-0`, zoneId, lx: 2, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-visitor-1`, zoneId, lx: 3, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-plant-l`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-sign`, zoneId, lx: 5, ly: 4, assetId: "bay-sign-post", direction: "se", layer: "object", placedBy: "system" },
+    ],
+  };
 }
 
 export function createDefaultCommonWing(row: number): CommonWingRecord {
@@ -57,7 +76,11 @@ export function createDefaultBayFurniture(bayId: string): FurnitureInstance[] {
   ];
 }
 
-export function createExtraBayWorkstations(bayId: string, desiredDeskSlots: number, existing: FurnitureInstance[]): FurnitureInstance[] {
+export function createExtraBayWorkstations(
+  bayId: string,
+  desiredDeskSlots: number,
+  existing: FurnitureInstance[],
+): FurnitureInstance[] {
   const zoneId: ZoneId = `bay:${bayId}`;
   const added: FurnitureInstance[] = [];
   const hasId = (id: string) => existing.some((f) => f.id === id);
@@ -77,19 +100,29 @@ export function createExtraBayWorkstations(bayId: string, desiredDeskSlots: numb
   return added;
 }
 
+/**
+ * Generates module coordinates (col, row) for square ring `k` in exact visual CLOCKWISE order
+ * around the top-most corner (0, 0) in 2:1 isometric view:
+ *   (k, 0) [3 o'clock] -> (k, 1) -> ... -> (k, k) [6 o'clock] -> (k-1, k) -> ... -> (0, k) [9 o'clock]
+ */
+export function getClockwiseRingCoords(ring: number): Array<[number, number]> {
+  const coords: Array<[number, number]> = [];
+  for (let row = 0; row <= ring; row++) {
+    coords.push([ring, row]);
+  }
+  for (let col = ring - 1; col >= 0; col--) {
+    coords.push([col, ring]);
+  }
+  return coords;
+}
+
 export function computeCampusLayout(
   bays: ProjectBayRecord[],
   commonWings: CommonWingRecord[],
   catalogById: Map<string, CatalogEntry>,
+  bossOffice?: BossOfficeRecord,
 ): ComputedCampus {
   const activeBays = bays.filter((b) => !b.archived);
-  const bayCount = Math.max(1, activeBays.length);
-  const rowCount = Math.max(1, Math.ceil(bayCount / BAYS_PER_ROW));
-  const maxColsInAnyRow = activeBays.length === 0 ? 2 : Math.min(1 + activeBays.length, 1 + BAYS_PER_ROW);
-
-  const widthTiles = maxColsInAnyRow * MODULE_PITCH_X - 1;
-  const depthTiles = rowCount * MODULE_PITCH_Y - 2;
-
   const wingByRow = new Map<number, CommonWingRecord>();
   for (const w of commonWings) wingByRow.set(w.row, w);
 
@@ -110,53 +143,111 @@ export function computeCampusLayout(
     }
   };
 
-  // 1. Common wings anchored at col=0 of every active row
-  for (let row = 0; row < rowCount; row++) {
-    const zoneId: ZoneId = `common:${row}`;
-    const zone: ZoneBounds = {
-      zoneId,
-      kind: "common",
-      row,
-      col: 0,
-      originX: 0,
-      originY: row * MODULE_PITCH_Y,
-      width: ZONE_SIZE,
-      height: ZONE_SIZE,
-    };
-    zones.push(zone);
-    const wing = wingByRow.get(row) ?? createDefaultCommonWing(row);
-    pushFurniture(zone, wing.furniture);
+  // 1. Boss Office permanently anchored at the top-most apex (col=0, row=0)
+  const bossRec = bossOffice ?? createDefaultBossOffice();
+  const bossZone: ZoneBounds = {
+    zoneId: "boss:0",
+    kind: "boss",
+    row: 0,
+    col: 0,
+    originX: 0,
+    originY: 0,
+    width: ZONE_SIZE,
+    height: ZONE_SIZE,
+  };
+  zones.push(bossZone);
+  pushFurniture(bossZone, bossRec.furniture);
+
+  // 2. Primary Common Lounge & Meeting Hub at (col=0, row=1)
+  const common0Zone: ZoneBounds = {
+    zoneId: "common:0",
+    kind: "common",
+    row: 1,
+    col: 0,
+    originX: 0,
+    originY: MODULE_PITCH_Y,
+    width: ZONE_SIZE,
+    height: ZONE_SIZE,
+  };
+  zones.push(common0Zone);
+  const wing0 = wingByRow.get(0) ?? createDefaultCommonWing(0);
+  pushFurniture(common0Zone, wing0.furniture);
+
+  // 3. Allocate active Project Bays clockwise across square rings (k = 1, 2, 3, ...)
+  // Ring 1 skips (0, 1) because common:0 occupies it; rings >= 3 reserve (0, k) every 2nd ring for extra common hubs
+  const availableSlots: Array<{ col: number; row: number; extraCommonRow?: number }> = [];
+  let maxGridSide = 2;
+  let ring = 1;
+  let commonIdx = 1;
+
+  while (availableSlots.filter((s) => s.extraCommonRow === undefined).length < activeBays.length) {
+    const ringCoords = getClockwiseRingCoords(ring);
+    for (const [col, row] of ringCoords) {
+      if (col === 0 && row === 1) continue; // reserved for common:0
+      if (ring >= 3 && ring % 2 === 1 && col === 0 && row === ring) {
+        availableSlots.push({ col, row, extraCommonRow: commonIdx++ });
+      } else {
+        availableSlots.push({ col, row });
+      }
+    }
+    maxGridSide = Math.max(maxGridSide, ring + 1);
+    ring++;
   }
 
-  // 2. Active project bays compacted into consecutive (row, col = 1..3) slots
-  activeBays.forEach((bay, idx) => {
-    const row = Math.floor(idx / BAYS_PER_ROW);
-    const col = 1 + (idx % BAYS_PER_ROW);
-    const zone: ZoneBounds = {
+  let bayCursor = 0;
+  for (const slot of availableSlots) {
+    if (bayCursor >= activeBays.length) break;
+    if (slot.extraCommonRow !== undefined) {
+      const cIdx = slot.extraCommonRow;
+      const cZone: ZoneBounds = {
+        zoneId: `common:${cIdx}`,
+        kind: "common",
+        row: slot.row,
+        col: slot.col,
+        originX: slot.col * MODULE_PITCH_X,
+        originY: slot.row * MODULE_PITCH_Y,
+        width: ZONE_SIZE,
+        height: ZONE_SIZE,
+      };
+      zones.push(cZone);
+      const wing = wingByRow.get(cIdx) ?? createDefaultCommonWing(cIdx);
+      pushFurniture(cZone, wing.furniture);
+      continue;
+    }
+
+    const bay = activeBays[bayCursor++];
+    const bayZone: ZoneBounds = {
       zoneId: `bay:${bay.id}`,
       kind: "bay",
       bayId: bay.id,
-      row,
-      col,
-      originX: col * MODULE_PITCH_X,
-      originY: row * MODULE_PITCH_Y,
+      row: slot.row,
+      col: slot.col,
+      originX: slot.col * MODULE_PITCH_X,
+      originY: slot.row * MODULE_PITCH_Y,
       width: ZONE_SIZE,
       height: ZONE_SIZE,
     };
-    zones.push(zone);
-    pushFurniture(zone, bay.furniture);
-  });
+    zones.push(bayZone);
+    pushFurniture(bayZone, bay.furniture);
+  }
 
-  // 3. Low dividers in the 1-tile seam between adjacent modules in the same row (leaves bottom walkway open!)
-  for (let row = 0; row < rowCount; row++) {
-    const rowZones = zones.filter((z) => z.row === row).sort((a, b) => a.col - b.col);
-    for (let i = 0; i < rowZones.length - 1; i++) {
-      const left = rowZones[i];
-      const dividerTx = left.originX + ZONE_SIZE;
-      for (const offsetY of [0, 1, 2]) {
+  // Exact square overall campus dimensions (widthTiles === depthTiles)
+  const sideTiles = maxGridSide * MODULE_PITCH_X - 1;
+  const widthTiles = sideTiles;
+  const depthTiles = sideTiles;
+
+  // 4. Low glass dividers along vertical seams between occupied adjacent columns (leaves bottom walkway open!)
+  const zoneAt = new Map<string, ZoneBounds>();
+  for (const z of zones) zoneAt.set(`${z.col},${z.row}`, z);
+
+  for (const z of zones) {
+    const right = zoneAt.get(`${z.col + 1},${z.row}`);
+    if (right) {
+      const dividerTx = z.originX + ZONE_SIZE;
+      for (const offsetY of [0, 1]) {
         worldFurniture.push({
-          id: `sys-div-${row}-${i}-${offsetY}`,
-          zoneId: left.zoneId,
+          id: `sys-div-v-${z.col}-${z.row}-${offsetY}`,
+          zoneId: z.zoneId,
           lx: 5,
           ly: offsetY,
           assetId: "divider-low-glass",
@@ -164,32 +255,61 @@ export function computeCampusLayout(
           layer: "object",
           placedBy: "system",
           tx: dividerTx,
-          ty: left.originY + offsetY,
+          ty: z.originY + offsetY,
+          footprintTiles: [1, 1],
+        });
+      }
+    }
+    const below = zoneAt.get(`${z.col},${z.row + 1}`);
+    if (below) {
+      const dividerTy = z.originY + ZONE_SIZE;
+      for (const offsetX of [0, 1]) {
+        worldFurniture.push({
+          id: `sys-div-h-${z.col}-${z.row}-${offsetX}`,
+          zoneId: z.zoneId,
+          lx: offsetX,
+          ly: 5,
+          assetId: "divider-low-glass",
+          direction: "se",
+          layer: "object",
+          placedBy: "system",
+          tx: z.originX + offsetX,
+          ty: dividerTy,
           footprintTiles: [1, 1],
         });
       }
     }
   }
 
-  // 4. Seamless floors across the entire campus
+  // 5. Seamless square floors with rug accents under Boss Office and Common Lounges
+  const rugSet = new Set<string>();
+  for (let y = 1; y <= 4; y++) {
+    for (let x = 1; x <= 4; x++) {
+      rugSet.add(`${x},${y}`); // Boss Office executive rug
+    }
+  }
+  for (const z of zones) {
+    if (z.kind !== "common") continue;
+    for (let ly = 3; ly <= 5; ly++) {
+      for (let lx = 3; lx <= 5; lx++) {
+        rugSet.add(`${z.originX + lx},${z.originY + ly}`);
+      }
+    }
+  }
+
   const floors: ComputedCampus["floors"] = [];
   for (let ty = 0; ty < depthTiles; ty++) {
     for (let tx = 0; tx < widthTiles; tx++) {
-      // Cozy rug tiles under the lounge corner of every Common Wing
-      const inCommonX = tx >= 3 && tx <= 5;
-      const localY = ty % MODULE_PITCH_Y;
-      const isLoungeRug = inCommonX && localY >= 3 && localY <= 5;
       floors.push({
         tx,
         ty,
-        assetId: isLoungeRug ? "floor-lounge-rug" : "floor-wood-plank",
+        assetId: rugSet.has(`${tx},${ty}`) ? "floor-lounge-rug" : "floor-wood-plank",
         direction: "se",
       });
     }
   }
 
-  // 5. Cutaway outer perimeter walls ONLY along ty = 0 (NE edge) and tx = 0 (NW edge)
-  // Matches iherk-pixcel: +tx runs SE so ty=0 is NE wall (dir sw); +ty runs SW so tx=0 is NW wall (dir se)
+  // 6. Cutaway outer perimeter walls along full square rear edges: ty=0 (NE edge) and tx=0 (NW edge)
   const walls: ComputedCampus["walls"] = [
     { tx: 0, ty: 0, assetId: "wall-corner-pillar", edge: "corner" },
     { tx: 0, ty: 0, assetId: "wall-slate-plain", edge: "nw" },
@@ -207,7 +327,7 @@ export function computeCampusLayout(
     });
   }
   for (let ty = 1; ty < depthTiles; ty++) {
-    const isWindow = ty % 3 === 1;
+    const isWindow = ty % 4 === 2;
     walls.push({
       tx: 0,
       ty,
@@ -216,7 +336,7 @@ export function computeCampusLayout(
     });
   }
 
-  // Mount architecture whiteboards flush along the back NE wall (ty = 0) of row-0 zones
+  // Mount whiteboards flush along rear NE wall (ty=0) for top-row zones (Boss & top-right bays)
   for (const z of zones) {
     if (z.row === 0 && z.originX + 2 < widthTiles) {
       wallDecor.push({
@@ -286,7 +406,6 @@ export function validateFurniturePlacement(
     };
   }
 
-  // Build occupancy grid for this 6x6 zone
   const occ = new Set<string>();
   for (const item of existingInZone) {
     if (candidate.ignoreInstanceId && item.id === candidate.ignoreInstanceId) continue;
@@ -317,8 +436,6 @@ export function validateFurniturePlacement(
     return { ok: false, reason: `Cannot block both entrance tiles (2,5) and (3,5) of zone "${candidate.zoneId}"` };
   }
 
-  // BFS connectivity from open entrances: prevent sealing off walkable interior tiles of the 6x6 zone
-  // Chairs remain passable for walking connectivity so seated workspaces stay reachable
   const walkBlocked = new Set<string>();
   const addWalkBlock = (assetId: string, lx: number, ly: number, dir: Direction) => {
     if (assetId === "chair-office-swivel") return;

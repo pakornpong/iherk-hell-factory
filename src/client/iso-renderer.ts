@@ -374,6 +374,55 @@ export class IsoRenderer {
       });
     }
 
+    // Boss avatar seated permanently at Boss Office (0,0) executive chair
+    const bossZone = campus.zones.find((z) => z.kind === "boss");
+    if (bossZone) {
+      const bossChair = campus.worldFurniture.find(
+        (f) => f.zoneId === "boss:0" && f.id === "boss:0-boss-chair",
+      );
+      const bx = bossChair ? bossChair.tx : bossZone.originX + 2;
+      const by = bossChair ? bossChair.ty : bossZone.originY + 1;
+      const hasVisitor = employees.some((e) => e.record.visualState === "reporting");
+      const bossClip = hasVisitor ? `talk_${Math.floor(timeMs / 350) % 2}` : `idle_${Math.floor(timeMs / 750) % 2}`;
+      const bossSprite = atlas.getFrame(theme, "agent-starter", "sw", bossClip);
+      if (bossSprite) {
+        const [wx, wy] = toAnchorWorld(bx, by, 1, 1);
+        if (isInWorldBounds(wx, wy, bounds)) {
+          unified.push({
+            id: "e:boss-avatar",
+            kind: "employee",
+            x: bx + 0.2,
+            y: by + 0.2,
+            footprintX: 0.6,
+            footprintY: 0.6,
+            sprite: bossSprite,
+            wx,
+            wy,
+            emp: {
+              record: {
+                id: "boss-avatar",
+                bayId: "boss:0",
+                spriteId: "agent-starter",
+                displayName: "BOSS",
+                role: "Boss",
+                isEphemeral: false,
+                deskIndex: 0,
+                visualState: "working",
+                toolCategory: "idle",
+                lastUpdatedAt: timeMs,
+              },
+              x: bx,
+              y: by,
+              direction: "sw",
+              clipName: bossClip,
+              bubbleIcon: "👑",
+              bubbleText: "BOSS",
+            },
+          });
+        }
+      }
+    }
+
     for (const emp of employees) {
       const sprite = atlas.getFrame(theme, emp.record.spriteId, emp.direction, emp.clipName);
       if (!sprite) continue;
@@ -479,7 +528,12 @@ export class IsoRenderer {
       if (!isInWorldBounds(wx, wy, bounds)) continue;
       const [sx, sy] = camera.worldToScreen(wx, wy);
       const bay = z.bayId ? bayById.get(z.bayId) : undefined;
-      const label = z.kind === "common" ? `LOUNGE & MEETING · R${z.row + 1}` : bay?.displayName ?? z.zoneId;
+      const label =
+        z.kind === "boss"
+          ? "👑 BOSS OFFICE"
+          : z.kind === "common"
+            ? `LOUNGE & MEETING · #${z.zoneId.split(":")[1] ?? "0"}`
+            : bay?.displayName ?? z.zoneId;
       const activeTeamCount = z.bayId
         ? employees.filter(
             (e) =>
@@ -491,14 +545,38 @@ export class IsoRenderer {
       const textW = ctx.measureText(fullLabel).width + 12;
       ctx.fillStyle = theme === "day" ? "rgba(15, 23, 42, 0.82)" : "rgba(10, 14, 26, 0.86)";
       ctx.fillRect(Math.round(sx - textW / 2), Math.round(sy - 10), Math.round(textW), 18);
-      ctx.strokeStyle = bay?.accentColor ?? "#64748b";
-      ctx.lineWidth = 1;
+      ctx.strokeStyle = z.kind === "boss" ? "#f59e0b" : bay?.accentColor ?? "#64748b";
+      ctx.lineWidth = z.kind === "boss" ? 1.5 : 1;
       ctx.strokeRect(Math.round(sx - textW / 2), Math.round(sy - 10), Math.round(textW), 18);
-      ctx.fillStyle = "#f8fafc";
+      ctx.fillStyle = z.kind === "boss" ? "#fde68a" : "#f8fafc";
       ctx.fillText(fullLabel, Math.round(sx), Math.round(sy + 3));
     }
 
     // Employee floating bubbles & subtle tool-category aura
+    // Floating 👑 BOSS badge above Boss avatar in Boss Office (0,0)
+    if (bossZone) {
+      const bossChair = campus.worldFurniture.find(
+        (f) => f.zoneId === "boss:0" && f.id === "boss:0-boss-chair",
+      );
+      const bx = bossChair ? bossChair.tx : bossZone.originX + 2;
+      const by = bossChair ? bossChair.ty : bossZone.originY + 1;
+      const [wx, wy] = toAnchorWorld(bx, by, 1, 1);
+      if (isInWorldBounds(wx, wy, bounds)) {
+        const [sx, sy] = camera.worldToScreen(wx, wy - 36);
+        ctx.font = `700 ${Math.max(10, 5 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+        const label = "👑 BOSS";
+        const bw = ctx.measureText(label).width + 10;
+        const bh = 18;
+        ctx.fillStyle = "rgba(120, 53, 15, 0.92)";
+        ctx.fillRect(Math.round(sx - bw / 2), Math.round(sy - bh), Math.round(bw), bh);
+        ctx.strokeStyle = "#f59e0b";
+        ctx.lineWidth = 1;
+        ctx.strokeRect(Math.round(sx - bw / 2), Math.round(sy - bh), Math.round(bw), bh);
+        ctx.fillStyle = "#fef3c7";
+        ctx.fillText(label, Math.round(sx), Math.round(sy - 5));
+      }
+    }
+
     for (const emp of employees) {
       const [wx, wy] = toAnchorWorld(emp.x, emp.y, 1, 1);
       if (!isInWorldBounds(wx, wy, bounds)) continue;

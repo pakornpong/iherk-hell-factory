@@ -121,6 +121,10 @@ export class OfficeSimulation {
     return this.campus?.zones.find((z) => z.kind === "bay" && z.bayId === bayId);
   }
 
+  private findBossZone(): ZoneBounds | undefined {
+    return this.campus?.zones.find((z) => z.kind === "boss");
+  }
+
   private findCommonWingForRow(row: number): ZoneBounds | undefined {
     return (
       this.campus?.zones.find((z) => z.kind === "common" && z.row === row) ??
@@ -183,6 +187,21 @@ export class OfficeSimulation {
 
       case "assigning":
         return { tile: [bayZone.originX + 2 + (emp.deskIndex % 2), bayZone.originY + 4], facing: "se" };
+
+      case "reporting": {
+        const boss = this.findBossZone();
+        if (boss) {
+          const visitorSpots: Array<{ tile: [number, number]; facing: Direction }> = [
+            { tile: [boss.originX + 2, boss.originY + 3], facing: "ne" },
+            { tile: [boss.originX + 3, boss.originY + 3], facing: "ne" },
+            { tile: [boss.originX + 1, boss.originY + 3], facing: "ne" },
+            { tile: [boss.originX + 4, boss.originY + 3], facing: "ne" },
+          ];
+          const slot = (emp.deskIndex + this.hashSlot(emp.id)) % visitorSpots.length;
+          return visitorSpots[slot];
+        }
+        return { tile: [2, 3], facing: "ne" };
+      }
 
       case "meeting": {
         // Spread employees across common wing chairs using employee-unique hash so different bays don't stack
@@ -362,7 +381,16 @@ export class OfficeSimulation {
       const idx = Math.floor(sim.animClockMs / 140) % 4;
       return {
         clipName: `walk_${idx}`,
-        bubbleIcon: sim.record.visualState === "meeting" ? "💬" : sim.record.visualState === "assigning" ? "📋" : undefined,
+        bubbleIcon:
+          sim.record.visualState === "reporting"
+            ? sim.record.reportReason === "question"
+              ? "❓"
+              : "✅"
+            : sim.record.visualState === "meeting"
+              ? "💬"
+              : sim.record.visualState === "assigning"
+                ? "📋"
+                : undefined,
       };
     }
 
@@ -370,6 +398,14 @@ export class OfficeSimulation {
     const tSlow = Math.floor(sim.animClockMs / 650) % 2;
 
     switch (sim.record.visualState) {
+      case "reporting": {
+        const isQ = sim.record.reportReason === "question";
+        return {
+          clipName: isQ ? `talk_${t2}` : `assign_${t2}`,
+          bubbleIcon: isQ ? "❓" : "✅",
+          bubbleText: sim.record.detail ?? (isQ ? "Question for Boss" : "Report ready"),
+        };
+      }
       case "assigning":
         return {
           clipName: `assign_${t2}`,

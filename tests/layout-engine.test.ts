@@ -44,7 +44,9 @@ describe("layout-engine", () => {
     const campus = computeCampusLayout(bays, wings, mockCatalog);
 
     expect(campus.zones.filter((z) => z.kind === "bay")).toHaveLength(25);
-    expect(campus.zones.filter((z) => z.kind === "common")).toHaveLength(rows);
+    expect(campus.zones.filter((z) => z.kind === "boss")).toHaveLength(1);
+    expect(campus.zones.filter((z) => z.kind === "common").length).toBeGreaterThanOrEqual(1);
+    expect(campus.widthTiles).toBe(campus.depthTiles);
     expect(campus.walls.some((w) => w.edge === "corner" && w.tx === 0 && w.ty === 0)).toBe(true);
 
     // Every NE perimeter tile (ty=0) and NW perimeter tile (tx=0) has a wall
@@ -76,7 +78,7 @@ describe("layout-engine", () => {
     const campus = computeCampusLayout(bays, wings, mockCatalog);
     const activeBays = campus.zones.filter((z) => z.kind === "bay");
     expect(activeBays.map((z) => z.bayId)).toEqual(["bay-0", "bay-2"]);
-    expect(activeBays[1].col).toBe(2);
+    expect([activeBays[1].col, activeBays[1].row]).toEqual([1, 1]);
     expect(campus.zones.find((z) => z.zoneId === "common:0")?.originX).toBe(0);
   });
 

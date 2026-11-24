@@ -121,7 +121,7 @@ describe("OfficeEngine lifecycle & 5-state FSM", () => {
     expect(team).toHaveLength(2);
     expect(team.every((e) => e.visualState === "teamwork")).toBe(true);
 
-    // waiting_user -> meeting
+    // waiting_user -> reporting (walks to Boss Office with question)
     await engine.ingestEvent({
       provider: "claude",
       source: "claude-code",
@@ -129,6 +129,17 @@ describe("OfficeEngine lifecycle & 5-state FSM", () => {
       projectPath: "/work/alpha",
       eventType: "waiting_user",
       detail: "Approve plan?",
+    });
+    expect(engine.getSnapshot().state.employees.find((e) => !e.isEphemeral)?.visualState).toBe("reporting");
+
+    // swarm tool -> meeting (Conference Table)
+    await engine.ingestEvent({
+      provider: "claude",
+      source: "claude-code",
+      sessionId: "s1",
+      projectPath: "/work/alpha",
+      eventType: "tool_start",
+      toolName: "swarm",
     });
     expect(engine.getSnapshot().state.employees.find((e) => !e.isEphemeral)?.visualState).toBe("meeting");
 

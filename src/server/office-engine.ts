@@ -19,9 +19,9 @@ import {
   type ZoneId,
 } from "../shared/types.js";
 import {
-  BAYS_PER_ROW,
   computeCampusLayout,
   createDefaultBayFurniture,
+  createDefaultBossOffice,
   createDefaultCommonWing,
   createExtraBayWorkstations,
   resolveWorldToZone,
@@ -80,7 +80,13 @@ function classifyToolCategory(toolName?: string): ToolCategory {
 function isMeetingTool(toolName?: string): boolean {
   if (!toolName) return false;
   const t = toolName.toLowerCase();
-  return t === "swarm" || t === "ask_question" || t.includes("brainstorm") || t.includes("plan");
+  return t === "swarm" || t.includes("brainstorm") || t.includes("plan");
+}
+
+function isQuestionTool(toolName?: string): boolean {
+  if (!toolName) return false;
+  const t = toolName.toLowerCase();
+  return t === "ask_question";
 }
 
 function isAssignTool(toolName?: string): boolean {
@@ -129,7 +135,12 @@ export class OfficeEngine extends EventEmitter {
     this.restCooldownMs = opts.restCooldownMs ?? 15_000;
     this.assignDurationMs = opts.assignDurationMs ?? 2_500;
     this.state = this.createFreshState();
-    this.campus = computeCampusLayout(this.state.bays, this.state.commonWings, this.catalogById);
+    this.campus = computeCampusLayout(
+      this.state.bays,
+      this.state.commonWings,
+      this.catalogById,
+      this.state.bossOffice,
+    );
   }
 
   private createFreshState(): OfficeState {
@@ -138,6 +149,7 @@ export class OfficeEngine extends EventEmitter {
     return {
       version: 1,
       theme: "night",
+      bossOffice: createDefaultBossOffice(),
       commonWings: [createDefaultCommonWing(0)],
       bays: [
         {
@@ -176,6 +188,9 @@ export class OfficeEngine extends EventEmitter {
     if (loaded && loaded.bays.length > 0) {
       // Remove any leftover ephemeral subagents from a previous crash
       loaded.employees = loaded.employees.filter((e) => !e.isEphemeral);
+      if (!loaded.bossOffice) {
+        loaded.bossOffice = createDefaultBossOffice();
+      }
       this.state = loaded;
     } else {
       this.state = this.createFreshState();
@@ -238,15 +253,20 @@ export class OfficeEngine extends EventEmitter {
   }
 
   private recomputeCampus(): void {
-    this.campus = computeCampusLayout(this.state.bays, this.state.commonWings, this.catalogById);
+    this.campus = computeCampusLayout(
+      this.state.bays,
+      this.state.commonWings,
+      this.catalogById,
+      this.state.bossOffice,
+    );
   }
 
   private ensureCommonWingsForActiveRows(): void {
     const activeCount = Math.max(1, this.state.bays.filter((b) => !b.archived).length);
-    const neededRows = Math.max(1, Math.ceil(activeCount / BAYS_PER_ROW));
-    for (let row = 0; row < neededRows; row++) {
-      if (!this.state.commonWings.some((w) => w.row === row)) {
-        this.state.commonWings.push(createDefaultCommonWing(row));
+    const neededWings = Math.max(1, 1 + Math.floor(activeCount / 10));
+    for (let idx = 0; idx < neededWings; idx++) {
+      if (!this.state.commonWings.some((w) => w.row === idx)) {
+        this.state.commonWings.push(createDefaultCommonWing(idx));
       }
     }
   }
@@ -531,7 +551,13 @@ export class OfficeEngine extends EventEmitter {
       case "tool_start": {
         emp.restAt = undefined;
         emp.assignUntil = undefined;
-        if (isMeetingTool(ev.toolName)) {
+        emp.reportReason = undefined;
+        if (isQuestionTool(ev.toolName)) {
+          emp.visualState = "reporting";
+          emp.reportReason = "question";
+          emp.toolCategory = "idle";
+          emp.detail = ev.detail ?? "Has a question for Boss";
+        } else if (isMeetingTool(ev.toolName)) {
           emp.visualState = "meeting";
           emp.toolCategory = "search";
           emp.detail = ev.detail ?? `Discussing (${ev.toolName})`;
@@ -568,6 +594,7 @@ export class OfficeEngine extends EventEmitter {
       }
       case "tool_error": {
         emp.restAt = undefined;
+        emp.reportReason = undefined;
         emp.visualState = "working";
         emp.toolCategory = "error";
         emp.errorUntil = ts + 4_000;
@@ -577,9 +604,10 @@ export class OfficeEngine extends EventEmitter {
       case "waiting_user": {
         emp.restAt = undefined;
         emp.assignUntil = undefined;
-        emp.visualState = "meeting";
+        emp.visualState = "reporting";
+        emp.reportReason = "question";
         emp.toolCategory = "idle";
-        emp.detail = ev.detail ?? "Waiting for your review";
+        emp.detail = ev.detail ?? "Question for Boss";
         break;
       }
       case "turn_stop":
@@ -589,8 +617,10 @@ export class OfficeEngine extends EventEmitter {
           this.state.employees = this.state.employees.filter((e) => e.id !== emp.id);
         } else {
           emp.assignUntil = undefined;
+          emp.visualState = "reporting";
+          emp.reportReason = "result";
           emp.restAt = ts + this.restCooldownMs;
-          emp.detail = ev.detail ?? "Wrapping up";
+          emp.detail = ev.detail ?? "Reporting results to Boss";
           // Also clean up ephemeral subagents belonging to this parent session (e.g., Antigravity subagents)
           for (const sub of this.state.employees) {
             if (sub.isEphemeral && sub.bayId === bay.id && sub.sessionId === ev.sessionId) {
@@ -701,6 +731,10 @@ export class OfficeEngine extends EventEmitter {
   }
 
   private getZoneFurnitureArray(zoneId: ZoneId): FurnitureInstance[] | null {
+    if (zoneId === "boss:0") {
+      if (!this.state.bossOffice) this.state.bossOffice = createDefaultBossOffice();
+      return this.state.bossOffice.furniture;
+    }
     if (zoneId.startsWith("common:")) {
       const wing = this.state.commonWings.find((w) => w.zoneId === zoneId);
       return wing ? wing.furniture : null;
@@ -840,6 +874,12 @@ export class OfficeEngine extends EventEmitter {
   private findFurnitureById(
     instanceId: string,
   ): { item: FurnitureInstance; list: FurnitureInstance[]; index: number } | null {
+    if (this.state.bossOffice) {
+      const idx = this.state.bossOffice.furniture.findIndex((f) => f.id === instanceId);
+      if (idx !== -1) {
+        return { item: this.state.bossOffice.furniture[idx], list: this.state.bossOffice.furniture, index: idx };
+      }
+    }
     for (const w of this.state.commonWings) {
       const idx = w.furniture.findIndex((f) => f.id === instanceId);
       if (idx !== -1) return { item: w.furniture[idx], list: w.furniture, index: idx };

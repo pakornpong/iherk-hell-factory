@@ -19,6 +19,7 @@ export const VisualStateSchema = z.enum([
   "working",
   "teamwork",
   "meeting",
+  "reporting",
   "resting",
 ]);
 export type VisualState = z.infer<typeof VisualStateSchema>;
@@ -34,7 +35,7 @@ export type AssetLayer = z.infer<typeof AssetLayerSchema>;
 
 export const ZoneIdSchema = z
   .string()
-  .regex(/^(bay:[a-z0-9-_]+|common:\d+)$/i, "zoneId must be 'bay:<id>' or 'common:<row>'");
+  .regex(/^(boss:0|bay:[a-z0-9-_]+|common:\d+)$/i, "zoneId must be 'boss:0', 'bay:<id>', or 'common:<row>'");
 export type ZoneId = z.infer<typeof ZoneIdSchema>;
 
 export const TelemetryEventTypeSchema = z.enum([
@@ -95,6 +96,7 @@ export const EmployeeRecordSchema = z.object({
   isEphemeral: z.boolean().default(false),
   deskIndex: z.number().int().min(0).default(0),
   visualState: VisualStateSchema.default("resting"),
+  reportReason: z.enum(["question", "result"]).optional(),
   toolCategory: ToolCategorySchema.default("idle"),
   toolName: z.string().max(128).optional(),
   detail: z.string().max(80).optional(),
@@ -125,6 +127,13 @@ export const CommonWingRecordSchema = z.object({
 });
 export type CommonWingRecord = z.infer<typeof CommonWingRecordSchema>;
 
+export const BossOfficeRecordSchema = z.object({
+  zoneId: z.literal("boss:0").default("boss:0"),
+  displayName: z.string().min(1).max(128).default("BOSS OFFICE"),
+  furniture: z.array(FurnitureInstanceSchema).default([]),
+});
+export type BossOfficeRecord = z.infer<typeof BossOfficeRecordSchema>;
+
 export const ActivityLogEntrySchema = z.object({
   id: z.string().min(1),
   timestamp: z.number().int().nonnegative(),
@@ -140,6 +149,7 @@ export type ActivityLogEntry = z.infer<typeof ActivityLogEntrySchema>;
 export const OfficeStateSchema = z.object({
   version: z.literal(1).default(1),
   theme: ThemeModeSchema.default("night"),
+  bossOffice: BossOfficeRecordSchema.optional(),
   bays: z.array(ProjectBayRecordSchema).default([]),
   commonWings: z.array(CommonWingRecordSchema).default([]),
   employees: z.array(EmployeeRecordSchema).default([]),
@@ -159,7 +169,7 @@ export type CatalogEntry = z.infer<typeof CatalogEntrySchema>;
 
 export interface ZoneBounds {
   zoneId: ZoneId;
-  kind: "common" | "bay";
+  kind: "boss" | "common" | "bay";
   bayId?: string;
   row: number;
   col: number;
