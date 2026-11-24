@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "divider-low-glass",
+  "category": "architecture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-night",
+  "materials": {
+    "metal_dark": { "color": "#1d2432", "kind": "metal" },
+    "panel_base": { "color": "#283347", "kind": "matte" },
+    "glass_frost": { "color": "#2f5f87", "kind": "glass" },
+    "trim_cyan": { "color": "#38bdf8", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.25 }
+  },
+  "ops": [
+    { "op": "box", "from": [0, 14, 0], "to": [31, 17, 2], "material": "metal_dark", "part": "base" },
+    { "op": "box", "from": [1, 14, 3], "to": [30, 17, 10], "material": "panel_base", "part": "lower" },
+    { "op": "box", "from": [1, 15, 11], "to": [30, 16, 16], "material": "glass_frost", "part": "glass" },
+    { "op": "box", "from": [0, 14, 0], "to": [2, 17, 17], "material": "metal_dark", "part": "post_l" },
+    { "op": "box", "from": [29, 14, 0], "to": [31, 17, 17], "material": "metal_dark", "part": "post_r" },
+    { "op": "box", "from": [0, 14, 17], "to": [31, 17, 18], "material": "metal_dark", "part": "rail" },
+    { "op": "box", "from": [4, 15, 10], "to": [27, 16, 10], "material": "trim_cyan", "part": "accent" }
+  ]
+}

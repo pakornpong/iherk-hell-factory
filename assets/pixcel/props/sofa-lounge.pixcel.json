@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "sofa-lounge",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [2, 1],
+  "palette": "office-night",
+  "materials": {
+    "wood_leg": { "color": "#4b3121", "kind": "wood" },
+    "sofa_dark": { "color": "#1e3a52", "kind": "matte" },
+    "sofa_cushion": { "color": "#2b5272", "kind": "matte" },
+    "pillow_accent": { "color": "#d97757", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [4, 5, 0], "to": [7, 8, 3], "material": "wood_leg", "part": "legs" },
+    { "op": "box", "from": [56, 5, 0], "to": [59, 8, 3], "material": "wood_leg", "part": "legs" },
+    { "op": "box", "from": [4, 23, 0], "to": [7, 26, 3], "material": "wood_leg", "part": "legs" },
+    { "op": "box", "from": [56, 23, 0], "to": [59, 26, 3], "material": "wood_leg", "part": "legs" },
+    { "op": "box", "from": [2, 4, 4], "to": [61, 27, 10], "material": "sofa_dark", "part": "frame" },
+    { "op": "box", "from": [7, 10, 11], "to": [30, 26, 13], "material": "sofa_cushion", "part": "cushion_l" },
+    { "op": "box", "from": [33, 10, 11], "to": [56, 26, 13], "material": "sofa_cushion", "part": "cushion_r" },
+    { "op": "box", "from": [2, 4, 11], "to": [61, 10, 24], "material": "sofa_dark", "part": "backrest" },
+    { "op": "box", "from": [7, 10, 14], "to": [56, 11, 22], "material": "sofa_cushion", "part": "back_cushion" },
+    { "op": "box", "from": [2, 4, 11], "to": [7, 27, 18], "material": "sofa_dark", "part": "arm_l" },
+    { "op": "box", "from": [56, 4, 11], "to": [61, 27, 18], "material": "sofa_dark", "part": "arm_r" },
+    { "op": "box", "from": [9, 12, 14], "to": [16, 17, 20], "material": "pillow_accent", "part": "pillow" }
+  ]
+}

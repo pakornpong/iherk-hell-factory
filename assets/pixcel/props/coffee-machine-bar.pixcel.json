@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "coffee-machine-bar",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [2, 1],
+  "palette": "office-night",
+  "materials": {
+    "wood_dark": { "color": "#4b3121", "kind": "wood" },
+    "wood_top": { "color": "#6b442a", "kind": "wood" },
+    "metal_dark": { "color": "#1a202c", "kind": "metal" },
+    "steel": { "color": "#5b677d", "kind": "metal" },
+    "mug_white": { "color": "#e2e8f0", "kind": "matte" },
+    "coffee_dark": { "color": "#3b1f12", "kind": "matte" },
+    "led_amber": { "color": "#f59e0b", "kind": "emissive", "glowRadius": 2, "glowIntensity": 0.45 },
+    "led_green": { "color": "#22c55e", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.4 },
+    "steam": { "color": "#cbd5e1", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.15 }
+  },
+  "ops": [
+    { "op": "box", "from": [2, 4, 0], "to": [61, 27, 14], "material": "wood_dark", "part": "cabinet" },
+    { "op": "box", "from": [1, 3, 15], "to": [62, 28, 17], "material": "wood_top", "part": "counter" },
+    { "op": "box", "from": [8, 6, 18], "to": [28, 22, 31], "material": "metal_dark", "part": "machine" },
+    { "op": "box", "from": [10, 16, 19], "to": [26, 22, 26], "material": "steel", "part": "machine_face" },
+    { "op": "box", "from": [11, 22, 28], "to": [14, 22, 29], "material": "led_green", "part": "leds" },
+    { "op": "box", "from": [17, 22, 28], "to": [20, 22, 29], "material": "led_amber", "part": "leds" },
+    { "op": "box", "from": [36, 14, 18], "to": [41, 19, 22], "material": "mug_white", "part": "mug1" },
+    { "op": "box", "from": [37, 15, 22], "to": [40, 18, 22], "material": "coffee_dark", "part": "mug1" },
+    { "op": "box", "from": [46, 16, 18], "to": [51, 21, 22], "material": "mug_white", "part": "mug2" },
+    { "op": "box", "from": [47, 17, 22], "to": [50, 20, 22], "material": "coffee_dark", "part": "mug2" }
+  ],
+  "frames": [
+    {
+      "name": "idle_0",
+      "durationMs": 700,
+      "ops": [
+        { "op": "voxel", "at": [38, 16, 25], "material": "steam" },
+        { "op": "voxel", "at": [39, 16, 27], "material": "steam" }
+      ]
+    },
+    {
+      "name": "idle_1",
+      "durationMs": 700,
+      "ops": [
+        { "op": "voxel", "at": [39, 16, 26], "material": "steam" },
+        { "op": "voxel", "at": [38, 16, 29], "material": "steam" }
+      ]
+    }
+  ]
+}

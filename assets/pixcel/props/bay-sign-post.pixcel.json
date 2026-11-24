@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "bay-sign-post",
+  "category": "decor",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-night",
+  "materials": {
+    "metal_dark": { "color": "#1a202c", "kind": "metal" },
+    "metal_mid": { "color": "#334155", "kind": "metal" },
+    "screen_bg": { "color": "#0f2942", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.25 },
+    "accent_cyan": { "color": "#38bdf8", "kind": "emissive", "glowRadius": 2, "glowIntensity": 0.5 }
+  },
+  "ops": [
+    { "op": "box", "from": [11, 11, 0], "to": [20, 20, 2], "material": "metal_dark", "part": "base" },
+    { "op": "box", "from": [14, 14, 3], "to": [17, 17, 17], "material": "metal_mid", "part": "pole" },
+    { "op": "box", "from": [8, 13, 18], "to": [23, 18, 26], "material": "metal_dark", "part": "sign_frame" },
+    { "op": "box", "from": [9, 18, 19], "to": [22, 18, 25], "material": "screen_bg", "part": "sign_face" },
+    { "op": "box", "from": [10, 18, 23], "to": [21, 18, 24], "material": "accent_cyan", "part": "sign_glow" }
+  ]
+}

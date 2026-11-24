@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "water-cooler",
+  "category": "decor",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-night",
+  "materials": {
+    "body_light": { "color": "#94a3b8", "kind": "metal" },
+    "body_dark": { "color": "#334155", "kind": "metal" },
+    "jug_glass": { "color": "#38bdf8", "kind": "glass" },
+    "tap_red": { "color": "#ef4444", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.3 },
+    "tap_blue": { "color": "#3b82f6", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.3 }
+  },
+  "ops": [
+    { "op": "box", "from": [9, 9, 0], "to": [22, 22, 22], "material": "body_light", "part": "cabinet" },
+    { "op": "box", "from": [11, 21, 14], "to": [20, 22, 19], "material": "body_dark", "part": "recess" },
+    { "op": "box", "from": [12, 22, 18], "to": [13, 22, 19], "material": "tap_red", "part": "taps" },
+    { "op": "box", "from": [18, 22, 18], "to": [19, 22, 19], "material": "tap_blue", "part": "taps" },
+    { "op": "cylinder", "center": [15, 15], "zFrom": 23, "zTo": 34, "radius": 5, "material": "jug_glass", "part": "jug" }
+  ]
+}

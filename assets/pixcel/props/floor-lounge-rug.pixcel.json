@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "floor-lounge-rug",
+  "category": "architecture",
+  "layer": "floor",
+  "outlineMode": "none",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-night",
+  "materials": {
+    "rug_base": { "color": "#26384d", "kind": "matte" },
+    "rug_border": { "color": "#344f6b", "kind": "matte" },
+    "rug_weave": { "color": "#1e2e40", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [0, 0, 0], "to": [31, 31, 0], "material": "rug_base" },
+    { "op": "hollowBox", "from": [1, 1, 0], "to": [30, 30, 0], "thickness": 2, "material": "rug_border" },
+    { "op": "box", "from": [6, 6, 0], "to": [25, 7, 0], "material": "rug_weave" },
+    { "op": "box", "from": [6, 15, 0], "to": [25, 16, 0], "material": "rug_weave" },
+    { "op": "box", "from": [6, 24, 0], "to": [25, 25, 0], "material": "rug_weave" }
+  ]
+}
