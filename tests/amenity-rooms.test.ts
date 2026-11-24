@@ -103,8 +103,8 @@ describe("themed amenity rooms", () => {
       expect(cells.size).toBe(campus.zones.length);
       for (const z of amenities) {
         expect(z.amenityTheme).toBeDefined();
-        expect((z.col + 1) * 7 - 1).toBeLessThanOrEqual(campus.widthTiles);
-        expect((z.row + 1) * 7 - 1).toBeLessThanOrEqual(campus.depthTiles);
+        expect((z.col + 1) * ZONE_SIZE).toBeLessThanOrEqual(campus.widthTiles);
+        expect((z.row + 1) * ZONE_SIZE).toBeLessThanOrEqual(campus.depthTiles);
       }
     }
   });

@@ -800,6 +800,36 @@ export class IsoRenderer {
       });
     }
 
+    // Room walls stand on the line between two tiles, so they ride the same depth sort as furniture at a
+    // half-tile offset; that keeps them correctly in front of the room behind and behind the room in front.
+    for (const w of campus.wallSegments ?? []) {
+      const sprite = atlas.getFrame(theme, w.assetId, w.direction, animFrameForAsset(w.assetId));
+      if (!sprite) continue;
+      const [wx, wy] = toAnchorWorld(w.rx, w.ry, sprite.footprintTiles[0], sprite.footprintTiles[1]);
+      if (!isInWorldBounds(wx, wy, bounds)) continue;
+      // The sprite is drawn from (wx, wy), but for depth sorting the wall is a thin plane standing on
+      // the boundary line, not a tile-sized box: that keeps it in front of the room behind it and behind
+      // whatever stands in the room in front, instead of a deep desk covering it.
+      const thin = 0.1;
+      const alongY = w.axis === "y";
+      const alongX = w.axis === "x";
+      unified.push({
+        id: `w:${w.id}`,
+        kind: "furniture",
+        x: alongX ? w.rx : w.rx + 0.5 - thin / 2,
+        y: alongY ? w.ry : w.ry + 0.5 - thin / 2,
+        footprintX: alongX ? sprite.footprintTiles[0] : thin,
+        footprintY: alongY ? sprite.footprintTiles[1] : thin,
+        sprite,
+        wx,
+        wy,
+        zoneId: "",
+        assetId: w.assetId,
+        furnitureId: w.id,
+      });
+    }
+
+
     // Boss avatar seated permanently at Boss Office (0,0) executive chair facing "se" (+Y toward desk)
     const bossZone = campus.zones.find((z) => z.kind === "boss");
     if (bossZone) {

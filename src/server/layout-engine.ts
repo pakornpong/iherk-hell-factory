@@ -20,11 +20,11 @@ import { bayLayoutKey, commonLayoutKey, getRoomLayout, toFurniture } from "../sh
 
 export const ZONE_SIZE = 6;
 /**
- * Gap between neighbouring zones: a walled room's wall + 1 walkway tile + the next room's wall.
- * Between open-plan areas (no walls) the whole gap is walkway; inside one lot it is shared floor.
+ * Gap between neighbouring zones: none. Rooms sit directly against each other and their shared wall
+ * stands on the line between the two tiles rather than taking a tile of its own.
  */
-export const ZONE_GAP = 3;
-/** 6-tile zone + 3-tile gap. */
+export const ZONE_GAP = 0;
+/** 6-tile zone, no gap: walls live on the boundary line. */
 export const MODULE_PITCH_X = ZONE_SIZE + ZONE_GAP;
 export const MODULE_PITCH_Y = MODULE_PITCH_X;
 /** Fixed slot of the shared co-working room where every project's subagents sit (next to the Boss Office). */
@@ -335,8 +335,9 @@ export function computeCampusLayout(
     pushFurniture(cZone, (wingByRow.get(cIdx) ?? createDefaultCommonWing(cIdx)).furniture);
   });
 
-  // 3b. Themed amenity rooms (game, music, gym, lab, ...) take the free cells, one per theme.
-  packed.free.slice(0, AMENITY_THEME_ORDER.length).forEach(([col, row], idx) => {
+  // 3b. Themed amenity rooms (game, music, gym, lab, ...) fill EVERY free cell, cycling the themes, so
+  // the plan never leaves an empty slot showing as bare walkway inside the campus.
+  packed.free.forEach(([col, row], idx) => {
     const amenityTheme = getAmenityTheme(idx);
     const aZone: ZoneBounds = {
       zoneId: `amenity:${idx}`,
@@ -357,7 +358,7 @@ export function computeCampusLayout(
   // projects inside a lot sit IN_LOT_GAP (1 tile: the low divider line) apart, while different lots keep
   // a ZONE_GAP walkway (wall + 1 walkway tile + wall). Blocks are compacted toward the Boss Office corner,
   // first along x, then along y, so the plan stays tight instead of following a fixed 9-tile grid.
-  const IN_LOT_GAP = 1;
+  const IN_LOT_GAP = 0;
   type Block = { key: string; col: number; row: number; w: number; h: number; x: number; y: number; W: number; H: number };
   const blocks = new Map<string, Block>();
   const blockKeyOf = (z: ZoneBounds) => (z.kind === "bay" && z.lotId ? z.lotId : z.zoneId);
@@ -406,140 +407,120 @@ export function computeCampusLayout(
   }
   for (const { zone, items } of pendingFurniture) placeFurniture(zone, items);
 
-  // Square campus just large enough for every block
-  const sideTiles = Math.max(...blockList.map((b) => Math.max(b.x + b.W, b.y + b.H)));
-  const widthTiles = sideTiles;
-  const depthTiles = sideTiles;
+  // Campus is the real bounding box of every block; width and depth are independent (no square padding)
+  const widthTiles = Math.max(...blockList.map((b) => b.x + b.W));
+  const depthTiles = Math.max(...blockList.map((b) => b.y + b.H));
 
-  // 4. Rooms, corridors and walls are resolved per tile.
-  // Floor that belongs to a zone: its 6x6 interior, plus the 1-tile seam to a neighbouring project of the
-  // same lot (where the low divider stands). Everything else is walkway.
-  // Every lot (a department's projects, Boss Office, lounges, themed rooms) is a glass-walled room with a
-  // 2-tile doorway at offset 2..3 of every outer side and corner posts closing each box. Only the
-  // co-working area is open plan (face-to-face desk pods, no walls).
+  // 4. Rooms and walls. Zones are packed flush (ZONE_GAP = 0), so every tile inside the campus is room
+  // floor and a wall is no longer a tile of its own: it stands ON the line between two tiles. Each
+  // segment renders half a tile back from the tile it fronts and closes that single step for walking,
+  // so neither room loses floor to it and furniture can sit right against it.
   const zoneAt = new Map<string, ZoneBounds>();
   for (const z of zones) zoneAt.set(`${z.col},${z.row}`, z);
 
-  const sameDepartment = (a?: ZoneBounds, b?: ZoneBounds): boolean =>
-    Boolean(a && b && a.lotId && a.lotId === b.lotId);
   // Every zone is a walled room except the co-working area, which is an open bench of face-to-face desks
   const isEnclosedKind = (z?: ZoneBounds): boolean => Boolean(z && z.kind !== "cowork");
 
   const interiorTiles = new Map<string, ZoneBounds>();
   for (const z of zones) {
-    for (let y = 0; y < ZONE_SIZE; y++) for (let x = 0; x < ZONE_SIZE; x++) interiorTiles.set(`${z.originX + x},${z.originY + y}`, z);
-    const right = zoneAt.get(`${z.col + 1},${z.row}`);
-    const below = zoneAt.get(`${z.col},${z.row + 1}`);
-    const diag = zoneAt.get(`${z.col + 1},${z.row + 1}`);
-    if (sameDepartment(z, right)) {
-      for (let y = 0; y < ZONE_SIZE; y++) interiorTiles.set(`${z.originX + ZONE_SIZE},${z.originY + y}`, z);
-    }
-    if (sameDepartment(z, below)) {
-      for (let x = 0; x < ZONE_SIZE; x++) interiorTiles.set(`${z.originX + x},${z.originY + ZONE_SIZE}`, z);
-    }
-    if (sameDepartment(z, right) && sameDepartment(z, below) && sameDepartment(z, diag)) {
-      interiorTiles.set(`${z.originX + ZONE_SIZE},${z.originY + ZONE_SIZE}`, z);
-    }
+    for (let y = 0; y < ZONE_SIZE; y++)
+      for (let x = 0; x < ZONE_SIZE; x++) interiorTiles.set(`${z.originX + x},${z.originY + y}`, z);
   }
-  /** Zone whose floor a tile belongs to (room interior or a same-lot seam), else undefined (walkway). */
-  const interiorZoneAt = (tx: number, ty: number): ZoneBounds | undefined => interiorTiles.get(`${tx},${ty}`);
-
-  const worldWallSet = new Set<string>();
-  const addRoomWallTile = (
-    id: string,
-    zoneId: ZoneId,
-    tx: number,
-    ty: number,
-    assetId: string,
-    direction: Direction,
-  ) => {
-    const key = `${tx},${ty}`;
-    if (worldWallSet.has(key)) return;
-    worldWallSet.add(key);
-    worldFurniture.push({
-      id,
-      zoneId,
-      lx: 5,
-      ly: 5,
-      assetId,
-      direction,
-      layer: "object",
-      placedBy: "system",
-      tx,
-      ty,
-      footprintTiles: [1, 1],
-    });
-  };
-
-  const isDoorOffset = (o: number) => o === 2 || o === 3;
-  const cubicleDividerAssetId = theme === "office" ? "divider-cubicle-amber" : "divider-low-glass";
-
-  /** Interior of an enclosed (walled) room at this tile, else undefined. */
+  /** Zone whose floor this tile is, else undefined (outside the campus footprint). */
+  const interiorZoneAt = (tx: number, ty: number): ZoneBounds | undefined =>
+    interiorTiles.get(`${tx},${ty}`);
+  /** Same, but only for rooms that are actually walled. */
   const enclosedAt = (tx: number, ty: number): ZoneBounds | undefined => {
     const z = interiorZoneAt(tx, ty);
     return isEnclosedKind(z) ? z : undefined;
   };
 
-  // 4a. Straight walls on every non-room tile that touches an enclosed room's floor
-  for (let ty = 0; ty < depthTiles; ty++) {
-    for (let tx = 0; tx < widthTiles; tx++) {
-      if (interiorZoneAt(tx, ty)) continue;
-      const left = enclosedAt(tx - 1, ty);
-      const right = enclosedAt(tx + 1, ty);
-      const up = enclosedAt(tx, ty - 1);
-      const down = enclosedAt(tx, ty + 1);
-      const xSide = left ?? right;
-      const ySide = up ?? down;
-      if (xSide && ySide) {
-        addRoomWallTile(`sys-wall-${tx}-${ty}`, xSide.zoneId, tx, ty, "room-junction-corner", left && up ? "nw" : left ? "sw" : up ? "ne" : "se");
-      } else if (xSide) {
-        // Vertical wall (constant tx); doorway where the room side is at local offset 2..3
-        if (isDoorOffset(ty - xSide.originY)) continue;
-        addRoomWallTile(`sys-wall-${tx}-${ty}`, xSide.zoneId, tx, ty, "room-wall-glass", "sw");
-      } else if (ySide) {
-        if (isDoorOffset(tx - ySide.originX)) continue;
-        addRoomWallTile(`sys-wall-${tx}-${ty}`, ySide.zoneId, tx, ty, "room-wall-glass", "se");
-      }
+  // One tile of doorway per side. A 2-tile opening on all four sides of a 6-tile room left only
+  // two-tile stubs at the corners, so rooms read as free-standing X partitions instead of rooms.
+  const isDoorOffset = (o: number) => o === 2;
+  const cubicleDividerAssetId = theme === "office" ? "divider-cubicle-amber" : "divider-low-glass";
+
+  const wallSegments: ComputedCampus["wallSegments"] = [];
+  /** Which boundary lines carry a full-height wall, so junctions know how many arms meet. */
+  const vWallAt = new Set<string>();
+  const hWallAt = new Set<string>();
+
+  // 4a. One segment per boundary between two different rooms (and around the campus edge).
+  // Vertical lines: x = bx separates tile (bx - 1, y) from (bx, y).
+  for (let bx = 0; bx <= widthTiles; bx++) {
+    for (let y = 0; y < depthTiles; y++) {
+      const left = interiorZoneAt(bx - 1, y);
+      const right = interiorZoneAt(bx, y);
+      if (left === right) continue;
+      // Campus edge: the diorama's own rear walls cover the back, the front is the open cutaway
+      if (!left || !right) continue;
+      const owner = enclosedAt(bx - 1, y) ?? enclosedAt(bx, y);
+      if (!owner) continue;
+      if (isDoorOffset(y - owner.originY)) continue; // 2-tile doorway on every side
+      const sameLot = Boolean(left && right && left.lotId && left.lotId === right.lotId);
+      wallSegments.push({
+        id: `sys-wall-v-${bx}-${y}`,
+        axis: "y",
+        rx: bx - 0.5,
+        ry: y,
+        assetId: sameLot ? cubicleDividerAssetId : "room-wall-glass",
+        direction: "sw",
+        blocks: sameLot ? null : { x: bx, y, side: "w" },
+      });
+      if (!sameLot) vWallAt.add(`${bx},${y}`);
+    }
+  }
+  // Horizontal lines: y = by separates tile (x, by - 1) from (x, by).
+  for (let by = 0; by <= depthTiles; by++) {
+    for (let x = 0; x < widthTiles; x++) {
+      const up = interiorZoneAt(x, by - 1);
+      const down = interiorZoneAt(x, by);
+      if (up === down) continue;
+      if (!up || !down) continue;
+      const owner = enclosedAt(x, by - 1) ?? enclosedAt(x, by);
+      if (!owner) continue;
+      if (isDoorOffset(x - owner.originX)) continue;
+      const sameLot = Boolean(up && down && up.lotId && up.lotId === down.lotId);
+      wallSegments.push({
+        id: `sys-wall-h-${x}-${by}`,
+        axis: "x",
+        rx: x,
+        ry: by - 0.5,
+        assetId: sameLot ? cubicleDividerAssetId : "room-wall-glass",
+        direction: "se",
+        blocks: sameLot ? null : { x, y: by, side: "n" },
+      });
+      if (!sameLot) hWallAt.add(`${x},${by}`);
     }
   }
 
-  // 4b. Corner posts where two walls meet diagonally to a room's corner
-  for (let ty = 0; ty < depthTiles; ty++) {
-    for (let tx = 0; tx < widthTiles; tx++) {
-      const key = `${tx},${ty}`;
-      if (worldWallSet.has(key) || interiorZoneAt(tx, ty)) continue;
-      const negX = worldWallSet.has(`${tx - 1},${ty}`);
-      const posX = worldWallSet.has(`${tx + 1},${ty}`);
-      const negY = worldWallSet.has(`${tx},${ty - 1}`);
-      const posY = worldWallSet.has(`${tx},${ty + 1}`);
-      if (!((negX || posX) && (negY || posY))) continue;
-      const diagZone =
-        enclosedAt(tx - 1, ty - 1) ?? enclosedAt(tx + 1, ty - 1) ?? enclosedAt(tx - 1, ty + 1) ?? enclosedAt(tx + 1, ty + 1);
-      if (!diagZone) continue;
-      let dir: Direction;
-      if (posX && posY) dir = "se";
-      else if (posY && negX) dir = "sw";
-      else if (negX && negY) dir = "nw";
-      else dir = "ne";
-      addRoomWallTile(`sys-wall-c-${tx}-${ty}`, diagZone.zoneId, tx, ty, "room-junction-corner", dir);
-    }
-  }
-
-  // 4c. Low cubicle dividers between projects of one lot (keeping a 2-tile pass-through at offset 2..3)
-  for (const z of zones) {
-    const right = zoneAt.get(`${z.col + 1},${z.row}`);
-    if (sameDepartment(z, right)) {
-      for (let o = 0; o < ZONE_SIZE; o++) {
-        if (isDoorOffset(o)) continue;
-        addRoomWallTile(`sys-div-v-${z.col}-${z.row}-${o}`, z.zoneId, z.originX + ZONE_SIZE, z.originY + o, cubicleDividerAssetId, "sw");
+  // 4b. Junction pieces where two wall lines cross, so runs meet instead of ending in mid-air.
+  // The quadrant piece's arms point +x/+y at direction "se"; each further step rotates 90 degrees CW.
+  for (let bx = 0; bx <= widthTiles; bx++) {
+    for (let by = 0; by <= depthTiles; by++) {
+      const armNegY = vWallAt.has(`${bx},${by - 1}`);
+      const armPosY = vWallAt.has(`${bx},${by}`);
+      const armNegX = hWallAt.has(`${bx - 1},${by}`);
+      const armPosX = hWallAt.has(`${bx},${by}`);
+      const arms = [armNegX, armPosX, armNegY, armPosY].filter(Boolean).length;
+      if (arms < 2) continue;
+      const straightThrough = (armNegX && armPosX && arms === 2) || (armNegY && armPosY && arms === 2);
+      if (straightThrough) continue; // the two segments already meet along one line
+      let assetId = "room-junction-cross";
+      let direction: Direction = "se";
+      if (arms === 2) {
+        assetId = "room-junction-corner";
+        direction = armPosX && armPosY ? "se" : armNegX && armPosY ? "sw" : armNegX && armNegY ? "nw" : "ne";
       }
-    }
-    const below = zoneAt.get(`${z.col},${z.row + 1}`);
-    if (sameDepartment(z, below)) {
-      for (let o = 0; o < ZONE_SIZE; o++) {
-        if (isDoorOffset(o)) continue;
-        addRoomWallTile(`sys-div-h-${z.col}-${z.row}-${o}`, z.zoneId, z.originX + o, z.originY + ZONE_SIZE, cubicleDividerAssetId, "se");
-      }
+      wallSegments.push({
+        id: `sys-wall-j-${bx}-${by}`,
+        axis: "point",
+        rx: bx - 0.5,
+        ry: by - 0.5,
+        assetId,
+        direction,
+        blocks: null,
+      });
     }
   }
 
@@ -567,7 +548,8 @@ export function computeCampusLayout(
   for (let ty = 0; ty < depthTiles; ty++) {
     for (let tx = 0; tx < widthTiles; tx++) {
       const key = `${tx},${ty}`;
-      // Walls + corridors between rooms get the hallway tile so each room reads as its own zone
+      // A wall tile carries the floor of the room it encloses, so the strip either side of the wall reads
+      // as room floor instead of dead corridor. Only tiles touching no room at all stay walkway.
       const isCorridor = !interiorZoneAt(tx, ty);
       const assetId = isCorridor
         ? "floor-corridor-tile"
@@ -709,7 +691,7 @@ export function computeCampusLayout(
     });
   }
 
-  return { widthTiles, depthTiles, zones, floors, walls, wallDecor, worldFurniture };
+  return { widthTiles, depthTiles, zones, floors, walls, wallDecor, wallSegments, worldFurniture };
 }
 
 export function resolveWorldToZone(

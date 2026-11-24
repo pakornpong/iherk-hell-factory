@@ -323,6 +323,22 @@ export interface ComputedCampus {
   floors: Array<{ tx: number; ty: number; assetId: string; direction: Direction }>;
   walls: Array<{ tx: number; ty: number; assetId: string; edge: "nw" | "ne" | "corner" }>;
   wallDecor: Array<{ tx: number; ty: number; assetId: string; edge: "nw" | "ne" }>;
+  /**
+   * Room walls that stand ON the line between two tiles rather than inside a tile of their own.
+   * `rx`/`ry` are fractional render coordinates (half a tile back from the tile they front), and
+   * `blocks` is the tile edge they close for pathfinding: the step from (x-1,y) to (x,y) for "w",
+   * or from (x,y-1) to (x,y) for "n".
+   */
+  wallSegments: Array<{
+    id: string;
+    /** Which way the piece runs: along y ("y"), along x ("x"), or a crossing that is just a point. */
+    axis: "x" | "y" | "point";
+    rx: number;
+    ry: number;
+    assetId: string;
+    direction: Direction;
+    blocks: { x: number; y: number; side: "w" | "n" } | null;
+  }>;
   worldFurniture: WorldFurnitureInstance[];
 }
 

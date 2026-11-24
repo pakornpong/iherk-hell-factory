@@ -281,14 +281,15 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
 
     // Office theme floors, room threshold strips, boss rug, architectural room walls, junctions & same-dept amber dividers
     expect(officeCampus.floors.some((f) => f.assetId === "floor-office-carpet")).toBe(true);
-    expect(officeCampus.floors.some((f) => f.assetId === "floor-corridor-tile")).toBe(true);
+    // Rooms sit flush now: every tile inside the campus belongs to a room, so no walkway tile is left
+    expect(officeCampus.floors.some((f) => f.assetId === "floor-corridor-tile")).toBe(false);
     expect(officeCampus.floors.some((f) => f.assetId === "floor-boss-rug")).toBe(true);
-    expect(officeCampus.worldFurniture.some((f) => f.assetId === "room-wall-glass")).toBe(true);
-    // Walled rooms are closed glass boxes with corner posts; projects of one department share an
-    // open-plan lot split by low amber cubicle dividers
-    expect(officeCampus.worldFurniture.some((f) => f.assetId === "room-junction-corner")).toBe(true);
-    expect(officeCampus.worldFurniture.some((f) => f.assetId === "room-junction-cross")).toBe(false);
-    expect(officeCampus.worldFurniture.some((f) => f.assetId === "divider-cubicle-amber")).toBe(true);
+    // Walls stand on the boundary lines, so they are wallSegments rather than tile furniture
+    expect(officeCampus.wallSegments.some((w) => w.assetId === "room-wall-glass")).toBe(true);
+    // Four rooms meeting at a crossing need the full cross so the wall never breaks
+    expect(officeCampus.wallSegments.some((w) => w.assetId === "room-junction-cross")).toBe(true);
+    // Projects of one department share an open-plan lot split by low amber cubicle dividers
+    expect(officeCampus.wallSegments.some((w) => w.assetId === "divider-cubicle-amber")).toBe(true);
     expect(officeCampus.worldFurniture.some((f) => f.assetId === "filing-cabinet")).toBe(true);
     expect(officeCampus.worldFurniture.some((f) => f.assetId === "printer-copier")).toBe(true);
     expect(officeCampus.worldFurniture.some((f) => f.assetId === "robot-vacuum")).toBe(true);
@@ -322,8 +323,8 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
       "night",
     );
     expect(nightCampus.floors.some((f) => f.assetId === "floor-wood-plank")).toBe(true);
-    expect(nightCampus.worldFurniture.some((f) => f.assetId === "room-wall-glass")).toBe(true);
-    expect(nightCampus.worldFurniture.some((f) => f.assetId === "room-junction-corner")).toBe(true);
+    expect(nightCampus.wallSegments.some((w) => w.assetId === "room-wall-glass")).toBe(true);
+    expect(nightCampus.wallSegments.some((w) => w.assetId === "room-junction-cross")).toBe(true);
   });
 
   it("uses Phase 2 1:1 facing directions in OfficeSimulation, supports AI Org roles, manageBay(department), and 4-dept DemoSimulator", async () => {

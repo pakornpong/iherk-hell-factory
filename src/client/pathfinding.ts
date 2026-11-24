@@ -4,6 +4,10 @@ export interface WalkableGrid {
   width: number;
   height: number;
   blocked: Uint8Array;
+  /** Wall on a tile boundary: blockedW[y * width + x] closes the step between (x - 1, y) and (x, y). */
+  blockedW?: Uint8Array;
+  /** Wall on a tile boundary: blockedN[y * width + x] closes the step between (x, y - 1) and (x, y). */
+  blockedN?: Uint8Array;
 }
 
 const PASSABLE_INTERACTION_ASSETS = new Set(["chair-office-swivel"]);
@@ -27,7 +31,15 @@ export function buildWalkableGrid(campus: ComputedCampus): WalkableGrid {
       }
     }
   }
-  return { width, height, blocked };
+  const blockedW = new Uint8Array(width * height);
+  const blockedN = new Uint8Array(width * height);
+  for (const w of campus.wallSegments ?? []) {
+    if (!w.blocks) continue;
+    const { x, y, side } = w.blocks;
+    if (x < 0 || x >= width || y < 0 || y >= height) continue;
+    (side === "w" ? blockedW : blockedN)[y * width + x] = 1;
+  }
+  return { width, height, blocked, blockedW, blockedN };
 }
 
 export function findTilePath(
@@ -112,6 +124,11 @@ export function findTilePath(
       const nIdx = idx(nx, ny);
       if (closed[nIdx]) continue;
       if (grid.blocked[nIdx] !== 0) continue;
+      // A wall sits on the boundary, not on a tile: check the one step being taken
+      if (dx === 1 && grid.blockedW?.[nIdx]) continue;
+      if (dx === -1 && grid.blockedW?.[current]) continue;
+      if (dy === 1 && grid.blockedN?.[nIdx]) continue;
+      if (dy === -1 && grid.blockedN?.[current]) continue;
 
       const tentativeG = gScore[current] + 1;
       if (tentativeG < gScore[nIdx]) {

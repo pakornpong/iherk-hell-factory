@@ -65,43 +65,56 @@ describe("Corridors between rooms & shared co-working room", () => {
     campus.worldFurniture.some((f) => f.tx === x && f.ty === y && f.assetId.startsWith("room-"));
   const floorAt = (x: number, y: number) => campus.floors.find((f) => f.tx === x && f.ty === y)?.assetId;
 
-  it("keeps a narrow walkway between areas of different zones", () => {
+  it("packs areas flush: rooms share a boundary line, no tile is spent on the wall", () => {
     expect(MODULE_PITCH_X).toBe(ZONE_SIZE + ZONE_GAP);
-    expect(ZONE_GAP).toBe(3);
+    expect(ZONE_GAP).toBe(0);
+    const boss = campus.zones.find((z) => z.kind === "boss")!;
     const cowork = campus.zones.find((z) => z.kind === "cowork")!;
-    // Boss Office (walled) | wall at 6 | walkway 7..8 | open-plan co-working from 9
-    expect(cowork.originX).toBe(ZONE_SIZE + ZONE_GAP);
-    expect(wallAt(ZONE_SIZE, 0)).toBe(true);
-    for (const tx of [ZONE_SIZE + 1, ZONE_SIZE + 2]) {
-      for (let ty = 0; ty < ZONE_SIZE; ty++) {
-        expect(walkable(tx, ty)).toBe(true);
-        expect(floorAt(tx, ty)).toBe("floor-corridor-tile");
-      }
+    // Boss Office floor ends at 5 and the next room's floor starts at 6: the wall stands on that line
+    expect(cowork.originX).toBe(boss.originX + ZONE_SIZE);
+    expect(wallAt(ZONE_SIZE, 0)).toBe(false); // no wall occupies a tile any more
+    expect(
+      campus.wallSegments.some((w) => w.blocks?.side === "w" && w.blocks.x === ZONE_SIZE && w.blocks.y === 0),
+    ).toBe(true);
+    // Nothing inside the plan is walkway: every tile is some room's floor
+    for (let ty = 0; ty < ZONE_SIZE; ty++) {
+      expect(floorAt(ZONE_SIZE, ty)).not.toBe("floor-corridor-tile");
     }
   });
 
-  it("walls every lot (with 2-tile doorways onto the walkway); only co-working is open plan", () => {
-    const rightWallBlocked = [0, 1, 2, 3, 4, 5].filter((o) => !walkable(ZONE_SIZE, o));
-    expect(rightWallBlocked).toEqual([0, 1, 4, 5]);
-    const glassOn = (kind: string) =>
-      campus.worldFurniture.some(
-        (f) =>
-          campus.zones.some((z) => z.zoneId === f.zoneId && z.kind === kind) &&
-          (f.assetId === "room-wall-glass" || f.assetId === "room-junction-corner"),
-      );
-    expect(glassOn("bay")).toBe(true);
-    expect(glassOn("cowork")).toBe(false);
+  it("walls every lot (with a 1-tile doorway); only co-working is open plan", () => {
+    // The Boss Office's right-hand line is walled except the doorway at offset 2
+    const closedOffsets = [0, 1, 2, 3, 4, 5].filter((o) =>
+      campus.wallSegments.some((w) => w.blocks?.side === "w" && w.blocks.x === ZONE_SIZE && w.blocks.y === o),
+    );
+    expect(closedOffsets).toEqual([0, 1, 3, 4, 5]);
+    expect(campus.wallSegments.some((w) => w.assetId === "room-wall-glass")).toBe(true);
+    // Co-working is open plan: no wall closes a step between two of its own tiles
+    const cowork = campus.zones.find((z) => z.kind === "cowork")!;
+    const insideCowork = (x: number, y: number) =>
+      x > cowork.originX &&
+      x < cowork.originX + ZONE_SIZE &&
+      y >= cowork.originY &&
+      y < cowork.originY + ZONE_SIZE;
+    expect(campus.wallSegments.some((w) => w.blocks && insideCowork(w.blocks.x, w.blocks.y))).toBe(false);
   });
 
-  it("packs projects of one department tight: only a 1-tile low divider line between them", () => {
+  it("packs projects of one department tight: only a low divider line between them", () => {
     const bays = campus.zones.filter((z) => z.kind === "bay");
     const a = bays.find((z) => bays.some((b) => b.col === z.col + 1 && b.row === z.row))!;
     const b = bays.find((z) => z.col === a.col + 1 && z.row === a.row)!;
-    expect(b.originX - (a.originX + ZONE_SIZE)).toBe(1); // neighbouring project starts right after the divider
+    expect(b.originX - (a.originX + ZONE_SIZE)).toBe(0); // the neighbouring project starts immediately
     const seamX = a.originX + ZONE_SIZE;
     expect(floorAt(seamX, a.originY)).not.toBe("floor-corridor-tile");
+    // A low divider stands on the shared line and blocks nothing: one lot stays open plan inside
     expect(
-      campus.worldFurniture.some((f) => f.tx === seamX && f.ty === a.originY && f.assetId.startsWith("divider-")),
+      campus.wallSegments.some(
+        (w) =>
+          w.assetId.startsWith("divider-") &&
+          w.blocks === null &&
+          Math.abs(w.rx - (seamX - 0.5)) < 1e-6 &&
+          w.ry === a.originY,
+      ),
     ).toBe(true);
     expect(walkable(seamX, a.originY + 2)).toBe(true); // pass-through between the two projects
   });

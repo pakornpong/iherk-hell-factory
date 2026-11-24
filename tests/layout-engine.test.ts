@@ -90,8 +90,8 @@ describe("layout-engine", () => {
     const wings = [createDefaultCommonWing(0)];
     const campus = computeCampusLayout(bays, wings, mockCatalog);
 
-    // Corridor tile between zones resolves to null
-    expect(resolveWorldToZone(campus, 6, 0)).toBeNull();
+    // Rooms fill the plan edge to edge, so only a tile outside the footprint resolves to null
+    expect(resolveWorldToZone(campus, campus.widthTiles + 2, 0)).toBeNull();
     // 2x1 desk overflowing zone boundary (lx=5, width=2) fails
     const straddle = validateFurniturePlacement(
       campus,
