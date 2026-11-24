@@ -807,19 +807,23 @@ export class IsoRenderer {
       if (!sprite) continue;
       const [wx, wy] = toAnchorWorld(w.rx, w.ry, sprite.footprintTiles[0], sprite.footprintTiles[1]);
       if (!isInWorldBounds(wx, wy, bounds)) continue;
-      // The sprite is drawn from (wx, wy), but for depth sorting the wall is a thin plane standing on
-      // the boundary line, not a tile-sized box: that keeps it in front of the room behind it and behind
-      // whatever stands in the room in front, instead of a deep desk covering it.
-      const thin = 0.1;
+      // The sprite is drawn from (wx, wy), but for depth sorting the wall is a plane standing ON the
+      // boundary line. Its box starts exactly at the line and is a hair thick, so anything in the room
+      // behind ends at or before it and sorts behind for certain — even a two-tile desk, which would
+      // otherwise win on the distance tiebreak and be drawn straight through the glass. The box is a
+      // hair LONGER than a tile along the run so a neighbour in the room in front counts as sitting
+      // inside it and draws after it.
+      const thin = 0.05;
+      const over = 0.05;
       const alongY = w.axis === "y";
       const alongX = w.axis === "x";
       unified.push({
         id: `w:${w.id}`,
         kind: "furniture",
-        x: alongX ? w.rx : w.rx + 0.5 - thin / 2,
-        y: alongY ? w.ry : w.ry + 0.5 - thin / 2,
-        footprintX: alongX ? sprite.footprintTiles[0] : thin,
-        footprintY: alongY ? sprite.footprintTiles[1] : thin,
+        x: alongX ? w.rx - over : w.rx + 0.5,
+        y: alongY ? w.ry - over : w.ry + 0.5,
+        footprintX: alongX ? sprite.footprintTiles[0] + over * 2 : thin,
+        footprintY: alongY ? sprite.footprintTiles[1] + over * 2 : thin,
         sprite,
         wx,
         wy,

@@ -57,9 +57,11 @@ Where two wall lines cross, the arms meeting at that point are counted:
 ### 2.4 Renderer: walls ride the unified depth sort
 
 `iso-renderer.ts` pushes each segment into the same topological sort as furniture and characters, which
-already supports fractional positions. Its **sort box is a thin plane** (0.1 tile) standing on the
-boundary rather than a tile-sized box, so a deep desk in the room behind cannot sort in front of the wall
-and a desk in the room in front still occludes it correctly.
+already supports fractional positions. Its **sort box is a hair-thick plane starting exactly on the
+boundary line**, and a hair longer than a tile along the run. Starting on the line makes anything in the
+room behind end at or before the wall, so it sorts behind for certain — a two-tile desk would otherwise
+win the distance tiebreak and be drawn straight through the glass. Overhanging the run makes a neighbour
+in the room in front count as sitting inside the wall's box, so it draws after and occludes it.
 
 ### 2.5 Pathfinding: edges block, not tiles
 
