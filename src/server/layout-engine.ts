@@ -154,15 +154,57 @@ export function computeCampusLayout(
     pendingFurniture.push({ zone, items });
   };
   const placeFurniture = (zone: ZoneBounds, items: FurnitureInstance[]) => {
+    const footOf = (item: FurnitureInstance): [number, number] =>
+      getRotatedFootprint(catalogById.get(item.assetId)?.footprintTiles ?? [1, 1], item.direction);
+
+    // Walls now stand on the room's own edge, and an isometric sprite is drawn up and to the left of the
+    // tiles it stands on. A piece two or more tiles long therefore reaches past the wall behind it and
+    // reads as sticking through the glass. Step those pieces one tile off the two back edges when the
+    // room has space; small props still sit flush against the wall.
+    const occupied = new Set<string>();
+    const mark = (item: FurnitureInstance, lx: number, ly: number) => {
+      const [w, d] = footOf(item);
+      for (let y = 0; y < d; y++) for (let x = 0; x < w; x++) occupied.add(`${lx + x},${ly + y}`);
+    };
+    const freeAt = (item: FurnitureInstance, lx: number, ly: number): boolean => {
+      const [w, d] = footOf(item);
+      if (lx < 0 || ly < 0 || lx + w > ZONE_SIZE || ly + d > ZONE_SIZE) return false;
+      for (let y = 0; y < d; y++) {
+        for (let x = 0; x < w; x++) if (occupied.has(`${lx + x},${ly + y}`)) return false;
+      }
+      return true;
+    };
+    for (const item of items) mark(item, item.lx, item.ly);
+
+    const placed: Array<FurnitureInstance & { lx: number; ly: number }> = [];
     for (const item of items) {
-      const cat = catalogById.get(item.assetId);
-      const baseFootprint: [number, number] = cat?.footprintTiles ?? [1, 1];
-      const footprintTiles = getRotatedFootprint(baseFootprint, item.direction);
+      const [w, d] = footOf(item);
+      let { lx, ly } = item;
+      if (w >= 2 || d >= 2) {
+        const clear = (x: number, y: number) => {
+          const [fw, fd] = footOf(item);
+          for (let yy = 0; yy < fd; yy++) for (let xx = 0; xx < fw; xx++) occupied.delete(`${x + xx},${y + yy}`);
+        };
+        if (lx === 0 || ly === 0) {
+          const nx = lx === 0 ? 1 : lx;
+          const ny = ly === 0 ? 1 : ly;
+          clear(lx, ly);
+          if (freeAt(item, nx, ny)) {
+            lx = nx;
+            ly = ny;
+          }
+          mark(item, lx, ly);
+        }
+      }
+      placed.push({ ...item, lx, ly });
+    }
+
+    for (const item of placed) {
       worldFurniture.push({
         ...item,
         tx: zone.originX + item.lx,
         ty: zone.originY + item.ly,
-        footprintTiles,
+        footprintTiles: footOf(item),
       });
     }
   };
