@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iherk-hell-factory — AI Agent Office</title>
+    <link rel="stylesheet" href="/style.css" />
+    <!--UI_SESSION-->
+  </head>
+  <body>
+    <canvas id="office-canvas"></canvas>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <strong>HELL FACTORY</strong>
+        <span id="office-stats" class="stats">Loading...</span>
+      </div>
+      <div class="toolbar">
+        <div class="zoom-group">
+          <button id="zoom-1">1×</button>
+          <button id="zoom-2" class="active">2×</button>
+          <button id="zoom-3">3×</button>
+          <button id="zoom-4">4×</button>
+        </div>
+        <button id="btn-decorate">🪑 Decorate</button>
+        <button id="btn-theme" data-theme="night">🌙 Night</button>
+        <button id="btn-demo">▶ Demo Mode</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span>PROJECT BAYS</span>
+        <button id="toggle-archived" title="Toggle Archived">Archive</button>
+      </div>
+      <input id="bay-search" type="search" placeholder="Filter projects..." />
+      <div id="bay-list" class="bay-list"></div>
+    </aside>
+
+    <aside id="decorate-panel" class="decorate-panel hidden">
+      <div class="sidebar-header">
+        <span>DECORATE MODE</span>
+        <span class="hint">R: rotate · Esc: exit</span>
+      </div>
+      <div class="decorate-controls">
+        <button id="btn-rotate">↻ SE</button>
+        <button id="btn-erase">🧹 Erase</button>
+        <button id="btn-undo" disabled>↶ Undo</button>
+        <button id="btn-redo" disabled>↷ Redo</button>
+      </div>
+      <div id="catalog-list" class="catalog-list"></div>
+    </aside>
+
+    <section id="employee-inspector" class="inspector hidden">
+      <button id="inspector-close" class="inspector-close">×</button>
+      <div id="inspector-body"></div>
+    </section>
+
+    <div class="minimap-wrap">
+      <canvas id="minimap-canvas" width="180" height="120"></canvas>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
