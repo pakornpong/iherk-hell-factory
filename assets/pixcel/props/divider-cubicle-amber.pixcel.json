@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "divider-cubicle-amber",
+  "category": "architecture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "metal_trim": { "color": "#cbd5e1", "kind": "metal" },
+    "metal_foot": { "color": "#475569", "kind": "metal" },
+    "panel_amber": { "color": "#c97b36", "kind": "wood" },
+    "panel_dark": { "color": "#9e5a22", "kind": "wood" },
+    "note_yellow": { "color": "#fde047", "kind": "matte" },
+    "note_white": { "color": "#f8fafc", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [0, 14, 0], "to": [31, 17, 2], "material": "metal_foot", "part": "base" },
+    { "op": "box", "from": [1, 14, 3], "to": [30, 17, 22], "material": "panel_amber", "part": "panel" },
+    { "op": "box", "from": [1, 14, 3], "to": [30, 17, 5], "material": "panel_dark", "part": "base_trim" },
+    { "op": "box", "from": [0, 14, 0], "to": [1, 17, 23], "material": "metal_trim", "part": "post_l" },
+    { "op": "box", "from": [30, 14, 0], "to": [31, 17, 23], "material": "metal_trim", "part": "post_r" },
+    { "op": "box", "from": [0, 14, 23], "to": [31, 17, 24], "material": "metal_trim", "part": "top_rail" },
+    { "op": "box", "from": [6, 17, 14], "to": [10, 18, 18], "material": "note_yellow", "part": "notes" },
+    { "op": "box", "from": [13, 17, 15], "to": [18, 18, 20], "material": "note_white", "part": "notes" },
+    { "op": "box", "from": [21, 17, 13], "to": [24, 18, 16], "material": "note_yellow", "part": "notes" }
+  ]
+}

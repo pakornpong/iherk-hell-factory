@@ -4,7 +4,7 @@ import { z } from "zod";
 import { OfficeEngine } from "../server/office-engine.js";
 import { PixcelBridge } from "../server/pixcel-bridge.js";
 import { OfficeStore } from "../server/store.js";
-import { DirectionSchema } from "../shared/types.js";
+import { DepartmentIdSchema, DirectionSchema } from "../shared/types.js";
 
 export interface ArchitectMcpOptions {
   serverUrl: string;
@@ -245,10 +245,11 @@ export function createArchitectMcpServer(opts: ArchitectMcpOptions): McpServer {
 
   server.tool(
     "manage_bay",
-    "Rename a project bay, change its accent color, or archive/unarchive it.",
+    "Rename a project bay, assign its AI Org department (iherk/dev/erp/accounting/general), change its accent color, or archive/unarchive it.",
     {
       bayId: z.string().min(1),
       displayName: z.string().min(1).max(128).optional(),
+      department: DepartmentIdSchema.optional(),
       accentColor: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
       archived: z.boolean().optional(),
     },

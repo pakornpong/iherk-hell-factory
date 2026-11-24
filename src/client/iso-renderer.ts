@@ -1,11 +1,13 @@
-import type {
-  CatalogEntry,
-  ComputedCampus,
-  Direction,
-  EmployeeRecord,
-  OfficeState,
-  ThemeMode,
-  ToolCategory,
+import {
+  classifyDepartmentFromPath,
+  DEPARTMENT_META,
+  type CatalogEntry,
+  type ComputedCampus,
+  type Direction,
+  type EmployeeRecord,
+  type OfficeState,
+  type ThemeMode,
+  type ToolCategory,
 } from "../shared/types.js";
 import type { AtlasManager, ResolvedSpriteFrame } from "./atlas-loader.js";
 import { STEP_X, STEP_Y, type IsoCamera } from "./camera.js";
@@ -71,7 +73,14 @@ export function resolveAssetAnimationFrame(
   const tick = Math.floor(timeMs / 650);
   if (assetId === "server-rack") return `blink_${tick % 3}`;
   if (assetId === "desk-security-ops") return `alert_${tick % 2}`;
-  if (assetId === "desk-dev-dual" || assetId === "coffee-machine-bar") return `idle_${tick % 2}`;
+  if (
+    assetId === "desk-dev-dual" ||
+    assetId === "coffee-machine-bar" ||
+    assetId === "printer-copier" ||
+    assetId === "robot-vacuum"
+  ) {
+    return `idle_${tick % 2}`;
+  }
   return "default";
 }
 
@@ -127,6 +136,18 @@ export function sortUnifiedIsoEntities<T extends DepthRenderItem>(items: T[]): T
       } else if (bBehindA && !aBehindB) {
         adj[j].push(i);
         inDeg[i]++;
+      } else if (!aBehindB && !bBehindA) {
+        // Overlapping footprints: an occupant fully inside another item's footprint
+        // (character seated on a chair) draws after the item it occupies.
+        const aInsideB = ax0 >= bx0 - EPS && ax1 <= bx1 + EPS && ay0 >= by0 - EPS && ay1 <= by1 + EPS;
+        const bInsideA = bx0 >= ax0 - EPS && bx1 <= ax1 + EPS && by0 >= ay0 - EPS && by1 <= ay1 + EPS;
+        if (aInsideB && !bInsideA) {
+          adj[j].push(i);
+          inDeg[i]++;
+        } else if (bInsideA && !aInsideB) {
+          adj[i].push(j);
+          inDeg[j]++;
+        }
       }
     }
   }
@@ -214,7 +235,7 @@ export class IsoRenderer {
     const bounds = camera.getVisibleWorldBounds(width, height, 150);
 
     ctx.imageSmoothingEnabled = false;
-    ctx.fillStyle = theme === "day" ? "#cbd5e1" : "#0a0e1a";
+    ctx.fillStyle = theme === "office" ? "#212226" : theme === "day" ? "#cbd5e1" : "#0a0e1a";
     ctx.fillRect(0, 0, width, height);
 
     const drawSprite = (
@@ -374,7 +395,7 @@ export class IsoRenderer {
       });
     }
 
-    // Boss avatar seated permanently at Boss Office (0,0) executive chair
+    // Boss avatar seated permanently at Boss Office (0,0) executive chair facing "se" (+Y toward desk)
     const bossZone = campus.zones.find((z) => z.kind === "boss");
     if (bossZone) {
       const bossChair = campus.worldFurniture.find(
@@ -383,8 +404,11 @@ export class IsoRenderer {
       const bx = bossChair ? bossChair.tx : bossZone.originX + 2;
       const by = bossChair ? bossChair.ty : bossZone.originY + 1;
       const hasVisitor = employees.some((e) => e.record.visualState === "reporting");
-      const bossClip = hasVisitor ? `talk_${Math.floor(timeMs / 350) % 2}` : `idle_${Math.floor(timeMs / 750) % 2}`;
-      const bossSprite = atlas.getFrame(theme, "agent-starter", "sw", bossClip);
+      // Boss stays seated in the executive chair; types faster while a visitor reports.
+      const bossClip = `sit_type_${Math.floor(timeMs / (hasVisitor ? 300 : 750)) % 2}`;
+      const bossSprite =
+        atlas.getFrame(theme, "agent-boss", "se", bossClip) ??
+        atlas.getFrame(theme, "agent-starter", "se", bossClip);
       if (bossSprite) {
         const [wx, wy] = toAnchorWorld(bx, by, 1, 1);
         if (isInWorldBounds(wx, wy, bounds)) {
@@ -402,7 +426,7 @@ export class IsoRenderer {
               record: {
                 id: "boss-avatar",
                 bayId: "boss:0",
-                spriteId: "agent-starter",
+                spriteId: "agent-boss",
                 displayName: "BOSS",
                 role: "Boss",
                 isEphemeral: false,
@@ -413,7 +437,7 @@ export class IsoRenderer {
               },
               x: bx,
               y: by,
-              direction: "sw",
+              direction: "se",
               clipName: bossClip,
               bubbleIcon: "👑",
               bubbleText: "BOSS",
@@ -481,7 +505,7 @@ export class IsoRenderer {
     if (emissiveDraws.length > 0) {
       ctx.save();
       ctx.globalCompositeOperation = "lighter";
-      const glowAlpha = theme === "night" ? 0.55 : 0.18;
+      const glowAlpha = theme === "night" ? 0.55 : theme === "office" ? 0.25 : 0.18;
       for (const ed of emissiveDraws) {
         drawSprite(ed.sprite, ed.wx, ed.wy, { alpha: glowAlpha, popScaleY: ed.pop, emissive: true });
       }
@@ -519,21 +543,28 @@ export class IsoRenderer {
       ctx.restore();
     }
 
-    // 7. Bay Nameplates & Employee Speech/Tool Bubbles
+    // 7. Bay Nameplates (with Department Badges) & Employee Speech/Tool Bubbles
     ctx.save();
     ctx.font = `bold ${Math.max(10, 6 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
     ctx.textAlign = "center";
+    const seenDepts = new Set<string>();
     for (const z of campus.zones) {
       const [wx, wy] = toAnchorWorld(z.originX + 3, z.originY + 5.7, 1, 1);
       if (!isInWorldBounds(wx, wy, bounds)) continue;
       const [sx, sy] = camera.worldToScreen(wx, wy);
       const bay = z.bayId ? bayById.get(z.bayId) : undefined;
+      const deptId =
+        z.kind === "bay"
+          ? (z.department ?? bay?.department ?? classifyDepartmentFromPath(bay?.projectPath))
+          : undefined;
+      const deptMeta = deptId ? DEPARTMENT_META[deptId] : undefined;
+
       const label =
         z.kind === "boss"
           ? "👑 BOSS OFFICE"
           : z.kind === "common"
             ? `LOUNGE & MEETING · #${z.zoneId.split(":")[1] ?? "0"}`
-            : bay?.displayName ?? z.zoneId;
+            : `${deptMeta ? `${deptMeta.icon} ${deptMeta.shortLabel} · ` : ""}${bay?.displayName ?? z.zoneId}`;
       const activeTeamCount = z.bayId
         ? employees.filter(
             (e) =>
@@ -542,14 +573,39 @@ export class IsoRenderer {
           ).length
         : 0;
       const fullLabel = activeTeamCount >= 2 ? `${label} · TEAM` : label;
-      const textW = ctx.measureText(fullLabel).width + 12;
-      ctx.fillStyle = theme === "day" ? "rgba(15, 23, 42, 0.82)" : "rgba(10, 14, 26, 0.86)";
-      ctx.fillRect(Math.round(sx - textW / 2), Math.round(sy - 10), Math.round(textW), 18);
-      ctx.strokeStyle = z.kind === "boss" ? "#f59e0b" : bay?.accentColor ?? "#64748b";
+      const textW = ctx.measureText(fullLabel).width + 14;
+      const borderColor = z.kind === "boss" ? "#f59e0b" : deptMeta?.color ?? bay?.accentColor ?? "#64748b";
+      const boxX = Math.round(sx - textW / 2);
+      const boxY = Math.round(sy - 10);
+      ctx.fillStyle = theme === "day" ? "rgba(15, 23, 42, 0.84)" : "rgba(15, 23, 42, 0.90)";
+      ctx.fillRect(boxX, boxY, Math.round(textW), 18);
+      if (deptMeta) {
+        ctx.fillStyle = deptMeta.color;
+        ctx.fillRect(boxX, boxY, 4, 18);
+      }
+      ctx.strokeStyle = borderColor;
       ctx.lineWidth = z.kind === "boss" ? 1.5 : 1;
-      ctx.strokeRect(Math.round(sx - textW / 2), Math.round(sy - 10), Math.round(textW), 18);
+      ctx.strokeRect(boxX, boxY, Math.round(textW), 18);
       ctx.fillStyle = z.kind === "boss" ? "#fde68a" : "#f8fafc";
-      ctx.fillText(fullLabel, Math.round(sx), Math.round(sy + 3));
+      ctx.fillText(fullLabel, Math.round(sx + (deptMeta ? 2 : 0)), Math.round(sy + 3));
+
+      // Department Zone Header Pill above the first bay of each department group
+      if (deptMeta && !seenDepts.has(deptMeta.id)) {
+        seenDepts.add(deptMeta.id);
+        const [zwx, zwy] = toAnchorWorld(z.originX + 2.5, z.originY + 0.3, 1, 1);
+        if (isInWorldBounds(zwx, zwy, bounds)) {
+          const [zsx, zsy] = camera.worldToScreen(zwx, zwy - 34);
+          const zoneLabel = `${deptMeta.icon} ${deptMeta.label} ZONE`;
+          const zw = ctx.measureText(zoneLabel).width + 12;
+          ctx.fillStyle = "rgba(15, 23, 42, 0.88)";
+          ctx.fillRect(Math.round(zsx - zw / 2), Math.round(zsy - 14), Math.round(zw), 16);
+          ctx.strokeStyle = deptMeta.color;
+          ctx.lineWidth = 1.25;
+          ctx.strokeRect(Math.round(zsx - zw / 2), Math.round(zsy - 14), Math.round(zw), 16);
+          ctx.fillStyle = deptMeta.color;
+          ctx.fillText(zoneLabel, Math.round(zsx), Math.round(zsy - 2));
+        }
+      }
     }
 
     // Employee floating bubbles & subtle tool-category aura
@@ -562,7 +618,8 @@ export class IsoRenderer {
       const by = bossChair ? bossChair.ty : bossZone.originY + 1;
       const [wx, wy] = toAnchorWorld(bx, by, 1, 1);
       if (isInWorldBounds(wx, wy, bounds)) {
-        const [sx, sy] = camera.worldToScreen(wx, wy - 36);
+        // Sit above the seated Boss's head (sprite ~49px tall incl. chair offset) instead of over the face.
+        const [sx, sy] = camera.worldToScreen(wx, wy - 50);
         ctx.font = `700 ${Math.max(10, 5 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
         const label = "👑 BOSS";
         const bw = ctx.measureText(label).width + 10;
@@ -580,24 +637,22 @@ export class IsoRenderer {
     for (const emp of employees) {
       const [wx, wy] = toAnchorWorld(emp.x, emp.y, 1, 1);
       if (!isInWorldBounds(wx, wy, bounds)) continue;
-      const bob = Math.sin(timeMs / 400 + emp.x) * 2;
-      const [sx, sy] = camera.worldToScreen(wx, wy - 36 + bob);
-
-      if (emp.record.visualState === "working" || emp.record.visualState === "teamwork") {
-        ctx.fillStyle = toolGlowColor(emp.record.toolCategory);
-        ctx.beginPath();
-        ctx.arc(sx, sy + 16 * zoom, 10 * zoom, 0, Math.PI * 2);
-        ctx.fill();
-      }
+      const bob = Math.sin(timeMs / 400 + emp.x) * 1.5;
+      // Float cleanly above the Phase 2 sprite head (~49px tall) without covering the face
+      const [sx, sy] = camera.worldToScreen(wx, wy - 52 + bob);
 
       if (emp.bubbleIcon || emp.bubbleText) {
         const text = emp.bubbleIcon ? `${emp.bubbleIcon}${emp.bubbleText ? ` ${emp.bubbleText}` : ""}` : (emp.bubbleText ?? "");
         const trimmed = text.length > 22 ? `${text.slice(0, 20)}..` : text;
         ctx.font = `600 ${Math.max(10, 5 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
-        const bw = ctx.measureText(trimmed).width + 10;
+        const hasStatusDot = emp.record.visualState === "working" || emp.record.visualState === "teamwork";
+        const dotPad = hasStatusDot ? 10 : 0;
+        const bw = ctx.measureText(trimmed).width + 10 + dotPad;
         const bh = 18;
+        const left = Math.round(sx - bw / 2);
+        const top = Math.round(sy - bh);
         ctx.fillStyle = emp.record.toolCategory === "error" ? "#7f1d1d" : "rgba(15, 23, 42, 0.92)";
-        ctx.fillRect(Math.round(sx - bw / 2), Math.round(sy - bh), Math.round(bw), bh);
+        ctx.fillRect(left, top, Math.round(bw), bh);
         ctx.strokeStyle =
           emp.record.provider === "claude"
             ? "#d97757"
@@ -605,9 +660,13 @@ export class IsoRenderer {
               ? "#38bdf8"
               : "#94a3b8";
         ctx.lineWidth = 1;
-        ctx.strokeRect(Math.round(sx - bw / 2), Math.round(sy - bh), Math.round(bw), bh);
+        ctx.strokeRect(left, top, Math.round(bw), bh);
+        if (hasStatusDot) {
+          ctx.fillStyle = toolGlowColor(emp.record.toolCategory).replace(/0\.\d+\)$/, "1)");
+          ctx.fillRect(left + 5, top + 6, 5, 5);
+        }
         ctx.fillStyle = "#f8fafc";
-        ctx.fillText(trimmed, Math.round(sx), Math.round(sy - 5));
+        ctx.fillText(trimmed, Math.round(sx + dotPad / 2), Math.round(sy - 5));
       }
     }
     ctx.restore();

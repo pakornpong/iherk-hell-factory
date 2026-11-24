@@ -27,6 +27,17 @@ describe("IsoCamera & unified topological depth-sorter", () => {
     expect(sorted.map((s) => s.id)).toEqual(["char-behind", "desk", "char-front"]);
   });
 
+  it("draws a character seated on a chair tile after the chair it sits on", () => {
+    const chair = { id: "f:boss-chair", x: 2, y: 1, footprintX: 1, footprintY: 1 };
+    const boss = { id: "e:boss-avatar", x: 2.2, y: 1.2, footprintX: 0.6, footprintY: 0.6 };
+    const desk = { id: "f:boss-desk", x: 2, y: 2, footprintX: 2, footprintY: 1 };
+    expect(sortUnifiedIsoEntities([boss, desk, chair]).map((s) => s.id)).toEqual([
+      "f:boss-chair",
+      "e:boss-avatar",
+      "f:boss-desk",
+    ]);
+  });
+
   it("culls far-away bays outside camera viewport bounds", () => {
     const cam = new IsoCamera();
     cam.setZoom(2);

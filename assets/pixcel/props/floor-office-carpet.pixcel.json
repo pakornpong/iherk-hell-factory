@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "floor-office-carpet",
+  "category": "architecture",
+  "layer": "floor",
+  "outlineMode": "none",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "tile_a": { "color": "#1e81a8", "kind": "matte" },
+    "tile_b": { "color": "#2695bf", "kind": "matte" },
+    "seam": { "color": "#186b8d", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [0, 0, 0], "to": [15, 15, 0], "material": "tile_a" },
+    { "op": "box", "from": [16, 16, 0], "to": [31, 31, 0], "material": "tile_a" },
+    { "op": "box", "from": [16, 0, 0], "to": [31, 15, 0], "material": "tile_b" },
+    { "op": "box", "from": [0, 16, 0], "to": [15, 31, 0], "material": "tile_b" },
+    { "op": "box", "from": [0, 0, 0], "to": [31, 0, 0], "material": "seam" },
+    { "op": "box", "from": [0, 0, 0], "to": [0, 31, 0], "material": "seam" }
+  ]
+}

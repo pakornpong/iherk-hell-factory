@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "printer-copier",
+  "category": "tech",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "body_white": { "color": "#d8dee9", "kind": "metal" },
+    "body_mid": { "color": "#9aa5b4", "kind": "metal" },
+    "tray_dark": { "color": "#334155", "kind": "metal" },
+    "paper": { "color": "#f8fafc", "kind": "matte" },
+    "led_green": { "color": "#22c55e", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.45 },
+    "led_cyan": { "color": "#38bdf8", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.4 }
+  },
+  "ops": [
+    { "op": "box", "from": [5, 5, 0], "to": [26, 26, 22], "material": "body_white", "part": "cabinet" },
+    { "op": "box", "from": [6, 25, 3], "to": [25, 27, 8], "material": "body_mid", "part": "drawer1" },
+    { "op": "box", "from": [6, 25, 10], "to": [25, 27, 15], "material": "body_mid", "part": "drawer2" },
+    { "op": "box", "from": [8, 22, 17], "to": [23, 27, 20], "material": "tray_dark", "part": "output_bay" },
+    { "op": "box", "from": [10, 24, 18], "to": [21, 28, 18], "material": "paper", "part": "paper" },
+    { "op": "box", "from": [4, 4, 23], "to": [27, 26, 26], "material": "body_white", "part": "scanner_lid" },
+    { "op": "box", "from": [7, 7, 27], "to": [24, 22, 28], "material": "body_mid", "part": "feeder" },
+    { "op": "box", "from": [20, 26, 23], "to": [25, 27, 25], "material": "tray_dark", "part": "control_panel" },
+    { "op": "voxel", "at": [22, 27, 24], "material": "led_green", "part": "leds" }
+  ],
+  "frames": [
+    { "name": "idle_0", "durationMs": 800, "ops": [{ "op": "voxel", "at": [24, 27, 24], "material": "led_cyan" }] },
+    { "name": "idle_1", "durationMs": 800, "ops": [{ "op": "voxel", "at": [24, 27, 24], "material": "tray_dark" }] }
+  ]
+}

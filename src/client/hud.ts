@@ -1,9 +1,15 @@
-import type {
-  CatalogEntry,
-  ComputedCampus,
-  EmployeeRecord,
-  OfficeSnapshotPayload,
-  ThemeMode,
+import {
+  classifyDepartmentFromPath,
+  DEPARTMENT_META,
+  DEPARTMENT_ORDER,
+  getOrgRoleMeta,
+  type CatalogEntry,
+  type ComputedCampus,
+  type DepartmentId,
+  type EmployeeRecord,
+  type OfficeSnapshotPayload,
+  type ProjectBayRecord,
+  type ThemeMode,
 } from "../shared/types.js";
 import type { DecorateController } from "./decorate.js";
 import type { SimEmployeeVisual } from "./sim.js";
@@ -28,8 +34,22 @@ const STATE_LABELS: Record<string, string> = {
   resting: "☕ Resting",
 };
 
+const THEME_CYCLE: readonly ThemeMode[] = ["office", "night", "day"] as const;
+
+const THEME_LABELS: Record<ThemeMode, string> = {
+  office: "🏢 Office",
+  night: "🌙 Night",
+  day: "☀️ Day",
+};
+
+export function nextThemeMode(current: ThemeMode): ThemeMode {
+  const idx = THEME_CYCLE.indexOf(current);
+  return THEME_CYCLE[(idx + 1) % THEME_CYCLE.length];
+}
+
 export class OfficeHud {
   private baySearch = "";
+  private deptFilter: DepartmentId | "all" = "all";
   private showArchived = false;
   private minimapCanvas: HTMLCanvasElement;
   private minimapCtx: CanvasRenderingContext2D;
@@ -92,10 +112,20 @@ export class OfficeHud {
       void this.decorate.redo().then(() => this.cb.onDecorateChanged());
     });
 
+    const deptButtons = document.querySelectorAll<HTMLButtonElement>(".dept-filter-btn");
+    deptButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const val = (btn.dataset.dept ?? "all") as DepartmentId | "all";
+        this.deptFilter = val;
+        deptButtons.forEach((b) => b.classList.toggle("active", b === btn));
+        this.cb.onDecorateChanged();
+      });
+    });
+
     const btnTheme = document.getElementById("btn-theme") as HTMLButtonElement;
     btnTheme.addEventListener("click", () => {
-      const next = btnTheme.dataset.theme === "night" ? "day" : "night";
-      this.cb.onSetTheme(next);
+      const current = (btnTheme.dataset.theme as ThemeMode) || "office";
+      this.cb.onSetTheme(nextThemeMode(current));
     });
 
     const btnDemo = document.getElementById("btn-demo") as HTMLButtonElement;
@@ -153,7 +183,7 @@ export class OfficeHud {
     // Top buttons
     const btnTheme = document.getElementById("btn-theme") as HTMLButtonElement;
     btnTheme.dataset.theme = state.theme;
-    btnTheme.textContent = state.theme === "night" ? "🌙 Night" : "☀️ Day";
+    btnTheme.textContent = THEME_LABELS[state.theme] ?? "🏢 Office";
 
     const btnDemo = document.getElementById("btn-demo") as HTMLButtonElement;
     btnDemo.classList.toggle("active", demoMode);
@@ -174,44 +204,67 @@ export class OfficeHud {
       document.getElementById(`zoom-${z}`)?.classList.toggle("active", z === currentZoom);
     }
 
-    // Bay Quick-Jump list
+    // Bay Quick-Jump list (grouped by AI Org Department)
     const bayListEl = document.getElementById("bay-list")!;
     bayListEl.innerHTML = "";
     const filteredBays = state.bays.filter((b) => {
       if (b.archived !== this.showArchived) return false;
+      const dept = b.department ?? classifyDepartmentFromPath(b.projectPath);
+      if (this.deptFilter !== "all" && dept !== this.deptFilter) return false;
       if (!this.baySearch) return true;
       return (
         b.displayName.toLowerCase().includes(this.baySearch) ||
+        dept.includes(this.baySearch) ||
         (b.projectPath?.toLowerCase().includes(this.baySearch) ?? false)
       );
     });
 
+    const grouped = new Map<DepartmentId, ProjectBayRecord[]>();
+    for (const deptId of DEPARTMENT_ORDER) grouped.set(deptId, []);
     for (const bay of filteredBays) {
-      const team = state.employees.filter((e) => e.bayId === bay.id);
-      const hasClaude = team.some((e) => e.provider === "claude");
-      const hasGemini = team.some((e) => e.provider === "gemini");
-      const row = document.createElement("div");
-      row.className = "bay-item";
-      row.innerHTML = `
-        <div class="bay-item-main">
-          <span class="bay-dot" style="background:${bay.accentColor}"></span>
-          <span class="bay-name">${escapeHtml(bay.displayName)}</span>
-        </div>
-        <div class="bay-item-meta">
-          ${hasClaude ? '<span class="badge claude">C</span>' : ""}
-          ${hasGemini ? '<span class="badge gemini">G</span>' : ""}
-          <span class="bay-count">${team.length}</span>
-          <button class="bay-arch-btn" title="${bay.archived ? "Restore" : "Archive"}">${bay.archived ? "↩" : "×"}</button>
-        </div>
-      `;
-      row.querySelector(".bay-item-main")?.addEventListener("click", () => {
-        if (!bay.archived) this.cb.onFocusBay(bay.id);
-      });
-      row.querySelector(".bay-arch-btn")?.addEventListener("click", (e) => {
-        e.stopPropagation();
-        this.cb.onToggleArchive(bay.id, !bay.archived);
-      });
-      bayListEl.appendChild(row);
+      const dept = bay.department ?? classifyDepartmentFromPath(bay.projectPath);
+      grouped.get(dept)?.push(bay);
+    }
+
+    for (const deptId of DEPARTMENT_ORDER) {
+      const groupBays = grouped.get(deptId) ?? [];
+      if (groupBays.length === 0) continue;
+      const meta = DEPARTMENT_META[deptId];
+
+      const header = document.createElement("div");
+      header.className = "dept-group-header";
+      header.style.color = meta.color;
+      header.innerHTML = `<span>${meta.icon} ${meta.label}</span><span>${groupBays.length}</span>`;
+      bayListEl.appendChild(header);
+
+      for (const bay of groupBays) {
+        const team = state.employees.filter((e) => e.bayId === bay.id);
+        const hasClaude = team.some((e) => e.provider === "claude");
+        const hasGemini = team.some((e) => e.provider === "gemini");
+        const row = document.createElement("div");
+        row.className = "bay-item";
+        row.innerHTML = `
+          <div class="bay-item-main">
+            <span class="bay-dot" style="background:${meta.color}"></span>
+            <span class="bay-name">${escapeHtml(bay.displayName)}</span>
+          </div>
+          <div class="bay-item-meta">
+            <span class="dept-badge" style="color:${meta.color}">${meta.shortLabel}</span>
+            ${hasClaude ? '<span class="badge claude">C</span>' : ""}
+            ${hasGemini ? '<span class="badge gemini">G</span>' : ""}
+            <span class="bay-count">${team.length}</span>
+            <button class="bay-arch-btn" title="${bay.archived ? "Restore" : "Archive"}">${bay.archived ? "↩" : "×"}</button>
+          </div>
+        `;
+        row.querySelector(".bay-item-main")?.addEventListener("click", () => {
+          if (!bay.archived) this.cb.onFocusBay(bay.id);
+        });
+        row.querySelector(".bay-arch-btn")?.addEventListener("click", (e) => {
+          e.stopPropagation();
+          this.cb.onToggleArchive(bay.id, !bay.archived);
+        });
+        bayListEl.appendChild(row);
+      }
     }
 
     // Furniture Catalog (when Decorate Mode is open)
@@ -247,14 +300,26 @@ export class OfficeHud {
 
   private renderInspector(emp: EmployeeRecord, snapshot: OfficeSnapshotPayload): void {
     const bay = snapshot.state.bays.find((b) => b.id === emp.bayId);
+    const deptId = bay ? (bay.department ?? classifyDepartmentFromPath(bay.projectPath)) : "general";
+    const deptMeta = DEPARTMENT_META[deptId];
+    const roleMeta = getOrgRoleMeta(emp.role);
     const logs = snapshot.state.activityLog.filter((l) => l.employeeId === emp.id).slice(0, 6);
     const body = document.getElementById("inspector-body")!;
     body.innerHTML = `
       <div class="insp-header">
         <strong>${escapeHtml(emp.displayName)}</strong>
         <span class="badge ${emp.provider ?? "starter"}">${(emp.provider ?? "starter").toUpperCase()}</span>
+        <span class="dept-badge" style="color:${deptMeta.color}">${deptMeta.icon} ${deptMeta.shortLabel}</span>
       </div>
-      <div class="insp-row"><span>Role:</span><span>${escapeHtml(emp.role)}</span></div>
+      <div class="insp-row">
+        <span>Role:</span>
+        <span>${
+          roleMeta
+            ? `<span class="role-badge" style="color:${roleMeta.color}">${roleMeta.icon} ${escapeHtml(emp.role)}</span>`
+            : escapeHtml(emp.role)
+        }</span>
+      </div>
+      <div class="insp-row"><span>Department:</span><span style="color:${deptMeta.color}">${deptMeta.icon} ${deptMeta.label}</span></div>
       <div class="insp-row"><span>State:</span><span>${STATE_LABELS[emp.visualState] ?? emp.visualState}</span></div>
       <div class="insp-row"><span>Project:</span><span>${escapeHtml(bay?.displayName ?? "-")}</span></div>
       <div class="insp-path">${escapeHtml(bay?.projectPath ?? "Unclaimed Starter Studio")}</div>
@@ -281,10 +346,11 @@ export class OfficeHud {
     const scaleY = h / Math.max(1, campus.depthTiles);
 
     for (const z of campus.zones) {
+      const deptMeta = z.department ? DEPARTMENT_META[z.department] : undefined;
       ctx.fillStyle =
         z.kind === "boss" ? "#92400e" : z.kind === "common" ? "#1e3a5f" : "#1e293b";
       ctx.fillRect(z.originX * scaleX, z.originY * scaleY, z.width * scaleX, z.height * scaleY);
-      ctx.strokeStyle = z.kind === "boss" ? "#f59e0b" : "#334155";
+      ctx.strokeStyle = z.kind === "boss" ? "#f59e0b" : deptMeta?.color ?? "#334155";
       ctx.strokeRect(z.originX * scaleX, z.originY * scaleY, z.width * scaleX, z.height * scaleY);
     }
 

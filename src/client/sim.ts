@@ -1,10 +1,11 @@
-import type {
-  ComputedCampus,
-  Direction,
-  EmployeeRecord,
-  OfficeState,
-  VisualState,
-  ZoneBounds,
+import {
+  getOrgRoleMeta,
+  type ComputedCampus,
+  type Direction,
+  type EmployeeRecord,
+  type OfficeState,
+  type VisualState,
+  type ZoneBounds,
 } from "../shared/types.js";
 import type { RenderedEmployeeInput, SyncPacketVisual } from "./iso-renderer.js";
 import { buildWalkableGrid, findTilePath, type WalkableGrid } from "./pathfinding.js";
@@ -32,12 +33,16 @@ interface AgentSimState {
 
 const WALK_SPEED_TILES_PER_SEC = 3.2;
 
-function deltaToDir(dx: number, dy: number, fallback: Direction): Direction {
+/**
+ * Phase 2 character facing matches chair-office-swivel 1:1:
+ *   +X -> "ne", -X -> "sw", +Y -> "se", -Y -> "nw"
+ */
+export function deltaToDir(dx: number, dy: number, fallback: Direction): Direction {
   if (Math.abs(dx) > Math.abs(dy)) {
-    return dx > 0 ? "se" : "nw";
+    return dx > 0 ? "ne" : "sw";
   }
   if (Math.abs(dy) > 1e-4) {
-    return dy > 0 ? "sw" : "ne";
+    return dy > 0 ? "se" : "nw";
   }
   return fallback;
 }
@@ -160,29 +165,16 @@ export class OfficeSimulation {
     ];
     const [cx, cy] = defaultChairOffsets[emp.deskIndex % defaultChairOffsets.length];
 
-    // Character models face +X in "se", +Y in "sw", -X in "nw", -Y in "ne"
-    const chairDirToCharFacing = (chairDir: Direction): Direction => {
-      // chair-office-swivel faces +Y in "se", -X in "sw", -Y in "nw", +X in "ne"
-      switch (chairDir) {
-        case "nw":
-          return "ne"; // faces -Y toward desk/table north-east
-        case "sw":
-          return "nw"; // faces -X toward table
-        case "se":
-          return "sw"; // faces +Y
-        case "ne":
-          return "se"; // faces +X
-      }
-    };
-
+    // Phase 2 character models match chair-office-swivel 1:1:
+    // "se" = +Y, "sw" = -X, "nw" = -Y, "ne" = +X
     switch (emp.visualState) {
       case "working":
       case "teamwork": {
         const chair = bayChairs[emp.deskIndex % Math.max(1, bayChairs.length)];
         if (chair) {
-          return { tile: [chair.tx, chair.ty], facing: chairDirToCharFacing(chair.direction) };
+          return { tile: [chair.tx, chair.ty], facing: chair.direction };
         }
-        return { tile: [bayZone.originX + cx, bayZone.originY + cy], facing: "ne" };
+        return { tile: [bayZone.originX + cx, bayZone.originY + cy], facing: "nw" };
       }
 
       case "assigning":
@@ -191,35 +183,30 @@ export class OfficeSimulation {
       case "reporting": {
         const boss = this.findBossZone();
         if (boss) {
+          // Stand on open floor tiles in Boss Office (avoid visitor swivel chairs at +2,+3 and +3,+3)
           const visitorSpots: Array<{ tile: [number, number]; facing: Direction }> = [
-            { tile: [boss.originX + 2, boss.originY + 3], facing: "ne" },
-            { tile: [boss.originX + 3, boss.originY + 3], facing: "ne" },
-            { tile: [boss.originX + 1, boss.originY + 3], facing: "ne" },
-            { tile: [boss.originX + 4, boss.originY + 3], facing: "ne" },
+            { tile: [boss.originX + 1, boss.originY + 3], facing: "nw" },
+            { tile: [boss.originX + 4, boss.originY + 3], facing: "nw" },
+            { tile: [boss.originX + 2, boss.originY + 4], facing: "nw" },
+            { tile: [boss.originX + 3, boss.originY + 4], facing: "nw" },
           ];
           const slot = (emp.deskIndex + this.hashSlot(emp.id)) % visitorSpots.length;
           return visitorSpots[slot];
         }
-        return { tile: [2, 3], facing: "ne" };
+        return { tile: [1, 3], facing: "nw" };
       }
 
       case "meeting": {
-        // Spread employees across common wing chairs using employee-unique hash so different bays don't stack
-        const commonChairs = this.campus.worldFurniture.filter(
-          (f) => f.zoneId === common.zoneId && f.assetId === "chair-office-swivel",
-        );
-        const seats: Array<{ tile: [number, number]; facing: Direction }> =
-          commonChairs.length > 0
-            ? commonChairs.map((c) => ({ tile: [c.tx, c.ty], facing: chairDirToCharFacing(c.direction) }))
-            : [
-                { tile: [common.originX + 1, common.originY + 3], facing: "ne" },
-                { tile: [common.originX + 2, common.originY + 3], facing: "ne" },
-                { tile: [common.originX + 3, common.originY + 1], facing: "nw" },
-                { tile: [common.originX + 3, common.originY + 2], facing: "nw" },
-                { tile: [common.originX + 0, common.originY + 2], facing: "se" },
-              ];
-        const slot = (emp.deskIndex + this.hashSlot(emp.id)) % seats.length;
-        return seats[slot];
+        // Stand on open floor standup tiles around the conference table (avoid swivel chairs so talk_* legs never clip)
+        const standupSpots: Array<{ tile: [number, number]; facing: Direction }> = [
+          { tile: [common.originX + 1, common.originY + 4], facing: "nw" },
+          { tile: [common.originX + 2, common.originY + 4], facing: "nw" },
+          { tile: [common.originX + 3, common.originY + 2], facing: "sw" },
+          { tile: [common.originX + 0, common.originY + 2], facing: "ne" },
+          { tile: [common.originX + 0, common.originY + 1], facing: "ne" },
+        ];
+        const slot = (emp.deskIndex + this.hashSlot(emp.id)) % standupSpots.length;
+        return standupSpots[slot];
       }
 
       case "resting": {
@@ -229,18 +216,18 @@ export class OfficeSimulation {
             (f) => f.zoneId === common.zoneId && f.assetId === "coffee-machine-bar",
           );
           if (bar) {
-            return { tile: [bar.tx + slotOffset, Math.min(this.campus.depthTiles - 1, bar.ty + 1)], facing: "ne" };
+            return { tile: [bar.tx + slotOffset, Math.min(this.campus.depthTiles - 1, bar.ty + 1)], facing: "nw" };
           }
-          return { tile: [common.originX + 4 + slotOffset, common.originY + 1], facing: "ne" };
+          return { tile: [common.originX + 4 + slotOffset, common.originY + 1], facing: "nw" };
         }
         if (restActivity === "sofa" || restActivity === "nap") {
           const sofa = this.campus.worldFurniture.find(
             (f) => f.zoneId === common.zoneId && f.assetId === "sofa-lounge",
           );
           if (sofa) {
-            return { tile: [sofa.tx + slotOffset, Math.max(0, sofa.ty - 1)], facing: "sw" };
+            return { tile: [sofa.tx + slotOffset, Math.max(0, sofa.ty - 1)], facing: "se" };
           }
-          return { tile: [common.originX + 4 + slotOffset, common.originY + 3], facing: "sw" };
+          return { tile: [common.originX + 4 + slotOffset, common.originY + 3], facing: "se" };
         }
         return { tile: [bayZone.originX + 1 + ((emp.deskIndex + slotOffset) % 3), bayZone.originY + 5], facing: "se" };
       }
@@ -396,6 +383,8 @@ export class OfficeSimulation {
 
     const t2 = Math.floor(sim.animClockMs / 300) % 2;
     const tSlow = Math.floor(sim.animClockMs / 650) % 2;
+    const roleMeta = getOrgRoleMeta(sim.record.role);
+    const rolePrefix = roleMeta ? `${roleMeta.shortLabel} · ` : "";
 
     switch (sim.record.visualState) {
       case "reporting": {
@@ -409,38 +398,39 @@ export class OfficeSimulation {
       case "assigning":
         return {
           clipName: `assign_${t2}`,
-          bubbleIcon: "📋",
-          bubbleText: sim.record.detail ?? "Assigning task",
+          bubbleIcon: roleMeta?.id === "Orchestrator" ? "🎯" : "📋",
+          bubbleText: `${rolePrefix}${sim.record.detail ?? "Assigning task"}`,
         };
       case "working": {
         const icon =
           sim.record.toolCategory === "error"
             ? "⚠️"
-            : sim.record.toolCategory === "shell"
-              ? "⚡"
-              : sim.record.toolCategory === "search"
-                ? "🔎"
-                : "💻";
+            : roleMeta
+              ? roleMeta.icon
+              : sim.record.toolCategory === "shell"
+                ? "⚡"
+                : sim.record.toolCategory === "search"
+                  ? "🔎"
+                  : "💻";
         return {
           clipName: `sit_type_${t2}`,
           bubbleIcon: icon,
-          bubbleText: sim.record.toolName ?? sim.record.detail,
+          bubbleText: `${rolePrefix}${sim.record.toolName ?? sim.record.detail ?? "Working"}`,
         };
       }
       case "teamwork": {
-        // Alternate typing and glancing/talking to teammate
-        const talkingPhase = Math.floor(sim.animClockMs / 2400) % 4 === 0;
+        // Stay seated on the swivel chair (avoid standing talk/inspect legs clipping through the chair)
         return {
-          clipName: talkingPhase ? `talk_${t2}` : `sit_type_${t2}`,
-          bubbleIcon: "🤝",
-          bubbleText: sim.record.toolName ?? "Team sync",
+          clipName: `sit_type_${t2}`,
+          bubbleIcon: roleMeta ? roleMeta.icon : "🤝",
+          bubbleText: `${rolePrefix}${sim.record.toolName ?? "Team sync"}`,
         };
       }
       case "meeting":
         return {
           clipName: `talk_${t2}`,
           bubbleIcon: "💬",
-          bubbleText: sim.record.detail ?? "In meeting",
+          bubbleText: `${rolePrefix}${sim.record.detail ?? "In meeting"}`,
         };
       case "resting": {
         if (sim.restActivity === "coffee") {
@@ -448,6 +438,9 @@ export class OfficeSimulation {
         }
         if (sim.restActivity === "nap") {
           return { clipName: `rest_sleep_${tSlow}`, bubbleIcon: "💤" };
+        }
+        if (sim.restActivity === "stroll") {
+          return { clipName: `inspect_${tSlow}`, bubbleIcon: undefined };
         }
         return { clipName: `idle_${tSlow}`, bubbleIcon: sim.restActivity === "sofa" ? "😌" : undefined };
       }

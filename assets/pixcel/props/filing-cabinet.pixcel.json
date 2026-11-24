@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "filing-cabinet",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "steel_light": { "color": "#b4becb", "kind": "metal" },
+    "steel_dark": { "color": "#64748b", "kind": "metal" },
+    "handle": { "color": "#334155", "kind": "metal" },
+    "binder_red": { "color": "#dc2626", "kind": "matte" },
+    "binder_green": { "color": "#16a34a", "kind": "matte" },
+    "binder_amber": { "color": "#f59e0b", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [6, 5, 0], "to": [25, 25, 30], "material": "steel_light", "part": "body" },
+    { "op": "box", "from": [7, 25, 2], "to": [24, 26, 7], "material": "steel_dark", "part": "d1" },
+    { "op": "box", "from": [13, 26, 4], "to": [18, 27, 5], "material": "handle", "part": "d1" },
+    { "op": "box", "from": [7, 25, 9], "to": [24, 26, 14], "material": "steel_dark", "part": "d2" },
+    { "op": "box", "from": [13, 26, 11], "to": [18, 27, 12], "material": "handle", "part": "d2" },
+    { "op": "box", "from": [7, 25, 16], "to": [24, 26, 21], "material": "steel_dark", "part": "d3" },
+    { "op": "box", "from": [13, 26, 18], "to": [18, 27, 19], "material": "handle", "part": "d3" },
+    { "op": "box", "from": [7, 25, 23], "to": [24, 26, 28], "material": "steel_dark", "part": "d4" },
+    { "op": "box", "from": [13, 26, 25], "to": [18, 27, 26], "material": "handle", "part": "d4" },
+    { "op": "box", "from": [8, 10, 31], "to": [11, 21, 38], "material": "binder_red", "part": "binders" },
+    { "op": "box", "from": [12, 10, 31], "to": [15, 21, 38], "material": "binder_green", "part": "binders" },
+    { "op": "box", "from": [16, 10, 31], "to": [19, 21, 38], "material": "binder_amber", "part": "binders" }
+  ]
+}

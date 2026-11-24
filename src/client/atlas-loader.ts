@@ -66,16 +66,19 @@ async function fetchAtlasPack(jsonUrl: string, cacheBust?: number): Promise<Load
 }
 
 export class AtlasManager {
+  private officePack: LoadedAtlasPack | null = null;
   private nightPack: LoadedAtlasPack | null = null;
   private dayPack: LoadedAtlasPack | null = null;
   private customPack: LoadedAtlasPack | null = null;
 
   async loadAll(): Promise<void> {
-    const [night, day, custom] = await Promise.all([
+    const [office, night, day, custom] = await Promise.all([
+      fetchAtlasPack("/runtime-assets/atlas-office.json").catch(() => null),
       fetchAtlasPack("/runtime-assets/atlas-night.json"),
       fetchAtlasPack("/runtime-assets/atlas-day.json"),
       fetchAtlasPack("/runtime-assets/custom-atlas.json").catch(() => null),
     ]);
+    this.officePack = office;
     this.nightPack = night;
     this.dayPack = day;
     this.customPack = custom;
@@ -114,7 +117,12 @@ export class AtlasManager {
   }
 
   getFrame(theme: ThemeMode, assetId: string, direction: Direction, frameName = "default"): ResolvedSpriteFrame | null {
-    const pack = theme === "day" ? this.dayPack : this.nightPack;
+    const pack =
+      theme === "office"
+        ? (this.officePack ?? this.dayPack ?? this.nightPack)
+        : theme === "day"
+          ? this.dayPack
+          : this.nightPack;
     const keys = [
       `${assetId}/${direction}/${frameName}`,
       `${assetId}/${direction}/default`,

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "robot-vacuum",
+  "category": "decor",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "rim_dark": { "color": "#272c36", "kind": "metal" },
+    "top_silver": { "color": "#cbd5e1", "kind": "metal" },
+    "ring_cyan": { "color": "#22d3ee", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.45 },
+    "ring_dim": { "color": "#0e7490", "kind": "metal" }
+  },
+  "ops": [
+    { "op": "cylinder", "center": [15, 15], "zFrom": 0, "zTo": 3, "radius": 8, "material": "rim_dark", "part": "body" },
+    { "op": "cylinder", "center": [15, 15], "zFrom": 4, "zTo": 4, "radius": 7, "material": "top_silver", "part": "lid" }
+  ],
+  "frames": [
+    { "name": "idle_0", "durationMs": 700, "ops": [{ "op": "box", "from": [14, 14, 5], "to": [16, 16, 5], "material": "ring_cyan" }] },
+    { "name": "idle_1", "durationMs": 700, "ops": [{ "op": "box", "from": [14, 14, 5], "to": [16, 16, 5], "material": "ring_dim" }] }
+  ]
+}

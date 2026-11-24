@@ -1,14 +1,18 @@
-import type {
-  BossOfficeRecord,
-  CatalogEntry,
-  CommonWingRecord,
-  ComputedCampus,
-  Direction,
-  FurnitureInstance,
-  ProjectBayRecord,
-  WorldFurnitureInstance,
-  ZoneBounds,
-  ZoneId,
+import {
+  classifyDepartmentFromPath,
+  DEPARTMENT_ORDER,
+  type BossOfficeRecord,
+  type CatalogEntry,
+  type CommonWingRecord,
+  type ComputedCampus,
+  type DepartmentId,
+  type Direction,
+  type FurnitureInstance,
+  type ProjectBayRecord,
+  type ThemeMode,
+  type WorldFurnitureInstance,
+  type ZoneBounds,
+  type ZoneId,
 } from "../shared/types.js";
 
 export const ZONE_SIZE = 6;
@@ -56,24 +60,62 @@ export function createDefaultCommonWing(row: number): CommonWingRecord {
       { id: `${zoneId}-c3`, zoneId, lx: 3, ly: 1, assetId: "chair-office-swivel", direction: "sw", layer: "object", placedBy: "system" },
       { id: `${zoneId}-coffee`, zoneId, lx: 4, ly: 0, assetId: "coffee-machine-bar", direction: "se", layer: "object", placedBy: "system" },
       { id: `${zoneId}-sofa`, zoneId, lx: 4, ly: 4, assetId: "sofa-lounge", direction: "nw", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-vac`, zoneId, lx: 0, ly: 4, assetId: "robot-vacuum", direction: "se", layer: "object", placedBy: "system" },
       { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 5, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
       { id: `${zoneId}-cooler`, zoneId, lx: 5, ly: 2, assetId: "water-cooler", direction: "sw", layer: "object", placedBy: "system" },
     ],
   };
 }
 
-export function createDefaultBayFurniture(bayId: string): FurnitureInstance[] {
+export function createDefaultBayFurniture(bayId: string, department: DepartmentId = "general"): FurnitureInstance[] {
   const zoneId: ZoneId = `bay:${bayId}`;
-  return [
+  const base: FurnitureInstance[] = [
     { id: `${zoneId}-desk-0`, zoneId, lx: 1, ly: 0, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
     { id: `${zoneId}-chair-0`, zoneId, lx: 1, ly: 1, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
     { id: `${zoneId}-desk-1`, zoneId, lx: 3, ly: 0, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
     { id: `${zoneId}-chair-1`, zoneId, lx: 4, ly: 1, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
-    { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 0, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
-    { id: `${zoneId}-shelf`, zoneId, lx: 0, ly: 0, assetId: "bookshelf-wood", direction: "se", layer: "object", placedBy: "system" },
-    { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
     { id: `${zoneId}-sign`, zoneId, lx: 5, ly: 5, assetId: "bay-sign-post", direction: "se", layer: "object", placedBy: "system" },
   ];
+
+  switch (department) {
+    case "iherk":
+      return [
+        ...base,
+        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 0, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-shelf`, zoneId, lx: 0, ly: 0, assetId: "bookshelf-wood", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-vac`, zoneId, lx: 5, ly: 4, assetId: "robot-vacuum", direction: "se", layer: "object", placedBy: "system" },
+      ];
+    case "dev":
+      return [
+        ...base,
+        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 0, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-printer`, zoneId, lx: 0, ly: 0, assetId: "printer-copier", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
+      ];
+    case "erp":
+      return [
+        ...base,
+        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 0, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-cabinet`, zoneId, lx: 0, ly: 0, assetId: "filing-cabinet", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-printer`, zoneId, lx: 0, ly: 4, assetId: "printer-copier", direction: "se", layer: "object", placedBy: "system" },
+      ];
+    case "accounting":
+      return [
+        ...base,
+        { id: `${zoneId}-cabinet-r`, zoneId, lx: 5, ly: 0, assetId: "filing-cabinet", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-cabinet-l`, zoneId, lx: 0, ly: 0, assetId: "filing-cabinet", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-printer`, zoneId, lx: 0, ly: 4, assetId: "printer-copier", direction: "se", layer: "object", placedBy: "system" },
+      ];
+    case "general":
+    default:
+      return [
+        ...base,
+        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 0, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-shelf`, zoneId, lx: 0, ly: 0, assetId: "bookshelf-wood", direction: "se", layer: "object", placedBy: "system" },
+        { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
+      ];
+  }
 }
 
 export function createExtraBayWorkstations(
@@ -121,8 +163,17 @@ export function computeCampusLayout(
   commonWings: CommonWingRecord[],
   catalogById: Map<string, CatalogEntry>,
   bossOffice?: BossOfficeRecord,
+  theme: ThemeMode = "office",
 ): ComputedCampus {
-  const activeBays = bays.filter((b) => !b.archived);
+  const deptRank = (bay: ProjectBayRecord): number => {
+    const dept = bay.department ?? classifyDepartmentFromPath(bay.projectPath);
+    const idx = DEPARTMENT_ORDER.indexOf(dept);
+    return idx === -1 ? DEPARTMENT_ORDER.length : idx;
+  };
+  const activeBays = bays
+    .filter((b) => !b.archived)
+    .slice()
+    .sort((a, b) => deptRank(a) - deptRank(b));
   const wingByRow = new Map<number, CommonWingRecord>();
   for (const w of commonWings) wingByRow.set(w.row, w);
 
@@ -216,10 +267,12 @@ export function computeCampusLayout(
     }
 
     const bay = activeBays[bayCursor++];
+    const bayDept = bay.department ?? classifyDepartmentFromPath(bay.projectPath);
     const bayZone: ZoneBounds = {
       zoneId: `bay:${bay.id}`,
       kind: "bay",
       bayId: bay.id,
+      department: bayDept,
       row: slot.row,
       col: slot.col,
       originX: slot.col * MODULE_PITCH_X,
@@ -236,7 +289,8 @@ export function computeCampusLayout(
   const widthTiles = sideTiles;
   const depthTiles = sideTiles;
 
-  // 4. Low glass dividers along vertical seams between occupied adjacent columns (leaves bottom walkway open!)
+  // 4. Low dividers along vertical/horizontal seams between occupied adjacent zones (leaves bottom walkway open!)
+  const dividerAssetId = theme === "office" ? "divider-cubicle-amber" : "divider-low-glass";
   const zoneAt = new Map<string, ZoneBounds>();
   for (const z of zones) zoneAt.set(`${z.col},${z.row}`, z);
 
@@ -250,7 +304,7 @@ export function computeCampusLayout(
           zoneId: z.zoneId,
           lx: 5,
           ly: offsetY,
-          assetId: "divider-low-glass",
+          assetId: dividerAssetId,
           direction: "sw",
           layer: "object",
           placedBy: "system",
@@ -269,7 +323,7 @@ export function computeCampusLayout(
           zoneId: z.zoneId,
           lx: offsetX,
           ly: 5,
-          assetId: "divider-low-glass",
+          assetId: dividerAssetId,
           direction: "se",
           layer: "object",
           placedBy: "system",
@@ -282,43 +336,84 @@ export function computeCampusLayout(
   }
 
   // 5. Seamless square floors with rug accents under Boss Office and Common Lounges
-  const rugSet = new Set<string>();
+  const bossRugSet = new Set<string>();
   for (let y = 1; y <= 4; y++) {
     for (let x = 1; x <= 4; x++) {
-      rugSet.add(`${x},${y}`); // Boss Office executive rug
+      bossRugSet.add(`${x},${y}`); // Boss Office executive rug
     }
   }
+  const loungeRugSet = new Set<string>();
   for (const z of zones) {
     if (z.kind !== "common") continue;
     for (let ly = 3; ly <= 5; ly++) {
       for (let lx = 3; lx <= 5; lx++) {
-        rugSet.add(`${z.originX + lx},${z.originY + ly}`);
+        loungeRugSet.add(`${z.originX + lx},${z.originY + ly}`);
       }
     }
   }
 
+  const baseFloorAsset = theme === "office" ? "floor-office-carpet" : "floor-wood-plank";
+  const bossRugAsset = theme === "office" ? "floor-boss-rug" : "floor-lounge-rug";
+
   const floors: ComputedCampus["floors"] = [];
   for (let ty = 0; ty < depthTiles; ty++) {
     for (let tx = 0; tx < widthTiles; tx++) {
+      const key = `${tx},${ty}`;
+      const assetId = bossRugSet.has(key)
+        ? bossRugAsset
+        : loungeRugSet.has(key)
+          ? "floor-lounge-rug"
+          : baseFloorAsset;
       floors.push({
         tx,
         ty,
-        assetId: rugSet.has(`${tx},${ty}`) ? "floor-lounge-rug" : "floor-wood-plank",
+        assetId,
         direction: "se",
       });
     }
   }
 
-  // 6. Cutaway outer perimeter walls along full square rear edges: ty=0 (NE edge) and tx=0 (NW edge)
+  // 6. Mount whiteboards, corkboards, and AC units flush along rear NE wall (ty=0) first
+  // so perimeter windows never sit hidden behind wall decor
+  const wallDecor: ComputedCampus["wallDecor"] = [];
+  const decorBlockedTx = new Set<number>();
+
+  for (const z of zones) {
+    if (z.row === 0 && z.originX + 2 < widthTiles) {
+      const useCorkboard =
+        z.kind === "bay" && (z.department === "erp" || z.department === "accounting" || z.col % 2 === 1);
+      const dtx = z.originX + 1;
+      wallDecor.push({
+        tx: dtx,
+        ty: 0,
+        assetId: useCorkboard ? "wall-corkboard" : "whiteboard-arch",
+        edge: "ne",
+      });
+      decorBlockedTx.add(dtx);
+      decorBlockedTx.add(dtx + 1);
+    }
+    if (z.row === 0 && z.originX + 5 < widthTiles) {
+      const dtx = z.originX + 4;
+      wallDecor.push({
+        tx: dtx,
+        ty: 0,
+        assetId: "wall-ac-unit",
+        edge: "ne",
+      });
+      decorBlockedTx.add(dtx);
+      decorBlockedTx.add(dtx + 1);
+    }
+  }
+
+  // Cutaway outer perimeter walls along full square rear edges: ty=0 (NE edge) and tx=0 (NW edge)
   const walls: ComputedCampus["walls"] = [
     { tx: 0, ty: 0, assetId: "wall-corner-pillar", edge: "corner" },
     { tx: 0, ty: 0, assetId: "wall-slate-plain", edge: "nw" },
     { tx: 0, ty: 0, assetId: "wall-slate-plain", edge: "ne" },
   ];
-  const wallDecor: ComputedCampus["wallDecor"] = [];
 
   for (let tx = 1; tx < widthTiles; tx++) {
-    const isWindow = tx % 4 === 2;
+    const isWindow = tx % 4 === 2 && !decorBlockedTx.has(tx);
     walls.push({
       tx,
       ty: 0,
@@ -334,18 +429,6 @@ export function computeCampusLayout(
       assetId: isWindow ? "wall-night-window" : "wall-slate-plain",
       edge: "nw",
     });
-  }
-
-  // Mount whiteboards flush along rear NE wall (ty=0) for top-row zones (Boss & top-right bays)
-  for (const z of zones) {
-    if (z.row === 0 && z.originX + 2 < widthTiles) {
-      wallDecor.push({
-        tx: z.originX + 1,
-        ty: 0,
-        assetId: "whiteboard-arch",
-        edge: "ne",
-      });
-    }
   }
 
   return { widthTiles, depthTiles, zones, floors, walls, wallDecor, worldFurniture };

@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import type { CatalogEntry, Direction } from "../shared/types.js";
+import type { CatalogEntry, Direction, ThemeMode } from "../shared/types.js";
 
 export const CHARACTER_CLIPS = [
   "idle_0",
@@ -12,6 +12,8 @@ export const CHARACTER_CLIPS = [
   "walk_3",
   "sit_type_0",
   "sit_type_1",
+  "inspect_0",
+  "inspect_1",
   "talk_0",
   "talk_1",
   "assign_0",
@@ -22,7 +24,173 @@ export const CHARACTER_CLIPS = [
   "rest_sleep_1",
 ] as const;
 
+export interface CharacterBuilderSpec {
+  id: string;
+  role?: string;
+  palette?: string;
+  skinTone?: string;
+  hairStyle?: "short" | "spiky" | "bob" | "ponytail" | "parted" | "hood_up";
+  hairColor?: string;
+  outfitStyle?: "hoodie" | "blazer" | "tshirt" | "sweater";
+  outfitColor?: string;
+  accentColor?: string;
+  pantsColor?: string;
+  shoeColor?: string;
+  glasses?: boolean;
+  headset?: boolean;
+  emissiveAccent?: boolean;
+}
+
+export const PHASE2_CHARACTER_SPECS: readonly CharacterBuilderSpec[] = [
+  {
+    id: "agent-boss",
+    role: "boss",
+    skinTone: "warm",
+    hairStyle: "parted",
+    hairColor: "#2b211b",
+    outfitStyle: "blazer",
+    outfitColor: "#1e3a5f",
+    accentColor: "#f59e0b",
+    pantsColor: "#0f172a",
+    shoeColor: "#090d16",
+    glasses: true,
+    emissiveAccent: false,
+  },
+  {
+    id: "agent-starter",
+    role: "starter",
+    skinTone: "warm",
+    hairStyle: "short",
+    hairColor: "#334155",
+    outfitStyle: "sweater",
+    outfitColor: "#475569",
+    accentColor: "#94a3b8",
+    pantsColor: "#1e293b",
+    shoeColor: "#0f172a",
+    emissiveAccent: false,
+  },
+  {
+    id: "agent-claude",
+    role: "claude",
+    skinTone: "light",
+    hairStyle: "short",
+    hairColor: "#3d2314",
+    outfitStyle: "hoodie",
+    outfitColor: "#d97757",
+    accentColor: "#fbbf24",
+    pantsColor: "#3a2a22",
+    shoeColor: "#1c1410",
+    emissiveAccent: true,
+  },
+  {
+    id: "agent-claude-v1",
+    role: "claude",
+    skinTone: "warm",
+    hairStyle: "spiky",
+    hairColor: "#7c2d12",
+    outfitStyle: "hoodie",
+    outfitColor: "#c2410c",
+    accentColor: "#fcd34d",
+    pantsColor: "#3a2a22",
+    shoeColor: "#1c1410",
+    emissiveAccent: true,
+  },
+  {
+    id: "agent-claude-v2",
+    role: "claude",
+    skinTone: "tan",
+    hairStyle: "ponytail",
+    hairColor: "#1f2937",
+    outfitStyle: "sweater",
+    outfitColor: "#e0764a",
+    accentColor: "#fdba74",
+    pantsColor: "#2b2320",
+    shoeColor: "#1c1410",
+    emissiveAccent: true,
+  },
+  {
+    id: "agent-claude-v3",
+    role: "claude",
+    skinTone: "light",
+    hairStyle: "bob",
+    hairColor: "#a16207",
+    outfitStyle: "tshirt",
+    outfitColor: "#b9422f",
+    accentColor: "#fbbf24",
+    pantsColor: "#3a2a22",
+    shoeColor: "#1c1410",
+    glasses: true,
+    emissiveAccent: true,
+  },
+  {
+    id: "agent-gemini",
+    role: "gemini",
+    skinTone: "light",
+    hairStyle: "parted",
+    hairColor: "#1e293b",
+    outfitStyle: "hoodie",
+    outfitColor: "#4f46e5",
+    accentColor: "#38bdf8",
+    pantsColor: "#172033",
+    shoeColor: "#0f172a",
+    glasses: true,
+    emissiveAccent: true,
+  },
+  {
+    id: "agent-gemini-v1",
+    role: "gemini",
+    skinTone: "warm",
+    hairStyle: "short",
+    hairColor: "#312e81",
+    outfitStyle: "hoodie",
+    outfitColor: "#2563eb",
+    accentColor: "#22d3ee",
+    pantsColor: "#172033",
+    shoeColor: "#0f172a",
+    glasses: true,
+    emissiveAccent: true,
+  },
+  {
+    id: "agent-gemini-v2",
+    role: "gemini",
+    skinTone: "brown",
+    hairStyle: "bob",
+    hairColor: "#475569",
+    outfitStyle: "sweater",
+    outfitColor: "#0284c7",
+    accentColor: "#a5f3fc",
+    pantsColor: "#1b2a3d",
+    shoeColor: "#0f172a",
+    emissiveAccent: true,
+  },
+  {
+    id: "agent-gemini-v3",
+    role: "gemini",
+    skinTone: "tan",
+    hairStyle: "spiky",
+    hairColor: "#78350f",
+    outfitStyle: "tshirt",
+    outfitColor: "#6d28d9",
+    accentColor: "#67e8f9",
+    pantsColor: "#172033",
+    shoeColor: "#0f172a",
+    headset: true,
+    emissiveAccent: true,
+  },
+] as const;
+
 const ALL_DIRECTIONS: Direction[] = ["se", "sw", "nw", "ne"];
+
+/**
+ * Phase 2 characters natively face +Y in "se", -X in "sw", -Y in "nw", +X in "ne",
+ * matching chair-office-swivel 1:1 without any directional offset.
+ */
+export function pixcelRenderDirection(
+  _asset: { category: string; animations?: Record<string, unknown> },
+  dir: Direction,
+): Direction {
+  return dir;
+}
 
 interface PixcelMaterialDef {
   color: string;
@@ -45,7 +213,11 @@ export interface PixcelAssetLike {
   ops: unknown[];
   decals: unknown[];
   frames?: Array<{ name: string; durationMs: number; ops?: unknown[]; decals?: unknown[]; partTransforms?: unknown }>;
+  parts?: unknown;
+  animations?: Record<string, { frames: Array<{ name: string; durationMs?: number }> } & Record<string, unknown>>;
 }
+
+type CompiledFrameLike = { name: string; durationMs: number; grid: unknown };
 
 interface RGBAImageLike {
   width: number;
@@ -55,7 +227,9 @@ interface RGBAImageLike {
 
 interface PixcelCoreModules {
   PixcelAssetSchema: { parse: (v: unknown) => PixcelAssetLike };
-  compileAsset: (asset: PixcelAssetLike) => { frames: Array<{ name: string; durationMs: number; grid: unknown }> };
+  compileAsset: (asset: PixcelAssetLike) => { frames: CompiledFrameLike[] };
+  compileAssetAnimations: (asset: PixcelAssetLike) => Map<string, CompiledFrameLike[]>;
+  buildCharacterAsset: (spec: CharacterBuilderSpec) => PixcelAssetLike;
   renderAssetFrame: (
     asset: PixcelAssetLike,
     grid: unknown,
@@ -98,6 +272,7 @@ const DAY_HEX_REMAP: Record<string, string> = {
   "#13294b": "#7dd3fc",
   "#28548a": "#bae6fd",
   "#0f223d": "#60a5fa",
+  "#183661": "#7dd3fc",
   // Dark oak wood planks -> sunlit honey oak
   "#543725": "#b88a5b",
   "#5f3e29": "#c69968",
@@ -114,17 +289,22 @@ const DAY_HEX_REMAP: Record<string, string> = {
   "#2b5272": "#4d8599",
 };
 
-const TEAMMATE_VARIANTS: Record<string, Array<{ suffix: string; hair: string; outfitTrim: string; badge?: string }>> = {
-  "agent-claude": [
-    { suffix: "v1", hair: "#7c2d12", outfitTrim: "#9a3412", badge: "#fcd34d" },
-    { suffix: "v2", hair: "#1f2937", outfitTrim: "#c2410c", badge: "#fdba74" },
-    { suffix: "v3", hair: "#a16207", outfitTrim: "#9f1239", badge: "#fbbf24" },
-  ],
-  "agent-gemini": [
-    { suffix: "v1", hair: "#312e81", outfitTrim: "#2563eb", badge: "#22d3ee" },
-    { suffix: "v2", hair: "#475569", outfitTrim: "#0284c7", badge: "#a5f3fc" },
-    { suffix: "v3", hair: "#78350f", outfitTrim: "#6d28d9", badge: "#67e8f9" },
-  ],
+const OFFICE_HEX_REMAP: Record<string, string> = {
+  // Dark oak wood -> Pixel Salvaje honey oak
+  "#543725": "#c87d42",
+  "#5f3e29": "#d48c50",
+  "#4c3120": "#b56c35",
+  "#382216": "#98582a",
+  "#4b3121": "#a66330",
+  "#62402a": "#c87d42",
+  "#6b442a": "#c87d42",
+  // Lounge rug dark navy -> crisp office teal rug
+  "#26384d": "#2d8a8a",
+  "#344f6b": "#3da3a3",
+  "#1e2e40": "#226e6e",
+  // Sofa -> bright slate blue
+  "#1e3a52": "#3b6f8c",
+  "#2b5272": "#4e89ab",
 };
 
 export function remapAssetToDayTheme(asset: PixcelAssetLike): PixcelAssetLike {
@@ -138,7 +318,6 @@ export function remapAssetToDayTheme(asset: PixcelAssetLike): PixcelAssetLike {
       mat.kind !== "emissive" &&
       mat.kind !== "glass"
     ) {
-      // Fallback brighten any dark slate wall colors
       if (/^#[0-3][0-9a-f][0-3][0-9a-f][0-5][0-9a-f]$/i.test(key)) {
         mat.color = "#dcd6c8";
       }
@@ -151,17 +330,82 @@ export function remapAssetToDayTheme(asset: PixcelAssetLike): PixcelAssetLike {
   return cloned;
 }
 
-function buildVariantAssets(base: PixcelAssetLike): PixcelAssetLike[] {
-  const defs = TEAMMATE_VARIANTS[base.id];
-  if (!defs) return [];
-  return defs.map((v) => {
-    const cloned = structuredClone(base);
-    cloned.id = `${base.id}-${v.suffix}`;
-    if (cloned.materials.hair) cloned.materials.hair.color = v.hair;
-    if (cloned.materials.outfit_trim) cloned.materials.outfit_trim.color = v.outfitTrim;
-    if (v.badge && cloned.materials.badge) cloned.materials.badge.color = v.badge;
+export function remapAssetToOfficeTheme(asset: PixcelAssetLike): PixcelAssetLike {
+  const cloned = structuredClone(asset);
+  if (cloned.category === "character" || cloned.palette === "office-day") {
     return cloned;
-  });
+  }
+
+  const isWall = cloned.layer === "wall" || cloned.id.startsWith("wall-");
+  const isDeskOrTable = cloned.id.startsWith("desk-") || cloned.id.startsWith("table-");
+  const isCoffeeBar = cloned.id === "coffee-machine-bar";
+
+  for (const [matName, mat] of Object.entries(cloned.materials)) {
+    const key = mat.color.toLowerCase();
+
+    if (isWall) {
+      if (matName.includes("cap")) {
+        mat.color = "#5d5355";
+      } else if (matName === "frame") {
+        mat.color = "#5d5355";
+      } else if (mat.kind === "glass" || matName.includes("glass")) {
+        mat.color = "#7dd3fc";
+      } else if (mat.kind === "emissive" && cloned.id.includes("window")) {
+        mat.color = "#e0f2fe";
+      } else if (matName === "wall_trim" || matName === "baseboard") {
+        mat.color = "#c8cdd5";
+      } else if (matName === "wall_main" || /^#[0-3][0-9a-f][0-3][0-9a-f][0-5][0-9a-f]$/i.test(key)) {
+        mat.color = "#dadde2";
+      }
+      continue;
+    }
+
+    if (isCoffeeBar) {
+      if (matName === "metal_dark") {
+        mat.color = "#dc2626";
+        continue;
+      }
+      if (matName === "steel") {
+        mat.color = "#cbd5e1";
+        continue;
+      }
+      if (matName === "wood_top") {
+        mat.color = "#c87d42";
+        continue;
+      }
+      if (matName === "wood_dark") {
+        mat.color = "#a66330";
+        continue;
+      }
+    }
+
+    if (isDeskOrTable) {
+      if (matName === "wood_top") {
+        mat.color = "#c87d42";
+        continue;
+      }
+      if (matName === "wood_trim") {
+        mat.color = "#a66330";
+        continue;
+      }
+      if (matName === "metal_dark") {
+        mat.color = "#8b95a5";
+        continue;
+      }
+      if (matName === "metal_mid") {
+        mat.color = "#a3adbc";
+        continue;
+      }
+    }
+
+    if (key in OFFICE_HEX_REMAP) {
+      mat.color = OFFICE_HEX_REMAP[key];
+    } else if (matName.includes("plank") && /^#[0-6]/.test(key)) {
+      mat.color = "#c87d42";
+    }
+  }
+
+  return cloned;
 }
 
 function blitRGBA(src: RGBAImageLike, dst: RGBAImageLike, dx: number, dy: number): void {
@@ -181,6 +425,21 @@ function blitRGBA(src: RGBAImageLike, dst: RGBAImageLike, dx: number, dy: number
       dst.data[di + 3] = sa;
     }
   }
+}
+
+/** Phase 2 assets (`animations`) flatten every clip (frames named `<clip>_<i>`); legacy assets use `frames`. */
+function compileFrames(core: PixcelCoreModules, asset: PixcelAssetLike): CompiledFrameLike[] {
+  if (asset.animations && Object.keys(asset.animations).length > 0) {
+    return [...core.compileAssetAnimations(asset).values()].flat();
+  }
+  return core.compileAsset(asset).frames;
+}
+
+function frameNames(asset: PixcelAssetLike): string[] {
+  if (asset.animations && Object.keys(asset.animations).length > 0) {
+    return Object.values(asset.animations).flatMap((clip) => clip.frames.map((f) => f.name));
+  }
+  return asset.frames?.map((f) => f.name) ?? ["default"];
 }
 
 export class PixcelBridge {
@@ -207,9 +466,10 @@ export class PixcelBridge {
     if (!this.corePromise) {
       this.corePromise = (async () => {
         const coreDir = path.join(this.opts.pixcelRoot, "dist", "core");
-        const [schemaMod, dslMod, postMod, atlasMod, pngMod] = await Promise.all([
+        const [schemaMod, dslMod, charMod, postMod, atlasMod, pngMod] = await Promise.all([
           import(pathToFileURL(path.join(coreDir, "schema.js")).href),
           import(pathToFileURL(path.join(coreDir, "dsl-compiler.js")).href),
+          import(pathToFileURL(path.join(coreDir, "character-builder.js")).href),
           import(pathToFileURL(path.join(coreDir, "postprocess.js")).href),
           import(pathToFileURL(path.join(coreDir, "exporters", "atlas.js")).href),
           import(pathToFileURL(path.join(coreDir, "exporters", "png.js")).href),
@@ -217,6 +477,8 @@ export class PixcelBridge {
         return {
           PixcelAssetSchema: schemaMod.PixcelAssetSchema,
           compileAsset: dslMod.compileAsset,
+          compileAssetAnimations: dslMod.compileAssetAnimations,
+          buildCharacterAsset: charMod.buildCharacterAsset,
           renderAssetFrame: postMod.renderAssetFrame,
           packSpriteAtlas: atlasMod.packSpriteAtlas,
           createRGBAImage: pngMod.createRGBAImage,
@@ -247,21 +509,44 @@ export class PixcelBridge {
     return result;
   }
 
+  private async loadCharacterAssets(): Promise<Array<{ asset: PixcelAssetLike; source: CatalogEntry["source"] }>> {
+    const core = await this.loadCore();
+    const built = PHASE2_CHARACTER_SPECS.map((spec) => ({
+      asset: core.buildCharacterAsset(spec),
+      source: "character" as const,
+    }));
+    const builtIds = new Set(built.map((item) => item.asset.id));
+    const diskExtras = (await this.readAssetsFromDir(this.charsDir, "character")).filter(
+      (item) => !builtIds.has(item.asset.id),
+    );
+    return [...built, ...diskExtras];
+  }
+
   private renderAssetsToSprites(
     core: PixcelCoreModules,
     assets: PixcelAssetLike[],
-    theme: "night" | "day",
+    theme: ThemeMode,
   ) {
-    const dummyPalette = { name: theme === "day" ? "office-day" : "office-night", colors: {} };
+    const dummyPalette = {
+      name: theme === "office" ? "office-salvaje" : theme === "day" ? "office-day" : "office-night",
+      colors: {},
+    };
     const sprites: Parameters<PixcelCoreModules["packSpriteAtlas"]>[0] = [];
     for (const original of assets) {
-      const asset = theme === "day" && original.category !== "character" ? remapAssetToDayTheme(original) : original;
-      const { frames } = core.compileAsset(asset);
+      const asset =
+        original.category === "character"
+          ? original
+          : theme === "office"
+            ? remapAssetToOfficeTheme(original)
+            : theme === "day"
+              ? remapAssetToDayTheme(original)
+              : original;
+      const frames = compileFrames(core, asset);
       const dirs: Direction[] = asset.layer === "floor" ? ["se"] : ALL_DIRECTIONS;
       for (const dir of dirs) {
         for (const frame of frames) {
           const rendered = core.renderAssetFrame(asset, frame.grid, dummyPalette, {
-            direction: dir,
+            direction: pixcelRenderDirection(asset, dir),
             emissiveMode: "both",
           });
           sprites.push({
@@ -289,7 +574,7 @@ export class PixcelBridge {
       layer: asset.layer,
       footprintTiles: asset.footprintTiles,
       source,
-      frames: asset.frames?.map((f) => f.name) ?? ["default"],
+      frames: frameNames(asset),
     }));
   }
 
@@ -297,20 +582,14 @@ export class PixcelBridge {
     const [starter, props, chars, custom] = await Promise.all([
       this.readAssetsFromDir(this.starterDir, "starter"),
       this.readAssetsFromDir(this.propsDir, "prop"),
-      this.readAssetsFromDir(this.charsDir, "character"),
+      this.loadCharacterAssets(),
       this.readAssetsFromDir(this.customDir, "custom"),
     ]);
-    const expandedChars: Array<{ asset: PixcelAssetLike; source: CatalogEntry["source"] }> = [];
-    for (const c of chars) {
-      expandedChars.push(c);
-      for (const v of buildVariantAssets(c.asset)) {
-        expandedChars.push({ asset: v, source: "character" });
-      }
-    }
-    return this.toCatalogEntries([...starter, ...props, ...expandedChars, ...custom]);
+    return this.toCatalogEntries([...starter, ...props, ...chars, ...custom]);
   }
 
   async buildCoreAtlases(): Promise<{
+    officeAtlasPath: string;
     nightAtlasPath: string;
     dayAtlasPath: string;
     catalog: CatalogEntry[];
@@ -321,19 +600,19 @@ export class PixcelBridge {
     const [starter, props, chars] = await Promise.all([
       this.readAssetsFromDir(this.starterDir, "starter"),
       this.readAssetsFromDir(this.propsDir, "prop"),
-      this.readAssetsFromDir(this.charsDir, "character"),
+      this.loadCharacterAssets(),
     ]);
 
-    const expandedChars: Array<{ asset: PixcelAssetLike; source: CatalogEntry["source"] }> = [];
-    for (const c of chars) {
-      expandedChars.push(c);
-      for (const v of buildVariantAssets(c.asset)) {
-        expandedChars.push({ asset: v, source: "character" });
-      }
-    }
-
-    const allCore = [...starter, ...props, ...expandedChars];
+    const allCore = [...starter, ...props, ...chars];
     const assets = allCore.map((a) => a.asset);
+
+    const officeSprites = this.renderAssetsToSprites(core, assets, "office");
+    const officePacked = core.packSpriteAtlas(officeSprites, {
+      imageName: "atlas-office.png",
+      emissiveImageName: "atlas-office_emissive.png",
+      tilePreset: "64x32",
+      padding: 1,
+    });
 
     const nightSprites = this.renderAssetsToSprites(core, assets, "night");
     const nightPacked = core.packSpriteAtlas(nightSprites, {
@@ -351,10 +630,20 @@ export class PixcelBridge {
       padding: 1,
     });
 
+    const officeAtlasPath = path.join(this.opts.runtimeOutDir, "atlas-office.json");
     const nightAtlasPath = path.join(this.opts.runtimeOutDir, "atlas-night.json");
     const dayAtlasPath = path.join(this.opts.runtimeOutDir, "atlas-day.json");
 
     await Promise.all([
+      fs.writeFile(path.join(this.opts.runtimeOutDir, "atlas-office.png"), core.encodePNG(officePacked.sheet)),
+      officePacked.emissiveSheet
+        ? fs.writeFile(
+            path.join(this.opts.runtimeOutDir, "atlas-office_emissive.png"),
+            core.encodePNG(officePacked.emissiveSheet),
+          )
+        : Promise.resolve(),
+      fs.writeFile(officeAtlasPath, `${JSON.stringify(officePacked.atlas, null, 2)}\n`, "utf8"),
+
       fs.writeFile(path.join(this.opts.runtimeOutDir, "atlas-night.png"), core.encodePNG(nightPacked.sheet)),
       nightPacked.emissiveSheet
         ? fs.writeFile(
@@ -363,6 +652,7 @@ export class PixcelBridge {
           )
         : Promise.resolve(),
       fs.writeFile(nightAtlasPath, `${JSON.stringify(nightPacked.atlas, null, 2)}\n`, "utf8"),
+
       fs.writeFile(path.join(this.opts.runtimeOutDir, "atlas-day.png"), core.encodePNG(dayPacked.sheet)),
       dayPacked.emissiveSheet
         ? fs.writeFile(
@@ -376,7 +666,7 @@ export class PixcelBridge {
     // Ensure an empty or populated custom atlas also exists
     await this.rebuildCustomAtlas();
     const catalog = await this.listCatalog();
-    return { nightAtlasPath, dayAtlasPath, catalog };
+    return { officeAtlasPath, nightAtlasPath, dayAtlasPath, catalog };
   }
 
   async rebuildCustomAtlas(): Promise<{ atlasPath: string; catalog: CatalogEntry[] }> {
@@ -411,7 +701,7 @@ export class PixcelBridge {
       return { atlasPath, catalog: await this.listCatalog() };
     }
 
-    // Custom assets render as authored in both themes
+    // Custom assets render as authored in all themes
     const sprites = this.renderAssetsToSprites(
       core,
       customItems.map((c) => c.asset),
@@ -452,8 +742,7 @@ export class PixcelBridge {
     const core = await this.loadCore();
     // 1. Validate schema & compile in memory BEFORE writing anything to disk
     const asset = core.PixcelAssetSchema.parse(rawAsset);
-    const compiled = core.compileAsset(asset);
-    const firstFrame = compiled.frames[0];
+    const firstFrame = compileFrames(core, asset)[0];
     const dummyPalette = { name: "office-night", colors: {} };
 
     // 2. Render 4-direction contact sheet for Gemini visual self-verification
@@ -496,7 +785,7 @@ export class PixcelBridge {
       layer: asset.layer,
       footprintTiles: asset.footprintTiles,
       source: "custom",
-      frames: asset.frames?.map((f) => f.name) ?? ["default"],
+      frames: frameNames(asset),
     };
 
     return {

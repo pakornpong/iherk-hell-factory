@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-ac-unit",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 2],
+  "palette": "office-day",
+  "materials": {
+    "plastic_white": { "color": "#e2e8f0", "kind": "matte" },
+    "plastic_shade": { "color": "#cbd5e1", "kind": "matte" },
+    "vent_dark": { "color": "#334155", "kind": "metal" },
+    "led_green": { "color": "#22c55e", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.45 }
+  },
+  "ops": [
+    { "op": "box", "from": [2, 10, 34], "to": [10, 52, 43], "material": "plastic_white", "part": "casing" },
+    { "op": "box", "from": [10, 12, 35], "to": [11, 50, 37], "material": "vent_dark", "part": "vent" },
+    { "op": "box", "from": [10, 11, 41], "to": [10, 51, 43], "material": "plastic_shade", "part": "top_lip" },
+    { "op": "voxel", "at": [10, 48, 39], "material": "led_green", "part": "led" }
+  ]
+}

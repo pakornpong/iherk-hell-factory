@@ -35,6 +35,7 @@ Usage:
 
 async function ensureAtlasesExist(bridge: PixcelBridge): Promise<void> {
   try {
+    await fs.access(path.join(RUNTIME_ASSETS_DIR, "atlas-office.json"));
     await fs.access(path.join(RUNTIME_ASSETS_DIR, "atlas-night.json"));
     await fs.access(path.join(RUNTIME_ASSETS_DIR, "atlas-day.json"));
   } catch {
@@ -128,6 +129,7 @@ async function main(): Promise<void> {
         JSON.stringify(
           {
             ok: true,
+            officeAtlas: res.officeAtlasPath,
             nightAtlas: res.nightAtlasPath,
             dayAtlas: res.dayAtlasPath,
             catalogCount: res.catalog.length,

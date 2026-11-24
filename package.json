@@ -9,6 +9,7 @@
   "scripts": {
     "build:server": "tsc -p tsconfig.json",
     "build:client": "tsx scripts/build-client.ts",
+    "build:characters": "tsx scripts/build-characters.ts",
     "build:assets": "tsx src/cli/index.ts build-assets",
     "build": "npm run build:server && npm run build:client && npm run build:assets",
     "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit",

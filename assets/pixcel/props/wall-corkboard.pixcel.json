@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-corkboard",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 2],
+  "palette": "office-day",
+  "materials": {
+    "frame_wood": { "color": "#7c4a26", "kind": "wood" },
+    "cork": { "color": "#c5915b", "kind": "matte" },
+    "note_yellow": { "color": "#fde047", "kind": "matte" },
+    "note_white": { "color": "#f8fafc", "kind": "matte" },
+    "note_blue": { "color": "#7dd3fc", "kind": "matte" },
+    "pin_red": { "color": "#ef4444", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [2, 8, 22], "to": [5, 55, 41], "material": "frame_wood", "part": "frame" },
+    { "op": "box", "from": [4, 10, 24], "to": [6, 53, 39], "material": "cork", "part": "board" },
+    { "op": "box", "from": [6, 13, 31], "to": [6, 20, 37], "material": "note_white", "part": "notes" },
+    { "op": "box", "from": [6, 24, 28], "to": [6, 30, 35], "material": "note_yellow", "part": "notes" },
+    { "op": "box", "from": [6, 34, 31], "to": [6, 41, 37], "material": "note_blue", "part": "notes" },
+    { "op": "box", "from": [6, 44, 27], "to": [6, 50, 34], "material": "note_white", "part": "notes" },
+    { "op": "voxel", "at": [6, 16, 37], "material": "pin_red", "part": "pins" },
+    { "op": "voxel", "at": [6, 27, 35], "material": "pin_red", "part": "pins" },
+    { "op": "voxel", "at": [6, 37, 37], "material": "pin_red", "part": "pins" }
+  ]
+}

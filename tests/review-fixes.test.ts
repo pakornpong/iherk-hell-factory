@@ -95,7 +95,7 @@ describe("Final Review Fix Verification (Critical #1-#4 & Important #5-#10)", ()
     expect(Math.floor(pty)).toBe(4);
   });
 
-  it("#4: employees face their desks (ne), south conference chairs (ne), east conference chairs (nw), and sofa (sw)", () => {
+  it("#4: employees face their desks (nw), south conference chairs (nw), matching chair-office-swivel 1:1", () => {
     const bay: ProjectBayRecord = {
       id: "b0",
       projectPath: "/p/a",
@@ -112,7 +112,7 @@ describe("Final Review Fix Verification (Critical #1-#4 & Important #5-#10)", ()
     const sim = new OfficeSimulation();
     const state: OfficeState = {
       version: 1,
-      theme: "night",
+      theme: "office",
       bays: [bay],
       commonWings: [wing],
       activityLog: [],
@@ -123,12 +123,12 @@ describe("Final Review Fix Verification (Critical #1-#4 & Important #5-#10)", ()
     sim.syncFromServer(state, campus);
     let out = sim.step(50);
     for (let i = 0; i < 400; i++) out = sim.step(50);
-    expect(out.visuals[0].direction).toBe("ne"); // faces -Y toward desk at ly=1
+    expect(out.visuals[0].direction).toBe("nw"); // faces -Y toward desk (1:1 with chair-office-swivel)
 
     state.employees[0].visualState = "meeting";
     sim.syncFromServer(state, campus);
     for (let i = 0; i < 400; i++) out = sim.step(50);
-    expect(out.visuals[0].direction).toBe("ne"); // south conference seat faces -Y toward table
+    expect(out.visuals[0].direction).toBe("nw"); // south conference seat faces -Y toward table
   });
 
   it("#5 & #7: prevents subagent resurrection after stop, ignores stray session_end for unknown projects, cleans subagents on parent turn_stop, and allocates unique deskIndex + extra desks", async () => {

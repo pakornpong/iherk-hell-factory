@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "floor-boss-rug",
+  "category": "architecture",
+  "layer": "floor",
+  "outlineMode": "none",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "rug_red": { "color": "#9e2a3b", "kind": "matte" },
+    "rug_border": { "color": "#731b29", "kind": "matte" },
+    "rug_gold": { "color": "#c98b3c", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [0, 0, 0], "to": [31, 31, 0], "material": "rug_red" },
+    { "op": "hollowBox", "from": [0, 0, 0], "to": [31, 31, 0], "thickness": 2, "material": "rug_border" },
+    { "op": "hollowBox", "from": [4, 4, 0], "to": [27, 27, 0], "thickness": 1, "material": "rug_gold" }
+  ]
+}

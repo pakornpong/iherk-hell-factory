@@ -24,7 +24,7 @@
           <button id="zoom-4">4×</button>
         </div>
         <button id="btn-decorate">🪑 Decorate</button>
-        <button id="btn-theme" data-theme="night">🌙 Night</button>
+        <button id="btn-theme" data-theme="office">🏢 Office</button>
         <button id="btn-demo">▶ Demo Mode</button>
       </div>
     </header>
@@ -33,6 +33,13 @@
       <div class="sidebar-header">
         <span>PROJECT BAYS</span>
         <button id="toggle-archived" title="Toggle Archived">Archive</button>
+      </div>
+      <div id="dept-filters" class="dept-filters">
+        <button class="dept-filter-btn active" data-dept="all">All</button>
+        <button class="dept-filter-btn" data-dept="iherk">IHERK</button>
+        <button class="dept-filter-btn" data-dept="dev">DEV</button>
+        <button class="dept-filter-btn" data-dept="erp">ERP</button>
+        <button class="dept-filter-btn" data-dept="accounting">ACC</button>
       </div>
       <input id="bay-search" type="search" placeholder="Filter projects..." />
       <div id="bay-list" class="bay-list"></div>

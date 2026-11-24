@@ -27,8 +27,98 @@ export type VisualState = z.infer<typeof VisualStateSchema>;
 export const ToolCategorySchema = z.enum(["code", "shell", "search", "error", "idle"]);
 export type ToolCategory = z.infer<typeof ToolCategorySchema>;
 
-export const ThemeModeSchema = z.enum(["night", "day"]);
+export const ThemeModeSchema = z.enum(["office", "night", "day"]);
 export type ThemeMode = z.infer<typeof ThemeModeSchema>;
+
+export const DepartmentIdSchema = z.enum(["iherk", "dev", "erp", "accounting", "general"]);
+export type DepartmentId = z.infer<typeof DepartmentIdSchema>;
+
+export const DEPARTMENT_ORDER: readonly DepartmentId[] = [
+  "iherk",
+  "dev",
+  "erp",
+  "accounting",
+  "general",
+] as const;
+
+export interface DepartmentMeta {
+  id: DepartmentId;
+  label: string;
+  shortLabel: string;
+  icon: string;
+  color: string;
+}
+
+export const DEPARTMENT_META: Record<DepartmentId, DepartmentMeta> = {
+  iherk: { id: "iherk", label: "IHERK", shortLabel: "IHERK", icon: "⚡", color: "#38bdf8" },
+  dev: { id: "dev", label: "DEV", shortLabel: "DEV", icon: "💻", color: "#6366f1" },
+  erp: { id: "erp", label: "ERP", shortLabel: "ERP", icon: "🏭", color: "#10b981" },
+  accounting: { id: "accounting", label: "ACCOUNTING", shortLabel: "ACC", icon: "💰", color: "#f59e0b" },
+  general: { id: "general", label: "GENERAL", shortLabel: "GEN", icon: "🏢", color: "#94a3b8" },
+};
+
+export interface OrgRoleMeta {
+  id: string;
+  label: string;
+  shortLabel: string;
+  icon: string;
+  color: string;
+}
+
+export const ORG_ROLE_META: Record<string, OrgRoleMeta> = {
+  orchestrator: { id: "Orchestrator", label: "Orchestrator", shortLabel: "ORCH", icon: "🎯", color: "#a78bfa" },
+  "org-researcher": { id: "org-researcher", label: "Researcher", shortLabel: "RES", icon: "🔍", color: "#38bdf8" },
+  "org-worker": { id: "org-worker", label: "Worker", shortLabel: "WRK", icon: "🛠️", color: "#f59e0b" },
+  "org-qa": { id: "org-qa", label: "QA", shortLabel: "QA", icon: "🧪", color: "#10b981" },
+};
+
+export function getOrgRoleMeta(role?: string): OrgRoleMeta | null {
+  if (!role) return null;
+  const key = role.trim().toLowerCase();
+  return ORG_ROLE_META[key] ?? null;
+}
+
+export function classifyDepartmentFromPath(
+  projectPath: string | null | undefined,
+  explicitDepartment?: DepartmentId,
+): DepartmentId {
+  if (explicitDepartment) return explicitDepartment;
+  if (!projectPath) return "general";
+  const p = projectPath.replace(/\\/g, "/").toLowerCase();
+
+  // 1. IHERK: ~/Documents/IHERK/*, ~/Documents/iherk-*, /demo/iherk-*
+  if (
+    p.includes("/documents/iherk/") ||
+    p.endsWith("/documents/iherk") ||
+    p.includes("/documents/iherk-") ||
+    p.includes("/demo/iherk-") ||
+    /(^|\/)iherk-[a-z0-9._-]+(\/|$)/.test(p)
+  ) {
+    return "iherk";
+  }
+
+  // 2. ACCOUNTING: account / vat / tax / finance
+  if (/(^|[^a-z0-9])(account(?:ing)?|vat|tax(?:es)?|finance|financial)([^a-z0-9]|$)/.test(p)) {
+    return "accounting";
+  }
+
+  // 3. ERP: erp / loh-pc / db
+  if (/(^|[^a-z0-9])(erp|loh-?pc|db)([^a-z0-9]|$)/.test(p)) {
+    return "erp";
+  }
+
+  // 4. DEV: ~/Documents/Github/* or /demo/msv-*
+  if (
+    p.includes("/documents/github/") ||
+    p.endsWith("/documents/github") ||
+    p.includes("/demo/msv-") ||
+    /(^|\/)msv-[a-z0-9._-]+(\/|$)/.test(p)
+  ) {
+    return "dev";
+  }
+
+  return "general";
+}
 
 export const AssetLayerSchema = z.enum(["floor", "wall", "wall-decor", "object"]);
 export type AssetLayer = z.infer<typeof AssetLayerSchema>;
@@ -61,6 +151,7 @@ export const AgentTelemetryEventSchema = z.object({
   agentRole: z.string().min(1).max(64).optional(),
   projectPath: z.string().min(1).max(1024),
   projectName: z.string().min(1).max(128).optional(),
+  department: DepartmentIdSchema.optional(),
   eventType: TelemetryEventTypeSchema,
   toolName: z.string().min(1).max(128).optional(),
   detail: z
@@ -111,6 +202,7 @@ export const ProjectBayRecordSchema = z.object({
   id: z.string().min(1).max(128),
   projectPath: z.string().min(1).max(1024).nullable(),
   displayName: z.string().min(1).max(128),
+  department: DepartmentIdSchema.optional(),
   accentColor: z.string().regex(/^#[0-9a-fA-F]{6}$/).default("#38bdf8"),
   archived: z.boolean().default(false),
   deskSlots: z.number().int().min(1).max(4).default(2),
@@ -148,7 +240,7 @@ export type ActivityLogEntry = z.infer<typeof ActivityLogEntrySchema>;
 
 export const OfficeStateSchema = z.object({
   version: z.literal(1).default(1),
-  theme: ThemeModeSchema.default("night"),
+  theme: ThemeModeSchema.default("office"),
   bossOffice: BossOfficeRecordSchema.optional(),
   bays: z.array(ProjectBayRecordSchema).default([]),
   commonWings: z.array(CommonWingRecordSchema).default([]),
@@ -171,6 +263,7 @@ export interface ZoneBounds {
   zoneId: ZoneId;
   kind: "boss" | "common" | "bay";
   bayId?: string;
+  department?: DepartmentId;
   row: number;
   col: number;
   originX: number;

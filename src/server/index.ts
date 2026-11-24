@@ -7,6 +7,7 @@ import { WebSocket, WebSocketServer } from "ws";
 import { z } from "zod";
 import {
   AgentTelemetryEventSchema,
+  DepartmentIdSchema,
   DirectionSchema,
   ThemeModeSchema,
   type WsServerMessage,
@@ -62,6 +63,7 @@ const MoveFurnitureBodySchema = z.object({
 
 const ManageBayBodySchema = z.object({
   displayName: z.string().min(1).max(128).optional(),
+  department: DepartmentIdSchema.optional(),
   accentColor: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
   archived: z.boolean().optional(),
 });

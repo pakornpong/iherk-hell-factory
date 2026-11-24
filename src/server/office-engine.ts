@@ -3,10 +3,13 @@ import { EventEmitter } from "node:events";
 import path from "node:path";
 import {
   AgentTelemetryEventSchema,
+  classifyDepartmentFromPath,
+  DEPARTMENT_META,
   type ActivityLogEntry,
   type AgentTelemetryEvent,
   type CatalogEntry,
   type ComputedCampus,
+  type DepartmentId,
   type Direction,
   type EmployeeRecord,
   type FurnitureInstance,
@@ -140,6 +143,7 @@ export class OfficeEngine extends EventEmitter {
       this.state.commonWings,
       this.catalogById,
       this.state.bossOffice,
+      this.state.theme,
     );
   }
 
@@ -148,7 +152,7 @@ export class OfficeEngine extends EventEmitter {
     const starterBayId = "bay-0";
     return {
       version: 1,
-      theme: "night",
+      theme: "office",
       bossOffice: createDefaultBossOffice(),
       commonWings: [createDefaultCommonWing(0)],
       bays: [
@@ -156,10 +160,11 @@ export class OfficeEngine extends EventEmitter {
           id: starterBayId,
           projectPath: null,
           displayName: "Starter Studio",
+          department: "general",
           accentColor: BAY_ACCENT_PALETTE[0],
           archived: false,
           deskSlots: 2,
-          furniture: createDefaultBayFurniture(starterBayId),
+          furniture: createDefaultBayFurniture(starterBayId, "general"),
           createdAt: ts,
           lastActiveAt: ts,
         },
@@ -190,6 +195,11 @@ export class OfficeEngine extends EventEmitter {
       loaded.employees = loaded.employees.filter((e) => !e.isEphemeral);
       if (!loaded.bossOffice) {
         loaded.bossOffice = createDefaultBossOffice();
+      }
+      for (const b of loaded.bays) {
+        if (!b.department) {
+          b.department = classifyDepartmentFromPath(b.projectPath);
+        }
       }
       this.state = loaded;
     } else {
@@ -258,6 +268,7 @@ export class OfficeEngine extends EventEmitter {
       this.state.commonWings,
       this.catalogById,
       this.state.bossOffice,
+      this.state.theme,
     );
   }
 
@@ -290,12 +301,24 @@ export class OfficeEngine extends EventEmitter {
     return `${base}-v${((variantIdx - 1) % 3) + 1}`;
   }
 
-  private getOrCreateBayForProject(projectPath: string, projectName: string | undefined, ts: number): { bay: ProjectBayRecord; expanded: boolean } {
+  private getOrCreateBayForProject(
+    projectPath: string,
+    projectName: string | undefined,
+    explicitDepartment: DepartmentId | undefined,
+    ts: number,
+  ): { bay: ProjectBayRecord; expanded: boolean } {
+    const dept = classifyDepartmentFromPath(projectPath, explicitDepartment);
     const existing = this.state.bays.find((b) => b.projectPath === projectPath);
     if (existing) {
       const wasArchived = existing.archived;
       existing.archived = false;
       existing.lastActiveAt = ts;
+      if (explicitDepartment && existing.department !== explicitDepartment) {
+        existing.department = explicitDepartment;
+        existing.accentColor = DEPARTMENT_META[explicitDepartment].color;
+      } else if (!existing.department) {
+        existing.department = dept;
+      }
       if (wasArchived) {
         this.ensureCommonWingsForActiveRows();
       }
@@ -308,6 +331,11 @@ export class OfficeEngine extends EventEmitter {
     if (starterBay) {
       starterBay.projectPath = projectPath;
       starterBay.displayName = displayName;
+      starterBay.department = dept;
+      starterBay.accentColor = DEPARTMENT_META[dept].color;
+      if (starterBay.furniture.every((f) => f.placedBy === "system")) {
+        starterBay.furniture = createDefaultBayFurniture(starterBay.id, dept);
+      }
       starterBay.archived = false;
       starterBay.lastActiveAt = ts;
       return { bay: starterBay, expanded: false };
@@ -320,10 +348,11 @@ export class OfficeEngine extends EventEmitter {
       id: bayId,
       projectPath,
       displayName,
-      accentColor: BAY_ACCENT_PALETTE[nextIndex % BAY_ACCENT_PALETTE.length],
+      department: dept,
+      accentColor: DEPARTMENT_META[dept].color ?? BAY_ACCENT_PALETTE[nextIndex % BAY_ACCENT_PALETTE.length],
       archived: false,
       deskSlots: 2,
-      furniture: createDefaultBayFurniture(bayId),
+      furniture: createDefaultBayFurniture(bayId, dept),
       createdAt: ts,
       lastActiveAt: ts,
     };
@@ -399,6 +428,7 @@ export class OfficeEngine extends EventEmitter {
       unboundStarter.provider = ev.provider;
       unboundStarter.spriteId = this.providerBaseSprite(ev.provider);
       unboundStarter.displayName = ev.provider === "claude" ? "Claude Lead" : "Gemini Lead";
+      if (ev.agentRole) unboundStarter.role = ev.agentRole;
       unboundStarter.sessionId = ev.sessionId;
       unboundStarter.lastUpdatedAt = ts;
       return unboundStarter;
@@ -408,6 +438,7 @@ export class OfficeEngine extends EventEmitter {
     const primary = bayEmployees.find((e) => !e.isEphemeral && e.provider === ev.provider);
     if (primary) {
       primary.sessionId = ev.sessionId;
+      if (ev.agentRole) primary.role = ev.agentRole;
       primary.lastUpdatedAt = ts;
       return primary;
     }
@@ -504,7 +535,7 @@ export class OfficeEngine extends EventEmitter {
       return;
     }
 
-    const { bay, expanded } = this.getOrCreateBayForProject(normalizedPath, ev.projectName, ts);
+    const { bay, expanded } = this.getOrCreateBayForProject(normalizedPath, ev.projectName, ev.department, ts);
     if (expanded) this.recomputeCampus();
     const emp = this.resolveOrSpawnEmployee(bay, ev, ts);
     if (!emp) return;
@@ -893,13 +924,19 @@ export class OfficeEngine extends EventEmitter {
 
   async manageBay(
     bayId: string,
-    patch: { displayName?: string; accentColor?: string; archived?: boolean },
+    patch: { displayName?: string; accentColor?: string; archived?: boolean; department?: DepartmentId },
   ): Promise<ProjectBayRecord> {
     return this.runSerialized(async () => {
       this.assertNotDemoMode();
       const bay = this.state.bays.find((b) => b.id === bayId);
       if (!bay) throw new Error(`Bay "${bayId}" not found`);
       if (patch.displayName !== undefined) bay.displayName = patch.displayName.slice(0, 128);
+      if (patch.department !== undefined) {
+        bay.department = patch.department;
+        if (patch.accentColor === undefined) {
+          bay.accentColor = DEPARTMENT_META[patch.department].color;
+        }
+      }
       if (patch.accentColor !== undefined) {
         if (!/^#[0-9a-fA-F]{6}$/.test(patch.accentColor)) {
           throw new Error(`Invalid hex color "${patch.accentColor}"`);
@@ -921,8 +958,9 @@ export class OfficeEngine extends EventEmitter {
 
   async setTheme(theme: ThemeMode): Promise<void> {
     return this.runSerialized(async () => {
-      // Allow toggling visual Day/Night theme even in Demo Mode; also apply to backup so it persists cleanly
+      // Allow toggling visual Office/Night/Day theme even in Demo Mode; also apply to backup so it persists cleanly
       this.state.theme = theme;
+      this.recomputeCampus();
       if (this.demoBackupState) {
         this.demoBackupState.theme = theme;
         await this.store.save(this.demoBackupState);
