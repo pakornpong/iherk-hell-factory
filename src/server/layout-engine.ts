@@ -16,6 +16,7 @@ import {
   type ZoneBounds,
   type ZoneId,
 } from "../shared/types.js";
+import { bayLayoutKey, commonLayoutKey, getRoomLayout, toFurniture } from "../shared/room-layouts.js";
 
 export const ZONE_SIZE = 6;
 /**
@@ -53,127 +54,12 @@ export function getRotatedFootprint(
 }
 
 export function createDefaultBossOffice(): BossOfficeRecord {
-  const zoneId = "boss:0" as const;
   return {
-    zoneId,
+    zoneId: "boss:0",
     displayName: "BOSS OFFICE",
-    furniture: [
-      { id: `${zoneId}-shelf`, zoneId, lx: 0, ly: 0, assetId: "bookshelf-wood", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-cabinet`, zoneId, lx: 1, ly: 0, assetId: "cabinet-wood-tall", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-screen`, zoneId, lx: 4, ly: 0, assetId: "projector-screen", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-plant-r`, zoneId, lx: 5, ly: 0, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-ext`, zoneId, lx: 0, ly: 1, assetId: "fire-extinguisher", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-boss-chair`, zoneId, lx: 2, ly: 1, assetId: "chair-office-swivel", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-projector`, zoneId, lx: 4, ly: 1, assetId: "projector-tripod", direction: "nw", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-file`, zoneId, lx: 5, ly: 1, assetId: "filing-cabinet", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-boss-desk`, zoneId, lx: 2, ly: 2, assetId: "desk-dev-dual", direction: "nw", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-visitor-0`, zoneId, lx: 2, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-visitor-1`, zoneId, lx: 3, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-plant-l`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-bin`, zoneId, lx: 1, ly: 4, assetId: "trash-bin-office", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-storage`, zoneId, lx: 0, ly: 5, assetId: "shelf-metal-storage", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-shredder`, zoneId, lx: 1, ly: 5, assetId: "shredder-mini", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-cooler`, zoneId, lx: 4, ly: 4, assetId: "water-cooler", direction: "sw", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-sign`, zoneId, lx: 5, ly: 4, assetId: "bay-sign-post", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-pc`, zoneId, lx: 5, ly: 5, assetId: "pc-tower-box", direction: "se", layer: "object", placedBy: "system" },
-    ],
+    furniture: toFurniture("boss:0", getRoomLayout("boss").items),
   };
 }
-
-type AmenitySpot = [lx: number, ly: number, assetId: string, direction?: Direction];
-
-/**
- * Themed amenity rooms. Items only use the four 2x2 corners (lx 0..1 / 4..5, ly 0..1 / 4..5) so the
- * 2-tile central corridor (lx 2..3) and all four 2-tile doorways (offset 2..3 on every side) stay walkable.
- */
-const AMENITY_LAYOUTS: Record<AmenityThemeId, AmenitySpot[]> = {
-  game: [
-    [0, 0, "game-pinball-machine"],
-    [0, 1, "game-arcade-cabinet"],
-    [1, 1, "game-claw-machine"],
-    [4, 0, "game-racing-rig"],
-    [4, 1, "game-console-tv"],
-    [0, 4, "sofa-lounge", "nw"],
-    [0, 5, "office-vending-machine"],
-    [5, 5, "plant-potted"],
-  ],
-  music: [
-    [0, 0, "music-drum-kit"],
-    [0, 1, "music-guitar-amp"],
-    [1, 1, "music-vinyl-shelf"],
-    [4, 0, "music-synth-keyboard"],
-    [4, 1, "music-dj-turntable"],
-    [0, 4, "sofa-lounge", "nw"],
-    [5, 5, "plant-potted"],
-  ],
-  stream: [
-    [0, 0, "stream-desk-pro"],
-    [0, 1, "stream-ring-light"],
-    [1, 1, "chair-office-swivel", "nw"],
-    [4, 0, "stream-green-screen"],
-    [4, 1, "stream-softbox-light"],
-    [5, 1, "stream-ring-light"],
-    [0, 4, "stream-podcast-table"],
-    [0, 5, "chair-office-swivel", "nw"],
-    [1, 5, "chair-office-swivel", "nw"],
-  ],
-  gym: [
-    [0, 0, "gym-treadmill"],
-    [0, 1, "gym-exercise-bike"],
-    [1, 1, "gym-punching-bag"],
-    [4, 0, "gym-bench-press"],
-    [4, 1, "gym-dumbbell-rack"],
-    [0, 5, "gym-yoga-mat-corner"],
-    [1, 5, "water-cooler"],
-    [5, 5, "office-locker-bank"],
-  ],
-  lab: [
-    [0, 0, "lab-bench-microscope"],
-    [0, 1, "lab-fume-hood"],
-    [1, 1, "lab-centrifuge-table"],
-    [4, 0, "lab-bioreactor"],
-    [5, 0, "lab-cryo-tank"],
-    [4, 1, "sci-dna-holo"],
-    [5, 1, "sci-chemistry-rack"],
-    [0, 5, "sci-tesla-coil"],
-    [1, 5, "sci-globe-stand"],
-    [4, 5, "fire-extinguisher"],
-    [5, 5, "sci-telescope"],
-  ],
-  maker: [
-    [0, 0, "pc-soldering-bench"],
-    [0, 1, "pc-3d-printer"],
-    [1, 1, "gadget-robot-arm"],
-    [4, 0, "pc-desk-triple"],
-    [4, 1, "chair-office-swivel", "nw"],
-    [5, 1, "pc-retro-crt"],
-    [0, 5, "gadget-drone-pad"],
-    [1, 5, "gadget-vr-station"],
-    [4, 5, "gadget-charging-hub"],
-    [5, 5, "gadget-smart-kiosk"],
-  ],
-  home: [
-    [0, 0, "home-bed-cozy"],
-    [4, 0, "home-tv-bookshelf"],
-    [0, 4, "home-dining-set"],
-    [0, 5, "home-kitchen-fridge"],
-    [5, 4, "home-cat-tree"],
-    [4, 5, "sofa-lounge", "nw"],
-  ],
-  server: [
-    [0, 0, "server-blade-tower"],
-    [1, 0, "server-nas-vault"],
-    [0, 1, "server-patch-panel"],
-    [1, 1, "server-ups-battery"],
-    [4, 0, "server-rack"],
-    [5, 0, "server-blade-tower"],
-    [4, 1, "server-cooling-unit"],
-    [5, 1, "server-patch-panel"],
-    [0, 5, "pc-workstation-mac"],
-    [4, 5, "shelf-metal-storage"],
-    [5, 5, "fire-extinguisher"],
-  ],
-};
 
 export function getAmenityTheme(index: number): AmenityThemeId {
   return AMENITY_THEME_ORDER[index % AMENITY_THEME_ORDER.length];
@@ -181,164 +67,46 @@ export function getAmenityTheme(index: number): AmenityThemeId {
 
 /** System-generated (not persisted, not user-editable) furniture for a themed amenity room. */
 export function createAmenityFurniture(index: number, theme: AmenityThemeId): FurnitureInstance[] {
-  const zoneId: ZoneId = `amenity:${index}`;
-  return AMENITY_LAYOUTS[theme].map(([lx, ly, assetId, direction], i) => ({
-    id: `${zoneId}-${theme}-${i}`,
-    zoneId,
-    lx,
-    ly,
-    assetId,
-    direction: direction ?? "se",
-    layer: "object" as const,
-    placedBy: "system" as const,
-  }));
+  // Repeat visits to the same theme (index >= theme count) get the mirrored layout
+  const mirrored = Math.floor(index / AMENITY_THEME_ORDER.length) % 2 === 1;
+  return toFurniture(`amenity:${index}`, getRoomLayout(`amenity-${theme}`, mirrored).items);
 }
 
-/**
- * Open-plan co-working bench for subagents of every project: two pods of back-to-back desks where people
- * sit face to face (4 seats per pod). The centre aisle (lx 2..3) and the front row (ly 4..5) stay walkable.
- */
+/** Open-plan co-working bench for subagents of every project: face-to-face desk pods, 8 seats. */
 export function createCoworkFurniture(): FurnitureInstance[] {
-  const zoneId: ZoneId = "cowork:0";
-  const pod = (lx: number): AmenitySpot[] => [
-    [lx, 0, "chair-office-swivel", "se"],
-    [lx + 1, 0, "chair-office-swivel", "se"],
-    [lx, 1, "desk-dev-dual", "nw"],
-    [lx, 2, "pc-desk-triple", "se"],
-    [lx, 3, "chair-office-swivel", "nw"],
-    [lx + 1, 3, "chair-office-swivel", "nw"],
-  ];
-  const spots: AmenitySpot[] = [...pod(0), ...pod(4), [2, 5, "plant-potted"], [3, 5, "water-cooler", "sw"]];
-  return spots.map(([lx, ly, assetId, direction], i) => ({
-    id: `${zoneId}-${i}`,
-    zoneId,
-    lx,
-    ly,
-    assetId,
-    direction: direction ?? "se",
-    layer: "object" as const,
-    placedBy: "system" as const,
-  }));
+  return toFurniture("cowork:0", getRoomLayout("cowork").items);
 }
 
 export function createDefaultCommonWing(row: number): CommonWingRecord {
   const zoneId: ZoneId = `common:${row}`;
-  return {
-    row,
-    zoneId,
-    furniture: [
-      { id: `${zoneId}-conf`, zoneId, lx: 1, ly: 1, assetId: "table-conference", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-c1`, zoneId, lx: 1, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-c2`, zoneId, lx: 2, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-c3`, zoneId, lx: 3, ly: 1, assetId: "chair-office-swivel", direction: "sw", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-coffee`, zoneId, lx: 4, ly: 0, assetId: "coffee-machine-bar", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-bin`, zoneId, lx: 4, ly: 1, assetId: "trash-bin-office", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-vac`, zoneId, lx: 4, ly: 2, assetId: "robot-vacuum", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-cabinet`, zoneId, lx: 0, ly: 4, assetId: "office-vending-machine", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-ext`, zoneId, lx: 1, ly: 4, assetId: "fire-extinguisher", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 5, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-copier`, zoneId, lx: 1, ly: 5, assetId: "printer-copier", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-sofa`, zoneId, lx: 4, ly: 4, assetId: "sofa-lounge", direction: "nw", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-storage`, zoneId, lx: 4, ly: 5, assetId: "office-whiteboard-mobile", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-cooler`, zoneId, lx: 5, ly: 5, assetId: "water-cooler", direction: "sw", layer: "object", placedBy: "system" },
-    ],
-  };
+  const { key, mirrored } = commonLayoutKey(row);
+  return { row, zoneId, furniture: toFurniture(zoneId, getRoomLayout(key, mirrored).items) };
 }
 
+function bayLayoutItems(bayId: string, department: DepartmentId) {
+  const { key, mirrored } = bayLayoutKey(department, bayId);
+  return getRoomLayout(key, mirrored).items;
+}
+
+/** A project's team room: one of 3 department-flavoured layouts, possibly mirrored, chosen from the bay id. */
 export function createDefaultBayFurniture(bayId: string, department: DepartmentId = "general"): FurnitureInstance[] {
-  const zoneId: ZoneId = `bay:${bayId}`;
-  // Symmetric room layout with wide 2-tile central corridor (lx=2..3) and clear doorways on all 4 room sides
-  const desk1Asset = department === "iherk" ? "desk-drafting" : "desk-dev-dual";
-  const base: FurnitureInstance[] = [
-    { id: `${zoneId}-desk-0`, zoneId, lx: 0, ly: 0, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
-    { id: `${zoneId}-chair-0`, zoneId, lx: 1, ly: 1, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
-    { id: `${zoneId}-desk-1`, zoneId, lx: 4, ly: 0, assetId: desk1Asset, direction: "se", layer: "object", placedBy: "system" },
-    { id: `${zoneId}-chair-1`, zoneId, lx: 4, ly: 1, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
-    { id: `${zoneId}-sign`, zoneId, lx: 5, ly: 5, assetId: "bay-sign-post", direction: "se", layer: "object", placedBy: "system" },
-  ];
-
-  switch (department) {
-    case "iherk":
-      return [
-        ...base,
-        { id: `${zoneId}-pc`, zoneId, lx: 0, ly: 1, assetId: "pc-tower-box", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-bin`, zoneId, lx: 5, ly: 1, assetId: "trash-bin-office", direction: "sw", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 4, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-shelf`, zoneId, lx: 0, ly: 5, assetId: "bookshelf-wood", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-storage`, zoneId, lx: 1, ly: 5, assetId: "shelf-metal-storage", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-vac`, zoneId, lx: 4, ly: 5, assetId: "game-arcade-cabinet", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
-      ];
-    case "dev":
-      return [
-        ...base,
-        { id: `${zoneId}-pc`, zoneId, lx: 0, ly: 1, assetId: "pc-tower-box", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-bin`, zoneId, lx: 5, ly: 1, assetId: "trash-bin-office", direction: "sw", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 4, assetId: "server-blade-tower", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-printer`, zoneId, lx: 0, ly: 5, assetId: "printer-copier", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-cabinet`, zoneId, lx: 1, ly: 5, assetId: "cabinet-wood-tall", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-cooler`, zoneId, lx: 4, ly: 5, assetId: "pc-3d-printer", direction: "sw", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
-      ];
-    case "erp":
-      return [
-        ...base,
-        { id: `${zoneId}-shredder`, zoneId, lx: 0, ly: 1, assetId: "shredder-mini", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-bin`, zoneId, lx: 5, ly: 1, assetId: "trash-bin-office", direction: "sw", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 4, assetId: "server-nas-vault", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-cabinet`, zoneId, lx: 0, ly: 5, assetId: "filing-cabinet", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-storage`, zoneId, lx: 1, ly: 5, assetId: "shelf-metal-storage", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-ext`, zoneId, lx: 4, ly: 5, assetId: "fire-extinguisher", direction: "sw", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-printer`, zoneId, lx: 0, ly: 4, assetId: "printer-copier", direction: "se", layer: "object", placedBy: "system" },
-      ];
-    case "accounting":
-      return [
-        ...base,
-        { id: `${zoneId}-shredder`, zoneId, lx: 0, ly: 1, assetId: "shredder-mini", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-bin`, zoneId, lx: 5, ly: 1, assetId: "trash-bin-office", direction: "sw", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-cabinet-r`, zoneId, lx: 5, ly: 4, assetId: "office-locker-bank", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-cabinet-l`, zoneId, lx: 0, ly: 5, assetId: "filing-cabinet", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-woodcab`, zoneId, lx: 1, ly: 5, assetId: "cabinet-wood-tall", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-ext`, zoneId, lx: 4, ly: 5, assetId: "fire-extinguisher", direction: "sw", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-printer`, zoneId, lx: 0, ly: 4, assetId: "printer-copier", direction: "se", layer: "object", placedBy: "system" },
-      ];
-    case "general":
-    default:
-      return [
-        ...base,
-        { id: `${zoneId}-pc`, zoneId, lx: 0, ly: 1, assetId: "pc-tower-box", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-bin`, zoneId, lx: 5, ly: 1, assetId: "trash-bin-office", direction: "sw", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 4, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-shelf`, zoneId, lx: 0, ly: 5, assetId: "bookshelf-wood", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-storage`, zoneId, lx: 1, ly: 5, assetId: "shelf-metal-storage", direction: "se", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-cooler`, zoneId, lx: 4, ly: 5, assetId: "water-cooler", direction: "sw", layer: "object", placedBy: "system" },
-        { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
-      ];
-  }
+  return toFurniture(`bay:${bayId}`, bayLayoutItems(bayId, department).filter((it) => !it.extra));
 }
 
+/** Workstations 3 and 4 of the same layout, added as the team grows (only those not placed yet). */
 export function createExtraBayWorkstations(
   bayId: string,
   desiredDeskSlots: number,
   existing: FurnitureInstance[],
+  department: DepartmentId = "general",
 ): FurnitureInstance[] {
   const zoneId: ZoneId = `bay:${bayId}`;
-  const added: FurnitureInstance[] = [];
   const hasId = (id: string) => existing.some((f) => f.id === id);
-
-  if (desiredDeskSlots >= 3 && !hasId(`${zoneId}-desk-2`)) {
-    added.push(
-      { id: `${zoneId}-desk-2`, zoneId, lx: 0, ly: 3, assetId: "desk-security-ops", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-chair-2`, zoneId, lx: 1, ly: 4, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
-    );
-  }
-  if (desiredDeskSlots >= 4 && !hasId(`${zoneId}-desk-3`)) {
-    added.push(
-      { id: `${zoneId}-desk-3`, zoneId, lx: 4, ly: 3, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-chair-3`, zoneId, lx: 4, ly: 4, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
-    );
-  }
-  return added;
+  const wanted = new Set<string>();
+  if (desiredDeskSlots >= 3) wanted.add("desk-2").add("chair-2");
+  if (desiredDeskSlots >= 4) wanted.add("desk-3").add("chair-3");
+  const extras = bayLayoutItems(bayId, department).filter((it) => it.extra && wanted.has(it.key));
+  return toFurniture(zoneId, extras).filter((f) => !hasId(f.id));
 }
 
 /**
@@ -975,55 +743,59 @@ export function validateFurniturePlacement(
   }
 
   const walkBlocked = new Set<string>();
-  const addWalkBlock = (assetId: string, lx: number, ly: number, dir: Direction) => {
+  const addWalkBlock = (set: Set<string>, assetId: string, lx: number, ly: number, dir: Direction) => {
     if (assetId === "chair-office-swivel") return;
     const c = catalogById.get(assetId);
     const [w, d] = getRotatedFootprint(c?.footprintTiles ?? [1, 1], dir);
     for (let dy = 0; dy < d; dy++) {
       for (let dx = 0; dx < w; dx++) {
-        walkBlocked.add(`${lx + dx},${ly + dy}`);
+        set.add(`${lx + dx},${ly + dy}`);
       }
     }
   };
   for (const item of existingInZone) {
     if (candidate.ignoreInstanceId && item.id === candidate.ignoreInstanceId) continue;
-    addWalkBlock(item.assetId, item.lx, item.ly, item.direction);
+    addWalkBlock(walkBlocked, item.assetId, item.lx, item.ly, item.direction);
   }
-  addWalkBlock(candidate.assetId, candidate.lx, candidate.ly, candidate.direction);
+  const blockedWithCandidate = new Set(walkBlocked);
+  addWalkBlock(blockedWithCandidate, candidate.assetId, candidate.lx, candidate.ly, candidate.direction);
 
-  const visited = new Set<string>();
-  const queue: Array<[number, number]> = [];
-  for (const [ex, ey] of openEntrances) {
-    const k = `${ex},${ey}`;
-    if (!walkBlocked.has(k)) {
-      visited.add(k);
-      queue.push([ex, ey]);
+  const reachable = (blocked: Set<string>): Set<string> => {
+    const visited = new Set<string>();
+    const queue: Array<[number, number]> = [];
+    for (const [ex, ey] of openEntrances) {
+      const k = `${ex},${ey}`;
+      if (!blocked.has(k)) {
+        visited.add(k);
+        queue.push([ex, ey]);
+      }
     }
-  }
-  while (queue.length > 0) {
-    const [cx, cy] = queue.shift()!;
-    for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]] as const) {
-      const nx = cx + dx;
-      const ny = cy + dy;
-      if (nx < 0 || nx >= ZONE_SIZE || ny < 0 || ny >= ZONE_SIZE) continue;
-      const nk = `${nx},${ny}`;
-      if (visited.has(nk) || walkBlocked.has(nk)) continue;
-      visited.add(nk);
-      queue.push([nx, ny]);
+    while (queue.length > 0) {
+      const [cx, cy] = queue.shift()!;
+      for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]] as const) {
+        const nx = cx + dx;
+        const ny = cy + dy;
+        if (nx < 0 || nx >= ZONE_SIZE || ny < 0 || ny >= ZONE_SIZE) continue;
+        const nk = `${nx},${ny}`;
+        if (visited.has(nk) || blocked.has(nk)) continue;
+        visited.add(nk);
+        queue.push([nx, ny]);
+      }
     }
-  }
+    return visited;
+  };
 
-  let totalWalkable = 0;
-  for (let y = 0; y < ZONE_SIZE; y++) {
-    for (let x = 0; x < ZONE_SIZE; x++) {
-      if (!walkBlocked.has(`${x},${y}`)) totalWalkable++;
+  // Reject only if this placement cuts off floor that is reachable today (a pocket that already exists,
+  // e.g. from an asset whose footprint changed, must not freeze the whole room for editing)
+  const before = reachable(walkBlocked);
+  const after = reachable(blockedWithCandidate);
+  for (const tile of before) {
+    if (!blockedWithCandidate.has(tile) && !after.has(tile)) {
+      return {
+        ok: false,
+        reason: `Placing "${candidate.assetId}" at (${candidate.lx},${candidate.ly}) seals off part of zone "${candidate.zoneId}"`,
+      };
     }
-  }
-  if (visited.size < totalWalkable) {
-    return {
-      ok: false,
-      reason: `Placing "${candidate.assetId}" at (${candidate.lx},${candidate.ly}) seals off part of zone "${candidate.zoneId}"`,
-    };
   }
 
   return { ok: true };

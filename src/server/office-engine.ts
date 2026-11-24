@@ -193,8 +193,9 @@ export class OfficeEngine extends EventEmitter {
     if (loaded && loaded.bays.length > 0) {
       // Remove any leftover ephemeral subagents from a previous crash
       loaded.employees = loaded.employees.filter((e) => !e.isEphemeral);
-      if (!loaded.bossOffice) {
-        loaded.bossOffice = createDefaultBossOffice();
+      // Missing or untouched Boss Office gets the current designed layout
+      if (!loaded.bossOffice || loaded.bossOffice.furniture.every((f) => f.placedBy === "system")) {
+        loaded.bossOffice = { ...createDefaultBossOffice(), displayName: loaded.bossOffice?.displayName ?? "BOSS OFFICE" };
       }
       for (const b of loaded.bays) {
         if (!b.department) {
@@ -203,7 +204,7 @@ export class OfficeEngine extends EventEmitter {
         // Refresh untouched rooms so new default props (themed decor) reach existing saves.
         if (b.furniture.every((f) => f.placedBy === "system")) {
           const base = createDefaultBayFurniture(b.id, b.department);
-          b.furniture = [...base, ...createExtraBayWorkstations(b.id, b.deskSlots, base)];
+          b.furniture = [...base, ...createExtraBayWorkstations(b.id, b.deskSlots, base, b.department)];
         }
       }
       for (const w of loaded.commonWings) {
@@ -489,7 +490,12 @@ export class OfficeEngine extends EventEmitter {
     const desired = Math.min(4, Math.max(bay.deskSlots, teamSize));
     if (desired > bay.deskSlots) {
       bay.deskSlots = desired;
-      const added = createExtraBayWorkstations(bay.id, desired, bay.furniture);
+      const added = createExtraBayWorkstations(
+        bay.id,
+        desired,
+        bay.furniture,
+        bay.department ?? classifyDepartmentFromPath(bay.projectPath),
+      );
       for (const f of added) {
         // Only add if spot is currently free (respects user/Gemini custom furniture!)
         const check = validateFurniturePlacement(this.campus, bay.furniture, f, this.catalogById);

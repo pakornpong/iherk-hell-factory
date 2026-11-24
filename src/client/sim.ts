@@ -9,6 +9,7 @@ import {
 } from "../shared/types.js";
 import type { RenderedEmployeeInput, SyncPacketVisual } from "./iso-renderer.js";
 import { buildWalkableGrid, findTilePath, type WalkableGrid } from "./pathfinding.js";
+import { bayLayoutKey, commonLayoutKey, facingToward, getRoomLayout } from "../shared/room-layouts.js";
 
 export interface SimEmployeeVisual extends RenderedEmployeeInput {
   id: string;
@@ -164,6 +165,25 @@ export class OfficeSimulation {
     );
   }
 
+  /** World tiles of a room's designed stand spots that are still walkable (furniture may have been moved). */
+  private openSpots(zone: ZoneBounds, spots?: Array<[number, number]>): Array<[number, number]> {
+    if (!spots) return [];
+    const world = spots.map(([x, y]) => [zone.originX + x, zone.originY + y] as [number, number]);
+    if (!this.grid) return world;
+    const grid = this.grid;
+    return world.filter(([x, y]) => x >= 0 && y >= 0 && x < grid.width && y < grid.height && grid.blocked[y * grid.width + x] === 0);
+  }
+
+  /** Centre (world tiles) of the first furniture item in a zone matching `pred`. */
+  private furnitureCentre(
+    zone: ZoneBounds,
+    pred: (f: ComputedCampus["worldFurniture"][number]) => boolean,
+  ): [number, number] | undefined {
+    const f = this.campus?.worldFurniture.find((w) => w.zoneId === zone.zoneId && pred(w));
+    if (!f) return undefined;
+    return [f.tx + (f.footprintTiles[0] - 1) / 2, f.ty + (f.footprintTiles[1] - 1) / 2];
+  }
+
   private hashSlot(id: string): number {
     let h = 0;
     for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) | 0;
@@ -210,36 +230,44 @@ export class OfficeSimulation {
         return { tile: [bayZone.originX + cx, bayZone.originY + cy], facing: "nw" };
       }
 
-      case "assigning":
+      case "assigning": {
+        // Briefing spots come from the room's designed layout (mirrored with it)
+        const dept = bayZone.department ?? "general";
+        const { key, mirrored } = bayLayoutKey(dept, emp.bayId);
+        const spots = this.openSpots(bayZone, getRoomLayout(key, mirrored).standSpots);
+        if (spots.length > 0) {
+          return { tile: spots[emp.deskIndex % spots.length], facing: "se" };
+        }
         return { tile: [bayZone.originX + 2 + (emp.deskIndex % 2), bayZone.originY + 4], facing: "se" };
+      }
 
       case "reporting": {
         const boss = this.findBossZone();
         if (boss) {
-          // Stand on open floor tiles in Boss Office (avoid visitor swivel chairs at +2,+3 and +3,+3)
-          const visitorSpots: Array<{ tile: [number, number]; facing: Direction }> = [
-            { tile: [boss.originX + 1, boss.originY + 3], facing: "nw" },
-            { tile: [boss.originX + 4, boss.originY + 3], facing: "nw" },
-            { tile: [boss.originX + 2, boss.originY + 4], facing: "nw" },
-            { tile: [boss.originX + 3, boss.originY + 4], facing: "nw" },
-          ];
-          const slot = (emp.deskIndex + this.hashSlot(emp.id)) % visitorSpots.length;
-          return visitorSpots[slot];
+          // Visitors stand in front of the boss desk, looking at it
+          const spots = this.openSpots(boss, getRoomLayout("boss").standSpots);
+          const desk = this.furnitureCentre(boss, (f) => f.id === "boss:0-boss-desk");
+          if (spots.length > 0) {
+            const tile = spots[(emp.deskIndex + this.hashSlot(emp.id)) % spots.length];
+            return { tile, facing: desk ? facingToward(tile, desk) : "nw" };
+          }
+          return { tile: [boss.originX + 1, boss.originY + 3], facing: "nw" };
         }
         return { tile: [1, 3], facing: "nw" };
       }
 
       case "meeting": {
-        // Stand on open floor standup tiles around the conference table (avoid swivel chairs so talk_* legs never clip)
-        const standupSpots: Array<{ tile: [number, number]; facing: Direction }> = [
-          { tile: [common.originX + 1, common.originY + 4], facing: "nw" },
-          { tile: [common.originX + 2, common.originY + 4], facing: "nw" },
-          { tile: [common.originX + 3, common.originY + 2], facing: "sw" },
-          { tile: [common.originX + 0, common.originY + 2], facing: "ne" },
-          { tile: [common.originX + 0, common.originY + 1], facing: "ne" },
-        ];
-        const slot = (emp.deskIndex + this.hashSlot(emp.id)) % standupSpots.length;
-        return standupSpots[slot];
+        // Stand-up spots around the lounge's meeting table (open floor, so talk_* legs never clip chairs)
+        const row = Number(common.zoneId.split(":")[1] ?? 0);
+        const layout =
+          common.kind === "common" ? getRoomLayout(commonLayoutKey(row).key, commonLayoutKey(row).mirrored) : undefined;
+        const spots = this.openSpots(common, layout?.standSpots);
+        const table = this.furnitureCentre(common, (f) => f.assetId === "table-conference");
+        if (spots.length > 0) {
+          const tile = spots[(emp.deskIndex + this.hashSlot(emp.id)) % spots.length];
+          return { tile, facing: table ? facingToward(tile, table) : "nw" };
+        }
+        return { tile: [common.originX + 2, common.originY + 4], facing: "nw" };
       }
     }
   }

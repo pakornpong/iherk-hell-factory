@@ -1,3 +1,4 @@
+import { facingToward } from "../src/shared/room-layouts.js";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -99,7 +100,7 @@ describe("Final Review Fix Verification (Critical #1-#4 & Important #5-#10)", ()
     expect(Math.floor(pty)).toBe(4);
   });
 
-  it("#4: employees face their desks (nw), south conference chairs (nw), matching chair-office-swivel 1:1", () => {
+  it("#4: employees face their desks (chair direction) and look at the meeting table during stand-ups", () => {
     const bay: ProjectBayRecord = {
       id: "b0",
       projectPath: "/p/a",
@@ -127,12 +128,18 @@ describe("Final Review Fix Verification (Critical #1-#4 & Important #5-#10)", ()
     sim.syncFromServer(state, campus);
     let out = sim.step(50);
     for (let i = 0; i < 400; i++) out = sim.step(50);
-    expect(out.visuals[0].direction).toBe("nw"); // faces -Y toward desk (1:1 with chair-office-swivel)
+    // Seated worker faces exactly where their chair faces (chair-0 of whichever layout variant the bay got)
+    const chair0 = campus.worldFurniture.find((f) => f.id === "bay:b0-chair-0")!;
+    expect(out.visuals[0].direction).toBe(chair0.direction);
 
     state.employees[0].visualState = "meeting";
     sim.syncFromServer(state, campus);
     for (let i = 0; i < 400; i++) out = sim.step(50);
-    expect(out.visuals[0].direction).toBe("nw"); // south conference seat faces -Y toward table
+    // Stand-up: looks toward the lounge's meeting table
+    const table = campus.worldFurniture.find((f) => f.zoneId === "common:0" && f.assetId === "table-conference")!;
+    const centre: [number, number] = [table.tx + (table.footprintTiles[0] - 1) / 2, table.ty + (table.footprintTiles[1] - 1) / 2];
+    const v = out.visuals[0];
+    expect(v.direction).toBe(facingToward([Math.round(v.x), Math.round(v.y)], centre));
   });
 
   it("#5 & #7: prevents subagent resurrection after stop, ignores stray session_end for unknown projects, cleans subagents on parent turn_stop, and seats subagents on unique co-working hot desks", async () => {

@@ -6,6 +6,7 @@ import {
   createAmenityFurniture,
   createDefaultBayFurniture,
   createDefaultCommonWing,
+  getRotatedFootprint,
   validateFurniturePlacement,
   ZONE_SIZE,
 } from "../src/server/layout-engine.js";
@@ -61,28 +62,27 @@ function makeBay(i: number): ProjectBayRecord {
 
 describe("themed amenity rooms", () => {
   it.each(AMENITY_THEME_ORDER.map((t, i) => [t, i] as const))(
-    "%s room uses real assets and keeps corridor + doorways walkable",
+    "%s room uses real assets, keeps all doorways open and leaves no floor sealed off",
     (theme, idx) => {
       const items = createAmenityFurniture(idx, theme);
       const campus = computeCampusLayout([makeBay(0)], [createDefaultCommonWing(0)], catalog);
       const zone = { ...campus.zones[0], zoneId: items[0].zoneId };
       const fakeCampus = { ...campus, zones: [zone] };
-      const placed: FurnitureInstance[] = [];
+      // Every item is valid where it stands given all the others (bounds, no overlap, nothing sealed off)
       for (const item of items) {
         expect(catalog.has(item.assetId), `missing asset ${item.assetId}`).toBe(true);
-        const res = validateFurniturePlacement(fakeCampus, placed, { ...item }, catalog);
+        const res = validateFurniturePlacement(fakeCampus, items, { ...item, ignoreInstanceId: item.id }, catalog);
         expect(res, `${theme}: ${item.assetId}`).toEqual({ ok: true });
-        placed.push(item);
       }
-      // Corridor lx 2..3 and side doorways (ly 2..3 at lx 0/5) stay empty
-      for (const item of placed) {
-        const [w, d] = catalog.get(item.assetId)!.footprintTiles;
+      // All eight 2-tile doorways (offset 2..3 on every side) stay empty
+      const doorways = new Set(["2,0", "3,0", "0,2", "0,3", "5,2", "5,3", "2,5", "3,5"]);
+      for (const item of items) {
+        const [w, d] = getRotatedFootprint(catalog.get(item.assetId)!.footprintTiles, item.direction);
         for (let dy = 0; dy < d; dy++) {
           for (let dx = 0; dx < w; dx++) {
             const x = item.lx + dx;
             const y = item.ly + dy;
-            expect(x === 2 || x === 3, `${item.assetId} blocks corridor`).toBe(false);
-            expect(y === 2 || y === 3, `${item.assetId} blocks side door`).toBe(false);
+            expect(doorways.has(`${x},${y}`), `${theme}: ${item.assetId} blocks doorway (${x},${y})`).toBe(false);
             expect(x < ZONE_SIZE && y < ZONE_SIZE).toBe(true);
           }
         }

@@ -1,3 +1,4 @@
+import { facingToward } from "../src/shared/room-layouts.js";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -446,7 +447,7 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
     expect(updated.department).toBe("erp");
     expect(updated.accentColor).toBe(DEPARTMENT_META.erp.color);
 
-    // Simulation facing: desk worker faces "nw", visitor reporting to Boss faces "nw"
+    // Simulation facing: subagent faces across its pod, visitor reporting to Boss faces the boss desk
     const sim = new OfficeSimulation();
     sim.syncFromServer(engine.getSnapshot().state, engine.getSnapshot().campus);
     let out = sim.step(50);
@@ -457,7 +458,15 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
     // Subagent sits on co-working seat 0: the back row of a face-to-face pod, facing "se" across the desks
     expect(qaVisual?.direction).toBe("se");
     expect(qaVisual?.bubbleIcon).toBe("🧪");
-    expect(reportingVisual?.direction).toBe("nw");
+    // Visitors stand in front of the boss desk and look at it
+    const bossDesk = engine.getSnapshot().campus.worldFurniture.find((f) => f.id === "boss:0-boss-desk")!;
+    const deskCentre: [number, number] = [
+      bossDesk.tx + (bossDesk.footprintTiles[0] - 1) / 2,
+      bossDesk.ty + (bossDesk.footprintTiles[1] - 1) / 2,
+    ];
+    expect(reportingVisual?.direction).toBe(
+      facingToward([Math.round(reportingVisual!.x), Math.round(reportingVisual!.y)], deskCentre),
+    );
     expect(reportingVisual?.bubbleIcon).toBe("❓");
 
     // DEMO_SCRIPT covers all 4 departments, AI Org roles, HITL (waiting_user), and Report (turn_stop)
