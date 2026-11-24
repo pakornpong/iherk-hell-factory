@@ -83,21 +83,49 @@ stands 56 voxels tall and reads clearly above the tallest prop.
 fill **every** free cell (cycling the theme list) instead of only the first N, so the plan never leaves
 an empty slot showing as bare ground.
 
-## 3. Approaches tried and rejected
+## 3. Problems hit, and how each was solved
+
+Every row below was a visible defect found by looking at the running office, not a guess. The cause
+column is what measurement showed; the fix column is what shipped.
+
+| # | What went wrong | Cause (measured) | Fix |
+|---|---|---|---|
+| 1 | Wide grey bands between every pair of rooms | `ZONE_GAP = 3`: wall tile + walkway tile + wall tile, 96 voxels from one room's floor to the next | `ZONE_GAP = 0`; rooms share a boundary line |
+| 2 | A grey strip hugged each wall even inside its own tile | The wall occupies only 6 of its tile's 32 voxels, and the rest of the tile was painted `floor-corridor-tile` | First the wall tile carried the room's floor; then §2.1 removed the tile altogether |
+| 3 | A bare 6×6 patch of ground inside the plan | Amenity rooms filled only the first N free cells (N = number of themes); any further free cell stayed empty | Fill **every** free cell, cycling the theme list |
+| 4 | Ground padded out to a square even when the rooms were not | `widthTiles` and `depthTiles` were both set to one `sideTiles` value | Use the real bounding box of the packed blocks |
+| 5 | Walls broke open where four rooms meet | At a crossing the code always placed `room-junction-corner`, a single quadrant: it covered one arm and left the other three missing | Count the arms meeting at the point; 3–4 arms get `room-junction-cross`, an L corner keeps the quadrant piece |
+| 6 | A second glass partition stood against the diorama's outer wall | Wall segments were generated on the campus perimeter too, where `campus.walls` already draws the rear wall | Emit nothing on the outer boundary: the back is the rear wall, the front is the open cutaway |
+| 7 | After packing rooms flush, **no walls were visible at all** | Not a rendering failure — 98 wall sprites were drawn on screen every frame. The partition is 26 voxels tall while **69 of 95 props stand up to 45**, so furniture lining both sides buried it | Raise `room-wall-glass` and the three `room-junction-*` pieces from 26 to 56 voxels |
+| 8 | Rooms read as free-standing X partitions rather than rooms | A 2-tile doorway on all four sides of a 6-tile room leaves only 2-tile stubs at the corners, and four corners make an X | Narrow the doorway to 1 tile at offset 2 |
+| 9 | Printers and monitors drawn straight through the glass | The wall's depth-sort box straddled the line, so furniture in the room behind failed the "is behind" test and fell through to the distance tiebreak, which a two-tile desk wins | Start the sort box exactly on the line, a hair thick, and a hair longer than a tile along the run |
+| 10 | Four test files failed after the geometry change | They asserted the old model: pitch 7, `ZONE_GAP === 3`, walls as tile furniture, a corridor tile between zones | Rewrote those assertions against `wallSegments` and the new pitch; made the edge arrays on `WalkableGrid` optional so hand-built grids still work |
+
+### 3.1 Dead ends — approaches tried and dropped
 
 | Attempt | Why it failed |
 |---|---|
 | Widen the wall art to fill its tile (6 → 28 voxels deep) | Reads as a low concrete slab lying on the floor, not a wall |
 | Shift the wall art to one edge of its tile | Only helps the room on that side; the other side's gap grows to 26 voxels |
-| Keep the wall on its own tile and paint that tile with the room's floor | Removes the grey strip but the tile is still blocked, so furniture still cannot touch the wall |
+| Keep the wall on its own tile and paint that tile with the room's floor | Removes the grey strip, but the tile stays blocked so furniture still cannot touch the wall |
+| Flip the vertical wall's rotation to `ne` to move the shifted band | The band landed on the far side instead; walls disappeared from view |
 
-Each of these moves the empty space around rather than removing it. Only taking the wall's tile away
-removes it, which is what §2.2 does.
+The first three all move the empty space around rather than removing it: as long as the wall owns a
+tile, that tile is dead floor on both sides. Only taking the tile away removes it, which is what §2.2
+does.
+
+### 3.2 The diagnostic that settled it
+
+Problem 7 resisted four rounds of guessing. What cracked it was a temporary `?wallsonly=1` switch that
+rendered the wall segments and nothing else: the walls appeared immediately and in the right places,
+which ruled out geometry, culling, atlas frames and the depth sort in one shot and pointed straight at
+occlusion. Measuring `maxZ` across all 95 prop assets then gave the number. **Render one layer alone
+before theorising about why it is missing.**
 
 ## 4. Verification
 
 - `npm run typecheck` clean for both the server and client configs
-- `npm test` — full suite
+- `npm test` — 85/85
 - Scripted checks on the computed campus: no tile left with 2+ wall arms but no wall of its own, zero
   `floor-corridor-tile` inside the plan, and an A* path from every room to the Boss Office
 
@@ -108,3 +136,5 @@ removes it, which is what §2.2 does.
 - Walking between rooms now goes through doorways into neighbouring rooms; there is no central corridor.
 - `ZONE_GAP` stays a constant: setting it back to 1 restores a wall tile between rooms without touching
   the rest of this work.
+- A wall is no longer furniture, so anything that scanned `worldFurniture` for `room-*` assets must read
+  `wallSegments` instead.
