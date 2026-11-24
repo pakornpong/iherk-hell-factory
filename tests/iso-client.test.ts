@@ -10,8 +10,8 @@ describe("IsoCamera & unified topological depth-sorter", () => {
       cam.glideToTile(12, 7, 1280, 720);
       for (let i = 0; i < 60; i++) cam.update(16);
       const [tx, ty] = cam.screenToTile(640, 360, 1280, 720);
-      expect(Math.round(tx)).toBe(12);
-      expect(Math.round(ty)).toBe(7);
+      expect(Math.floor(tx)).toBe(12);
+      expect(Math.floor(ty)).toBe(7);
     }
     const [wx, wy] = tileToWorld(5, 3);
     const [rtX, rtY] = worldToTile(wx, wy);

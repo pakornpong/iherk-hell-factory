@@ -128,6 +128,12 @@ export class OfficeSimulation {
     );
   }
 
+  private hashSlot(id: string): number {
+    let h = 0;
+    for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) | 0;
+    return Math.abs(h);
+  }
+
   private pickGoalForEmployee(
     emp: EmployeeRecord,
     restActivity: RestActivity,
@@ -138,43 +144,86 @@ export class OfficeSimulation {
     }
     const common = this.findCommonWingForRow(bayZone.row) ?? bayZone;
 
-    // Desk chair slots inside a 6x6 project bay
-    const chairOffsets: Array<[number, number]> = [
+    // Resolve actual swivel chairs in this bay first so moved furniture updates seating
+    const bayChairs = this.campus.worldFurniture.filter(
+      (f) => f.zoneId === bayZone.zoneId && f.assetId === "chair-office-swivel",
+    );
+    const defaultChairOffsets: Array<[number, number]> = [
       [1, 2],
       [4, 2],
       [1, 4],
       [4, 4],
     ];
-    const [cx, cy] = chairOffsets[emp.deskIndex % chairOffsets.length];
+    const [cx, cy] = defaultChairOffsets[emp.deskIndex % defaultChairOffsets.length];
+
+    // Character models face +X in "se", +Y in "sw", -X in "nw", -Y in "ne"
+    const chairDirToCharFacing = (chairDir: Direction): Direction => {
+      // chair-office-swivel faces +Y in "se", -X in "sw", -Y in "nw", +X in "ne"
+      switch (chairDir) {
+        case "nw":
+          return "ne"; // faces -Y toward desk/table north-east
+        case "sw":
+          return "nw"; // faces -X toward table
+        case "se":
+          return "sw"; // faces +Y
+        case "ne":
+          return "se"; // faces +X
+      }
+    };
 
     switch (emp.visualState) {
       case "working":
-      case "teamwork":
-        return { tile: [bayZone.originX + cx, bayZone.originY + cy], facing: "nw" };
+      case "teamwork": {
+        const chair = bayChairs[emp.deskIndex % Math.max(1, bayChairs.length)];
+        if (chair) {
+          return { tile: [chair.tx, chair.ty], facing: chairDirToCharFacing(chair.direction) };
+        }
+        return { tile: [bayZone.originX + cx, bayZone.originY + cy], facing: "ne" };
+      }
 
       case "assigning":
         return { tile: [bayZone.originX + 2 + (emp.deskIndex % 2), bayZone.originY + 4], facing: "se" };
 
       case "meeting": {
-        const seats: Array<{ tile: [number, number]; facing: Direction }> = [
-          { tile: [common.originX + 1, common.originY + 3], facing: "nw" },
-          { tile: [common.originX + 2, common.originY + 3], facing: "nw" },
-          { tile: [common.originX + 3, common.originY + 1], facing: "sw" },
-          { tile: [common.originX + 3, common.originY + 2], facing: "sw" },
-          { tile: [common.originX + 0, common.originY + 2], facing: "se" },
-        ];
-        return seats[emp.deskIndex % seats.length];
+        // Spread employees across common wing chairs using employee-unique hash so different bays don't stack
+        const commonChairs = this.campus.worldFurniture.filter(
+          (f) => f.zoneId === common.zoneId && f.assetId === "chair-office-swivel",
+        );
+        const seats: Array<{ tile: [number, number]; facing: Direction }> =
+          commonChairs.length > 0
+            ? commonChairs.map((c) => ({ tile: [c.tx, c.ty], facing: chairDirToCharFacing(c.direction) }))
+            : [
+                { tile: [common.originX + 1, common.originY + 3], facing: "ne" },
+                { tile: [common.originX + 2, common.originY + 3], facing: "ne" },
+                { tile: [common.originX + 3, common.originY + 1], facing: "nw" },
+                { tile: [common.originX + 3, common.originY + 2], facing: "nw" },
+                { tile: [common.originX + 0, common.originY + 2], facing: "se" },
+              ];
+        const slot = (emp.deskIndex + this.hashSlot(emp.id)) % seats.length;
+        return seats[slot];
       }
 
       case "resting": {
+        const slotOffset = this.hashSlot(emp.id) % 2;
         if (restActivity === "coffee") {
-          return { tile: [common.originX + 4, common.originY + 1], facing: "ne" };
+          const bar = this.campus.worldFurniture.find(
+            (f) => f.zoneId === common.zoneId && f.assetId === "coffee-machine-bar",
+          );
+          if (bar) {
+            return { tile: [bar.tx + slotOffset, Math.min(this.campus.depthTiles - 1, bar.ty + 1)], facing: "ne" };
+          }
+          return { tile: [common.originX + 4 + slotOffset, common.originY + 1], facing: "ne" };
         }
         if (restActivity === "sofa" || restActivity === "nap") {
-          return { tile: [common.originX + 4, common.originY + 3], facing: "se" };
+          const sofa = this.campus.worldFurniture.find(
+            (f) => f.zoneId === common.zoneId && f.assetId === "sofa-lounge",
+          );
+          if (sofa) {
+            return { tile: [sofa.tx + slotOffset, Math.max(0, sofa.ty - 1)], facing: "sw" };
+          }
+          return { tile: [common.originX + 4 + slotOffset, common.originY + 3], facing: "sw" };
         }
-        // Stroll near plants / bay entrance
-        return { tile: [bayZone.originX + 1 + (emp.deskIndex % 3), bayZone.originY + 5], facing: "se" };
+        return { tile: [bayZone.originX + 1 + ((emp.deskIndex + slotOffset) % 3), bayZone.originY + 5], facing: "se" };
       }
     }
   }

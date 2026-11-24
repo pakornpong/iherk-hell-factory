@@ -32,13 +32,14 @@ export class IsoCamera {
   glideToTile(tx: number, ty: number, viewportW: number, viewportH: number): void {
     const [wx, wy] = tileToWorld(tx, ty);
     this.targetPanX = viewportW / (2 * this.zoom) - wx;
-    this.targetPanY = viewportH / (2 * this.zoom) - wy;
+    // Visual center of bottom-diamond anchored tile (tx, ty) is at wy - STEP_Y
+    this.targetPanY = viewportH / (2 * this.zoom) - (wy - STEP_Y);
   }
 
   snapToTile(tx: number, ty: number, viewportW: number, viewportH: number): void {
     const [wx, wy] = tileToWorld(tx, ty);
     this.panX = viewportW / (2 * this.zoom) - wx;
-    this.panY = viewportH / (2 * this.zoom) - wy;
+    this.panY = viewportH / (2 * this.zoom) - (wy - STEP_Y);
     this.targetPanX = null;
     this.targetPanY = null;
   }
@@ -71,7 +72,8 @@ export class IsoCamera {
 
   screenToTile(sx: number, sy: number, _viewportW?: number, _viewportH?: number): [number, number] {
     const [wx, wy] = this.screenToWorld(sx, sy);
-    return worldToTile(wx, wy);
+    // Offset by +2*STEP_Y because bottom-diamond anchor places tile (tx, ty)'s top tip at wy - 2*STEP_Y and bottom tip at wy
+    return worldToTile(wx, wy + STEP_Y * 2);
   }
 
   getVisibleWorldBounds(

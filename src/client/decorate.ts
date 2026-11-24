@@ -9,18 +9,37 @@ export interface DecorateApiClient {
     assetId: string;
     direction: Direction;
   }): Promise<FurnitureInstance>;
+  moveFurniture?(
+    instanceId: string,
+    req: { tx: number; ty: number; direction?: Direction },
+  ): Promise<FurnitureInstance>;
   removeFurniture(instanceId: string): Promise<void>;
 }
 
 type HistoryAction =
   | { kind: "place"; item: FurnitureInstance; tx: number; ty: number }
-  | { kind: "remove"; item: FurnitureInstance; tx: number; ty: number };
+  | { kind: "remove"; item: FurnitureInstance; tx: number; ty: number }
+  | {
+      kind: "move";
+      itemId: string;
+      fromTx: number;
+      fromTy: number;
+      fromDir: Direction;
+      toTx: number;
+      toTy: number;
+      toDir: Direction;
+    };
+
+export function isEditableFurniture(item?: FurnitureInstance): item is FurnitureInstance {
+  return Boolean(item && !item.id.startsWith("sys-div-"));
+}
 
 export class DecorateController {
   active = false;
-  tool: "place" | "erase" = "place";
+  tool: "place" | "move" | "erase" = "place";
   selectedAssetId: string | null = "plant-potted";
   direction: Direction = "se";
+  movingItem: { item: FurnitureInstance; originTx: number; originTy: number } | null = null;
   private undoStack: HistoryAction[] = [];
   private redoStack: HistoryAction[] = [];
 
@@ -28,19 +47,23 @@ export class DecorateController {
 
   toggle(): void {
     this.active = !this.active;
+    if (!this.active) this.movingItem = null;
   }
 
   setActive(next: boolean): void {
     this.active = next;
+    if (!this.active) this.movingItem = null;
   }
 
-  setTool(tool: "place" | "erase"): void {
+  setTool(tool: "place" | "move" | "erase"): void {
     this.tool = tool;
+    this.movingItem = null;
   }
 
   selectAsset(assetId: string): void {
     this.selectedAssetId = assetId;
     this.tool = "place";
+    this.movingItem = null;
   }
 
   rotateCw(): void {
@@ -58,11 +81,37 @@ export class DecorateController {
 
   async handleTileClick(tx: number, ty: number, existingInstance?: FurnitureInstance): Promise<void> {
     if (!this.active) return;
+
     if (this.tool === "erase") {
-      if (!existingInstance) return;
+      if (!isEditableFurniture(existingInstance)) return;
       await this.api.removeFurniture(existingInstance.id);
       this.undoStack.push({ kind: "remove", item: existingInstance, tx, ty });
       this.redoStack.length = 0;
+      return;
+    }
+
+    if (this.tool === "move") {
+      if (!this.movingItem) {
+        if (!isEditableFurniture(existingInstance)) return;
+        this.movingItem = { item: existingInstance, originTx: tx, originTy: ty };
+        this.direction = existingInstance.direction;
+        return;
+      }
+      if (!this.api.moveFurniture) return;
+      const picked = this.movingItem;
+      await this.api.moveFurniture(picked.item.id, { tx, ty, direction: this.direction });
+      this.undoStack.push({
+        kind: "move",
+        itemId: picked.item.id,
+        fromTx: picked.originTx,
+        fromTy: picked.originTy,
+        fromDir: picked.item.direction,
+        toTx: tx,
+        toTy: ty,
+        toDir: this.direction,
+      });
+      this.redoStack.length = 0;
+      this.movingItem = null;
       return;
     }
 
@@ -83,7 +132,7 @@ export class DecorateController {
     if (action.kind === "place") {
       await this.api.removeFurniture(action.item.id);
       this.redoStack.push(action);
-    } else {
+    } else if (action.kind === "remove") {
       const recreated = await this.api.placeFurniture({
         tx: action.tx,
         ty: action.ty,
@@ -91,6 +140,13 @@ export class DecorateController {
         direction: action.item.direction,
       });
       this.redoStack.push({ ...action, item: recreated });
+    } else if (action.kind === "move" && this.api.moveFurniture) {
+      await this.api.moveFurniture(action.itemId, {
+        tx: action.fromTx,
+        ty: action.fromTy,
+        direction: action.fromDir,
+      });
+      this.redoStack.push(action);
     }
   }
 
@@ -105,8 +161,15 @@ export class DecorateController {
         direction: action.item.direction,
       });
       this.undoStack.push({ ...action, item: recreated });
-    } else {
+    } else if (action.kind === "remove") {
       await this.api.removeFurniture(action.item.id);
+      this.undoStack.push(action);
+    } else if (action.kind === "move" && this.api.moveFurniture) {
+      await this.api.moveFurniture(action.itemId, {
+        tx: action.toTx,
+        ty: action.toTy,
+        direction: action.toDir,
+      });
       this.undoStack.push(action);
     }
   }

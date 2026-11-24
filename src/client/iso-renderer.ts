@@ -1,4 +1,5 @@
 import type {
+  CatalogEntry,
   ComputedCampus,
   Direction,
   EmployeeRecord,
@@ -48,12 +49,30 @@ export interface RenderSceneInput {
   campus: ComputedCampus;
   camera: IsoCamera;
   atlas: AtlasManager;
+  catalogById?: Map<string, CatalogEntry>;
   employees: RenderedEmployeeInput[];
   syncPackets: SyncPacketVisual[];
   selectedEmployeeId?: string | null;
   bayPopAnimations?: Map<string, number>; // bayId -> 0..1 progress
   ghost?: DecorateGhostInput | null;
   timeMs: number;
+}
+
+export function resolveAssetAnimationFrame(
+  assetId: string,
+  timeMs: number,
+  catalogById?: Map<string, CatalogEntry>,
+): string {
+  const frames = catalogById?.get(assetId)?.frames;
+  if (frames && frames.length > 0) {
+    if (frames.length === 1) return frames[0];
+    return frames[Math.floor(timeMs / 650) % frames.length];
+  }
+  const tick = Math.floor(timeMs / 650);
+  if (assetId === "server-rack") return `blink_${tick % 3}`;
+  if (assetId === "desk-security-ops") return `alert_${tick % 2}`;
+  if (assetId === "desk-dev-dual" || assetId === "coffee-machine-bar") return `idle_${tick % 2}`;
+  return "default";
 }
 
 export interface ScreenHitBox {
@@ -310,14 +329,8 @@ export class IsoRenderer {
     }
 
     // 3. Unified Furniture + Animated Characters (topological depth-sort)
-    const blinkFrameIdx = Math.floor(timeMs / 650);
-    const animFrameForAsset = (assetId: string): string => {
-      if (assetId === "server-rack") return `idle_${blinkFrameIdx % 3}`;
-      if (assetId === "desk-dev-dual" || assetId === "desk-security-ops" || assetId === "coffee-machine-bar") {
-        return `idle_${blinkFrameIdx % 2}`;
-      }
-      return "default";
-    };
+    const animFrameForAsset = (assetId: string): string =>
+      resolveAssetAnimationFrame(assetId, timeMs, input.catalogById);
 
     type UnifiedItem =
       | (DepthRenderItem & {

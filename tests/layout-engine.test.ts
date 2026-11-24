@@ -47,12 +47,12 @@ describe("layout-engine", () => {
     expect(campus.zones.filter((z) => z.kind === "common")).toHaveLength(rows);
     expect(campus.walls.some((w) => w.edge === "corner" && w.tx === 0 && w.ty === 0)).toBe(true);
 
-    // Every NW perimeter tile (ty=0) and NE perimeter tile (tx=0) has a wall
-    for (let tx = 1; tx < campus.widthTiles; tx++) {
-      expect(campus.walls.some((w) => w.edge === "nw" && w.tx === tx && w.ty === 0)).toBe(true);
+    // Every NE perimeter tile (ty=0) and NW perimeter tile (tx=0) has a wall
+    for (let tx = 0; tx < campus.widthTiles; tx++) {
+      expect(campus.walls.some((w) => w.edge === "ne" && w.tx === tx && w.ty === 0)).toBe(true);
     }
-    for (let ty = 1; ty < campus.depthTiles; ty++) {
-      expect(campus.walls.some((w) => w.edge === "ne" && w.tx === 0 && w.ty === ty)).toBe(true);
+    for (let ty = 0; ty < campus.depthTiles; ty++) {
+      expect(campus.walls.some((w) => w.edge === "nw" && w.tx === 0 && w.ty === ty)).toBe(true);
     }
 
     // Zero overlap between any two zones

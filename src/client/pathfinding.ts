@@ -34,8 +34,9 @@ export function findTilePath(
   grid: WalkableGrid,
   startRaw: [number, number],
   goalRaw: [number, number],
-  maxExpansions = 2500,
+  maxExpansions?: number,
 ): Array<[number, number]> {
+  const limit = maxExpansions ?? Math.max(4000, grid.width * grid.height);
   const clampX = (x: number) => Math.max(0, Math.min(grid.width - 1, Math.round(x)));
   const clampY = (y: number) => Math.max(0, Math.min(grid.height - 1, Math.round(y)));
 
@@ -44,7 +45,7 @@ export function findTilePath(
   const gx = clampX(goalRaw[0]);
   const gy = clampY(goalRaw[1]);
 
-  if (sx === gx && sy === gy) return [[sx, sy]];
+  if (sx === gx && sy === gy && grid.blocked[sy * grid.width + sx] === 0) return [[sx, sy]];
 
   const idx = (x: number, y: number) => y * grid.width + x;
   const h = (x: number, y: number) => Math.abs(x - gx) + Math.abs(y - gy);
@@ -62,8 +63,9 @@ export function findTilePath(
   gScore[startIdx] = 0;
   fScore[startIdx] = h(sx, sy);
 
-  let bestFallbackIdx = startIdx;
-  let bestFallbackDist = h(sx, sy);
+  // If starting on a blocked tile, allow any reachable unblocked tile to beat the initial fallback
+  let bestFallbackIdx = grid.blocked[startIdx] === 0 ? startIdx : -1;
+  let bestFallbackDist = grid.blocked[startIdx] === 0 ? h(sx, sy) : Infinity;
   let expansions = 0;
 
   const dirs: ReadonlyArray<[number, number]> = [
@@ -73,9 +75,8 @@ export function findTilePath(
     [0, -1],
   ];
 
-  while (open.length > 0 && expansions < maxExpansions) {
+  while (open.length > 0 && expansions < limit) {
     expansions++;
-    // Pick lowest fScore in open list
     let bestPos = 0;
     let current = open[0];
     let bestF = fScore[current];
@@ -100,7 +101,7 @@ export function findTilePath(
       bestFallbackIdx = current;
     }
 
-    if (current === goalIdx) {
+    if (current === goalIdx && grid.blocked[current] === 0) {
       return reconstructPath(cameFrom, current, grid.width);
     }
 
@@ -125,7 +126,7 @@ export function findTilePath(
     }
   }
 
-  return reconstructPath(cameFrom, bestFallbackIdx, grid.width);
+  return reconstructPath(cameFrom, bestFallbackIdx !== -1 ? bestFallbackIdx : startIdx, grid.width);
 }
 
 function reconstructPath(cameFrom: Int32Array, endIdx: number, width: number): Array<[number, number]> {

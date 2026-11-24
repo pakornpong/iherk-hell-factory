@@ -6,7 +6,7 @@ import type {
 } from "../shared/types.js";
 import { AtlasManager } from "./atlas-loader.js";
 import { IsoCamera } from "./camera.js";
-import { DecorateController } from "./decorate.js";
+import { DecorateController, isEditableFurniture } from "./decorate.js";
 import { OfficeHud } from "./hud.js";
 import { IsoRenderer } from "./iso-renderer.js";
 import { OfficeSimulation } from "./sim.js";
@@ -44,6 +44,7 @@ async function bootstrap(): Promise<void> {
 
   let snapshot: OfficeSnapshotPayload | null = null;
   let catalog: CatalogEntry[] = [];
+  let catalogById = new Map<string, CatalogEntry>();
   let selectedEmployeeId: string | null = null;
   let hoverTile: [number, number] | null = null;
   let cameraInitialized = false;
@@ -59,6 +60,13 @@ async function bootstrap(): Promise<void> {
     async placeFurniture(req) {
       const res = await architectFetch<{ furniture: any }>("/api/architect/furniture", {
         method: "POST",
+        body: JSON.stringify(req),
+      });
+      return res.furniture;
+    },
+    async moveFurniture(id, req) {
+      const res = await architectFetch<{ furniture: any }>(`/api/architect/furniture/${encodeURIComponent(id)}`, {
+        method: "PATCH",
         body: JSON.stringify(req),
       });
       return res.furniture;
@@ -120,6 +128,7 @@ async function bootstrap(): Promise<void> {
     if (res.ok) {
       const data = (await res.json()) as { catalog: CatalogEntry[] };
       catalog = data.catalog;
+      catalogById = new Map(catalog.map((c) => [c.id, c]));
     }
   };
 
@@ -209,7 +218,12 @@ async function bootstrap(): Promise<void> {
     if (decorate.active && hoverTile) {
       const [tx, ty] = hoverTile;
       const existing = snapshot.campus.worldFurniture.find(
-        (f) => tx >= f.tx && tx < f.tx + f.footprintTiles[0] && ty >= f.ty && ty < f.ty + f.footprintTiles[1],
+        (f) =>
+          isEditableFurniture(f) &&
+          tx >= f.tx &&
+          tx < f.tx + f.footprintTiles[0] &&
+          ty >= f.ty &&
+          ty < f.ty + f.footprintTiles[1],
       );
       void decorate
         .handleTileClick(tx, ty, existing)
@@ -290,17 +304,44 @@ async function bootstrap(): Promise<void> {
     lastDrawTs = now;
 
     let ghost = null;
-    if (decorate.active && decorate.tool === "place" && decorate.selectedAssetId && hoverTile) {
+    const ghostAssetId =
+      decorate.tool === "place"
+        ? decorate.selectedAssetId
+        : decorate.tool === "move"
+          ? decorate.movingItem?.item.assetId ?? null
+          : null;
+    if (decorate.active && ghostAssetId && hoverTile) {
       const [tx, ty] = hoverTile;
-      const insideZone = snapshot.campus.zones.some(
+      const zone = snapshot.campus.zones.find(
         (z) => tx >= z.originX && tx < z.originX + z.width && ty >= z.originY && ty < z.originY + z.height,
       );
+      const cat = catalogById.get(ghostAssetId);
+      const baseFp = cat?.footprintTiles ?? [1, 1];
+      const [fw, fd] =
+        decorate.direction === "sw" || decorate.direction === "ne" ? [baseFp[1], baseFp[0]] : [baseFp[0], baseFp[1]];
+      let valid = false;
+      if (zone) {
+        const lx = tx - zone.originX;
+        const ly = ty - zone.originY;
+        const inBounds = lx >= 0 && ly >= 0 && lx + fw <= zone.width && ly + fd <= zone.height;
+        const ignoreId = decorate.movingItem?.item.id;
+        const collides = snapshot.campus.worldFurniture.some((f) => {
+          if (f.id === ignoreId || f.zoneId !== zone.zoneId || f.id.startsWith("sys-div-")) return false;
+          return (
+            tx < f.tx + f.footprintTiles[0] &&
+            tx + fw > f.tx &&
+            ty < f.ty + f.footprintTiles[1] &&
+            ty + fd > f.ty
+          );
+        });
+        valid = inBounds && !collides;
+      }
       ghost = {
         tx,
         ty,
-        assetId: decorate.selectedAssetId,
+        assetId: ghostAssetId,
         direction: decorate.direction,
-        valid: insideZone,
+        valid,
       };
     }
 
@@ -309,6 +350,7 @@ async function bootstrap(): Promise<void> {
       campus: snapshot.campus,
       camera,
       atlas,
+      catalogById,
       employees: simStep.visuals,
       syncPackets: simStep.syncPackets,
       selectedEmployeeId,

@@ -1,14 +1,40 @@
+import fsSync from "node:fs";
 import fs from "node:fs/promises";
+import os from "node:os";
 import path from "node:path";
 import type { AgentTelemetryEvent } from "../shared/types.js";
 
 const RECENT_MTIME_MS = 5 * 60 * 1000;
 const HOOK_DEDUP_WINDOW_MS = 30_000;
+const PROJECT_MARKERS = [".git", "package.json", "Cargo.toml", "pyproject.toml", "go.mod"];
 
 interface TrackedTranscript {
   offset: number;
   projectPath: string;
   remainder: string;
+}
+
+function resolveProjectRoot(candidatePath: string): string {
+  const home = os.homedir();
+  let cur = path.resolve(candidatePath);
+  try {
+    const st = fsSync.statSync(cur);
+    if (st.isFile()) cur = path.dirname(cur);
+  } catch {
+    // If path has a file extension, step up to its parent directory
+    if (path.extname(cur)) cur = path.dirname(cur);
+  }
+
+  let probe = cur;
+  while (probe && probe !== path.dirname(probe) && probe !== home) {
+    for (const marker of PROJECT_MARKERS) {
+      if (fsSync.existsSync(path.join(probe, marker))) {
+        return probe;
+      }
+    }
+    probe = path.dirname(probe);
+  }
+  return cur;
 }
 
 function inferProjectFromStep(step: Record<string, unknown>, currentProject: string): string {
@@ -19,14 +45,14 @@ function inferProjectFromStep(step: Record<string, unknown>, currentProject: str
     if (args && typeof args === "object") {
       const p = (args as Record<string, unknown>).Path ?? (args as Record<string, unknown>).path;
       if (typeof p === "string" && p.startsWith("/") && !p.includes("/.gemini/")) {
-        return path.dirname(p);
+        return resolveProjectRoot(p);
       }
     }
   }
   const content = typeof step.content === "string" ? step.content : "";
-  const match = content.match(/\/Users\/[^\s"'<>|]+\/[^\s"'<>|]+/);
+  const match = content.match(/\/(?:Users|var|tmp|home)\/[^\s"'<>|]+/);
   if (match && !match[0].includes("/.gemini/")) {
-    return match[0];
+    return resolveProjectRoot(match[0]);
   }
   return currentProject;
 }

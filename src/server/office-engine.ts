@@ -41,6 +41,7 @@ const BAY_ACCENT_PALETTE = [
 ];
 
 const STALE_ACTIVITY_TIMEOUT_MS = 120_000;
+const SUBAGENT_TOMBSTONE_MS = 60_000;
 
 function normalizeProjectPath(raw: string): string {
   const resolved = path.resolve(raw);
@@ -98,6 +99,21 @@ export class OfficeEngine extends EventEmitter {
   private readonly assignDurationMs: number;
   private demoBackupState: OfficeState | null = null;
   private demoMode = false;
+  private queuedRealEventsDuringDemo: AgentTelemetryEvent[] = [];
+  private readonly stoppedSubagents = new Map<string, number>();
+  private opQueue: Promise<unknown> = Promise.resolve();
+
+  private runSerialized<T>(fn: () => Promise<T>): Promise<T> {
+    const next = this.opQueue.then(fn, fn);
+    this.opQueue = next.then(() => undefined, () => undefined);
+    return next;
+  }
+
+  private assertNotDemoMode(): void {
+    if (this.demoMode) {
+      throw new Error("Cannot edit office layout while Demo Mode is active — stop Demo Mode first");
+    }
+  }
 
   constructor(opts: {
     store: OfficeStore;
@@ -184,24 +200,33 @@ export class OfficeEngine extends EventEmitter {
   }
 
   async enterDemoMode(): Promise<void> {
-    if (this.demoMode) return;
-    this.demoBackupState = structuredClone(this.state);
-    this.demoMode = true;
-    this.state = this.createFreshState();
-    this.recomputeCampus();
-    this.emitSnapshot();
+    return this.runSerialized(async () => {
+      if (this.demoMode) return;
+      this.demoBackupState = structuredClone(this.state);
+      this.queuedRealEventsDuringDemo = [];
+      this.demoMode = true;
+      this.state = this.createFreshState();
+      this.recomputeCampus();
+      this.emitSnapshot();
+    });
   }
 
   async exitDemoMode(): Promise<void> {
-    if (!this.demoMode) return;
-    this.demoMode = false;
-    if (this.demoBackupState) {
-      this.state = this.demoBackupState;
-      this.demoBackupState = null;
-    }
-    this.ensureCommonWingsForActiveRows();
-    this.recomputeCampus();
-    this.emitSnapshot();
+    return this.runSerialized(async () => {
+      if (!this.demoMode) return;
+      this.demoMode = false;
+      if (this.demoBackupState) {
+        this.state = this.demoBackupState;
+        this.demoBackupState = null;
+      }
+      this.ensureCommonWingsForActiveRows();
+      this.recomputeCampus();
+      const queued = this.queuedRealEventsDuringDemo.splice(0);
+      for (const ev of queued) {
+        await this.ingestEventUnlocked(ev);
+      }
+      this.emitSnapshot();
+    });
   }
 
   getSnapshot(): OfficeSnapshotPayload {
@@ -287,6 +312,15 @@ export class OfficeEngine extends EventEmitter {
     return { bay: newBay, expanded: true };
   }
 
+  private allocateDeskIndex(bayId: string): number {
+    const used = new Set(
+      this.state.employees.filter((e) => e.bayId === bayId).map((e) => e.deskIndex),
+    );
+    let idx = 0;
+    while (used.has(idx)) idx++;
+    return idx;
+  }
+
   private resolveOrSpawnEmployee(bay: ProjectBayRecord, ev: AgentTelemetryEvent, ts: number): EmployeeRecord | null {
     const bayEmployees = this.state.employees.filter((e) => e.bayId === bay.id);
 
@@ -299,9 +333,21 @@ export class OfficeEngine extends EventEmitter {
         existingSub.lastUpdatedAt = ts;
         return existingSub;
       }
-      if (ev.eventType === "subagent_stop" || ev.eventType === "session_end") {
+      if (
+        ev.eventType === "subagent_stop" ||
+        ev.eventType === "session_end" ||
+        ev.eventType === "turn_stop" ||
+        ev.eventType === "tool_end"
+      ) {
         return null; // Idempotent ignore for unknown/already-cleaned subagent
       }
+      // Prevent delayed async hook events from resurrecting a recently stopped subagent
+      const stoppedAt = this.stoppedSubagents.get(subId);
+      if (stoppedAt !== undefined && ts - stoppedAt < SUBAGENT_TOMBSTONE_MS && ev.eventType !== "subagent_start") {
+        return null;
+      }
+      this.stoppedSubagents.delete(subId);
+
       const variantIdx = bayEmployees.filter((e) => e.provider === ev.provider).length;
       const emp: EmployeeRecord = {
         id: subId,
@@ -316,12 +362,13 @@ export class OfficeEngine extends EventEmitter {
         agentId: ev.agentId,
         parentAgentId: ev.parentAgentId,
         isEphemeral: true,
-        deskIndex: bayEmployees.length,
+        deskIndex: this.allocateDeskIndex(bay.id),
         visualState: "assigning",
         toolCategory: "idle",
         lastUpdatedAt: ts,
       };
       this.state.employees.push(emp);
+      this.recomputeCampus();
       this.ensureBayDesksForTeam(bay);
       return emp;
     }
@@ -355,12 +402,13 @@ export class OfficeEngine extends EventEmitter {
       role: ev.agentRole ?? "Lead",
       sessionId: ev.sessionId,
       isEphemeral: false,
-      deskIndex: bayEmployees.length,
+      deskIndex: this.allocateDeskIndex(bay.id),
       visualState: "assigning",
       toolCategory: "idle",
       lastUpdatedAt: ts,
     };
     this.state.employees.push(emp);
+    this.recomputeCampus();
     this.ensureBayDesksForTeam(bay);
     return emp;
   }
@@ -394,19 +442,41 @@ export class OfficeEngine extends EventEmitter {
   }
 
   async ingestEvent(raw: AgentTelemetryEvent): Promise<void> {
-    const ev = AgentTelemetryEventSchema.parse(raw);
+    return this.runSerialized(async () => {
+      const ev = AgentTelemetryEventSchema.parse(raw);
+      // Queue real telemetry during Demo Mode so it is never lost when exiting demo
+      if (this.demoMode && ev.source !== "simulator") {
+        this.queuedRealEventsDuringDemo.push(ev);
+        return;
+      }
+      await this.ingestEventUnlocked(ev);
+    });
+  }
+
+  private async ingestEventUnlocked(ev: AgentTelemetryEvent): Promise<void> {
     const ts = ev.timestamp ?? this.now();
     const normalizedPath = normalizeProjectPath(ev.projectPath);
 
-    // Handle subagent_stop on unknown bay/subagent cleanly without expanding a bay
-    if (ev.eventType === "subagent_stop" && ev.agentId) {
-      const existingBay = this.state.bays.find((b) => b.projectPath === normalizedPath);
-      if (!existingBay) return;
-      const subId = `sub:${existingBay.id}:${ev.provider}:${ev.agentId}`;
+    // Do not create or claim a bay for closing/orphan events referencing an unknown project
+    const existingBayForPath = this.state.bays.find((b) => b.projectPath === normalizedPath);
+    if (
+      !existingBayForPath &&
+      (ev.eventType === "subagent_stop" ||
+        ev.eventType === "session_end" ||
+        ev.eventType === "turn_stop" ||
+        ev.eventType === "tool_end")
+    ) {
+      return;
+    }
+
+    // Handle subagent_stop cleanly with tombstone to prevent delayed async hook resurrection
+    if (ev.eventType === "subagent_stop" && ev.agentId && existingBayForPath) {
+      const subId = `sub:${existingBayForPath.id}:${ev.provider}:${ev.agentId}`;
+      this.stoppedSubagents.set(subId, ts);
       const idx = this.state.employees.findIndex((e) => e.id === subId);
       if (idx !== -1) {
         this.state.employees.splice(idx, 1);
-        this.reconcileBayTeamwork(existingBay.id);
+        this.reconcileBayTeamwork(existingBayForPath.id);
         this.recomputeCampus();
         await this.persist();
         this.emitSnapshot();
@@ -415,6 +485,7 @@ export class OfficeEngine extends EventEmitter {
     }
 
     const { bay, expanded } = this.getOrCreateBayForProject(normalizedPath, ev.projectName, ts);
+    if (expanded) this.recomputeCampus();
     const emp = this.resolveOrSpawnEmployee(bay, ev, ts);
     if (!emp) return;
 
@@ -514,11 +585,21 @@ export class OfficeEngine extends EventEmitter {
       case "turn_stop":
       case "session_end": {
         if (emp.isEphemeral) {
+          this.stoppedSubagents.set(emp.id, ts);
           this.state.employees = this.state.employees.filter((e) => e.id !== emp.id);
         } else {
           emp.assignUntil = undefined;
           emp.restAt = ts + this.restCooldownMs;
           emp.detail = ev.detail ?? "Wrapping up";
+          // Also clean up ephemeral subagents belonging to this parent session (e.g., Antigravity subagents)
+          for (const sub of this.state.employees) {
+            if (sub.isEphemeral && sub.bayId === bay.id && sub.sessionId === ev.sessionId) {
+              this.stoppedSubagents.set(sub.id, ts);
+            }
+          }
+          this.state.employees = this.state.employees.filter(
+            (e) => !(e.isEphemeral && e.bayId === bay.id && e.sessionId === ev.sessionId),
+          );
         }
         break;
       }
@@ -551,67 +632,72 @@ export class OfficeEngine extends EventEmitter {
   }
 
   async tick(): Promise<void> {
-    const ts = this.now();
-    let changed = false;
-    const touchedBays = new Set<string>();
+    return this.runSerialized(async () => {
+      const ts = this.now();
+      for (const [id, stoppedAt] of [...this.stoppedSubagents.entries()]) {
+        if (ts - stoppedAt >= SUBAGENT_TOMBSTONE_MS) this.stoppedSubagents.delete(id);
+      }
+      let changed = false;
+      const touchedBays = new Set<string>();
 
-    for (const emp of this.state.employees) {
-      if (emp.assignUntil && ts >= emp.assignUntil && emp.visualState === "assigning") {
-        emp.assignUntil = undefined;
-        emp.visualState = "working";
-        emp.toolCategory = emp.toolCategory === "idle" ? "code" : emp.toolCategory;
-        touchedBays.add(emp.bayId);
-        changed = true;
-      }
-      if (emp.errorUntil && ts >= emp.errorUntil && emp.toolCategory === "error") {
-        emp.errorUntil = undefined;
-        emp.toolCategory = "code";
-        changed = true;
-      }
-      if (emp.restAt && ts >= emp.restAt && emp.visualState !== "resting") {
-        emp.restAt = undefined;
-        emp.visualState = "resting";
-        emp.toolCategory = "idle";
-        emp.detail = "Taking a break";
-        touchedBays.add(emp.bayId);
-        changed = true;
-      }
-      // Guard against stale zombie sessions where no stop hook ever arrived
-      if (
-        emp.visualState !== "resting" &&
-        !emp.restAt &&
-        ts - emp.lastUpdatedAt >= STALE_ACTIVITY_TIMEOUT_MS
-      ) {
-        if (emp.isEphemeral) {
-          emp.restAt = ts; // cleaned below
-        } else {
-          emp.visualState = "resting";
-          emp.toolCategory = "idle";
-          emp.detail = "Idle — taking a break";
+      for (const emp of this.state.employees) {
+        if (emp.assignUntil && ts >= emp.assignUntil && emp.visualState === "assigning") {
+          emp.assignUntil = undefined;
+          emp.visualState = "working";
+          emp.toolCategory = emp.toolCategory === "idle" ? "code" : emp.toolCategory;
           touchedBays.add(emp.bayId);
           changed = true;
         }
+        if (emp.errorUntil && ts >= emp.errorUntil && emp.toolCategory === "error") {
+          emp.errorUntil = undefined;
+          emp.toolCategory = "code";
+          changed = true;
+        }
+        if (emp.restAt && ts >= emp.restAt && emp.visualState !== "resting") {
+          emp.restAt = undefined;
+          emp.visualState = "resting";
+          emp.toolCategory = "idle";
+          emp.detail = "Taking a break";
+          touchedBays.add(emp.bayId);
+          changed = true;
+        }
+        // Guard against stale zombie sessions where no stop hook ever arrived
+        if (
+          emp.visualState !== "resting" &&
+          !emp.restAt &&
+          ts - emp.lastUpdatedAt >= STALE_ACTIVITY_TIMEOUT_MS
+        ) {
+          if (emp.isEphemeral) {
+            emp.restAt = ts; // cleaned below
+          } else {
+            emp.visualState = "resting";
+            emp.toolCategory = "idle";
+            emp.detail = "Idle — taking a break";
+            touchedBays.add(emp.bayId);
+            changed = true;
+          }
+        }
       }
-    }
 
-    const beforeLen = this.state.employees.length;
-    this.state.employees = this.state.employees.filter(
-      (e) => !(e.isEphemeral && ts - e.lastUpdatedAt >= STALE_ACTIVITY_TIMEOUT_MS),
-    );
-    if (this.state.employees.length !== beforeLen) {
-      changed = true;
-      for (const b of this.state.bays) touchedBays.add(b.id);
-    }
+      const beforeLen = this.state.employees.length;
+      this.state.employees = this.state.employees.filter(
+        (e) => !(e.isEphemeral && ts - e.lastUpdatedAt >= STALE_ACTIVITY_TIMEOUT_MS),
+      );
+      if (this.state.employees.length !== beforeLen) {
+        changed = true;
+        for (const b of this.state.bays) touchedBays.add(b.id);
+      }
 
-    for (const bayId of touchedBays) {
-      this.reconcileBayTeamwork(bayId);
-    }
+      for (const bayId of touchedBays) {
+        this.reconcileBayTeamwork(bayId);
+      }
 
-    if (changed) {
-      this.recomputeCampus();
-      await this.persist();
-      this.emitSnapshot();
-    }
+      if (changed) {
+        this.recomputeCampus();
+        await this.persist();
+        this.emitSnapshot();
+      }
+    });
   }
 
   private getZoneFurnitureArray(zoneId: ZoneId): FurnitureInstance[] | null {
@@ -657,89 +743,98 @@ export class OfficeEngine extends EventEmitter {
     direction: Direction;
     placedBy: "user" | "gemini";
   }): Promise<FurnitureInstance> {
-    const { zoneId, lx, ly } = this.resolveTargetZoneCoord(input);
-    const list = this.getZoneFurnitureArray(zoneId);
-    if (!list) throw new Error(`Unknown zone "${zoneId}"`);
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const { zoneId, lx, ly } = this.resolveTargetZoneCoord(input);
+      const list = this.getZoneFurnitureArray(zoneId);
+      if (!list) throw new Error(`Unknown zone "${zoneId}"`);
 
-    const check = validateFurniturePlacement(
-      this.campus,
-      list,
-      { zoneId, lx, ly, assetId: input.assetId, direction: input.direction },
-      this.catalogById,
-    );
-    if (!check.ok) throw new Error(check.reason);
+      const check = validateFurniturePlacement(
+        this.campus,
+        list,
+        { zoneId, lx, ly, assetId: input.assetId, direction: input.direction },
+        this.catalogById,
+      );
+      if (!check.ok) throw new Error(check.reason);
 
-    const cat = this.catalogById.get(input.assetId)!;
-    const instance: FurnitureInstance = {
-      id: `furn-${Date.now()}-${crypto.randomBytes(3).toString("hex")}`,
-      zoneId,
-      lx,
-      ly,
-      assetId: input.assetId,
-      direction: input.direction,
-      layer: cat.layer,
-      placedBy: input.placedBy,
-    };
-    list.push(instance);
-    this.recomputeCampus();
-    await this.persist();
-    this.emitSnapshot();
-    return instance;
+      const cat = this.catalogById.get(input.assetId)!;
+      const instance: FurnitureInstance = {
+        id: `furn-${Date.now()}-${crypto.randomBytes(3).toString("hex")}`,
+        zoneId,
+        lx,
+        ly,
+        assetId: input.assetId,
+        direction: input.direction,
+        layer: cat.layer,
+        placedBy: input.placedBy,
+      };
+      list.push(instance);
+      this.recomputeCampus();
+      await this.persist();
+      this.emitSnapshot();
+      return instance;
+    });
   }
 
   async moveFurniture(
     instanceId: string,
     input: { zoneId?: string; tx?: number; ty?: number; lx?: number; ly?: number; direction?: Direction },
   ): Promise<FurnitureInstance> {
-    const found = this.findFurnitureById(instanceId);
-    if (!found) throw new Error(`Furniture instance "${instanceId}" not found`);
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const found = this.findFurnitureById(instanceId);
+      if (!found) throw new Error(`Furniture instance "${instanceId}" not found`);
 
-    const targetCoord =
-      input.zoneId !== undefined || input.tx !== undefined
-        ? this.resolveTargetZoneCoord(input)
-        : { zoneId: found.item.zoneId, lx: input.lx ?? found.item.lx, ly: input.ly ?? found.item.ly };
-    const nextDir = input.direction ?? found.item.direction;
+      const targetCoord =
+        input.zoneId !== undefined || input.tx !== undefined
+          ? this.resolveTargetZoneCoord(input)
+          : { zoneId: found.item.zoneId, lx: input.lx ?? found.item.lx, ly: input.ly ?? found.item.ly };
+      const nextDir = input.direction ?? found.item.direction;
 
-    const targetList = this.getZoneFurnitureArray(targetCoord.zoneId);
-    if (!targetList) throw new Error(`Unknown zone "${targetCoord.zoneId}"`);
+      const targetList = this.getZoneFurnitureArray(targetCoord.zoneId);
+      if (!targetList) throw new Error(`Unknown zone "${targetCoord.zoneId}"`);
 
-    const check = validateFurniturePlacement(
-      this.campus,
-      targetList,
-      {
-        zoneId: targetCoord.zoneId,
-        lx: targetCoord.lx,
-        ly: targetCoord.ly,
-        assetId: found.item.assetId,
-        direction: nextDir,
-        ignoreInstanceId: found.item.zoneId === targetCoord.zoneId ? instanceId : undefined,
-      },
-      this.catalogById,
-    );
-    if (!check.ok) throw new Error(check.reason);
+      const check = validateFurniturePlacement(
+        this.campus,
+        targetList,
+        {
+          zoneId: targetCoord.zoneId,
+          lx: targetCoord.lx,
+          ly: targetCoord.ly,
+          assetId: found.item.assetId,
+          direction: nextDir,
+          ignoreInstanceId: found.item.zoneId === targetCoord.zoneId ? instanceId : undefined,
+        },
+        this.catalogById,
+      );
+      if (!check.ok) throw new Error(check.reason);
 
-    if (found.list !== targetList) {
-      found.list.splice(found.index, 1);
-      targetList.push(found.item);
-    }
-    found.item.zoneId = targetCoord.zoneId;
-    found.item.lx = targetCoord.lx;
-    found.item.ly = targetCoord.ly;
-    found.item.direction = nextDir;
+      if (found.list !== targetList) {
+        found.list.splice(found.index, 1);
+        targetList.push(found.item);
+      }
+      found.item.zoneId = targetCoord.zoneId;
+      found.item.lx = targetCoord.lx;
+      found.item.ly = targetCoord.ly;
+      found.item.direction = nextDir;
 
-    this.recomputeCampus();
-    await this.persist();
-    this.emitSnapshot();
-    return structuredClone(found.item);
+      this.recomputeCampus();
+      await this.persist();
+      this.emitSnapshot();
+      return structuredClone(found.item);
+    });
   }
 
   async removeFurniture(instanceId: string): Promise<void> {
-    const found = this.findFurnitureById(instanceId);
-    if (!found) throw new Error(`Furniture instance "${instanceId}" not found`);
-    found.list.splice(found.index, 1);
-    this.recomputeCampus();
-    await this.persist();
-    this.emitSnapshot();
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const found = this.findFurnitureById(instanceId);
+      if (!found) throw new Error(`Furniture instance "${instanceId}" not found`);
+      found.list.splice(found.index, 1);
+      this.recomputeCampus();
+      await this.persist();
+      this.emitSnapshot();
+    });
   }
 
   private findFurnitureById(
@@ -760,30 +855,41 @@ export class OfficeEngine extends EventEmitter {
     bayId: string,
     patch: { displayName?: string; accentColor?: string; archived?: boolean },
   ): Promise<ProjectBayRecord> {
-    const bay = this.state.bays.find((b) => b.id === bayId);
-    if (!bay) throw new Error(`Bay "${bayId}" not found`);
-    if (patch.displayName !== undefined) bay.displayName = patch.displayName.slice(0, 128);
-    if (patch.accentColor !== undefined) {
-      if (!/^#[0-9a-fA-F]{6}$/.test(patch.accentColor)) {
-        throw new Error(`Invalid hex color "${patch.accentColor}"`);
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const bay = this.state.bays.find((b) => b.id === bayId);
+      if (!bay) throw new Error(`Bay "${bayId}" not found`);
+      if (patch.displayName !== undefined) bay.displayName = patch.displayName.slice(0, 128);
+      if (patch.accentColor !== undefined) {
+        if (!/^#[0-9a-fA-F]{6}$/.test(patch.accentColor)) {
+          throw new Error(`Invalid hex color "${patch.accentColor}"`);
+        }
+        bay.accentColor = patch.accentColor;
       }
-      bay.accentColor = patch.accentColor;
-    }
-    if (patch.archived !== undefined) {
-      bay.archived = patch.archived;
-      if (!patch.archived) {
-        this.ensureCommonWingsForActiveRows();
+      if (patch.archived !== undefined) {
+        bay.archived = patch.archived;
+        if (!patch.archived) {
+          this.ensureCommonWingsForActiveRows();
+        }
       }
-    }
-    this.recomputeCampus();
-    await this.persist();
-    this.emitSnapshot();
-    return structuredClone(bay);
+      this.recomputeCampus();
+      await this.persist();
+      this.emitSnapshot();
+      return structuredClone(bay);
+    });
   }
 
   async setTheme(theme: ThemeMode): Promise<void> {
-    this.state.theme = theme;
-    await this.persist();
-    this.emitSnapshot();
+    return this.runSerialized(async () => {
+      // Allow toggling visual Day/Night theme even in Demo Mode; also apply to backup so it persists cleanly
+      this.state.theme = theme;
+      if (this.demoBackupState) {
+        this.demoBackupState.theme = theme;
+        await this.store.save(this.demoBackupState);
+      } else {
+        await this.persist();
+      }
+      this.emitSnapshot();
+    });
   }
 }

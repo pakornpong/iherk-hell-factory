@@ -69,6 +69,12 @@ export class OfficeHud {
       this.cb.onDecorateChanged();
     });
 
+    const btnMove = document.getElementById("btn-move") as HTMLButtonElement | null;
+    btnMove?.addEventListener("click", () => {
+      this.decorate.setTool(this.decorate.tool === "move" ? "place" : "move");
+      this.cb.onDecorateChanged();
+    });
+
     const btnErase = document.getElementById("btn-erase") as HTMLButtonElement;
     btnErase.addEventListener("click", () => {
       this.decorate.setTool(this.decorate.tool === "erase" ? "place" : "erase");
@@ -158,6 +164,7 @@ export class OfficeHud {
     const decoratePanel = document.getElementById("decorate-panel")!;
     decoratePanel.classList.toggle("hidden", !this.decorate.active);
     document.getElementById("btn-rotate")!.textContent = `↻ ${this.decorate.direction.toUpperCase()}`;
+    document.getElementById("btn-move")?.classList.toggle("active", this.decorate.tool === "move");
     document.getElementById("btn-erase")!.classList.toggle("active", this.decorate.tool === "erase");
     (document.getElementById("btn-undo") as HTMLButtonElement).disabled = !this.decorate.canUndo();
     (document.getElementById("btn-redo") as HTMLButtonElement).disabled = !this.decorate.canRedo();

@@ -46,10 +46,10 @@ export function createDefaultCommonWing(row: number): CommonWingRecord {
 export function createDefaultBayFurniture(bayId: string): FurnitureInstance[] {
   const zoneId: ZoneId = `bay:${bayId}`;
   return [
-    { id: `${zoneId}-desk-0`, zoneId, lx: 1, ly: 1, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
-    { id: `${zoneId}-chair-0`, zoneId, lx: 1, ly: 2, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
-    { id: `${zoneId}-desk-1`, zoneId, lx: 3, ly: 1, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
-    { id: `${zoneId}-chair-1`, zoneId, lx: 4, ly: 2, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
+    { id: `${zoneId}-desk-0`, zoneId, lx: 1, ly: 0, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
+    { id: `${zoneId}-chair-0`, zoneId, lx: 1, ly: 1, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
+    { id: `${zoneId}-desk-1`, zoneId, lx: 3, ly: 0, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
+    { id: `${zoneId}-chair-1`, zoneId, lx: 4, ly: 1, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
     { id: `${zoneId}-rack`, zoneId, lx: 5, ly: 0, assetId: "server-rack", direction: "se", layer: "object", placedBy: "system" },
     { id: `${zoneId}-shelf`, zoneId, lx: 0, ly: 0, assetId: "bookshelf-wood", direction: "se", layer: "object", placedBy: "system" },
     { id: `${zoneId}-plant`, zoneId, lx: 0, ly: 4, assetId: "plant-potted", direction: "se", layer: "object", placedBy: "system" },
@@ -64,14 +64,14 @@ export function createExtraBayWorkstations(bayId: string, desiredDeskSlots: numb
 
   if (desiredDeskSlots >= 3 && !hasId(`${zoneId}-desk-2`)) {
     added.push(
-      { id: `${zoneId}-desk-2`, zoneId, lx: 1, ly: 3, assetId: "desk-security-ops", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-chair-2`, zoneId, lx: 1, ly: 4, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-desk-2`, zoneId, lx: 1, ly: 2, assetId: "desk-security-ops", direction: "se", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-chair-2`, zoneId, lx: 1, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
     );
   }
   if (desiredDeskSlots >= 4 && !hasId(`${zoneId}-desk-3`)) {
     added.push(
-      { id: `${zoneId}-desk-3`, zoneId, lx: 3, ly: 3, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
-      { id: `${zoneId}-chair-3`, zoneId, lx: 4, ly: 4, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-desk-3`, zoneId, lx: 3, ly: 2, assetId: "desk-dev-dual", direction: "se", layer: "object", placedBy: "system" },
+      { id: `${zoneId}-chair-3`, zoneId, lx: 4, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
     );
   }
   return added;
@@ -188,9 +188,12 @@ export function computeCampusLayout(
     }
   }
 
-  // 5. Cutaway outer perimeter walls ONLY along ty = 0 (NW) and tx = 0 (NE)
+  // 5. Cutaway outer perimeter walls ONLY along ty = 0 (NE edge) and tx = 0 (NW edge)
+  // Matches iherk-pixcel: +tx runs SE so ty=0 is NE wall (dir sw); +ty runs SW so tx=0 is NW wall (dir se)
   const walls: ComputedCampus["walls"] = [
     { tx: 0, ty: 0, assetId: "wall-corner-pillar", edge: "corner" },
+    { tx: 0, ty: 0, assetId: "wall-slate-plain", edge: "nw" },
+    { tx: 0, ty: 0, assetId: "wall-slate-plain", edge: "ne" },
   ];
   const wallDecor: ComputedCampus["wallDecor"] = [];
 
@@ -200,7 +203,7 @@ export function computeCampusLayout(
       tx,
       ty: 0,
       assetId: isWindow ? "wall-night-window" : "wall-slate-plain",
-      edge: "nw",
+      edge: "ne",
     });
   }
   for (let ty = 1; ty < depthTiles; ty++) {
@@ -209,18 +212,18 @@ export function computeCampusLayout(
       tx: 0,
       ty,
       assetId: isWindow ? "wall-night-window" : "wall-slate-plain",
-      edge: "ne",
+      edge: "nw",
     });
   }
 
-  // Mount architecture whiteboards along back wall of row-0 zones
+  // Mount architecture whiteboards flush along the back NE wall (ty = 0) of row-0 zones
   for (const z of zones) {
-    if (z.row === 0 && z.originX + 1 < widthTiles) {
+    if (z.row === 0 && z.originX + 2 < widthTiles) {
       wallDecor.push({
         tx: z.originX + 1,
         ty: 0,
         assetId: "whiteboard-arch",
-        edge: "nw",
+        edge: "ne",
       });
     }
   }
@@ -307,8 +310,65 @@ export function validateFurniturePlacement(
   }
 
   // Keep at least one entrance tile open at the front corridor side (ly = 5, lx ∈ {2, 3})
-  if (occ.has("2,5") && occ.has("3,5")) {
+  const openEntrances: Array<[number, number]> = [];
+  if (!occ.has("2,5")) openEntrances.push([2, 5]);
+  if (!occ.has("3,5")) openEntrances.push([3, 5]);
+  if (openEntrances.length === 0) {
     return { ok: false, reason: `Cannot block both entrance tiles (2,5) and (3,5) of zone "${candidate.zoneId}"` };
+  }
+
+  // BFS connectivity from open entrances: prevent sealing off walkable interior tiles of the 6x6 zone
+  // Chairs remain passable for walking connectivity so seated workspaces stay reachable
+  const walkBlocked = new Set<string>();
+  const addWalkBlock = (assetId: string, lx: number, ly: number, dir: Direction) => {
+    if (assetId === "chair-office-swivel") return;
+    const c = catalogById.get(assetId);
+    const [w, d] = getRotatedFootprint(c?.footprintTiles ?? [1, 1], dir);
+    for (let dy = 0; dy < d; dy++) {
+      for (let dx = 0; dx < w; dx++) {
+        walkBlocked.add(`${lx + dx},${ly + dy}`);
+      }
+    }
+  };
+  for (const item of existingInZone) {
+    if (candidate.ignoreInstanceId && item.id === candidate.ignoreInstanceId) continue;
+    addWalkBlock(item.assetId, item.lx, item.ly, item.direction);
+  }
+  addWalkBlock(candidate.assetId, candidate.lx, candidate.ly, candidate.direction);
+
+  const visited = new Set<string>();
+  const queue: Array<[number, number]> = [];
+  for (const [ex, ey] of openEntrances) {
+    const k = `${ex},${ey}`;
+    if (!walkBlocked.has(k)) {
+      visited.add(k);
+      queue.push([ex, ey]);
+    }
+  }
+  while (queue.length > 0) {
+    const [cx, cy] = queue.shift()!;
+    for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]] as const) {
+      const nx = cx + dx;
+      const ny = cy + dy;
+      if (nx < 0 || nx >= ZONE_SIZE || ny < 0 || ny >= ZONE_SIZE) continue;
+      const nk = `${nx},${ny}`;
+      if (visited.has(nk) || walkBlocked.has(nk)) continue;
+      visited.add(nk);
+      queue.push([nx, ny]);
+    }
+  }
+
+  let totalWalkable = 0;
+  for (let y = 0; y < ZONE_SIZE; y++) {
+    for (let x = 0; x < ZONE_SIZE; x++) {
+      if (!walkBlocked.has(`${x},${y}`)) totalWalkable++;
+    }
+  }
+  if (visited.size < totalWalkable) {
+    return {
+      ok: false,
+      reason: `Placing "${candidate.assetId}" at (${candidate.lx},${candidate.ly}) seals off part of zone "${candidate.zoneId}"`,
+    };
   }
 
   return { ok: true };

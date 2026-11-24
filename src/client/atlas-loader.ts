@@ -103,6 +103,16 @@ export class AtlasManager {
     };
   }
 
+  private findAnyFrameInPack(pack: LoadedAtlasPack | null, prefix: string): ResolvedSpriteFrame | null {
+    if (!pack) return null;
+    for (const key of Object.keys(pack.meta.frames)) {
+      if (key.startsWith(prefix)) {
+        return this.lookupInPack(pack, key);
+      }
+    }
+    return null;
+  }
+
   getFrame(theme: ThemeMode, assetId: string, direction: Direction, frameName = "default"): ResolvedSpriteFrame | null {
     const pack = theme === "day" ? this.dayPack : this.nightPack;
     const keys = [
@@ -117,6 +127,12 @@ export class AtlasManager {
       const hit = this.lookupInPack(pack, k) ?? this.lookupInPack(this.customPack, k);
       if (hit) return hit;
     }
-    return null;
+    // Fallback for assets whose animated frames have custom names (e.g. blink_0, alert_0, spin_0)
+    return (
+      this.findAnyFrameInPack(pack, `${assetId}/${direction}/`) ??
+      this.findAnyFrameInPack(this.customPack, `${assetId}/${direction}/`) ??
+      this.findAnyFrameInPack(pack, `${assetId}/`) ??
+      this.findAnyFrameInPack(this.customPack, `${assetId}/`)
+    );
   }
 }
