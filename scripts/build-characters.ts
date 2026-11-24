@@ -9,7 +9,7 @@ import { PHASE2_CHARACTER_SPECS } from "../src/server/pixcel-bridge.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(here, "..");
-const pixcelRoot = process.env.PIXCEL_ROOT ?? "/Users/dev3/Documents/IHERK/iherk-pixcel";
+const pixcelRoot = process.env.PIXCEL_ROOT ?? process.env.IHERK_PIXCEL_ROOT ?? new URL("../../iherk-pixcel", import.meta.url).pathname;
 const outDir = path.join(projectRoot, "assets", "pixcel", "characters");
 
 const builder = await import(pathToFileURL(path.join(pixcelRoot, "dist", "core", "character-builder.js")).href);

@@ -141,7 +141,7 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
   it("builds atlas-office.{png,json} (+ emissive) with all 8 office props and all 10 Phase 2 characters x 8 clips x 4 directions", async () => {
     const outDir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-office-atlas-"));
     const bridge = new PixcelBridge({
-      pixcelRoot: "/Users/dev3/Documents/IHERK/iherk-pixcel",
+      pixcelRoot: process.env.IHERK_PIXCEL_ROOT ?? new URL("../../iherk-pixcel", import.meta.url).pathname,
       projectRoot: process.cwd(),
       runtimeOutDir: outDir,
     });

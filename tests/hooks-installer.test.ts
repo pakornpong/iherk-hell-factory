@@ -60,7 +60,7 @@ describe("Hook scripts & safe CLI installer", () => {
     await fs.writeFile(path.join(pubDir, "index.html"), "<html><!--UI_SESSION--></html>");
 
     const store = new OfficeStore(tmp);
-    const bridge = new PixcelBridge({ pixcelRoot: "/Users/dev3/Documents/IHERK/iherk-pixcel", projectRoot: root, runtimeOutDir: runDir });
+    const bridge = new PixcelBridge({ pixcelRoot: process.env.IHERK_PIXCEL_ROOT ?? new URL("../../iherk-pixcel", import.meta.url).pathname, projectRoot: root, runtimeOutDir: runDir });
     const engine = new OfficeEngine({ store, catalogById: new Map() });
     await engine.init();
     const srv = await createHellFactoryServer({

@@ -23,7 +23,7 @@ describe("Gemini-Only Office Architect MCP Server", () => {
 
     const store = new OfficeStore(dataDir);
     const bridge = new PixcelBridge({
-      pixcelRoot: "/Users/dev3/Documents/IHERK/iherk-pixcel",
+      pixcelRoot: process.env.IHERK_PIXCEL_ROOT ?? new URL("../../iherk-pixcel", import.meta.url).pathname,
       projectRoot: tmp,
       runtimeOutDir: runDir,
     });
@@ -54,7 +54,7 @@ describe("Gemini-Only Office Architect MCP Server", () => {
     const mcpServer = createArchitectMcpServer({
       serverUrl: srv.url,
       dataDir,
-      pixcelRoot: "/Users/dev3/Documents/IHERK/iherk-pixcel",
+      pixcelRoot: process.env.IHERK_PIXCEL_ROOT ?? new URL("../../iherk-pixcel", import.meta.url).pathname,
       projectRoot: tmp,
       runtimeOutDir: runDir,
     });

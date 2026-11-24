@@ -23,7 +23,7 @@ describe("HTTP/WS server, Architect auth boundary & AntigravityWatcher", () => {
     const store = new OfficeStore(dir);
     const token = await store.ensureArchitectToken();
     const bridge = new PixcelBridge({
-      pixcelRoot: "/Users/dev3/Documents/IHERK/iherk-pixcel",
+      pixcelRoot: process.env.IHERK_PIXCEL_ROOT ?? new URL("../../iherk-pixcel", import.meta.url).pathname,
       projectRoot: process.cwd(),
       runtimeOutDir: runDir,
     });

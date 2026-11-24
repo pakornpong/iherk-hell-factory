@@ -23,7 +23,7 @@ describe("PixcelBridge & Hell Factory voxel assets", () => {
   it("compiles all starter assets, office props, and Phase 2 characters (+ variants & boss) into office, night, and day atlases", async () => {
     const outDir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-atlas-"));
     const bridge = new PixcelBridge({
-      pixcelRoot: "/Users/dev3/Documents/IHERK/iherk-pixcel",
+      pixcelRoot: process.env.IHERK_PIXCEL_ROOT ?? new URL("../../iherk-pixcel", import.meta.url).pathname,
       projectRoot: process.cwd(),
       runtimeOutDir: outDir,
     });
@@ -84,7 +84,7 @@ describe("PixcelBridge & Hell Factory voxel assets", () => {
     await fs.mkdir(path.join(tmpRoot, "assets/pixcel/custom"), { recursive: true });
     const outDir = path.join(tmpRoot, "runtime-assets");
     const bridge = new PixcelBridge({
-      pixcelRoot: "/Users/dev3/Documents/IHERK/iherk-pixcel",
+      pixcelRoot: process.env.IHERK_PIXCEL_ROOT ?? new URL("../../iherk-pixcel", import.meta.url).pathname,
       projectRoot: tmpRoot,
       runtimeOutDir: outDir,
     });
