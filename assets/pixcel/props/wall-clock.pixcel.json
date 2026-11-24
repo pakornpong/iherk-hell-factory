@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-clock",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "rim_dark": { "color": "#475569", "kind": "metal" },
+    "rim_silver": { "color": "#94a3b8", "kind": "metal" },
+    "face_white": { "color": "#f8fafc", "kind": "matte" },
+    "hand_dark": { "color": "#0f172a", "kind": "matte" },
+    "hand_red": { "color": "#ef4444", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [4, 11, 30], "to": [6, 21, 40], "material": "rim_dark", "part": "casing" },
+    { "op": "box", "from": [5, 10, 32], "to": [6, 22, 38], "material": "rim_silver", "part": "bezel_h" },
+    { "op": "box", "from": [5, 13, 29], "to": [6, 19, 41], "material": "rim_silver", "part": "bezel_v" },
+    { "op": "box", "from": [6, 12, 31], "to": [6, 20, 39], "material": "face_white", "part": "face" },
+    { "op": "box", "from": [6, 16, 35], "to": [6, 16, 38], "material": "hand_dark", "part": "hand_min" },
+    { "op": "box", "from": [6, 16, 35], "to": [6, 19, 35], "material": "hand_dark", "part": "hand_hr" },
+    { "op": "voxel", "at": [6, 16, 35], "material": "hand_red", "part": "pin" }
+  ]
+}

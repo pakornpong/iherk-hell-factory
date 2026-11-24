@@ -1,5 +1,6 @@
 import {
   classifyDepartmentFromPath,
+  AMENITY_THEME_META,
   DEPARTMENT_META,
   type CatalogEntry,
   type ComputedCampus,
@@ -105,27 +106,50 @@ export function sortUnifiedIsoEntities<T extends DepthRenderItem>(items: T[]): T
   const n = items.length;
   if (n <= 1) return [...items];
 
-  const adj: number[][] = Array.from({ length: n }, () => []);
-  const inDeg = new Int32Array(n);
   const EPS = 1e-4;
+  // Precompute bounds and sort indices by screen-X start for fast sweep-line overlap culling
+  const minSX = new Float64Array(n);
+  const maxSX = new Float64Array(n);
+  const x0 = new Float64Array(n);
+  const x1 = new Float64Array(n);
+  const y0 = new Float64Array(n);
+  const y1 = new Float64Array(n);
+  const dKey = new Float64Array(n);
+  const order = new Array<number>(n);
 
   for (let i = 0; i < n; i++) {
-    const a = items[i];
-    const [aMinSX, aMaxSX] = isoScreenXRange(a);
-    const ax0 = a.x;
-    const ax1 = a.x + a.footprintX;
-    const ay0 = a.y;
-    const ay1 = a.y + a.footprintY;
+    const it = items[i];
+    x0[i] = it.x;
+    x1[i] = it.x + it.footprintX;
+    y0[i] = it.y;
+    y1[i] = it.y + it.footprintY;
+    minSX[i] = it.x - y1[i];
+    maxSX[i] = x1[i] - it.y;
+    dKey[i] = x1[i] + y1[i];
+    order[i] = i;
+  }
+  order.sort((a, b) => minSX[a] - minSX[b]);
 
-    for (let j = i + 1; j < n; j++) {
-      const b = items[j];
-      const [bMinSX, bMaxSX] = isoScreenXRange(b);
-      if (aMaxSX <= bMinSX + EPS || bMaxSX <= aMinSX + EPS) continue;
+  const adj: number[][] = Array.from({ length: n }, () => []);
+  const inDeg = new Int32Array(n);
 
-      const bx0 = b.x;
-      const bx1 = b.x + b.footprintX;
-      const by0 = b.y;
-      const by1 = b.y + b.footprintY;
+  for (let oi = 0; oi < n; oi++) {
+    const i = order[oi];
+    const aMaxSX = maxSX[i];
+    const ax0 = x0[i];
+    const ax1 = x1[i];
+    const ay0 = y0[i];
+    const ay1 = y1[i];
+
+    for (let oj = oi + 1; oj < n; oj++) {
+      const j = order[oj];
+      // Sweep-line early break: all subsequent items start at or past aMaxSX
+      if (minSX[j] >= aMaxSX - EPS) break;
+
+      const bx0 = x0[j];
+      const bx1 = x1[j];
+      const by0 = y0[j];
+      const by1 = y1[j];
 
       const aBehindB = ax1 <= bx0 + EPS || ay1 <= by0 + EPS;
       const bBehindA = bx1 <= ax0 + EPS || by1 <= ay0 + EPS;
@@ -153,38 +177,53 @@ export function sortUnifiedIsoEntities<T extends DepthRenderItem>(items: T[]): T
   }
 
   const compareIdx = (ia: number, ib: number): number => {
-    const a = items[ia];
-    const b = items[ib];
-    const dk = depthSortKey(a) - depthSortKey(b);
+    const dk = dKey[ia] - dKey[ib];
     if (Math.abs(dk) > EPS) return dk;
-    if (Math.abs(a.x - b.x) > EPS) return a.x - b.x;
-    if (Math.abs(a.y - b.y) > EPS) return a.y - b.y;
-    return a.id.localeCompare(b.id);
+    const dx = x0[ia] - x0[ib];
+    if (Math.abs(dx) > EPS) return dx;
+    const dy = y0[ia] - y0[ib];
+    if (Math.abs(dy) > EPS) return dy;
+    return items[ia].id.localeCompare(items[ib].id);
   };
+
+  // Incremental sorted ready queue (binary insert avoids O(N^2 log N) full scans)
+  const ready: number[] = [];
+  const insertReady = (idx: number) => {
+    let lo = 0;
+    let hi = ready.length;
+    while (lo < hi) {
+      const mid = (lo + hi) >>> 1;
+      if (compareIdx(ready[mid], idx) <= 0) lo = mid + 1;
+      else hi = mid;
+    }
+    ready.splice(lo, 0, idx);
+  };
+
+  for (let i = 0; i < n; i++) {
+    if (inDeg[i] === 0) insertReady(i);
+  }
 
   const emitted = new Uint8Array(n);
   const result: T[] = [];
 
   while (result.length < n) {
-    const ready: number[] = [];
-    for (let i = 0; i < n; i++) {
-      if (!emitted[i] && inDeg[i] === 0) ready.push(i);
-    }
     let pick: number;
     if (ready.length > 0) {
-      ready.sort(compareIdx);
-      pick = ready[0];
+      pick = ready.shift()!;
     } else {
-      const remaining: number[] = [];
+      pick = -1;
       for (let i = 0; i < n; i++) {
-        if (!emitted[i]) remaining.push(i);
+        if (!emitted[i] && (pick === -1 || compareIdx(i, pick) < 0)) pick = i;
       }
-      remaining.sort(compareIdx);
-      pick = remaining[0];
     }
     emitted[pick] = 1;
     result.push(items[pick]);
-    for (const next of adj[pick]) inDeg[next]--;
+    for (const next of adj[pick]) {
+      inDeg[next]--;
+      if (inDeg[next] === 0 && !emitted[next]) {
+        insertReady(next);
+      }
+    }
   }
 
   return result;
@@ -223,51 +262,174 @@ function toolGlowColor(cat: ToolCategory): string {
   }
 }
 
+export interface FloorSlabPalette {
+  rimTop: string;
+  rimBevel: string;
+  faceLeft: string;
+  faceLeftBottom: string;
+  faceRight: string;
+  faceRightBottom: string;
+  innerSeam: string;
+  cornerCrease: string;
+  outline: string;
+  shadowColor: string;
+}
+
+export const FLOOR_SLAB_PALETTES: Record<ThemeMode, FloorSlabPalette> = {
+  office: {
+    rimTop: "#7a6e6f",
+    rimBevel: "#8d8081",
+    faceLeft: "#4d4446",
+    faceLeftBottom: "#3f3739",
+    faceRight: "#5e5355",
+    faceRightBottom: "#504648",
+    innerSeam: "#292325",
+    cornerCrease: "#362f31",
+    outline: "#1c1218",
+    shadowColor: "rgba(0, 0, 0, 0.28)",
+  },
+  day: {
+    rimTop: "#dcd5c8",
+    rimBevel: "#ede7dc",
+    faceLeft: "#9c9183",
+    faceLeftBottom: "#8a7f72",
+    faceRight: "#b8ada0",
+    faceRightBottom: "#a69b8d",
+    innerSeam: "#6b6156",
+    cornerCrease: "#7d7265",
+    outline: "#2b241f",
+    shadowColor: "rgba(15, 23, 42, 0.18)",
+  },
+  night: {
+    rimTop: "#334254",
+    rimBevel: "#43566d",
+    faceLeft: "#1a2234",
+    faceLeftBottom: "#131928",
+    faceRight: "#253147",
+    faceRightBottom: "#1d273a",
+    innerSeam: "#0e1320",
+    cornerCrease: "#121826",
+    outline: "#04060c",
+    shadowColor: "rgba(0, 0, 0, 0.35)",
+  },
+};
+
+export interface FloorSlabGeometry {
+  leftX: number;
+  leftY: number;
+  bottomX: number;
+  bottomY: number;
+  rightX: number;
+  rightY: number;
+  rimHeight: number;
+  faceHeight: number;
+  slabDepth: number;
+  wallCutawayStart: number;
+}
+
+export function computeFloorSlabGeometry(widthTiles: number, depthTiles: number): FloorSlabGeometry {
+  const rimHeight = 3; // 2px cutaway top rim + 1px bevel highlight
+  const faceHeight = 10; // 8px vertical slab face + 2px shaded bottom lip
+  const slabDepth = 1 + rimHeight + faceHeight; // 14 world px below floor edge (before 1px outer outline)
+  return {
+    leftX: -depthTiles * STEP_X + 1,
+    leftY: (depthTiles - 2) * STEP_Y,
+    bottomX: (widthTiles - depthTiles) * STEP_X,
+    bottomY: (widthTiles + depthTiles - 2) * STEP_Y,
+    rightX: widthTiles * STEP_X - 1,
+    rightY: (widthTiles - 2) * STEP_Y,
+    rimHeight,
+    faceHeight,
+    slabDepth,
+    wallCutawayStart: 94, // double-volume loft height: sits directly beneath the 2px top wall cap (z=94..95)
+  };
+}
+
+interface IsoEdgeRun {
+  x: number;
+  y: number;
+  w: number;
+}
+
+function collectIsoEdgeRuns(
+  xStart: number,
+  xEnd: number,
+  yAt: (x: number) => number,
+  minVisX: number,
+  maxVisX: number,
+): IsoEdgeRun[] {
+  const clampedStart = Math.max(xStart, Math.floor(minVisX));
+  const clampedEnd = Math.min(xEnd, Math.ceil(maxVisX));
+  if (clampedStart > clampedEnd) return [];
+
+  const runs: IsoEdgeRun[] = [];
+  let curX = clampedStart;
+  let curY = yAt(clampedStart);
+  let curW = 1;
+
+  for (let x = clampedStart + 1; x <= clampedEnd; x++) {
+    const y = yAt(x);
+    if (y === curY) {
+      curW++;
+    } else {
+      runs.push({ x: curX, y: curY, w: curW });
+      curX = x;
+      curY = y;
+      curW = 1;
+    }
+  }
+  runs.push({ x: curX, y: curY, w: curW });
+  return runs;
+}
+
+interface StaticBackdropCache {
+  canvas: HTMLCanvasElement;
+  campus: ComputedCampus;
+  theme: ThemeMode;
+  atlasImage: HTMLImageElement | null;
+  minWX: number;
+  minWY: number;
+  width: number;
+  height: number;
+}
+
 export class IsoRenderer {
   lastHitBoxes: ScreenHitBox[] = [];
+  private backdropCache: StaticBackdropCache | null = null;
 
-  render(ctx: CanvasRenderingContext2D, input: RenderSceneInput): void {
-    const { state, campus, camera, atlas, employees, syncPackets, ghost, timeMs } = input;
+  private drawStaticBackdrop(
+    ctx: CanvasRenderingContext2D,
+    input: RenderSceneInput,
+    zoom: number,
+    baseScreenX: number,
+    baseScreenY: number,
+    bounds: { minX: number; minY: number; maxX: number; maxY: number },
+  ): void {
+    const { state, campus, atlas } = input;
     const theme: ThemeMode = state.theme;
-    const width = ctx.canvas.width;
-    const height = ctx.canvas.height;
-    const zoom = camera.zoom;
-    const bounds = camera.getVisibleWorldBounds(width, height, 150);
 
-    ctx.imageSmoothingEnabled = false;
-    ctx.fillStyle = theme === "office" ? "#212226" : theme === "day" ? "#cbd5e1" : "#0a0e1a";
-    ctx.fillRect(0, 0, width, height);
+    const worldToScreen = (wx: number, wy: number): [number, number] => [
+      Math.round(baseScreenX + wx * zoom),
+      Math.round(baseScreenY + wy * zoom),
+    ];
 
-    const drawSprite = (
-      sprite: ResolvedSpriteFrame,
-      wx: number,
-      wy: number,
-      opts?: { alpha?: number; popScaleY?: number; emissive?: boolean },
-    ): { sx: number; sy: number; sw: number; sh: number } => {
-      const [baseSX, baseSY] = camera.worldToScreen(wx - sprite.anchor.x, wy - sprite.anchor.y);
-      const sw = sprite.frame.w * zoom;
-      const sh = sprite.frame.h * zoom;
-      const pop = opts?.popScaleY ?? 1;
-      const drawH = Math.round(sh * pop);
-      const drawY = baseSY + (sh - drawH);
+    const drawStaticSprite = (sprite: ResolvedSpriteFrame, wx: number, wy: number): void => {
+      const [sx, sy] = worldToScreen(wx - sprite.anchor.x, wy - sprite.anchor.y);
+      ctx.drawImage(
+        sprite.image,
+        sprite.frame.x,
+        sprite.frame.y,
+        sprite.frame.w,
+        sprite.frame.h,
+        sx,
+        sy,
+        sprite.frame.w * zoom,
+        sprite.frame.h * zoom,
+      );
+    };
 
-      if (opts?.alpha !== undefined) ctx.globalAlpha = opts.alpha;
-      const img = opts?.emissive ? sprite.emissiveImage : sprite.image;
-      if (img) {
-        ctx.drawImage(
-          img,
-          sprite.frame.x,
-          sprite.frame.y,
-          sprite.frame.w,
-          sprite.frame.h,
-          baseSX,
-          drawY,
-          sw,
-          drawH,
-        );
-      }
-      if (opts?.alpha !== undefined) ctx.globalAlpha = 1;
-      return { sx: baseSX, sy: drawY, sw, sh: drawH };
+    const fillWorldRect = (wx: number, wy: number, ww: number, wh: number) => {
+      ctx.fillRect(baseScreenX + wx * zoom, baseScreenY + wy * zoom, ww * zoom, wh * zoom);
     };
 
     // 1. Floors (viewport culled)
@@ -282,7 +444,84 @@ export class IsoRenderer {
       const sprite = atlas.getFrame(theme, f.assetId, f.direction, "default");
       if (!sprite) continue;
       const [wx, wy] = toAnchorWorld(f.tx, f.ty, 1, 1);
-      drawSprite(sprite, wx, wy);
+      drawStaticSprite(sprite, wx, wy);
+    }
+
+    // 1b. Diorama Floor Cutaway Rim & Thick Slab (prevents flat paper-thin floor edges)
+    const hasFloorPerimeter = campus.widthTiles > 0 && campus.depthTiles > 0;
+    const slabPal = FLOOR_SLAB_PALETTES[theme];
+    const slabGeo = hasFloorPerimeter
+      ? computeFloorSlabGeometry(campus.widthTiles, campus.depthTiles)
+      : null;
+
+    if (slabGeo) {
+      const { leftX, leftY, bottomX, bottomY, rightX, rightY, faceHeight, slabDepth } = slabGeo;
+      const leftRuns = collectIsoEdgeRuns(
+        leftX,
+        bottomX,
+        (x) => leftY + Math.floor((x - leftX + 1) / 2),
+        bounds.minX - 2,
+        bounds.maxX + 2,
+      );
+      const rightRuns = collectIsoEdgeRuns(
+        bottomX + 1,
+        rightX,
+        (x) => rightY + Math.floor((rightX - x + 1) / 2),
+        bounds.minX - 2,
+        bounds.maxX + 2,
+      );
+
+      if (leftRuns.length > 0 || rightRuns.length > 0) {
+        // Grounded contact shadow beneath the slab
+        ctx.fillStyle = slabPal.shadowColor;
+        for (const r of leftRuns) fillWorldRect(r.x, r.y + slabDepth + 1, r.w, 3);
+        for (const r of rightRuns) fillWorldRect(r.x, r.y + slabDepth + 1, r.w, 3);
+
+        // 1px dark inner seam separating floor tiles from cutaway rim
+        ctx.fillStyle = slabPal.innerSeam;
+        for (const r of leftRuns) fillWorldRect(r.x, r.y, r.w, 1);
+        for (const r of rightRuns) fillWorldRect(r.x, r.y, r.w, 1);
+
+        // 2px top cutaway rim ledge
+        ctx.fillStyle = slabPal.rimTop;
+        for (const r of leftRuns) fillWorldRect(r.x, r.y + 1, r.w, 2);
+        for (const r of rightRuns) fillWorldRect(r.x, r.y + 1, r.w, 2);
+
+        // 1px crisp bevel highlight along top edge of vertical slab face
+        ctx.fillStyle = slabPal.rimBevel;
+        for (const r of leftRuns) fillWorldRect(r.x, r.y + 3, r.w, 1);
+        for (const r of rightRuns) fillWorldRect(r.x, r.y + 3, r.w, 1);
+
+        // Two-tone vertical slab faces (shaded front-left vs lit front-right)
+        ctx.fillStyle = slabPal.faceLeft;
+        for (const r of leftRuns) fillWorldRect(r.x, r.y + 4, r.w, faceHeight - 2);
+        ctx.fillStyle = slabPal.faceLeftBottom;
+        for (const r of leftRuns) fillWorldRect(r.x, r.y + 4 + faceHeight - 2, r.w, 2);
+
+        ctx.fillStyle = slabPal.faceRight;
+        for (const r of rightRuns) fillWorldRect(r.x, r.y + 4, r.w, faceHeight - 2);
+        ctx.fillStyle = slabPal.faceRightBottom;
+        for (const r of rightRuns) fillWorldRect(r.x, r.y + 4 + faceHeight - 2, r.w, 2);
+
+        // 1px crisp outer bottom outline
+        ctx.fillStyle = slabPal.outline;
+        for (const r of leftRuns) fillWorldRect(r.x, r.y + slabDepth, r.w, 1);
+        for (const r of rightRuns) fillWorldRect(r.x, r.y + slabDepth, r.w, 1);
+
+        // Outer left & right vertical 1px outlines + front apex corner crease
+        if (leftX - 1 >= bounds.minX - 2 && leftX - 1 <= bounds.maxX + 2) {
+          fillWorldRect(leftX - 1, leftY, 1, slabDepth + 1);
+        }
+        if (rightX + 1 >= bounds.minX - 2 && rightX + 1 <= bounds.maxX + 2) {
+          fillWorldRect(rightX + 1, rightY, 1, slabDepth + 1);
+        }
+        if (bottomX >= bounds.minX - 2 && bottomX <= bounds.maxX + 2) {
+          ctx.fillStyle = slabPal.cornerCrease;
+          fillWorldRect(bottomX, bottomY + 4, 1, faceHeight);
+          ctx.fillStyle = slabPal.outline;
+          fillWorldRect(bottomX, bottomY + slabDepth, 1, 1);
+        }
+      }
     }
 
     // Subtle colored floor accent strips for each Project Bay
@@ -293,7 +532,7 @@ export class IsoRenderer {
       if (!bay) continue;
       const [wx, wy] = toAnchorWorld(z.originX + 2.5, z.originY + 5.1, 1, 1);
       if (!isInWorldBounds(wx, wy, bounds)) continue;
-      const [sx, sy] = camera.worldToScreen(wx, wy);
+      const [sx, sy] = worldToScreen(wx, wy);
       ctx.save();
       ctx.fillStyle = bay.accentColor;
       ctx.globalAlpha = 0.25;
@@ -346,7 +585,167 @@ export class IsoRenderer {
     }
     wallEvents.sort((a, b) => a.depthKey - b.depthKey || (a.isDecor ? 1 : -1) - (b.isDecor ? 1 : -1) || a.tx - b.tx);
     for (const we of wallEvents) {
-      drawSprite(we.sprite, we.wx, we.wy);
+      drawStaticSprite(we.sprite, we.wx, we.wy);
+    }
+
+    // 2b. Seamless Vertical Wall Cutaway End-Caps (connects wall top cap straight into floor cutaway slab)
+    if (slabGeo && campus.walls.length > 0) {
+      const { leftX, leftY, rightX, rightY, slabDepth, wallCutawayStart } = slabGeo;
+      if (leftX + 4 >= bounds.minX - 2 && leftX - 1 <= bounds.maxX + 2) {
+        for (let dx = 0; dx <= 4; dx++) {
+          const x = leftX + dx;
+          const stepY = Math.floor((dx + 1) / 2);
+          const yTop = leftY - wallCutawayStart + stepY;
+          const ySlabBot = leftY + stepY + slabDepth;
+          if (dx === 0) {
+            ctx.fillStyle = slabPal.outline;
+            fillWorldRect(x - 1, yTop - 1, 1, ySlabBot - (yTop - 1) + 1);
+            ctx.fillStyle = slabPal.faceLeft;
+            fillWorldRect(x, yTop, 1, ySlabBot - yTop - 2);
+            ctx.fillStyle = slabPal.faceLeftBottom;
+            fillWorldRect(x, ySlabBot - 2, 1, 2);
+          } else if (dx === 4) {
+            ctx.fillStyle = slabPal.innerSeam;
+            fillWorldRect(x, yTop, 1, leftY + stepY - yTop + 1);
+          } else {
+            ctx.fillStyle = slabPal.faceLeft;
+            fillWorldRect(x, yTop, 1, ySlabBot - yTop - 2);
+            ctx.fillStyle = slabPal.faceLeftBottom;
+            fillWorldRect(x, ySlabBot - 2, 1, 2);
+          }
+        }
+      }
+      if (rightX + 1 >= bounds.minX - 2 && rightX - 4 <= bounds.maxX + 2) {
+        for (let dx = 0; dx <= 4; dx++) {
+          const x = rightX - dx;
+          const stepY = Math.floor((dx + 1) / 2);
+          const yTop = rightY - wallCutawayStart + stepY;
+          const ySlabBot = rightY + stepY + slabDepth;
+          if (dx === 0) {
+            ctx.fillStyle = slabPal.outline;
+            fillWorldRect(x + 1, yTop - 1, 1, ySlabBot - (yTop - 1) + 1);
+            ctx.fillStyle = slabPal.faceRight;
+            fillWorldRect(x, yTop, 1, ySlabBot - yTop - 2);
+            ctx.fillStyle = slabPal.faceRightBottom;
+            fillWorldRect(x, ySlabBot - 2, 1, 2);
+          } else if (dx === 4) {
+            ctx.fillStyle = slabPal.innerSeam;
+            fillWorldRect(x, yTop, 1, rightY + stepY - yTop + 1);
+          } else {
+            ctx.fillStyle = slabPal.faceRight;
+            fillWorldRect(x, yTop, 1, ySlabBot - yTop - 2);
+            ctx.fillStyle = slabPal.faceRightBottom;
+            fillWorldRect(x, ySlabBot - 2, 1, 2);
+          }
+        }
+      }
+    }
+  }
+
+  private getOrBuildBackdropCache(input: RenderSceneInput): StaticBackdropCache | null {
+    if (typeof document === "undefined") return null;
+    const { campus, state, atlas } = input;
+    if (campus.widthTiles <= 0 || campus.depthTiles <= 0) return null;
+    const minWX = -campus.depthTiles * STEP_X - 40;
+    const minWY = -168;
+    const maxWX = campus.widthTiles * STEP_X + 40;
+    const maxWY = (campus.widthTiles + campus.depthTiles) * STEP_Y + 48;
+    const cacheW = Math.ceil(maxWX - minWX);
+    const cacheH = Math.ceil(maxWY - minWY);
+    if (cacheW > 4096 || cacheH > 4096) return null;
+
+    const sampleFloor = campus.floors[0];
+    const sampleSprite = sampleFloor
+      ? atlas.getFrame(state.theme, sampleFloor.assetId, sampleFloor.direction, "default")
+      : null;
+    const atlasImage = sampleSprite?.image ?? null;
+
+    const cur = this.backdropCache;
+    if (cur && cur.campus === campus && cur.theme === state.theme && cur.atlasImage === atlasImage) {
+      return cur;
+    }
+
+    const canvas = cur && cur.width === cacheW && cur.height === cacheH ? cur.canvas : document.createElement("canvas");
+    canvas.width = cacheW;
+    canvas.height = cacheH;
+    const offCtx = canvas.getContext("2d");
+    if (!offCtx) return null;
+    offCtx.imageSmoothingEnabled = false;
+    offCtx.clearRect(0, 0, cacheW, cacheH);
+
+    this.drawStaticBackdrop(offCtx, input, 1, -minWX, -minWY, {
+      minX: minWX - 64,
+      minY: minWY - 64,
+      maxX: maxWX + 64,
+      maxY: maxWY + 64,
+    });
+
+    this.backdropCache = {
+      canvas,
+      campus,
+      theme: state.theme,
+      atlasImage,
+      minWX,
+      minWY,
+      width: cacheW,
+      height: cacheH,
+    };
+    return this.backdropCache;
+  }
+
+  render(ctx: CanvasRenderingContext2D, input: RenderSceneInput): void {
+    const { state, campus, camera, atlas, employees, syncPackets, ghost, timeMs } = input;
+    const theme: ThemeMode = state.theme;
+    const width = ctx.canvas.width;
+    const height = ctx.canvas.height;
+    const zoom = camera.zoom;
+    const bounds = camera.getVisibleWorldBounds(width, height, 150);
+
+    ctx.imageSmoothingEnabled = false;
+    ctx.fillStyle = theme === "office" ? "#212226" : theme === "day" ? "#cbd5e1" : "#0a0e1a";
+    ctx.fillRect(0, 0, width, height);
+
+    const drawSprite = (
+      sprite: ResolvedSpriteFrame,
+      wx: number,
+      wy: number,
+      opts?: { alpha?: number; popScaleY?: number; emissive?: boolean },
+    ): { sx: number; sy: number; sw: number; sh: number } => {
+      const [baseSX, baseSY] = camera.worldToScreen(wx - sprite.anchor.x, wy - sprite.anchor.y);
+      const sw = sprite.frame.w * zoom;
+      const sh = sprite.frame.h * zoom;
+      const pop = opts?.popScaleY ?? 1;
+      const drawH = Math.round(sh * pop);
+      const drawY = baseSY + (sh - drawH);
+
+      if (opts?.alpha !== undefined) ctx.globalAlpha = opts.alpha;
+      const img = opts?.emissive ? sprite.emissiveImage : sprite.image;
+      if (img) {
+        ctx.drawImage(
+          img,
+          sprite.frame.x,
+          sprite.frame.y,
+          sprite.frame.w,
+          sprite.frame.h,
+          baseSX,
+          drawY,
+          sw,
+          drawH,
+        );
+      }
+      if (opts?.alpha !== undefined) ctx.globalAlpha = 1;
+      return { sx: baseSX, sy: drawY, sw, sh: drawH };
+    };
+
+    // 1-2. Static Backdrop (Floors + Cutaway Slab + Outer Walls + Wall Decor) — cached offscreen in browser!
+    const cached = this.getOrBuildBackdropCache(input);
+    if (cached) {
+      const [sx, sy] = camera.worldToScreen(cached.minWX, cached.minWY);
+      ctx.drawImage(cached.canvas, sx, sy, cached.width * zoom, cached.height * zoom);
+    } else {
+      const baseScreenX = Math.round(camera.panX * zoom);
+      const baseScreenY = Math.round(camera.panY * zoom);
+      this.drawStaticBackdrop(ctx, input, zoom, baseScreenX, baseScreenY, bounds);
     }
 
     // 3. Unified Furniture + Animated Characters (topological depth-sort)
@@ -372,8 +771,14 @@ export class IsoRenderer {
         });
 
     const unified: UnifiedItem[] = [];
+    // Track rear-facing swivel chairs ("nw"/"sw") so their ergonomic backrest overlays the seated character's lower back
+    // while keeping the chair seat cushion and base cleanly underneath the character.
+    const rearChairByTile = new Map<string, Direction>();
 
     for (const f of campus.worldFurniture) {
+      if (f.assetId === "chair-office-swivel" && (f.direction === "nw" || f.direction === "sw")) {
+        rearChairByTile.set(`${f.tx},${f.ty}`, f.direction);
+      }
       const frameName = animFrameForAsset(f.assetId);
       const sprite = atlas.getFrame(theme, f.assetId, f.direction, frameName);
       if (!sprite) continue;
@@ -482,7 +887,24 @@ export class IsoRenderer {
       } else {
         const box = drawSprite(item.sprite, item.wx, item.wy);
         hitBoxes.push({ kind: "employee", id: item.emp.record.id, x: box.sx, y: box.sy, w: box.sw, h: box.sh });
-        if (item.sprite.emissiveImage) {
+        // 3-layer seating: if seated (typing or sleeping) on a rear-facing swivel chair ("nw"/"sw"),
+        // draw only the ergonomic backrest in front of the character's lower back.
+        const seatTx = Math.round(item.emp.x);
+        const seatTy = Math.round(item.emp.y);
+        const isSeatedClip =
+          item.emp.clipName.startsWith("sit_") || item.emp.clipName.startsWith("rest_sleep_");
+        const rearChairDir = isSeatedClip
+          ? rearChairByTile.get(`${seatTx},${seatTy}`)
+          : undefined;
+        if (rearChairDir && rearChairDir === item.emp.direction) {
+          const backSprite = atlas.getFrame(theme, "chair-office-swivel-back", rearChairDir, "default");
+          if (backSprite) {
+            const [cwx, cwy] = toAnchorWorld(seatTx, seatTy, 1, 1);
+            drawSprite(backSprite, cwx, cwy);
+          }
+        }
+        const occludedBackGlow = Boolean(rearChairDir && rearChairDir === item.emp.direction);
+        if (item.sprite.emissiveImage && !occludedBackGlow) {
           emissiveDraws.push({ sprite: item.sprite, wx: item.wx, wy: item.wy, pop: 1 });
         }
         // Highlight selected employee ring
@@ -544,6 +966,7 @@ export class IsoRenderer {
     }
 
     // 7. Bay Nameplates (with Department Badges) & Employee Speech/Tool Bubbles
+    const bayById = new Map(state.bays.map((b) => [b.id, b]));
     ctx.save();
     ctx.font = `bold ${Math.max(10, 6 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
     ctx.textAlign = "center";
@@ -562,9 +985,13 @@ export class IsoRenderer {
       const label =
         z.kind === "boss"
           ? "👑 BOSS OFFICE"
+          : z.kind === "cowork"
+            ? `🤝 CO-WORKING · SUBAGENTS`
           : z.kind === "common"
             ? `LOUNGE & MEETING · #${z.zoneId.split(":")[1] ?? "0"}`
-            : `${deptMeta ? `${deptMeta.icon} ${deptMeta.shortLabel} · ` : ""}${bay?.displayName ?? z.zoneId}`;
+            : z.kind === "amenity" && z.amenityTheme
+              ? `${AMENITY_THEME_META[z.amenityTheme].icon} ${AMENITY_THEME_META[z.amenityTheme].label}`
+              : `${deptMeta ? `${deptMeta.icon} ${deptMeta.shortLabel} · ` : ""}${bay?.displayName ?? z.zoneId}`;
       const activeTeamCount = z.bayId
         ? employees.filter(
             (e) =>
@@ -574,7 +1001,7 @@ export class IsoRenderer {
         : 0;
       const fullLabel = activeTeamCount >= 2 ? `${label} · TEAM` : label;
       const textW = ctx.measureText(fullLabel).width + 14;
-      const borderColor = z.kind === "boss" ? "#f59e0b" : deptMeta?.color ?? bay?.accentColor ?? "#64748b";
+      const borderColor = z.kind === "boss" ? "#f59e0b" : z.kind === "cowork" ? "#14b8a6" : z.amenityTheme ? AMENITY_THEME_META[z.amenityTheme].color : deptMeta?.color ?? bay?.accentColor ?? "#64748b";
       const boxX = Math.round(sx - textW / 2);
       const boxY = Math.round(sy - 10);
       ctx.fillStyle = theme === "day" ? "rgba(15, 23, 42, 0.84)" : "rgba(15, 23, 42, 0.90)";

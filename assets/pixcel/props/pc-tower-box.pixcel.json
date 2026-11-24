@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "pc-tower-box",
+  "category": "tech",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "case_dark": { "color": "#1e293b", "kind": "metal" },
+    "case_trim": { "color": "#334155", "kind": "metal" },
+    "glass": { "color": "#0f172a", "kind": "glass" },
+    "rgb_cyan": { "color": "#22d3ee", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.55 },
+    "rgb_green": { "color": "#4ade80", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.5 },
+    "rgb_pink": { "color": "#f472b6", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.5 },
+    "box_cardboard": { "color": "#b8844c", "kind": "matte" },
+    "box_tape": { "color": "#8f5f30", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [6, 8, 0], "to": [14, 23, 18], "material": "case_dark", "part": "tower" },
+    { "op": "box", "from": [7, 23, 1], "to": [13, 24, 17], "material": "case_trim", "part": "front" },
+    { "op": "box", "from": [14, 10, 3], "to": [15, 21, 15], "material": "glass", "part": "window" },
+    { "op": "box", "from": [9, 24, 12], "to": [11, 24, 14], "material": "rgb_cyan", "part": "fan1" },
+    { "op": "box", "from": [9, 24, 7], "to": [11, 24, 9], "material": "rgb_green", "part": "fan2" },
+    { "op": "box", "from": [9, 24, 2], "to": [11, 24, 4], "material": "rgb_pink", "part": "fan3" },
+    { "op": "box", "from": [17, 10, 0], "to": [27, 22, 9], "material": "box_cardboard", "part": "box" },
+    { "op": "box", "from": [17, 15, 9], "to": [27, 17, 9], "material": "box_tape", "part": "box" }
+  ]
+}

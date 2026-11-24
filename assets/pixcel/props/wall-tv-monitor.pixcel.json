@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-tv-monitor",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 2],
+  "palette": "office-day",
+  "materials": {
+    "bezel": { "color": "#1e293b", "kind": "metal" },
+    "screen_bg": { "color": "#0f172a", "kind": "matte" },
+    "logo_red": { "color": "#ef4444", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.5 },
+    "bar_cyan": { "color": "#38bdf8", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.45 },
+    "bar_green": { "color": "#22c55e", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.45 },
+    "led_red": { "color": "#ef4444", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.4 }
+  },
+  "ops": [
+    { "op": "box", "from": [4, 10, 21], "to": [6, 52, 41], "material": "bezel", "part": "frame" },
+    { "op": "box", "from": [6, 12, 23], "to": [6, 50, 39], "material": "screen_bg", "part": "screen" },
+    { "op": "box", "from": [6, 20, 32], "to": [6, 30, 34], "material": "logo_red", "part": "logo" },
+    { "op": "box", "from": [6, 15, 25], "to": [6, 28, 26], "material": "bar_cyan", "part": "hud" },
+    { "op": "box", "from": [6, 33, 25], "to": [6, 46, 27], "material": "bar_green", "part": "hud" },
+    { "op": "voxel", "at": [6, 50, 22], "material": "led_red", "part": "power_led" }
+  ]
+}

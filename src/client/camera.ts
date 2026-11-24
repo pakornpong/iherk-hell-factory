@@ -18,8 +18,21 @@ export class IsoCamera {
   private targetPanX: number | null = null;
   private targetPanY: number | null = null;
 
-  setZoom(z: number): void {
-    this.zoom = Math.max(1, Math.min(4, Math.round(z)));
+  setZoom(z: number, anchorScreenX?: number, anchorScreenY?: number): void {
+    const prevZoom = this.zoom;
+    const nextZoom = Math.max(1, Math.min(4, Math.round(z)));
+    if (nextZoom === prevZoom) return;
+    if (anchorScreenX !== undefined && anchorScreenY !== undefined) {
+      // Keep the world point under (anchorScreenX, anchorScreenY) pinned at the exact same screen pixel
+      const deltaScale = 1 / nextZoom - 1 / prevZoom;
+      this.panX += anchorScreenX * deltaScale;
+      this.panY += anchorScreenY * deltaScale;
+      if (this.targetPanX !== null && this.targetPanY !== null) {
+        this.targetPanX += anchorScreenX * deltaScale;
+        this.targetPanY += anchorScreenY * deltaScale;
+      }
+    }
+    this.zoom = nextZoom;
   }
 
   panBy(dxScreen: number, dyScreen: number): void {

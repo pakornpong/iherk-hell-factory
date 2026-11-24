@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "projector-screen",
+  "category": "decor",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "frame_dark": { "color": "#262e3d", "kind": "metal" },
+    "steel": { "color": "#94a3b8", "kind": "metal" },
+    "screen_white": { "color": "#f1f5f9", "kind": "matte" },
+    "note_yellow": { "color": "#fde047", "kind": "matte" },
+    "note_pink": { "color": "#fb7185", "kind": "matte" },
+    "ink_blue": { "color": "#38bdf8", "kind": "matte" },
+    "box_gray": { "color": "#cbd5e1", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [7, 14, 0], "to": [8, 16, 12], "material": "frame_dark", "part": "legs" },
+    { "op": "box", "from": [23, 14, 0], "to": [24, 16, 12], "material": "frame_dark", "part": "legs" },
+    { "op": "box", "from": [15, 10, 0], "to": [16, 12, 14], "material": "frame_dark", "part": "legs" },
+    { "op": "box", "from": [4, 13, 12], "to": [27, 16, 13], "material": "steel", "part": "bottom_bar" },
+    { "op": "box", "from": [4, 12, 13], "to": [27, 15, 36], "material": "screen_white", "part": "screen" },
+    { "op": "box", "from": [3, 11, 36], "to": [28, 16, 38], "material": "frame_dark", "part": "roller" },
+    { "op": "box", "from": [21, 15, 29], "to": [25, 16, 33], "material": "note_yellow", "part": "notes" },
+    { "op": "box", "from": [7, 15, 16], "to": [11, 16, 20], "material": "note_yellow", "part": "notes" },
+    { "op": "box", "from": [14, 15, 24], "to": [18, 16, 27], "material": "note_pink", "part": "notes" },
+    { "op": "box", "from": [8, 15, 28], "to": [18, 15, 29], "material": "ink_blue", "part": "diagram" },
+    { "op": "box", "from": [11, 18, 0], "to": [20, 26, 6], "material": "box_gray", "part": "box" }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "stream-softbox-light",
+  "category": "streaming",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "stand_black": { "color": "#18181b", "kind": "metal" },
+    "metal_gray": { "color": "#475569", "kind": "metal" },
+    "softbox_glow": { "color": "#f8fafc", "kind": "emissive", "glowRadius": 4, "glowIntensity": 0.78 },
+    "softbox_rim": { "color": "#e2e8f0", "kind": "emissive", "glowRadius": 2, "glowIntensity": 0.5 },
+    "foam_dark": { "color": "#27272a", "kind": "matte" },
+    "foam_ridge": { "color": "#3f3f46", "kind": "matte" },
+    "led_amber": { "color": "#f59e0b", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.5 }
+  },
+  "ops": [
+    { "op": "box", "from": [3, 6, 0], "to": [11, 15, 1], "material": "stand_black", "part": "acoustic_base" },
+    { "op": "box", "from": [3, 8, 2], "to": [12, 11, 37], "material": "stand_black", "part": "acoustic_frame" },
+    { "op": "box", "from": [4, 11, 5], "to": [11, 12, 35], "material": "foam_dark", "part": "acoustic_foam" },
+    { "op": "box", "from": [4, 13, 7], "to": [11, 13, 8], "material": "foam_ridge", "part": "foam_wedge_1" },
+    { "op": "box", "from": [4, 13, 12], "to": [11, 13, 13], "material": "foam_ridge", "part": "foam_wedge_2" },
+    { "op": "box", "from": [4, 13, 17], "to": [11, 13, 18], "material": "foam_ridge", "part": "foam_wedge_3" },
+    { "op": "box", "from": [4, 13, 22], "to": [11, 13, 23], "material": "foam_ridge", "part": "foam_wedge_4" },
+    { "op": "box", "from": [4, 13, 27], "to": [11, 13, 28], "material": "foam_ridge", "part": "foam_wedge_5" },
+    { "op": "box", "from": [4, 13, 32], "to": [11, 13, 33], "material": "foam_ridge", "part": "foam_wedge_6" },
+    { "op": "line", "from": [21, 18, 9], "to": [14, 25, 0], "material": "stand_black", "part": "tripod_leg_fl" },
+    { "op": "line", "from": [21, 18, 9], "to": [28, 25, 0], "material": "stand_black", "part": "tripod_leg_fr" },
+    { "op": "line", "from": [21, 18, 9], "to": [21, 10, 0], "material": "stand_black", "part": "tripod_leg_back" },
+    { "op": "box", "from": [19, 16, 8], "to": [23, 20, 10], "material": "metal_gray", "part": "tripod_hub" },
+    { "op": "box", "from": [20, 17, 10], "to": [22, 19, 25], "material": "stand_black", "part": "tripod_pole" },
+    { "op": "box", "from": [22, 17, 15], "to": [24, 19, 19], "material": "metal_gray", "part": "dimmer_pack" },
+    { "op": "voxel", "at": [24, 19, 17], "material": "led_amber", "part": "dimmer_led" },
+    { "op": "box", "from": [18, 12, 28], "to": [24, 16, 34], "material": "stand_black", "part": "lamp_housing" },
+    { "op": "box", "from": [15, 16, 25], "to": [27, 20, 37], "material": "stand_black", "part": "softbox_hood_mid" },
+    { "op": "box", "from": [13, 20, 23], "to": [29, 23, 39], "material": "stand_black", "part": "softbox_hood_front" },
+    { "op": "box", "from": [14, 23, 24], "to": [28, 24, 38], "material": "softbox_rim", "part": "diffuser_outer" },
+    { "op": "box", "from": [15, 24, 25], "to": [27, 24, 37], "material": "softbox_glow", "part": "diffuser_core" }
+  ]
+}

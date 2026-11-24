@@ -78,7 +78,10 @@ describe("layout-engine", () => {
     const campus = computeCampusLayout(bays, wings, mockCatalog);
     const activeBays = campus.zones.filter((z) => z.kind === "bay");
     expect(activeBays.map((z) => z.bayId)).toEqual(["bay-0", "bay-2"]);
-    expect([activeBays[1].col, activeBays[1].row]).toEqual([1, 1]);
+    // Both remaining bays are one department -> packed side by side in one 2x1 lot
+    expect(activeBays[0].lotId).toBe(activeBays[1].lotId);
+    expect(activeBays[1].row).toBe(activeBays[0].row);
+    expect(activeBays[1].col).toBe(activeBays[0].col + 1);
     expect(campus.zones.find((z) => z.zoneId === "common:0")?.originX).toBe(0);
   });
 

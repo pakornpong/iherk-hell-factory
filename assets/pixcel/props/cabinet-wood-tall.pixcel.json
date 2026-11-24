@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "cabinet-wood-tall",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "wood_main": { "color": "#c87d42", "kind": "wood" },
+    "wood_dark": { "color": "#9a5928", "kind": "wood" },
+    "wood_trim": { "color": "#dc9355", "kind": "wood" },
+    "handle_brass": { "color": "#f59e0b", "kind": "metal" },
+    "binder_red": { "color": "#dc2626", "kind": "matte" },
+    "binder_green": { "color": "#16a34a", "kind": "matte" },
+    "binder_blue": { "color": "#2563eb", "kind": "matte" },
+    "paper": { "color": "#f8fafc", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [4, 4, 0], "to": [27, 25, 34], "material": "wood_main", "part": "body" },
+    { "op": "box", "from": [4, 4, 0], "to": [27, 26, 2], "material": "wood_dark", "part": "plinth" },
+    { "op": "box", "from": [3, 3, 34], "to": [28, 26, 36], "material": "wood_trim", "part": "top_cap" },
+    { "op": "box", "from": [6, 25, 4], "to": [14, 26, 32], "material": "wood_trim", "part": "door_l" },
+    { "op": "box", "from": [17, 25, 4], "to": [25, 26, 32], "material": "wood_trim", "part": "door_r" },
+    { "op": "box", "from": [15, 25, 4], "to": [16, 25, 32], "material": "wood_dark", "part": "seam" },
+    { "op": "box", "from": [13, 26, 17], "to": [13, 27, 21], "material": "handle_brass", "part": "handles" },
+    { "op": "box", "from": [18, 26, 17], "to": [18, 27, 21], "material": "handle_brass", "part": "handles" },
+    { "op": "box", "from": [6, 8, 37], "to": [9, 21, 45], "material": "binder_red", "part": "binders" },
+    { "op": "box", "from": [10, 8, 37], "to": [13, 21, 45], "material": "binder_green", "part": "binders" },
+    { "op": "box", "from": [14, 8, 37], "to": [17, 21, 45], "material": "binder_blue", "part": "binders" },
+    { "op": "box", "from": [19, 10, 37], "to": [26, 22, 40], "material": "paper", "part": "papers" }
+  ]
+}

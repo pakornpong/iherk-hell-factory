@@ -329,7 +329,7 @@ export function remapAssetToDayTheme(asset: PixcelAssetLike): PixcelAssetLike {
       } else if (/^#[0-3][0-9a-f][0-3][0-9a-f][0-5][0-9a-f]$/i.test(key)) {
         mat.color = "#dcd6c8";
       }
-    } else if (mat.kind === "glass" && (asset.id.includes("window") || asset.id.startsWith("room-"))) {
+    } else if (mat.kind === "glass" && (asset.id.includes("window") || asset.id.includes("clerestory") || asset.id.startsWith("room-"))) {
       mat.color = "#93c5fd";
     } else if (matName.includes("plank") && /^#[0-6]/.test(key)) {
       mat.color = "#b88a5b";
@@ -366,7 +366,7 @@ export function remapAssetToOfficeTheme(asset: PixcelAssetLike): PixcelAssetLike
         mat.color = "#5d5355";
       } else if (mat.kind === "glass" || matName.includes("glass")) {
         mat.color = "#7dd3fc";
-      } else if (mat.kind === "emissive" && cloned.id.includes("window")) {
+      } else if (mat.kind === "emissive" && (cloned.id.includes("window") || cloned.id.includes("clerestory"))) {
         mat.color = "#e0f2fe";
       } else if (matName === "wall_trim" || matName === "baseboard") {
         mat.color = "#c8cdd5";
@@ -601,7 +601,12 @@ export class PixcelBridge {
       this.loadCharacterAssets(),
       this.readAssetsFromDir(this.customDir, "custom"),
     ]);
-    return this.toCatalogEntries([...starter, ...props, ...chars, ...custom]);
+    // Local project props override starter assets of the same id (e.g. ergonomic chair-office-swivel)
+    const byId = new Map<string, { asset: PixcelAssetLike; source: CatalogEntry["source"] }>();
+    for (const item of [...starter, ...props, ...chars, ...custom]) {
+      byId.set(item.asset.id, item);
+    }
+    return this.toCatalogEntries([...byId.values()]);
   }
 
   async buildCoreAtlases(): Promise<{
@@ -619,7 +624,11 @@ export class PixcelBridge {
       this.loadCharacterAssets(),
     ]);
 
-    const allCore = [...starter, ...props, ...chars];
+    const byId = new Map<string, { asset: PixcelAssetLike; source: CatalogEntry["source"] }>();
+    for (const item of [...starter, ...props, ...chars]) {
+      byId.set(item.asset.id, item);
+    }
+    const allCore = [...byId.values()];
     const assets = allCore.map((a) => a.asset);
 
     const officeSprites = this.renderAssetsToSprites(core, assets, "office");

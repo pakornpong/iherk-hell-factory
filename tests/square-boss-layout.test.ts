@@ -42,7 +42,7 @@ function makeBay(i: number): ProjectBayRecord {
 }
 
 describe("Square Clockwise Expansion & Boss Office (0,0)", () => {
-  it("places Boss Office at top-most corner (0,0), Lounge at (0,1), expands bays clockwise, and keeps overall floor square", () => {
+  it("places Boss Office at (0,0), Lounge at (0,1), packs a department into one lot, and keeps overall floor square", () => {
     const bays = Array.from({ length: 7 }, (_, i) => makeBay(i));
     const campus = computeCampusLayout(bays, [createDefaultCommonWing(0)], catalog, createDefaultBossOffice());
 
@@ -62,19 +62,18 @@ describe("Square Clockwise Expansion & Boss Office (0,0)", () => {
     expect(lounge?.col).toBe(0);
     expect(lounge?.row).toBe(1);
 
-    // Clockwise order for bays 0..6:
-    // Ring 1 (2x2): (1,0), (1,1)  [(0,1) is Lounge]
-    // Ring 2 (3x3): (2,0), (2,1), (2,2), (1,2), (0,2)
+    // Co-working area for subagents is fixed at (1,0), right next to the Boss Office
+    const cowork = campus.zones.find((z) => z.kind === "cowork");
+    expect([cowork?.col, cowork?.row]).toEqual([1, 0]);
+
+    // All 7 bays share one department -> one rectangular open-plan lot sized to fit them (at most 2 spare cells)
     const activeBays = campus.zones.filter((z) => z.kind === "bay");
-    expect(activeBays.map((z) => [z.col, z.row])).toEqual([
-      [1, 0],
-      [1, 1],
-      [2, 0],
-      [2, 1],
-      [2, 2],
-      [1, 2],
-      [0, 2],
-    ]);
+    expect(new Set(activeBays.map((z) => z.lotId)).size).toBe(1);
+    const cols = activeBays.map((z) => z.col);
+    const rows = activeBays.map((z) => z.row);
+    const lotArea = (Math.max(...cols) - Math.min(...cols) + 1) * (Math.max(...rows) - Math.min(...rows) + 1);
+    expect(lotArea - activeBays.length).toBeLessThanOrEqual(2);
+    expect(new Set(activeBays.map((z) => `${z.col},${z.row}`)).size).toBe(7);
   });
 
   it("routes employees to Boss Office (0,0) when reporting finished work or asking questions", async () => {

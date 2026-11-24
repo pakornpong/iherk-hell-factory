@@ -2,7 +2,9 @@ import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
+import { IsoCamera } from "../src/client/camera.js";
 import { nextThemeMode } from "../src/client/hud.js";
+import { sortUnifiedIsoEntities } from "../src/client/iso-renderer.js";
 import { buildWalkableGrid, findTilePath } from "../src/client/pathfinding.js";
 import { deltaToDir, OfficeSimulation } from "../src/client/sim.js";
 import { DEMO_SCRIPT } from "../src/server/demo-simulator.js";
@@ -11,6 +13,8 @@ import {
   createDefaultBayFurniture,
   createDefaultBossOffice,
   createDefaultCommonWing,
+  MODULE_PITCH_X,
+  MODULE_PITCH_Y,
 } from "../src/server/layout-engine.js";
 import { OfficeEngine } from "../src/server/office-engine.js";
 import {
@@ -45,6 +49,15 @@ const mockCatalog = new Map<string, CatalogEntry>([
   ["filing-cabinet", { id: "filing-cabinet", category: "furniture", layer: "object", footprintTiles: [1, 1], source: "prop" }],
   ["printer-copier", { id: "printer-copier", category: "tech", layer: "object", footprintTiles: [1, 1], source: "prop" }],
   ["robot-vacuum", { id: "robot-vacuum", category: "decor", layer: "object", footprintTiles: [1, 1], source: "prop" }],
+  ["cabinet-wood-tall", { id: "cabinet-wood-tall", category: "furniture", layer: "object", footprintTiles: [1, 1], source: "prop" }],
+  ["shelf-metal-storage", { id: "shelf-metal-storage", category: "furniture", layer: "object", footprintTiles: [1, 1], source: "prop" }],
+  ["projector-screen", { id: "projector-screen", category: "decor", layer: "object", footprintTiles: [1, 1], source: "prop" }],
+  ["projector-tripod", { id: "projector-tripod", category: "tech", layer: "object", footprintTiles: [1, 1], source: "prop" }],
+  ["trash-bin-office", { id: "trash-bin-office", category: "decor", layer: "object", footprintTiles: [1, 1], source: "prop" }],
+  ["fire-extinguisher", { id: "fire-extinguisher", category: "decor", layer: "object", footprintTiles: [1, 1], source: "prop" }],
+  ["desk-drafting", { id: "desk-drafting", category: "furniture", layer: "object", footprintTiles: [2, 1], source: "prop" }],
+  ["pc-tower-box", { id: "pc-tower-box", category: "tech", layer: "object", footprintTiles: [1, 1], source: "prop" }],
+  ["shredder-mini", { id: "shredder-mini", category: "tech", layer: "object", footprintTiles: [1, 1], source: "prop" }],
 ]);
 
 function makeDeptBay(id: string, projectPath: string, department: DepartmentId, idx: number): ProjectBayRecord {
@@ -142,16 +155,34 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
     expect(officeAtlas.meta.image).toBe("atlas-office.png");
     expect(officeAtlas.meta.emissiveImage).toBe("atlas-office_emissive.png");
 
-    // All 8 new office props
+    // All office props + room walls + ergonomic chair backrest overlay + expanded furniture & wall decor
     for (const propId of [
       "floor-office-carpet",
       "floor-boss-rug",
+      "floor-corridor-tile",
       "divider-cubicle-amber",
+      "room-wall-glass",
+      "room-junction-cross",
+      "chair-office-swivel-back",
       "printer-copier",
       "filing-cabinet",
       "robot-vacuum",
       "wall-ac-unit",
       "wall-corkboard",
+      "cabinet-wood-tall",
+      "shelf-metal-storage",
+      "projector-screen",
+      "projector-tripod",
+      "trash-bin-office",
+      "fire-extinguisher",
+      "desk-drafting",
+      "pc-tower-box",
+      "shredder-mini",
+      "wall-clock",
+      "wall-tv-monitor",
+      "wall-chart-org",
+      "wall-calendar",
+      "wall-certificate",
     ]) {
       const hasAny = Object.keys(officeAtlas.frames).some((k) => k.startsWith(`${propId}/se/`));
       expect(hasAny, `Expected ${propId} in atlas-office`).toBe(true);
@@ -239,22 +270,23 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
       "accounting",
       "general",
     ]);
-    // Clockwise ring coordinates: Ring 1: (1,0), (1,1); Ring 2: (2,0), (2,1), (2,2), (1,2)
-    expect(bayZones.map((z) => [z.col, z.row])).toEqual([
-      [1, 0],
-      [1, 1],
-      [2, 0],
-      [2, 1],
-      [2, 2],
-      [1, 2],
-    ]);
+    // Each department is one lot; its bays sit in neighbouring cells of that lot
+    for (const dept of ["iherk", "dev", "erp", "accounting", "general"]) {
+      const deptZones = bayZones.filter((z) => z.department === dept);
+      expect(new Set(deptZones.map((z) => z.lotId))).toEqual(new Set([`dept:${dept}`]));
+    }
+    const [i1, i2] = bayZones.filter((z) => z.department === "iherk");
+    expect(Math.abs(i1.col - i2.col) + Math.abs(i1.row - i2.row)).toBe(1);
 
     // Office theme floors, room threshold strips, boss rug, architectural room walls, junctions & same-dept amber dividers
     expect(officeCampus.floors.some((f) => f.assetId === "floor-office-carpet")).toBe(true);
     expect(officeCampus.floors.some((f) => f.assetId === "floor-corridor-tile")).toBe(true);
     expect(officeCampus.floors.some((f) => f.assetId === "floor-boss-rug")).toBe(true);
     expect(officeCampus.worldFurniture.some((f) => f.assetId === "room-wall-glass")).toBe(true);
-    expect(officeCampus.worldFurniture.some((f) => f.assetId === "room-junction-cross")).toBe(true);
+    // Walled rooms are closed glass boxes with corner posts; projects of one department share an
+    // open-plan lot split by low amber cubicle dividers
+    expect(officeCampus.worldFurniture.some((f) => f.assetId === "room-junction-corner")).toBe(true);
+    expect(officeCampus.worldFurniture.some((f) => f.assetId === "room-junction-cross")).toBe(false);
     expect(officeCampus.worldFurniture.some((f) => f.assetId === "divider-cubicle-amber")).toBe(true);
     expect(officeCampus.worldFurniture.some((f) => f.assetId === "filing-cabinet")).toBe(true);
     expect(officeCampus.worldFurniture.some((f) => f.assetId === "printer-copier")).toBe(true);
@@ -262,10 +294,12 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
     expect(officeCampus.wallDecor.some((d) => d.assetId === "wall-ac-unit")).toBe(true);
     expect(officeCampus.wallDecor.some((d) => d.assetId === "wall-corkboard")).toBe(true);
 
-    // Outer perimeter windows never collide with interior wall seams (tx % 7 === 6 or ty % 7 === 6)
+    // Outer perimeter windows only sit over room interiors, never over room walls or corridors
     expect(
       officeCampus.walls.some(
-        (w) => w.assetId === "wall-night-window" && ((w.ty === 0 && w.tx % 7 === 6) || (w.tx === 0 && w.ty % 7 === 6)),
+        (w) =>
+          w.assetId === "wall-night-window" &&
+          ((w.ty === 0 && w.tx % MODULE_PITCH_X >= 6) || (w.tx === 0 && w.ty % MODULE_PITCH_Y >= 6)),
       ),
     ).toBe(false);
 
@@ -288,7 +322,7 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
     );
     expect(nightCampus.floors.some((f) => f.assetId === "floor-wood-plank")).toBe(true);
     expect(nightCampus.worldFurniture.some((f) => f.assetId === "room-wall-glass")).toBe(true);
-    expect(nightCampus.worldFurniture.some((f) => f.assetId === "divider-low-glass")).toBe(true);
+    expect(nightCampus.worldFurniture.some((f) => f.assetId === "room-junction-corner")).toBe(true);
   });
 
   it("uses Phase 2 1:1 facing directions in OfficeSimulation, supports AI Org roles, manageBay(department), and 4-dept DemoSimulator", async () => {
@@ -296,6 +330,69 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
     expect(deltaToDir(-1, 0, "se")).toBe("sw");
     expect(deltaToDir(0, 1, "se")).toBe("se");
     expect(deltaToDir(0, -1, "se")).toBe("nw");
+
+    // Camera zoom with anchor keeps the exact world point pinned under cursor / viewport center
+    const cam = new IsoCamera();
+    cam.snapToTile(8, 8, 1280, 720);
+    const [wxBefore, wyBefore] = cam.screenToWorld(820, 410);
+    cam.setZoom(4, 820, 410);
+    const [wxAfterIn, wyAfterIn] = cam.screenToWorld(820, 410);
+    expect(wxAfterIn).toBeCloseTo(wxBefore, 5);
+    expect(wyAfterIn).toBeCloseTo(wyBefore, 5);
+    cam.setZoom(1, 820, 410);
+    const [wxAfterOut, wyAfterOut] = cam.screenToWorld(820, 410);
+    expect(wxAfterOut).toBeCloseTo(wxBefore, 5);
+    expect(wyAfterOut).toBeCloseTo(wyBefore, 5);
+
+    // Depth-sorter layers desk -> chair -> seated worker cleanly (rear backrest overlay draws after worker)
+    const desk = { id: "f:desk", x: 0, y: 0, footprintX: 2, footprintY: 1 };
+    const chairNw = { id: "f:chair-nw", x: 1, y: 1, footprintX: 1, footprintY: 1 };
+    const worker = { id: "e:worker", x: 1.2, y: 1.2, footprintX: 0.6, footprintY: 0.6 };
+    expect(sortUnifiedIsoEntities([chairNw, worker, desk]).map((s) => s.id)).toEqual([
+      "f:desk",
+      "f:chair-nw",
+      "e:worker",
+    ]);
+
+    // Idle/resting employees sit and nap (rest_sleep_*) at their own desk chair with 💤
+    const restSim = new OfficeSimulation();
+    const restBay = makeDeptBay("bay-rest", "/demo/iherk-hell-factory", "iherk", 1);
+    const restWing = createDefaultCommonWing(0);
+    const restCampus = computeCampusLayout([restBay], [restWing], mockCatalog, createDefaultBossOffice(), "office");
+    restSim.syncFromServer(
+      {
+        version: 1,
+        theme: "office",
+        bays: [restBay],
+        commonWings: [restWing],
+        activityLog: [],
+        employees: [
+          {
+            id: "emp-sleep",
+            bayId: "bay-rest",
+            provider: "claude",
+            spriteId: "agent-claude",
+            displayName: "Claude",
+            role: "org-worker",
+            isEphemeral: false,
+            deskIndex: 0,
+            visualState: "resting",
+            toolCategory: "idle",
+            lastUpdatedAt: 1,
+          },
+        ],
+      },
+      restCampus,
+    );
+    let stepOut = restSim.step(50);
+    for (let i = 0; i < 400; i++) stepOut = restSim.step(50);
+    const bayChair = restCampus.worldFurniture.find(
+      (f) => f.zoneId === "bay:bay-rest" && f.assetId === "chair-office-swivel",
+    )!;
+    expect(Math.round(stepOut.visuals[0].x)).toBe(bayChair.tx);
+    expect(Math.round(stepOut.visuals[0].y)).toBe(bayChair.ty);
+    expect(stepOut.visuals[0].clipName).toMatch(/^rest_sleep_/);
+    expect(stepOut.visuals[0].bubbleIcon).toBe("💤");
 
     const dir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-org-flow-"));
     const engine = new OfficeEngine({
@@ -357,7 +454,8 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
 
     const qaVisual = out.visuals.find((v) => v.record.role === "org-qa");
     const reportingVisual = out.visuals.find((v) => v.record.visualState === "reporting");
-    expect(qaVisual?.direction).toBe("nw");
+    // Subagent sits on co-working seat 0: the back row of a face-to-face pod, facing "se" across the desks
+    expect(qaVisual?.direction).toBe("se");
     expect(qaVisual?.bubbleIcon).toBe("🧪");
     expect(reportingVisual?.direction).toBe("nw");
     expect(reportingVisual?.bubbleIcon).toBe("❓");

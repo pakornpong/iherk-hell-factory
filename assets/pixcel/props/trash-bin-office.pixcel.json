@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "trash-bin-office",
+  "category": "decor",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "bin_dark": { "color": "#475569", "kind": "metal" },
+    "bin_rim": { "color": "#94a3b8", "kind": "metal" },
+    "paper": { "color": "#f8fafc", "kind": "matte" },
+    "can_red": { "color": "#ef4444", "kind": "metal" },
+    "can_cyan": { "color": "#38bdf8", "kind": "metal" },
+    "box_cardboard": { "color": "#b8844c", "kind": "matte" },
+    "box_tape": { "color": "#8f5f30", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [6, 12, 0], "to": [15, 21, 11], "material": "bin_dark", "part": "bin" },
+    { "op": "box", "from": [5, 11, 11], "to": [16, 22, 12], "material": "bin_rim", "part": "rim" },
+    { "op": "box", "from": [7, 13, 12], "to": [11, 17, 15], "material": "paper", "part": "trash" },
+    { "op": "box", "from": [11, 15, 12], "to": [14, 19, 14], "material": "can_red", "part": "trash" },
+    { "op": "box", "from": [8, 17, 12], "to": [10, 20, 15], "material": "can_cyan", "part": "trash" },
+    { "op": "box", "from": [18, 9, 0], "to": [27, 19, 8], "material": "box_cardboard", "part": "box" },
+    { "op": "box", "from": [18, 13, 8], "to": [27, 15, 8], "material": "box_tape", "part": "box" }
+  ]
+}

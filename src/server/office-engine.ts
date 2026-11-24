@@ -200,6 +200,16 @@ export class OfficeEngine extends EventEmitter {
         if (!b.department) {
           b.department = classifyDepartmentFromPath(b.projectPath);
         }
+        // Refresh untouched rooms so new default props (themed decor) reach existing saves.
+        if (b.furniture.every((f) => f.placedBy === "system")) {
+          const base = createDefaultBayFurniture(b.id, b.department);
+          b.furniture = [...base, ...createExtraBayWorkstations(b.id, b.deskSlots, base)];
+        }
+      }
+      for (const w of loaded.commonWings) {
+        if (w.furniture.every((f) => f.placedBy === "system")) {
+          w.furniture = createDefaultCommonWing(w.row).furniture;
+        }
       }
       this.state = loaded;
     } else {
@@ -361,10 +371,19 @@ export class OfficeEngine extends EventEmitter {
     return { bay: newBay, expanded: true };
   }
 
+  /** Desk in the project's own room — only persistent (lead) employees sit there. */
   private allocateDeskIndex(bayId: string): number {
     const used = new Set(
-      this.state.employees.filter((e) => e.bayId === bayId).map((e) => e.deskIndex),
+      this.state.employees.filter((e) => e.bayId === bayId && !e.isEphemeral).map((e) => e.deskIndex),
     );
+    let idx = 0;
+    while (used.has(idx)) idx++;
+    return idx;
+  }
+
+  /** Hot-desk seat in the shared co-working room, unique across every project's subagents. */
+  private allocateCoworkSeat(): number {
+    const used = new Set(this.state.employees.filter((e) => e.isEphemeral).map((e) => e.deskIndex));
     let idx = 0;
     while (used.has(idx)) idx++;
     return idx;
@@ -403,22 +422,23 @@ export class OfficeEngine extends EventEmitter {
         bayId: bay.id,
         provider: ev.provider,
         spriteId: this.providerVariantSprite(ev.provider, Math.max(1, variantIdx)),
-        displayName: ev.agentRole
+        // Name says which project it works for, since every project's subagents share the co-working room
+        displayName: `${ev.agentRole
           ? `${ev.provider === "claude" ? "Claude" : "Gemini"} · ${ev.agentRole}`
-          : `${ev.provider === "claude" ? "Claude" : "Gemini"} Sub`,
+          : `${ev.provider === "claude" ? "Claude" : "Gemini"} Sub`} @ ${bay.displayName}`.slice(0, 128),
         role: ev.agentRole ?? "Subagent",
         sessionId: ev.sessionId,
         agentId: ev.agentId,
         parentAgentId: ev.parentAgentId,
         isEphemeral: true,
-        deskIndex: this.allocateDeskIndex(bay.id),
+        deskIndex: this.allocateCoworkSeat(),
         visualState: "assigning",
         toolCategory: "idle",
         lastUpdatedAt: ts,
       };
+      // Subagents work from the shared co-working room, so the project's own room does not grow desks
       this.state.employees.push(emp);
       this.recomputeCampus();
-      this.ensureBayDesksForTeam(bay);
       return emp;
     }
 
@@ -465,7 +485,7 @@ export class OfficeEngine extends EventEmitter {
   }
 
   private ensureBayDesksForTeam(bay: ProjectBayRecord): void {
-    const teamSize = this.state.employees.filter((e) => e.bayId === bay.id).length;
+    const teamSize = this.state.employees.filter((e) => e.bayId === bay.id && !e.isEphemeral).length;
     const desired = Math.min(4, Math.max(bay.deskSlots, teamSize));
     if (desired > bay.deskSlots) {
       bay.deskSlots = desired;

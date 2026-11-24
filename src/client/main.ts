@@ -108,7 +108,7 @@ async function bootstrap(): Promise<void> {
       );
     },
     onSetZoom(zoom) {
-      camera.setZoom(zoom);
+      camera.setZoom(zoom, canvas.width / 2, canvas.height / 2);
       refreshHud();
     },
     onSelectEmployee(id) {
@@ -246,12 +246,20 @@ async function bootstrap(): Promise<void> {
     refreshHud();
   });
 
+  let lastWheelZoomTs = 0;
   canvas.addEventListener(
     "wheel",
     (ev) => {
       ev.preventDefault();
-      if (ev.deltaY < 0) camera.setZoom(camera.zoom + 1);
-      else if (ev.deltaY > 0) camera.setZoom(camera.zoom - 1);
+      if (ev.deltaY === 0) return;
+      const now = performance.now();
+      if (now - lastWheelZoomTs < 110) return;
+      lastWheelZoomTs = now;
+      const rect = canvas.getBoundingClientRect();
+      const sx = ev.clientX - rect.left;
+      const sy = ev.clientY - rect.top;
+      if (ev.deltaY < 0) camera.setZoom(camera.zoom + 1, sx, sy);
+      else if (ev.deltaY > 0) camera.setZoom(camera.zoom - 1, sx, sy);
       refreshHud();
     },
     { passive: false },
@@ -274,7 +282,7 @@ async function bootstrap(): Promise<void> {
         refreshHud();
       }
     } else if (["1", "2", "3", "4"].includes(ev.key)) {
-      camera.setZoom(Number(ev.key));
+      camera.setZoom(Number(ev.key), canvas.width / 2, canvas.height / 2);
       refreshHud();
     } else if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === "z") {
       if (decorate.active) {

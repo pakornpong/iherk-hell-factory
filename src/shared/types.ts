@@ -125,7 +125,10 @@ export type AssetLayer = z.infer<typeof AssetLayerSchema>;
 
 export const ZoneIdSchema = z
   .string()
-  .regex(/^(boss:0|bay:[a-z0-9-_]+|common:\d+)$/i, "zoneId must be 'boss:0', 'bay:<id>', or 'common:<row>'");
+  .regex(
+    /^(boss:0|cowork:0|bay:[a-z0-9-_]+|common:\d+|amenity:\d+)$/i,
+    "zoneId must be 'boss:0', 'cowork:0', 'bay:<id>', 'common:<row>', or 'amenity:<idx>'",
+  );
 export type ZoneId = z.infer<typeof ZoneIdSchema>;
 
 export const TelemetryEventTypeSchema = z.enum([
@@ -259,9 +262,44 @@ export const CatalogEntrySchema = z.object({
 });
 export type CatalogEntry = z.infer<typeof CatalogEntrySchema>;
 
+export type AmenityThemeId = "game" | "music" | "stream" | "gym" | "lab" | "maker" | "home" | "server";
+
+export interface AmenityThemeMeta {
+  id: AmenityThemeId;
+  label: string;
+  icon: string;
+  color: string;
+}
+
+/** Order in which themed amenity rooms fill the leftover slots of the outer ring. */
+export const AMENITY_THEME_ORDER: readonly AmenityThemeId[] = [
+  "game",
+  "music",
+  "stream",
+  "gym",
+  "lab",
+  "maker",
+  "home",
+  "server",
+] as const;
+
+export const AMENITY_THEME_META: Record<AmenityThemeId, AmenityThemeMeta> = {
+  game: { id: "game", label: "GAME ROOM", icon: "🕹️", color: "#ec4899" },
+  music: { id: "music", label: "MUSIC STUDIO", icon: "🎛️", color: "#a855f7" },
+  stream: { id: "stream", label: "STREAM STUDIO", icon: "🎥", color: "#22d3ee" },
+  gym: { id: "gym", label: "GYM", icon: "🏋️", color: "#ef4444" },
+  lab: { id: "lab", label: "SCIENCE LAB", icon: "🧪", color: "#4ade80" },
+  maker: { id: "maker", label: "GADGET WORKSHOP", icon: "🛠️", color: "#f97316" },
+  home: { id: "home", label: "REST HOME", icon: "🛋️", color: "#facc15" },
+  server: { id: "server", label: "SERVER ROOM", icon: "🗄️", color: "#60a5fa" },
+};
+
 export interface ZoneBounds {
   zoneId: ZoneId;
-  kind: "boss" | "common" | "bay";
+  kind: "boss" | "common" | "bay" | "amenity" | "cowork";
+  amenityTheme?: AmenityThemeId;
+  /** Open-plan lot this zone belongs to (e.g. "dept:dev"); zones of one lot share floor with no corridor. */
+  lotId?: string;
   bayId?: string;
   department?: DepartmentId;
   row: number;

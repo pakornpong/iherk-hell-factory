@@ -37,6 +37,23 @@ function resolveProjectRoot(candidatePath: string): string {
   return cur;
 }
 
+const IGNORED_PATH_SEGMENTS = [
+  "/.gemini/",
+  "/.ai-org",
+  "/.claude",
+  "/.gitconfig",
+  "/Library/Application Support/",
+];
+
+function sanitizeCandidatePath(raw: string): string | null {
+  const cleaned = raw.replace(/[:`),.;\]}]+$/g, "");
+  if (!cleaned.startsWith("/")) return null;
+  for (const seg of IGNORED_PATH_SEGMENTS) {
+    if (cleaned.includes(seg)) return null;
+  }
+  return fsSync.existsSync(cleaned) ? cleaned : null;
+}
+
 function inferProjectFromStep(step: Record<string, unknown>, currentProject: string): string {
   const toolCalls = Array.isArray(step.tool_calls) ? step.tool_calls : [];
   for (const tc of toolCalls) {
@@ -44,15 +61,17 @@ function inferProjectFromStep(step: Record<string, unknown>, currentProject: str
     const args = (tc as Record<string, unknown>).args;
     if (args && typeof args === "object") {
       const p = (args as Record<string, unknown>).Path ?? (args as Record<string, unknown>).path;
-      if (typeof p === "string" && p.startsWith("/") && !p.includes("/.gemini/")) {
-        return resolveProjectRoot(p);
+      if (typeof p === "string") {
+        const valid = sanitizeCandidatePath(p);
+        if (valid) return resolveProjectRoot(valid);
       }
     }
   }
   const content = typeof step.content === "string" ? step.content : "";
   const match = content.match(/\/(?:Users|var|tmp|home)\/[^\s"'<>|]+/);
-  if (match && !match[0].includes("/.gemini/")) {
-    return resolveProjectRoot(match[0]);
+  if (match) {
+    const valid = sanitizeCandidatePath(match[0]);
+    if (valid) return resolveProjectRoot(valid);
   }
   return currentProject;
 }

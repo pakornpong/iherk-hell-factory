@@ -56,9 +56,13 @@ describe("Final Review Fix Verification (Critical #1-#4 & Important #5-#10)", ()
     expect(campus.walls.some((w) => w.tx === 2 && w.ty === 0 && w.edge === "ne")).toBe(true);
     // tx = 0 runs along +Y (SW) -> NW edge
     expect(campus.walls.some((w) => w.tx === 0 && w.ty === 2 && w.edge === "nw")).toBe(true);
-    // Whiteboard along ty = 0 uses edge "ne"
+    // Wall decor mounts flush along rear NE (ty = 0) and NW (tx = 0) perimeter walls
     expect(campus.wallDecor.length).toBeGreaterThan(0);
-    expect(campus.wallDecor.every((d) => d.ty === 0 && d.edge === "ne")).toBe(true);
+    expect(campus.wallDecor.some((d) => d.ty === 0 && d.edge === "ne")).toBe(true);
+    expect(campus.wallDecor.some((d) => d.tx === 0 && d.edge === "nw")).toBe(true);
+    expect(
+      campus.wallDecor.every((d) => (d.ty === 0 && d.edge === "ne") || (d.tx === 0 && d.edge === "nw")),
+    ).toBe(true);
   });
 
   it("#2: resolves actual frame names for server-rack (blink_*), desk-security-ops (alert_*), and custom animated assets", () => {
@@ -131,7 +135,7 @@ describe("Final Review Fix Verification (Critical #1-#4 & Important #5-#10)", ()
     expect(out.visuals[0].direction).toBe("nw"); // south conference seat faces -Y toward table
   });
 
-  it("#5 & #7: prevents subagent resurrection after stop, ignores stray session_end for unknown projects, cleans subagents on parent turn_stop, and allocates unique deskIndex + extra desks", async () => {
+  it("#5 & #7: prevents subagent resurrection after stop, ignores stray session_end for unknown projects, cleans subagents on parent turn_stop, and seats subagents on unique co-working hot desks", async () => {
     const dir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-fix5-"));
     let clock = 10_000;
     const engine = new OfficeEngine({ store: new OfficeStore(dir), catalogById: fullCatalog, now: () => clock });
@@ -148,12 +152,16 @@ describe("Final Review Fix Verification (Critical #1-#4 & Important #5-#10)", ()
     await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "s1", agentId: "sub-a", projectPath: "/work/real", eventType: "tool_end", toolName: "Read" });
     expect(engine.getSnapshot().state.employees.filter((e) => e.agentId === "sub-a")).toHaveLength(0);
 
-    // Spawn 2 active subagents (total 3 workers in bay) -> extra desk-2 must be placed (not blocked by stale campus!) & unique deskIndex
+    // Spawn 2 active subagents -> they hot-desk in the shared co-working room on unique seats,
+    // so the project's own room does NOT grow extra desks for them
     await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "s1", agentId: "sub-b", projectPath: "/work/real", eventType: "subagent_start" });
     await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "s1", agentId: "sub-c", projectPath: "/work/real", eventType: "subagent_start" });
     const bay = engine.getSnapshot().state.bays[0];
-    expect(bay.furniture.some((f) => f.id.endsWith("-desk-2"))).toBe(true);
-    const deskIndices = engine.getSnapshot().state.employees.map((e) => e.deskIndex);
+    expect(bay.furniture.some((f) => f.id.endsWith("-desk-2"))).toBe(false);
+    const subs = engine.getSnapshot().state.employees.filter((e) => e.isEphemeral);
+    expect(subs).toHaveLength(2);
+    expect(subs.every((e) => e.displayName.endsWith(`@ ${bay.displayName}`))).toBe(true);
+    const deskIndices = subs.map((e) => e.deskIndex);
     expect(new Set(deskIndices).size).toBe(deskIndices.length);
 
     // Parent turn_stop cleans up ephemeral subagents belonging to that session

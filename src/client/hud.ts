@@ -1,5 +1,6 @@
 import {
   classifyDepartmentFromPath,
+  AMENITY_THEME_META,
   DEPARTMENT_META,
   DEPARTMENT_ORDER,
   getOrgRoleMeta,
@@ -50,6 +51,8 @@ export function nextThemeMode(current: ThemeMode): ThemeMode {
 export class OfficeHud {
   private baySearch = "";
   private deptFilter: DepartmentId | "all" = "all";
+  private catalogSearch = "";
+  private catalogCategory = "all";
   private showArchived = false;
   private minimapCanvas: HTMLCanvasElement;
   private minimapCtx: CanvasRenderingContext2D;
@@ -68,6 +71,12 @@ export class OfficeHud {
     const searchInput = document.getElementById("bay-search") as HTMLInputElement;
     searchInput.addEventListener("input", () => {
       this.baySearch = searchInput.value.trim().toLowerCase();
+      this.cb.onDecorateChanged();
+    });
+
+    const catSearchInput = document.getElementById("catalog-search") as HTMLInputElement | null;
+    catSearchInput?.addEventListener("input", () => {
+      this.catalogSearch = catSearchInput.value.trim().toLowerCase();
       this.cb.onDecorateChanged();
     });
 
@@ -269,10 +278,77 @@ export class OfficeHud {
 
     // Furniture Catalog (when Decorate Mode is open)
     if (this.decorate.active) {
+      const placeables = catalog.filter(
+        (c) => c.layer === "object" && c.source !== "character" && !c.id.endsWith("-back"),
+      );
+
+      const categoryLabels: Record<string, string> = {
+        all: "All",
+        lab: "🧪 Lab",
+        science: "🔬 Sci",
+        server: "🖥️ Server",
+        computer: "💻 PC",
+        music: "🎸 Music",
+        streaming: "🎙️ Stream",
+        gadget: "⌚ Gadget",
+        game: "🎮 Game",
+        office: "🏢 Office",
+        home: "🛋️ Home",
+        gym: "🏋️ Gym",
+        furniture: "🪑 Furn",
+        tech: "⚡ Tech",
+        decor: "🌿 Decor",
+        architecture: "🧱 Arch",
+      };
+      const categoryOrder = [
+        "all",
+        "lab",
+        "science",
+        "server",
+        "computer",
+        "music",
+        "streaming",
+        "gadget",
+        "game",
+        "office",
+        "home",
+        "gym",
+        "furniture",
+        "tech",
+        "decor",
+        "architecture",
+      ];
+      const availableCats = new Set(placeables.map((p) => p.category));
+      const filterEl = document.getElementById("catalog-filters");
+      if (filterEl) {
+        filterEl.innerHTML = "";
+        for (const cat of categoryOrder) {
+          if (cat !== "all" && !availableCats.has(cat)) continue;
+          const btn = document.createElement("button");
+          btn.className = `cat-filter-btn ${this.catalogCategory === cat ? "active" : ""}`;
+          btn.textContent = categoryLabels[cat] ?? cat;
+          btn.addEventListener("click", () => {
+            this.catalogCategory = cat;
+            this.cb.onDecorateChanged();
+          });
+          filterEl.appendChild(btn);
+        }
+      }
+
+      const filteredPlaceables = placeables.filter((item) => {
+        if (this.catalogCategory !== "all" && item.category !== this.catalogCategory) return false;
+        if (this.catalogSearch) {
+          return (
+            item.id.toLowerCase().includes(this.catalogSearch) ||
+            item.category.toLowerCase().includes(this.catalogSearch)
+          );
+        }
+        return true;
+      });
+
       const catEl = document.getElementById("catalog-list")!;
       catEl.innerHTML = "";
-      const placeables = catalog.filter((c) => c.layer === "object" && c.source !== "character");
-      for (const item of placeables) {
+      for (const item of filteredPlaceables) {
         const btn = document.createElement("button");
         btn.className = `cat-item ${this.decorate.selectedAssetId === item.id && this.decorate.tool === "place" ? "selected" : ""}`;
         btn.innerHTML = `
@@ -348,9 +424,16 @@ export class OfficeHud {
     for (const z of campus.zones) {
       const deptMeta = z.department ? DEPARTMENT_META[z.department] : undefined;
       ctx.fillStyle =
-        z.kind === "boss" ? "#92400e" : z.kind === "common" ? "#1e3a5f" : "#1e293b";
+        z.kind === "boss" ? "#92400e" : z.kind === "cowork" ? "#134e4a" : z.kind === "common" ? "#1e3a5f" : z.kind === "amenity" ? "#2e1065" : "#1e293b";
       ctx.fillRect(z.originX * scaleX, z.originY * scaleY, z.width * scaleX, z.height * scaleY);
-      ctx.strokeStyle = z.kind === "boss" ? "#f59e0b" : deptMeta?.color ?? "#334155";
+      ctx.strokeStyle =
+        z.kind === "boss"
+          ? "#f59e0b"
+          : z.kind === "cowork"
+            ? "#14b8a6"
+          : z.amenityTheme
+            ? AMENITY_THEME_META[z.amenityTheme].color
+            : deptMeta?.color ?? "#334155";
       ctx.strokeRect(z.originX * scaleX, z.originY * scaleY, z.width * scaleX, z.height * scaleY);
     }
 

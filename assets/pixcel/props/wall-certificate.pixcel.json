@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-certificate",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "frame_wood": { "color": "#8c5228", "kind": "wood" },
+    "paper_cream": { "color": "#fef3c7", "kind": "matte" },
+    "seal_gold": { "color": "#f59e0b", "kind": "metal" },
+    "ink_dark": { "color": "#475569", "kind": "matte" },
+    "sign_white": { "color": "#f8fafc", "kind": "matte" },
+    "arrow_red": { "color": "#dc2626", "kind": "matte" },
+    "note_yellow": { "color": "#fde047", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [4, 4, 27], "to": [5, 17, 38], "material": "frame_wood", "part": "frame" },
+    { "op": "box", "from": [5, 6, 29], "to": [5, 15, 36], "material": "paper_cream", "part": "diploma" },
+    { "op": "box", "from": [5, 8, 33], "to": [5, 13, 34], "material": "ink_dark", "part": "text" },
+    { "op": "box", "from": [5, 12, 30], "to": [5, 14, 31], "material": "seal_gold", "part": "seal" },
+    { "op": "box", "from": [4, 20, 32], "to": [5, 29, 39], "material": "sign_white", "part": "exit_sign" },
+    { "op": "box", "from": [5, 22, 35], "to": [5, 27, 36], "material": "arrow_red", "part": "arrow" },
+    { "op": "box", "from": [5, 21, 22], "to": [5, 26, 27], "material": "note_yellow", "part": "sticky" }
+  ]
+}

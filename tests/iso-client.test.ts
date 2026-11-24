@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
 import { IsoCamera, tileToWorld, worldToTile } from "../src/client/camera.js";
-import { isInWorldBounds, sortUnifiedIsoEntities } from "../src/client/iso-renderer.js";
+import {
+  computeFloorSlabGeometry,
+  FLOOR_SLAB_PALETTES,
+  isInWorldBounds,
+  IsoRenderer,
+  sortUnifiedIsoEntities,
+} from "../src/client/iso-renderer.js";
 
 describe("IsoCamera & unified topological depth-sorter", () => {
   it("round-trips tile <-> world <-> screen picking across integer zooms 1..4", () => {
@@ -48,5 +54,77 @@ describe("IsoCamera & unified topological depth-sorter", () => {
     const [farX, farY] = tileToWorld(80, 80);
     expect(isInWorldBounds(nearX, nearY, bounds)).toBe(true);
     expect(isInWorldBounds(farX, farY, bounds)).toBe(false);
+  });
+
+  it("computes exact diorama floor cutaway slab corners and renders across all themes", () => {
+    const geo = computeFloorSlabGeometry(13, 13);
+    expect(geo.leftX).toBe(-13 * 32 + 1);
+    expect(geo.leftY).toBe(11 * 16);
+    expect(geo.bottomX).toBe(0);
+    expect(geo.bottomY).toBe(24 * 16);
+    expect(geo.rightX).toBe(13 * 32 - 1);
+    expect(geo.rightY).toBe(11 * 16);
+    expect(geo.slabDepth).toBeGreaterThan(10);
+
+    for (const theme of ["office", "day", "night"] as const) {
+      const pal = FLOOR_SLAB_PALETTES[theme];
+      expect(pal.rimTop).toMatch(/^#/);
+      expect(pal.faceLeft).not.toBe(pal.faceRight);
+      expect(pal.outline).toMatch(/^#/);
+
+      const rects: Array<{ fillStyle: string; x: number; y: number; w: number; h: number }> = [];
+      const mockCtx = {
+        canvas: { width: 1280, height: 720 },
+        imageSmoothingEnabled: true,
+        fillStyle: "",
+        strokeStyle: "",
+        lineWidth: 1,
+        globalAlpha: 1,
+        globalCompositeOperation: "source-over",
+        font: "",
+        textAlign: "left",
+        fillRect(x: number, y: number, w: number, h: number) {
+          rects.push({ fillStyle: String(this.fillStyle), x, y, w, h });
+        },
+        strokeRect() {},
+        fillText() {},
+        measureText: () => ({ width: 40 }),
+        drawImage() {},
+        save() {},
+        restore() {},
+        beginPath() {},
+        ellipse() {},
+        stroke() {},
+      } as unknown as CanvasRenderingContext2D;
+
+      const cam = new IsoCamera();
+      cam.setZoom(2);
+      cam.snapToTile(3, 3, 1280, 720);
+
+      const renderer = new IsoRenderer();
+      renderer.render(mockCtx, {
+        state: { version: 1, theme, demoMode: false, bays: [], commonWings: [], employees: [] },
+        campus: {
+          widthTiles: 6,
+          depthTiles: 6,
+          zones: [],
+          floors: [],
+          walls: [{ tx: 0, ty: 0, assetId: "wall-slate-plain", edge: "nw" }],
+          wallDecor: [],
+          worldFurniture: [],
+        },
+        camera: cam,
+        atlas: { getFrame: () => null } as never,
+        employees: [],
+        syncPackets: [],
+        timeMs: 0,
+      });
+
+      const usedColors = new Set(rects.map((r) => r.fillStyle));
+      expect(usedColors.has(pal.rimTop)).toBe(true);
+      expect(usedColors.has(pal.faceLeft)).toBe(true);
+      expect(usedColors.has(pal.faceRight)).toBe(true);
+      expect(usedColors.has(pal.outline)).toBe(true);
+    }
   });
 });

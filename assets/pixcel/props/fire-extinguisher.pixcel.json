@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "fire-extinguisher",
+  "category": "decor",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "red_tank": { "color": "#dc2626", "kind": "metal" },
+    "red_bright": { "color": "#ef4444", "kind": "metal" },
+    "label_white": { "color": "#f8fafc", "kind": "matte" },
+    "valve_brass": { "color": "#f59e0b", "kind": "metal" },
+    "hose_black": { "color": "#1e293b", "kind": "matte" },
+    "box_body": { "color": "#cbd5e1", "kind": "matte" },
+    "box_lid": { "color": "#94a3b8", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [7, 10, 0], "to": [13, 16, 17], "material": "red_tank", "part": "tank" },
+    { "op": "box", "from": [8, 15, 2], "to": [11, 16, 15], "material": "red_bright", "part": "tank_hi" },
+    { "op": "box", "from": [8, 16, 6], "to": [12, 16, 11], "material": "label_white", "part": "label" },
+    { "op": "box", "from": [9, 12, 18], "to": [11, 14, 20], "material": "valve_brass", "part": "valve" },
+    { "op": "box", "from": [7, 13, 20], "to": [13, 14, 21], "material": "hose_black", "part": "handle" },
+    { "op": "box", "from": [13, 13, 10], "to": [14, 15, 20], "material": "hose_black", "part": "hose" },
+    { "op": "box", "from": [17, 13, 0], "to": [27, 24, 7], "material": "box_body", "part": "supply_box" },
+    { "op": "box", "from": [16, 12, 7], "to": [28, 25, 8], "material": "box_lid", "part": "supply_box" }
+  ]
+}

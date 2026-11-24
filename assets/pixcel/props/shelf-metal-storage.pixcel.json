@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "shelf-metal-storage",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "steel_post": { "color": "#64748b", "kind": "metal" },
+    "steel_shelf": { "color": "#cbd5e1", "kind": "metal" },
+    "box_cardboard": { "color": "#b8844c", "kind": "matte" },
+    "box_tape": { "color": "#8f5f30", "kind": "matte" },
+    "binder_red": { "color": "#dc2626", "kind": "matte" },
+    "binder_dark": { "color": "#334155", "kind": "matte" },
+    "binder_gray": { "color": "#94a3b8", "kind": "matte" },
+    "firstaid_white": { "color": "#f8fafc", "kind": "matte" },
+    "firstaid_red": { "color": "#ef4444", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [4, 5, 0], "to": [5, 6, 36], "material": "steel_post", "part": "posts" },
+    { "op": "box", "from": [26, 5, 0], "to": [27, 6, 36], "material": "steel_post", "part": "posts" },
+    { "op": "box", "from": [4, 24, 0], "to": [5, 25, 36], "material": "steel_post", "part": "posts" },
+    { "op": "box", "from": [26, 24, 0], "to": [27, 25, 36], "material": "steel_post", "part": "posts" },
+    { "op": "box", "from": [4, 5, 4], "to": [27, 25, 5], "material": "steel_shelf", "part": "shelves" },
+    { "op": "box", "from": [4, 5, 16], "to": [27, 25, 17], "material": "steel_shelf", "part": "shelves" },
+    { "op": "box", "from": [4, 5, 28], "to": [27, 25, 29], "material": "steel_shelf", "part": "shelves" },
+    { "op": "box", "from": [6, 8, 6], "to": [15, 23, 14], "material": "box_cardboard", "part": "boxes_low" },
+    { "op": "box", "from": [6, 15, 14], "to": [15, 16, 14], "material": "box_tape", "part": "boxes_low" },
+    { "op": "box", "from": [17, 9, 6], "to": [25, 23, 13], "material": "box_cardboard", "part": "boxes_low" },
+    { "op": "box", "from": [7, 9, 18], "to": [10, 23, 26], "material": "binder_dark", "part": "binders" },
+    { "op": "box", "from": [11, 9, 18], "to": [14, 23, 26], "material": "binder_red", "part": "binders" },
+    { "op": "box", "from": [15, 9, 18], "to": [18, 23, 26], "material": "binder_gray", "part": "binders" },
+    { "op": "box", "from": [19, 9, 18], "to": [22, 23, 26], "material": "binder_dark", "part": "binders" },
+    { "op": "box", "from": [6, 8, 30], "to": [15, 22, 37], "material": "box_cardboard", "part": "top_items" },
+    { "op": "box", "from": [17, 10, 30], "to": [26, 22, 37], "material": "firstaid_white", "part": "firstaid" },
+    { "op": "box", "from": [20, 22, 32], "to": [22, 23, 35], "material": "firstaid_red", "part": "firstaid_cross" },
+    { "op": "box", "from": [19, 22, 33], "to": [23, 23, 34], "material": "firstaid_red", "part": "firstaid_cross" }
+  ]
+}

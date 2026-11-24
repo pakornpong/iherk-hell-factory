@@ -31,7 +31,7 @@ interface AgentSimState {
   lastVisualState: VisualState;
 }
 
-const WALK_SPEED_TILES_PER_SEC = 3.2;
+const WALK_SPEED_TILES_PER_SEC = 5.5;
 
 /**
  * Phase 2 character facing matches chair-office-swivel 1:1:
@@ -126,6 +126,33 @@ export class OfficeSimulation {
     return this.campus?.zones.find((z) => z.kind === "bay" && z.bayId === bayId);
   }
 
+  private findCoworkZone(): ZoneBounds | undefined {
+    return this.campus?.zones.find((z) => z.kind === "cowork");
+  }
+
+  /** Subagents hot-desk in the shared co-working room: sit on its chairs, or wait at its centre when full. */
+  private pickCoworkGoal(emp: EmployeeRecord): { tile: [number, number]; facing: Direction } | null {
+    const cowork = this.findCoworkZone();
+    if (!cowork || !this.campus) return null;
+    const isSitting =
+      emp.visualState === "working" || emp.visualState === "teamwork" || emp.visualState === "resting";
+    if (isSitting) {
+      const chairs = this.campus.worldFurniture
+        .filter((f) => f.zoneId === cowork.zoneId && f.assetId === "chair-office-swivel")
+        .sort((a, b) => a.ty - b.ty || a.tx - b.tx);
+      if (emp.deskIndex < chairs.length) {
+        const chair = chairs[emp.deskIndex];
+        return { tile: [chair.tx, chair.ty], facing: chair.direction };
+      }
+    }
+    // Assigning (or no free chair): stand in the walkable centre cross of the room
+    const spot = emp.deskIndex % 4;
+    return {
+      tile: [cowork.originX + 2 + (spot % 2), cowork.originY + 2 + Math.floor(spot / 2)],
+      facing: "se",
+    };
+  }
+
   private findBossZone(): ZoneBounds | undefined {
     return this.campus?.zones.find((z) => z.kind === "boss");
   }
@@ -153,13 +180,18 @@ export class OfficeSimulation {
     }
     const common = this.findCommonWingForRow(bayZone.row) ?? bayZone;
 
+    if (emp.isEphemeral && emp.visualState !== "reporting" && emp.visualState !== "meeting") {
+      const coworkGoal = this.pickCoworkGoal(emp);
+      if (coworkGoal) return coworkGoal;
+    }
+
     // Resolve actual swivel chairs in this bay first so moved furniture updates seating
     const bayChairs = this.campus.worldFurniture.filter(
       (f) => f.zoneId === bayZone.zoneId && f.assetId === "chair-office-swivel",
     );
     const defaultChairOffsets: Array<[number, number]> = [
-      [1, 2],
-      [4, 2],
+      [1, 1],
+      [4, 1],
       [1, 4],
       [4, 4],
     ];
@@ -169,7 +201,8 @@ export class OfficeSimulation {
     // "se" = +Y, "sw" = -X, "nw" = -Y, "ne" = +X
     switch (emp.visualState) {
       case "working":
-      case "teamwork": {
+      case "teamwork":
+      case "resting": {
         const chair = bayChairs[emp.deskIndex % Math.max(1, bayChairs.length)];
         if (chair) {
           return { tile: [chair.tx, chair.ty], facing: chair.direction };
@@ -207,29 +240,6 @@ export class OfficeSimulation {
         ];
         const slot = (emp.deskIndex + this.hashSlot(emp.id)) % standupSpots.length;
         return standupSpots[slot];
-      }
-
-      case "resting": {
-        const slotOffset = this.hashSlot(emp.id) % 2;
-        if (restActivity === "coffee") {
-          const bar = this.campus.worldFurniture.find(
-            (f) => f.zoneId === common.zoneId && f.assetId === "coffee-machine-bar",
-          );
-          if (bar) {
-            return { tile: [bar.tx + slotOffset, Math.min(this.campus.depthTiles - 1, bar.ty + 1)], facing: "nw" };
-          }
-          return { tile: [common.originX + 4 + slotOffset, common.originY + 1], facing: "nw" };
-        }
-        if (restActivity === "sofa" || restActivity === "nap") {
-          const sofa = this.campus.worldFurniture.find(
-            (f) => f.zoneId === common.zoneId && f.assetId === "sofa-lounge",
-          );
-          if (sofa) {
-            return { tile: [sofa.tx + slotOffset, Math.max(0, sofa.ty - 1)], facing: "se" };
-          }
-          return { tile: [common.originX + 4 + slotOffset, common.originY + 3], facing: "se" };
-        }
-        return { tile: [bayZone.originX + 1 + ((emp.deskIndex + slotOffset) % 3), bayZone.originY + 5], facing: "se" };
       }
     }
   }
@@ -271,16 +281,6 @@ export class OfficeSimulation {
 
     for (const sim of this.agents.values()) {
       sim.animClockMs += clampedDt;
-
-      // Rotate autonomous resting routines every 14-22s
-      if (sim.record.visualState === "resting" && sim.path.length === 0 && this.simTimeMs >= sim.nextRestSwitchMs) {
-        const order: RestActivity[] = ["coffee", "sofa", "nap", "stroll"];
-        const nextIdx = (order.indexOf(sim.restActivity) + 1) % order.length;
-        sim.restActivity = order[nextIdx];
-        sim.nextRestSwitchMs = this.simTimeMs + 14_000 + ((Math.round(this.simTimeMs) % 7) * 1000);
-        const target = this.pickGoalForEmployee(sim.record, sim.restActivity);
-        this.routeAgentTo(sim, target.tile, target.facing);
-      }
 
       let isMoving = false;
       if (sim.path.length > 0) {
@@ -432,18 +432,8 @@ export class OfficeSimulation {
           bubbleIcon: "💬",
           bubbleText: `${rolePrefix}${sim.record.detail ?? "In meeting"}`,
         };
-      case "resting": {
-        if (sim.restActivity === "coffee") {
-          return { clipName: `rest_coffee_${tSlow}`, bubbleIcon: "☕" };
-        }
-        if (sim.restActivity === "nap") {
-          return { clipName: `rest_sleep_${tSlow}`, bubbleIcon: "💤" };
-        }
-        if (sim.restActivity === "stroll") {
-          return { clipName: `inspect_${tSlow}`, bubbleIcon: undefined };
-        }
-        return { clipName: `idle_${tSlow}`, bubbleIcon: sim.restActivity === "sofa" ? "😌" : undefined };
-      }
+      case "resting":
+        return { clipName: `rest_sleep_${tSlow}`, bubbleIcon: "💤" };
     }
   }
 }

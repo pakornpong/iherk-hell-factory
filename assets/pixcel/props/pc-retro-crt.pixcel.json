@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "pc-retro-crt",
+  "category": "computer",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "wood_desk": { "color": "#b5763c", "kind": "wood" },
+    "wood_dark": { "color": "#855226", "kind": "wood" },
+    "beige_main": { "color": "#e6dec8", "kind": "matte" },
+    "beige_shade": { "color": "#c5bba0", "kind": "matte" },
+    "dark_slot": { "color": "#27272a", "kind": "matte" },
+    "crt_bg": { "color": "#082914", "kind": "glass" },
+    "term_green": { "color": "#4ade80", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.65 },
+    "led_amber": { "color": "#f59e0b", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.45 }
+  },
+  "ops": [
+    { "op": "box", "from": [4, 6, 0], "to": [5, 25, 15], "material": "wood_dark", "part": "panel_l" },
+    { "op": "box", "from": [26, 6, 0], "to": [27, 25, 15], "material": "wood_dark", "part": "panel_r" },
+    { "op": "box", "from": [5, 6, 5], "to": [26, 7, 15], "material": "wood_dark", "part": "modesty_back" },
+    { "op": "box", "from": [3, 5, 16], "to": [28, 27, 17], "material": "wood_desk", "part": "desktop" },
+    { "op": "box", "from": [6, 8, 18], "to": [25, 20, 22], "material": "beige_main", "part": "pc_case" },
+    { "op": "box", "from": [6, 20, 18], "to": [25, 20, 22], "material": "beige_shade", "part": "case_face" },
+    { "op": "box", "from": [16, 20, 20], "to": [22, 21, 20], "material": "dark_slot", "part": "floppy_slot" },
+    { "op": "voxel", "at": [8, 21, 20], "material": "term_green", "part": "power_led" },
+    { "op": "voxel", "at": [10, 21, 20], "material": "led_amber", "part": "hdd_led" },
+    { "op": "box", "from": [11, 11, 23], "to": [20, 18, 24], "material": "beige_shade", "part": "crt_swivel" },
+    { "op": "box", "from": [9, 7, 26], "to": [22, 13, 34], "material": "beige_shade", "part": "crt_tube_back" },
+    { "op": "box", "from": [7, 13, 25], "to": [24, 21, 36], "material": "beige_main", "part": "crt_bezel" },
+    { "op": "box", "from": [9, 21, 27], "to": [22, 21, 34], "material": "crt_bg", "part": "crt_screen" },
+    { "op": "box", "from": [10, 21, 33], "to": [17, 21, 33], "material": "term_green", "part": "term_line_1" },
+    { "op": "box", "from": [10, 21, 31], "to": [20, 21, 31], "material": "term_green", "part": "term_line_2" },
+    { "op": "box", "from": [10, 21, 29], "to": [14, 21, 29], "material": "term_green", "part": "term_prompt" },
+    { "op": "voxel", "at": [22, 21, 25], "material": "term_green", "part": "crt_led" },
+    { "op": "box", "from": [7, 22, 18], "to": [22, 26, 19], "material": "beige_main", "part": "keyboard_base" },
+    { "op": "box", "from": [8, 23, 19], "to": [21, 25, 19], "material": "beige_shade", "part": "keybank" },
+    { "op": "box", "from": [24, 23, 18], "to": [26, 25, 19], "material": "beige_shade", "part": "retro_mouse" }
+  ]
+}

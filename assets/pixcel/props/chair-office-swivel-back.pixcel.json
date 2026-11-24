@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "chair-office-swivel-back",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-night",
+  "materials": {
+    "metal_dark": { "color": "#171c26", "kind": "metal" },
+    "fabric_dark": { "color": "#1f2430", "kind": "matte" },
+    "fabric_cushion": { "color": "#2d3548", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [14, 8, 11], "to": [17, 10, 14], "material": "metal_dark", "part": "spine" },
+    { "op": "box", "from": [10, 8, 14], "to": [21, 10, 20], "material": "fabric_dark", "part": "backrest" },
+    { "op": "box", "from": [11, 10, 15], "to": [20, 10, 19], "material": "fabric_cushion", "part": "backrest_pad" }
+  ]
+}
