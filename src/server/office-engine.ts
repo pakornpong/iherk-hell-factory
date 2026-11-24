@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 import { EventEmitter } from "node:events";
 import path from "node:path";
-import { toTileKey, type RenderLayer, type TilePermission } from "../shared/layers.js";
+import { isSurfaceHostAsset, isTabletopAsset, toTileKey, type RenderLayer, type TilePermission } from "../shared/layers.js";
 import {
   AgentTelemetryEventSchema,
   classifyDepartmentFromPath,
@@ -31,6 +31,7 @@ import {
   createDefaultCommonWing,
   createExtraBayWorkstations,
   getAmenityTheme,
+  getRotatedFootprint,
   resolveWorldToZone,
   validateFurniturePlacement,
 } from "./layout-engine.js";
@@ -875,6 +876,18 @@ export class OfficeEngine extends EventEmitter {
       if (!check.ok) throw new Error(check.reason);
 
       const cat = this.catalogById.get(input.assetId)!;
+      const isTop = isTabletopAsset(input.assetId, cat.layer, cat);
+      let surfaceHostId: string | undefined;
+      if (isTop) {
+        const host = list.find((item) => {
+          const itemCat = this.catalogById.get(item.assetId);
+          if (isTabletopAsset(item.assetId, item.layer, itemCat)) return false;
+          if (!isSurfaceHostAsset(item.assetId, itemCat)) return false;
+          const [iw, id] = getRotatedFootprint(itemCat?.footprintTiles ?? [1, 1], item.direction);
+          return lx >= item.lx && lx < item.lx + iw && ly >= item.ly && ly < item.ly + id;
+        });
+        surfaceHostId = host?.id;
+      }
       const instance: FurnitureInstance = {
         id: `furn-${Date.now()}-${crypto.randomBytes(3).toString("hex")}`,
         zoneId,
@@ -882,7 +895,8 @@ export class OfficeEngine extends EventEmitter {
         ly,
         assetId: input.assetId,
         direction: input.direction,
-        layer: cat.layer,
+        layer: isTop ? "tabletop" : cat.layer,
+        ...(surfaceHostId ? { surfaceHostId } : {}),
         placedBy: input.placedBy,
       };
       list.push(instance);
@@ -934,6 +948,29 @@ export class OfficeEngine extends EventEmitter {
       );
       if (!check.ok) throw new Error(check.reason);
 
+      const oldLx = found.item.lx;
+      const oldLy = found.item.ly;
+      const oldDir = found.item.direction;
+      const itemCat = this.catalogById.get(found.item.assetId);
+      const isMovingTabletop = isTabletopAsset(found.item.assetId, found.item.layer, itemCat);
+      const isMovingHost = !isMovingTabletop && isSurfaceHostAsset(found.item.assetId, itemCat);
+
+      // Collect hosted tabletop props sitting on this desk/table before moving it
+      const hostedProps: Array<{ item: FurnitureInstance; relX: number; relY: number }> = [];
+      if (isMovingHost) {
+        const [oldW, oldD] = getRotatedFootprint(itemCat?.footprintTiles ?? [1, 1], oldDir);
+        for (const other of found.list) {
+          if (other.id === found.item.id) continue;
+          const otherCat = this.catalogById.get(other.assetId);
+          if (!isTabletopAsset(other.assetId, other.layer, otherCat)) continue;
+          const onFootprint =
+            other.lx >= oldLx && other.lx < oldLx + oldW && other.ly >= oldLy && other.ly < oldLy + oldD;
+          if (other.surfaceHostId === found.item.id || onFootprint) {
+            hostedProps.push({ item: other, relX: other.lx - oldLx, relY: other.ly - oldLy });
+          }
+        }
+      }
+
       if (found.list !== targetList) {
         found.list.splice(found.index, 1);
         targetList.push(found.item);
@@ -944,6 +981,58 @@ export class OfficeEngine extends EventEmitter {
       found.item.direction = nextDir;
       if (input.renderLayer !== undefined) {
         found.item.renderLayer = input.renderLayer;
+      }
+
+      // If moving a tabletop prop, update its surfaceHostId to the new host desk underneath
+      if (isMovingTabletop) {
+        const newHost = targetList.find((other) => {
+          if (other.id === found.item.id) return false;
+          const otherCat = this.catalogById.get(other.assetId);
+          if (isTabletopAsset(other.assetId, other.layer, otherCat)) return false;
+          if (!isSurfaceHostAsset(other.assetId, otherCat)) return false;
+          const [ow, od] = getRotatedFootprint(otherCat?.footprintTiles ?? [1, 1], other.direction);
+          return (
+            targetCoord.lx >= other.lx &&
+            targetCoord.lx < other.lx + ow &&
+            targetCoord.ly >= other.ly &&
+            targetCoord.ly < other.ly + od
+          );
+        });
+        found.item.surfaceHostId = newHost?.id;
+      }
+
+      // Carry hosted tabletop props along with their host surface (remapped cleanly inside new rotated footprint)
+      if (hostedProps.length > 0) {
+        const [newW, newD] = getRotatedFootprint(itemCat?.footprintTiles ?? [1, 1], nextDir);
+        const usedSlots = new Set<string>();
+        for (const hp of hostedProps) {
+          let nx = targetCoord.lx + Math.min(Math.max(0, hp.relX), newW - 1);
+          let ny = targetCoord.ly + Math.min(Math.max(0, hp.relY), newD - 1);
+          if (usedSlots.has(`${nx},${ny}`)) {
+            // Find first unused slot on the host's new footprint
+            for (let dy = 0; dy < newD; dy++) {
+              for (let dx = 0; dx < newW; dx++) {
+                const cx = targetCoord.lx + dx;
+                const cy = targetCoord.ly + dy;
+                if (!usedSlots.has(`${cx},${cy}`)) {
+                  nx = cx;
+                  ny = cy;
+                  break;
+                }
+              }
+            }
+          }
+          usedSlots.add(`${nx},${ny}`);
+          if (found.list !== targetList) {
+            const idx = found.list.indexOf(hp.item);
+            if (idx !== -1) found.list.splice(idx, 1);
+            targetList.push(hp.item);
+          }
+          hp.item.zoneId = targetCoord.zoneId;
+          hp.item.lx = nx;
+          hp.item.ly = ny;
+          hp.item.surfaceHostId = found.item.id;
+        }
       }
 
       this.recomputeCampus();
@@ -1002,7 +1091,31 @@ export class OfficeEngine extends EventEmitter {
       this.assertNotDemoMode();
       const found = this.findFurnitureById(instanceId);
       if (!found) throw new Error(`Furniture instance "${instanceId}" not found`);
+      const removed = found.item;
+      const removedCat = this.catalogById.get(removed.assetId);
+      const wasHost =
+        !isTabletopAsset(removed.assetId, removed.layer, removedCat) &&
+        isSurfaceHostAsset(removed.assetId, removedCat);
       found.list.splice(found.index, 1);
+
+      // Remove hosted tabletop props sitting on a deleted desk/table so nothing floats in mid-air
+      if (wasHost) {
+        const [rw, rd] = getRotatedFootprint(removedCat?.footprintTiles ?? [1, 1], removed.direction);
+        for (let i = found.list.length - 1; i >= 0; i--) {
+          const other = found.list[i];
+          const otherCat = this.catalogById.get(other.assetId);
+          if (!isTabletopAsset(other.assetId, other.layer, otherCat)) continue;
+          const onFootprint =
+            other.lx >= removed.lx &&
+            other.lx < removed.lx + rw &&
+            other.ly >= removed.ly &&
+            other.ly < removed.ly + rd;
+          if (other.surfaceHostId === removed.id || onFootprint) {
+            found.list.splice(i, 1);
+          }
+        }
+      }
+
       this.recomputeCampus();
       await this.persist();
       this.emitSnapshot();

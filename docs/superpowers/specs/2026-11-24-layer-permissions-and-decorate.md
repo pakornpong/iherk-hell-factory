@@ -1,7 +1,7 @@
 # Layer & Movement Permission System + Full-Campus Decorate Mode
 
 **Date:** 2026-11-24
-**Status:** Implemented (Phase 1: Layers, Permissions, Complete Partitions & Move/Decorate Fixes; Phase 2: Tabletop Props planned)
+**Status:** Implemented (Phase 1: Layers, Permissions, Complete Partitions & Move/Decorate Fixes; Phase 2: Tabletop Props & Surface Placement)
 **Builds on:** `2026-11-24-iherk-hell-factory-design.md`, `2026-11-24-flush-rooms-edge-walls.md`
 
 ---
@@ -102,27 +102,40 @@ Manual overrides persist in `OfficeState.tilePermissionOverrides` (keyed by `"tx
 
 ---
 
-## 4. Verification
+## 4. Phase 2 — Tabletop Props & Surface Placement (Implemented)
 
-- `npm run typecheck` — clean (server + client)
-- `npm run build:server`, `npm run build:client`, `npm run build:assets` — clean (`catalogCount: 114`)
-- Live campus depth-sort audit — `0` wall-vs-furniture violations across all rooms
-- `npm test` — **17/17 test files (92/92 tests)** passing, including `tests/layer-system.test.ts` and
-  expanded `tests/decorate.test.ts`
+- **Catalog & Assets (`assets/pixcel/props/prop-*.pixcel.json`)**: Authored 5 dedicated 1×1 tabletop
+  props (`category: "tabletop"`, upstream `layer: "object"`, mapped to `CatalogEntry.layer = "tabletop"`
+  and `RENDER_LAYER.TABLETOP = 5` in `PixcelBridge`):
+  - `prop-desk-lamp` (articulated swing-arm lamp with warm emissive bulb)
+  - `prop-laptop` (open aluminum laptop with glowing cyan IDE screen)
+  - `prop-book-stack` (3 stacked hardcover books + bookmark + pen)
+  - `prop-coffee-mug` (ceramic mug on wood coaster with steam)
+  - `prop-mini-plant` (terracotta pot succulent with blossom)
+- **Measured Surface Heights (`src/shared/layers.ts`)**: `desk-dev-dual` / `desk-security-ops` /
+  `table-conference` / `home-dining-set` (`17`), `coffee-machine-bar` / `stream-podcast-table` /
+  `pc-workstation-mac` / `lab-bench-*` / `maker-solder-bench` (`18`), `stream-desk-pro` (`19`),
+  `desk-drafting` (`20`).
+- **Surface Validation & Host Lifecycle (`layout-engine.ts`, `office-engine.ts`)**:
+  - `validateFurniturePlacement` requires tabletop props to sit on an existing surface host tile and
+    forbids overlapping another tabletop prop on the same slot (while allowing 2 props on the 2 tiles
+    of a 2×1 desk).
+  - Moving a host desk carries all hosted tabletop props along (remapped cleanly inside the desk's
+    rotated footprint and new zone); deleting a host desk cleans up its hosted props so nothing floats.
+- **Decorate Mode UX (`hud.ts`, `main.ts`, `iso-renderer.ts`)**:
+  - New `💡 Tabletop` category in the Decorate catalog (`💡 Top` badge); architecture wall pieces
+    (`room-wall-*`, `room-junction-*`) filtered out of the furniture catalog.
+  - Ghost preview lifts by `surfaceOffsetY` directly onto the desk surface, and floor-furniture ghosts
+    now also mirror the server's reachability (`seals off part of zone`) check so green/red accuracy is
+    100%.
+  - Move and Erase prioritize tabletop props over the underlying desk on click.
 
 ---
 
-## 5. Next Phase — Tabletop Props & Surface Placement
+## 5. Verification
 
-With `RENDER_LAYER.TABLETOP` (`5`), `surfaceHeightVoxels`, and `surfaceOffsetY` already in place:
-
-1. Extend `validateFurniturePlacement` and Decorate Mode to allow `layer: "tabletop"` props to sit on
-   host surfaces (`isSurfaceHostAsset`: `desk-*`, `table-*`, `lab-bench-*`, `coffee-machine-bar`), lifting
-   ghosts to `surfaceOffsetY`, prioritizing tabletop items on Move/Erase click, and keeping hosted items
-   consistent when their host desk moves or is removed.
-2. Author initial tabletop prop pack in `assets/pixcel/props/`:
-   - `prop-desk-lamp` (warm emissive glow)
-   - `prop-laptop` (emissive screen)
-   - `prop-book-stack`
-   - `prop-coffee-mug`
-   - `prop-mini-plant`
+- `npm run typecheck` — clean (server + client)
+- `npm run build:server`, `npm run build:client`, `npm run build:assets` — clean (`catalogCount: 119`)
+- Live campus depth-sort audit — `0` wall-vs-furniture violations across all rooms
+- `npm test` — **18/18 test files (95/95 tests)** passing, including `tests/layer-system.test.ts`,
+  `tests/tabletop-props.test.ts`, and expanded `tests/decorate.test.ts`

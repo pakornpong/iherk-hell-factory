@@ -586,11 +586,12 @@ export class PixcelBridge {
 
   private toCatalogEntries(items: Array<{ asset: PixcelAssetLike; source: CatalogEntry["source"] }>): CatalogEntry[] {
     return items.map(({ asset, source }) => {
-      const cfg = resolveAssetLayerConfig(asset.id, asset.layer);
+      const effectiveLayer: AssetLayer = asset.category === "tabletop" ? "tabletop" : asset.layer;
+      const cfg = resolveAssetLayerConfig(asset.id, effectiveLayer);
       return {
         id: asset.id,
         category: asset.category,
-        layer: asset.layer,
+        layer: effectiveLayer,
         footprintTiles: asset.footprintTiles,
         source,
         frames: frameNames(asset),
@@ -812,11 +813,12 @@ export class PixcelBridge {
     await fs.rename(tmpPath, filePath);
 
     const { atlasPath } = await this.rebuildCustomAtlas();
-    const cfg = resolveAssetLayerConfig(asset.id, asset.layer);
+    const effectiveLayer: AssetLayer = asset.category === "tabletop" ? "tabletop" : asset.layer;
+    const cfg = resolveAssetLayerConfig(asset.id, effectiveLayer);
     const catalogEntry: CatalogEntry = {
       id: asset.id,
       category: asset.category,
-      layer: asset.layer,
+      layer: effectiveLayer,
       footprintTiles: asset.footprintTiles,
       source: "custom",
       frames: frameNames(asset),

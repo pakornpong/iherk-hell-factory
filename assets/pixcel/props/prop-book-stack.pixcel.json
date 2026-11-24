@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "prop-book-stack",
+  "category": "tabletop",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "book_navy": { "color": "#1d4ed8", "kind": "matte" },
+    "book_crimson": { "color": "#dc2626", "kind": "matte" },
+    "book_emerald": { "color": "#15803d", "kind": "matte" },
+    "pages_cream": { "color": "#f8fafc", "kind": "matte" },
+    "bookmark_gold": { "color": "#facc15", "kind": "matte" },
+    "pen_dark": { "color": "#334155", "kind": "metal" }
+  },
+  "ops": [
+    { "op": "box", "from": [9, 9, 0], "to": [22, 21, 2], "material": "book_navy", "part": "book_bottom" },
+    { "op": "box", "from": [10, 10, 1], "to": [22, 20, 1], "material": "pages_cream", "part": "pages_1" },
+    { "op": "box", "from": [10, 10, 3], "to": [21, 22, 5], "material": "book_crimson", "part": "book_mid" },
+    { "op": "box", "from": [11, 11, 4], "to": [21, 21, 4], "material": "pages_cream", "part": "pages_2" },
+    { "op": "box", "from": [9, 11, 6], "to": [20, 20, 8], "material": "book_emerald", "part": "book_top" },
+    { "op": "box", "from": [10, 12, 7], "to": [20, 19, 7], "material": "pages_cream", "part": "pages_3" },
+    { "op": "box", "from": [19, 14, 4], "to": [23, 16, 4], "material": "bookmark_gold", "part": "bookmark" },
+    { "op": "box", "from": [11, 15, 9], "to": [19, 16, 9], "material": "pen_dark", "part": "pen" }
+  ]
+}

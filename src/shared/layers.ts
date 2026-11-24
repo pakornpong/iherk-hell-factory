@@ -158,6 +158,14 @@ const FLAT_FLOOR_PROP_IDS = new Set([
   "gym-yoga-mat-corner",
 ]);
 
+const TABLETOP_PROP_IDS = new Set([
+  "prop-desk-lamp",
+  "prop-laptop",
+  "prop-book-stack",
+  "prop-coffee-mug",
+  "prop-mini-plant",
+]);
+
 const SEAT_PROP_CONFIGS: Record<string, AssetLayerConfig> = {
   "chair-office-swivel": {
     renderLayer: RENDER_LAYER.LOW,
@@ -167,17 +175,20 @@ const SEAT_PROP_CONFIGS: Record<string, AssetLayerConfig> = {
   },
 };
 
+/** Measured tabletop surface heights (in voxels above z=0) so tabletop props sit flush on each host. */
 const SURFACE_HOST_HEIGHTS: Record<string, number> = {
-  "desk-dev-dual": 19,
-  "desk-security-ops": 19,
-  "desk-drafting": 19,
-  "table-conference": 18,
-  "coffee-machine-bar": 20,
+  "desk-dev-dual": 17,
+  "desk-security-ops": 17,
+  "desk-drafting": 20,
+  "table-conference": 17,
+  "coffee-machine-bar": 18,
+  "stream-desk-pro": 19,
+  "stream-podcast-table": 18,
   "home-dining-set": 17,
-  "lab-bench-microscope": 19,
-  "lab-centrifuge-table": 19,
-  "maker-solder-bench": 19,
-  "pc-workstation-mac": 19,
+  "lab-bench-microscope": 18,
+  "lab-centrifuge-table": 18,
+  "maker-solder-bench": 18,
+  "pc-workstation-mac": 18,
 };
 
 export function toTileKey(tx: number, ty: number): string {
@@ -212,7 +223,12 @@ export function resolveAssetLayerConfig(
     };
   }
 
-  if (effectiveLayer === "tabletop") {
+  if (
+    effectiveLayer === "tabletop" ||
+    catalogEntry?.category === "tabletop" ||
+    TABLETOP_PROP_IDS.has(assetId) ||
+    assetId.startsWith("tabletop-")
+  ) {
     return {
       renderLayer: catalogEntry?.renderLayer ?? RENDER_LAYER.TABLETOP,
       tilePermission: catalogEntry?.tilePermission ?? TILE_PERM.BLOCKED,
@@ -255,7 +271,7 @@ export function resolveAssetLayerConfig(
   const knownSurface =
     catalogEntry?.surfaceHeightVoxels ??
     SURFACE_HOST_HEIGHTS[assetId] ??
-    (assetId.startsWith("desk-") || assetId.startsWith("table-") ? 19 : undefined);
+    (assetId.startsWith("desk-") || assetId.startsWith("table-") ? 17 : undefined);
 
   return {
     renderLayer: catalogEntry?.renderLayer ?? RENDER_LAYER.CHARACTER,
@@ -265,9 +281,21 @@ export function resolveAssetLayerConfig(
   };
 }
 
+export function isTabletopAsset(assetId: string, layer?: AssetLayer, catalogEntry?: CatalogEntry): boolean {
+  const cfg = resolveAssetLayerConfig(assetId, layer, catalogEntry);
+  return cfg.renderLayer === RENDER_LAYER.TABLETOP;
+}
+
 export function isSurfaceHostAsset(assetId: string, catalogEntry?: CatalogEntry): boolean {
   const cfg = resolveAssetLayerConfig(assetId, catalogEntry?.layer, catalogEntry);
   return typeof cfg.surfaceHeightVoxels === "number" && cfg.surfaceHeightVoxels > 0;
+}
+
+export function getSurfaceHostHeightVoxels(assetId: string, catalogEntry?: CatalogEntry): number | null {
+  const cfg = resolveAssetLayerConfig(assetId, catalogEntry?.layer, catalogEntry);
+  return typeof cfg.surfaceHeightVoxels === "number" && cfg.surfaceHeightVoxels > 0
+    ? cfg.surfaceHeightVoxels
+    : null;
 }
 
 /** Convert a surface's voxel height into 2:1 isometric vertical world pixel lift (32 voxels/tile -> 1px/voxel). */

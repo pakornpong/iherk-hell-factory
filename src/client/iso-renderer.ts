@@ -59,6 +59,8 @@ export interface DecorateGhostInput {
   assetId: string;
   direction: Direction;
   valid: boolean;
+  /** Vertical world-pixel lift when previewing a tabletop prop over a desk/table surface. */
+  surfaceOffsetY?: number;
 }
 
 export interface RenderSceneInput {
@@ -1049,19 +1051,21 @@ export class IsoRenderer {
       ctx.restore();
     }
 
-    // 5. Decorate Mode Ghost Preview (supports animated props & highlights exact footprint tiles)
+    // 5. Decorate Mode Ghost Preview (supports animated props, tabletop surface lift & exact footprint tiles)
     if (ghost) {
       const sprite =
         atlas.getFrame(theme, ghost.assetId, ghost.direction, animFrameForAsset(ghost.assetId)) ??
         atlas.getFrame(theme, ghost.assetId, ghost.direction, "default");
       const [fw, fd] = sprite?.footprintTiles ?? [1, 1];
+      const liftY = ghost.surfaceOffsetY ?? 0;
       ctx.save();
       ctx.fillStyle = ghost.valid ? "rgba(34, 197, 94, 0.24)" : "rgba(239, 68, 68, 0.28)";
       ctx.strokeStyle = ghost.valid ? "#22c55e" : "#ef4444";
       ctx.lineWidth = Math.max(1.5, zoom);
       for (let dy = 0; dy < fd; dy++) {
         for (let dx = 0; dx < fw; dx++) {
-          const [twx, twy] = toAnchorWorld(ghost.tx + dx, ghost.ty + dy, 1, 1);
+          const [twx, rawTwy] = toAnchorWorld(ghost.tx + dx, ghost.ty + dy, 1, 1);
+          const twy = rawTwy - liftY;
           const [topX, topY] = camera.worldToScreen(twx, twy - STEP_Y * 2);
           const [rightX, rightY] = camera.worldToScreen(twx + STEP_X, twy - STEP_Y);
           const [botX, botY] = camera.worldToScreen(twx, twy);
@@ -1078,8 +1082,8 @@ export class IsoRenderer {
       }
       ctx.restore();
       if (sprite) {
-        const [wx, wy] = toAnchorWorld(ghost.tx, ghost.ty, sprite.footprintTiles[0], sprite.footprintTiles[1]);
-        drawSprite(sprite, wx, wy, { alpha: 0.7 });
+        const [wx, rawWy] = toAnchorWorld(ghost.tx, ghost.ty, sprite.footprintTiles[0], sprite.footprintTiles[1]);
+        drawSprite(sprite, wx, rawWy - liftY, { alpha: 0.75 });
       }
     }
 

@@ -1,3 +1,10 @@
+import {
+  getSurfaceHostHeightVoxels,
+  isTabletopAsset,
+  isWalkablePermission,
+  resolveAssetLayerConfig,
+  surfaceVoxelsToWorldOffsetY,
+} from "../shared/layers.js";
 import type {
   CatalogEntry,
   OfficeSnapshotPayload,
@@ -235,7 +242,7 @@ async function bootstrap(): Promise<void> {
     if (decorate.active && hoverTile) {
       const [tx, ty] = hoverTile;
       const isPicking = decorate.tool === "erase" || (decorate.tool === "move" && !decorate.movingItem);
-      let existing = snapshot.campus.worldFurniture.find(
+      const tileMatches = snapshot.campus.worldFurniture.filter(
         (f) =>
           isEditableFurniture(f) &&
           tx >= f.tx &&
@@ -243,7 +250,11 @@ async function bootstrap(): Promise<void> {
           ty >= f.ty &&
           ty < f.ty + f.footprintTiles[1],
       );
-      // Fallback to visual sprite hitbox when picking tall furniture in Move/Erase mode
+      // Prefer tabletop props over their underlying host desk when picking or erasing
+      let existing =
+        tileMatches.find((f) => isTabletopAsset(f.assetId, f.layer, catalogById.get(f.assetId))) ??
+        tileMatches[0];
+      // Fallback to visual sprite hitbox when picking tall furniture or lifted tabletop props in Move/Erase mode
       if (!existing && isPicking) {
         for (let i = renderer.lastHitBoxes.length - 1; i >= 0; i--) {
           const box = renderer.lastHitBoxes[i];
@@ -394,6 +405,8 @@ async function bootstrap(): Promise<void> {
       const [fw, fd] =
         decorate.direction === "sw" || decorate.direction === "ne" ? [baseFp[1], baseFp[0]] : [baseFp[0], baseFp[1]];
       let valid = false;
+      let surfaceOffsetY = 0;
+      const ghostIsTabletop = isTabletopAsset(ghostAssetId, cat?.layer, cat);
       if (zone) {
         const lx = tx - zone.originX;
         const ly = ty - zone.originY;
@@ -402,28 +415,118 @@ async function bootstrap(): Promise<void> {
         const zoneFurn = snapshot.campus.worldFurniture.filter(
           (f) => f.id !== ignoreId && f.zoneId === zone.zoneId && !f.id.startsWith("sys-div-"),
         );
-        const collides = zoneFurn.some(
-          (f) =>
-            tx < f.tx + f.footprintTiles[0] &&
-            tx + fw > f.tx &&
-            ty < f.ty + f.footprintTiles[1] &&
-            ty + fd > f.ty,
-        );
-        const occ = new Set<string>();
-        for (const f of zoneFurn) {
-          for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
-            for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
-              occ.add(`${f.tx - zone.originX + dx},${f.ty - zone.originY + dy}`);
+
+        if (ghostIsTabletop) {
+          const surfaceHeightByTile = new Map<string, number>();
+          const topOcc = new Set<string>();
+          for (const f of zoneFurn) {
+            const fCat = catalogById.get(f.assetId);
+            const fIsTop = isTabletopAsset(f.assetId, f.layer, fCat);
+            if (fIsTop) {
+              for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
+                for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
+                  topOcc.add(`${f.tx - zone.originX + dx},${f.ty - zone.originY + dy}`);
+                }
+              }
+            } else {
+              const h = getSurfaceHostHeightVoxels(f.assetId, fCat);
+              if (h) {
+                for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
+                  for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
+                    surfaceHeightByTile.set(`${f.tx - zone.originX + dx},${f.ty - zone.originY + dy}`, h);
+                  }
+                }
+              }
             }
           }
-        }
-        for (let dy = 0; dy < fd; dy++) {
-          for (let dx = 0; dx < fw; dx++) {
-            occ.add(`${lx + dx},${ly + dy}`);
+          let allOnSurface = inBounds;
+          let noTopOverlap = true;
+          let hostVoxels = 0;
+          for (let dy = 0; dy < fd; dy++) {
+            for (let dx = 0; dx < fw; dx++) {
+              const key = `${lx + dx},${ly + dy}`;
+              const h = surfaceHeightByTile.get(key);
+              if (!h) allOnSurface = false;
+              else hostVoxels = Math.max(hostVoxels, h);
+              if (topOcc.has(key)) noTopOverlap = false;
+            }
           }
+          valid = allOnSurface && noTopOverlap;
+          if (hostVoxels > 0) surfaceOffsetY = surfaceVoxelsToWorldOffsetY(hostVoxels);
+        } else {
+          const floorFurn = zoneFurn.filter(
+            (f) => !isTabletopAsset(f.assetId, f.layer, catalogById.get(f.assetId)),
+          );
+          const collides = floorFurn.some(
+            (f) =>
+              tx < f.tx + f.footprintTiles[0] &&
+              tx + fw > f.tx &&
+              ty < f.ty + f.footprintTiles[1] &&
+              ty + fd > f.ty,
+          );
+          const occ = new Set<string>();
+          const walkBlocked = new Set<string>();
+          for (const f of floorFurn) {
+            const fCfg = resolveAssetLayerConfig(f.assetId, f.layer, catalogById.get(f.assetId));
+            const blocksWalk = !isWalkablePermission(fCfg.tilePermission);
+            for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
+              for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
+                const k = `${f.tx - zone.originX + dx},${f.ty - zone.originY + dy}`;
+                occ.add(k);
+                if (blocksWalk) walkBlocked.add(k);
+              }
+            }
+          }
+          const candCfg = resolveAssetLayerConfig(ghostAssetId, cat?.layer, cat);
+          const candBlocksWalk = !isWalkablePermission(candCfg.tilePermission);
+          const blockedWithCand = new Set(walkBlocked);
+          for (let dy = 0; dy < fd; dy++) {
+            for (let dx = 0; dx < fw; dx++) {
+              const k = `${lx + dx},${ly + dy}`;
+              occ.add(k);
+              if (candBlocksWalk) blockedWithCand.add(k);
+            }
+          }
+          const openEntrances: Array<[number, number]> = [];
+          if (!occ.has("2,5")) openEntrances.push([2, 5]);
+          if (!occ.has("3,5")) openEntrances.push([3, 5]);
+          let sealsOff = false;
+          if (openEntrances.length > 0 && inBounds && !collides && candBlocksWalk) {
+            const reach = (blocked: Set<string>): Set<string> => {
+              const vis = new Set<string>();
+              const q: Array<[number, number]> = [];
+              for (const [ex, ey] of openEntrances) {
+                const k = `${ex},${ey}`;
+                if (!blocked.has(k)) {
+                  vis.add(k);
+                  q.push([ex, ey]);
+                }
+              }
+              while (q.length > 0) {
+                const [cx, cy] = q.shift()!;
+                for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]] as const) {
+                  const nx = cx + dx;
+                  const ny = cy + dy;
+                  if (nx < 0 || nx >= zone.width || ny < 0 || ny >= zone.height) continue;
+                  const nk = `${nx},${ny}`;
+                  if (vis.has(nk) || blocked.has(nk)) continue;
+                  vis.add(nk);
+                  q.push([nx, ny]);
+                }
+              }
+              return vis;
+            };
+            const before = reach(walkBlocked);
+            const after = reach(blockedWithCand);
+            for (const tile of before) {
+              if (!blockedWithCand.has(tile) && !after.has(tile)) {
+                sealsOff = true;
+                break;
+              }
+            }
+          }
+          valid = inBounds && !collides && openEntrances.length > 0 && !sealsOff;
         }
-        const entranceOpen = !occ.has("2,5") || !occ.has("3,5");
-        valid = inBounds && !collides && entranceOpen;
       }
       ghost = {
         tx,
@@ -431,6 +534,7 @@ async function bootstrap(): Promise<void> {
         assetId: ghostAssetId,
         direction: decorate.direction,
         valid,
+        ...(surfaceOffsetY > 0 ? { surfaceOffsetY } : {}),
       };
     }
 

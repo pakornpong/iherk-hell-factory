@@ -1,5 +1,7 @@
 import {
   buildTilePermissionMap,
+  isSurfaceHostAsset,
+  isTabletopAsset,
   isWalkablePermission,
   RENDER_LAYER,
   resolveAssetLayerConfig,
@@ -772,7 +774,8 @@ export function validateFurniturePlacement(
   if (!cat) {
     return { ok: false, reason: `Unknown asset "${candidate.assetId}"` };
   }
-  if (cat.layer !== "object") {
+  const candidateIsTabletop = isTabletopAsset(candidate.assetId, cat.layer, cat);
+  if (cat.layer !== "object" && !candidateIsTabletop) {
     return { ok: false, reason: `Asset "${candidate.assetId}" is layer "${cat.layer}" and cannot be placed as furniture` };
   }
 
@@ -789,10 +792,54 @@ export function validateFurniturePlacement(
     };
   }
 
+  // Tabletop props must sit on top of an existing desk/table surface host and cannot overlap other tabletop props
+  if (candidateIsTabletop) {
+    const surfaceTiles = new Set<string>();
+    const tabletopOcc = new Set<string>();
+    for (const item of existingInZone) {
+      if (candidate.ignoreInstanceId && item.id === candidate.ignoreInstanceId) continue;
+      const itemCat = catalogById.get(item.assetId);
+      const [iw, id] = getRotatedFootprint(itemCat?.footprintTiles ?? [1, 1], item.direction);
+      const itemIsTop = isTabletopAsset(item.assetId, item.layer, itemCat);
+      if (itemIsTop) {
+        for (let dy = 0; dy < id; dy++) {
+          for (let dx = 0; dx < iw; dx++) {
+            tabletopOcc.add(`${item.lx + dx},${item.ly + dy}`);
+          }
+        }
+      } else if (isSurfaceHostAsset(item.assetId, itemCat)) {
+        for (let dy = 0; dy < id; dy++) {
+          for (let dx = 0; dx < iw; dx++) {
+            surfaceTiles.add(`${item.lx + dx},${item.ly + dy}`);
+          }
+        }
+      }
+    }
+    for (let dy = 0; dy < fd; dy++) {
+      for (let dx = 0; dx < fw; dx++) {
+        const key = `${candidate.lx + dx},${candidate.ly + dy}`;
+        if (!surfaceTiles.has(key)) {
+          return {
+            ok: false,
+            reason: `Tabletop prop "${candidate.assetId}" at (${candidate.lx + dx},${candidate.ly + dy}) must be placed on a desk or table surface`,
+          };
+        }
+        if (tabletopOcc.has(key)) {
+          return {
+            ok: false,
+            reason: `Tabletop slot (${candidate.lx + dx},${candidate.ly + dy}) in "${candidate.zoneId}" is already occupied`,
+          };
+        }
+      }
+    }
+    return { ok: true };
+  }
+
   const occ = new Set<string>();
   for (const item of existingInZone) {
     if (candidate.ignoreInstanceId && item.id === candidate.ignoreInstanceId) continue;
     const itemCat = catalogById.get(item.assetId);
+    if (isTabletopAsset(item.assetId, item.layer, itemCat)) continue;
     const [iw, id] = getRotatedFootprint(itemCat?.footprintTiles ?? [1, 1], item.direction);
     for (let dy = 0; dy < id; dy++) {
       for (let dx = 0; dx < iw; dx++) {
@@ -822,6 +869,7 @@ export function validateFurniturePlacement(
   const walkBlocked = new Set<string>();
   const addWalkBlock = (set: Set<string>, assetId: string, lx: number, ly: number, dir: Direction) => {
     const c = catalogById.get(assetId);
+    if (isTabletopAsset(assetId, c?.layer, c)) return;
     const cfg = resolveAssetLayerConfig(assetId, c?.layer, c);
     if (isWalkablePermission(cfg.tilePermission)) return;
     const [w, d] = getRotatedFootprint(c?.footprintTiles ?? [1, 1], dir);

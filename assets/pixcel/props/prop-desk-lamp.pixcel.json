@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "prop-desk-lamp",
+  "category": "tabletop",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "base_dark": { "color": "#1e293b", "kind": "metal" },
+    "arm_steel": { "color": "#64748b", "kind": "metal" },
+    "joint_brass": { "color": "#d97706", "kind": "metal" },
+    "shade_outer": { "color": "#334155", "kind": "metal" },
+    "bulb_warm": { "color": "#fde047", "kind": "emissive", "glowRadius": 2, "glowIntensity": 0.75 },
+    "glow_core": { "color": "#fef9c3", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.65 }
+  },
+  "ops": [
+    { "op": "box", "from": [11, 11, 0], "to": [20, 20, 1], "material": "base_dark", "part": "base" },
+    { "op": "box", "from": [13, 13, 2], "to": [18, 18, 2], "material": "arm_steel", "part": "base_cap" },
+    { "op": "box", "from": [14, 12, 3], "to": [15, 13, 9], "material": "arm_steel", "part": "lower_arm" },
+    { "op": "box", "from": [13, 11, 9], "to": [16, 14, 11], "material": "joint_brass", "part": "elbow" },
+    { "op": "box", "from": [14, 13, 11], "to": [16, 15, 16], "material": "arm_steel", "part": "upper_arm" },
+    { "op": "box", "from": [13, 15, 15], "to": [18, 20, 17], "material": "shade_outer", "part": "shade_top" },
+    { "op": "box", "from": [11, 14, 12], "to": [20, 22, 14], "material": "shade_outer", "part": "shade_rim" },
+    { "op": "box", "from": [13, 16, 11], "to": [18, 20, 12], "material": "bulb_warm", "part": "bulb" },
+    { "op": "box", "from": [14, 17, 10], "to": [17, 19, 11], "material": "glow_core", "part": "bulb_core" }
+  ]
+}

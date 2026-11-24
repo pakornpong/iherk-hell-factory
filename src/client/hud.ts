@@ -364,11 +364,17 @@ export class OfficeHud {
     // Furniture Catalog (when Decorate Mode is open)
     if (this.decorate.active) {
       const placeables = catalog.filter(
-        (c) => c.layer === "object" && c.source !== "character" && !c.id.endsWith("-back"),
+        (c) =>
+          (c.layer === "object" || c.layer === "tabletop") &&
+          c.source !== "character" &&
+          !c.id.endsWith("-back") &&
+          !c.id.startsWith("room-wall-") &&
+          !c.id.startsWith("room-junction-"),
       );
 
       const categoryLabels: Record<string, string> = {
         all: "All",
+        tabletop: "💡 Tabletop",
         lab: "🧪 Lab",
         science: "🔬 Sci",
         server: "🖥️ Server",
@@ -387,6 +393,7 @@ export class OfficeHud {
       };
       const categoryOrder = [
         "all",
+        "tabletop",
         "lab",
         "science",
         "server",
@@ -438,7 +445,7 @@ export class OfficeHud {
         btn.className = `cat-item ${this.decorate.selectedAssetId === item.id && this.decorate.tool === "place" ? "selected" : ""}`;
         btn.innerHTML = `
           <span>${escapeHtml(item.id)}</span>
-          <span class="cat-tag">${item.source === "custom" ? "✨ Gemini" : `${item.footprintTiles[0]}×${item.footprintTiles[1]}`}</span>
+          <span class="cat-tag">${item.source === "custom" ? "✨ Gemini" : item.layer === "tabletop" ? "💡 Top" : `${item.footprintTiles[0]}×${item.footprintTiles[1]}`}</span>
         `;
         btn.addEventListener("click", () => {
           this.decorate.selectAsset(item.id);
