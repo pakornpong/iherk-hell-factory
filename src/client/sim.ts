@@ -9,7 +9,7 @@ import {
 } from "../shared/types.js";
 import type { RenderedEmployeeInput, SyncPacketVisual } from "./iso-renderer.js";
 import { buildWalkableGrid, findTilePath, type WalkableGrid } from "./pathfinding.js";
-import { bayLayoutKeyForBay, commonLayoutKey, facingToward, getRoomLayout } from "../shared/room-layouts.js";
+import { commonLayoutKey, facingToward, getRoomLayout } from "../shared/room-layouts.js";
 
 export interface SimEmployeeVisual extends RenderedEmployeeInput {
   id: string;
@@ -26,6 +26,7 @@ interface AgentSimState {
   targetDirection: Direction;
   path: Array<[number, number]>;
   goalTile: [number, number];
+  seatedOnChair: boolean;
   animClockMs: number;
   restActivity: RestActivity;
   nextRestSwitchMs: number;
@@ -73,17 +74,19 @@ export class OfficeSimulation {
     const liveIds = new Set<string>();
     const visibleEmployees = state.employees.filter((e) => activeBayIds.has(e.bayId));
     const workingEmployees = visibleEmployees.filter(
-      (e) => e.visualState !== "resting" && e.visualState !== "reporting",
+      (e) => e.visualState === "working" || e.visualState === "teamwork",
     );
+    const meetingEmployees = visibleEmployees.filter((e) => e.visualState === "meeting");
 
     for (let capsuleIdx = 0; capsuleIdx < visibleEmployees.length; capsuleIdx++) {
       const emp = visibleEmployees[capsuleIdx];
       liveIds.add(emp.id);
       const workSeatIdx = Math.max(0, workingEmployees.findIndex((e) => e.id === emp.id));
+      const meetingSeatIdx = Math.max(0, meetingEmployees.findIndex((e) => e.id === emp.id));
 
       let sim = this.agents.get(emp.id);
       if (!sim) {
-        const spawn = this.pickGoalForEmployee(emp, "coffee", capsuleIdx, workSeatIdx);
+        const spawn = this.pickGoalForEmployee(emp, "coffee", capsuleIdx, workSeatIdx, meetingSeatIdx);
         sim = {
           record: emp,
           x: spawn.tile[0],
@@ -92,13 +95,14 @@ export class OfficeSimulation {
           targetDirection: spawn.facing,
           path: [],
           goalTile: spawn.tile,
+          seatedOnChair: Boolean(spawn.seatedOnChair),
           animClockMs: Math.random() * 600,
           restActivity: "coffee",
           nextRestSwitchMs: this.simTimeMs + 14_000 + (emp.deskIndex * 3100) % 8000,
           lastVisualState: emp.visualState,
         };
         this.agents.set(emp.id, sim);
-        // Walk from their hypersleep capsule to the Central Work Hub when newly spawned into an active state
+        // Walk from their hypersleep capsule to their target spot when newly spawned into an active state
         if (emp.visualState !== "resting") {
           const podGoal = this.pickHypersleepGoal(capsuleIdx);
           if (podGoal) {
@@ -111,7 +115,8 @@ export class OfficeSimulation {
         const prevState = sim.lastVisualState;
         sim.record = emp;
         sim.lastVisualState = emp.visualState;
-        const desired = this.pickGoalForEmployee(emp, sim.restActivity, capsuleIdx, workSeatIdx);
+        const desired = this.pickGoalForEmployee(emp, sim.restActivity, capsuleIdx, workSeatIdx, meetingSeatIdx);
+        sim.seatedOnChair = Boolean(desired.seatedOnChair);
         const goalChanged =
           prevState !== emp.visualState ||
           desired.tile[0] !== sim.goalTile[0] ||
@@ -139,43 +144,176 @@ export class OfficeSimulation {
     return this.campus?.zones.find((z) => z.kind === "cowork");
   }
 
-  private pickHypersleepGoal(capsuleIndex: number): { tile: [number, number]; facing: Direction } | null {
+  private isInCustomZoneRole(tx: number, ty: number, role: "work" | "meeting" | "hypersleep" | "lounge"): boolean {
+    const zones = this.state?.customZones ?? [];
+    return zones.some(
+      (z) => z.role === role && tx >= z.x && tx < z.x + z.width && ty >= z.y && ty < z.y + z.height,
+    );
+  }
+
+  private isBossChair(id: string): boolean {
+    return id === "boss:0-boss-chair" || id.startsWith("boss:0-visitor-");
+  }
+
+  private pickHypersleepGoal(capsuleIndex: number): { tile: [number, number]; facing: Direction; seatedOnChair?: boolean } | null {
     if (!this.campus) return null;
     const pods = this.campus.worldFurniture
       .filter((f) => f.assetId === "hypersleep-capsule")
-      .sort((a, b) => a.ty - b.ty || a.tx - b.tx);
+      .sort((a, b) => {
+        const aInZone = this.isInCustomZoneRole(a.tx, a.ty, "hypersleep") ? 0 : 1;
+        const bInZone = this.isInCustomZoneRole(b.tx, b.ty, "hypersleep") ? 0 : 1;
+        return aInZone - bInZone || a.ty - b.ty || a.tx - b.tx;
+      });
     if (pods.length === 0) return null;
     const pod = pods[capsuleIndex % pods.length];
     return { tile: [pod.tx, pod.ty], facing: pod.direction };
   }
 
-  /** Central Work Hub (+ moved Central chairs + user-defined Work Zones): working agents sit on swivel chairs, or stand nearby when full. */
-  private pickCoworkGoal(emp: EmployeeRecord, seatIndex: number): { tile: [number, number]; facing: Direction } | null {
+  /**
+   * Work/Thinking seating: prioritizes swivel chairs in user-defined Work Zones, then Central Work Hub,
+   * then any other swivel chair placed on the open floor (excluding Boss chairs & Meeting Zone chairs).
+   */
+  private pickWorkGoal(seatIndex: number): { tile: [number, number]; facing: Direction; seatedOnChair?: boolean } | null {
     const cowork = this.findCoworkZone();
-    if (!cowork || !this.campus) return null;
-    const isSitting = emp.visualState === "working" || emp.visualState === "teamwork";
-    if (isSitting) {
-      const workCustomZones = (this.state?.customZones ?? []).filter((z) => z.role === "work");
-      const inCustomWorkZone = (tx: number, ty: number) =>
-        workCustomZones.some((z) => tx >= z.x && tx < z.x + z.width && ty >= z.y && ty < z.y + z.height);
-      const chairs = this.campus.worldFurniture
-        .filter(
-          (f) =>
-            f.assetId === "chair-office-swivel" &&
-            f.id !== "boss:0-boss-chair" &&
-            (f.zoneId === cowork.zoneId || f.id.startsWith("cowork:0-") || inCustomWorkZone(f.tx, f.ty)),
-        )
-        .sort((a, b) => a.ty - b.ty || a.tx - b.tx);
-      if (seatIndex < chairs.length) {
-        const chair = chairs[seatIndex];
-        return { tile: [chair.tx, chair.ty], facing: chair.direction };
-      }
+    if (!this.campus) return null;
+
+    const allWorkChairs = this.campus.worldFurniture
+      .filter(
+        (f) =>
+          f.assetId === "chair-office-swivel" &&
+          !this.isBossChair(f.id) &&
+          !this.isInCustomZoneRole(f.tx, f.ty, "meeting"),
+      )
+      .sort((a, b) => {
+        const tierOf = (f: ComputedCampus["worldFurniture"][number]) => {
+          if (this.isInCustomZoneRole(f.tx, f.ty, "work")) return 0;
+          if ((cowork && f.zoneId === cowork.zoneId) || f.id.startsWith("cowork:0-")) return 1;
+          return 2;
+        };
+        return tierOf(a) - tierOf(b) || a.ty - b.ty || a.tx - b.tx;
+      });
+
+    if (allWorkChairs.length > 0) {
+      const chair = allWorkChairs[seatIndex % allWorkChairs.length];
+      return { tile: [chair.tx, chair.ty], facing: chair.direction, seatedOnChair: true };
     }
+
+    if (!cowork) return null;
     const spot = seatIndex % 6;
     return {
       tile: [cowork.originX + (spot % 6), cowork.originY + 5],
       facing: "nw",
+      seatedOnChair: false,
     };
+  }
+
+  /**
+   * Meeting seating: sits at swivel chairs inside Meeting Zones or beside conference tables,
+   * or gathers inside Meeting Zones / around conference tables.
+   */
+  private pickMeetingGoal(meetingIndex: number): { tile: [number, number]; facing: Direction; seatedOnChair?: boolean } | null {
+    if (!this.campus) return null;
+    const meetingZones = (this.state?.customZones ?? []).filter((z) => z.role === "meeting");
+    const tables = this.campus.worldFurniture.filter((f) => f.assetId === "table-conference");
+
+    const isNearTable = (tx: number, ty: number) =>
+      tables.some(
+        (t) =>
+          tx >= t.tx - 1 &&
+          tx <= t.tx + t.footprintTiles[0] &&
+          ty >= t.ty - 1 &&
+          ty <= t.ty + t.footprintTiles[1],
+      );
+
+    // 1. Chairs inside Meeting Custom Zones
+    const meetingZoneChairs = this.campus.worldFurniture
+      .filter(
+        (f) =>
+          f.assetId === "chair-office-swivel" &&
+          !this.isBossChair(f.id) &&
+          this.isInCustomZoneRole(f.tx, f.ty, "meeting"),
+      )
+      .sort((a, b) => a.ty - b.ty || a.tx - b.tx);
+    if (meetingZoneChairs.length > 0) {
+      const chair = meetingZoneChairs[meetingIndex % meetingZoneChairs.length];
+      return { tile: [chair.tx, chair.ty], facing: chair.direction, seatedOnChair: true };
+    }
+
+    // 2. Chairs adjacent to any conference table on the map
+    const tableChairs = this.campus.worldFurniture
+      .filter(
+        (f) =>
+          f.assetId === "chair-office-swivel" &&
+          !this.isBossChair(f.id) &&
+          isNearTable(f.tx, f.ty),
+      )
+      .sort((a, b) => a.ty - b.ty || a.tx - b.tx);
+    if (tableChairs.length > 0) {
+      const chair = tableChairs[meetingIndex % tableChairs.length];
+      return { tile: [chair.tx, chair.ty], facing: chair.direction, seatedOnChair: true };
+    }
+
+    const isWalkableTile = (x: number, y: number): boolean => {
+      if (!this.grid) return x >= 0 && y >= 0;
+      return x >= 0 && y >= 0 && x < this.grid.width && y < this.grid.height && this.grid.blocked[y * this.grid.width + x] === 0;
+    };
+
+    // 3. Walkable tiles inside Meeting Custom Zone(s), facing table or zone center
+    if (meetingZones.length > 0) {
+      const mz = meetingZones[meetingIndex % meetingZones.length];
+      const zoneTable = tables.find(
+        (t) => t.tx >= mz.x && t.tx < mz.x + mz.width && t.ty >= mz.y && t.ty < mz.y + mz.height,
+      );
+      const lookTarget: [number, number] = zoneTable
+        ? [zoneTable.tx + (zoneTable.footprintTiles[0] - 1) / 2, zoneTable.ty + (zoneTable.footprintTiles[1] - 1) / 2]
+        : [mz.x + (mz.width - 1) / 2, mz.y + (mz.height - 1) / 2];
+      const openTiles: Array<[number, number]> = [];
+      for (let y = mz.y; y < mz.y + mz.height; y++) {
+        for (let x = mz.x; x < mz.x + mz.width; x++) {
+          if (isWalkableTile(x, y)) openTiles.push([x, y]);
+        }
+      }
+      if (openTiles.length > 0) {
+        const tile = openTiles[meetingIndex % openTiles.length];
+        return { tile, facing: facingToward(tile, lookTarget), seatedOnChair: false };
+      }
+    }
+
+    // 4. Walkable tiles around any conference table on the map
+    if (tables.length > 0) {
+      const tbl = tables[meetingIndex % tables.length];
+      const center: [number, number] = [
+        tbl.tx + (tbl.footprintTiles[0] - 1) / 2,
+        tbl.ty + (tbl.footprintTiles[1] - 1) / 2,
+      ];
+      const around: Array<[number, number]> = [];
+      for (let y = tbl.ty - 1; y <= tbl.ty + tbl.footprintTiles[1]; y++) {
+        for (let x = tbl.tx - 1; x <= tbl.tx + tbl.footprintTiles[0]; x++) {
+          const inside =
+            x >= tbl.tx &&
+            x < tbl.tx + tbl.footprintTiles[0] &&
+            y >= tbl.ty &&
+            y < tbl.ty + tbl.footprintTiles[1];
+          if (!inside && isWalkableTile(x, y)) around.push([x, y]);
+        }
+      }
+      if (around.length > 0) {
+        const tile = around[meetingIndex % around.length];
+        return { tile, facing: facingToward(tile, center), seatedOnChair: false };
+      }
+    }
+
+    // 5. Fallback stand-up spot (e.g. bare campus without a Meeting Zone or Conference Table)
+    const cowork = this.findCoworkZone();
+    if (cowork) {
+      const spot = meetingIndex % 6;
+      return {
+        tile: [cowork.originX + (spot % 6), cowork.originY + 5],
+        facing: "nw",
+        seatedOnChair: false,
+      };
+    }
+    return null;
   }
 
   private findBossZone(): ZoneBounds | undefined {
@@ -255,8 +393,10 @@ export class OfficeSimulation {
       ? [bossDesk.tx + (bossDesk.footprintTiles[0] - 1) / 2, bossDesk.ty + (bossDesk.footprintTiles[1] - 1) / 2]
       : [bx, by];
 
-    const reportingOrder = (this.state?.employees ?? []).filter((e) => e.visualState === "reporting");
-    const visitorRank = Math.max(0, reportingOrder.findIndex((e) => e.id === emp.id));
+    const bossVisitors = (this.state?.employees ?? []).filter(
+      (e) => e.visualState === "reporting" || e.visualState === "assigning",
+    );
+    const visitorRank = Math.max(0, bossVisitors.findIndex((e) => e.id === emp.id));
 
     for (const ring of preferredRings) {
       const open = ring.tiles.filter(([x, y]) => isWalkableTile(x, y));
@@ -306,13 +446,14 @@ export class OfficeSimulation {
     _restActivity: RestActivity,
     capsuleIdx = 0,
     workSeatIdx = 0,
-  ): { tile: [number, number]; facing: Direction } {
+    meetingSeatIdx = 0,
+  ): { tile: [number, number]; facing: Direction; seatedOnChair?: boolean } {
     if (!this.campus) {
       return { tile: [2, 2], facing: "se" };
     }
 
-    // 1. Reporting -> walk directly in front of Boss's actual chair/desk and face Boss
-    if (emp.visualState === "reporting") {
+    // 1. Reporting & Briefing (รับบรีฟ) -> walk directly in front of Boss's desk and face Boss
+    if (emp.visualState === "reporting" || emp.visualState === "assigning") {
       return this.pickBossReportGoal(emp);
     }
 
@@ -322,9 +463,15 @@ export class OfficeSimulation {
       if (podGoal) return podGoal;
     }
 
-    // 3. Working / Teamwork / Assigning / Meeting -> Central Work Hub (+ Custom Work Zones)
-    const centralGoal = this.pickCoworkGoal(emp, workSeatIdx);
-    if (centralGoal) return centralGoal;
+    // 3. Meeting (ประชุม) -> sit at chairs in Meeting Zone / around conference table
+    if (emp.visualState === "meeting") {
+      const meetingGoal = this.pickMeetingGoal(meetingSeatIdx);
+      if (meetingGoal) return meetingGoal;
+    }
+
+    // 4. Thinking / Working / Teamwork -> sit directly at a desk chair (Work Zones -> Central Hub -> any open-floor chair)
+    const workGoal = this.pickWorkGoal(workSeatIdx);
+    if (workGoal) return workGoal;
 
     const bayZone = this.findBayZone(emp.bayId);
     if (!bayZone) {
@@ -355,16 +502,6 @@ export class OfficeSimulation {
           return { tile: [chair.tx, chair.ty], facing: chair.direction };
         }
         return { tile: [bayZone.originX + cx, bayZone.originY + cy], facing: "nw" };
-      }
-
-      case "assigning": {
-        // Briefing spots come from the room's designed layout (mirrored with it)
-        const { key, mirrored } = bayLayoutKeyForBay(emp.bayId);
-        const spots = this.openSpots(bayZone, getRoomLayout(key, mirrored).standSpots);
-        if (spots.length > 0) {
-          return { tile: spots[emp.deskIndex % spots.length], facing: "se" };
-        }
-        return { tile: [bayZone.originX + 2 + (emp.deskIndex % 2), bayZone.originY + 4], facing: "se" };
       }
 
       case "meeting": {
@@ -541,16 +678,19 @@ export class OfficeSimulation {
           bubbleText: `${rolePrefix}${sim.record.detail ?? "Assigning task"}`,
         };
       case "working": {
+        const isThinking = !sim.record.toolName && sim.record.detail === "Thinking...";
         const icon =
           sim.record.toolCategory === "error"
             ? "⚠️"
-            : roleMeta
-              ? roleMeta.icon
-              : sim.record.toolCategory === "shell"
-                ? "⚡"
-                : sim.record.toolCategory === "search"
-                  ? "🔎"
-                  : "💻";
+            : isThinking
+              ? "💭"
+              : roleMeta
+                ? roleMeta.icon
+                : sim.record.toolCategory === "shell"
+                  ? "⚡"
+                  : sim.record.toolCategory === "search"
+                    ? "🔎"
+                    : "💻";
         return {
           clipName: `sit_type_${t2}`,
           bubbleIcon: icon,
@@ -567,7 +707,7 @@ export class OfficeSimulation {
       }
       case "meeting":
         return {
-          clipName: `talk_${t2}`,
+          clipName: sim.seatedOnChair ? `sit_type_${t2}` : `talk_${t2}`,
           bubbleIcon: "💬",
           bubbleText: `${rolePrefix}${sim.record.detail ?? "In meeting"}`,
         };

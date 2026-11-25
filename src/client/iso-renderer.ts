@@ -73,6 +73,7 @@ export interface ZoneEditorOverlayInput {
   hoverTile: [number, number] | null;
   draftColor: string;
   draftLabel: string;
+  editingZoneId?: string | null;
 }
 
 export interface RenderSceneInput {
@@ -978,7 +979,9 @@ export class IsoRenderer {
       const bx = bossChair ? bossChair.tx : (bossZone?.originX ?? 0) + 2;
       const by = bossChair ? bossChair.ty : (bossZone?.originY ?? 0) + 1;
       const bossDir: Direction = bossChair?.direction ?? "se";
-      const hasVisitor = employees.some((e) => e.record.visualState === "reporting");
+      const hasVisitor = employees.some(
+        (e) => e.record.visualState === "reporting" || e.record.visualState === "assigning",
+      );
       const bossClip = `sit_type_${Math.floor(timeMs / (hasVisitor ? 300 : 750)) % 2}`;
       const bossSprite =
         atlas.getFrame(theme, "agent-boss", bossDir, bossClip) ??
@@ -1263,7 +1266,8 @@ export class IsoRenderer {
     const customZones = state.customZones ?? [];
     if (input.zoneEditor?.active) {
       for (const cz of customZones) {
-        drawIsoRectOutline(cz.x, cz.y, cz.width, cz.height, cz.color, 0.18, false);
+        const isEditing = input.zoneEditor.editingZoneId === cz.id;
+        drawIsoRectOutline(cz.x, cz.y, cz.width, cz.height, cz.color, isEditing ? 0.30 : 0.16, false);
       }
       const ze = input.zoneEditor;
       const h = ze.hoverTile;
@@ -1312,7 +1316,9 @@ export class IsoRenderer {
 
     // 7. Zone Nameplates & Employee Speech/Tool Bubbles
     const bayById = new Map(state.bays.map((b) => [b.id, b]));
-    const totalPods = campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule").length;
+    const allPods = campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
+    const totalPods = allPods.length;
+    const hasCustomHypersleepZone = customZones.some((cz) => cz.role === "hypersleep");
     const sleepingCount = employees.filter((e) => e.record.visualState === "resting").length;
     ctx.save();
     ctx.font = `bold ${Math.max(10, 6 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
@@ -1321,8 +1327,19 @@ export class IsoRenderer {
     for (const z of campus.zones) {
       // Skip blank floor and Boss zone (Boss already has the live 👑 BOSS badge above his chair)
       if (z.kind === "floor" || z.kind === "boss") continue;
+      // Skip default built-in Hypersleep nameplate when user defined their own editable Pods Zone
+      if (z.kind === "hypersleep" && hasCustomHypersleepZone) continue;
 
-      const [wx, wy] = getZoneCenterWorld(z);
+      let centerZone: { originX: number; originY: number; width: number; height: number } = z;
+      if (z.kind === "hypersleep" && allPods.length > 0) {
+        const minX = Math.min(...allPods.map((p) => p.tx));
+        const minY = Math.min(...allPods.map((p) => p.ty));
+        const maxX = Math.max(...allPods.map((p) => p.tx + p.footprintTiles[0]));
+        const maxY = Math.max(...allPods.map((p) => p.ty + p.footprintTiles[1]));
+        centerZone = { originX: minX, originY: minY, width: maxX - minX, height: maxY - minY };
+      }
+
+      const [wx, wy] = getZoneCenterWorld(centerZone);
       if (!isInWorldBounds(wx, wy, bounds)) continue;
       const [sx, sy] = camera.worldToScreen(wx, wy);
       const bay = z.bayId ? bayById.get(z.bayId) : undefined;
@@ -1374,7 +1391,14 @@ export class IsoRenderer {
       const [wx, wy] = getZoneCenterWorld({ originX: cz.x, originY: cz.y, width: cz.width, height: cz.height });
       if (!isInWorldBounds(wx, wy, bounds)) continue;
       const [sx, sy] = camera.worldToScreen(wx, wy);
-      const roleSuffix = cz.role === "work" ? " · WORK" : cz.role === "hypersleep" ? " · SLEEP" : "";
+      const roleSuffix =
+        cz.role === "work"
+          ? " · WORK"
+          : cz.role === "meeting"
+            ? " · MEETING"
+            : cz.role === "hypersleep"
+              ? ` · ${sleepingCount}/${totalPods}`
+              : "";
       const fullLabel = `${cz.icon} ${cz.name}${roleSuffix}`;
       const textW = ctx.measureText(fullLabel).width + 14;
       const boxX = Math.round(sx - textW / 2);

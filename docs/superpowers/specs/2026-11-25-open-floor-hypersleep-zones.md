@@ -1,8 +1,8 @@
 # Open Floor Sandbox, Space Haven Hypersleep Pods, Flush Edge Dividers, Floor Painting & Custom Zones
 
 **Date:** 2026-11-25  
-**Status:** Implemented (`main` commit `78c32ee`)  
-**Supersedes:** auto-generated boxed project-room grid & amenity-ring layout in `2026-11-24-iherk-hell-factory-design.md` §6.1 and `2026-11-24-flush-rooms-edge-walls.md` §2.7  
+**Status:** Implemented  
+**Supersedes:** auto-generated boxed project-room grid, fixed lounge resting, and §6.1 / §6.3 routing in `2026-11-24-iherk-hell-factory-design.md` and `2026-11-24-flush-rooms-edge-walls.md` §2.7  
 **Builds on:** `2026-11-24-flush-rooms-edge-walls.md`, `2026-11-24-layer-permissions-and-decorate.md`
 
 ---
@@ -47,16 +47,28 @@ The previous campus auto-generated fixed `6×6` boxed rooms for every project fo
   - `hypersleep-capsule-front.pixcel.json` — closed curved translucent glass canopy rendered on `RENDER_LAYER.FOREGROUND = 6` (`foregroundAssetId`) whenever a resting agent lies inside the pod.
 - Added horizontal lying-down `rest_sleep_0` and `rest_sleep_1` animation frames for all Phase 2 characters (`agent-claude`, `agent-gemini`, `agent-starter`, and variants) so sleeping agents lie cleanly inside the open mattress beneath the translucent canopy.
 
-### 3.2 Auto-Scaling & Full Decorate Support
-- `ensureHypersleepPodForNewEmployee()` in `src/server/office-engine.ts` automatically spawns 1 additional pod whenever a new persistent employee joins, maintaining a 1:1 pod-to-agent ratio.
+### 3.2 Auto-Scaling, Editable Pods Zone & Full Decorate Support
+- `ensureHypersleepPodForNewEmployee()` in `src/server/office-engine.ts` automatically spawns 1 additional pod whenever a new persistent employee joins, maintaining a 1:1 pod-to-agent ratio (preferring user-defined custom `role: "hypersleep"` zones first).
 - `hypersleep:0` supports full Move, Rotate, and Erase in Decorate Mode and the Architect API via lazy materialization into `OfficeState.zoneOverrides["hypersleep:0"]`.
+- Users can define, move, or resize the **Pods Zone** directly from **`🏷️ Zones` (`Z`)** via **`🧊 กำหนด / ย้ายโซน Pods`** (or edit any `role: "hypersleep"` custom zone). Creating or moving a custom `hypersleep` zone automatically transfers the cryo-deck floor and live `🧊 <Name> · sleeping/total` nameplate to that zone, and `POST /api/architect/zones/:id/relocate-pods` neatly packs all existing pods inside the zone.
 
 ---
 
-## 4. Dynamic Boss Avatar & Reporting
+## 4. Dynamic Boss Avatar, Briefing, Thinking & Meeting Routing
 
 - The Boss character sprite and **`👑 BOSS`** nameplate dynamically track the live world position and facing direction of `boss:0-boss-chair` — moving or rotating the Boss chair anywhere on the campus moves and rotates the Boss seamlessly.
-- `pickBossReportGoal()` in `src/client/sim.ts` computes the walkable tile directly in front of the Boss chair's current facing vector and turns reporting/questioning employees to face opposite the Boss's direction.
+- Boss animates attentively (`300ms` clip cadence) whenever any employee is in `reporting` or `assigning` state in front of the Boss desk.
+
+### 4.1 Agent State → Location & Animation Matrix (`src/client/sim.ts`)
+
+| Visual State | Trigger | Target Destination (Priority Order) | Animation & Bubble |
+|---|---|---|---|
+| **`assigning` (รับบรีฟ)** | `prompt_submit`, `session_start`, `subagent_start`, `Agent`/`invoke_subagent` | Directly in front of `boss:0-boss-desk` / `boss:0-boss-chair` (`pickBossReportGoal`), facing opposite Boss | `assign_0..1` + `📋` / `🎯` |
+| **`reporting` (รายงาน/ถาม Boss)** | `turn_stop`, `waiting_user`, `ask_question` | Directly in front of `boss:0-boss-desk` / `boss:0-boss-chair` (`pickBossReportGoal`), facing opposite Boss | `talk_0..1` (`❓`) or `assign_0..1` (`✅`) |
+| **`working` — Thinking (กำลังคิด)** | After `assignDurationMs` expires or `tool_end` (`!toolName && detail === "Thinking..."`) | Seated on `chair-office-swivel` (`pickWorkGoal`): **Work Zone** → **Central Hub (`cowork:0`)** → any open-floor work chair *(excludes Boss & Meeting Zone chairs)* | `sit_type_0..1` + `💭 Thinking...` |
+| **`working` / `teamwork` (ทำงาน)** | `tool_start`, `tool_error`, 2+ active bay teammates | Seated on `chair-office-swivel` (`pickWorkGoal`, same priority) | `sit_type_0..1` + `💻` / `⚡` / `🔎` / `⚠️` / `🤝` |
+| **`meeting` (ประชุม)** | `swarm`, planning/brainstorming tools | **1.** `chair-office-swivel` in **Meeting Zone (`role: "meeting"`)** → **2.** chairs adjacent to `table-conference` → **3.** walkable tiles in Meeting Zone / around `table-conference` → **4.** fallback stand-up | Seated on chair: `sit_type_0..1` + `💬`; Standing: `talk_0..1` + `💬` |
+| **`resting` (พักผ่อน)** | Post-report cooldown (`15s`) or stale timeout | `hypersleep-capsule` (`pickHypersleepGoal`), prioritizing pods inside custom `role: "hypersleep"` zones | Lying `rest_sleep_0..1` under translucent L6 glass canopy + `💤` |
 
 ---
 
@@ -106,19 +118,28 @@ The previous campus auto-generated fixed `6×6` boxed rooms for every project fo
     name: string;
     icon: string; // default "🏷️"
     color: string; // hex accent color
-    role: "label" | "work" | "hypersleep" | "lounge";
+    role: "label" | "work" | "meeting" | "hypersleep" | "lounge";
     x: number;
     y: number;
     width: number;
     height: number;
   }
   ```
-- **Functional Behavior:**
-  - Zones render subtle translucent isometric boundary highlights and centered floating pixel nameplates, plus quick-jump chips in the sidebar.
-  - Zones with `role === "work"` are **functional workspaces** — active employees automatically discover and sit at available `chair-office-swivel` seats placed inside them.
+- **Zone Roles & Functional Behavior:**
+
+| Role | Nameplate Suffix | Behavior |
+|---|---|---|
+| `label` | *(none)* | Named visual room boundary & sidebar quick-jump chip |
+| `work` | `· WORK` | Priority seating for thinking/working agents (`chair-office-swivel`) |
+| `meeting` | `· MEETING` | Priority seating for `meeting` agents (`chair-office-swivel` + `table-conference`); chairs here are reserved for meetings and excluded from work seating |
+| `hypersleep` | `· <sleeping>/<total>` | Overrides default Pods Bay location, cryo-deck floor, nameplate, `🧊 Pods` sidebar jump, auto-spawn target for new agents, and supports one-click pod relocation (`📦`) |
+| `lounge` | *(none)* | Visual break/lounge zone & quick-jump chip |
+
+- All custom zones support in-place **Edit (`✏️`)** in `#zone-panel` (update name/icon/color/role via `💾 บันทึกข้อมูลโซน` or 2-click on map to move/resize) plus **`🧊 กำหนด / ย้ายโซน Pods`** quick action.
 - **API Endpoints:**
   - `POST /api/architect/zones` — create custom zone
   - `PATCH /api/architect/zones/:id` — rename, recolor, change role, or resize/move zone
+  - `POST /api/architect/zones/:id/relocate-pods` — relocate & pack all existing `hypersleep-capsule` pods cleanly inside a `role: "hypersleep"` zone
   - `DELETE /api/architect/zones/:id` — remove custom zone
 
 ---
@@ -138,6 +159,7 @@ The previous campus auto-generated fixed `6×6` boxed rooms for every project fo
 | 1 | Moving `hypersleep-capsule` failed or snapped back | `getZoneFurnitureArray` / `findFurnitureById` in `office-engine.ts` did not materialize `hypersleep:0`, `layout-engine.ts` ignored `zoneOverrides["hypersleep:0"]`, and cross-zone `moveFurniture` omitted `ignoreInstanceId` | Added `hypersleep:0` materialization in `office-engine.ts`, honored `zoneOverrides["hypersleep:0"]` in `layout-engine.ts`, and forwarded `ignoreInstanceId` on cross-zone moves |
 | 2 | Furniture could not sit flush against `divider-low-glass` (20-voxel half-tile gap + floor color bleed) | `divider-low-glass` was placed as a `1×1` tile-center furniture item (`y = 14..17`), blocking the entire tile | Converted all `EDGE_DIVIDER_PROP_IDS` into zero-thickness boundary-line segments via `expandEdgeDividerSegments()` in `src/shared/layers.ts` |
 | 3 | Multi-tile furniture rejected near `x = 5` / `y = 5` on the open floor | `resolveWorldToZone` matched legacy `6×6` `boss:0`/`cowork:0` boxes before `floor:0`, flagging overflow across invisible internal lines | Updated `resolveWorldToZone` to resolve all in-bounds open-floor tiles directly to `floor:0` |
+| 4 | Agents walked onto empty floor while thinking, briefing, or in meetings; Pods Zone stayed stuck at `(13, 1)` | `pickCoworkGoal` only looked up chairs for `working`/`teamwork` (sending `assigning`/`meeting` and custom `floor:0` chairs to fallback `[cowork.originX + spot, cowork.originY + 5]`); `hypersleep:0` cryo deck & nameplate were hardcoded to `HYPERSLEEP_ORIGIN` | Split routing into `pickBossReportGoal` (briefing/reporting at Boss desk), `pickWorkGoal` (thinking/working seated at Work Zone → Central Hub → open-floor chairs), and `pickMeetingGoal` (seated in Meeting Zone / around conference table); added editable `role: "hypersleep"` Pods Zone + `POST /api/architect/zones/:id/relocate-pods` |
 
 ---
 
@@ -145,5 +167,5 @@ The previous campus auto-generated fixed `6×6` boxed rooms for every project fo
 
 - **Asset Pipeline:** All 10 new `.pixcel.json` props compiled cleanly into `runtime-assets/atlas-{office,night,day}.{png,json}` (`catalogCount: 129`).
 - **Typecheck & Builds:** `npm run typecheck`, `npm run build:server`, and `npm run build:client` all pass with 0 errors.
-- **Test Suite:** `npm test` — **18/18 test files, 97/97 tests passing**.
+- **Test Suite:** `npm test` — **18/18 test files, 99/99 tests passing**.
 - **Visual Verification:** Verified via rendered preview sheets for Space Haven open/closed hypersleep capsules with lying Claude/Gemini sprites, modular L/T/+ divider seams, and flush locker placement on both sides and inside corners of edge-mounted glass walls.

@@ -17,6 +17,7 @@ import {
   type CatalogEntry,
   type CommonWingRecord,
   type ComputedCampus,
+  type CustomZoneRecord,
   type DepartmentId,
   type Direction,
   type FurnitureInstance,
@@ -179,6 +180,8 @@ export interface CampusLayoutOptions {
   floorDepthTiles?: number;
   /** Optional per-tile custom floor asset overrides keyed by "tx,ty". */
   floorTileOverrides?: Record<string, string>;
+  /** User-defined custom zones (e.g. custom hypersleep zone overrides default cryo deck floor). */
+  customZones?: CustomZoneRecord[];
 }
 
 export function computeCampusLayout(
@@ -371,14 +374,20 @@ export function computeCampusLayout(
 
   const floors: ComputedCampus["floors"] = [];
   const floorOverrides = opts?.floorTileOverrides;
+  const customHypersleepZones = (opts?.customZones ?? []).filter((z) => z.role === "hypersleep");
   for (let ty = 0; ty < depthTiles; ty++) {
     for (let tx = 0; tx < widthTiles; tx++) {
       const inBossRug = tx >= 1 && tx <= 4 && ty >= 1 && ty <= 4;
       const inHypersleepDeck =
-        tx >= hypersleepZone.originX &&
-        tx < hypersleepZone.originX + hypersleepZone.width &&
-        ty >= hypersleepZone.originY &&
-        ty < hypersleepZone.originY + hypersleepZone.height;
+        customHypersleepZones.length > 0
+          ? customHypersleepZones.some(
+              (cz) => tx >= cz.x && tx < cz.x + cz.width && ty >= cz.y && ty < cz.y + cz.height,
+            )
+          : !hasCustomHypersleep &&
+            tx >= hypersleepZone.originX &&
+            tx < hypersleepZone.originX + hypersleepZone.width &&
+            ty >= hypersleepZone.originY &&
+            ty < hypersleepZone.originY + hypersleepZone.height;
       const defaultAssetId = inBossRug
         ? bossRugAsset
         : inHypersleepDeck

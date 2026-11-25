@@ -177,4 +177,136 @@ describe("Corridors between rooms & shared co-working room", () => {
       expect(inCowork(goal[0], goal[1]), `${sub.displayName} goal ${goal}`).toBe(true);
     }
   });
+
+  it("briefs in front of Boss desk, thinks seated at work desk, and meets seated at Meeting Zone chairs", async () => {
+    const dir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-zones-sim-"));
+    let clock = 10_000;
+    const engine = new OfficeEngine({ store: new OfficeStore(dir), catalogById: catalog, now: () => clock });
+    await engine.init();
+
+    // Create a Meeting Zone at (2, 12, 6x5) with a conference table & swivel chair
+    await engine.createCustomZone({
+      name: "Boardroom",
+      icon: "🤝",
+      color: "#a78bfa",
+      role: "meeting",
+      x: 2,
+      y: 12,
+      width: 6,
+      height: 5,
+    });
+    await engine.placeFurniture({
+      assetId: "table-conference",
+      tx: 4,
+      ty: 13,
+      direction: "se",
+      placedBy: "user",
+    });
+    await engine.placeFurniture({
+      assetId: "chair-office-swivel",
+      tx: 4,
+      ty: 15,
+      direction: "nw",
+      placedBy: "user",
+    });
+
+    // 1. Briefing (prompt_submit -> assigning) -> stands/sits in front of Boss's desk facing Boss ("nw")
+    await engine.ingestEvent({
+      provider: "claude",
+      source: "claude-code",
+      sessionId: "s1",
+      projectPath: "/work/alpha",
+      eventType: "prompt_submit",
+    });
+    const sim = new OfficeSimulation();
+    let snap = engine.getSnapshot();
+    sim.syncFromServer(snap.state, snap.campus);
+    let out = sim.step(50);
+    for (let i = 0; i < 400; i++) out = sim.step(50);
+    // Boss chair is at (2,1) facing "se", Boss desk at (2,2) -> front visitor ring is y=3, facing "nw"
+    expect(Math.round(out.visuals[0].y)).toBe(3);
+    expect(out.visuals[0].direction).toBe("nw");
+
+    // 2. Thinking (after assignDuration expires -> working with Thinking...) -> sits at work chair with 💭
+    clock += 4_000;
+    await engine.tick();
+    snap = engine.getSnapshot();
+    expect(snap.state.employees[0].visualState).toBe("working");
+    expect(snap.state.employees[0].detail).toBe("Thinking...");
+    sim.syncFromServer(snap.state, snap.campus);
+    for (let i = 0; i < 400; i++) out = sim.step(50);
+    expect(out.visuals[0].clipName).toMatch(/^sit_type_/);
+    expect(out.visuals[0].bubbleIcon).toBe("💭");
+    // Must NOT pick the Meeting Zone chair at (4, 15) for working
+    expect([Math.round(out.visuals[0].x), Math.round(out.visuals[0].y)]).not.toEqual([4, 15]);
+
+    // 3. Meeting (swarm / planning tool) -> sits at the Meeting Zone swivel chair (4, 15) facing "nw"
+    await engine.ingestEvent({
+      provider: "claude",
+      source: "claude-code",
+      sessionId: "s1",
+      projectPath: "/work/alpha",
+      eventType: "tool_start",
+      toolName: "swarm",
+    });
+    snap = engine.getSnapshot();
+    sim.syncFromServer(snap.state, snap.campus);
+    for (let i = 0; i < 400; i++) out = sim.step(50);
+    expect([Math.round(out.visuals[0].x), Math.round(out.visuals[0].y)]).toEqual([4, 15]);
+    expect(out.visuals[0].direction).toBe("nw");
+    expect(out.visuals[0].clipName).toMatch(/^sit_type_/);
+    expect(out.visuals[0].bubbleIcon).toBe("💬");
+  });
+
+  it("supports editing Pods Zone, relocating all pods into it, updating cryo deck floor, and auto-spawning new pods inside it", async () => {
+    const dir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-pods-zone-"));
+    const engine = new OfficeEngine({ store: new OfficeStore(dir), catalogById: catalog, now: () => 20_000 });
+    await engine.init();
+
+    // Spawn 2 agents -> 2 pods total
+    await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "p1", projectPath: "/work/p1", eventType: "tool_start", toolName: "Edit" });
+    await engine.ingestEvent({ provider: "gemini", source: "gemini-cli", sessionId: "p2", projectPath: "/work/p2", eventType: "tool_start", toolName: "Read" });
+
+    // Create a custom Pods Zone at bottom-left (2, 14, 6x6)
+    const podsZone = await engine.createCustomZone({
+      name: "Cryo Deck South",
+      icon: "🧊",
+      color: "#14b8a6",
+      role: "hypersleep",
+      x: 2,
+      y: 14,
+      width: 6,
+      height: 6,
+    });
+
+    // Cryo deck floor should now follow the custom Pods Zone (not default 13,1)
+    let snap = engine.getSnapshot();
+    expect(snap.campus.floors.find((f) => f.tx === 2 && f.ty === 14)?.assetId).toBe("floor-corridor-tile");
+    expect(snap.campus.floors.find((f) => f.tx === 13 && f.ty === 1)?.assetId).not.toBe("floor-corridor-tile");
+
+    // Relocate all existing pods into the custom Pods Zone
+    const relocated = await engine.relocateHypersleepPodsToZone(podsZone.id);
+    expect(relocated).toEqual({ moved: 2, total: 2, remaining: 0 });
+    snap = engine.getSnapshot();
+    const pods = snap.campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
+    expect(pods).toHaveLength(2);
+    for (const p of pods) {
+      expect(p.tx).toBeGreaterThanOrEqual(2);
+      expect(p.tx + p.footprintTiles[0]).toBeLessThanOrEqual(8);
+      expect(p.ty).toBeGreaterThanOrEqual(14);
+      expect(p.ty + p.footprintTiles[1]).toBeLessThanOrEqual(20);
+    }
+
+    // Adding a 3rd agent auto-spawns its new pod inside the custom Pods Zone too
+    await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "p3", projectPath: "/work/p3", eventType: "tool_start", toolName: "Bash" });
+    snap = engine.getSnapshot();
+    const podsAfter = snap.campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
+    expect(podsAfter).toHaveLength(3);
+    for (const p of podsAfter) {
+      expect(p.tx).toBeGreaterThanOrEqual(2);
+      expect(p.tx + p.footprintTiles[0]).toBeLessThanOrEqual(8);
+      expect(p.ty).toBeGreaterThanOrEqual(14);
+      expect(p.ty + p.footprintTiles[1]).toBeLessThanOrEqual(20);
+    }
+  });
 });

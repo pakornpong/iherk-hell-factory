@@ -278,7 +278,7 @@ export const ActivityLogEntrySchema = z.object({
 });
 export type ActivityLogEntry = z.infer<typeof ActivityLogEntrySchema>;
 
-export const CustomZoneRoleSchema = z.enum(["label", "work", "hypersleep", "lounge"]);
+export const CustomZoneRoleSchema = z.enum(["label", "work", "meeting", "hypersleep", "lounge"]);
 export type CustomZoneRole = z.infer<typeof CustomZoneRoleSchema>;
 
 export const CustomZoneRecordSchema = z.object({

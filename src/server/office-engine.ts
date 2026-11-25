@@ -168,6 +168,7 @@ export class OfficeEngine extends EventEmitter {
         floorWidthTiles: state.floorWidthTiles,
         floorDepthTiles: state.floorDepthTiles,
         floorTileOverrides: state.floorTileOverrides,
+        customZones: state.customZones,
       },
     );
   }
@@ -492,12 +493,14 @@ export class OfficeEngine extends EventEmitter {
   }
 
   /**
-   * When the user has customized hypersleep:0 (moved/rotated pods), keep auto-spawning 1 new capsule
-   * whenever a new agent joins and total capsules on campus are fewer than the active employee count.
+   * When the user has customized hypersleep:0 (moved/rotated pods) or defined a custom hypersleep zone,
+   * keep auto-spawning 1 new capsule whenever a new agent joins and total capsules on campus are fewer
+   * than the active employee count.
    */
   private ensureHypersleepPodForNewEmployee(): void {
     const customPods = this.state.zoneOverrides?.["hypersleep:0"];
-    if (!customPods) return;
+    const customHsZones = (this.state.customZones ?? []).filter((z) => z.role === "hypersleep");
+    if (!customPods && customHsZones.length === 0) return;
     const activeBayIds = new Set(this.state.bays.filter((b) => !b.archived).map((b) => b.id));
     const empCount = this.state.employees.filter((e) => activeBayIds.has(e.bayId)).length;
     const totalPods = this.campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule").length;
@@ -511,6 +514,7 @@ export class OfficeEngine extends EventEmitter {
     for (const wf of this.campus.worldFurniture) {
       const cat = this.catalogById.get(wf.assetId);
       if (isTabletopAsset(wf.assetId, wf.layer, cat)) continue;
+      if (wf.assetId.startsWith("divider-")) continue;
       for (let dy = 0; dy < wf.footprintTiles[1]; dy++) {
         for (let dx = 0; dx < wf.footprintTiles[0]; dx++) {
           occupied.add(`${wf.tx + dx},${wf.ty + dy}`);
@@ -519,7 +523,40 @@ export class OfficeEngine extends EventEmitter {
     }
 
     const podId = `hypersleep:0-pod-${Date.now()}-${crypto.randomBytes(2).toString("hex")}`;
-    if (hsZone) {
+
+    // 1. Prefer user-defined custom hypersleep zone(s) first
+    if (customHsZones.length > 0 && floorZone) {
+      const floorList = this.getZoneFurnitureArray("floor:0");
+      if (floorList) {
+        for (const cz of customHsZones) {
+          for (const stepY of [3, 2]) {
+            for (let ly = 0; ly + 2 <= cz.height; ly += stepY) {
+              for (let lx = 0; lx < cz.width; lx++) {
+                const wx = cz.x + lx;
+                const wy = cz.y + ly;
+                if (!occupied.has(`${wx},${wy}`) && !occupied.has(`${wx},${wy + 1}`)) {
+                  floorList.push({
+                    id: podId,
+                    zoneId: "floor:0",
+                    lx: wx,
+                    ly: wy,
+                    assetId: "hypersleep-capsule",
+                    direction: "se",
+                    layer: "object",
+                    placedBy: "system",
+                  });
+                  this.recomputeCampus();
+                  return;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 2. Fallback to built-in hypersleep:0 bounds
+    if (hsZone && customPods) {
       for (let ly = 0; ly + 2 <= hsZone.height; ly += 3) {
         for (let lx = 0; lx < hsZone.width; lx++) {
           const wx = hsZone.originX + lx;
@@ -541,6 +578,8 @@ export class OfficeEngine extends EventEmitter {
         }
       }
     }
+
+    // 3. Fallback to open floor
     if (floorZone) {
       const floorList = this.getZoneFurnitureArray("floor:0");
       if (!floorList) return;
@@ -724,7 +763,8 @@ export class OfficeEngine extends EventEmitter {
       }
       case "tool_end": {
         if (emp.visualState === "working" || emp.visualState === "teamwork") {
-          emp.detail = ev.detail ?? `Finished ${ev.toolName ?? "tool"}`;
+          emp.toolName = undefined;
+          emp.detail = ev.detail ?? "Thinking...";
         }
         break;
       }
@@ -811,6 +851,9 @@ export class OfficeEngine extends EventEmitter {
           emp.assignUntil = undefined;
           emp.visualState = "working";
           emp.toolCategory = emp.toolCategory === "idle" ? "code" : emp.toolCategory;
+          if (!emp.toolName) {
+            emp.detail = "Thinking...";
+          }
           touchedBays.add(emp.bayId);
           changed = true;
         }
@@ -1505,6 +1548,7 @@ export class OfficeEngine extends EventEmitter {
       };
       if (!this.state.customZones) this.state.customZones = [];
       this.state.customZones.push(zone);
+      this.recomputeCampus();
       await this.persist();
       this.emitSnapshot();
       return structuredClone(zone);
@@ -1549,6 +1593,7 @@ export class OfficeEngine extends EventEmitter {
       zone.y = nextY;
       zone.width = nextW;
       zone.height = nextH;
+      this.recomputeCampus();
       await this.persist();
       this.emitSnapshot();
       return structuredClone(zone);
@@ -1563,8 +1608,139 @@ export class OfficeEngine extends EventEmitter {
       if (idx === -1) throw new Error(`Custom zone "${id}" not found`);
       list.splice(idx, 1);
       if (list.length === 0) this.state.customZones = undefined;
+      this.recomputeCampus();
       await this.persist();
       this.emitSnapshot();
+    });
+  }
+
+  /**
+   * Relocate all existing hypersleep-capsule pods cleanly into rows inside a custom hypersleep zone.
+   * Clears default system pods at (13, 1) and packs pods neatly into floor:0 inside the zone rectangle.
+   */
+  async relocateHypersleepPodsToZone(
+    zoneId: string,
+  ): Promise<{ moved: number; total: number; remaining: number }> {
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const zone = (this.state.customZones ?? []).find((z) => z.id === zoneId);
+      if (!zone) throw new Error(`Custom zone "${zoneId}" not found`);
+      if (zone.role !== "hypersleep") {
+        throw new Error(`Zone "${zone.name}" is not a Hypersleep zone (role: ${zone.role})`);
+      }
+
+      const existingPods = this.campus.worldFurniture
+        .filter((f) => f.assetId === "hypersleep-capsule")
+        .sort((a, b) => a.ty - b.ty || a.tx - b.tx);
+      const total = existingPods.length;
+      if (total === 0) {
+        return { moved: 0, total: 0, remaining: 0 };
+      }
+
+      // Compute tiles occupied by non-pod, non-tabletop, non-divider furniture
+      const occupied = new Set<string>();
+      for (const wf of this.campus.worldFurniture) {
+        if (wf.assetId === "hypersleep-capsule") continue;
+        const cat = this.catalogById.get(wf.assetId);
+        if (isTabletopAsset(wf.assetId, wf.layer, cat)) continue;
+        if (wf.assetId.startsWith("divider-")) continue;
+        for (let dy = 0; dy < wf.footprintTiles[1]; dy++) {
+          for (let dx = 0; dx < wf.footprintTiles[0]; dx++) {
+            occupied.add(`${wf.tx + dx},${wf.ty + dy}`);
+          }
+        }
+      }
+
+      // Build candidate slots inside zone: prefer 1x2 vertical with 1-tile walking aisles, then tight 1x2, then 2x1
+      const slots: Array<{ x: number; y: number; direction: Direction }> = [];
+      const reserved = new Set<string>(occupied);
+      const tryClaim = (x: number, y: number, fw: number, fd: number, direction: Direction): boolean => {
+        if (x < zone.x || y < zone.y || x + fw > zone.x + zone.width || y + fd > zone.y + zone.height) {
+          return false;
+        }
+        for (let dy = 0; dy < fd; dy++) {
+          for (let dx = 0; dx < fw; dx++) {
+            if (reserved.has(`${x + dx},${y + dy}`)) return false;
+          }
+        }
+        for (let dy = 0; dy < fd; dy++) {
+          for (let dx = 0; dx < fw; dx++) {
+            reserved.add(`${x + dx},${y + dy}`);
+          }
+        }
+        slots.push({ x, y, direction });
+        return true;
+      };
+
+      // Pass 1: 1x2 ("se") rows with 1-tile walking aisle
+      for (let ly = 0; ly + 2 <= zone.height && slots.length < total; ly += 3) {
+        for (let lx = 0; lx < zone.width && slots.length < total; lx++) {
+          tryClaim(zone.x + lx, zone.y + ly, 1, 2, "se");
+        }
+      }
+      // Pass 2: tight 1x2 ("se") rows if zone needs denser packing
+      if (slots.length < total) {
+        for (let ly = 0; ly + 2 <= zone.height && slots.length < total; ly++) {
+          for (let lx = 0; lx < zone.width && slots.length < total; lx++) {
+            tryClaim(zone.x + lx, zone.y + ly, 1, 2, "se");
+          }
+        }
+      }
+      // Pass 3: 2x1 ("sw") orientation if narrow horizontal strip
+      if (slots.length < total) {
+        for (let ly = 0; ly < zone.height && slots.length < total; ly++) {
+          for (let lx = 0; lx + 2 <= zone.width && slots.length < total; lx++) {
+            tryClaim(zone.x + lx, zone.y + ly, 2, 1, "sw");
+          }
+        }
+      }
+
+      if (slots.length === 0) {
+        throw new Error(`โซน "${zone.name}" (${zone.width}×${zone.height}) เล็กเกินไปหรือมีเฟอร์นิเจอร์เต็ม ไม่สามารถวาง Pod ขนาด 1×2 ได้`);
+      }
+
+      if (!this.state.zoneOverrides) this.state.zoneOverrides = {};
+      // Clear built-in hypersleep:0 overrides & remove existing pods from floor:0 before re-placing
+      const floorList = (this.state.zoneOverrides["floor:0"] ?? []).filter(
+        (f) => f.assetId !== "hypersleep-capsule",
+      );
+      this.state.zoneOverrides["hypersleep:0"] = [];
+
+      const movedCount = Math.min(total, slots.length);
+      for (let i = 0; i < movedCount; i++) {
+        const pod = existingPods[i];
+        const slot = slots[i];
+        floorList.push({
+          id: pod.id,
+          zoneId: "floor:0",
+          lx: slot.x,
+          ly: slot.y,
+          assetId: "hypersleep-capsule",
+          direction: slot.direction,
+          layer: "object",
+          placedBy: "user",
+        });
+      }
+      // Keep any overflow pods at their previous world coordinates on floor:0 so zero pods are lost
+      for (let i = movedCount; i < total; i++) {
+        const pod = existingPods[i];
+        floorList.push({
+          id: pod.id,
+          zoneId: "floor:0",
+          lx: pod.tx,
+          ly: pod.ty,
+          assetId: "hypersleep-capsule",
+          direction: pod.direction,
+          layer: "object",
+          placedBy: pod.placedBy,
+        });
+      }
+      this.state.zoneOverrides["floor:0"] = floorList;
+
+      this.recomputeCampus();
+      await this.persist();
+      this.emitSnapshot();
+      return { moved: movedCount, total, remaining: total - movedCount };
     });
   }
 

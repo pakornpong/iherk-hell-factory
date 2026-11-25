@@ -109,12 +109,20 @@
         </div>
       </div>
       <div class="layer-section">
-        <div class="layer-section-title">CREATE ZONE (2 CLICKS ON MAP)</div>
-        <input id="zone-name-input" type="text" maxlength="64" placeholder="ชื่อโซน เช่น Meeting, Lab..." />
+        <div class="layer-section-title">PODS ZONE (HYPERSLEEP)</div>
+        <div class="zone-pods-actions">
+          <button id="btn-edit-pods-zone" class="floor-size-btn" title="กำหนด / ย้าย / แก้ขนาดโซน Pods บนพื้น">🧊 แก้ / ย้ายโซน Pods</button>
+          <button id="btn-relocate-pods" class="floor-size-btn hidden" title="จัดเรียง Pods ทั้งหมดเข้าในโซนนี้">📦 จัด Pods เข้าโซน</button>
+        </div>
+      </div>
+      <div class="layer-section">
+        <div id="zone-form-title" class="layer-section-title">CREATE ZONE (2 CLICKS ON MAP)</div>
+        <input id="zone-name-input" type="text" maxlength="64" placeholder="ชื่อโซน เช่น Meeting, Pods, Lab..." />
         <select id="zone-role-select" class="zone-select">
           <option value="label">🏷️ Label / Room (ป้ายโซน)</option>
           <option value="work">💻 Work Zone (เอเจนต์มานั่งทำงานได้)</option>
-          <option value="hypersleep">🧊 Hypersleep Bay (โซนนอน)</option>
+          <option value="meeting">🤝 Meeting Zone (โซนประชุม · นั่งโต๊ะประชุม)</option>
+          <option value="hypersleep">🧊 Hypersleep Bay (โซน Pods นอน)</option>
           <option value="lounge">🛋️ Lounge / Break Room</option>
         </select>
         <div id="zone-icon-row" class="zone-icon-row">
@@ -134,6 +142,10 @@
           <button class="zone-color-btn" data-color="#a78bfa" style="background:#a78bfa"></button>
           <button class="zone-color-btn" data-color="#f43f5e" style="background:#f43f5e"></button>
           <button class="zone-color-btn" data-color="#14b8a6" style="background:#14b8a6"></button>
+        </div>
+        <div id="zone-edit-actions" class="zone-edit-actions hidden">
+          <button id="btn-zone-save-meta" class="floor-size-btn zone-save-btn">💾 บันทึกข้อมูลโซน</button>
+          <button id="btn-zone-cancel-edit" class="floor-size-btn">✕ ยกเลิก</button>
         </div>
         <div id="zone-draw-status" class="zone-draw-status">1. คลิกมุมแรกบนพื้นเพื่อเริ่มลากกรอบโซน</div>
       </div>

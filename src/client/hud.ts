@@ -28,6 +28,7 @@ export interface LayerEditorState {
 export interface ZoneEditorState {
   active: boolean;
   startTile: [number, number] | null;
+  editingZoneId: string | null;
   draftName: string;
   draftIcon: string;
   draftColor: string;
@@ -38,6 +39,11 @@ export interface HudCallbacks {
   onFocusBay(bayId: string): void;
   onFocusZoneGroup?(group: CampusZoneGroup): void;
   onFocusCustomZone?(zone: CustomZoneRecord): void;
+  onEditCustomZone?(zone: CustomZoneRecord): void;
+  onCancelEditZone?(): void;
+  onSaveEditingZoneMeta?(): void;
+  onStartEditPodsZone?(): void;
+  onRelocatePodsToZone?(zoneId: string): void;
   onDeleteCustomZone?(zoneId: string): void;
   onResizeFloor?(delta: { deltaWidth?: number; deltaDepth?: number }): void;
   onToggleZonePanel?(open?: boolean): void;
@@ -293,6 +299,21 @@ export class OfficeHud {
       this.cb.onDecorateChanged();
     });
 
+    document.getElementById("btn-edit-pods-zone")?.addEventListener("click", () => {
+      this.cb.onStartEditPodsZone?.();
+    });
+    document.getElementById("btn-relocate-pods")?.addEventListener("click", () => {
+      const btn = document.getElementById("btn-relocate-pods") as HTMLButtonElement | null;
+      const zId = btn?.dataset.zoneId;
+      if (zId) this.cb.onRelocatePodsToZone?.(zId);
+    });
+    document.getElementById("btn-zone-save-meta")?.addEventListener("click", () => {
+      this.cb.onSaveEditingZoneMeta?.();
+    });
+    document.getElementById("btn-zone-cancel-edit")?.addEventListener("click", () => {
+      this.cb.onCancelEditZone?.();
+    });
+
     const zoneButtons = document.querySelectorAll<HTMLButtonElement>(".zone-jump-btn");
     zoneButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -468,13 +489,43 @@ export class OfficeHud {
       zonePanel.classList.toggle("hidden", !zoneOpen);
       const sizeEl = document.getElementById("floor-size-readout");
       if (sizeEl) sizeEl.textContent = `${snapshot.campus.widthTiles} × ${snapshot.campus.depthTiles}`;
+
+      const czs = state.customZones ?? [];
+      const editingZone = zoneEditor?.editingZoneId ? czs.find((z) => z.id === zoneEditor.editingZoneId) ?? null : null;
+      const customPodsZone = czs.find((z) => z.role === "hypersleep") ?? null;
+
+      const btnEditPods = document.getElementById("btn-edit-pods-zone") as HTMLButtonElement | null;
+      if (btnEditPods) {
+        btnEditPods.textContent = customPodsZone ? "✏️ แก้โซน Pods" : "🧊 กำหนด / ย้ายโซน Pods";
+      }
+      const btnRelocatePods = document.getElementById("btn-relocate-pods") as HTMLButtonElement | null;
+      if (btnRelocatePods) {
+        const targetPodsZone = editingZone?.role === "hypersleep" ? editingZone : customPodsZone;
+        btnRelocatePods.classList.toggle("hidden", !targetPodsZone);
+        if (targetPodsZone) btnRelocatePods.dataset.zoneId = targetPodsZone.id;
+      }
+
+      const formTitle = document.getElementById("zone-form-title");
+      if (formTitle) {
+        formTitle.textContent = editingZone
+          ? `EDIT ZONE · ${editingZone.name.toUpperCase()}`
+          : "CREATE ZONE (2 CLICKS ON MAP)";
+      }
+      document.getElementById("zone-edit-actions")?.classList.toggle("hidden", !editingZone);
+
       const statusEl = document.getElementById("zone-draw-status");
       if (statusEl && zoneEditor) {
-        statusEl.textContent = zoneEditor.startTile
-          ? `2. เลือกมุมตรงข้ามเพื่อสร้างโซน (เริ่มที่ ${zoneEditor.startTile[0]},${zoneEditor.startTile[1]} · Esc ยกเลิก)`
-          : "1. คลิกมุมแรกบนพื้นเพื่อเริ่มลากกรอบโซน";
+        if (editingZone) {
+          statusEl.textContent = zoneEditor.startTile
+            ? `2. เลือกมุมตรงข้ามเพื่อย้าย/ปรับขนาด "${editingZone.name}" (เริ่ม ${zoneEditor.startTile[0]},${zoneEditor.startTile[1]})`
+            : `แก้ชื่อ/บทบาทแล้วกด 💾 บันทึก หรือคลิก 2 มุมบนพื้นเพื่อย้าย/ปรับขนาดโซนนี้`;
+        } else {
+          statusEl.textContent = zoneEditor.startTile
+            ? `2. เลือกมุมตรงข้ามเพื่อสร้างโซน (เริ่มที่ ${zoneEditor.startTile[0]},${zoneEditor.startTile[1]} · Esc ยกเลิก)`
+            : "1. คลิกมุมแรกบนพื้นเพื่อเริ่มลากกรอบโซน";
+        }
       }
-      const czs = state.customZones ?? [];
+
       const countEl = document.getElementById("custom-zone-count");
       if (countEl) countEl.textContent = String(czs.length);
       const listEl = document.getElementById("custom-zone-list");
@@ -485,17 +536,39 @@ export class OfficeHud {
         } else {
           for (const cz of czs) {
             const row = document.createElement("div");
-            row.className = "custom-zone-row";
+            row.className = `custom-zone-row${zoneEditor?.editingZoneId === cz.id ? " editing" : ""}`;
+            const roleTag =
+              cz.role === "work"
+                ? " · WORK"
+                : cz.role === "meeting"
+                  ? " · MEET"
+                  : cz.role === "hypersleep"
+                    ? " · PODS"
+                    : cz.role === "lounge"
+                      ? " · LOUNGE"
+                      : "";
             row.innerHTML = `
               <div class="custom-zone-main">
                 <span class="bay-dot" style="background:${cz.color}"></span>
                 <span class="custom-zone-name">${escapeHtml(cz.icon)} ${escapeHtml(cz.name)}</span>
-                <span class="custom-zone-meta">${cz.width}×${cz.height}${cz.role === "work" ? " · WORK" : ""}</span>
+                <span class="custom-zone-meta">${cz.width}×${cz.height}${roleTag}</span>
               </div>
-              <button class="custom-zone-del" title="Delete zone">×</button>
+              <div class="custom-zone-actions">
+                ${cz.role === "hypersleep" ? '<button class="custom-zone-btn custom-zone-pack" title="จัด Pods ทั้งหมดเข้าโซนนี้">📦</button>' : ""}
+                <button class="custom-zone-btn custom-zone-edit" title="แก้ไข / ย้ายกรอบโซน">✏️</button>
+                <button class="custom-zone-del" title="ลบโซน">×</button>
+              </div>
             `;
             row.querySelector(".custom-zone-main")?.addEventListener("click", () => {
               this.cb.onFocusCustomZone?.(cz);
+            });
+            row.querySelector(".custom-zone-pack")?.addEventListener("click", (e) => {
+              e.stopPropagation();
+              this.cb.onRelocatePodsToZone?.(cz.id);
+            });
+            row.querySelector(".custom-zone-edit")?.addEventListener("click", (e) => {
+              e.stopPropagation();
+              this.cb.onEditCustomZone?.(cz);
             });
             row.querySelector(".custom-zone-del")?.addEventListener("click", (e) => {
               e.stopPropagation();

@@ -65,6 +65,7 @@ async function bootstrap(): Promise<void> {
   const zoneEditorState: ZoneEditorState = {
     active: false,
     startTile: null,
+    editingZoneId: null,
     draftName: "",
     draftIcon: "🏷️",
     draftColor: "#38bdf8",
@@ -92,6 +93,17 @@ async function bootstrap(): Promise<void> {
       document.querySelectorAll(".zone-color-btn").forEach((b) => b.classList.toggle("active", b === btn));
     });
   });
+
+  const syncZoneFormInputs = () => {
+    if (zoneNameInput) zoneNameInput.value = zoneEditorState.draftName;
+    if (zoneRoleSelect) zoneRoleSelect.value = zoneEditorState.draftRole;
+    document.querySelectorAll<HTMLButtonElement>(".zone-icon-btn").forEach((b) => {
+      b.classList.toggle("active", (b.dataset.icon ?? "") === zoneEditorState.draftIcon);
+    });
+    document.querySelectorAll<HTMLButtonElement>(".zone-color-btn").forEach((b) => {
+      b.classList.toggle("active", (b.dataset.color ?? "").toLowerCase() === zoneEditorState.draftColor.toLowerCase());
+    });
+  };
 
   const resize = () => {
     canvas.width = window.innerWidth;
@@ -164,6 +176,27 @@ async function bootstrap(): Promise<void> {
           return;
         }
       }
+      if (group === "hypersleep") {
+        const customPodsZone = snapshot?.state.customZones?.find((z) => z.role === "hypersleep");
+        if (customPodsZone) {
+          camera.glideToTile(
+            customPodsZone.x + customPodsZone.width / 2,
+            customPodsZone.y + customPodsZone.height / 2,
+            canvas.width,
+            canvas.height,
+          );
+          return;
+        }
+        const pods = snapshot?.campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule") ?? [];
+        if (pods.length > 0) {
+          const minX = Math.min(...pods.map((p) => p.tx));
+          const maxX = Math.max(...pods.map((p) => p.tx + p.footprintTiles[0]));
+          const minY = Math.min(...pods.map((p) => p.ty));
+          const maxY = Math.max(...pods.map((p) => p.ty + p.footprintTiles[1]));
+          camera.glideToTile((minX + maxX) / 2, (minY + maxY) / 2, canvas.width, canvas.height);
+          return;
+        }
+      }
       const matching = snapshot?.campus.zones.filter((z) => z.zoneGroup === group);
       if (matching && matching.length > 0) {
         const minX = Math.min(...matching.map((z) => z.originX));
@@ -176,7 +209,105 @@ async function bootstrap(): Promise<void> {
     onFocusCustomZone(zone: CustomZoneRecord) {
       camera.glideToTile(zone.x + zone.width / 2, zone.y + zone.height / 2, canvas.width, canvas.height);
     },
+    onEditCustomZone(zone: CustomZoneRecord) {
+      zoneEditorState.active = true;
+      zoneEditorState.editingZoneId = zone.id;
+      zoneEditorState.startTile = null;
+      zoneEditorState.draftName = zone.name;
+      zoneEditorState.draftIcon = zone.icon;
+      zoneEditorState.draftColor = zone.color;
+      zoneEditorState.draftRole = zone.role;
+      syncZoneFormInputs();
+      camera.glideToTile(zone.x + zone.width / 2, zone.y + zone.height / 2, canvas.width, canvas.height);
+      hud.showToast(`✏️ กำลังแก้ไข "${zone.name}" — กด 💾 บันทึก หรือคลิก 2 มุมบนพื้นเพื่อย้าย/ปรับขนาด`);
+      refreshHud();
+    },
+    onCancelEditZone() {
+      zoneEditorState.editingZoneId = null;
+      zoneEditorState.startTile = null;
+      zoneEditorState.draftName = "";
+      syncZoneFormInputs();
+      refreshHud();
+    },
+    onSaveEditingZoneMeta() {
+      const id = zoneEditorState.editingZoneId;
+      if (!id) return;
+      const name = zoneEditorState.draftName.trim();
+      if (!name) {
+        hud.showToast("กรุณาใส่ชื่อโซน", true);
+        return;
+      }
+      void architectFetch<{ zone: CustomZoneRecord }>(`/api/architect/zones/${encodeURIComponent(id)}`, {
+        method: "PATCH",
+        body: JSON.stringify({
+          name,
+          icon: zoneEditorState.draftIcon,
+          color: zoneEditorState.draftColor,
+          role: zoneEditorState.draftRole,
+        }),
+      })
+        .then((res) => {
+          zoneEditorState.editingZoneId = null;
+          zoneEditorState.startTile = null;
+          hud.showToast(`💾 บันทึกโซน "${res.zone.icon} ${res.zone.name}" แล้ว`);
+          refreshHud();
+        })
+        .catch((e) => hud.showToast(e instanceof Error ? e.message : String(e), true));
+    },
+    onStartEditPodsZone() {
+      const existingPodsZone = snapshot?.state.customZones?.find((z) => z.role === "hypersleep");
+      if (existingPodsZone) {
+        zoneEditorState.active = true;
+        zoneEditorState.editingZoneId = existingPodsZone.id;
+        zoneEditorState.startTile = null;
+        zoneEditorState.draftName = existingPodsZone.name;
+        zoneEditorState.draftIcon = existingPodsZone.icon;
+        zoneEditorState.draftColor = existingPodsZone.color;
+        zoneEditorState.draftRole = "hypersleep";
+        syncZoneFormInputs();
+        camera.glideToTile(
+          existingPodsZone.x + existingPodsZone.width / 2,
+          existingPodsZone.y + existingPodsZone.height / 2,
+          canvas.width,
+          canvas.height,
+        );
+        hud.showToast(`🧊 คลิก 2 มุมบนพื้นเพื่อย้าย/ปรับขนาดโซน "${existingPodsZone.name}"`);
+        refreshHud();
+        return;
+      }
+      zoneEditorState.active = true;
+      zoneEditorState.editingZoneId = null;
+      zoneEditorState.startTile = null;
+      zoneEditorState.draftName = "HYPERSLEEP BAY";
+      zoneEditorState.draftIcon = "🧊";
+      zoneEditorState.draftColor = "#14b8a6";
+      zoneEditorState.draftRole = "hypersleep";
+      syncZoneFormInputs();
+      hud.showToast("🧊 คลิก 2 มุมบนพื้นเพื่อกำหนดตำแหน่งโซน Pods ใหม่ (จะจัด Pods เข้าให้อัตโนมัติ)");
+      refreshHud();
+    },
+    onRelocatePodsToZone(zoneId: string) {
+      void architectFetch<{ moved: number; total: number; remaining: number }>(
+        `/api/architect/zones/${encodeURIComponent(zoneId)}/relocate-pods`,
+        { method: "POST" },
+      )
+        .then((res) => {
+          if (res.remaining > 0) {
+            hud.showToast(
+              `🧊 ย้าย Pods เข้าโซนได้ ${res.moved}/${res.total} แคปซูล (เหลือ ${res.remaining} — ขยายโซนเพิ่มเพื่อให้พอใส่ทั้งหมด)`,
+            );
+          } else {
+            hud.showToast(`🧊 จัด Pods เข้าโซนครบทั้ง ${res.moved}/${res.total} แคปซูลแล้ว!`);
+          }
+          refreshHud();
+        })
+        .catch((e) => hud.showToast(e instanceof Error ? e.message : String(e), true));
+    },
     onDeleteCustomZone(zoneId: string) {
+      if (zoneEditorState.editingZoneId === zoneId) {
+        zoneEditorState.editingZoneId = null;
+        zoneEditorState.startTile = null;
+      }
       void architectFetch(`/api/architect/zones/${encodeURIComponent(zoneId)}`, { method: "DELETE" })
         .then(() => hud.showToast("🗑️ ลบโซนแล้ว"))
         .catch((e) => hud.showToast(e instanceof Error ? e.message : String(e), true));
@@ -374,7 +505,11 @@ async function bootstrap(): Promise<void> {
       if (tx < 0 || ty < 0 || tx >= snapshot.campus.widthTiles || ty >= snapshot.campus.depthTiles) return;
       if (!zoneEditorState.startTile) {
         zoneEditorState.startTile = [tx, ty];
-        hud.showToast(`📍 มุมแรก (${tx},${ty}) — คลิกมุมตรงข้ามเพื่อสร้างโซน`);
+        hud.showToast(
+          zoneEditorState.editingZoneId
+            ? `📍 มุมแรก (${tx},${ty}) — คลิกมุมตรงข้ามเพื่อย้าย/ปรับขนาดโซน`
+            : `📍 มุมแรก (${tx},${ty}) — คลิกมุมตรงข้ามเพื่อสร้างโซน`,
+        );
         refreshHud();
         return;
       }
@@ -383,10 +518,51 @@ async function bootstrap(): Promise<void> {
       const y = Math.min(sy0, ty);
       const width = Math.abs(tx - sx0) + 1;
       const height = Math.abs(ty - sy0) + 1;
+      const editingId = zoneEditorState.editingZoneId;
       const name =
         zoneEditorState.draftName.trim() ||
-        `Zone ${(snapshot.state.customZones?.length ?? 0) + 1}`;
+        (editingId
+          ? snapshot.state.customZones?.find((z) => z.id === editingId)?.name ?? "Zone"
+          : `Zone ${(snapshot.state.customZones?.length ?? 0) + 1}`);
       zoneEditorState.startTile = null;
+
+      if (editingId) {
+        void architectFetch<{ zone: CustomZoneRecord }>(`/api/architect/zones/${encodeURIComponent(editingId)}`, {
+          method: "PATCH",
+          body: JSON.stringify({
+            name,
+            icon: zoneEditorState.draftIcon,
+            color: zoneEditorState.draftColor,
+            role: zoneEditorState.draftRole,
+            x,
+            y,
+            width,
+            height,
+          }),
+        })
+          .then(async (res) => {
+            zoneEditorState.editingZoneId = null;
+            if (res.zone.role === "hypersleep") {
+              try {
+                const moved = await architectFetch<{ moved: number; total: number; remaining: number }>(
+                  `/api/architect/zones/${encodeURIComponent(res.zone.id)}/relocate-pods`,
+                  { method: "POST" },
+                );
+                hud.showToast(
+                  `✅ ย้ายโซน "${res.zone.icon} ${res.zone.name}" (${width}×${height}) และจัด Pods ${moved.moved}/${moved.total} แคปซูลแล้ว`,
+                );
+              } catch {
+                hud.showToast(`✅ อัปเดตโซน "${res.zone.icon} ${res.zone.name}" (${width}×${height}) แล้ว`);
+              }
+            } else {
+              hud.showToast(`✅ อัปเดตโซน "${res.zone.icon} ${res.zone.name}" (${width}×${height}) แล้ว`);
+            }
+            refreshHud();
+          })
+          .catch((err) => hud.showToast(err instanceof Error ? err.message : String(err), true));
+        return;
+      }
+
       void architectFetch<{ zone: CustomZoneRecord }>("/api/architect/zones", {
         method: "POST",
         body: JSON.stringify({
@@ -400,8 +576,22 @@ async function bootstrap(): Promise<void> {
           height,
         }),
       })
-        .then((res) => {
-          hud.showToast(`✅ สร้างโซน "${res.zone.icon} ${res.zone.name}" (${width}×${height}) แล้ว`);
+        .then(async (res) => {
+          if (res.zone.role === "hypersleep") {
+            try {
+              const moved = await architectFetch<{ moved: number; total: number; remaining: number }>(
+                `/api/architect/zones/${encodeURIComponent(res.zone.id)}/relocate-pods`,
+                { method: "POST" },
+              );
+              hud.showToast(
+                `🧊 สร้างโซน Pods "${res.zone.name}" (${width}×${height}) และย้าย Pods เข้า ${moved.moved}/${moved.total} แคปซูลแล้ว`,
+              );
+            } catch {
+              hud.showToast(`✅ สร้างโซน "${res.zone.icon} ${res.zone.name}" (${width}×${height}) แล้ว`);
+            }
+          } else {
+            hud.showToast(`✅ สร้างโซน "${res.zone.icon} ${res.zone.name}" (${width}×${height}) แล้ว`);
+          }
           refreshHud();
         })
         .catch((err) => hud.showToast(err instanceof Error ? err.message : String(err), true));
@@ -589,6 +779,8 @@ async function bootstrap(): Promise<void> {
       if (zoneEditorState.active) {
         if (zoneEditorState.startTile) {
           zoneEditorState.startTile = null;
+        } else if (zoneEditorState.editingZoneId) {
+          zoneEditorState.editingZoneId = null;
         } else {
           zoneEditorState.active = false;
         }
@@ -864,6 +1056,7 @@ async function bootstrap(): Promise<void> {
             hoverTile,
             draftColor: zoneEditorState.draftColor,
             draftLabel: `${zoneEditorState.draftIcon} ${zoneEditorState.draftName.trim() || "New Zone"}`,
+            editingZoneId: zoneEditorState.editingZoneId,
           }
         : null,
       layerOverlayMode: layerState.mode,

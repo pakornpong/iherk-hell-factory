@@ -1,9 +1,14 @@
 # iherk-hell-factory — Design Document
 
 **Date:** 2026-11-24  
-**Status:** Ready for Approval (Builder Check Completed)  
+**Status:** Implemented & Evolved *(see follow-up specs below for current campus layout, layer system, agent routing, and custom zones)*  
 **Target Workspace:** `/Users/dev3/Documents/IHERK/iherk-hell-factory`  
 **Asset Engine Dependency:** `/Users/dev3/Documents/IHERK/iherk-pixcel`
+
+> **Design Evolution (Current Architecture):**
+> - [`2026-11-24-flush-rooms-edge-walls.md`](./2026-11-24-flush-rooms-edge-walls.md) — Boundary-line zero-thickness walls, slim corner posts, edge-blocking pathfinding.
+> - [`2026-11-24-layer-permissions-and-decorate.md`](./2026-11-24-layer-permissions-and-decorate.md) — GBA-style tile permissions (`0–3`), elevation layers (`L1–L7`), tabletop props, and full-campus Decorate Mode.
+> - [`2026-11-25-open-floor-hypersleep-zones.md`](./2026-11-25-open-floor-hypersleep-zones.md) — **Latest:** Open resizable sandbox floor (`floor:0`), Space Haven hypersleep pods + editable Pods Zone, flush edge-mounted glass dividers, floor painting, Custom Zones (`work` / `meeting` / `hypersleep` / `lounge`), and Boss-briefing / desk-thinking / meeting-table agent routing.
 
 ---
 

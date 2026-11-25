@@ -415,6 +415,14 @@ export async function createHellFactoryServer(opts: {
           return;
         }
 
+        const relocatePodsMatch = pathname.match(/^\/api\/architect\/zones\/([^/]+)\/relocate-pods$/);
+        if (relocatePodsMatch && method === "POST") {
+          const id = decodeURIComponent(relocatePodsMatch[1]);
+          const result = await opts.engine.relocateHypersleepPodsToZone(id);
+          sendJson(res, 200, { ok: true, ...result });
+          return;
+        }
+
         const customZoneMatch = pathname.match(/^\/api\/architect\/zones\/([^/]+)$/);
         if (customZoneMatch && method === "PATCH") {
           const id = decodeURIComponent(customZoneMatch[1]);

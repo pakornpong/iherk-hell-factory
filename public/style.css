@@ -667,6 +667,49 @@ button.active {
   flex-shrink: 0;
 }
 
+.zone-pods-actions,
+.zone-edit-actions {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 6px;
+}
+
+.zone-pods-actions .floor-size-btn,
+.zone-edit-actions .floor-size-btn {
+  flex: 1;
+}
+
+.zone-save-btn {
+  background: rgba(14, 165, 233, 0.25) !important;
+  border-color: #38bdf8 !important;
+  color: #e0f2fe !important;
+}
+
+.custom-zone-row.editing {
+  border-color: #38bdf8;
+  background: rgba(14, 165, 233, 0.16);
+}
+
+.custom-zone-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.custom-zone-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0 3px;
+}
+
+.custom-zone-btn:hover {
+  color: #38bdf8;
+}
+
 .custom-zone-del {
   background: transparent;
   border: none;
