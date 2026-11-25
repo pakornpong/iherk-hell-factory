@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "id": "home-aquarium",
+  "category": "home",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "wood_dark": {
+      "color": "#4b3121",
+      "kind": "wood"
+    },
+    "water_cyan": {
+      "color": "#22d3ee",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.4
+    },
+    "fish_orange": {
+      "color": "#f59e0b",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.3
+    },
+    "plant_green": {
+      "color": "#4ade80",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        27,
+        4
+      ],
+      "material": "wood_dark",
+      "part": "stand"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        4
+      ],
+      "to": [
+        26,
+        26,
+        30
+      ],
+      "material": "wood_dark",
+      "part": "tank_frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        5
+      ],
+      "to": [
+        25,
+        25,
+        29
+      ],
+      "material": "water_cyan",
+      "part": "water"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        10,
+        10,
+        10
+      ],
+      "material": "fish_orange",
+      "part": "fish_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        15,
+        12,
+        12
+      ],
+      "material": "fish_orange",
+      "part": "fish_2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        18,
+        18,
+        14
+      ],
+      "material": "fish_orange",
+      "part": "fish_3"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        12,
+        8,
+        6
+      ],
+      "material": "plant_green",
+      "part": "plant_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        20,
+        15,
+        7
+      ],
+      "material": "plant_green",
+      "part": "plant_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        30
+      ],
+      "to": [
+        26,
+        26,
+        31
+      ],
+      "material": "wood_dark",
+      "part": "tank_rim"
+    }
+  ]
+}

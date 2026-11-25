@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 1,
+  "id": "gadget-3d-hologram-table",
+  "category": "gadget",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "dark_matt": {
+      "color": "#2d2d2d",
+      "kind": "matte"
+    },
+    "grid_pattern": {
+      "color": "#444444",
+      "kind": "matte"
+    },
+    "hologram_glow": {
+      "color": "#00ffff",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.6
+    },
+    "edge_glow": {
+      "color": "#00ffff",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.6
+    },
+    "metallic": {
+      "color": "#666666",
+      "kind": "metal"
+    },
+    "red_button": {
+      "color": "#ff0000",
+      "kind": "matte"
+    },
+    "green_button": {
+      "color": "#00ff00",
+      "kind": "matte"
+    },
+    "blue_button": {
+      "color": "#0000ff",
+      "kind": "matte"
+    },
+    "city_skyline": {
+      "color": "#00ffff",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.6
+    },
+    "building": {
+      "color": "#888888",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        63,
+        31,
+        20
+      ],
+      "material": "dark_matt",
+      "part": "table_base"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        5,
+        5,
+        20
+      ],
+      "material": "grid_pattern",
+      "part": "grid_pattern_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        10,
+        10,
+        20
+      ],
+      "material": "grid_pattern",
+      "part": "grid_pattern_2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        15,
+        15,
+        20
+      ],
+      "material": "grid_pattern",
+      "part": "grid_pattern_3"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        20,
+        20,
+        20
+      ],
+      "material": "grid_pattern",
+      "part": "grid_pattern_4"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        25,
+        25,
+        20
+      ],
+      "material": "grid_pattern",
+      "part": "grid_pattern_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        21
+      ],
+      "to": [
+        53,
+        21,
+        25
+      ],
+      "material": "hologram_glow",
+      "part": "hologram_area"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        25
+      ],
+      "to": [
+        53,
+        21,
+        25
+      ],
+      "material": "dark_matt",
+      "part": "hologram_base"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        10,
+        10,
+        25
+      ],
+      "to": [
+        53,
+        21,
+        25
+      ],
+      "thickness": 1,
+      "material": "edge_glow",
+      "part": "hologram_edges"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        23,
+        20
+      ],
+      "to": [
+        8,
+        31,
+        25
+      ],
+      "material": "metallic",
+      "part": "control_frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        27,
+        25
+      ],
+      "to": [
+        4,
+        29,
+        25
+      ],
+      "material": "red_button",
+      "part": "button_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        27,
+        25
+      ],
+      "to": [
+        7,
+        29,
+        25
+      ],
+      "material": "green_button",
+      "part": "button_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        27,
+        25
+      ],
+      "to": [
+        10,
+        29,
+        25
+      ],
+      "material": "blue_button",
+      "part": "button_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        20
+      ],
+      "to": [
+        63,
+        1,
+        20
+      ],
+      "material": "metallic",
+      "part": "frame_top"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        30,
+        20
+      ],
+      "to": [
+        63,
+        31,
+        20
+      ],
+      "material": "metallic",
+      "part": "frame_bottom"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        20
+      ],
+      "to": [
+        1,
+        31,
+        20
+      ],
+      "material": "metallic",
+      "part": "frame_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        62,
+        0,
+        20
+      ],
+      "to": [
+        63,
+        31,
+        20
+      ],
+      "material": "metallic",
+      "part": "frame_right"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        16,
+        16,
+        31
+      ],
+      "material": "building",
+      "part": "city_building_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        25,
+        16,
+        31
+      ],
+      "material": "building",
+      "part": "city_building_2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        35,
+        16,
+        31
+      ],
+      "material": "building",
+      "part": "city_building_3"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        45,
+        16,
+        31
+      ],
+      "material": "building",
+      "part": "city_building_4"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        20,
+        17,
+        36
+      ],
+      "material": "building",
+      "part": "city_building_5"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        30,
+        17,
+        35
+      ],
+      "material": "building",
+      "part": "city_building_6"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        40,
+        17,
+        34
+      ],
+      "material": "building",
+      "part": "city_building_7"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        25,
+        18,
+        40
+      ],
+      "material": "building",
+      "part": "city_building_8"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        35,
+        18,
+        39
+      ],
+      "material": "building",
+      "part": "city_building_9"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        45,
+        18,
+        42
+      ],
+      "material": "building",
+      "part": "city_building_10"
+    }
+  ]
+}

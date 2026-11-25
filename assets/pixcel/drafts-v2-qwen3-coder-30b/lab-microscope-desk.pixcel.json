@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "lab-microscope-desk",
+  "category": "lab",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "white_ceramic": {
+      "color": "#f0f0f0",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#808080",
+      "kind": "metal"
+    },
+    "black_plastic": {
+      "color": "#202020",
+      "kind": "matte"
+    },
+    "dark_grey": {
+      "color": "#404040",
+      "kind": "matte"
+    },
+    "cyan_screen": {
+      "color": "#00ffff",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.6
+    },
+    "sample_pattern": {
+      "color": "#1e40af",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.4
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        31,
+        31,
+        25
+      ],
+      "material": "white_ceramic",
+      "part": "table_top"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        2,
+        2,
+        25
+      ],
+      "to": [
+        29,
+        31,
+        31
+      ],
+      "thickness": 1,
+      "material": "steel",
+      "part": "frame_front"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        0,
+        2,
+        25
+      ],
+      "to": [
+        31,
+        29,
+        31
+      ],
+      "thickness": 1,
+      "material": "steel",
+      "part": "frame_side"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        31
+      ],
+      "to": [
+        21,
+        21,
+        47
+      ],
+      "material": "steel",
+      "part": "microscope_base"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 47,
+      "zTo": 70,
+      "radius": 3,
+      "material": "steel",
+      "part": "microscope_column"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        13,
+        70
+      ],
+      "to": [
+        19,
+        19,
+        72
+      ],
+      "material": "black_plastic",
+      "part": "control_panel"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        14,
+        14,
+        72
+      ],
+      "to": [
+        18,
+        18,
+        73
+      ],
+      "thickness": 1,
+      "material": "dark_grey",
+      "part": "screen_frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        73
+      ],
+      "to": [
+        17,
+        17,
+        74
+      ],
+      "material": "cyan_screen",
+      "part": "screen_display"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        4,
+        25
+      ],
+      "to": [
+        4,
+        4,
+        26
+      ],
+      "material": "white_ceramic",
+      "part": "drawer_handle"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        25
+      ],
+      "to": [
+        31,
+        4,
+        26
+      ],
+      "material": "white_ceramic",
+      "part": "drawer_front"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        2,
+        0
+      ],
+      "to": [
+        4,
+        4,
+        25
+      ],
+      "material": "steel",
+      "part": "base_legs"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        27,
+        0
+      ],
+      "to": [
+        29,
+        29,
+        25
+      ],
+      "material": "steel",
+      "part": "base_legs2"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        2,
+        0
+      ],
+      "to": [
+        4,
+        4,
+        1
+      ],
+      "material": "dark_grey",
+      "part": "anti_slip_pad"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        27,
+        0
+      ],
+      "to": [
+        29,
+        29,
+        1
+      ],
+      "material": "dark_grey",
+      "part": "anti_slip_pad2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        16,
+        16,
+        73
+      ],
+      "material": "sample_pattern",
+      "part": "sample_detail_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        15,
+        17,
+        73
+      ],
+      "material": "sample_pattern",
+      "part": "sample_detail_2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        17,
+        15,
+        73
+      ],
+      "material": "sample_pattern",
+      "part": "sample_detail_3"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        16,
+        16,
+        74
+      ],
+      "material": "sample_pattern",
+      "part": "sample_detail_4"
+    }
+  ]
+}

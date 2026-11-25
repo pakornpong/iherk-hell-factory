@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "id": "server-tape-library",
+  "category": "server",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "charcoal_metal": {
+      "color": "#333333",
+      "kind": "metal"
+    },
+    "glass_transparent": {
+      "color": "#88ccff",
+      "kind": "glass"
+    },
+    "dark_gray": {
+      "color": "#222222",
+      "kind": "matte"
+    },
+    "green_led": {
+      "color": "#00ff00",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.6
+    },
+    "amber_led": {
+      "color": "#ff8800",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.6
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        31,
+        31,
+        96
+      ],
+      "material": "charcoal_metal",
+      "part": "body_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        2,
+        92
+      ],
+      "to": [
+        27,
+        30,
+        96
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_12"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        2,
+        2
+      ],
+      "to": [
+        29,
+        31,
+        94
+      ],
+      "material": "glass_transparent",
+      "part": "glass_front"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        4
+      ],
+      "to": [
+        27,
+        31,
+        8
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        12
+      ],
+      "to": [
+        27,
+        31,
+        16
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        20
+      ],
+      "to": [
+        27,
+        31,
+        24
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        28
+      ],
+      "to": [
+        27,
+        31,
+        32
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        36
+      ],
+      "to": [
+        27,
+        31,
+        40
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        44
+      ],
+      "to": [
+        27,
+        31,
+        48
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_6"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        52
+      ],
+      "to": [
+        27,
+        31,
+        56
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_7"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        60
+      ],
+      "to": [
+        27,
+        31,
+        64
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_8"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        68
+      ],
+      "to": [
+        27,
+        31,
+        72
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_9"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        76
+      ],
+      "to": [
+        27,
+        31,
+        80
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_10"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        84
+      ],
+      "to": [
+        27,
+        31,
+        88
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_11"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        2,
+        5
+      ],
+      "to": [
+        8,
+        3,
+        7
+      ],
+      "material": "green_led",
+      "part": "led_green_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        2,
+        13
+      ],
+      "to": [
+        8,
+        3,
+        15
+      ],
+      "material": "green_led",
+      "part": "led_green_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        2,
+        21
+      ],
+      "to": [
+        8,
+        3,
+        23
+      ],
+      "material": "green_led",
+      "part": "led_green_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        2,
+        29
+      ],
+      "to": [
+        8,
+        3,
+        31
+      ],
+      "material": "green_led",
+      "part": "led_green_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        2,
+        37
+      ],
+      "to": [
+        8,
+        3,
+        39
+      ],
+      "material": "green_led",
+      "part": "led_green_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        2,
+        5
+      ],
+      "to": [
+        12,
+        3,
+        7
+      ],
+      "material": "amber_led",
+      "part": "led_amber_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        2,
+        13
+      ],
+      "to": [
+        12,
+        3,
+        15
+      ],
+      "material": "amber_led",
+      "part": "led_amber_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        2,
+        21
+      ],
+      "to": [
+        12,
+        3,
+        23
+      ],
+      "material": "amber_led",
+      "part": "led_amber_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        2,
+        29
+      ],
+      "to": [
+        12,
+        3,
+        31
+      ],
+      "material": "amber_led",
+      "part": "led_amber_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        2,
+        37
+      ],
+      "to": [
+        12,
+        3,
+        39
+      ],
+      "material": "amber_led",
+      "part": "led_amber_5"
+    }
+  ]
+}

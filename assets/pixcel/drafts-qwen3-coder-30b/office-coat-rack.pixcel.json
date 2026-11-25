@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "id": "office-coat-rack",
+  "category": "office",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "metal_dark": {
+      "color": "#1e293b",
+      "kind": "metal"
+    },
+    "metal_trim": {
+      "color": "#334155",
+      "kind": "metal"
+    },
+    "base_charcoal": {
+      "color": "#0f172a",
+      "kind": "matte"
+    },
+    "beige_coat": {
+      "color": "#f8fafc",
+      "kind": "matte"
+    },
+    "red_scarf": {
+      "color": "#dc2626",
+      "kind": "matte"
+    },
+    "hook_steel": {
+      "color": "#94a3b8",
+      "kind": "metal"
+    },
+    "led_white": {
+      "color": "#ffffff",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.35
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        16
+      ],
+      "zFrom": 0,
+      "zTo": 40,
+      "radius": 2,
+      "material": "metal_dark",
+      "part": "pole_base"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        16
+      ],
+      "zFrom": 40,
+      "zTo": 56,
+      "radius": 1,
+      "material": "metal_trim",
+      "part": "pole_shaft"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        14,
+        56
+      ],
+      "to": [
+        18,
+        18,
+        57
+      ],
+      "material": "base_charcoal",
+      "part": "round_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        57
+      ],
+      "to": [
+        17,
+        17,
+        58
+      ],
+      "material": "metal_trim",
+      "part": "base_trim"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        16,
+        58
+      ],
+      "to": [
+        14,
+        17,
+        59
+      ],
+      "material": "hook_steel",
+      "part": "hook_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        16,
+        58
+      ],
+      "to": [
+        19,
+        17,
+        59
+      ],
+      "material": "hook_steel",
+      "part": "hook_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        17,
+        59
+      ],
+      "to": [
+        14,
+        18,
+        60
+      ],
+      "material": "beige_coat",
+      "part": "coat_hem"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        17,
+        60
+      ],
+      "to": [
+        15,
+        18,
+        61
+      ],
+      "material": "beige_coat",
+      "part": "coat_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        17,
+        61
+      ],
+      "to": [
+        16,
+        18,
+        62
+      ],
+      "material": "beige_coat",
+      "part": "coat_sleeve_l"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        17,
+        61
+      ],
+      "to": [
+        17,
+        18,
+        62
+      ],
+      "material": "beige_coat",
+      "part": "coat_sleeve_r"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        18,
+        62
+      ],
+      "to": [
+        14,
+        19,
+        63
+      ],
+      "material": "red_scarf",
+      "part": "scarf_fold_l"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        18,
+        63
+      ],
+      "to": [
+        15,
+        19,
+        64
+      ],
+      "material": "red_scarf",
+      "part": "scarf_fold_r"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        18,
+        64
+      ],
+      "to": [
+        16,
+        19,
+        65
+      ],
+      "material": "red_scarf",
+      "part": "scarf_tip_l"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        18,
+        64
+      ],
+      "to": [
+        17,
+        19,
+        65
+      ],
+      "material": "red_scarf",
+      "part": "scarf_tip_r"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        13,
+        16,
+        58
+      ],
+      "material": "led_white",
+      "part": "hook_light_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        18,
+        16,
+        58
+      ],
+      "material": "led_white",
+      "part": "hook_light_2"
+    }
+  ]
+}

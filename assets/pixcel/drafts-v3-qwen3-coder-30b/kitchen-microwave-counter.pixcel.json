@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "id": "kitchen-microwave-counter",
+  "category": "home",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "wood_counter": {
+      "color": "#8B4513",
+      "kind": "wood"
+    },
+    "dark_microwave": {
+      "color": "#2F4F4F",
+      "kind": "metal"
+    },
+    "amber_display": {
+      "color": "#FFA500",
+      "kind": "glass"
+    },
+    "amber_emissive": {
+      "color": "#FF8C00",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.55
+    },
+    "white_mug": {
+      "color": "#FFFFFF",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        31,
+        31,
+        28
+      ],
+      "material": "wood_counter",
+      "part": "counter_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        2,
+        28
+      ],
+      "to": [
+        29,
+        29,
+        56
+      ],
+      "material": "dark_microwave",
+      "part": "microwave_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        3,
+        57
+      ],
+      "to": [
+        23,
+        28,
+        58
+      ],
+      "material": "amber_emissive",
+      "part": "display_glow"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        4,
+        45
+      ],
+      "to": [
+        4,
+        21,
+        56
+      ],
+      "material": "dark_microwave",
+      "part": "microwave_handle"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        10,
+        48
+      ],
+      "to": [
+        29,
+        21,
+        56
+      ],
+      "material": "dark_microwave",
+      "part": "microwave_controls"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        13,
+        56
+      ],
+      "to": [
+        27,
+        16,
+        57
+      ],
+      "material": "amber_display",
+      "part": "control_button"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        30,
+        28
+      ],
+      "to": [
+        31,
+        31,
+        30
+      ],
+      "material": "wood_counter",
+      "part": "counter_edge_front"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        0,
+        28
+      ],
+      "to": [
+        31,
+        31,
+        30
+      ],
+      "material": "wood_counter",
+      "part": "counter_edge_side"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        2,
+        54
+      ],
+      "to": [
+        6,
+        5,
+        56
+      ],
+      "material": "amber_display",
+      "part": "microwave_light_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        2,
+        54
+      ],
+      "to": [
+        27,
+        5,
+        56
+      ],
+      "material": "amber_display",
+      "part": "microwave_light_right"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        0,
+        0,
+        28
+      ],
+      "material": "wood_counter",
+      "part": "counter_grain"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        54
+      ],
+      "to": [
+        10,
+        10,
+        56
+      ],
+      "material": "dark_microwave",
+      "part": "microwave_reflection"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        3,
+        56
+      ],
+      "to": [
+        23,
+        28,
+        57
+      ],
+      "material": "amber_display",
+      "part": "display_screen"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        2,
+        28
+      ],
+      "to": [
+        29,
+        10,
+        36
+      ],
+      "material": "white_mug",
+      "part": "mug_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        4,
+        32
+      ],
+      "to": [
+        29,
+        8,
+        36
+      ],
+      "material": "white_mug",
+      "part": "mug_handle"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        2,
+        36
+      ],
+      "to": [
+        29,
+        10,
+        37
+      ],
+      "material": "white_mug",
+      "part": "mug_top"
+    }
+  ]
+}

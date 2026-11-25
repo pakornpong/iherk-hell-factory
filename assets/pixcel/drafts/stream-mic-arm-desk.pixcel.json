@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "id": "stream-mic-arm-desk",
+  "category": "streaming",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "desk_dark": {
+      "color": "#1f242d",
+      "kind": "matte"
+    },
+    "mic_arm_black": {
+      "color": "#18181b",
+      "kind": "metal"
+    },
+    "mic_head": {
+      "color": "#eab308",
+      "kind": "metal"
+    },
+    "mic_base": {
+      "color": "#3f3f46",
+      "kind": "metal"
+    },
+    "headphone_cable": {
+      "color": "#64748b",
+      "kind": "matte"
+    },
+    "headphone_jack": {
+      "color": "#cbd5e1",
+      "kind": "metal"
+    },
+    "on_air_light": {
+      "color": "#ec4899",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.65
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        0
+      ],
+      "to": [
+        25,
+        25,
+        2
+      ],
+      "material": "desk_dark",
+      "part": "desk_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        3
+      ],
+      "to": [
+        24,
+        24,
+        10
+      ],
+      "material": "desk_dark",
+      "part": "desk_top"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        11
+      ],
+      "to": [
+        24,
+        24,
+        12
+      ],
+      "material": "desk_dark",
+      "part": "desk_trim"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        16,
+        13
+      ],
+      "to": [
+        17,
+        17,
+        30
+      ],
+      "material": "mic_arm_black",
+      "part": "mic_arm"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        16,
+        31
+      ],
+      "to": [
+        17,
+        17,
+        32
+      ],
+      "material": "mic_head",
+      "part": "mic_head"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        16,
+        12
+      ],
+      "to": [
+        17,
+        17,
+        13
+      ],
+      "material": "mic_base",
+      "part": "mic_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        16,
+        10
+      ],
+      "to": [
+        17,
+        17,
+        11
+      ],
+      "material": "headphone_cable",
+      "part": "headphone_cable"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        16,
+        8
+      ],
+      "to": [
+        17,
+        17,
+        9
+      ],
+      "material": "headphone_jack",
+      "part": "headphone_jack"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        16,
+        4
+      ],
+      "to": [
+        17,
+        17,
+        5
+      ],
+      "material": "on_air_light",
+      "part": "on_air_light"
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "id": "lab-microscope-desk",
+  "category": "lab",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "white_tabletop": {
+      "color": "#f0f0f0",
+      "kind": "matte"
+    },
+    "steel_frame": {
+      "color": "#808080",
+      "kind": "metal"
+    },
+    "steel_microscope": {
+      "color": "#404040",
+      "kind": "metal"
+    },
+    "black_screen": {
+      "color": "#000000",
+      "kind": "matte"
+    },
+    "cyan_display": {
+      "color": "#00ffff",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.6
+    },
+    "red_button": {
+      "color": "#ff0000",
+      "kind": "matte"
+    },
+    "glass_slide": {
+      "color": "#80c0ff",
+      "kind": "glass"
+    },
+    "steel_tableleg": {
+      "color": "#606060",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        31,
+        31,
+        25
+      ],
+      "material": "white_tabletop",
+      "part": "table_top"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        25
+      ],
+      "to": [
+        31,
+        31,
+        27
+      ],
+      "material": "steel_frame",
+      "part": "frame_back"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        25
+      ],
+      "to": [
+        2,
+        31,
+        27
+      ],
+      "material": "steel_frame",
+      "part": "frame_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        0,
+        25
+      ],
+      "to": [
+        31,
+        31,
+        27
+      ],
+      "material": "steel_frame",
+      "part": "frame_right"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        29,
+        25
+      ],
+      "to": [
+        31,
+        31,
+        27
+      ],
+      "material": "steel_frame",
+      "part": "frame_front"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        27
+      ],
+      "to": [
+        23,
+        23,
+        40
+      ],
+      "material": "steel_microscope",
+      "part": "microscope_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        40
+      ],
+      "to": [
+        19,
+        19,
+        60
+      ],
+      "material": "steel_microscope",
+      "part": "microscope_column"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        60
+      ],
+      "to": [
+        21,
+        21,
+        70
+      ],
+      "material": "steel_microscope",
+      "part": "microscope_head"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        13,
+        70
+      ],
+      "to": [
+        18,
+        18,
+        72
+      ],
+      "material": "black_screen",
+      "part": "screen_frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        18,
+        70
+      ],
+      "to": [
+        19,
+        19,
+        71
+      ],
+      "material": "red_button",
+      "part": "power_button"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        15,
+        71
+      ],
+      "to": [
+        17,
+        18,
+        71
+      ],
+      "material": "cyan_display",
+      "part": "screen_display"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        20,
+        68
+      ],
+      "to": [
+        16,
+        21,
+        69
+      ],
+      "material": "glass_slide",
+      "part": "slide_holder"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        27,
+        0
+      ],
+      "to": [
+        6,
+        31,
+        25
+      ],
+      "material": "steel_tableleg",
+      "part": "table_leg_front_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        12,
+        0
+      ],
+      "to": [
+        29,
+        31,
+        25
+      ],
+      "material": "steel_tableleg",
+      "part": "table_leg_front_right"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        12,
+        0
+      ],
+      "to": [
+        6,
+        31,
+        25
+      ],
+      "material": "steel_tableleg",
+      "part": "table_leg_back_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        27,
+        0
+      ],
+      "to": [
+        29,
+        31,
+        25
+      ],
+      "material": "steel_tableleg",
+      "part": "table_leg_back_right"
+    }
+  ]
+}

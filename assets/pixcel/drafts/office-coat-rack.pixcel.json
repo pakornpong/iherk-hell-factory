@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "id": "office-coat-rack",
+  "category": "office",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "pole_dark": {
+      "color": "#1f242d",
+      "kind": "metal"
+    },
+    "base_round": {
+      "color": "#334155",
+      "kind": "metal"
+    },
+    "coat_beige": {
+      "color": "#f59e0b",
+      "kind": "matte"
+    },
+    "scarf_red": {
+      "color": "#dc2626",
+      "kind": "matte"
+    },
+    "hook": {
+      "color": "#cbd5e1",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        0
+      ],
+      "to": [
+        19,
+        19,
+        1
+      ],
+      "material": "base_round",
+      "part": "base"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        16,
+        2
+      ],
+      "to": [
+        17,
+        17,
+        40
+      ],
+      "material": "pole_dark",
+      "part": "pole"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        14,
+        41
+      ],
+      "to": [
+        16,
+        16,
+        42
+      ],
+      "material": "hook",
+      "part": "hook_l"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        14,
+        41
+      ],
+      "to": [
+        20,
+        16,
+        42
+      ],
+      "material": "hook",
+      "part": "hook_r"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        13,
+        43
+      ],
+      "to": [
+        14,
+        14,
+        44
+      ],
+      "material": "coat_beige",
+      "part": "coat_l"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        13,
+        43
+      ],
+      "to": [
+        21,
+        14,
+        44
+      ],
+      "material": "coat_beige",
+      "part": "coat_r"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        13,
+        45
+      ],
+      "to": [
+        16,
+        14,
+        46
+      ],
+      "material": "scarf_red",
+      "part": "scarf_l"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        13,
+        45
+      ],
+      "to": [
+        19,
+        14,
+        46
+      ],
+      "material": "scarf_red",
+      "part": "scarf_r"
+    }
+  ]
+}

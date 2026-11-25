@@ -1,0 +1,2548 @@
+{
+  "schemaVersion": 1,
+  "id": "music-piano-upright",
+  "category": "music",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "dark_wood": {
+      "color": "#4B2E2E",
+      "kind": "wood"
+    },
+    "white_keys": {
+      "color": "#FFFFFF",
+      "kind": "matte"
+    },
+    "black_keys": {
+      "color": "#000000",
+      "kind": "matte"
+    },
+    "amber_lamp": {
+      "color": "#FF8C00",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.65
+    },
+    "shadow": {
+      "color": "#222222",
+      "kind": "matte"
+    },
+    "white": {
+      "color": "#FFFFFF",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#94a3b8",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        63,
+        31,
+        56
+      ],
+      "material": "dark_wood",
+      "part": "piano_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        56
+      ],
+      "to": [
+        63,
+        31,
+        64
+      ],
+      "material": "dark_wood",
+      "part": "piano_lid"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        5,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        6,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        7,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_3"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        8,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_4"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        9,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_5"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        10,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        11,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_6"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        12,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_7"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        13,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_8"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        14,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        15,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_9"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        16,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_10"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        17,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_11"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        18,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_3"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        19,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_12"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        20,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_13"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        21,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_14"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        22,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_4"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        23,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_15"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        24,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_16"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        25,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_17"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        26,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_5"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        27,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_18"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        28,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_19"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        29,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_20"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        30,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_6"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        31,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_21"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        32,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_22"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        33,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_23"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        34,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_7"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        35,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_24"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        36,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_25"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        37,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_26"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        38,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_8"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        39,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_27"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        40,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_28"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        41,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_29"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        42,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_9"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        43,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_30"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        44,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_31"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        45,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_32"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        46,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_10"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        47,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_33"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        48,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_34"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        49,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_35"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        50,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_11"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        51,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_36"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        52,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_37"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        53,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_38"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        54,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_12"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        55,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_39"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        56,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_40"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        57,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_41"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        58,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_13"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        59,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_42"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        60,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_43"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        61,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "white_keys_44"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        62,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "black_keys_14"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        1,
+        48
+      ],
+      "to": [
+        63,
+        2,
+        56
+      ],
+      "material": "dark_wood",
+      "part": "front_panel"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        0,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        1,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        2,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_3"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        3,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_4"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        4,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_5"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        5,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_6"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        6,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_7"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        7,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_8"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        8,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_9"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        9,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_10"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        10,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_11"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        11,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_12"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        12,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_13"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        13,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_14"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        14,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_15"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        15,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_16"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        16,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_17"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        17,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_18"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        18,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_19"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        19,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_20"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        20,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_21"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        21,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_22"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        22,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_23"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        23,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_24"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        24,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_25"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        25,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_26"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        26,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_27"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        27,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_28"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        28,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_29"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        29,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_30"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        30,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_31"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        31,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_32"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        32,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_33"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        33,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_34"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        34,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_35"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        35,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_36"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        36,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_37"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        37,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_38"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        38,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_39"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        39,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_40"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        40,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_41"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        41,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_42"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        42,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_43"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        43,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_44"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        44,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_45"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        45,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_46"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        46,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_47"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        47,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_48"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        48,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_49"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        49,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_50"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        50,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_51"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        51,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_52"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        52,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_53"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        53,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_54"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        54,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_55"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        55,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_56"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        56,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_57"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        57,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_58"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        58,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_59"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        59,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_60"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        60,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_61"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        61,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_62"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        62,
+        2,
+        50
+      ],
+      "material": "white",
+      "part": "staff_line_63"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        0
+      ],
+      "to": [
+        15,
+        31,
+        8
+      ],
+      "material": "dark_wood",
+      "part": "piano_legs"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        0,
+        0
+      ],
+      "to": [
+        58,
+        31,
+        8
+      ],
+      "material": "dark_wood",
+      "part": "piano_back_leg"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        25,
+        64
+      ],
+      "to": [
+        63,
+        31,
+        72
+      ],
+      "material": "metal",
+      "part": "lamp_base"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        58,
+        28,
+        72
+      ],
+      "material": "amber_lamp",
+      "part": "lamp_light"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        1,
+        48
+      ],
+      "to": [
+        63,
+        2,
+        56
+      ],
+      "material": "dark_wood",
+      "part": "keyboard_panel"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        5,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "key_holes_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        6,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "key_holes_2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        7,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "key_holes_3"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        8,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "key_holes_4"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        9,
+        1,
+        48
+      ],
+      "material": "black_keys",
+      "part": "key_holes_5"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        10,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        11,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        12,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_3"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        13,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_4"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        14,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_5"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        15,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_6"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        16,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_7"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        17,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_8"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        18,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_9"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        19,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_10"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        20,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_11"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        21,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_12"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        22,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_13"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        23,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_14"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        24,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_15"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        25,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_16"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        26,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_17"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        27,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_18"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        28,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_19"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        29,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_20"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        30,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_21"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        31,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_22"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        32,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_23"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        33,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_24"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        34,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_25"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        35,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_26"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        36,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_27"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        37,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_28"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        38,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_29"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        39,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_30"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        40,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_31"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        41,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_32"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        42,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_33"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        43,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_34"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        44,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_35"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        45,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_36"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        46,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_37"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        47,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_38"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        48,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_39"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        49,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_40"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        50,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_41"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        51,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_42"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        52,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_43"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        53,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_44"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        54,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_45"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        55,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_46"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        56,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_47"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        57,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_48"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        58,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_49"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        59,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_50"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        60,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_51"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        61,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_52"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        62,
+        1,
+        48
+      ],
+      "material": "white_keys",
+      "part": "key_holes_black_53"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        1,
+        56
+      ],
+      "to": [
+        63,
+        2,
+        64
+      ],
+      "material": "dark_wood",
+      "part": "piano_top"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        5,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        6,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        7,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_3"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        8,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_4"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        9,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_5"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        10,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        11,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_6"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        12,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_7"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        13,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_8"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        14,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        15,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_9"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        16,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_10"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        17,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_11"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        18,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_3"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        19,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_12"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        20,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_13"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        21,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_14"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        22,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_4"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        23,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_15"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        24,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_16"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        25,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_17"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        26,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_5"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        27,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_18"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        28,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_19"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        29,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_20"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        30,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_6"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        31,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_21"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        32,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_22"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        33,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_23"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        34,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_7"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        35,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_24"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        36,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_25"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        37,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_26"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        38,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_8"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        39,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_27"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        40,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_28"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        41,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_29"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        42,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_9"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        43,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_30"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        44,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_31"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        45,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_32"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        46,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_10"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        47,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_33"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        48,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_34"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        49,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_35"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        50,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_11"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        51,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_36"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        52,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_37"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        53,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_38"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        54,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_12"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        55,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_39"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        56,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_40"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        57,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_41"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        58,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_13"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        59,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_42"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        60,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_43"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        61,
+        1,
+        57
+      ],
+      "material": "white_keys",
+      "part": "white_key_44"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        62,
+        1,
+        57
+      ],
+      "material": "black_keys",
+      "part": "black_key_14"
+    }
+  ]
+}

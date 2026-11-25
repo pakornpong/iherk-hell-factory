@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "id": "stream-mic-arm-desk",
+  "category": "streaming",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "dark_wood": {
+      "color": "#3a2613",
+      "kind": "wood"
+    },
+    "silver": {
+      "color": "#b0b0b0",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#000000",
+      "kind": "matte"
+    },
+    "magenta": {
+      "color": "#ff00ff",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.75
+    },
+    "gray": {
+      "color": "#64748b",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        31,
+        31,
+        28
+      ],
+      "material": "dark_wood",
+      "part": "desk_base"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        0,
+        0,
+        28
+      ],
+      "to": [
+        31,
+        31,
+        31
+      ],
+      "material": "dark_wood",
+      "part": "desk_edge",
+      "thickness": 1
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        25,
+        28
+      ],
+      "to": [
+        19,
+        30,
+        31
+      ],
+      "material": "black",
+      "part": "mic_hole"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        28
+      ],
+      "zFrom": 28,
+      "zTo": 31,
+      "radius": 2,
+      "material": "silver",
+      "part": "boom_arm_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        27,
+        31
+      ],
+      "to": [
+        16,
+        29,
+        56
+      ],
+      "material": "silver",
+      "part": "boom_arm_vertical"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        28,
+        56
+      ],
+      "to": [
+        21,
+        30,
+        59
+      ],
+      "material": "silver",
+      "part": "boom_arm_horizontal"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        29,
+        59
+      ],
+      "to": [
+        17,
+        31,
+        68
+      ],
+      "material": "black",
+      "part": "mic_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        30,
+        68
+      ],
+      "to": [
+        16,
+        31,
+        70
+      ],
+      "material": "silver",
+      "part": "mic_grill"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        29,
+        70
+      ],
+      "to": [
+        17,
+        31,
+        72
+      ],
+      "material": "dark_wood",
+      "part": "air_light_base"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        30
+      ],
+      "zFrom": 72,
+      "zTo": 80,
+      "radius": 1,
+      "material": "magenta",
+      "part": "air_light"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        28,
+        56
+      ],
+      "to": [
+        23,
+        30,
+        59
+      ],
+      "material": "silver",
+      "part": "headphone_stand"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        29,
+        58
+      ],
+      "to": [
+        25,
+        30,
+        60
+      ],
+      "material": "black",
+      "part": "headphone_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        29,
+        58
+      ],
+      "to": [
+        27,
+        30,
+        60
+      ],
+      "material": "black",
+      "part": "headphone_right"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        29,
+        56
+      ],
+      "to": [
+        24,
+        30,
+        58
+      ],
+      "material": "gray",
+      "part": "headphone_cable"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        2,
+        0
+      ],
+      "to": [
+        5,
+        5,
+        28
+      ],
+      "material": "dark_wood",
+      "part": "desk_leg_front_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        2,
+        0
+      ],
+      "to": [
+        29,
+        5,
+        28
+      ],
+      "material": "dark_wood",
+      "part": "desk_leg_front_right"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        26,
+        0
+      ],
+      "to": [
+        5,
+        29,
+        28
+      ],
+      "material": "dark_wood",
+      "part": "desk_leg_back_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        26,
+        0
+      ],
+      "to": [
+        29,
+        29,
+        28
+      ],
+      "material": "dark_wood",
+      "part": "desk_leg_back_right"
+    }
+  ]
+}

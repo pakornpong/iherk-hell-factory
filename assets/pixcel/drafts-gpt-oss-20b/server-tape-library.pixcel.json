@@ -1,0 +1,436 @@
+{
+  "schemaVersion": 1,
+  "id": "server-tape-library",
+  "category": "server",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "charcoal": {
+      "color": "#1f242d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#e2e8f0",
+      "kind": "glass"
+    },
+    "led_green": {
+      "color": "#4ade80",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.45
+    },
+    "led_amber": {
+      "color": "#f59e0b",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.55
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        2,
+        2,
+        0
+      ],
+      "to": [
+        29,
+        29,
+        70
+      ],
+      "material": "charcoal",
+      "part": "cabinet_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        29,
+        0
+      ],
+      "to": [
+        29,
+        29,
+        70
+      ],
+      "material": "glass",
+      "part": "glass_front"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        5,
+        27,
+        5
+      ],
+      "to": [
+        27,
+        28,
+        10
+      ],
+      "thickness": 1,
+      "material": "charcoal",
+      "part": "slot_row0"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        28,
+        7
+      ],
+      "to": [
+        15,
+        28,
+        7
+      ],
+      "material": "led_green",
+      "part": "led_green_row0"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        28,
+        7
+      ],
+      "to": [
+        20,
+        28,
+        7
+      ],
+      "material": "led_amber",
+      "part": "led_amber_row0"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        5,
+        27,
+        12
+      ],
+      "to": [
+        27,
+        28,
+        17
+      ],
+      "thickness": 1,
+      "material": "charcoal",
+      "part": "slot_row1"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        28,
+        14
+      ],
+      "to": [
+        15,
+        28,
+        14
+      ],
+      "material": "led_green",
+      "part": "led_green_row1"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        28,
+        14
+      ],
+      "to": [
+        20,
+        28,
+        14
+      ],
+      "material": "led_amber",
+      "part": "led_amber_row1"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        5,
+        27,
+        19
+      ],
+      "to": [
+        27,
+        28,
+        24
+      ],
+      "thickness": 1,
+      "material": "charcoal",
+      "part": "slot_row2"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        28,
+        21
+      ],
+      "to": [
+        15,
+        28,
+        21
+      ],
+      "material": "led_green",
+      "part": "led_green_row2"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        28,
+        21
+      ],
+      "to": [
+        20,
+        28,
+        21
+      ],
+      "material": "led_amber",
+      "part": "led_amber_row2"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        5,
+        27,
+        26
+      ],
+      "to": [
+        27,
+        28,
+        31
+      ],
+      "thickness": 1,
+      "material": "charcoal",
+      "part": "slot_row3"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        28,
+        28
+      ],
+      "to": [
+        15,
+        28,
+        28
+      ],
+      "material": "led_green",
+      "part": "led_green_row3"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        28,
+        28
+      ],
+      "to": [
+        20,
+        28,
+        28
+      ],
+      "material": "led_amber",
+      "part": "led_amber_row3"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        5,
+        27,
+        33
+      ],
+      "to": [
+        27,
+        28,
+        38
+      ],
+      "thickness": 1,
+      "material": "charcoal",
+      "part": "slot_row4"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        28,
+        35
+      ],
+      "to": [
+        15,
+        28,
+        35
+      ],
+      "material": "led_green",
+      "part": "led_green_row4"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        28,
+        35
+      ],
+      "to": [
+        20,
+        28,
+        35
+      ],
+      "material": "led_amber",
+      "part": "led_amber_row4"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        5,
+        27,
+        40
+      ],
+      "to": [
+        27,
+        28,
+        45
+      ],
+      "thickness": 1,
+      "material": "charcoal",
+      "part": "slot_row5"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        28,
+        42
+      ],
+      "to": [
+        15,
+        28,
+        42
+      ],
+      "material": "led_green",
+      "part": "led_green_row5"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        28,
+        42
+      ],
+      "to": [
+        20,
+        28,
+        42
+      ],
+      "material": "led_amber",
+      "part": "led_amber_row5"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        5,
+        27,
+        47
+      ],
+      "to": [
+        27,
+        28,
+        52
+      ],
+      "thickness": 1,
+      "material": "charcoal",
+      "part": "slot_row6"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        28,
+        49
+      ],
+      "to": [
+        15,
+        28,
+        49
+      ],
+      "material": "led_green",
+      "part": "led_green_row6"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        28,
+        49
+      ],
+      "to": [
+        20,
+        28,
+        49
+      ],
+      "material": "led_amber",
+      "part": "led_amber_row6"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        5,
+        27,
+        54
+      ],
+      "to": [
+        27,
+        28,
+        59
+      ],
+      "thickness": 1,
+      "material": "charcoal",
+      "part": "slot_row7"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        28,
+        56
+      ],
+      "to": [
+        15,
+        28,
+        56
+      ],
+      "material": "led_green",
+      "part": "led_green_row7"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        28,
+        56
+      ],
+      "to": [
+        20,
+        28,
+        56
+      ],
+      "material": "led_amber",
+      "part": "led_amber_row7"
+    }
+  ]
+}

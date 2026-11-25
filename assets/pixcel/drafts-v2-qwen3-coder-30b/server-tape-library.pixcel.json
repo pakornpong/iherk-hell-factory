@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 1,
+  "id": "server-tape-library",
+  "category": "server",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "charcoal_metal": {
+      "color": "#3a3a3a",
+      "kind": "metal"
+    },
+    "glass_clear": {
+      "color": "#80d0ff",
+      "kind": "glass"
+    },
+    "black_metal": {
+      "color": "#1a1a1a",
+      "kind": "metal"
+    },
+    "dark_gray": {
+      "color": "#2a2a2a",
+      "kind": "matte"
+    },
+    "green_led": {
+      "color": "#00ff00",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.65
+    },
+    "amber_led": {
+      "color": "#ff9900",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.6
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        31,
+        31,
+        96
+      ],
+      "material": "charcoal_metal",
+      "part": "body_base"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        2,
+        29,
+        5
+      ],
+      "to": [
+        29,
+        30,
+        91
+      ],
+      "thickness": 1,
+      "material": "glass_clear",
+      "part": "front_glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        29,
+        5
+      ],
+      "to": [
+        29,
+        30,
+        6
+      ],
+      "material": "black_metal",
+      "part": "slot_frame_top"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        29,
+        90
+      ],
+      "to": [
+        29,
+        30,
+        91
+      ],
+      "material": "black_metal",
+      "part": "slot_frame_bottom"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        29,
+        5
+      ],
+      "to": [
+        3,
+        30,
+        91
+      ],
+      "material": "black_metal",
+      "part": "slot_frame_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        29,
+        5
+      ],
+      "to": [
+        29,
+        30,
+        91
+      ],
+      "material": "black_metal",
+      "part": "slot_frame_right"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        29,
+        8
+      ],
+      "to": [
+        27,
+        30,
+        12
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        29,
+        16
+      ],
+      "to": [
+        27,
+        30,
+        20
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        29,
+        24
+      ],
+      "to": [
+        27,
+        30,
+        28
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        29,
+        32
+      ],
+      "to": [
+        27,
+        30,
+        36
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        29,
+        40
+      ],
+      "to": [
+        27,
+        30,
+        44
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        29,
+        48
+      ],
+      "to": [
+        27,
+        30,
+        52
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_6"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        29,
+        56
+      ],
+      "to": [
+        27,
+        30,
+        60
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_7"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        29,
+        64
+      ],
+      "to": [
+        27,
+        30,
+        68
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_8"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        29,
+        72
+      ],
+      "to": [
+        27,
+        30,
+        76
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_9"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        29,
+        80
+      ],
+      "to": [
+        27,
+        30,
+        84
+      ],
+      "material": "dark_gray",
+      "part": "tape_slot_10"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        29,
+        10
+      ],
+      "to": [
+        7,
+        30,
+        11
+      ],
+      "material": "green_led",
+      "part": "led_green_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        29,
+        10
+      ],
+      "to": [
+        10,
+        30,
+        11
+      ],
+      "material": "amber_led",
+      "part": "led_amber_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        29,
+        18
+      ],
+      "to": [
+        7,
+        30,
+        19
+      ],
+      "material": "green_led",
+      "part": "led_green_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        29,
+        18
+      ],
+      "to": [
+        10,
+        30,
+        19
+      ],
+      "material": "amber_led",
+      "part": "led_amber_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        29,
+        26
+      ],
+      "to": [
+        7,
+        30,
+        27
+      ],
+      "material": "green_led",
+      "part": "led_green_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        29,
+        26
+      ],
+      "to": [
+        10,
+        30,
+        27
+      ],
+      "material": "amber_led",
+      "part": "led_amber_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        29,
+        85
+      ],
+      "to": [
+        17,
+        30,
+        88
+      ],
+      "material": "black_metal",
+      "part": "handle"
+    }
+  ]
+}

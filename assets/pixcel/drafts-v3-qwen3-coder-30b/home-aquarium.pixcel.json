@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "id": "home-aquarium",
+  "category": "home",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "wood_stand": {
+      "color": "#4B2E2E",
+      "kind": "wood"
+    },
+    "glass_tank": {
+      "color": "#808080",
+      "kind": "glass"
+    },
+    "water_cyan": {
+      "color": "#00FFFF",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.6
+    },
+    "fish_orange": {
+      "color": "#FF8C00",
+      "kind": "matte"
+    },
+    "plant_green": {
+      "color": "#00FF00",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        31,
+        31,
+        15
+      ],
+      "material": "wood_stand",
+      "part": "stand_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        6,
+        6,
+        15
+      ],
+      "material": "wood_stand",
+      "part": "stand_leg1"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        6,
+        15
+      ],
+      "material": "wood_stand",
+      "part": "stand_leg2"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        25,
+        0
+      ],
+      "to": [
+        6,
+        26,
+        15
+      ],
+      "material": "wood_stand",
+      "part": "stand_leg3"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        25,
+        0
+      ],
+      "to": [
+        26,
+        26,
+        15
+      ],
+      "material": "wood_stand",
+      "part": "stand_leg4"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        2,
+        29,
+        15
+      ],
+      "to": [
+        29,
+        29,
+        20
+      ],
+      "thickness": 1,
+      "material": "glass_tank",
+      "part": "tank_frame_top"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        29,
+        20
+      ],
+      "to": [
+        29,
+        30,
+        25
+      ],
+      "material": "glass_tank",
+      "part": "tank_back"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        1,
+        20
+      ],
+      "to": [
+        29,
+        2,
+        25
+      ],
+      "material": "glass_tank",
+      "part": "tank_front"
+    },
+    {
+      "op": "box",
+      "from": [
+        1,
+        29,
+        20
+      ],
+      "to": [
+        2,
+        29,
+        25
+      ],
+      "material": "glass_tank",
+      "part": "tank_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        29,
+        20
+      ],
+      "to": [
+        31,
+        29,
+        25
+      ],
+      "material": "glass_tank",
+      "part": "tank_right"
+    },
+    {
+      "op": "box",
+      "from": [
+        1,
+        30,
+        25
+      ],
+      "to": [
+        30,
+        31,
+        26
+      ],
+      "material": "glass_tank",
+      "part": "tank_top"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        28,
+        24
+      ],
+      "to": [
+        28,
+        28,
+        25
+      ],
+      "material": "water_cyan",
+      "part": "water_surface"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        10,
+        15,
+        24
+      ],
+      "material": "fish_orange",
+      "part": "fish1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        20,
+        20,
+        23
+      ],
+      "material": "fish_orange",
+      "part": "fish2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        5,
+        25,
+        25
+      ],
+      "material": "plant_green",
+      "part": "plant1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        25,
+        5,
+        25
+      ],
+      "material": "plant_green",
+      "part": "plant2"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        2,
+        29,
+        20
+      ],
+      "to": [
+        29,
+        29,
+        25
+      ],
+      "thickness": 1,
+      "material": "glass_tank",
+      "part": "tank_frame_bottom"
+    }
+  ]
+}

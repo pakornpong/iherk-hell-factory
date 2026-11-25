@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 1,
+  "id": "gadget-3d-hologram-table",
+  "category": "gadget",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "dark_metal": {
+      "color": "#2a2a2a",
+      "kind": "metal"
+    },
+    "metal": {
+      "color": "#555555",
+      "kind": "metal"
+    },
+    "hologram_surface": {
+      "color": "#1a1a1a",
+      "kind": "glass"
+    },
+    "hologram_building": {
+      "color": "#0066cc",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.6
+    },
+    "hologram_window": {
+      "color": "#00ffff",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.7
+    },
+    "hologram_glow": {
+      "color": "#00ffff",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.65
+    },
+    "hologram_light": {
+      "color": "#00cccc",
+      "kind": "emissive",
+      "glowRadius": 3,
+      "glowIntensity": 0.75
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        63,
+        31,
+        28
+      ],
+      "material": "dark_metal",
+      "part": "table_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        2,
+        28
+      ],
+      "to": [
+        5,
+        5,
+        56
+      ],
+      "material": "metal",
+      "part": "leg_front_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        58,
+        2,
+        28
+      ],
+      "to": [
+        61,
+        5,
+        56
+      ],
+      "material": "metal",
+      "part": "leg_front_right"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        26,
+        28
+      ],
+      "to": [
+        5,
+        29,
+        56
+      ],
+      "material": "metal",
+      "part": "leg_back_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        58,
+        26,
+        28
+      ],
+      "to": [
+        61,
+        29,
+        56
+      ],
+      "material": "metal",
+      "part": "leg_back_right"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        2,
+        2,
+        27
+      ],
+      "to": [
+        61,
+        29,
+        28
+      ],
+      "thickness": 1,
+      "material": "dark_metal",
+      "part": "grid_pattern"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        28
+      ],
+      "to": [
+        58,
+        26,
+        32
+      ],
+      "material": "hologram_surface",
+      "part": "hologram_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        32
+      ],
+      "to": [
+        14,
+        20,
+        40
+      ],
+      "material": "hologram_building",
+      "part": "city_building_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        12,
+        32
+      ],
+      "to": [
+        22,
+        18,
+        36
+      ],
+      "material": "hologram_building",
+      "part": "city_building_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        8,
+        32
+      ],
+      "to": [
+        30,
+        22,
+        44
+      ],
+      "material": "hologram_building",
+      "part": "city_building_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        14,
+        32
+      ],
+      "to": [
+        38,
+        16,
+        34
+      ],
+      "material": "hologram_building",
+      "part": "city_building_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        10,
+        32
+      ],
+      "to": [
+        46,
+        20,
+        40
+      ],
+      "material": "hologram_building",
+      "part": "city_building_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        32
+      ],
+      "to": [
+        58,
+        6,
+        33
+      ],
+      "material": "hologram_glow",
+      "part": "hologram_edge_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        32
+      ],
+      "to": [
+        6,
+        26,
+        33
+      ],
+      "material": "hologram_glow",
+      "part": "hologram_edge_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        57,
+        5,
+        32
+      ],
+      "to": [
+        58,
+        26,
+        33
+      ],
+      "material": "hologram_glow",
+      "part": "hologram_edge_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        25,
+        32
+      ],
+      "to": [
+        58,
+        26,
+        33
+      ],
+      "material": "hologram_glow",
+      "part": "hologram_edge_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        34
+      ],
+      "to": [
+        55,
+        23,
+        60
+      ],
+      "material": "hologram_light",
+      "part": "hologram_projection"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        12,
+        32
+      ],
+      "to": [
+        13,
+        20,
+        33
+      ],
+      "material": "hologram_window",
+      "part": "window_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        14,
+        32
+      ],
+      "to": [
+        21,
+        18,
+        33
+      ],
+      "material": "hologram_window",
+      "part": "window_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        10,
+        32
+      ],
+      "to": [
+        29,
+        22,
+        33
+      ],
+      "material": "hologram_window",
+      "part": "window_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        16,
+        32
+      ],
+      "to": [
+        37,
+        16,
+        33
+      ],
+      "material": "hologram_window",
+      "part": "window_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        12,
+        32
+      ],
+      "to": [
+        45,
+        20,
+        33
+      ],
+      "material": "hologram_window",
+      "part": "window_5"
+    }
+  ]
+}

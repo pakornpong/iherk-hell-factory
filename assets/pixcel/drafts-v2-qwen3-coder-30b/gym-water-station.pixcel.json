@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "id": "gym-water-station",
+  "category": "gym",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "steel_body": {
+      "color": "#4a4a4a",
+      "kind": "metal"
+    },
+    "red_stripe": {
+      "color": "#ff0000",
+      "kind": "matte"
+    },
+    "blue_bottle": {
+      "color": "#0066cc",
+      "kind": "glass"
+    },
+    "white_cap": {
+      "color": "#ffffff",
+      "kind": "matte"
+    },
+    "cyan_led": {
+      "color": "#00ffff",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.6
+    },
+    "white_buttons": {
+      "color": "#ffffff",
+      "kind": "matte"
+    },
+    "black_label": {
+      "color": "#000000",
+      "kind": "matte"
+    },
+    "silver_logo": {
+      "color": "#c0c0c0",
+      "kind": "metal"
+    },
+    "emissive_logo": {
+      "color": "#ffff00",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.7
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        31,
+        31,
+        56
+      ],
+      "material": "steel_body",
+      "part": "body_base"
+    },
+    {
+      "op": "hollowBox",
+      "from": [
+        2,
+        2,
+        0
+      ],
+      "to": [
+        29,
+        29,
+        8
+      ],
+      "material": "red_stripe",
+      "part": "red_stripe"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 40,
+      "zTo": 56,
+      "radius": 7,
+      "material": "blue_bottle",
+      "part": "bottle_holder"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        14,
+        56
+      ],
+      "to": [
+        17,
+        17,
+        57
+      ],
+      "material": "white_cap",
+      "part": "bottle_cap"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        1,
+        48
+      ],
+      "to": [
+        23,
+        2,
+        52
+      ],
+      "material": "cyan_led",
+      "part": "led_panel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        1,
+        42
+      ],
+      "to": [
+        21,
+        2,
+        46
+      ],
+      "material": "white_buttons",
+      "part": "control_buttons"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        1,
+        45
+      ],
+      "to": [
+        12,
+        2,
+        46
+      ],
+      "material": "black_label",
+      "part": "button_labels"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        57
+      ],
+      "to": [
+        21,
+        21,
+        58
+      ],
+      "material": "silver_logo",
+      "part": "logo_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        58
+      ],
+      "to": [
+        19,
+        19,
+        59
+      ],
+      "material": "emissive_logo",
+      "part": "logo_reflect"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        59
+      ],
+      "to": [
+        31,
+        31,
+        60
+      ],
+      "material": "steel_body",
+      "part": "top_panel"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        30,
+        0
+      ],
+      "to": [
+        31,
+        31,
+        56
+      ],
+      "material": "steel_body",
+      "part": "front_edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        0,
+        0
+      ],
+      "to": [
+        31,
+        31,
+        56
+      ],
+      "material": "steel_body",
+      "part": "side_edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        31,
+        31,
+        1
+      ],
+      "material": "steel_body",
+      "part": "base_plate"
+    }
+  ]
+}

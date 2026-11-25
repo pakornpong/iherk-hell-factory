@@ -1,0 +1,647 @@
+{
+  "schemaVersion": 1,
+  "id": "office-coat-rack",
+  "category": "office",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "metal_base": {
+      "color": "#333333",
+      "kind": "metal"
+    },
+    "metal_pole": {
+      "color": "#444444",
+      "kind": "metal"
+    },
+    "metal_hook": {
+      "color": "#555555",
+      "kind": "metal"
+    },
+    "beige_coat": {
+      "color": "#f5f5dc",
+      "kind": "matte"
+    },
+    "red_scarf": {
+      "color": "#ff0000",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 0,
+      "zTo": 5,
+      "radius": 4,
+      "material": "metal_base",
+      "part": "base"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 5,
+      "zTo": 40,
+      "radius": 1,
+      "material": "metal_pole",
+      "part": "pole"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        12,
+        1,
+        40
+      ],
+      "material": "metal_hook",
+      "part": "hook1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        19,
+        1,
+        40
+      ],
+      "material": "metal_hook",
+      "part": "hook2"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        37
+      ],
+      "to": [
+        18,
+        2,
+        40
+      ],
+      "material": "beige_coat",
+      "part": "coat"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        35
+      ],
+      "to": [
+        18,
+        2,
+        37
+      ],
+      "material": "red_scarf",
+      "part": "scarf"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        14,
+        1,
+        34
+      ],
+      "material": "red_scarf",
+      "part": "scarf_drape"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        16,
+        1,
+        34
+      ],
+      "material": "red_scarf",
+      "part": "scarf_drape2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        15,
+        1,
+        40
+      ],
+      "material": "metal_pole",
+      "part": "pole_top"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        15,
+        1,
+        41
+      ],
+      "material": "metal_pole",
+      "part": "pole_top2"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        40
+      ],
+      "to": [
+        18,
+        2,
+        41
+      ],
+      "material": "beige_coat",
+      "part": "coat_hem"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        36
+      ],
+      "to": [
+        18,
+        2,
+        37
+      ],
+      "material": "beige_coat",
+      "part": "coat_collar"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        36
+      ],
+      "to": [
+        18,
+        2,
+        37
+      ],
+      "material": "red_scarf",
+      "part": "scarf_collar"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        34
+      ],
+      "to": [
+        18,
+        2,
+        35
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        35
+      ],
+      "to": [
+        18,
+        2,
+        36
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem2"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        33
+      ],
+      "to": [
+        18,
+        2,
+        34
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem3"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        32
+      ],
+      "to": [
+        18,
+        2,
+        33
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem4"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        31
+      ],
+      "to": [
+        18,
+        2,
+        32
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem5"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        30
+      ],
+      "to": [
+        18,
+        2,
+        31
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem6"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        29
+      ],
+      "to": [
+        18,
+        2,
+        30
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem7"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        28
+      ],
+      "to": [
+        18,
+        2,
+        29
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem8"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        27
+      ],
+      "to": [
+        18,
+        2,
+        28
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem9"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        26
+      ],
+      "to": [
+        18,
+        2,
+        27
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem10"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        25
+      ],
+      "to": [
+        18,
+        2,
+        26
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem11"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        24
+      ],
+      "to": [
+        18,
+        2,
+        25
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem12"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        23
+      ],
+      "to": [
+        18,
+        2,
+        24
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem13"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        22
+      ],
+      "to": [
+        18,
+        2,
+        23
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem14"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        21
+      ],
+      "to": [
+        18,
+        2,
+        22
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem15"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        20
+      ],
+      "to": [
+        18,
+        2,
+        21
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem16"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        19
+      ],
+      "to": [
+        18,
+        2,
+        20
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem17"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        18
+      ],
+      "to": [
+        18,
+        2,
+        19
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem18"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        17
+      ],
+      "to": [
+        18,
+        2,
+        18
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem19"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        16
+      ],
+      "to": [
+        18,
+        2,
+        17
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem20"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        15
+      ],
+      "to": [
+        18,
+        2,
+        16
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem21"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        14
+      ],
+      "to": [
+        18,
+        2,
+        15
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem22"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        13
+      ],
+      "to": [
+        18,
+        2,
+        14
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem23"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        12
+      ],
+      "to": [
+        18,
+        2,
+        13
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem24"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        11
+      ],
+      "to": [
+        18,
+        2,
+        12
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem25"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        10
+      ],
+      "to": [
+        18,
+        2,
+        11
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem26"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        9
+      ],
+      "to": [
+        18,
+        2,
+        10
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem27"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        8
+      ],
+      "to": [
+        18,
+        2,
+        9
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem28"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        7
+      ],
+      "to": [
+        18,
+        2,
+        8
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem29"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        1,
+        6
+      ],
+      "to": [
+        18,
+        2,
+        7
+      ],
+      "material": "red_scarf",
+      "part": "scarf_hem30"
+    }
+  ]
+}

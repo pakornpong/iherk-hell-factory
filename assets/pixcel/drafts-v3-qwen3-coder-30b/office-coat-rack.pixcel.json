@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "id": "office-coat-rack",
+  "category": "office",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "metal_base": {
+      "color": "#333333",
+      "kind": "metal"
+    },
+    "metal_pole": {
+      "color": "#222222",
+      "kind": "metal"
+    },
+    "metal_hook": {
+      "color": "#444444",
+      "kind": "metal"
+    },
+    "coat_beige": {
+      "color": "#f5f5dc",
+      "kind": "matte"
+    },
+    "scarf_red": {
+      "color": "#ff0000",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 0,
+      "zTo": 15,
+      "radius": 8,
+      "material": "metal_base",
+      "part": "base"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 15,
+      "zTo": 60,
+      "radius": 2,
+      "material": "metal_pole",
+      "part": "pole"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        30,
+        58
+      ],
+      "to": [
+        15,
+        31,
+        60
+      ],
+      "material": "metal_hook",
+      "part": "hook1"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        30,
+        58
+      ],
+      "to": [
+        18,
+        31,
+        60
+      ],
+      "material": "metal_hook",
+      "part": "hook2"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        30,
+        55
+      ],
+      "to": [
+        16,
+        31,
+        58
+      ],
+      "material": "coat_beige",
+      "part": "coat"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        30,
+        54
+      ],
+      "to": [
+        19,
+        31,
+        57
+      ],
+      "material": "scarf_red",
+      "part": "scarf"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        2,
+        60
+      ],
+      "to": [
+        17,
+        29,
+        63
+      ],
+      "material": "metal_pole",
+      "part": "pole_top"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        14,
+        15,
+        63
+      ],
+      "material": "metal_hook",
+      "part": "pole_detail"
+    }
+  ]
+}

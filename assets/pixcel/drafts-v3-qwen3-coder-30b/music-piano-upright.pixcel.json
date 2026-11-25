@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "id": "music-piano-upright",
+  "category": "music",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "wood_dark": {
+      "color": "#4B3621",
+      "kind": "wood"
+    },
+    "keys_white": {
+      "color": "#FFFFFF",
+      "kind": "matte"
+    },
+    "keys_black": {
+      "color": "#000000",
+      "kind": "matte"
+    },
+    "metal_amber": {
+      "color": "#FF8C00",
+      "kind": "metal"
+    },
+    "light_amber": {
+      "color": "#FFA500",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.65
+    },
+    "metal_silver": {
+      "color": "#CBD5E1",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        63,
+        31,
+        48
+      ],
+      "material": "wood_dark",
+      "part": "piano_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        0,
+        48
+      ],
+      "to": [
+        63,
+        31,
+        50
+      ],
+      "material": "wood_dark",
+      "part": "piano_top"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        0
+      ],
+      "to": [
+        10,
+        31,
+        8
+      ],
+      "material": "wood_dark",
+      "part": "piano_legs"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        0,
+        0
+      ],
+      "to": [
+        58,
+        31,
+        8
+      ],
+      "material": "wood_dark",
+      "part": "piano_legs_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        29,
+        47
+      ],
+      "to": [
+        63,
+        30,
+        48
+      ],
+      "material": "keys_white",
+      "part": "keyboard_edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        0,
+        1,
+        0
+      ],
+      "to": [
+        63,
+        2,
+        48
+      ],
+      "material": "wood_dark",
+      "part": "piano_back_panel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        29,
+        40
+      ],
+      "to": [
+        63,
+        30,
+        47
+      ],
+      "material": "keys_white",
+      "part": "keyboard_white_keys"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        30,
+        40
+      ],
+      "to": [
+        58,
+        31,
+        47
+      ],
+      "material": "keys_white",
+      "part": "keyboard_front"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        30,
+        40
+      ],
+      "to": [
+        15,
+        31,
+        47
+      ],
+      "material": "keys_black",
+      "part": "black_keys"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        30,
+        40
+      ],
+      "to": [
+        25,
+        31,
+        47
+      ],
+      "material": "keys_black",
+      "part": "black_keys_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        30,
+        40
+      ],
+      "to": [
+        35,
+        31,
+        47
+      ],
+      "material": "keys_black",
+      "part": "black_keys_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        30,
+        40
+      ],
+      "to": [
+        45,
+        31,
+        47
+      ],
+      "material": "keys_black",
+      "part": "black_keys_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        30,
+        40
+      ],
+      "to": [
+        55,
+        31,
+        47
+      ],
+      "material": "keys_black",
+      "part": "black_keys_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        1,
+        48
+      ],
+      "to": [
+        35,
+        2,
+        50
+      ],
+      "material": "metal_amber",
+      "part": "lamp_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        1,
+        49
+      ],
+      "to": [
+        33,
+        2,
+        50
+      ],
+      "material": "light_amber",
+      "part": "lamp_light"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        1,
+        48
+      ],
+      "to": [
+        32,
+        2,
+        50
+      ],
+      "material": "metal_silver",
+      "part": "piano_handle"
+    }
+  ]
+}

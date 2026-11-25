@@ -1,0 +1,10 @@
+{"ts":"2026-11-24T10:09:32.991Z","model":"qwen3-coder:30b","id":"home-aquarium","ok":true,"attempt":1,"errors":[],"ms":42948,"ops":19}
+{"ts":"2026-11-24T10:09:45.077Z","model":"qwen3-coder:30b","id":"office-coat-rack","ok":true,"attempt":1,"errors":[],"ms":12085,"ops":16}
+{"ts":"2026-11-24T10:09:53.874Z","model":"qwen3-coder:30b","id":"kitchen-microwave-counter","ok":true,"attempt":1,"errors":[],"ms":8796,"ops":10}
+{"ts":"2026-11-24T10:10:15.773Z","model":"qwen3-coder:30b","id":"music-piano-upright","ok":true,"attempt":1,"errors":[],"ms":21899,"ops":34}
+{"ts":"2026-11-24T10:10:37.492Z","model":"qwen3-coder:30b","id":"server-tape-library","ok":true,"attempt":1,"errors":[],"ms":21718,"ops":35}
+{"ts":"2026-11-24T10:10:49.062Z","model":"qwen3-coder:30b","id":"lab-microscope-desk","ok":true,"attempt":1,"errors":[],"ms":11570,"ops":14}
+{"ts":"2026-11-24T10:11:03.826Z","model":"qwen3-coder:30b","id":"game-foosball-table","ok":true,"attempt":1,"errors":[],"ms":14763,"ops":22}
+{"ts":"2026-11-24T10:11:15.500Z","model":"qwen3-coder:30b","id":"gym-water-station","ok":true,"attempt":1,"errors":[],"ms":11674,"ops":16}
+{"ts":"2026-11-24T10:11:29.325Z","model":"qwen3-coder:30b","id":"stream-mic-arm-desk","ok":true,"attempt":1,"errors":[],"ms":13825,"ops":19}
+{"ts":"2026-11-24T10:12:11.705Z","model":"qwen3-coder:30b","id":"gadget-3d-hologram-table","ok":false,"attempt":3,"errors":["op #8 point [32,32,16] outside x 0..63, y 0..31, z 0..96","op #9 point [35,35,17] outside x 0..63, y 0..31, z 0..96","op #10 point [40,40,18] outside x 0..63, y 0..31, z 0..96","op #11 point [35,35,18] outside x 0..63, y 0..31, z 0..96","op #11 point [45,45,19] outside x 0..63, y 0..31, z 0..96","op #12 point [40,40,19] outside x 0..63, y 0..31, z 0..96","op #12 point [50,50,20] outside x 0..63, y 0..31, z 0..96"],"ms":42380}

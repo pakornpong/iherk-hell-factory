@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "id": "game-foosball-table",
+  "category": "game",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "wood_brown": {
+      "color": "#6b442a",
+      "kind": "wood"
+    },
+    "field_green": {
+      "color": "#4ade80",
+      "kind": "matte"
+    },
+    "rod_steel": {
+      "color": "#cbd5e1",
+      "kind": "metal"
+    },
+    "player_red": {
+      "color": "#dc2626",
+      "kind": "metal"
+    },
+    "player_blue": {
+      "color": "#38bdf8",
+      "kind": "metal"
+    },
+    "trim_black": {
+      "color": "#1f242d",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        0
+      ],
+      "to": [
+        58,
+        26,
+        2
+      ],
+      "material": "trim_black",
+      "part": "base"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        3
+      ],
+      "to": [
+        57,
+        25,
+        40
+      ],
+      "material": "wood_brown",
+      "part": "table_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        40
+      ],
+      "to": [
+        57,
+        25,
+        42
+      ],
+      "material": "trim_black",
+      "part": "table_top"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        42
+      ],
+      "to": [
+        54,
+        10,
+        42
+      ],
+      "material": "field_green",
+      "part": "field"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        42
+      ],
+      "to": [
+        16,
+        25,
+        42
+      ],
+      "material": "rod_steel",
+      "part": "rod_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        42
+      ],
+      "to": [
+        15,
+        11,
+        42
+      ],
+      "material": "player_red",
+      "part": "player_red_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        42
+      ],
+      "to": [
+        15,
+        9,
+        42
+      ],
+      "material": "player_blue",
+      "part": "player_blue_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        42
+      ],
+      "to": [
+        21,
+        25,
+        42
+      ],
+      "material": "rod_steel",
+      "part": "rod_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        42
+      ],
+      "to": [
+        20,
+        11,
+        42
+      ],
+      "material": "player_red",
+      "part": "player_red_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        42
+      ],
+      "to": [
+        20,
+        9,
+        42
+      ],
+      "material": "player_blue",
+      "part": "player_blue_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        10,
+        42
+      ],
+      "to": [
+        26,
+        25,
+        42
+      ],
+      "material": "rod_steel",
+      "part": "rod_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        10,
+        42
+      ],
+      "to": [
+        25,
+        11,
+        42
+      ],
+      "material": "player_red",
+      "part": "player_red_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        10,
+        42
+      ],
+      "to": [
+        25,
+        9,
+        42
+      ],
+      "material": "player_blue",
+      "part": "player_blue_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        10,
+        42
+      ],
+      "to": [
+        31,
+        25,
+        42
+      ],
+      "material": "rod_steel",
+      "part": "rod_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        10,
+        42
+      ],
+      "to": [
+        30,
+        11,
+        42
+      ],
+      "material": "player_red",
+      "part": "player_red_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        10,
+        42
+      ],
+      "to": [
+        30,
+        9,
+        42
+      ],
+      "material": "player_blue",
+      "part": "player_blue_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        10,
+        42
+      ],
+      "to": [
+        36,
+        25,
+        42
+      ],
+      "material": "rod_steel",
+      "part": "rod_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        10,
+        42
+      ],
+      "to": [
+        35,
+        11,
+        42
+      ],
+      "material": "player_red",
+      "part": "player_red_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        10,
+        42
+      ],
+      "to": [
+        35,
+        9,
+        42
+      ],
+      "material": "player_blue",
+      "part": "player_blue_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        10,
+        42
+      ],
+      "to": [
+        41,
+        25,
+        42
+      ],
+      "material": "rod_steel",
+      "part": "rod_6"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        10,
+        42
+      ],
+      "to": [
+        40,
+        11,
+        42
+      ],
+      "material": "player_red",
+      "part": "player_red_6"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        10,
+        42
+      ],
+      "to": [
+        40,
+        9,
+        42
+      ],
+      "material": "player_blue",
+      "part": "player_blue_6"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        10,
+        42
+      ],
+      "to": [
+        46,
+        25,
+        42
+      ],
+      "material": "rod_steel",
+      "part": "rod_7"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        10,
+        42
+      ],
+      "to": [
+        45,
+        11,
+        42
+      ],
+      "material": "player_red",
+      "part": "player_red_7"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        10,
+        42
+      ],
+      "to": [
+        45,
+        9,
+        42
+      ],
+      "material": "player_blue",
+      "part": "player_blue_7"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        10,
+        42
+      ],
+      "to": [
+        51,
+        25,
+        42
+      ],
+      "material": "rod_steel",
+      "part": "rod_8"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        10,
+        42
+      ],
+      "to": [
+        50,
+        11,
+        42
+      ],
+      "material": "player_red",
+      "part": "player_red_8"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        10,
+        42
+      ],
+      "to": [
+        50,
+        9,
+        42
+      ],
+      "material": "player_blue",
+      "part": "player_blue_8"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "id": "home-aquarium",
+  "category": "home",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "tank_glass": {
+      "color": "#ffffff",
+      "kind": "glass"
+    },
+    "tank_stand": {
+      "color": "#6b442a",
+      "kind": "wood"
+    },
+    "tank_water": {
+      "color": "#00c8ff",
+      "kind": "emissive",
+      "glowRadius": 3,
+      "glowIntensity": 0.65
+    },
+    "tank_plant": {
+      "color": "#34c759",
+      "kind": "matte"
+    },
+    "tank_fish": {
+      "color": "#f97316",
+      "kind": "matte"
+    },
+    "tank_brim": {
+      "color": "#3f3f46",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        0
+      ],
+      "to": [
+        24,
+        24,
+        2
+      ],
+      "material": "tank_stand",
+      "part": "stand_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        3
+      ],
+      "to": [
+        25,
+        25,
+        33
+      ],
+      "material": "tank_glass",
+      "part": "tank_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        34
+      ],
+      "to": [
+        25,
+        25,
+        35
+      ],
+      "material": "tank_brim",
+      "part": "tank_brim"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        4
+      ],
+      "to": [
+        12,
+        12,
+        30
+      ],
+      "material": "tank_water",
+      "part": "water_level"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        4
+      ],
+      "to": [
+        17,
+        17,
+        30
+      ],
+      "material": "tank_water",
+      "part": "water_level"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        20,
+        4
+      ],
+      "to": [
+        22,
+        22,
+        30
+      ],
+      "material": "tank_water",
+      "part": "water_level"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        10,
+        10,
+        10
+      ],
+      "material": "tank_fish",
+      "part": "fish_1"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        15,
+        15,
+        15
+      ],
+      "material": "tank_fish",
+      "part": "fish_2"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        20,
+        20,
+        20
+      ],
+      "material": "tank_fish",
+      "part": "fish_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        20,
+        5
+      ],
+      "to": [
+        11,
+        21,
+        6
+      ],
+      "material": "tank_plant",
+      "part": "plant_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        25,
+        5
+      ],
+      "to": [
+        16,
+        26,
+        6
+      ],
+      "material": "tank_plant",
+      "part": "plant_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        5
+      ],
+      "to": [
+        21,
+        11,
+        6
+      ],
+      "material": "tank_plant",
+      "part": "plant_3"
+    }
+  ]
+}

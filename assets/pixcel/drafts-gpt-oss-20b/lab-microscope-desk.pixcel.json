@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "id": "lab-microscope-desk",
+  "category": "lab",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "white_table": {
+      "color": "#f1f5f9",
+      "kind": "matte"
+    },
+    "black_base": {
+      "color": "#14171f",
+      "kind": "matte"
+    },
+    "steel_mic": {
+      "color": "#64748b",
+      "kind": "metal"
+    },
+    "cyan_screen": {
+      "color": "#22d3ee",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.6
+    },
+    "sample_white": {
+      "color": "#ffffff",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        0
+      ],
+      "to": [
+        27,
+        27,
+        0
+      ],
+      "material": "black_base",
+      "part": "table_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        6,
+        6,
+        2
+      ],
+      "material": "white_table",
+      "part": "leg_bl"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        6,
+        2
+      ],
+      "material": "white_table",
+      "part": "leg_br"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        26,
+        0
+      ],
+      "to": [
+        6,
+        27,
+        2
+      ],
+      "material": "white_table",
+      "part": "leg_fl"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        26,
+        0
+      ],
+      "to": [
+        27,
+        27,
+        2
+      ],
+      "material": "white_table",
+      "part": "leg_fr"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        2
+      ],
+      "to": [
+        26,
+        26,
+        4
+      ],
+      "material": "white_table",
+      "part": "table_top"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        2
+      ],
+      "to": [
+        20,
+        20,
+        12
+      ],
+      "material": "steel_mic",
+      "part": "mic_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        13,
+        2
+      ],
+      "to": [
+        19,
+        19,
+        4
+      ],
+      "material": "steel_mic",
+      "part": "mic_stage"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        12
+      ],
+      "to": [
+        16,
+        16,
+        14
+      ],
+      "material": "steel_mic",
+      "part": "eyepiece"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        12,
+        10
+      ],
+      "to": [
+        18,
+        13,
+        11
+      ],
+      "material": "cyan_screen",
+      "part": "screen"
+    },
+    {
+      "op": "voxel",
+      "at": [
+        17,
+        12,
+        11
+      ],
+      "material": "sample_white",
+      "part": "sample"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        12,
+        10
+      ],
+      "to": [
+        20,
+        13,
+        12
+      ],
+      "material": "steel_mic",
+      "part": "mic_handle"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        12
+      ],
+      "to": [
+        16,
+        15,
+        13
+      ],
+      "material": "steel_mic",
+      "part": "focus_knob"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        12,
+        10
+      ],
+      "to": [
+        17,
+        13,
+        10
+      ],
+      "material": "steel_mic",
+      "part": "screen_border"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        12,
+        12
+      ],
+      "to": [
+        20,
+        12,
+        20
+      ],
+      "material": "steel_mic",
+      "part": "cable"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        14
+      ],
+      "to": [
+        16,
+        16,
+        15
+      ],
+      "material": "steel_mic",
+      "part": "lens_cap"
+    }
+  ]
+}

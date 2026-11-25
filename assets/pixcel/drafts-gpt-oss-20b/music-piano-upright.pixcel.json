@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "id": "music-piano-upright",
+  "category": "music",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "dark_wood": {
+      "color": "#4b3121",
+      "kind": "wood"
+    },
+    "white_key": {
+      "color": "#f8fafc",
+      "kind": "matte"
+    },
+    "black_key": {
+      "color": "#14171f",
+      "kind": "matte"
+    },
+    "lamp_base": {
+      "color": "#cbd5e1",
+      "kind": "metal"
+    },
+    "lamp_glow": {
+      "color": "#f59e0b",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.55
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        0
+      ],
+      "to": [
+        59,
+        27,
+        38
+      ],
+      "material": "dark_wood",
+      "part": "body"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        27,
+        38
+      ],
+      "to": [
+        34,
+        27,
+        40
+      ],
+      "material": "lamp_base",
+      "part": "lamp_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        27,
+        40
+      ],
+      "to": [
+        32,
+        27,
+        41
+      ],
+      "material": "lamp_glow",
+      "part": "lamp_glow"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        27,
+        0
+      ],
+      "to": [
+        12,
+        30,
+        2
+      ],
+      "material": "white_key",
+      "part": "key_white_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        27,
+        0
+      ],
+      "to": [
+        19,
+        30,
+        2
+      ],
+      "material": "white_key",
+      "part": "key_white_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        27,
+        0
+      ],
+      "to": [
+        26,
+        30,
+        2
+      ],
+      "material": "white_key",
+      "part": "key_white_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        27,
+        0
+      ],
+      "to": [
+        33,
+        30,
+        2
+      ],
+      "material": "white_key",
+      "part": "key_white_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        27,
+        0
+      ],
+      "to": [
+        40,
+        30,
+        2
+      ],
+      "material": "white_key",
+      "part": "key_white_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        27,
+        0
+      ],
+      "to": [
+        47,
+        30,
+        2
+      ],
+      "material": "white_key",
+      "part": "key_white_6"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        27,
+        0
+      ],
+      "to": [
+        54,
+        30,
+        2
+      ],
+      "material": "white_key",
+      "part": "key_white_7"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        27,
+        0
+      ],
+      "to": [
+        14,
+        30,
+        3
+      ],
+      "material": "black_key",
+      "part": "key_black_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        27,
+        0
+      ],
+      "to": [
+        21,
+        30,
+        3
+      ],
+      "material": "black_key",
+      "part": "key_black_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        27,
+        0
+      ],
+      "to": [
+        28,
+        30,
+        3
+      ],
+      "material": "black_key",
+      "part": "key_black_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        27,
+        0
+      ],
+      "to": [
+        35,
+        30,
+        3
+      ],
+      "material": "black_key",
+      "part": "key_black_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        27,
+        0
+      ],
+      "to": [
+        42,
+        30,
+        3
+      ],
+      "material": "black_key",
+      "part": "key_black_5"
+    }
+  ]
+}

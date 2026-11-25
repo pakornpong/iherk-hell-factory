@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "id": "gym-water-station",
+  "category": "gym",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "steel_body": {
+      "color": "#cbd5e1",
+      "kind": "metal"
+    },
+    "blue_bottle": {
+      "color": "#14b8a6",
+      "kind": "glass"
+    },
+    "cyan_panel": {
+      "color": "#22d3ee",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.55
+    },
+    "white_trim": {
+      "color": "#f8fafc",
+      "kind": "matte"
+    },
+    "red_button": {
+      "color": "#dc2626",
+      "kind": "metal"
+    },
+    "handle_grey": {
+      "color": "#6b7280",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        3
+      ],
+      "material": "steel_body",
+      "part": "base"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        4
+      ],
+      "to": [
+        26,
+        24,
+        32
+      ],
+      "material": "steel_body",
+      "part": "main_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        33
+      ],
+      "to": [
+        24,
+        22,
+        40
+      ],
+      "material": "white_trim",
+      "part": "panel_trim"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        41
+      ],
+      "to": [
+        24,
+        22,
+        42
+      ],
+      "material": "cyan_panel",
+      "part": "led_panel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        5
+      ],
+      "to": [
+        12,
+        12,
+        30
+      ],
+      "material": "blue_bottle",
+      "part": "water_bottle_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        10,
+        5
+      ],
+      "to": [
+        21,
+        12,
+        30
+      ],
+      "material": "blue_bottle",
+      "part": "water_bottle_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        14,
+        5
+      ],
+      "to": [
+        12,
+        16,
+        30
+      ],
+      "material": "blue_bottle",
+      "part": "water_bottle_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        14,
+        5
+      ],
+      "to": [
+        21,
+        16,
+        30
+      ],
+      "material": "blue_bottle",
+      "part": "water_bottle_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        18,
+        5
+      ],
+      "to": [
+        12,
+        20,
+        30
+      ],
+      "material": "blue_bottle",
+      "part": "water_bottle_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        18,
+        5
+      ],
+      "to": [
+        21,
+        20,
+        30
+      ],
+      "material": "blue_bottle",
+      "part": "water_bottle_6"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        22,
+        5
+      ],
+      "to": [
+        12,
+        24,
+        30
+      ],
+      "material": "blue_bottle",
+      "part": "water_bottle_7"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        22,
+        5
+      ],
+      "to": [
+        21,
+        24,
+        30
+      ],
+      "material": "blue_bottle",
+      "part": "water_bottle_8"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        26,
+        5
+      ],
+      "to": [
+        16,
+        27,
+        20
+      ],
+      "material": "red_button",
+      "part": "fill_button"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        26,
+        21
+      ],
+      "to": [
+        16,
+        27,
+        22
+      ],
+      "material": "handle_grey",
+      "part": "fill_button_handle"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        26,
+        5
+      ],
+      "to": [
+        22,
+        27,
+        20
+      ],
+      "material": "red_button",
+      "part": "dispense_button"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        26,
+        21
+      ],
+      "to": [
+        22,
+        27,
+        22
+      ],
+      "material": "handle_grey",
+      "part": "dispense_button_handle"
+    }
+  ]
+}

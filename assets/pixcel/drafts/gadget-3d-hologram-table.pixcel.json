@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "id": "gadget-3d-hologram-table",
+  "category": "gadget",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "table_dark": {
+      "color": "#1f242d",
+      "kind": "matte"
+    },
+    "hologram_cyan": {
+      "color": "#22d3ee",
+      "kind": "emissive",
+      "glowRadius": 3,
+      "glowIntensity": 0.55
+    },
+    "hologram_edge": {
+      "color": "#000000",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.85
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        10,
+        5,
+        0
+      ],
+      "to": [
+        49,
+        26,
+        3
+      ],
+      "material": "table_dark",
+      "part": "table_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        4,
+        3
+      ],
+      "to": [
+        49,
+        26,
+        4
+      ],
+      "material": "hologram_edge",
+      "part": "hologram_edge_bottom"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        5,
+        4
+      ],
+      "to": [
+        49,
+        26,
+        5
+      ],
+      "material": "hologram_edge",
+      "part": "hologram_edge_sides"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        26,
+        4
+      ],
+      "to": [
+        49,
+        27,
+        5
+      ],
+      "material": "hologram_edge",
+      "part": "hologram_edge_top"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        5,
+        4
+      ],
+      "to": [
+        48,
+        26,
+        10
+      ],
+      "material": "hologram_cyan",
+      "part": "hologram_city"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        5,
+        10
+      ],
+      "to": [
+        47,
+        26,
+        11
+      ],
+      "material": "hologram_edge",
+      "part": "hologram_edge_city_bottom"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        5,
+        11
+      ],
+      "to": [
+        47,
+        26,
+        12
+      ],
+      "material": "hologram_cyan",
+      "part": "hologram_city_skyline"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        26,
+        10
+      ],
+      "to": [
+        47,
+        27,
+        11
+      ],
+      "material": "hologram_edge",
+      "part": "hologram_edge_city_top"
+    }
+  ]
+}

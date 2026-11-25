@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "id": "kitchen-microwave-counter",
+  "category": "home",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "wood_counter": {
+      "color": "#6b442a",
+      "kind": "wood"
+    },
+    "wood_trim": {
+      "color": "#4b3121",
+      "kind": "wood"
+    },
+    "microwave_dark": {
+      "color": "#1e293b",
+      "kind": "metal"
+    },
+    "microwave_glass": {
+      "color": "#334155",
+      "kind": "glass"
+    },
+    "mug_white": {
+      "color": "#f8fafc",
+      "kind": "matte"
+    },
+    "handle_steel": {
+      "color": "#94a3b8",
+      "kind": "metal"
+    },
+    "led_amber": {
+      "color": "#f59e0b",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.65
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        27,
+        2
+      ],
+      "material": "wood_trim",
+      "part": "counter_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        2
+      ],
+      "to": [
+        28,
+        27,
+        32
+      ],
+      "material": "wood_counter",
+      "part": "counter_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        32
+      ],
+      "to": [
+        26,
+        26,
+        34
+      ],
+      "material": "microwave_dark",
+      "part": "microwave_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        34
+      ],
+      "to": [
+        25,
+        25,
+        38
+      ],
+      "material": "microwave_glass",
+      "part": "microwave_display"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        38
+      ],
+      "to": [
+        16,
+        16,
+        39
+      ],
+      "material": "handle_steel",
+      "part": "microwave_handle"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        10,
+        38
+      ],
+      "to": [
+        23,
+        16,
+        39
+      ],
+      "material": "handle_steel",
+      "part": "microwave_handle_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        39
+      ],
+      "to": [
+        14,
+        14,
+        40
+      ],
+      "material": "led_amber",
+      "part": "display_led"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        15,
+        32
+      ],
+      "to": [
+        27,
+        17,
+        34
+      ],
+      "material": "mug_white",
+      "part": "coffee_mug"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        16,
+        34
+      ],
+      "to": [
+        27,
+        17,
+        35
+      ],
+      "material": "mug_white",
+      "part": "mug_handle"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        16,
+        34
+      ],
+      "to": [
+        25,
+        17,
+        35
+      ],
+      "material": "wood_trim",
+      "part": "mug_base"
+    }
+  ]
+}

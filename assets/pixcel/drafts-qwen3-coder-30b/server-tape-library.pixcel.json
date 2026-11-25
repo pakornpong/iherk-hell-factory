@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 1,
+  "id": "server-tape-library",
+  "category": "server",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "cabinet_charcoal": {
+      "color": "#1e293b",
+      "kind": "metal"
+    },
+    "cabinet_trim": {
+      "color": "#334155",
+      "kind": "metal"
+    },
+    "glass_clear": {
+      "color": "#f8fafc",
+      "kind": "glass"
+    },
+    "tape_slot": {
+      "color": "#0f172a",
+      "kind": "matte"
+    },
+    "led_green": {
+      "color": "#4ade80",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.55
+    },
+    "led_amber": {
+      "color": "#f59e0b",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.55
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        0
+      ],
+      "to": [
+        28,
+        28,
+        2
+      ],
+      "material": "cabinet_trim",
+      "part": "base_plinth"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        3,
+        2
+      ],
+      "to": [
+        29,
+        29,
+        60
+      ],
+      "material": "cabinet_charcoal",
+      "part": "cabinet_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        3,
+        60
+      ],
+      "to": [
+        29,
+        29,
+        62
+      ],
+      "material": "cabinet_trim",
+      "part": "top_cap"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        29,
+        3
+      ],
+      "to": [
+        28,
+        29,
+        59
+      ],
+      "material": "glass_clear",
+      "part": "front_glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        4
+      ],
+      "to": [
+        27,
+        5,
+        58
+      ],
+      "material": "tape_slot",
+      "part": "tape_slot_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        4
+      ],
+      "to": [
+        27,
+        9,
+        58
+      ],
+      "material": "tape_slot",
+      "part": "tape_slot_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        4
+      ],
+      "to": [
+        27,
+        13,
+        58
+      ],
+      "material": "tape_slot",
+      "part": "tape_slot_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        16,
+        4
+      ],
+      "to": [
+        27,
+        17,
+        58
+      ],
+      "material": "tape_slot",
+      "part": "tape_slot_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        20,
+        4
+      ],
+      "to": [
+        27,
+        21,
+        58
+      ],
+      "material": "tape_slot",
+      "part": "tape_slot_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        4
+      ],
+      "to": [
+        27,
+        25,
+        58
+      ],
+      "material": "tape_slot",
+      "part": "tape_slot_6"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        28,
+        4
+      ],
+      "to": [
+        27,
+        29,
+        58
+      ],
+      "material": "tape_slot",
+      "part": "tape_slot_7"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        5
+      ],
+      "to": [
+        10,
+        5,
+        6
+      ],
+      "material": "led_green",
+      "part": "status_led_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        5,
+        5
+      ],
+      "to": [
+        16,
+        5,
+        6
+      ],
+      "material": "led_amber",
+      "part": "status_led_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        5,
+        5
+      ],
+      "to": [
+        22,
+        5,
+        6
+      ],
+      "material": "led_green",
+      "part": "status_led_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        5,
+        5
+      ],
+      "to": [
+        26,
+        5,
+        6
+      ],
+      "material": "led_amber",
+      "part": "status_led_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        5
+      ],
+      "to": [
+        10,
+        9,
+        6
+      ],
+      "material": "led_amber",
+      "part": "status_led_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        9,
+        5
+      ],
+      "to": [
+        16,
+        9,
+        6
+      ],
+      "material": "led_green",
+      "part": "status_led_6"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        9,
+        5
+      ],
+      "to": [
+        22,
+        9,
+        6
+      ],
+      "material": "led_amber",
+      "part": "status_led_7"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        9,
+        5
+      ],
+      "to": [
+        26,
+        9,
+        6
+      ],
+      "material": "led_green",
+      "part": "status_led_8"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        13,
+        5
+      ],
+      "to": [
+        10,
+        13,
+        6
+      ],
+      "material": "led_green",
+      "part": "status_led_9"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        13,
+        5
+      ],
+      "to": [
+        16,
+        13,
+        6
+      ],
+      "material": "led_amber",
+      "part": "status_led_10"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        13,
+        5
+      ],
+      "to": [
+        22,
+        13,
+        6
+      ],
+      "material": "led_green",
+      "part": "status_led_11"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        13,
+        5
+      ],
+      "to": [
+        26,
+        13,
+        6
+      ],
+      "material": "led_amber",
+      "part": "status_led_12"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        17,
+        5
+      ],
+      "to": [
+        10,
+        17,
+        6
+      ],
+      "material": "led_amber",
+      "part": "status_led_13"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        17,
+        5
+      ],
+      "to": [
+        16,
+        17,
+        6
+      ],
+      "material": "led_green",
+      "part": "status_led_14"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        17,
+        5
+      ],
+      "to": [
+        22,
+        17,
+        6
+      ],
+      "material": "led_amber",
+      "part": "status_led_15"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        17,
+        5
+      ],
+      "to": [
+        26,
+        17,
+        6
+      ],
+      "material": "led_green",
+      "part": "status_led_16"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        21,
+        5
+      ],
+      "to": [
+        10,
+        21,
+        6
+      ],
+      "material": "led_green",
+      "part": "status_led_17"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        21,
+        5
+      ],
+      "to": [
+        16,
+        21,
+        6
+      ],
+      "material": "led_amber",
+      "part": "status_led_18"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        21,
+        5
+      ],
+      "to": [
+        22,
+        21,
+        6
+      ],
+      "material": "led_green",
+      "part": "status_led_19"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        21,
+        5
+      ],
+      "to": [
+        26,
+        21,
+        6
+      ],
+      "material": "led_amber",
+      "part": "status_led_20"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        25,
+        5
+      ],
+      "to": [
+        10,
+        25,
+        6
+      ],
+      "material": "led_amber",
+      "part": "status_led_21"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        25,
+        5
+      ],
+      "to": [
+        16,
+        25,
+        6
+      ],
+      "material": "led_green",
+      "part": "status_led_22"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        25,
+        5
+      ],
+      "to": [
+        22,
+        25,
+        6
+      ],
+      "material": "led_amber",
+      "part": "status_led_23"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        25,
+        5
+      ],
+      "to": [
+        26,
+        25,
+        6
+      ],
+      "material": "led_green",
+      "part": "status_led_24"
+    }
+  ]
+}

@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 1,
+  "id": "music-piano-upright",
+  "category": "music",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "wood_dark": {
+      "color": "#4b3121",
+      "kind": "wood"
+    },
+    "wood_light": {
+      "color": "#f8fafc",
+      "kind": "wood"
+    },
+    "key_black": {
+      "color": "#0c0c0c",
+      "kind": "matte"
+    },
+    "key_white": {
+      "color": "#f1f5f9",
+      "kind": "matte"
+    },
+    "lamp_amber": {
+      "color": "#f59e0b",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.65
+    },
+    "metal_trim": {
+      "color": "#64748b",
+      "kind": "metal"
+    },
+    "pedal_black": {
+      "color": "#1e293b",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        58,
+        26,
+        2
+      ],
+      "material": "wood_dark",
+      "part": "base_plinth"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        2
+      ],
+      "to": [
+        59,
+        26,
+        32
+      ],
+      "material": "wood_light",
+      "part": "piano_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        32
+      ],
+      "to": [
+        59,
+        26,
+        33
+      ],
+      "material": "wood_dark",
+      "part": "top_trim"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        26,
+        30
+      ],
+      "to": [
+        58,
+        27,
+        33
+      ],
+      "material": "wood_light",
+      "part": "keyboard_top"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        26,
+        33
+      ],
+      "to": [
+        58,
+        27,
+        34
+      ],
+      "material": "wood_dark",
+      "part": "keyboard_trim"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        27,
+        30
+      ],
+      "to": [
+        12,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        27,
+        30
+      ],
+      "to": [
+        14,
+        28,
+        32
+      ],
+      "material": "key_black",
+      "part": "key_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        27,
+        30
+      ],
+      "to": [
+        16,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        27,
+        30
+      ],
+      "to": [
+        18,
+        28,
+        32
+      ],
+      "material": "key_black",
+      "part": "key_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        27,
+        30
+      ],
+      "to": [
+        20,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        27,
+        30
+      ],
+      "to": [
+        22,
+        28,
+        32
+      ],
+      "material": "key_black",
+      "part": "key_6"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        27,
+        30
+      ],
+      "to": [
+        24,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_7"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        27,
+        30
+      ],
+      "to": [
+        27,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_8"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        27,
+        30
+      ],
+      "to": [
+        29,
+        28,
+        32
+      ],
+      "material": "key_black",
+      "part": "key_9"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        27,
+        30
+      ],
+      "to": [
+        31,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_10"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        27,
+        30
+      ],
+      "to": [
+        33,
+        28,
+        32
+      ],
+      "material": "key_black",
+      "part": "key_11"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        27,
+        30
+      ],
+      "to": [
+        35,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_12"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        27,
+        30
+      ],
+      "to": [
+        37,
+        28,
+        32
+      ],
+      "material": "key_black",
+      "part": "key_13"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        27,
+        30
+      ],
+      "to": [
+        39,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_14"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        27,
+        30
+      ],
+      "to": [
+        41,
+        28,
+        32
+      ],
+      "material": "key_black",
+      "part": "key_15"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        27,
+        30
+      ],
+      "to": [
+        43,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_16"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        27,
+        30
+      ],
+      "to": [
+        46,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_17"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        27,
+        30
+      ],
+      "to": [
+        48,
+        28,
+        32
+      ],
+      "material": "key_black",
+      "part": "key_18"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        27,
+        30
+      ],
+      "to": [
+        50,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_19"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        27,
+        30
+      ],
+      "to": [
+        52,
+        28,
+        32
+      ],
+      "material": "key_black",
+      "part": "key_20"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        27,
+        30
+      ],
+      "to": [
+        54,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_21"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        27,
+        30
+      ],
+      "to": [
+        56,
+        28,
+        32
+      ],
+      "material": "key_black",
+      "part": "key_22"
+    },
+    {
+      "op": "box",
+      "from": [
+        56,
+        27,
+        30
+      ],
+      "to": [
+        58,
+        28,
+        32
+      ],
+      "material": "key_white",
+      "part": "key_23"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        26,
+        32
+      ],
+      "to": [
+        59,
+        27,
+        35
+      ],
+      "material": "metal_trim",
+      "part": "pedal_area"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        27,
+        35
+      ],
+      "to": [
+        14,
+        28,
+        36
+      ],
+      "material": "pedal_black",
+      "part": "pedal_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        27,
+        35
+      ],
+      "to": [
+        19,
+        28,
+        36
+      ],
+      "material": "pedal_black",
+      "part": "pedal_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        27,
+        35
+      ],
+      "to": [
+        24,
+        28,
+        36
+      ],
+      "material": "pedal_black",
+      "part": "pedal_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        59,
+        15,
+        35
+      ],
+      "to": [
+        60,
+        17,
+        36
+      ],
+      "material": "lamp_amber",
+      "part": "lamp_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        59,
+        15,
+        36
+      ],
+      "to": [
+        60,
+        16,
+        37
+      ],
+      "material": "lamp_amber",
+      "part": "lamp_top"
+    }
+  ]
+}

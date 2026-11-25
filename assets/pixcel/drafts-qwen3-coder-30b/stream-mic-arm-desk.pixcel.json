@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "id": "stream-mic-arm-desk",
+  "category": "streaming",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "desk_dark": {
+      "color": "#1e293b",
+      "kind": "wood"
+    },
+    "desk_trim": {
+      "color": "#334155",
+      "kind": "wood"
+    },
+    "mic_body": {
+      "color": "#0f172a",
+      "kind": "metal"
+    },
+    "mic_base": {
+      "color": "#1e293b",
+      "kind": "metal"
+    },
+    "arm_steel": {
+      "color": "#64748b",
+      "kind": "metal"
+    },
+    "headphone_gray": {
+      "color": "#94a3b8",
+      "kind": "metal"
+    },
+    "air_light": {
+      "color": "#ec4899",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.6
+    },
+    "led_indicator": {
+      "color": "#f59e0b",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.5
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        0
+      ],
+      "to": [
+        24,
+        24,
+        2
+      ],
+      "material": "desk_dark",
+      "part": "desk_top"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        2
+      ],
+      "to": [
+        25,
+        25,
+        10
+      ],
+      "material": "desk_trim",
+      "part": "desk_sides"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        2
+      ],
+      "to": [
+        11,
+        26,
+        8
+      ],
+      "material": "mic_base",
+      "part": "mic_stand_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        24,
+        8
+      ],
+      "to": [
+        12,
+        25,
+        12
+      ],
+      "material": "mic_body",
+      "part": "mic_body"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        23,
+        12
+      ],
+      "to": [
+        13,
+        24,
+        16
+      ],
+      "material": "mic_body",
+      "part": "mic_grill"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        22,
+        16
+      ],
+      "to": [
+        14,
+        23,
+        20
+      ],
+      "material": "mic_body",
+      "part": "mic_shoulder"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        21,
+        20
+      ],
+      "to": [
+        15,
+        22,
+        24
+      ],
+      "material": "arm_steel",
+      "part": "mic_arm"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        20,
+        24
+      ],
+      "to": [
+        16,
+        21,
+        28
+      ],
+      "material": "arm_steel",
+      "part": "mic_arm_end"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        19,
+        28
+      ],
+      "to": [
+        17,
+        20,
+        32
+      ],
+      "material": "mic_body",
+      "part": "mic_head"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        18,
+        32
+      ],
+      "to": [
+        18,
+        19,
+        36
+      ],
+      "material": "mic_body",
+      "part": "mic_stem"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        17,
+        36
+      ],
+      "to": [
+        19,
+        18,
+        40
+      ],
+      "material": "mic_body",
+      "part": "mic_capsule"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        25,
+        2
+      ],
+      "to": [
+        26,
+        26,
+        8
+      ],
+      "material": "headphone_gray",
+      "part": "headphone_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        25,
+        4
+      ],
+      "to": [
+        28,
+        26,
+        8
+      ],
+      "material": "headphone_gray",
+      "part": "headphone_right"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        24,
+        6
+      ],
+      "to": [
+        29,
+        25,
+        10
+      ],
+      "material": "headphone_gray",
+      "part": "headphone_earpad"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        24,
+        8
+      ],
+      "to": [
+        26,
+        25,
+        12
+      ],
+      "material": "headphone_gray",
+      "part": "headphone_cable"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        23,
+        12
+      ],
+      "to": [
+        27,
+        24,
+        16
+      ],
+      "material": "air_light",
+      "part": "on_air_light"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        16
+      ],
+      "to": [
+        28,
+        23,
+        20
+      ],
+      "material": "led_indicator",
+      "part": "status_led"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        25,
+        1
+      ],
+      "to": [
+        24,
+        26,
+        3
+      ],
+      "material": "desk_trim",
+      "part": "desk_leg_back"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        24,
+        1
+      ],
+      "to": [
+        25,
+        25,
+        3
+      ],
+      "material": "desk_trim",
+      "part": "desk_leg_front"
+    }
+  ]
+}

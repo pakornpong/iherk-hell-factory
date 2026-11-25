@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "id": "gym-water-station",
+  "category": "gym",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "steel_body": {
+      "color": "#cbd5e1",
+      "kind": "metal"
+    },
+    "water_bottle": {
+      "color": "#2563eb",
+      "kind": "metal"
+    },
+    "led_panel": {
+      "color": "#22d3ee",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.55
+    },
+    "handle": {
+      "color": "#64748b",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        0
+      ],
+      "to": [
+        23,
+        23,
+        40
+      ],
+      "material": "steel_body",
+      "part": "body"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        0
+      ],
+      "to": [
+        8,
+        23,
+        40
+      ],
+      "material": "steel_body",
+      "part": "side_left"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        0
+      ],
+      "to": [
+        24,
+        23,
+        40
+      ],
+      "material": "steel_body",
+      "part": "side_right"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 0,
+      "zTo": 20,
+      "radius": 4,
+      "material": "water_bottle",
+      "part": "bottle"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 20,
+      "zTo": 22,
+      "radius": 4,
+      "material": "water_bottle",
+      "part": "bottle_cap"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        23,
+        20
+      ],
+      "to": [
+        22,
+        23,
+        24
+      ],
+      "material": "led_panel",
+      "part": "front_led_panel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        23,
+        5
+      ],
+      "to": [
+        22,
+        23,
+        7
+      ],
+      "material": "led_panel",
+      "part": "bottom_led_strip"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        23
+      ],
+      "zFrom": 30,
+      "zTo": 35,
+      "radius": 2,
+      "material": "handle",
+      "part": "handle"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        23,
+        20
+      ],
+      "to": [
+        14,
+        23,
+        22
+      ],
+      "material": "steel_body",
+      "part": "water_spout"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        23,
+        21
+      ],
+      "to": [
+        14,
+        23,
+        22
+      ],
+      "material": "led_panel",
+      "part": "water_flow_indicator"
+    }
+  ]
+}

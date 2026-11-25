@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 1,
+  "id": "music-piano-upright",
+  "category": "music",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-day",
+  "materials": {
+    "dark_wood": {
+      "color": "#6b442a",
+      "kind": "wood"
+    },
+    "light_wood": {
+      "color": "#f8fafc",
+      "kind": "wood"
+    },
+    "black_key": {
+      "color": "#14171f",
+      "kind": "matte"
+    },
+    "white_key": {
+      "color": "#ffffff",
+      "kind": "matte"
+    },
+    "lamp_amber": {
+      "color": "#f59e0b",
+      "kind": "emissive",
+      "glowRadius": 2,
+      "glowIntensity": 0.65
+    },
+    "chrome": {
+      "color": "#cbd5e1",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        16,
+        5,
+        0
+      ],
+      "to": [
+        47,
+        24,
+        1
+      ],
+      "material": "dark_wood",
+      "part": "base"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        4,
+        2
+      ],
+      "to": [
+        48,
+        25,
+        30
+      ],
+      "material": "dark_wood",
+      "part": "cabinet"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        4,
+        30
+      ],
+      "to": [
+        48,
+        25,
+        32
+      ],
+      "material": "light_wood",
+      "part": "top_cap"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        6,
+        2
+      ],
+      "to": [
+        47,
+        7,
+        30
+      ],
+      "material": "light_wood",
+      "part": "key_bed"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        8,
+        2
+      ],
+      "to": [
+        17,
+        9,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_1"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        8,
+        2
+      ],
+      "to": [
+        21,
+        9,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_2"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        8,
+        2
+      ],
+      "to": [
+        25,
+        9,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_3"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        8,
+        2
+      ],
+      "to": [
+        29,
+        9,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_4"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        8,
+        2
+      ],
+      "to": [
+        33,
+        9,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_5"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        8,
+        2
+      ],
+      "to": [
+        37,
+        9,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_6"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        8,
+        2
+      ],
+      "to": [
+        41,
+        9,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_7"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        8,
+        2
+      ],
+      "to": [
+        45,
+        9,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_8"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        8,
+        2
+      ],
+      "to": [
+        49,
+        9,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_9"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        10,
+        2
+      ],
+      "to": [
+        18,
+        11,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_10"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        10,
+        2
+      ],
+      "to": [
+        22,
+        11,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_11"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        10,
+        2
+      ],
+      "to": [
+        26,
+        11,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_12"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        10,
+        2
+      ],
+      "to": [
+        30,
+        11,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_13"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        10,
+        2
+      ],
+      "to": [
+        34,
+        11,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_14"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        10,
+        2
+      ],
+      "to": [
+        38,
+        11,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_15"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        10,
+        2
+      ],
+      "to": [
+        42,
+        11,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_16"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        10,
+        2
+      ],
+      "to": [
+        46,
+        11,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_17"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        10,
+        2
+      ],
+      "to": [
+        50,
+        11,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_18"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        12,
+        2
+      ],
+      "to": [
+        17,
+        13,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_19"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        12,
+        2
+      ],
+      "to": [
+        21,
+        13,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_20"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        12,
+        2
+      ],
+      "to": [
+        25,
+        13,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_21"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        12,
+        2
+      ],
+      "to": [
+        29,
+        13,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_22"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        12,
+        2
+      ],
+      "to": [
+        33,
+        13,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_23"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        12,
+        2
+      ],
+      "to": [
+        37,
+        13,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_24"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        12,
+        2
+      ],
+      "to": [
+        41,
+        13,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_25"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        12,
+        2
+      ],
+      "to": [
+        45,
+        13,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_26"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        12,
+        2
+      ],
+      "to": [
+        49,
+        13,
+        30
+      ],
+      "material": "black_key",
+      "part": "key_27"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        14,
+        2
+      ],
+      "to": [
+        18,
+        15,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_28"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        14,
+        2
+      ],
+      "to": [
+        22,
+        15,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_29"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        14,
+        2
+      ],
+      "to": [
+        26,
+        15,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_30"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        14,
+        2
+      ],
+      "to": [
+        30,
+        15,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_31"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        14,
+        2
+      ],
+      "to": [
+        34,
+        15,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_32"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        14,
+        2
+      ],
+      "to": [
+        38,
+        15,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_33"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        14,
+        2
+      ],
+      "to": [
+        42,
+        15,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_34"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        14,
+        2
+      ],
+      "to": [
+        46,
+        15,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_35"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        14,
+        2
+      ],
+      "to": [
+        50,
+        15,
+        30
+      ],
+      "material": "white_key",
+      "part": "key_36"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        22,
+        29
+      ],
+      "to": [
+        21,
+        23,
+        30
+      ],
+      "material": "lamp_amber",
+      "part": "lamp_base"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        22,
+        30
+      ],
+      "to": [
+        21,
+        23,
+        32
+      ],
+      "material": "chrome",
+      "part": "lamp_stand"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        23,
+        32
+      ],
+      "to": [
+        21,
+        24,
+        34
+      ],
+      "material": "lamp_amber",
+      "part": "lamp_head"
+    }
+  ]
+}
