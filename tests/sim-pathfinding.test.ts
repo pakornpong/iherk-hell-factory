@@ -52,7 +52,12 @@ describe("A* pathfinding & OfficeSimulation", () => {
       lastActiveAt: 1,
     };
     const wing = createDefaultCommonWing(0);
-    const campus = computeCampusLayout([bay], [wing], catalog);
+    const campus = computeCampusLayout([bay], [wing], catalog, undefined, "office", undefined, {
+      "cowork:0": [{
+        id: "half-seat", zoneId: "cowork:0", assetId: "chair-office-swivel",
+        lx: 2.5, ly: 4, layer: "object", direction: "nw", placedBy: "user",
+      }],
+    });
 
     const sim = new OfficeSimulation();
     const state: OfficeState = {
@@ -84,11 +89,28 @@ describe("A* pathfinding & OfficeSimulation", () => {
     for (let i = 0; i < 400; i++) out = sim.step(50);
     expect(out.visuals[0].isMoving).toBe(false);
     expect(out.visuals[0].clipName).toMatch(/^sit_type_/);
+    expect([out.visuals[0].x, out.visuals[0].y]).toEqual([8.5, 4]);
     expect(out.targetFps).toBe(8);
+
+    // Move the seat half a tile under the desk facing southeast. Rounding its Y
+    // would send an agent to the blocked desk tile, so it must approach from Y=2.
+    const tuckedCampus = computeCampusLayout([bay], [wing], catalog, undefined, "office", undefined, {
+      "cowork:0": [
+        { id: "half-seat", zoneId: "cowork:0", assetId: "chair-office-swivel",
+          lx: 2.5, ly: 2.5, layer: "object", direction: "se", placedBy: "user" },
+        { id: "tuck-desk", zoneId: "cowork:0", assetId: "desk-dev-dual",
+          lx: 2, ly: 3, layer: "object", direction: "nw", placedBy: "user" },
+      ],
+    });
+    sim.syncFromServer(state, tuckedCampus);
+    for (let i = 0; i < 400; i++) out = sim.step(50);
+    expect(out.visuals[0].isMoving).toBe(false);
+    expect(out.visuals[0].clipName).toMatch(/^sit_type_/);
+    expect([out.visuals[0].x, out.visuals[0].y]).toEqual([8.5, 2.5]);
 
     // Switch to meeting -> walks to conference area and plays talk clip
     state.employees[0].visualState = "meeting";
-    sim.syncFromServer(state, campus);
+    sim.syncFromServer(state, tuckedCampus);
     out = sim.step(50);
     expect(out.visuals[0].isMoving).toBe(true);
     expect(out.targetFps).toBe(30);

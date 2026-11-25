@@ -187,6 +187,63 @@ export function isEdgeDividerAsset(assetId: string): boolean {
   return EDGE_DIVIDER_PROP_IDS.has(assetId);
 }
 
+/** Capsules and modular walls use tile-aligned pathfinding geometry. */
+export function supportsHalfTilePlacement(assetId: string): boolean {
+  return assetId !== "hypersleep-capsule" && !isEdgeDividerAsset(assetId);
+}
+
+/** A fractional placement may touch a divider edge but cannot extend through it. */
+export function crossesWallSegment(
+  segments: ComputedCampus["wallSegments"],
+  x: number,
+  y: number,
+  width: number,
+  depth: number,
+): boolean {
+  if (Number.isInteger(x) && Number.isInteger(y)) return false;
+  return (segments ?? []).some(({ blocks }) => {
+    if (!blocks) return false;
+    return blocks.side === "w"
+      ? x < blocks.x && blocks.x < x + width && y < blocks.y + 1 && blocks.y < y + depth
+      : y < blocks.y && blocks.y < y + depth && x < blocks.x + 1 && blocks.x < x + width;
+  });
+}
+
+
+type FurnitureFootprint = {
+  assetId: string;
+  direction: Direction;
+  tx: number;
+  ty: number;
+  footprintTiles: [number, number];
+};
+
+function isChairTuckedUnderDesk(chair: FurnitureFootprint, desk: FurnitureFootprint): boolean {
+  if (chair.assetId !== "chair-office-swivel" ||
+      !(desk.assetId.startsWith("desk-") || desk.assetId.startsWith("table-"))) return false;
+
+  const [cw, cd] = chair.footprintTiles;
+  if (cw !== 1 || cd !== 1) return false;
+  const [dw, dd] = desk.footprintTiles;
+  const withinDeskWidth = chair.tx >= desk.tx && chair.tx + cw <= desk.tx + dw;
+  const withinDeskDepth = chair.ty >= desk.ty && chair.ty + cd <= desk.ty + dd;
+  switch (chair.direction) {
+    case "se": return withinDeskWidth && chair.ty + cd === desk.ty + 0.5;
+    case "nw": return withinDeskWidth && chair.ty === desk.ty + dd - 0.5;
+    case "ne": return withinDeskDepth && chair.tx + cw === desk.tx + 0.5;
+    case "sw": return withinDeskDepth && chair.tx === desk.tx + dw - 0.5;
+  }
+}
+
+/** Keep furniture footprints solid, with a half-tile allowance for a chair facing a desk edge. */
+export function furnitureFootprintsCollide(a: FurnitureFootprint, b: FurnitureFootprint): boolean {
+  const [aw, ad] = a.footprintTiles;
+  const [bw, bd] = b.footprintTiles;
+  return a.tx < b.tx + bw && a.tx + aw > b.tx &&
+    a.ty < b.ty + bd && a.ty + ad > b.ty &&
+    !isChairTuckedUnderDesk(a, b) && !isChairTuckedUnderDesk(b, a);
+}
+
 /**
  * Expand a tile-edge partition prop at (tx, ty) into its exact zero-thickness boundary-line segment(s).
  * This allows furniture on BOTH sides of every glass wall, door, L-corner, T-junction, and +-cross
@@ -525,10 +582,8 @@ export function buildTilePermissionMap(
     const cfg = resolveAssetLayerConfig(f.assetId, f.layer, catalogById?.get(f.assetId));
     if (cfg.tilePermission === TILE_PERM.WALKABLE) continue;
     const [fw, fd] = f.footprintTiles;
-    for (let dy = 0; dy < fd; dy++) {
-      for (let dx = 0; dx < fw; dx++) {
-        const tx = f.tx + dx;
-        const ty = f.ty + dy;
+    for (let ty = Math.floor(f.ty); ty < f.ty + fd; ty++) {
+      for (let tx = Math.floor(f.tx); tx < f.tx + fw; tx++) {
         if (tx < 0 || tx >= width || ty < 0 || ty >= height) continue;
         const idx = ty * width + tx;
         // Solid BLOCKED (0) always wins over SEAT (2) or DOOR (3)

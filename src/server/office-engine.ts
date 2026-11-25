@@ -999,6 +999,7 @@ export class OfficeEngine extends EventEmitter {
   async placeFurniture(input: {
     zoneId?: string;
     tx?: number;
+    manualPosition?: boolean;
     ty?: number;
     lx?: number;
     ly?: number;
@@ -1043,6 +1044,7 @@ export class OfficeEngine extends EventEmitter {
         layer: isTop ? "tabletop" : cat.layer,
         ...(surfaceHostId ? { surfaceHostId } : {}),
         placedBy: input.placedBy,
+        ...(input.manualPosition !== undefined ? { manualPosition: input.manualPosition } : {}),
       };
       list.push(instance);
       this.recomputeCampus();
@@ -1057,6 +1059,7 @@ export class OfficeEngine extends EventEmitter {
     input: {
       zoneId?: string;
       tx?: number;
+    manualPosition?: boolean;
       ty?: number;
       lx?: number;
       ly?: number;
@@ -1124,6 +1127,7 @@ export class OfficeEngine extends EventEmitter {
       found.item.lx = targetCoord.lx;
       found.item.ly = targetCoord.ly;
       found.item.direction = nextDir;
+      if (input.manualPosition !== undefined) found.item.manualPosition = input.manualPosition;
       if (input.renderLayer !== undefined) {
         found.item.renderLayer = input.renderLayer;
       }
@@ -1417,8 +1421,8 @@ export class OfficeEngine extends EventEmitter {
         const hasCustomHypersleep = this.state.zoneOverrides?.["hypersleep:0"] !== undefined;
         for (const wf of this.campus.worldFurniture) {
           if (!hasCustomHypersleep && wf.zoneId === "hypersleep:0") continue;
-          const endX = wf.tx + wf.footprintTiles[0];
-          const endY = wf.ty + wf.footprintTiles[1];
+          const endX = Math.ceil(wf.tx + wf.footprintTiles[0]);
+          const endY = Math.ceil(wf.ty + wf.footprintTiles[1]);
           if (endX > minOccupiedW) {
             minOccupiedW = endX;
             blockerW = `${wf.assetId} (${wf.tx},${wf.ty})`;

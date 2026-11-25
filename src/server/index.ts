@@ -10,6 +10,7 @@ import {
   CustomZoneRoleSchema,
   DepartmentIdSchema,
   DirectionSchema,
+  FurnitureCoordinateSchema,
   RenderLayerSchema,
   ThemeModeSchema,
   TilePermissionSchema,
@@ -46,10 +47,11 @@ const MIME_TYPES: Record<string, string> = {
 
 const PlaceFurnitureBodySchema = z.object({
   zoneId: z.string().optional(),
-  lx: z.number().int().optional(),
-  ly: z.number().int().optional(),
-  tx: z.number().int().optional(),
-  ty: z.number().int().optional(),
+  lx: FurnitureCoordinateSchema.optional(),
+  ly: FurnitureCoordinateSchema.optional(),
+  manualPosition: z.boolean().optional(),
+  tx: FurnitureCoordinateSchema.optional(),
+  ty: FurnitureCoordinateSchema.optional(),
   assetId: z.string().min(1),
   direction: DirectionSchema.default("se"),
   placedBy: z.enum(["user", "gemini"]).optional(),
@@ -57,10 +59,11 @@ const PlaceFurnitureBodySchema = z.object({
 
 const MoveFurnitureBodySchema = z.object({
   zoneId: z.string().optional(),
-  lx: z.number().int().optional(),
-  ly: z.number().int().optional(),
-  tx: z.number().int().optional(),
-  ty: z.number().int().optional(),
+  lx: FurnitureCoordinateSchema.optional(),
+  ly: FurnitureCoordinateSchema.optional(),
+  manualPosition: z.boolean().optional(),
+  tx: FurnitureCoordinateSchema.optional(),
+  ty: FurnitureCoordinateSchema.optional(),
   direction: DirectionSchema.optional(),
   renderLayer: RenderLayerSchema.optional(),
 });

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { IsoCamera, tileToWorld, worldToTile } from "../src/client/camera.js";
+import { IsoCamera, IsoView, STEP_Y, tileToWorld, worldToTile } from "../src/client/camera.js";
 import { isEmployeeActive, sortActiveAgents } from "../src/client/hud.js";
 import {
   computeFloorSlabGeometry,
@@ -9,6 +9,9 @@ import {
   IsoRenderer,
   sortUnifiedIsoEntities,
 } from "../src/client/iso-renderer.js";
+import { getViewDividerSegments, rotateCampus } from "../src/client/view-scene.js";
+import { computeCampusLayout } from "../src/server/layout-engine.js";
+import { expandEdgeDividerSegments } from "../src/shared/layers.js";
 import type { EmployeeRecord } from "../src/shared/types.js";
 
 describe("IsoCamera & unified topological depth-sorter", () => {
@@ -26,6 +29,66 @@ describe("IsoCamera & unified topological depth-sorter", () => {
     const [rtX, rtY] = worldToTile(wx, wy);
     expect(rtX).toBeCloseTo(5, 5);
     expect(rtY).toBeCloseTo(3, 5);
+  });
+
+  it("rotates a rectangular floor around the viewport center and keeps picking in office coordinates", () => {
+    const camera = new IsoCamera();
+    camera.setFloorSize(24, 18, 1200, 800);
+    camera.setZoom(3);
+    camera.snapToTile(4.25, 7.125, 1200, 800);
+    const originalPan = [camera.panX, camera.panY];
+
+    for (const expected of [1, 2, 3, 0]) {
+      camera.rotate(1, 1200, 800);
+      expect(camera.view.turns).toBe(expected);
+      expect(camera.zoom).toBe(3);
+      expect(camera.screenToTile(600, 400)).toEqual([4.75, 7.625]);
+
+      for (const [tx, ty] of [[0, 0], [23, 17], [5, 11]]) {
+        const [wx, wy] = tileToWorld(...camera.view.toView(tx, ty));
+        const [sx, sy] = camera.worldToScreen(wx, wy - STEP_Y);
+        expect(camera.screenToTile(sx, sy).map(Math.floor)).toEqual([tx, ty]);
+      }
+    }
+
+    expect([camera.panX, camera.panY]).toEqual(originalPan);
+    camera.rotate(-1, 1200, 800);
+    expect(camera.view.turns).toBe(3);
+    camera.glideToTile(23, 17, 1200, 800);
+    for (let i = 0; i < 60; i++) camera.update(16);
+    expect(camera.screenToTile(600, 400).map(Math.floor)).toEqual([23, 17]);
+  });
+
+  it("projects the floor, multi-tile furniture, overrides and corner cutaway into the rotated view", () => {
+    const campus = computeCampusLayout([], [], new Map(), undefined, "office", { "4,3": 0 }, undefined, {
+      floorWidthTiles: 24,
+      floorDepthTiles: 18,
+      floorTileOverrides: { "4,3": "floor-wood-plank" },
+    });
+    const view = new IsoView(1, campus.widthTiles, campus.depthTiles);
+    const rotated = rotateCampus(campus, view);
+    expect([rotated.widthTiles, rotated.depthTiles]).toEqual([18, 24]);
+    expect(rotated.floors.find((f) => f.tx === 14 && f.ty === 4)).toMatchObject({
+      assetId: "floor-wood-plank", direction: "sw",
+    });
+    expect(rotated.tilePermissions?.[4 * 18 + 14]).toBe(0);
+    expect(rotated.worldFurniture.find((f) => f.assetId === "hypersleep-capsule")).toMatchObject({
+      tx: 15, ty: 13, footprintTiles: [2, 1], direction: "sw",
+    });
+    expect(rotated.walls.every((wall) => wall.tx === 0 || wall.ty === 0)).toBe(true);
+    expect(campus.floors.find((f) => f.tx === 4 && f.ty === 3)?.direction).toBe("se");
+  });
+
+  it("rotates each modular glass edge around its actual fractional tile position", () => {
+    const asset = "divider-low-glass-tee";
+    const original = expandEdgeDividerSegments(asset, 5, 4, "se");
+    const view = new IsoView(1, 24, 18);
+    const [tx, ty] = view.toView(5, 4);
+    const projected = getViewDividerSegments(asset, tx, ty, view.toViewDirection("se"), view);
+    expect(projected.map(({ rx, ry, axis }) => [rx, ry, axis])).toEqual(
+      original.map(({ rx, ry, axis }) => [17 - ry, rx, axis === "x" ? "y" : "x"]),
+    );
+    expect(projected[0].blocks).toEqual({ x: 14, y: 4, side: "w" });
   });
 
   it("sorts fractional moving characters cleanly behind and in front of a 2x1 desk", () => {

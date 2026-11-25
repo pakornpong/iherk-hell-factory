@@ -1,11 +1,14 @@
 import {
+  crossesWallSegment,
   expandEdgeDividerSegments,
+  furnitureFootprintsCollide,
   getSurfaceHostHeightVoxels,
   isEdgeDividerAsset,
   isTabletopAsset,
   isWalkablePermission,
   resolveAssetLayerConfig,
   surfaceVoxelsToWorldOffsetY,
+  supportsHalfTilePlacement,
   type RenderLayer,
 } from "../shared/layers.js";
 import type {
@@ -17,6 +20,7 @@ import type {
   WsServerMessage,
 } from "../shared/types.js";
 import { AtlasManager } from "./atlas-loader.js";
+import { findBossChair, getCenteredChairTile } from "./chair-alignment.js";
 import { IsoCamera } from "./camera.js";
 import { DecorateController, isEditableFurniture } from "./decorate.js";
 import { OfficeHud, type LayerBrush, type LayerEditorState, type ZoneEditorState } from "./hud.js";
@@ -61,6 +65,7 @@ async function bootstrap(): Promise<void> {
   let latestVisuals: SimEmployeeVisual[] = [];
   let hoverTile: [number, number] | null = null;
   let cameraInitialized = false;
+  let lastDrawTs = 0;
   const layerState: LayerEditorState = { mode: "off", brush: "inspect", selectedFurnitureId: null };
   const zoneEditorState: ZoneEditorState = {
     active: false,
@@ -145,7 +150,16 @@ async function bootstrap(): Promise<void> {
     hud.renderHud(snapshot, catalog, selectedEmployeeId, camera.zoom, layerState, atlas, zoneEditorState);
   };
 
+  const rotateView = (turn: -1 | 1) => {
+    if (!snapshot) return;
+    camera.rotate(turn, canvas.width, canvas.height);
+    renderer.lastHitBoxes = [];
+    hoverTile = null;
+    lastDrawTs = -Infinity;
+  };
+
   const hud = new OfficeHud(decorate, {
+    onRotateView: rotateView,
     onFocusBay(bayId) {
       const zone = snapshot?.campus.zones.find((z) => z.bayId === bayId);
       if (zone) {
@@ -170,7 +184,7 @@ async function bootstrap(): Promise<void> {
     },
     onFocusZoneGroup(group) {
       if (group === "hq") {
-        const bossChair = snapshot?.campus.worldFurniture.find((f) => f.id === "boss:0-boss-chair");
+        const bossChair = snapshot && findBossChair(snapshot.campus);
         if (bossChair) {
           camera.glideToTile(bossChair.tx, bossChair.ty, canvas.width, canvas.height);
           return;
@@ -422,9 +436,10 @@ async function bootstrap(): Promise<void> {
   const applySnapshot = (next: OfficeSnapshotPayload) => {
     snapshot = next;
     sim.syncFromServer(next.state, next.campus);
+    camera.setFloorSize(next.campus.widthTiles, next.campus.depthTiles, canvas.width, canvas.height);
     if (!cameraInitialized) {
       cameraInitialized = true;
-      camera.snapToTile(next.campus.widthTiles / 2, next.campus.depthTiles / 2, canvas.width, canvas.height);
+      camera.snapToTile((next.campus.widthTiles - 1) / 2, (next.campus.depthTiles - 1) / 2, canvas.width, canvas.height);
     }
     refreshHud();
   };
@@ -461,6 +476,31 @@ async function bootstrap(): Promise<void> {
 
   // Mouse pan, tile picking, click selection & decorate placement
   let dragging = false;
+  let furniturePointer: [number, number] | null = null;
+
+  const furnitureAt = (sx: number, sy: number, boxes: typeof renderer.lastHitBoxes, useSprite: boolean) => {
+    if (!snapshot) return;
+    const furniture = snapshot.campus.worldFurniture;
+    if (useSprite) {
+      for (let i = boxes.length - 1; i >= 0; i--) {
+        const box = boxes[i];
+        if (box.kind !== "furniture" || sx < box.x || sx > box.x + box.w || sy < box.y || sy > box.y + box.h) continue;
+        const hit = furniture.find((item) => item.id === box.id);
+        if (hit && isEditableFurniture(hit)) return hit;
+      }
+    }
+    const [x, y] = camera.screenToTile(sx, sy);
+    const matches = furniture.filter((item) =>
+      isEditableFurniture(item) && !isEdgeDividerAsset(item.assetId) &&
+      x >= item.tx && x < item.tx + item.footprintTiles[0] &&
+      y >= item.ty && y < item.ty + item.footprintTiles[1],
+    );
+    return matches.find((item) => isTabletopAsset(item.assetId, item.layer, catalogById.get(item.assetId))) ?? matches[0];
+  };
+
+  canvas.addEventListener("mouseleave", () => { furniturePointer = null; });
+  window.addEventListener("blur", () => { furniturePointer = null; });
+
   let movedPx = 0;
   let lastX = 0;
   let lastY = 0;
@@ -477,6 +517,8 @@ async function bootstrap(): Promise<void> {
     const rect = canvas.getBoundingClientRect();
     const sx = ev.clientX - rect.left;
     const sy = ev.clientY - rect.top;
+    furniturePointer = ev.target === canvas ? [sx, sy] : null;
+    if (furniturePointer) decorate.resumePointerMove();
     const [tx, ty] = camera.screenToTile(sx, sy);
     hoverTile = [Math.floor(tx), Math.floor(ty)];
 
@@ -500,7 +542,10 @@ async function bootstrap(): Promise<void> {
     const sx = ev.clientX - rect.left;
     const sy = ev.clientY - rect.top;
 
-    if (zoneEditorState.active && hoverTile) {
+    const [tileX, tileY] = camera.screenToTile(sx, sy);
+    hoverTile = [Math.floor(tileX), Math.floor(tileY)];
+
+    if (zoneEditorState.active) {
       const [tx, ty] = hoverTile;
       if (tx < 0 || ty < 0 || tx >= snapshot.campus.widthTiles || ty >= snapshot.campus.depthTiles) return;
       if (!zoneEditorState.startTile) {
@@ -614,37 +659,7 @@ async function bootstrap(): Promise<void> {
         return;
       }
       const isPicking = decorate.tool === "erase" || (decorate.tool === "move" && !decorate.movingItem);
-      const tileMatches = snapshot.campus.worldFurniture.filter(
-        (f) =>
-          isEditableFurniture(f) &&
-          !isEdgeDividerAsset(f.assetId) &&
-          tx >= f.tx &&
-          tx < f.tx + f.footprintTiles[0] &&
-          ty >= f.ty &&
-          ty < f.ty + f.footprintTiles[1],
-      );
-      // Prefer visual sprite hitbox first for edge-mounted dividers / tabletop props when picking in Move/Erase mode
-      let existing: (typeof snapshot.campus.worldFurniture)[number] | undefined;
-      if (isPicking) {
-        for (let i = renderer.lastHitBoxes.length - 1; i >= 0; i--) {
-          const box = renderer.lastHitBoxes[i];
-          if (box.kind !== "furniture") continue;
-          if (sx >= box.x && sx <= box.x + box.w && sy >= box.y && sy <= box.y + box.h) {
-            const hitFurn = snapshot.campus.worldFurniture.find(
-              (f) => f.id === box.id && isEditableFurniture(f),
-            );
-            if (hitFurn) {
-              existing = hitFurn;
-              break;
-            }
-          }
-        }
-      }
-      if (!existing) {
-        existing =
-          tileMatches.find((f) => isTabletopAsset(f.assetId, f.layer, catalogById.get(f.assetId))) ??
-          tileMatches[0];
-      }
+      const existing = furnitureAt(sx, sy, renderer.lastHitBoxes, isPicking);
       if (decorate.tool === "erase" && !existing && snapshot.state.floorTileOverrides?.[`${tx},${ty}`]) {
         void decorate
           .paintFloorAt(
@@ -660,11 +675,14 @@ async function bootstrap(): Promise<void> {
         return;
       }
       const wasHolding = Boolean(decorate.movingItem);
+      const [targetX, targetY] = wasHolding ? decorate.getPointerMoveTarget(tileX, tileY) : [tx, ty];
       void decorate
-        .handleTileClick(tx, ty, existing)
+        .handleTileClick(targetX, targetY, existing)
         .then(() => {
           if (!wasHolding && decorate.movingItem) {
-            hud.showToast(`✋ Picked up ${decorate.movingItem.item.assetId} — click tile to place (R: rotate · Esc: cancel)`);
+            const assetId = decorate.movingItem.item.assetId;
+            const step = supportsHalfTilePlacement(assetId) ? "½ tile" : "1 tile";
+            hud.showToast(`✋ Picked up ${assetId} — move by ${step} · click to place`);
           }
           refreshHud();
         })
@@ -750,7 +768,40 @@ async function bootstrap(): Promise<void> {
 
   // Keyboard shortcuts
   window.addEventListener("keydown", (ev) => {
-    if (ev.target instanceof HTMLInputElement || ev.target instanceof HTMLTextAreaElement) return;
+    if (ev.target instanceof HTMLElement && ev.target.closest("input, textarea, select, [contenteditable]")) return;
+    if ((ev.key === "[" || ev.key === "]") && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !ev.shiftKey) {
+      if (!ev.repeat) rotateView(ev.key === "[" ? -1 : 1);
+      return;
+    }
+    const picked = decorate.active ? decorate.movingItem : null;
+    if (picked && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !ev.shiftKey) {
+      const steps: Record<string, [number, number]> = {
+        ArrowLeft: [-1, 0],
+        ArrowRight: [1, 0],
+        ArrowUp: [0, -1],
+        ArrowDown: [0, 1],
+      };
+      const step = steps[ev.key];
+      if (step) {
+        ev.preventDefault();
+        const [x, y] = camera.view.toOffice(...step);
+        const [originX, originY] = camera.view.toOffice(0, 0);
+        const visualOrigin = snapshot && picked.item.assetId === "chair-office-swivel" && !picked.item.manualPosition
+          ? getCenteredChairTile(snapshot.campus, picked.originTx, picked.originTy, picked.item.direction, picked.item.id)
+          : undefined;
+        decorate.nudgeMove(x - originX, y - originY, visualOrigin);
+        return;
+      }
+      if (ev.key === "Enter" && picked.keyboardTarget) {
+        ev.preventDefault();
+        if (!ev.repeat) {
+          void decorate.handleTileClick(...picked.keyboardTarget)
+            .then(refreshHud)
+            .catch((err) => hud.showToast(err instanceof Error ? err.message : String(err), true));
+        }
+        return;
+      }
+    }
     if (ev.key === "r" || ev.key === "R") {
       if (decorate.active) {
         decorate.rotateCw();
@@ -811,8 +862,6 @@ async function bootstrap(): Promise<void> {
 
   // Adaptive FPS render loop (pauses completely when tab is hidden)
   let lastFrameTs = performance.now();
-  let lastDrawTs = 0;
-
   const loop = (now: number) => {
     requestAnimationFrame(loop);
     if (document.hidden || !snapshot) return;
@@ -851,8 +900,14 @@ async function bootstrap(): Promise<void> {
           : decorate.tool === "move"
             ? decorate.movingItem?.item.assetId ?? null
             : null;
-      if (decorate.active && ghostAssetId && hoverTile) {
-        const [tx, ty] = hoverTile;
+      const pointerTarget = decorate.movingItem && furniturePointer
+        ? decorate.getPointerMoveTarget(...camera.screenToTile(...furniturePointer))
+        : null;
+      const placementTile = decorate.movingItem
+        ? decorate.movingItem.keyboardTarget ?? pointerTarget
+        : hoverTile;
+      if (decorate.active && ghostAssetId && placementTile) {
+        const [tx, ty] = placementTile;
         const zone =
           snapshot.campus.zones.find(
             (z) =>
@@ -914,16 +969,16 @@ async function bootstrap(): Promise<void> {
               const fCat = catalogById.get(f.assetId);
               const fIsTop = isTabletopAsset(f.assetId, f.layer, fCat);
               if (fIsTop) {
-                for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
-                  for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
+                for (let dy = 0; dy < f.footprintTiles[1]; dy += 0.5) {
+                  for (let dx = 0; dx < f.footprintTiles[0]; dx += 0.5) {
                     topOcc.add(`${f.tx + dx},${f.ty + dy}`);
                   }
                 }
               } else {
                 const h = getSurfaceHostHeightVoxels(f.assetId, fCat);
                 if (h) {
-                  for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
-                    for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
+                  for (let dy = 0; dy < f.footprintTiles[1]; dy += 0.5) {
+                    for (let dx = 0; dx < f.footprintTiles[0]; dx += 0.5) {
                       surfaceHeightByTile.set(`${f.tx + dx},${f.ty + dy}`, h);
                     }
                   }
@@ -933,8 +988,8 @@ async function bootstrap(): Promise<void> {
             let allOnSurface = inBounds;
             let noTopOverlap = true;
             let hostVoxels = 0;
-            for (let dy = 0; dy < fd; dy++) {
-              for (let dx = 0; dx < fw; dx++) {
+            for (let dy = 0; dy < fd; dy += 0.5) {
+              for (let dx = 0; dx < fw; dx += 0.5) {
                 const key = `${tx + dx},${ty + dy}`;
                 const h = surfaceHeightByTile.get(key);
                 if (!h) allOnSurface = false;
@@ -948,13 +1003,9 @@ async function bootstrap(): Promise<void> {
             const floorFurn = zoneFurn.filter(
               (f) => !isEdgeDividerAsset(f.assetId) && !isTabletopAsset(f.assetId, f.layer, catalogById.get(f.assetId)),
             );
-            const collides = floorFurn.some(
-              (f) =>
-                tx < f.tx + f.footprintTiles[0] &&
-                tx + fw > f.tx &&
-                ty < f.ty + f.footprintTiles[1] &&
-                ty + fd > f.ty,
-            );
+            const candidateFootprint = { assetId: ghostAssetId, direction: decorate.direction, tx, ty, footprintTiles: [fw, fd] as [number, number] };
+            const collides = crossesWallSegment(snapshot.campus.wallSegments, tx, ty, fw, fd) ||
+              floorFurn.some((item) => furnitureFootprintsCollide(candidateFootprint, item));
             if (isOpenSandboxZone) {
               valid = inBounds && !collides;
             } else {
@@ -963,9 +1014,9 @@ async function bootstrap(): Promise<void> {
               for (const f of floorFurn) {
                 const fCfg = resolveAssetLayerConfig(f.assetId, f.layer, catalogById.get(f.assetId));
                 const blocksWalk = !isWalkablePermission(fCfg.tilePermission);
-                for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
-                  for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
-                    const k = `${f.tx - zone.originX + dx},${f.ty - zone.originY + dy}`;
+                for (let y = Math.floor(f.ty - zone.originY); y < f.ty - zone.originY + f.footprintTiles[1]; y++) {
+                  for (let x = Math.floor(f.tx - zone.originX); x < f.tx - zone.originX + f.footprintTiles[0]; x++) {
+                    const k = `${x},${y}`;
                     occ.add(k);
                     if (blocksWalk) walkBlocked.add(k);
                   }
@@ -974,9 +1025,9 @@ async function bootstrap(): Promise<void> {
               const candCfg = resolveAssetLayerConfig(ghostAssetId, cat?.layer, cat);
               const candBlocksWalk = !isWalkablePermission(candCfg.tilePermission);
               const blockedWithCand = new Set(walkBlocked);
-              for (let dy = 0; dy < fd; dy++) {
-                for (let dx = 0; dx < fw; dx++) {
-                  const k = `${lx + dx},${ly + dy}`;
+              for (let y = Math.floor(ly); y < ly + fd; y++) {
+                for (let x = Math.floor(lx); x < lx + fw; x++) {
+                  const k = `${x},${y}`;
                   occ.add(k);
                   if (candBlocksWalk) blockedWithCand.add(k);
                 }
@@ -1027,6 +1078,7 @@ async function bootstrap(): Promise<void> {
           tx,
           ty,
           assetId: ghostAssetId,
+          manualPosition: Boolean(decorate.movingItem),
           direction: decorate.direction,
           valid,
           ...(surfaceOffsetY > 0 ? { surfaceOffsetY } : {}),
@@ -1035,6 +1087,11 @@ async function bootstrap(): Promise<void> {
     }
 
     latestVisuals = simStep.visuals;
+
+    const pointer = furniturePointer;
+    const highlightTool = decorate.active && !zoneEditorState.active && !dragging && !decorate.isFloorPainting()
+      ? decorate.tool === "erase" ? "erase" : decorate.tool === "move" && !decorate.movingItem ? "move" : null
+      : null;
 
     renderer.render(ctx, {
       state: snapshot.state,
@@ -1045,6 +1102,10 @@ async function bootstrap(): Promise<void> {
       employees: simStep.visuals,
       syncPackets: simStep.syncPackets,
       selectedEmployeeId,
+      furnitureHover: highlightTool && pointer ? {
+        tool: highlightTool,
+        pick: (boxes) => furnitureAt(...pointer, boxes, true)?.id,
+      } : undefined,
       movingFurnitureId: decorate.movingItem?.item.id ?? null,
       selectedLayerFurnitureId: layerState.mode === "layers" ? layerState.selectedFurnitureId : null,
       bayPopAnimations: sim.getBayPopAnimations(),

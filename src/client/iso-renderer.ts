@@ -1,6 +1,5 @@
 import {
   buildTilePermissionMap,
-  expandEdgeDividerSegments,
   isEdgeDividerAsset,
   RENDER_LAYER,
   RENDER_LAYER_META,
@@ -22,6 +21,8 @@ import {
 } from "../shared/types.js";
 import type { AtlasManager, ResolvedSpriteFrame } from "./atlas-loader.js";
 import { STEP_X, STEP_Y, type IsoCamera } from "./camera.js";
+import { findBossChair, getCenteredChairTile } from "./chair-alignment.js";
+import { getViewDividerSegments, ViewScene } from "./view-scene.js";
 
 export type LayerOverlayMode = "off" | "permissions" | "layers";
 
@@ -54,6 +55,7 @@ export interface SyncPacketVisual {
 }
 
 export interface DecorateGhostInput {
+  manualPosition?: boolean;
   tx: number;
   ty: number;
   assetId: string;
@@ -85,6 +87,7 @@ export interface RenderSceneInput {
   employees: RenderedEmployeeInput[];
   syncPackets: SyncPacketVisual[];
   selectedEmployeeId?: string | null;
+  furnitureHover?: { tool: "move" | "erase"; pick(boxes: ScreenHitBox[]): string | undefined };
   movingFurnitureId?: string | null;
   selectedLayerFurnitureId?: string | null;
   bayPopAnimations?: Map<string, number>; // bayId -> 0..1 progress
@@ -774,7 +777,24 @@ export class IsoRenderer {
     return this.backdropCache;
   }
 
-  render(ctx: CanvasRenderingContext2D, input: RenderSceneInput): void {
+  private readonly viewScene = new ViewScene();
+  private chairAlignmentCampus?: ComputedCampus;
+  private readonly chairAlignment = new Map<string, [number, number]>();
+
+  private updateChairAlignment(campus: ComputedCampus): void {
+    if (this.chairAlignmentCampus === campus) return;
+    this.chairAlignmentCampus = campus;
+    this.chairAlignment.clear();
+    for (const chair of campus.worldFurniture) {
+      if (chair.assetId !== "chair-office-swivel" || chair.manualPosition) continue;
+      const position = getCenteredChairTile(campus, chair.tx, chair.ty, chair.direction, chair.id);
+      if (position[0] !== chair.tx || position[1] !== chair.ty) this.chairAlignment.set(chair.id, position);
+    }
+  }
+
+  render(ctx: CanvasRenderingContext2D, scene: RenderSceneInput): void {
+    const bossChairId = findBossChair(scene.campus)?.id;
+    const input = this.viewScene.project(scene);
     const { state, campus, camera, atlas, employees, syncPackets, ghost, timeMs } = input;
     const theme: ThemeMode = state.theme;
     const width = ctx.canvas.width;
@@ -859,6 +879,17 @@ export class IsoRenderer {
           occludedBackGlow?: boolean;
         });
 
+    this.updateChairAlignment(scene.campus);
+    const chairAlignmentByTile = new Map<string, { position: [number, number]; direction: Direction }>();
+    const furnitureTile = (item: ComputedCampus["worldFurniture"][number]): [number, number] => {
+      const centered = this.chairAlignment.get(item.id);
+      return centered ? camera.view.toView(...centered) : [item.tx, item.ty];
+    };
+    const seatedChairTile = (emp: RenderedEmployeeInput): [number, number] => {
+      const seat = emp.clipName.startsWith("sit_") && chairAlignmentByTile.get(toTileKey(emp.x, emp.y));
+      return seat && seat.direction === emp.direction ? seat.position : [emp.x, emp.y];
+    };
+
     const unified: UnifiedItem[] = [];
     // Track split-layer foreground attachments (e.g. rear-facing swivel chair backrests,
     // 1x2 closed hypersleep canopies) so they participate natively in the unified depth sort at RENDER_LAYER.FOREGROUND (6).
@@ -873,6 +904,10 @@ export class IsoRenderer {
     const foregroundAttachByTile = new Map<string, ForegroundAttach>();
 
     for (const f of campus.worldFurniture) {
+      const [drawTx, drawTy] = furnitureTile(f);
+      if (drawTx !== f.tx || drawTy !== f.ty) {
+        chairAlignmentByTile.set(toTileKey(f.tx, f.ty), { position: [drawTx, drawTy], direction: f.direction });
+      }
       const cfg = resolveAssetLayerConfig(f.assetId, f.layer, input.catalogById?.get(f.assetId));
       const frameName = animFrameForAsset(f.assetId);
       const sprite = atlas.getFrame(theme, f.assetId, f.direction, frameName);
@@ -882,8 +917,8 @@ export class IsoRenderer {
         const attach: ForegroundAttach = {
           assetId: cfg.foregroundAssetId,
           direction: f.direction,
-          originTx: f.tx,
-          originTy: f.ty,
+          originTx: drawTx,
+          originTy: drawTy,
           footprintX: fw,
           footprintY: fd,
         };
@@ -896,7 +931,7 @@ export class IsoRenderer {
       if (isEdgeDividerAsset(f.assetId)) {
         // Render user-placed glass partitions on the exact tile boundary line (zero-thickness depth plane)
         // so furniture on BOTH sides sits 100% flush with zero half-tile gap and exact depth sorting!
-        const segs = expandEdgeDividerSegments(f.assetId, f.tx, f.ty, f.direction);
+        const segs = getViewDividerSegments(f.assetId, f.tx, f.ty, f.direction, camera.view);
         segs.forEach((seg, idx) => {
           const segSprite = atlas.getFrame(theme, seg.assetId, seg.direction, animFrameForAsset(seg.assetId));
           if (!segSprite) return;
@@ -923,14 +958,14 @@ export class IsoRenderer {
         continue;
       }
       if (!sprite) continue;
-      const [wx, rawWy] = toAnchorWorld(f.tx, f.ty, sprite.footprintTiles[0], sprite.footprintTiles[1]);
+      const [wx, rawWy] = toAnchorWorld(drawTx, drawTy, sprite.footprintTiles[0], sprite.footprintTiles[1]);
       const wy = rawWy - (f.surfaceOffsetY ?? 0);
       if (!isInWorldBounds(wx, wy, bounds)) continue;
       unified.push({
         id: `f:${f.id}`,
         kind: "furniture",
-        x: f.tx,
-        y: f.ty,
+        x: drawTx,
+        y: drawTy,
         footprintX: sprite.footprintTiles[0],
         footprintY: sprite.footprintTiles[1],
         renderLayer: f.renderLayer ?? cfg.renderLayer,
@@ -974,10 +1009,11 @@ export class IsoRenderer {
 
     // Boss avatar seated permanently at Boss executive chair (follows the chair anywhere on campus + rotates with it)
     const bossZone = campus.zones.find((z) => z.kind === "boss");
-    const bossChair = campus.worldFurniture.find((f) => f.id === "boss:0-boss-chair");
+    const bossChair = bossChairId ? campus.worldFurniture.find((item) => item.id === bossChairId) : undefined;
     if (bossZone || bossChair) {
-      const bx = bossChair ? bossChair.tx : (bossZone?.originX ?? 0) + 2;
-      const by = bossChair ? bossChair.ty : (bossZone?.originY ?? 0) + 1;
+      const [bx, by] = bossChair
+        ? furnitureTile(bossChair)
+        : [(bossZone?.originX ?? 0) + 2, (bossZone?.originY ?? 0) + 1];
       const bossDir: Direction = bossChair?.direction ?? "se";
       const hasVisitor = employees.some(
         (e) => e.record.visualState === "reporting" || e.record.visualState === "assigning",
@@ -1039,8 +1075,9 @@ export class IsoRenderer {
       );
 
       // Center lying-down sleeping agents cleanly on the mattress of a 1x2 hypersleep pod
-      const drawTileX = isMultiTilePod && fgAttach ? fgAttach.originTx + (fgAttach.footprintX - 1) / 2 : emp.x;
-      const drawTileY = isMultiTilePod && fgAttach ? fgAttach.originTy + (fgAttach.footprintY - 1) / 2 : emp.y;
+      const [drawTileX, drawTileY] = isMultiTilePod && fgAttach
+        ? [fgAttach.originTx + (fgAttach.footprintX - 1) / 2, fgAttach.originTy + (fgAttach.footprintY - 1) / 2]
+        : seatedChairTile(emp);
       const [wx, wy] = toAnchorWorld(drawTileX, drawTileY, 1, 1);
       if (!isInWorldBounds(wx, wy, bounds)) continue;
 
@@ -1137,10 +1174,27 @@ export class IsoRenderer {
       ctx.restore();
     }
 
+    const hoverId = input.furnitureHover?.pick(hitBoxes);
+    const hoveredBoxes = hoverId ? hitBoxes.filter((box) => box.kind === "furniture" && box.id === hoverId) : [];
+    if (hoveredBoxes.length) {
+      const left = Math.min(...hoveredBoxes.map((box) => box.x)) - 2;
+      const top = Math.min(...hoveredBoxes.map((box) => box.y)) - 2;
+      const right = Math.max(...hoveredBoxes.map((box) => box.x + box.w)) + 2;
+      const bottom = Math.max(...hoveredBoxes.map((box) => box.y + box.h)) + 2;
+      ctx.save();
+      ctx.strokeStyle = "#0f172a";
+      ctx.lineWidth = 4;
+      ctx.strokeRect(left, top, right - left, bottom - top);
+      ctx.strokeStyle = input.furnitureHover?.tool === "erase" ? "#fb7185" : "#38bdf8";
+      ctx.lineWidth = 2;
+      ctx.strokeRect(left, top, right - left, bottom - top);
+      ctx.restore();
+    }
+
     // 5. Decorate Mode Ghost Preview (supports floor brushes, animated props, tabletop surface lift & exact footprint tiles)
     if (ghost) {
       if (ghost.brushSize && ghost.brushSize >= 1) {
-        const floorSprite = ghost.floorReset ? null : atlas.getFrame(theme, ghost.assetId, "se", "default");
+        const floorSprite = ghost.floorReset ? null : atlas.getFrame(theme, ghost.assetId, ghost.direction, "default");
         ctx.save();
         ctx.fillStyle = ghost.floorReset
           ? "rgba(245, 158, 11, 0.28)"
@@ -1175,7 +1229,7 @@ export class IsoRenderer {
         ctx.restore();
       } else if (isEdgeDividerAsset(ghost.assetId)) {
         // Preview edge-mounted glass partition(s) right on the exact tile boundary line(s)
-        const segs = expandEdgeDividerSegments(ghost.assetId, ghost.tx, ghost.ty, ghost.direction);
+        const segs = getViewDividerSegments(ghost.assetId, ghost.tx, ghost.ty, ghost.direction, camera.view);
         ctx.save();
         ctx.strokeStyle = ghost.valid ? "#22c55e" : "#ef4444";
         ctx.lineWidth = Math.max(2.5, zoom * 1.5);
@@ -1205,13 +1259,18 @@ export class IsoRenderer {
           atlas.getFrame(theme, ghost.assetId, ghost.direction, "default");
         const [fw, fd] = sprite?.footprintTiles ?? [1, 1];
         const liftY = ghost.surfaceOffsetY ?? 0;
+        const [ghostX, ghostY] = scene.ghost?.assetId === "chair-office-swivel" && !scene.ghost.manualPosition
+          ? camera.view.toView(...getCenteredChairTile(
+            scene.campus, scene.ghost.tx, scene.ghost.ty, scene.ghost.direction, scene.movingFurnitureId ?? undefined,
+          ))
+          : [ghost.tx, ghost.ty];
         ctx.save();
         ctx.fillStyle = ghost.valid ? "rgba(34, 197, 94, 0.24)" : "rgba(239, 68, 68, 0.28)";
         ctx.strokeStyle = ghost.valid ? "#22c55e" : "#ef4444";
         ctx.lineWidth = Math.max(1.5, zoom);
         for (let dy = 0; dy < fd; dy++) {
           for (let dx = 0; dx < fw; dx++) {
-            const [twx, rawTwy] = toAnchorWorld(ghost.tx + dx, ghost.ty + dy, 1, 1);
+            const [twx, rawTwy] = toAnchorWorld(ghostX + dx, ghostY + dy, 1, 1);
             const twy = rawTwy - liftY;
             const [topX, topY] = camera.worldToScreen(twx, twy - STEP_Y * 2);
             const [rightX, rightY] = camera.worldToScreen(twx + STEP_X, twy - STEP_Y);
@@ -1229,7 +1288,7 @@ export class IsoRenderer {
         }
         ctx.restore();
         if (sprite) {
-          const [wx, rawWy] = toAnchorWorld(ghost.tx, ghost.ty, sprite.footprintTiles[0], sprite.footprintTiles[1]);
+          const [wx, rawWy] = toAnchorWorld(ghostX, ghostY, sprite.footprintTiles[0], sprite.footprintTiles[1]);
           drawSprite(sprite, wx, rawWy - liftY, { alpha: 0.75 });
         }
       }
@@ -1283,7 +1342,8 @@ export class IsoRenderer {
         ctx.save();
         ctx.font = `bold ${Math.max(10, 6 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
         ctx.textAlign = "center";
-        const previewText = `${ze.draftLabel} (${w}×${hh})`;
+        const [draftWidth, draftHeight] = camera.view.swapsAxes ? [hh, w] : [w, hh];
+        const previewText = `${ze.draftLabel} (${draftWidth}×${draftHeight})`;
         const tw = ctx.measureText(previewText).width + 14;
         ctx.fillStyle = "rgba(15, 23, 42, 0.92)";
         ctx.fillRect(Math.round(csx - tw / 2), Math.round(csy - 10), Math.round(tw), 20);
@@ -1416,8 +1476,9 @@ export class IsoRenderer {
 
     // Floating 👑 BOSS badge above Boss avatar (follows Boss chair anywhere on campus)
     if (bossZone || bossChair) {
-      const bx = bossChair ? bossChair.tx : (bossZone?.originX ?? 0) + 2;
-      const by = bossChair ? bossChair.ty : (bossZone?.originY ?? 0) + 1;
+      const [bx, by] = bossChair
+        ? furnitureTile(bossChair)
+        : [(bossZone?.originX ?? 0) + 2, (bossZone?.originY ?? 0) + 1];
       const [wx, wy] = toAnchorWorld(bx, by, 1, 1);
       if (isInWorldBounds(wx, wy, bounds)) {
         const [sx, sy] = camera.worldToScreen(wx, wy - 50);
@@ -1443,8 +1504,9 @@ export class IsoRenderer {
       const isInMultiPod = Boolean(
         fgAttach && fgAttach.direction === emp.direction && (fgAttach.footprintX > 1 || fgAttach.footprintY > 1),
       );
-      const bx = isInMultiPod && fgAttach ? fgAttach.originTx + (fgAttach.footprintX - 1) / 2 : emp.x;
-      const by = isInMultiPod && fgAttach ? fgAttach.originTy + (fgAttach.footprintY - 1) / 2 : emp.y;
+      const [bx, by] = isInMultiPod && fgAttach
+        ? [fgAttach.originTx + (fgAttach.footprintX - 1) / 2, fgAttach.originTy + (fgAttach.footprintY - 1) / 2]
+        : seatedChairTile(emp);
       const [wx, wy] = toAnchorWorld(bx, by, 1, 1);
       if (!isInWorldBounds(wx, wy, bounds)) continue;
       const bob = Math.sin(timeMs / 400 + emp.x) * 1.5;
@@ -1520,7 +1582,7 @@ export class IsoRenderer {
         if (!isInWorldBounds(wx, wy, bounds)) continue;
 
         const idx = ty * width + tx;
-        const perm = (permMap.permissions[idx] ?? 1) as TilePermission;
+        const perm = (campus.tilePermissions?.[idx] ?? permMap.permissions[idx] ?? 1) as TilePermission;
         const meta = TILE_PERM_META[perm] ?? TILE_PERM_META[1];
         const isOverridden = Object.prototype.hasOwnProperty.call(overrides, toTileKey(tx, ty));
         const isHovered = Boolean(hoverTile && hoverTile[0] === tx && hoverTile[1] === ty);

@@ -104,16 +104,23 @@ describe("DecorateController", () => {
     await ctrl.handleTileClick(3, 2, desk);
     expect(ctrl.movingItem?.originTx).toBe(2);
     expect(ctrl.movingItem?.originTy).toBe(2);
+    // A diamond is split into two independently selectable half-steps per axis.
+    expect(ctrl.getPointerMoveTarget(3.25, 2.25)).toEqual([3, 2]);
+    expect(ctrl.getPointerMoveTarget(3.75, 2.25)).toEqual([3.5, 2]);
+    expect(ctrl.getPointerMoveTarget(3.25, 2.75)).toEqual([3, 2.5]);
+
 
     // Cancel move puts it down cleanly without exiting Decorate Mode
     expect(ctrl.cancelMove()).toBe(true);
     expect(ctrl.movingItem).toBeNull();
     expect(ctrl.active).toBe(true);
 
-    // Pick up again and drop at (1, 3), then undo -> restores exact (2, 2)
+    // Nudge right half a tile. The destination overlaps the original 2×1 footprint.
     await ctrl.handleTileClick(3, 2, desk);
-    await ctrl.handleTileClick(1, 3);
-    expect(moves[0]).toEqual({ id: "boss:0-boss-desk", tx: 1, ty: 3, direction: "nw" });
+    ctrl.nudgeMove(1, 0);
+    expect(ctrl.movingItem?.keyboardTarget).toEqual([2.5, 2]);
+    await ctrl.handleTileClick(...ctrl.movingItem!.keyboardTarget!);
+    expect(moves[0]).toEqual({ id: "boss:0-boss-desk", tx: 2.5, ty: 2, direction: "nw" });
 
     await ctrl.undo();
     expect(moves[1]).toEqual({ id: "boss:0-boss-desk", tx: 2, ty: 2, direction: "nw" });
@@ -157,6 +164,25 @@ describe("DecorateController", () => {
     // 2. Place 2x1 desk straddling former 6x6 Boss/Central seam (x=5..6) — zero invisible 6x6 walls!
     const seamDesk = await engine.placeFurniture({ tx: 5, ty: 4, assetId: "desk-dev-dual", direction: "se", placedBy: "user" });
     expect([seamDesk.lx, seamDesk.ly]).toEqual([5, 4]);
+
+    const adjusted = await engine.moveFurniture(seamDesk.id, { tx: 4.5, ty: 4 });
+    expect(adjusted.lx).toBe(4.5);
+    const halfTileCampus = engine.getSnapshot().campus;
+    expect([4, 5, 6].map((x) => halfTileCampus.tilePermissions?.[4 * halfTileCampus.widthTiles + x])).toEqual([0, 0, 0]);
+    await expect(engine.moveFurniture(seamDesk.id, { tx: 4.25, ty: 4 })).rejects.toThrow(/half a tile/);
+    const reloadedEngine = new OfficeEngine({ store: new OfficeStore(dir), catalogById: catalog });
+    await reloadedEngine.init();
+    expect(reloadedEngine.getSnapshot().campus.worldFurniture.find((f) => f.id === seamDesk.id)?.tx).toBe(4.5);
+
+    await engine.placeFurniture({ tx: 3, ty: 12, assetId: "desk-dev-dual", direction: "se" });
+    const tuckedChair = await engine.placeFurniture({
+      tx: 3.5, ty: 13, assetId: "chair-office-swivel", direction: "nw",
+    });
+    await expect(engine.moveFurniture(tuckedChair.id, { tx: 3.5, ty: 12.5 })).resolves.toMatchObject({
+      lx: 3.5, ly: 12.5,
+    });
+    await expect(engine.moveFurniture(tuckedChair.id, { tx: 3.5, ty: 12.5, direction: "se" })).rejects.toThrow(/already occupied/);
+    await expect(engine.moveFurniture(tuckedChair.id, { tx: 3.5, ty: 12 })).rejects.toThrow(/already occupied/);
 
     // 3. Floor painting (2x2 brush + Undo/Redo)
     const ctrl = new DecorateController({

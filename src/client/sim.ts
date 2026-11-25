@@ -1,3 +1,4 @@
+import { findBossChair } from "./chair-alignment.js";
 import {
   getOrgRoleMeta,
   type ComputedCampus,
@@ -152,7 +153,7 @@ export class OfficeSimulation {
   }
 
   private isBossChair(id: string): boolean {
-    return id === "boss:0-boss-chair" || id.startsWith("boss:0-visitor-");
+    return id.startsWith("boss:0-visitor-") || Boolean(this.campus && findBossChair(this.campus)?.id === id);
   }
 
   private pickHypersleepGoal(capsuleIndex: number): { tile: [number, number]; facing: Direction; seatedOnChair?: boolean } | null {
@@ -287,8 +288,8 @@ export class OfficeSimulation {
         tbl.ty + (tbl.footprintTiles[1] - 1) / 2,
       ];
       const around: Array<[number, number]> = [];
-      for (let y = tbl.ty - 1; y <= tbl.ty + tbl.footprintTiles[1]; y++) {
-        for (let x = tbl.tx - 1; x <= tbl.tx + tbl.footprintTiles[0]; x++) {
+      for (let y = Math.floor(tbl.ty) - 1; y <= Math.ceil(tbl.ty + tbl.footprintTiles[1]); y++) {
+        for (let x = Math.floor(tbl.tx) - 1; x <= Math.ceil(tbl.tx + tbl.footprintTiles[0]); x++) {
           const inside =
             x >= tbl.tx &&
             x < tbl.tx + tbl.footprintTiles[0] &&
@@ -322,12 +323,12 @@ export class OfficeSimulation {
 
   /** Compute walkable stand spots directly in front of Boss's actual chair position & facing direction. */
   private pickBossReportGoal(emp: EmployeeRecord): { tile: [number, number]; facing: Direction } {
-    const bossChair = this.campus?.worldFurniture.find((f) => f.id === "boss:0-boss-chair");
+    const bossChair = this.campus && findBossChair(this.campus);
     const bossDesk = this.campus?.worldFurniture.find((f) => f.id === "boss:0-boss-desk");
     const bossZone = this.findBossZone();
 
-    const bx = bossChair ? bossChair.tx : (bossZone?.originX ?? 0) + 2;
-    const by = bossChair ? bossChair.ty : (bossZone?.originY ?? 0) + 1;
+    const bx = bossChair ? Math.round(bossChair.tx) : (bossZone?.originX ?? 0) + 2;
+    const by = bossChair ? Math.round(bossChair.ty) : (bossZone?.originY ?? 0) + 1;
     const bossDir: Direction = bossChair?.direction ?? "se";
 
     const dirVec: Record<Direction, [number, number]> = {
@@ -527,9 +528,28 @@ export class OfficeSimulation {
       sim.path = [goal];
       return;
     }
-    const rawPath = findTilePath(this.grid, [Math.round(sim.x), Math.round(sim.y)], goal);
-    // Drop the starting tile if already at it
+    const grid = this.grid;
+    const [gx, gy] = goal;
+    const rounded: [number, number] = [Math.round(gx), Math.round(gy)];
+    const fractional = gx !== rounded[0] || gy !== rounded[1];
+    let approach = rounded;
+    if (fractional && grid.blocked[rounded[1] * grid.width + rounded[0]] !== 0) {
+      const [left, top] = [Math.floor(gx), Math.floor(gy)];
+      const touched: Array<[number, number]> = [[left, rounded[1]], [rounded[0], top], [left, top]];
+      approach = touched.find(([x, y]) =>
+        x >= 0 && y >= 0 && x < grid.width && y < grid.height && grid.blocked[y * grid.width + x] === 0,
+      ) ?? rounded;
+    }
+
+    const rawPath = findTilePath(grid, [Math.round(sim.x), Math.round(sim.y)], approach);
+    // Drop the starting tile if already at it.
     sim.path = rawPath.length > 1 ? rawPath.slice(1) : [];
+    const lastTile = rawPath.at(-1);
+    if (fractional && lastTile?.[0] === approach[0] && lastTile[1] === approach[1] &&
+        grid.blocked[approach[1] * grid.width + approach[0]] === 0) {
+      // A tucked chair can touch a blocked desk tile. Walk to its exposed tile first.
+      sim.path.push(goal);
+    }
   }
 
   step(dtMs: number): {

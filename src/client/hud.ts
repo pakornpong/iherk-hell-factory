@@ -53,6 +53,7 @@ export interface HudCallbacks {
   onSetTheme(theme: ThemeMode): void;
   onToggleDemo(): void;
   onSetZoom(zoom: number): void;
+  onRotateView(turn: -1 | 1): void;
   onSelectEmployee(id: string | null): void;
   onMinimapClick(tx: number, ty: number): void;
   onDecorateChanged(): void;
@@ -339,6 +340,9 @@ export class OfficeHud {
       const btn = document.getElementById(`zoom-${z}`) as HTMLButtonElement | null;
       btn?.addEventListener("click", () => this.cb.onSetZoom(z));
     }
+
+    document.getElementById("rotate-view-left")?.addEventListener("click", () => this.cb.onRotateView(-1));
+    document.getElementById("rotate-view-right")?.addEventListener("click", () => this.cb.onRotateView(1));
 
     document.getElementById("inspector-close")?.addEventListener("click", () => {
       this.cb.onSelectEmployee(null);

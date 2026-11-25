@@ -1,3 +1,5 @@
+import type { Direction } from "../shared/types.js";
+
 export const STEP_X = 32;
 export const STEP_Y = 16;
 
@@ -11,7 +13,76 @@ export function worldToTile(wx: number, wy: number): [number, number] {
   return [(a + b) / 2, (b - a) / 2];
 }
 
+const DIRECTIONS: readonly Direction[] = ["se", "sw", "nw", "ne"];
+
+export class IsoView {
+  constructor(
+    readonly turns = 0,
+    readonly width = 0,
+    readonly height = 0,
+  ) {}
+
+  get swapsAxes(): boolean {
+    return this.turns % 2 !== 0;
+  }
+
+  toView(x: number, y: number): [number, number] {
+    switch (this.turns) {
+      case 1: return [this.height - 1 - y, x];
+      case 2: return [this.width - 1 - x, this.height - 1 - y];
+      case 3: return [y, this.width - 1 - x];
+      default: return [x, y];
+    }
+  }
+
+  toOffice(x: number, y: number): [number, number] {
+    switch (this.turns) {
+      case 1: return [y, this.height - 1 - x];
+      case 2: return [this.width - 1 - x, this.height - 1 - y];
+      case 3: return [this.width - 1 - y, x];
+      default: return [x, y];
+    }
+  }
+
+  rect(x: number, y: number, width: number, height: number): [number, number, number, number] {
+    const [ax, ay] = this.toView(x, y);
+    const [bx, by] = this.toView(x + width - 1, y + height - 1);
+    return [Math.min(ax, bx), Math.min(ay, by), this.swapsAxes ? height : width, this.swapsAxes ? width : height];
+  }
+
+  toViewDirection(direction: Direction): Direction {
+    return DIRECTIONS[(DIRECTIONS.indexOf(direction) + this.turns) % DIRECTIONS.length];
+  }
+
+  toOfficeDirection(direction: Direction): Direction {
+    return DIRECTIONS[(DIRECTIONS.indexOf(direction) - this.turns + DIRECTIONS.length) % DIRECTIONS.length];
+  }
+}
+
 export class IsoCamera {
+  private currentView = new IsoView();
+
+  get view(): IsoView {
+    return this.currentView;
+  }
+
+  setFloorSize(width: number, height: number, viewportW: number, viewportH: number): void {
+    if (width === this.view.width && height === this.view.height) return;
+    this.changeView(new IsoView(this.view.turns, width, height), viewportW, viewportH);
+  }
+
+  rotate(turn: -1 | 1, viewportW: number, viewportH: number): void {
+    this.changeView(new IsoView((this.view.turns + turn + 4) % 4, this.view.width, this.view.height), viewportW, viewportH);
+  }
+
+  private changeView(next: IsoView, viewportW: number, viewportH: number): void {
+    const centerX = viewportW / 2;
+    const centerY = viewportH / 2;
+    const [tx, ty] = this.screenToTile(centerX, centerY);
+    this.currentView = next;
+    this.snapToTile(tx - 0.5, ty - 0.5, viewportW, viewportH);
+  }
+
   panX = 0;
   panY = 80;
   zoom = 2;
@@ -43,14 +114,14 @@ export class IsoCamera {
   }
 
   glideToTile(tx: number, ty: number, viewportW: number, viewportH: number): void {
-    const [wx, wy] = tileToWorld(tx, ty);
+    const [wx, wy] = tileToWorld(...this.view.toView(tx, ty));
     this.targetPanX = viewportW / (2 * this.zoom) - wx;
     // Visual center of bottom-diamond anchored tile (tx, ty) is at wy - STEP_Y
     this.targetPanY = viewportH / (2 * this.zoom) - (wy - STEP_Y);
   }
 
   snapToTile(tx: number, ty: number, viewportW: number, viewportH: number): void {
-    const [wx, wy] = tileToWorld(tx, ty);
+    const [wx, wy] = tileToWorld(...this.view.toView(tx, ty));
     this.panX = viewportW / (2 * this.zoom) - wx;
     this.panY = viewportH / (2 * this.zoom) - (wy - STEP_Y);
     this.targetPanX = null;
@@ -86,7 +157,9 @@ export class IsoCamera {
   screenToTile(sx: number, sy: number, _viewportW?: number, _viewportH?: number): [number, number] {
     const [wx, wy] = this.screenToWorld(sx, sy);
     // Offset by +2*STEP_Y because bottom-diamond anchor places tile (tx, ty)'s top tip at wy - 2*STEP_Y and bottom tip at wy
-    return worldToTile(wx, wy + STEP_Y * 2);
+    const [tx, ty] = worldToTile(wx, wy + STEP_Y);
+    const [officeX, officeY] = this.view.toOffice(tx, ty);
+    return [officeX + 0.5, officeY + 0.5];
   }
 
   getVisibleWorldBounds(

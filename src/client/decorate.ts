@@ -1,3 +1,4 @@
+import { supportsHalfTilePlacement } from "../shared/layers.js";
 import type { Direction, FurnitureInstance, WorldFurnitureInstance } from "../shared/types.js";
 
 const DIR_ORDER: Direction[] = ["se", "sw", "nw", "ne"];
@@ -8,10 +9,11 @@ export interface DecorateApiClient {
     ty: number;
     assetId: string;
     direction: Direction;
+    manualPosition?: boolean;
   }): Promise<FurnitureInstance>;
   moveFurniture?(
     instanceId: string,
-    req: { tx: number; ty: number; direction?: Direction },
+    req: { tx: number; ty: number; direction?: Direction; manualPosition?: boolean },
   ): Promise<FurnitureInstance>;
   removeFurniture(instanceId: string): Promise<void>;
   paintFloorTiles?(
@@ -31,6 +33,7 @@ type HistoryAction =
       toTx: number;
       toTy: number;
       toDir: Direction;
+      manualPosition?: { before: boolean; after: boolean };
     }
   | {
       kind: "floor";
@@ -52,7 +55,8 @@ export class DecorateController {
   direction: Direction = "se";
   floorBrushSize: 1 | 2 | 3 = 1;
   floorResetMode = false;
-  movingItem: { item: FurnitureInstance; originTx: number; originTy: number } | null = null;
+  movingItem: { item: FurnitureInstance; originTx: number; originTy: number; keyboardTarget?: [number, number] } | null = null;
+  private movePending = false;
   private undoStack: HistoryAction[] = [];
   private redoStack: HistoryAction[] = [];
 
@@ -116,6 +120,24 @@ export class DecorateController {
     return this.redoStack.length > 0;
   }
 
+  getPointerMoveTarget(x: number, y: number): [number, number] {
+    const assetId = this.movingItem?.item.assetId;
+    const scale = assetId && supportsHalfTilePlacement(assetId) ? 2 : 1;
+    return [Math.floor(x * scale) / scale, Math.floor(y * scale) / scale];
+  }
+
+  nudgeMove(dx: number, dy: number, visualOrigin?: [number, number]): void {
+    const item = this.movingItem;
+    if (!item || this.movePending) return;
+    const [x, y] = item.keyboardTarget ?? visualOrigin ?? [item.originTx, item.originTy];
+    const step = supportsHalfTilePlacement(item.item.assetId) ? 0.5 : 1;
+    item.keyboardTarget = [x + dx * step, y + dy * step];
+  }
+
+  resumePointerMove(): void {
+    if (this.movingItem) delete this.movingItem.keyboardTarget;
+  }
+
   async handleTileClick(
     tx: number,
     ty: number,
@@ -141,9 +163,18 @@ export class DecorateController {
         this.direction = existingInstance.direction;
         return;
       }
-      if (!this.api.moveFurniture) return;
+      if (!this.api.moveFurniture || this.movePending) return;
       const picked = this.movingItem;
-      await this.api.moveFurniture(picked.item.id, { tx, ty, direction: this.direction });
+      const direction = this.direction;
+      const manualPosition = picked.item.assetId === "chair-office-swivel" ? true : undefined;
+      this.movePending = true;
+      try {
+        await this.api.moveFurniture(picked.item.id, {
+          tx, ty, direction, ...(manualPosition !== undefined ? { manualPosition } : {}),
+        });
+      } finally {
+        this.movePending = false;
+      }
       this.undoStack.push({
         kind: "move",
         itemId: picked.item.id,
@@ -152,10 +183,13 @@ export class DecorateController {
         fromDir: picked.item.direction,
         toTx: tx,
         toTy: ty,
-        toDir: this.direction,
+        toDir: direction,
+        ...(manualPosition !== undefined
+          ? { manualPosition: { before: picked.item.manualPosition ?? false, after: manualPosition } }
+          : {}),
       });
       this.redoStack.length = 0;
-      this.movingItem = null;
+      if (this.movingItem === picked) this.movingItem = null;
       return;
     }
 
@@ -216,6 +250,7 @@ export class DecorateController {
         ty: action.ty,
         assetId: action.item.assetId,
         direction: action.item.direction,
+        ...(action.item.manualPosition !== undefined ? { manualPosition: action.item.manualPosition } : {}),
       });
       this.redoStack.push({ ...action, item: recreated });
     } else if (action.kind === "move" && this.api.moveFurniture) {
@@ -223,6 +258,7 @@ export class DecorateController {
         tx: action.fromTx,
         ty: action.fromTy,
         direction: action.fromDir,
+        ...(action.manualPosition ? { manualPosition: action.manualPosition.before } : {}),
       });
       this.redoStack.push(action);
     } else if (action.kind === "floor" && this.api.paintFloorTiles) {
@@ -240,6 +276,7 @@ export class DecorateController {
         ty: action.ty,
         assetId: action.item.assetId,
         direction: action.item.direction,
+        ...(action.item.manualPosition !== undefined ? { manualPosition: action.item.manualPosition } : {}),
       });
       this.undoStack.push({ ...action, item: recreated });
     } else if (action.kind === "remove") {
@@ -250,6 +287,7 @@ export class DecorateController {
         tx: action.toTx,
         ty: action.toTy,
         direction: action.toDir,
+        ...(action.manualPosition ? { manualPosition: action.manualPosition.after } : {}),
       });
       this.undoStack.push(action);
     } else if (action.kind === "floor" && this.api.paintFloorTiles) {

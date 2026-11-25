@@ -1,6 +1,8 @@
 import {
   buildTilePermissionMap,
+  crossesWallSegment,
   expandEdgeDividerSegments,
+  furnitureFootprintsCollide,
   isEdgeDividerAsset,
   isSurfaceHostAsset,
   isTabletopAsset,
@@ -8,6 +10,7 @@ import {
   RENDER_LAYER,
   resolveAssetLayerConfig,
   surfaceVoxelsToWorldOffsetY,
+  supportsHalfTilePlacement,
   type TilePermission,
 } from "../shared/layers.js";
 import {
@@ -213,8 +216,8 @@ export function computeCampusLayout(
       const cfg = resolveAssetLayerConfig(item.assetId, item.layer, catalogById.get(item.assetId));
       if (!cfg.surfaceHeightVoxels) continue;
       const [w, d] = footOf(item);
-      for (let yy = 0; yy < d; yy++) {
-        for (let xx = 0; xx < w; xx++) {
+      for (let yy = 0; yy < d; yy += 0.5) {
+        for (let xx = 0; xx < w; xx += 0.5) {
           surfaceHeightByLocalTile.set(`${item.lx + xx},${item.ly + yy}`, cfg.surfaceHeightVoxels);
         }
       }
@@ -280,8 +283,8 @@ export function computeCampusLayout(
     }
   }
 
-  const widthTiles = Math.max(requestedW, minAutoW);
-  const depthTiles = Math.max(requestedD, minAutoD);
+  const widthTiles = Math.ceil(Math.max(requestedW, minAutoW));
+  const depthTiles = Math.ceil(Math.max(requestedD, minAutoD));
 
   // 1. Boss Corner (anchored at top-most apex 0,0)
   const bossRec = bossOffice ?? createDefaultBossOffice();
@@ -494,6 +497,12 @@ export function validateFurniturePlacement(
   if (!zone) {
     return { ok: false, reason: `Zone "${candidate.zoneId}" does not exist or is archived` };
   }
+  if (!Number.isInteger(candidate.lx * 2) || !Number.isInteger(candidate.ly * 2)) {
+    return { ok: false, reason: "Furniture coordinates must be multiples of half a tile" };
+  }
+  if (!supportsHalfTilePlacement(candidate.assetId) && (!Number.isInteger(candidate.lx) || !Number.isInteger(candidate.ly))) {
+    return { ok: false, reason: "This asset must be aligned to whole tiles" };
+  }
   const cat = catalogById.get(candidate.assetId);
   if (!cat) {
     return { ok: false, reason: `Unknown asset "${candidate.assetId}"` };
@@ -527,12 +536,12 @@ export function validateFurniturePlacement(
       const [iw, id] = getRotatedFootprint(itemCat?.footprintTiles ?? [1, 1], dir);
       const itemIsTop = isTabletopAsset(assetId, layer, itemCat);
       if (itemIsTop) {
-        for (let dy = 0; dy < id; dy++) {
-          for (let dx = 0; dx < iw; dx++) tabletopOcc.add(`${wx + dx},${wy + dy}`);
+        for (let dy = 0; dy < id; dy += 0.5) {
+          for (let dx = 0; dx < iw; dx += 0.5) tabletopOcc.add(`${wx + dx},${wy + dy}`);
         }
       } else if (isSurfaceHostAsset(assetId, itemCat)) {
-        for (let dy = 0; dy < id; dy++) {
-          for (let dx = 0; dx < iw; dx++) surfaceTiles.add(`${wx + dx},${wy + dy}`);
+        for (let dy = 0; dy < id; dy += 0.5) {
+          for (let dx = 0; dx < iw; dx += 0.5) surfaceTiles.add(`${wx + dx},${wy + dy}`);
         }
       }
     };
@@ -547,8 +556,8 @@ export function validateFurniturePlacement(
         addHostOrTop(wf.tx, wf.ty, wf.assetId, wf.layer, wf.direction);
       }
     }
-    for (let dy = 0; dy < fd; dy++) {
-      for (let dx = 0; dx < fw; dx++) {
+    for (let dy = 0; dy < fd; dy += 0.5) {
+      for (let dx = 0; dx < fw; dx += 0.5) {
         const key = `${candWorldX + dx},${candWorldY + dy}`;
         if (!surfaceTiles.has(key)) {
           return {
@@ -619,52 +628,48 @@ export function validateFurniturePlacement(
     return { ok: true };
   }
 
-  const worldOcc = new Set<string>();
-  const occ = new Set<string>();
-  for (const item of existingInZone) {
-    if (candidate.ignoreInstanceId && item.id === candidate.ignoreInstanceId) continue;
-    if (isEdgeDividerAsset(item.assetId)) continue;
-    const itemCat = catalogById.get(item.assetId);
-    if (isTabletopAsset(item.assetId, item.layer, itemCat)) continue;
-    const [iw, id] = getRotatedFootprint(itemCat?.footprintTiles ?? [1, 1], item.direction);
-    for (let dy = 0; dy < id; dy++) {
-      for (let dx = 0; dx < iw; dx++) {
-        occ.add(`${item.lx + dx},${item.ly + dy}`);
-        worldOcc.add(`${zone.originX + item.lx + dx},${zone.originY + item.ly + dy}`);
-      }
-    }
-  }
-  // On open floor & hypersleep zones, also prevent overlapping furniture belonging to neighbouring zones
-  if (zone.kind === "floor" || zone.kind === "hypersleep") {
-    for (const wf of campus.worldFurniture) {
-      if (candidate.ignoreInstanceId && wf.id === candidate.ignoreInstanceId) continue;
-      if (wf.zoneId === zone.zoneId) continue;
-      if (isEdgeDividerAsset(wf.assetId)) continue;
-      const itemCat = catalogById.get(wf.assetId);
-      if (isTabletopAsset(wf.assetId, wf.layer, itemCat)) continue;
-      const [iw, id] = wf.footprintTiles;
-      for (let dy = 0; dy < id; dy++) {
-        for (let dx = 0; dx < iw; dx++) {
-          worldOcc.add(`${wf.tx + dx},${wf.ty + dy}`);
-        }
-      }
-    }
+  if (crossesWallSegment(campus.wallSegments, zone.originX + candidate.lx, zone.originY + candidate.ly, fw, fd)) {
+    return { ok: false, reason: "Furniture cannot cross a wall or divider" };
   }
 
-  for (let dy = 0; dy < fd; dy++) {
-    for (let dx = 0; dx < fw; dx++) {
-      const localKey = `${candidate.lx + dx},${candidate.ly + dy}`;
-      const worldKey = `${zone.originX + candidate.lx + dx},${zone.originY + candidate.ly + dy}`;
-      if (occ.has(localKey) || worldOcc.has(worldKey)) {
-        return { ok: false, reason: `Tile (${candidate.lx + dx},${candidate.ly + dy}) in "${candidate.zoneId}" is already occupied` };
-      }
-      occ.add(localKey);
-    }
+  const candidateFootprint = {
+    assetId: candidate.assetId,
+    direction: candidate.direction,
+    tx: zone.originX + candidate.lx,
+    ty: zone.originY + candidate.ly,
+    footprintTiles: [fw, fd] as [number, number],
+  };
+  // Open floors can contain furniture originally assigned to neighboring zones.
+  const neighbors = existingInZone.map((item) => ({
+    ...item,
+    tx: zone.originX + item.lx,
+    ty: zone.originY + item.ly,
+    footprintTiles: getRotatedFootprint(catalogById.get(item.assetId)?.footprintTiles ?? [1, 1], item.direction),
+  }));
+  const overlapCandidates = zone.kind === "floor" || zone.kind === "hypersleep"
+    ? [...neighbors, ...campus.worldFurniture.filter((item) => item.zoneId !== zone.zoneId)]
+    : neighbors;
+  const isFloorObstacle = (item: FurnitureInstance) =>
+    item.id !== candidate.ignoreInstanceId &&
+    !isEdgeDividerAsset(item.assetId) &&
+    !isTabletopAsset(item.assetId, item.layer, catalogById.get(item.assetId));
+
+  if (overlapCandidates.some((item) => isFloorObstacle(item) && furnitureFootprintsCollide(candidateFootprint, item))) {
+    return { ok: false, reason: `Tile (${candidate.lx},${candidate.ly}) in "${candidate.zoneId}" is already occupied` };
   }
 
   // Open sandbox areas have no walled 6x6 doorway constraints — decorate freely anywhere
   if (zone.kind === "floor" || zone.kind === "boss" || zone.kind === "cowork" || zone.kind === "hypersleep") {
     return { ok: true };
+  }
+
+  const occ = new Set<string>();
+  for (const item of [...neighbors.filter(isFloorObstacle), candidateFootprint]) {
+    const lx = item.tx - zone.originX;
+    const ly = item.ty - zone.originY;
+    for (let y = Math.floor(ly); y < ly + item.footprintTiles[1]; y++) {
+      for (let x = Math.floor(lx); x < lx + item.footprintTiles[0]; x++) occ.add(`${x},${y}`);
+    }
   }
 
   // Keep at least one entrance tile open at the front corridor side (ly = 5, lx ∈ {2, 3})
@@ -682,10 +687,8 @@ export function validateFurniturePlacement(
     const cfg = resolveAssetLayerConfig(assetId, c?.layer, c);
     if (isWalkablePermission(cfg.tilePermission)) return;
     const [w, d] = getRotatedFootprint(c?.footprintTiles ?? [1, 1], dir);
-    for (let dy = 0; dy < d; dy++) {
-      for (let dx = 0; dx < w; dx++) {
-        set.add(`${lx + dx},${ly + dy}`);
-      }
+    for (let y = Math.floor(ly); y < ly + d; y++) {
+      for (let x = Math.floor(lx); x < lx + w; x++) set.add(`${x},${y}`);
     }
   };
   for (const item of existingInZone) {

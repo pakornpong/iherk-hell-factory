@@ -198,11 +198,13 @@ export const AgentTelemetryEventSchema = z.object({
 });
 export type AgentTelemetryEvent = z.infer<typeof AgentTelemetryEventSchema>;
 
+export const FurnitureCoordinateSchema = z.number().multipleOf(0.5);
+
 export const FurnitureInstanceSchema = z.object({
   id: z.string().min(1).max(128),
   zoneId: ZoneIdSchema,
-  lx: z.number().int().min(0).max(127),
-  ly: z.number().int().min(0).max(127),
+  lx: FurnitureCoordinateSchema.min(0).max(127),
+  ly: FurnitureCoordinateSchema.min(0).max(127),
   assetId: z.string().min(1).max(128),
   direction: DirectionSchema.default("se"),
   layer: AssetLayerSchema.default("object"),
@@ -210,6 +212,7 @@ export const FurnitureInstanceSchema = z.object({
   renderLayer: RenderLayerSchema.optional(),
   /** For tabletop props: optional host furniture id this prop sits on. */
   surfaceHostId: z.string().min(1).max(128).optional(),
+  manualPosition: z.boolean().optional(),
   placedBy: z.enum(["system", "user", "gemini"]).default("system"),
 });
 export type FurnitureInstance = z.infer<typeof FurnitureInstanceSchema>;
