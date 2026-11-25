@@ -1,5 +1,7 @@
 import {
   buildTilePermissionMap,
+  expandEdgeDividerSegments,
+  isEdgeDividerAsset,
   RENDER_LAYER,
   RENDER_LAYER_META,
   resolveAssetLayerConfig,
@@ -9,9 +11,7 @@ import {
   type TilePermission,
 } from "../shared/layers.js";
 import {
-  classifyDepartmentFromPath,
   AMENITY_THEME_META,
-  DEPARTMENT_META,
   type CatalogEntry,
   type ComputedCampus,
   type Direction,
@@ -61,6 +61,18 @@ export interface DecorateGhostInput {
   valid: boolean;
   /** Vertical world-pixel lift when previewing a tabletop prop over a desk/table surface. */
   surfaceOffsetY?: number;
+  /** When set, previews a square floor-painting brush (1x1, 2x2, or 3x3) on the ground tiles. */
+  brushSize?: number;
+  /** When true alongside brushSize, previews restoring floor tiles back to default. */
+  floorReset?: boolean;
+}
+
+export interface ZoneEditorOverlayInput {
+  active: boolean;
+  startTile: [number, number] | null;
+  hoverTile: [number, number] | null;
+  draftColor: string;
+  draftLabel: string;
 }
 
 export interface RenderSceneInput {
@@ -76,6 +88,7 @@ export interface RenderSceneInput {
   selectedLayerFurnitureId?: string | null;
   bayPopAnimations?: Map<string, number>; // bayId -> 0..1 progress
   ghost?: DecorateGhostInput | null;
+  zoneEditor?: ZoneEditorOverlayInput | null;
   layerOverlayMode?: LayerOverlayMode;
   hoverTile?: [number, number] | null;
   timeMs: number;
@@ -297,6 +310,17 @@ function toAnchorWorld(x: number, y: number, fx: number, fy: number): [number, n
   const ax = x + fx - 1;
   const ay = y + fy - 1;
   return [(ax - ay) * STEP_X, (ax + ay) * STEP_Y];
+}
+
+/** Exact geometric center (in world pixels) of a zone's isometric floor diamond. */
+export function getZoneCenterWorld(z: {
+  originX: number;
+  originY: number;
+  width: number;
+  height: number;
+}): [number, number] {
+  const [wx, wy] = toAnchorWorld(z.originX + (z.width - 1) / 2, z.originY + (z.height - 1) / 2, 1, 1);
+  return [wx, wy - STEP_Y];
 }
 
 function edgeToDir(edge: "nw" | "ne" | "corner"): Direction {
@@ -835,20 +859,68 @@ export class IsoRenderer {
         });
 
     const unified: UnifiedItem[] = [];
-    // Track split-layer foreground attachments (e.g. rear-facing swivel chair backrests)
-    // so they participate natively in the unified depth sort at RENDER_LAYER.FOREGROUND (6).
-    const foregroundAttachByTile = new Map<string, { assetId: string; direction: Direction }>();
+    // Track split-layer foreground attachments (e.g. rear-facing swivel chair backrests,
+    // 1x2 closed hypersleep canopies) so they participate natively in the unified depth sort at RENDER_LAYER.FOREGROUND (6).
+    type ForegroundAttach = {
+      assetId: string;
+      direction: Direction;
+      originTx: number;
+      originTy: number;
+      footprintX: number;
+      footprintY: number;
+    };
+    const foregroundAttachByTile = new Map<string, ForegroundAttach>();
 
     for (const f of campus.worldFurniture) {
       const cfg = resolveAssetLayerConfig(f.assetId, f.layer, input.catalogById?.get(f.assetId));
-      if (cfg.foregroundAssetId && (!cfg.foregroundDirections || cfg.foregroundDirections.includes(f.direction))) {
-        foregroundAttachByTile.set(toTileKey(f.tx, f.ty), {
-          assetId: cfg.foregroundAssetId,
-          direction: f.direction,
-        });
-      }
       const frameName = animFrameForAsset(f.assetId);
       const sprite = atlas.getFrame(theme, f.assetId, f.direction, frameName);
+      if (cfg.foregroundAssetId && (!cfg.foregroundDirections || cfg.foregroundDirections.includes(f.direction))) {
+        const fw = sprite?.footprintTiles[0] ?? f.footprintTiles[0] ?? 1;
+        const fd = sprite?.footprintTiles[1] ?? f.footprintTiles[1] ?? 1;
+        const attach: ForegroundAttach = {
+          assetId: cfg.foregroundAssetId,
+          direction: f.direction,
+          originTx: f.tx,
+          originTy: f.ty,
+          footprintX: fw,
+          footprintY: fd,
+        };
+        for (let dy = 0; dy < fd; dy++) {
+          for (let dx = 0; dx < fw; dx++) {
+            foregroundAttachByTile.set(toTileKey(f.tx + dx, f.ty + dy), attach);
+          }
+        }
+      }
+      if (isEdgeDividerAsset(f.assetId)) {
+        // Render user-placed glass partitions on the exact tile boundary line (zero-thickness depth plane)
+        // so furniture on BOTH sides sits 100% flush with zero half-tile gap and exact depth sorting!
+        const segs = expandEdgeDividerSegments(f.assetId, f.tx, f.ty, f.direction);
+        segs.forEach((seg, idx) => {
+          const segSprite = atlas.getFrame(theme, seg.assetId, seg.direction, animFrameForAsset(seg.assetId));
+          if (!segSprite) return;
+          const [swx, swy] = toAnchorWorld(seg.rx, seg.ry, segSprite.footprintTiles[0], segSprite.footprintTiles[1]);
+          if (!isInWorldBounds(swx, swy, bounds)) return;
+          const alongY = seg.axis === "y";
+          const alongX = seg.axis === "x";
+          unified.push({
+            id: `f:${f.id}:e${idx}`,
+            kind: "furniture",
+            x: alongX ? seg.rx : seg.rx + 0.5,
+            y: alongY ? seg.ry : seg.ry + 0.5,
+            footprintX: alongX ? segSprite.footprintTiles[0] : 0,
+            footprintY: alongY ? segSprite.footprintTiles[1] : 0,
+            renderLayer: f.renderLayer ?? RENDER_LAYER.CHARACTER,
+            sprite: segSprite,
+            wx: swx,
+            wy: swy,
+            zoneId: f.zoneId,
+            assetId: seg.assetId,
+            furnitureId: f.id,
+          });
+        });
+        continue;
+      }
       if (!sprite) continue;
       const [wx, rawWy] = toAnchorWorld(f.tx, f.ty, sprite.footprintTiles[0], sprite.footprintTiles[1]);
       const wy = rawWy - (f.surfaceOffsetY ?? 0);
@@ -872,10 +944,9 @@ export class IsoRenderer {
 
     // Room walls stand on the exact boundary line between two tiles, so they use zero-thickness planes
     // on the line (footprintY = 0 along x, footprintX = 0 along y, 0x0 for corner posts).
-    // That makes EVERY entity in the room behind end at or before the plane (strictly behind) and
-    // EVERY entity in the room in front start at or after the plane (strictly in front) — with zero
-    // overlap or aInsideB inversions at room corners.
+    // Skip `ef:*` segments already emitted from worldFurniture above so Move dimming & hitBoxes stay intact.
     for (const w of campus.wallSegments ?? []) {
+      if (w.id.startsWith("ef:")) continue;
       const sprite = atlas.getFrame(theme, w.assetId, w.direction, animFrameForAsset(w.assetId));
       if (!sprite) continue;
       const [wx, wy] = toAnchorWorld(w.rx, w.ry, sprite.footprintTiles[0], sprite.footprintTiles[1]);
@@ -900,20 +971,18 @@ export class IsoRenderer {
     }
 
 
-    // Boss avatar seated permanently at Boss Office (0,0) executive chair facing "se" (+Y toward desk)
+    // Boss avatar seated permanently at Boss executive chair (follows the chair anywhere on campus + rotates with it)
     const bossZone = campus.zones.find((z) => z.kind === "boss");
-    if (bossZone) {
-      const bossChair = campus.worldFurniture.find(
-        (f) => f.zoneId === "boss:0" && f.id === "boss:0-boss-chair",
-      );
-      const bx = bossChair ? bossChair.tx : bossZone.originX + 2;
-      const by = bossChair ? bossChair.ty : bossZone.originY + 1;
+    const bossChair = campus.worldFurniture.find((f) => f.id === "boss:0-boss-chair");
+    if (bossZone || bossChair) {
+      const bx = bossChair ? bossChair.tx : (bossZone?.originX ?? 0) + 2;
+      const by = bossChair ? bossChair.ty : (bossZone?.originY ?? 0) + 1;
+      const bossDir: Direction = bossChair?.direction ?? "se";
       const hasVisitor = employees.some((e) => e.record.visualState === "reporting");
-      // Boss stays seated in the executive chair; types faster while a visitor reports.
       const bossClip = `sit_type_${Math.floor(timeMs / (hasVisitor ? 300 : 750)) % 2}`;
       const bossSprite =
-        atlas.getFrame(theme, "agent-boss", "se", bossClip) ??
-        atlas.getFrame(theme, "agent-starter", "se", bossClip);
+        atlas.getFrame(theme, "agent-boss", bossDir, bossClip) ??
+        atlas.getFrame(theme, "agent-starter", bossDir, bossClip);
       if (bossSprite) {
         const [wx, wy] = toAnchorWorld(bx, by, 1, 1);
         if (isInWorldBounds(wx, wy, bounds)) {
@@ -943,7 +1012,7 @@ export class IsoRenderer {
               },
               x: bx,
               y: by,
-              direction: "se",
+              direction: bossDir,
               clipName: bossClip,
               bubbleIcon: "👑",
               bubbleText: "BOSS",
@@ -956,19 +1025,27 @@ export class IsoRenderer {
     for (const emp of employees) {
       const sprite = atlas.getFrame(theme, emp.record.spriteId, emp.direction, emp.clipName);
       if (!sprite) continue;
-      const [wx, wy] = toAnchorWorld(emp.x, emp.y, 1, 1);
-      if (!isInWorldBounds(wx, wy, bounds)) continue;
       const seatTx = Math.round(emp.x);
       const seatTy = Math.round(emp.y);
-      const isSeatedClip = emp.clipName.startsWith("sit_") || emp.clipName.startsWith("rest_sleep_");
+      const isSleepingClip = emp.clipName.startsWith("rest_sleep_");
+      const isSeatedClip = emp.clipName.startsWith("sit_") || isSleepingClip;
       const fgAttach = isSeatedClip ? foregroundAttachByTile.get(toTileKey(seatTx, seatTy)) : undefined;
       const hasFgOverlay = Boolean(fgAttach && fgAttach.direction === emp.direction);
+      const isMultiTilePod = Boolean(
+        hasFgOverlay && fgAttach && isSleepingClip && (fgAttach.footprintX > 1 || fgAttach.footprintY > 1),
+      );
+
+      // Center lying-down sleeping agents cleanly on the mattress of a 1x2 hypersleep pod
+      const drawTileX = isMultiTilePod && fgAttach ? fgAttach.originTx + (fgAttach.footprintX - 1) / 2 : emp.x;
+      const drawTileY = isMultiTilePod && fgAttach ? fgAttach.originTy + (fgAttach.footprintY - 1) / 2 : emp.y;
+      const [wx, wy] = toAnchorWorld(drawTileX, drawTileY, 1, 1);
+      if (!isInWorldBounds(wx, wy, bounds)) continue;
 
       unified.push({
         id: `e:${emp.record.id}`,
         kind: "employee",
-        x: emp.x + 0.2,
-        y: emp.y + 0.2,
+        x: drawTileX + 0.2,
+        y: drawTileY + 0.2,
         footprintX: 0.6,
         footprintY: 0.6,
         renderLayer: RENDER_LAYER.CHARACTER,
@@ -982,14 +1059,16 @@ export class IsoRenderer {
       if (hasFgOverlay && fgAttach) {
         const fgSprite = atlas.getFrame(theme, fgAttach.assetId, fgAttach.direction, "default");
         if (fgSprite) {
-          const [cwx, cwy] = toAnchorWorld(seatTx, seatTy, 1, 1);
+          const fw = fgSprite.footprintTiles[0] ?? fgAttach.footprintX;
+          const fd = fgSprite.footprintTiles[1] ?? fgAttach.footprintY;
+          const [cwx, cwy] = toAnchorWorld(fgAttach.originTx, fgAttach.originTy, fw, fd);
           unified.push({
             id: `fg:${emp.record.id}:${fgAttach.assetId}`,
             kind: "foreground",
-            x: seatTx,
-            y: seatTy,
-            footprintX: 1,
-            footprintY: 1,
+            x: fgAttach.originTx,
+            y: fgAttach.originTy,
+            footprintX: fw,
+            footprintY: fd,
             renderLayer: RENDER_LAYER.FOREGROUND,
             sprite: fgSprite,
             wx: cwx,
@@ -1019,6 +1098,9 @@ export class IsoRenderer {
         }
       } else if (item.kind === "foreground") {
         drawSprite(item.sprite, item.wx, item.wy);
+        if (item.sprite.emissiveImage) {
+          emissiveDraws.push({ sprite: item.sprite, wx: item.wx, wy: item.wy, pop: 1 });
+        }
       } else {
         const box = drawSprite(item.sprite, item.wx, item.wy);
         hitBoxes.push({ kind: "employee", id: item.emp.record.id, x: box.sx, y: box.sy, w: box.sw, h: box.sh });
@@ -1052,39 +1134,165 @@ export class IsoRenderer {
       ctx.restore();
     }
 
-    // 5. Decorate Mode Ghost Preview (supports animated props, tabletop surface lift & exact footprint tiles)
+    // 5. Decorate Mode Ghost Preview (supports floor brushes, animated props, tabletop surface lift & exact footprint tiles)
     if (ghost) {
-      const sprite =
-        atlas.getFrame(theme, ghost.assetId, ghost.direction, animFrameForAsset(ghost.assetId)) ??
-        atlas.getFrame(theme, ghost.assetId, ghost.direction, "default");
-      const [fw, fd] = sprite?.footprintTiles ?? [1, 1];
-      const liftY = ghost.surfaceOffsetY ?? 0;
-      ctx.save();
-      ctx.fillStyle = ghost.valid ? "rgba(34, 197, 94, 0.24)" : "rgba(239, 68, 68, 0.28)";
-      ctx.strokeStyle = ghost.valid ? "#22c55e" : "#ef4444";
-      ctx.lineWidth = Math.max(1.5, zoom);
-      for (let dy = 0; dy < fd; dy++) {
-        for (let dx = 0; dx < fw; dx++) {
-          const [twx, rawTwy] = toAnchorWorld(ghost.tx + dx, ghost.ty + dy, 1, 1);
-          const twy = rawTwy - liftY;
-          const [topX, topY] = camera.worldToScreen(twx, twy - STEP_Y * 2);
-          const [rightX, rightY] = camera.worldToScreen(twx + STEP_X, twy - STEP_Y);
-          const [botX, botY] = camera.worldToScreen(twx, twy);
-          const [leftX, leftY] = camera.worldToScreen(twx - STEP_X, twy - STEP_Y);
+      if (ghost.brushSize && ghost.brushSize >= 1) {
+        const floorSprite = ghost.floorReset ? null : atlas.getFrame(theme, ghost.assetId, "se", "default");
+        ctx.save();
+        ctx.fillStyle = ghost.floorReset
+          ? "rgba(245, 158, 11, 0.28)"
+          : ghost.valid
+            ? "rgba(56, 189, 248, 0.22)"
+            : "rgba(239, 68, 68, 0.28)";
+        ctx.strokeStyle = ghost.floorReset ? "#f59e0b" : ghost.valid ? "#38bdf8" : "#ef4444";
+        ctx.lineWidth = Math.max(1.5, zoom);
+        for (let dy = 0; dy < ghost.brushSize; dy++) {
+          for (let dx = 0; dx < ghost.brushSize; dx++) {
+            const gx = ghost.tx + dx;
+            const gy = ghost.ty + dy;
+            if (gx < 0 || gy < 0 || gx >= campus.widthTiles || gy >= campus.depthTiles) continue;
+            const [twx, twy] = toAnchorWorld(gx, gy, 1, 1);
+            if (floorSprite) {
+              drawSprite(floorSprite, twx, twy, { alpha: 0.78 });
+            }
+            const [topX, topY] = camera.worldToScreen(twx, twy - STEP_Y * 2);
+            const [rightX, rightY] = camera.worldToScreen(twx + STEP_X, twy - STEP_Y);
+            const [botX, botY] = camera.worldToScreen(twx, twy);
+            const [leftX, leftY] = camera.worldToScreen(twx - STEP_X, twy - STEP_Y);
+            ctx.beginPath();
+            ctx.moveTo(topX, topY);
+            ctx.lineTo(rightX, rightY);
+            ctx.lineTo(botX, botY);
+            ctx.lineTo(leftX, leftY);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+          }
+        }
+        ctx.restore();
+      } else if (isEdgeDividerAsset(ghost.assetId)) {
+        // Preview edge-mounted glass partition(s) right on the exact tile boundary line(s)
+        const segs = expandEdgeDividerSegments(ghost.assetId, ghost.tx, ghost.ty, ghost.direction);
+        ctx.save();
+        ctx.strokeStyle = ghost.valid ? "#22c55e" : "#ef4444";
+        ctx.lineWidth = Math.max(2.5, zoom * 1.5);
+        for (const seg of segs) {
+          const alongX = seg.axis === "x";
+          const x0 = alongX ? seg.rx : seg.rx + 0.5;
+          const y0 = alongX ? seg.ry + 0.5 : seg.ry;
+          const x1 = alongX ? x0 + 1 : x0;
+          const y1 = alongX ? y0 : y0 + 1;
+          // Convert tile-corner (x, y) to world pixels: ((x - y) * STEP_X, (x + y) * STEP_Y - STEP_Y * 2)
+          const [sx0, sy0] = camera.worldToScreen((x0 - y0) * STEP_X, (x0 + y0) * STEP_Y - STEP_Y * 2);
+          const [sx1, sy1] = camera.worldToScreen((x1 - y1) * STEP_X, (x1 + y1) * STEP_Y - STEP_Y * 2);
           ctx.beginPath();
-          ctx.moveTo(topX, topY);
-          ctx.lineTo(rightX, rightY);
-          ctx.lineTo(botX, botY);
-          ctx.lineTo(leftX, leftY);
-          ctx.closePath();
-          ctx.fill();
+          ctx.moveTo(sx0, sy0);
+          ctx.lineTo(sx1, sy1);
           ctx.stroke();
+          const segSprite = atlas.getFrame(theme, seg.assetId, seg.direction, "default");
+          if (segSprite) {
+            const [swx, swy] = toAnchorWorld(seg.rx, seg.ry, segSprite.footprintTiles[0], segSprite.footprintTiles[1]);
+            drawSprite(segSprite, swx, swy, { alpha: 0.72 });
+          }
+        }
+        ctx.restore();
+      } else {
+        const sprite =
+          atlas.getFrame(theme, ghost.assetId, ghost.direction, animFrameForAsset(ghost.assetId)) ??
+          atlas.getFrame(theme, ghost.assetId, ghost.direction, "default");
+        const [fw, fd] = sprite?.footprintTiles ?? [1, 1];
+        const liftY = ghost.surfaceOffsetY ?? 0;
+        ctx.save();
+        ctx.fillStyle = ghost.valid ? "rgba(34, 197, 94, 0.24)" : "rgba(239, 68, 68, 0.28)";
+        ctx.strokeStyle = ghost.valid ? "#22c55e" : "#ef4444";
+        ctx.lineWidth = Math.max(1.5, zoom);
+        for (let dy = 0; dy < fd; dy++) {
+          for (let dx = 0; dx < fw; dx++) {
+            const [twx, rawTwy] = toAnchorWorld(ghost.tx + dx, ghost.ty + dy, 1, 1);
+            const twy = rawTwy - liftY;
+            const [topX, topY] = camera.worldToScreen(twx, twy - STEP_Y * 2);
+            const [rightX, rightY] = camera.worldToScreen(twx + STEP_X, twy - STEP_Y);
+            const [botX, botY] = camera.worldToScreen(twx, twy);
+            const [leftX, leftY] = camera.worldToScreen(twx - STEP_X, twy - STEP_Y);
+            ctx.beginPath();
+            ctx.moveTo(topX, topY);
+            ctx.lineTo(rightX, rightY);
+            ctx.lineTo(botX, botY);
+            ctx.lineTo(leftX, leftY);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+          }
+        }
+        ctx.restore();
+        if (sprite) {
+          const [wx, rawWy] = toAnchorWorld(ghost.tx, ghost.ty, sprite.footprintTiles[0], sprite.footprintTiles[1]);
+          drawSprite(sprite, wx, rawWy - liftY, { alpha: 0.75 });
         }
       }
+    }
+
+    // 5b. Custom Zone Editor Overlay (highlight existing custom zones + live 2-click rectangle draft)
+    const drawIsoRectOutline = (rx: number, ry: number, rw: number, rh: number, color: string, fillAlpha: number, dashed = false) => {
+      const [topWx, topWy] = toAnchorWorld(rx, ry, 1, 1);
+      const [rightWx, rightWy] = toAnchorWorld(rx + rw - 1, ry, 1, 1);
+      const [botWx, botWy] = toAnchorWorld(rx + rw - 1, ry + rh - 1, 1, 1);
+      const [leftWx, leftWy] = toAnchorWorld(rx, ry + rh - 1, 1, 1);
+      const [p0x, p0y] = camera.worldToScreen(topWx, topWy - STEP_Y * 2);
+      const [p1x, p1y] = camera.worldToScreen(rightWx + STEP_X, rightWy - STEP_Y);
+      const [p2x, p2y] = camera.worldToScreen(botWx, botWy);
+      const [p3x, p3y] = camera.worldToScreen(leftWx - STEP_X, leftWy - STEP_Y);
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(p0x, p0y);
+      ctx.lineTo(p1x, p1y);
+      ctx.lineTo(p2x, p2y);
+      ctx.lineTo(p3x, p3y);
+      ctx.closePath();
+      ctx.globalAlpha = fillAlpha;
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.globalAlpha = 0.95;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = Math.max(2, zoom * 1.2);
+      if (dashed) ctx.setLineDash([6, 4]);
+      ctx.stroke();
       ctx.restore();
-      if (sprite) {
-        const [wx, rawWy] = toAnchorWorld(ghost.tx, ghost.ty, sprite.footprintTiles[0], sprite.footprintTiles[1]);
-        drawSprite(sprite, wx, rawWy - liftY, { alpha: 0.75 });
+    };
+
+    const customZones = state.customZones ?? [];
+    if (input.zoneEditor?.active) {
+      for (const cz of customZones) {
+        drawIsoRectOutline(cz.x, cz.y, cz.width, cz.height, cz.color, 0.18, false);
+      }
+      const ze = input.zoneEditor;
+      const h = ze.hoverTile;
+      if (h && h[0] >= 0 && h[1] >= 0 && h[0] < campus.widthTiles && h[1] < campus.depthTiles) {
+        const s = ze.startTile ?? h;
+        const x0 = Math.min(s[0], h[0]);
+        const y0 = Math.min(s[1], h[1]);
+        const w = Math.abs(h[0] - s[0]) + 1;
+        const hh = Math.abs(h[1] - s[1]) + 1;
+        drawIsoRectOutline(x0, y0, w, hh, ze.draftColor, 0.24, true);
+        const [cwx, cwy] = getZoneCenterWorld({ originX: x0, originY: y0, width: w, height: hh });
+        const [csx, csy] = camera.worldToScreen(cwx, cwy);
+        ctx.save();
+        ctx.font = `bold ${Math.max(10, 6 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+        ctx.textAlign = "center";
+        const previewText = `${ze.draftLabel} (${w}×${hh})`;
+        const tw = ctx.measureText(previewText).width + 14;
+        ctx.fillStyle = "rgba(15, 23, 42, 0.92)";
+        ctx.fillRect(Math.round(csx - tw / 2), Math.round(csy - 10), Math.round(tw), 20);
+        ctx.strokeStyle = ze.draftColor;
+        ctx.lineWidth = 1.5;
+        ctx.strokeRect(Math.round(csx - tw / 2), Math.round(csy - 10), Math.round(tw), 20);
+        ctx.fillStyle = "#f8fafc";
+        ctx.fillText(previewText, Math.round(csx), Math.round(csy + 4));
+        ctx.restore();
+      }
+    } else if (customZones.length > 0) {
+      for (const cz of customZones) {
+        drawIsoRectOutline(cz.x, cz.y, cz.width, cz.height, cz.color, 0.05, true);
       }
     }
 
@@ -1102,33 +1310,33 @@ export class IsoRenderer {
       ctx.restore();
     }
 
-    // 7. Bay Nameplates (with Department Badges) & Employee Speech/Tool Bubbles
+    // 7. Zone Nameplates & Employee Speech/Tool Bubbles
     const bayById = new Map(state.bays.map((b) => [b.id, b]));
+    const totalPods = campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule").length;
+    const sleepingCount = employees.filter((e) => e.record.visualState === "resting").length;
     ctx.save();
     ctx.font = `bold ${Math.max(10, 6 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
     ctx.textAlign = "center";
-    const seenDepts = new Set<string>();
+
     for (const z of campus.zones) {
-      const [wx, wy] = toAnchorWorld(z.originX + 3, z.originY + 5.7, 1, 1);
+      // Skip blank floor and Boss zone (Boss already has the live 👑 BOSS badge above his chair)
+      if (z.kind === "floor" || z.kind === "boss") continue;
+
+      const [wx, wy] = getZoneCenterWorld(z);
       if (!isInWorldBounds(wx, wy, bounds)) continue;
       const [sx, sy] = camera.worldToScreen(wx, wy);
       const bay = z.bayId ? bayById.get(z.bayId) : undefined;
-      const deptId =
-        z.kind === "bay"
-          ? (z.department ?? bay?.department ?? classifyDepartmentFromPath(bay?.projectPath))
-          : undefined;
-      const deptMeta = deptId ? DEPARTMENT_META[deptId] : undefined;
 
       const label =
-        z.kind === "boss"
-          ? "👑 BOSS OFFICE"
-          : z.kind === "cowork"
-            ? `🤝 CO-WORKING · SUBAGENTS`
-          : z.kind === "common"
-            ? `LOUNGE & MEETING · #${z.zoneId.split(":")[1] ?? "0"}`
-            : z.kind === "amenity" && z.amenityTheme
-              ? `${AMENITY_THEME_META[z.amenityTheme].icon} ${AMENITY_THEME_META[z.amenityTheme].label}`
-              : `${deptMeta ? `${deptMeta.icon} ${deptMeta.shortLabel} · ` : ""}${bay?.displayName ?? z.zoneId}`;
+        z.kind === "cowork"
+          ? "💻 CENTRAL WORK HUB"
+          : z.kind === "hypersleep"
+            ? `🧊 HYPERSLEEP BAY · ${sleepingCount}/${totalPods}`
+            : z.kind === "common"
+              ? `LOUNGE & MEETING · #${z.zoneId.split(":")[1] ?? "0"}`
+              : z.kind === "amenity" && z.amenityTheme
+                ? `${AMENITY_THEME_META[z.amenityTheme].icon} ${AMENITY_THEME_META[z.amenityTheme].label}`
+                : bay?.displayName ?? z.zoneId;
       const activeTeamCount = z.bayId
         ? employees.filter(
             (e) =>
@@ -1138,51 +1346,56 @@ export class IsoRenderer {
         : 0;
       const fullLabel = activeTeamCount >= 2 ? `${label} · TEAM` : label;
       const textW = ctx.measureText(fullLabel).width + 14;
-      const borderColor = z.kind === "boss" ? "#f59e0b" : z.kind === "cowork" ? "#14b8a6" : z.amenityTheme ? AMENITY_THEME_META[z.amenityTheme].color : deptMeta?.color ?? bay?.accentColor ?? "#64748b";
+      const borderColor =
+        z.kind === "cowork"
+          ? "#38bdf8"
+          : z.kind === "hypersleep"
+            ? "#22d3ee"
+            : z.amenityTheme
+              ? AMENITY_THEME_META[z.amenityTheme].color
+              : bay?.accentColor ?? "#64748b";
       const boxX = Math.round(sx - textW / 2);
-      const boxY = Math.round(sy - 10);
+      const boxY = Math.round(sy - 9);
       ctx.fillStyle = theme === "day" ? "rgba(15, 23, 42, 0.84)" : "rgba(15, 23, 42, 0.90)";
       ctx.fillRect(boxX, boxY, Math.round(textW), 18);
-      if (deptMeta) {
-        ctx.fillStyle = deptMeta.color;
+      if (bay) {
+        ctx.fillStyle = bay.accentColor;
         ctx.fillRect(boxX, boxY, 4, 18);
       }
       ctx.strokeStyle = borderColor;
-      ctx.lineWidth = z.kind === "boss" ? 1.5 : 1;
+      ctx.lineWidth = z.kind === "hypersleep" ? 1.5 : 1;
       ctx.strokeRect(boxX, boxY, Math.round(textW), 18);
-      ctx.fillStyle = z.kind === "boss" ? "#fde68a" : "#f8fafc";
-      ctx.fillText(fullLabel, Math.round(sx + (deptMeta ? 2 : 0)), Math.round(sy + 3));
-
-      // Department Zone Header Pill above the first bay of each department group
-      if (deptMeta && !seenDepts.has(deptMeta.id)) {
-        seenDepts.add(deptMeta.id);
-        const [zwx, zwy] = toAnchorWorld(z.originX + 2.5, z.originY + 0.3, 1, 1);
-        if (isInWorldBounds(zwx, zwy, bounds)) {
-          const [zsx, zsy] = camera.worldToScreen(zwx, zwy - 34);
-          const zoneLabel = `${deptMeta.icon} ${deptMeta.label} ZONE`;
-          const zw = ctx.measureText(zoneLabel).width + 12;
-          ctx.fillStyle = "rgba(15, 23, 42, 0.88)";
-          ctx.fillRect(Math.round(zsx - zw / 2), Math.round(zsy - 14), Math.round(zw), 16);
-          ctx.strokeStyle = deptMeta.color;
-          ctx.lineWidth = 1.25;
-          ctx.strokeRect(Math.round(zsx - zw / 2), Math.round(zsy - 14), Math.round(zw), 16);
-          ctx.fillStyle = deptMeta.color;
-          ctx.fillText(zoneLabel, Math.round(zsx), Math.round(zsy - 2));
-        }
-      }
+      ctx.fillStyle = z.kind === "hypersleep" ? "#a5f3fc" : "#f8fafc";
+      ctx.fillText(fullLabel, Math.round(sx + (bay ? 2 : 0)), Math.round(sy + 4));
     }
 
-    // Employee floating bubbles & subtle tool-category aura
-    // Floating 👑 BOSS badge above Boss avatar in Boss Office (0,0)
-    if (bossZone) {
-      const bossChair = campus.worldFurniture.find(
-        (f) => f.zoneId === "boss:0" && f.id === "boss:0-boss-chair",
-      );
-      const bx = bossChair ? bossChair.tx : bossZone.originX + 2;
-      const by = bossChair ? bossChair.ty : bossZone.originY + 1;
+    // User-defined Custom Zone centered nameplates
+    for (const cz of customZones) {
+      const [wx, wy] = getZoneCenterWorld({ originX: cz.x, originY: cz.y, width: cz.width, height: cz.height });
+      if (!isInWorldBounds(wx, wy, bounds)) continue;
+      const [sx, sy] = camera.worldToScreen(wx, wy);
+      const roleSuffix = cz.role === "work" ? " · WORK" : cz.role === "hypersleep" ? " · SLEEP" : "";
+      const fullLabel = `${cz.icon} ${cz.name}${roleSuffix}`;
+      const textW = ctx.measureText(fullLabel).width + 14;
+      const boxX = Math.round(sx - textW / 2);
+      const boxY = Math.round(sy - 9);
+      ctx.fillStyle = theme === "day" ? "rgba(15, 23, 42, 0.86)" : "rgba(15, 23, 42, 0.92)";
+      ctx.fillRect(boxX, boxY, Math.round(textW), 18);
+      ctx.fillStyle = cz.color;
+      ctx.fillRect(boxX, boxY, 4, 18);
+      ctx.strokeStyle = cz.color;
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(boxX, boxY, Math.round(textW), 18);
+      ctx.fillStyle = "#f8fafc";
+      ctx.fillText(fullLabel, Math.round(sx + 2), Math.round(sy + 4));
+    }
+
+    // Floating 👑 BOSS badge above Boss avatar (follows Boss chair anywhere on campus)
+    if (bossZone || bossChair) {
+      const bx = bossChair ? bossChair.tx : (bossZone?.originX ?? 0) + 2;
+      const by = bossChair ? bossChair.ty : (bossZone?.originY ?? 0) + 1;
       const [wx, wy] = toAnchorWorld(bx, by, 1, 1);
       if (isInWorldBounds(wx, wy, bounds)) {
-        // Sit above the seated Boss's head (sprite ~49px tall incl. chair offset) instead of over the face.
         const [sx, sy] = camera.worldToScreen(wx, wy - 50);
         ctx.font = `700 ${Math.max(10, 5 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
         const label = "👑 BOSS";
@@ -1199,11 +1412,19 @@ export class IsoRenderer {
     }
 
     for (const emp of employees) {
-      const [wx, wy] = toAnchorWorld(emp.x, emp.y, 1, 1);
+      const isSleepingClip = emp.clipName.startsWith("rest_sleep_");
+      const fgAttach = isSleepingClip
+        ? foregroundAttachByTile.get(toTileKey(Math.round(emp.x), Math.round(emp.y)))
+        : undefined;
+      const isInMultiPod = Boolean(
+        fgAttach && fgAttach.direction === emp.direction && (fgAttach.footprintX > 1 || fgAttach.footprintY > 1),
+      );
+      const bx = isInMultiPod && fgAttach ? fgAttach.originTx + (fgAttach.footprintX - 1) / 2 : emp.x;
+      const by = isInMultiPod && fgAttach ? fgAttach.originTy + (fgAttach.footprintY - 1) / 2 : emp.y;
+      const [wx, wy] = toAnchorWorld(bx, by, 1, 1);
       if (!isInWorldBounds(wx, wy, bounds)) continue;
       const bob = Math.sin(timeMs / 400 + emp.x) * 1.5;
-      // Float cleanly above the Phase 2 sprite head (~49px tall) without covering the face
-      const [sx, sy] = camera.worldToScreen(wx, wy - 52 + bob);
+      const [sx, sy] = camera.worldToScreen(wx, wy - (isInMultiPod ? 32 : 52) + bob);
 
       if (emp.bubbleIcon || emp.bubbleText) {
         const text = emp.bubbleIcon ? `${emp.bubbleIcon}${emp.bubbleText ? ` ${emp.bubbleText}` : ""}` : (emp.bubbleText ?? "");

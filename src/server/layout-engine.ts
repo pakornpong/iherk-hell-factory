@@ -1,5 +1,7 @@
 import {
   buildTilePermissionMap,
+  expandEdgeDividerSegments,
+  isEdgeDividerAsset,
   isSurfaceHostAsset,
   isTabletopAsset,
   isWalkablePermission,
@@ -10,8 +12,6 @@ import {
 } from "../shared/layers.js";
 import {
   AMENITY_THEME_ORDER,
-  classifyDepartmentFromPath,
-  DEPARTMENT_ORDER,
   type AmenityThemeId,
   type BossOfficeRecord,
   type CatalogEntry,
@@ -27,19 +27,26 @@ import {
   type ZoneBounds,
   type ZoneId,
 } from "../shared/types.js";
-import { bayLayoutKey, commonLayoutKey, getRoomLayout, toFurniture } from "../shared/room-layouts.js";
+import { bayLayoutKey, bayLayoutKeyForBay, commonLayoutKey, getRoomLayout, toFurniture } from "../shared/room-layouts.js";
 
 export const ZONE_SIZE = 6;
-/**
- * Gap between neighbouring zones: none. Rooms sit directly against each other and their shared wall
- * stands on the line between the two tiles rather than taking a tile of its own.
- */
+/** Rooms inside the same functional zone sit flush and share boundary-line walls. */
+export const IN_ZONE_GAP = 0;
+/** Walkway corridor width (kept exported for compatibility). */
 export const ZONE_GAP = 0;
-/** 6-tile zone, no gap: walls live on the boundary line. */
-export const MODULE_PITCH_X = ZONE_SIZE + ZONE_GAP;
+/** 6-tile room pitch. */
+export const MODULE_PITCH_X = ZONE_SIZE + IN_ZONE_GAP;
 export const MODULE_PITCH_Y = MODULE_PITCH_X;
-/** Fixed slot of the shared co-working room where every project's subagents sit (next to the Boss Office). */
+/** Fixed slot of the Central Work Hub right next to Boss. */
 export const COWORK_SLOT = { col: 1, row: 0 } as const;
+/** Open sandbox floor defaults and expansion step. */
+export const DEFAULT_FLOOR_WIDTH = 24;
+export const DEFAULT_FLOOR_DEPTH = 24;
+export const FLOOR_EXPAND_STEP = 6;
+export const MIN_FLOOR_SIDE = 12;
+export const MAX_FLOOR_SIDE = 96;
+/** Hypersleep Bay top-left tile origin. */
+export const HYPERSLEEP_ORIGIN = { x: 13, y: 1 } as const;
 
 /** Square campus side length for a grid of `gridSide` x `gridSide` room slots. */
 export function campusSideTiles(gridSide: number): number {
@@ -68,8 +75,35 @@ export function createDefaultBossOffice(): BossOfficeRecord {
   return {
     zoneId: "boss:0",
     displayName: "BOSS OFFICE",
-    furniture: toFurniture("boss:0", getRoomLayout("boss").items),
+    furniture: [
+      { id: "boss:0-boss-chair", zoneId: "boss:0", lx: 2, ly: 1, assetId: "chair-office-swivel", direction: "se", layer: "object", placedBy: "system" },
+      { id: "boss:0-boss-desk", zoneId: "boss:0", lx: 2, ly: 2, assetId: "desk-dev-dual", direction: "nw", layer: "object", placedBy: "system" },
+      { id: "boss:0-boss-lamp", zoneId: "boss:0", lx: 2, ly: 2, assetId: "prop-desk-lamp", direction: "se", layer: "tabletop", surfaceHostId: "boss:0-boss-desk", placedBy: "system" },
+      { id: "boss:0-boss-mug", zoneId: "boss:0", lx: 3, ly: 2, assetId: "prop-coffee-mug", direction: "se", layer: "tabletop", surfaceHostId: "boss:0-boss-desk", placedBy: "system" },
+      { id: "boss:0-visitor-0", zoneId: "boss:0", lx: 2, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
+      { id: "boss:0-visitor-1", zoneId: "boss:0", lx: 3, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
+    ],
   };
+}
+
+/** Auto-generated 1x2 horizontal hypersleep pods: 1 capsule per agent, arranged in rows with 1-tile walking aisles. */
+export function createHypersleepFurniture(capsuleCount: number, cols: number): FurnitureInstance[] {
+  const count = Math.max(1, capsuleCount);
+  const safeCols = Math.max(1, cols);
+  const items: FurnitureInstance[] = [];
+  for (let i = 0; i < count; i++) {
+    items.push({
+      id: `hypersleep:0-pod-${i}`,
+      zoneId: "hypersleep:0",
+      lx: i % safeCols,
+      ly: Math.floor(i / safeCols) * 3,
+      assetId: "hypersleep-capsule",
+      direction: "se",
+      layer: "object",
+      placedBy: "system",
+    });
+  }
+  return items;
 }
 
 export function getAmenityTheme(index: number): AmenityThemeId {
@@ -94,13 +128,13 @@ export function createDefaultCommonWing(row: number): CommonWingRecord {
   return { row, zoneId, furniture: toFurniture(zoneId, getRoomLayout(key, mirrored).items) };
 }
 
-function bayLayoutItems(bayId: string, department: DepartmentId) {
-  const { key, mirrored } = bayLayoutKey(department, bayId);
+function bayLayoutItems(bayId: string, department?: DepartmentId) {
+  const { key, mirrored } = department ? bayLayoutKey(department, bayId) : bayLayoutKeyForBay(bayId);
   return getRoomLayout(key, mirrored).items;
 }
 
-/** A project's team room: one of 3 department-flavoured layouts, possibly mirrored, chosen from the bay id. */
-export function createDefaultBayFurniture(bayId: string, department: DepartmentId = "general"): FurnitureInstance[] {
+/** A project's team room: chosen deterministically from the bay id across all designed bay interiors. */
+export function createDefaultBayFurniture(bayId: string, department?: DepartmentId): FurnitureInstance[] {
   return toFurniture(`bay:${bayId}`, bayLayoutItems(bayId, department).filter((it) => !it.extra));
 }
 
@@ -109,7 +143,7 @@ export function createExtraBayWorkstations(
   bayId: string,
   desiredDeskSlots: number,
   existing: FurnitureInstance[],
-  department: DepartmentId = "general",
+  department?: DepartmentId,
 ): FurnitureInstance[] {
   const zoneId: ZoneId = `bay:${bayId}`;
   const hasId = (id: string) => existing.some((f) => f.id === id);
@@ -136,39 +170,38 @@ export function getClockwiseRingCoords(ring: number): Array<[number, number]> {
   return coords;
 }
 
+export interface CampusLayoutOptions {
+  /** Number of active employees -> determines how many hypersleep capsules are spawned (1 per agent). */
+  employeeCount?: number;
+  /** User-configurable open floor width in tiles (defaults to 24, expandable/shrinkable). */
+  floorWidthTiles?: number;
+  /** User-configurable open floor depth in tiles (defaults to 24, expandable/shrinkable). */
+  floorDepthTiles?: number;
+  /** Optional per-tile custom floor asset overrides keyed by "tx,ty". */
+  floorTileOverrides?: Record<string, string>;
+}
+
 export function computeCampusLayout(
   bays: ProjectBayRecord[],
-  commonWings: CommonWingRecord[],
+  _commonWings: CommonWingRecord[],
   catalogById: Map<string, CatalogEntry>,
   bossOffice?: BossOfficeRecord,
   theme: ThemeMode = "office",
   tilePermissionOverrides?: Record<string, TilePermission>,
   zoneOverrides?: Record<string, FurnitureInstance[]>,
+  opts?: CampusLayoutOptions,
 ): ComputedCampus {
-  const deptRank = (bay: ProjectBayRecord): number => {
-    const dept = bay.department ?? classifyDepartmentFromPath(bay.projectPath);
-    const idx = DEPARTMENT_ORDER.indexOf(dept);
-    return idx === -1 ? DEPARTMENT_ORDER.length : idx;
-  };
-  const activeBays = bays
-    .filter((b) => !b.archived)
-    .slice()
-    .sort((a, b) => deptRank(a) - deptRank(b));
-  const wingByRow = new Map<number, CommonWingRecord>();
-  for (const w of commonWings) wingByRow.set(w.row, w);
-
+  const activeBays = bays.filter((b) => !b.archived);
   const zones: ZoneBounds[] = [];
   const worldFurniture: WorldFurnitureInstance[] = [];
 
-  // Zones are first placed on a cell grid (col,row); their tile origins are assigned after packing,
-  // so furniture is queued and placed into world tiles at the end.
-  const pendingFurniture: Array<{ zone: ZoneBounds; items: FurnitureInstance[] }> = [];
-  const pushFurniture = (zone: ZoneBounds, items: FurnitureInstance[]) => {
-    pendingFurniture.push({ zone, items });
-  };
   const placeFurniture = (zone: ZoneBounds, items: FurnitureInstance[]) => {
     const footOf = (item: FurnitureInstance): [number, number] =>
-      getRotatedFootprint(catalogById.get(item.assetId)?.footprintTiles ?? [1, 1], item.direction);
+      getRotatedFootprint(
+        catalogById.get(item.assetId)?.footprintTiles ??
+          (item.assetId === "hypersleep-capsule" ? [1, 2] : [1, 1]),
+        item.direction,
+      );
 
     // Track host surface heights in this zone so tabletop props lift automatically to sit on their host
     const surfaceHeightByLocalTile = new Map<string, number>();
@@ -202,11 +235,57 @@ export function computeCampusLayout(
     }
   };
 
-  // 1. Boss Office permanently anchored at the top-most apex (col=0, row=0)
+  // =========================================================================
+  // Open Customizable Sandbox Floor + 3 Core Functional Anchors:
+  //   1. Boss Corner       (boss:0, 0..5 x 0..5)       — Boss desk & chair
+  //   2. Central Work Hub  (cowork:0, 6..11 x 0..5)    — Shared desks where working agents sit
+  //   3. Hypersleep Bay    (hypersleep:0, 13.. x 1..)  — Auto-scaled 1 capsule per agent
+  //   4. Open Blank Floor  (floor:0, 0..W x 0..D)      — Empty space for user decoration, expandable!
+  // =========================================================================
+
+  const requestedW = Math.max(MIN_FLOOR_SIDE, Math.min(MAX_FLOOR_SIDE, opts?.floorWidthTiles ?? DEFAULT_FLOOR_WIDTH));
+  const requestedD = Math.max(MIN_FLOOR_SIDE, Math.min(MAX_FLOOR_SIDE, opts?.floorDepthTiles ?? DEFAULT_FLOOR_DEPTH));
+
+  const capsuleCount = Math.max(1, opts?.employeeCount ?? Math.max(1, activeBays.length));
+  const hasCustomHypersleep = zoneOverrides?.["hypersleep:0"] !== undefined;
+  const capsuleCols = Math.max(4, requestedW - HYPERSLEEP_ORIGIN.x - 1);
+  const capsuleRows = Math.ceil(capsuleCount / capsuleCols);
+  const capsuleHeight = Math.max(3, capsuleRows * 3);
+
+  let minAutoW = HYPERSLEEP_ORIGIN.x + capsuleCols + 1;
+  let minAutoD = HYPERSLEEP_ORIGIN.y + capsuleHeight + 2;
+  if (hasCustomHypersleep) {
+    minAutoW = MIN_FLOOR_SIDE;
+    minAutoD = MIN_FLOOR_SIDE;
+    for (const item of zoneOverrides?.["hypersleep:0"] ?? []) {
+      const [fw, fd] = getRotatedFootprint(
+        catalogById.get(item.assetId)?.footprintTiles ??
+          (item.assetId === "hypersleep-capsule" ? [1, 2] : [1, 1]),
+        item.direction,
+      );
+      minAutoW = Math.max(minAutoW, HYPERSLEEP_ORIGIN.x + item.lx + fw);
+      minAutoD = Math.max(minAutoD, HYPERSLEEP_ORIGIN.y + item.ly + fd);
+    }
+    for (const item of zoneOverrides?.["floor:0"] ?? []) {
+      const [fw, fd] = getRotatedFootprint(
+        catalogById.get(item.assetId)?.footprintTiles ??
+          (item.assetId === "hypersleep-capsule" ? [1, 2] : [1, 1]),
+        item.direction,
+      );
+      minAutoW = Math.max(minAutoW, item.lx + fw);
+      minAutoD = Math.max(minAutoD, item.ly + fd);
+    }
+  }
+
+  const widthTiles = Math.max(requestedW, minAutoW);
+  const depthTiles = Math.max(requestedD, minAutoD);
+
+  // 1. Boss Corner (anchored at top-most apex 0,0)
   const bossRec = bossOffice ?? createDefaultBossOffice();
   const bossZone: ZoneBounds = {
     zoneId: "boss:0",
     kind: "boss",
+    zoneGroup: "hq",
     row: 0,
     col: 0,
     originX: 0,
@@ -215,384 +294,101 @@ export function computeCampusLayout(
     height: ZONE_SIZE,
   };
   zones.push(bossZone);
-  pushFurniture(bossZone, bossRec.furniture);
+  placeFurniture(bossZone, bossRec.furniture);
 
-  // 2. Primary Common Lounge & Meeting Hub at (col=0, row=1)
-  const common0Zone: ZoneBounds = {
-    zoneId: "common:0",
-    kind: "common",
-    row: 1,
-    col: 0,
-    originX: 0,
-    originY: 0, // assigned in 3c
-    width: ZONE_SIZE,
-    height: ZONE_SIZE,
-  };
-  zones.push(common0Zone);
-  const wing0 = wingByRow.get(0) ?? createDefaultCommonWing(0);
-  pushFurniture(common0Zone, wing0.furniture);
-
-  // 2b. Shared co-working room for subagents at (col=1, row=0), right next to the Boss Office
+  // 2. Central Work Hub (shared area where all active/working agents sit)
   const coworkZone: ZoneBounds = {
     zoneId: "cowork:0",
     kind: "cowork",
+    zoneGroup: "workspace",
     lotId: "cowork",
     row: COWORK_SLOT.row,
     col: COWORK_SLOT.col,
-    originX: 0, // assigned in 3c
-    originY: 0,
+    originX: COWORK_SLOT.col * ZONE_SIZE,
+    originY: COWORK_SLOT.row * ZONE_SIZE,
     width: ZONE_SIZE,
     height: ZONE_SIZE,
   };
   zones.push(coworkZone);
-  pushFurniture(coworkZone, zoneOverrides?.["cowork:0"] ?? createCoworkFurniture());
+  placeFurniture(coworkZone, zoneOverrides?.["cowork:0"] ?? createCoworkFurniture());
 
-  // 3. Pack department "lots". Each department is ONE rectangular open-plan lot sized by how many projects
-  // it has (1 -> 1x1, 2 -> 2x1, 3-4 -> 2x2, 5-6 -> 3x2, 7-9 -> 3x3, ...). Lots, extra lounges and themed rooms
-  // are packed as close to the Boss Office as possible; the square grid grows only when they do not fit.
-  const baysByDept = new Map<DepartmentId, ProjectBayRecord[]>();
-  for (const bay of activeBays) {
-    const dept = bay.department ?? classifyDepartmentFromPath(bay.projectPath);
-    const list = baysByDept.get(dept) ?? [];
-    list.push(bay);
-    baysByDept.set(dept, list);
-  }
-  const deptLots = [...baysByDept.entries()];
-  const extraCommonCount = Math.floor(activeBays.length / 10);
-
-  const lotShapes = (n: number, side: number): Array<[number, number]> => {
-    const shapes: Array<[number, number]> = [];
-    for (let w = 1; w <= side; w++) {
-      for (let h = 1; h <= side; h++) {
-        if (w * h >= n && w * h - n <= Math.max(1, Math.floor(n / 3))) shapes.push([w, h]);
-      }
-    }
-    // Most compact block first (shortest long side), then least wasted cells, then wider-than-deep
-    return shapes.sort(
-      (a, b) => Math.max(...a) - Math.max(...b) || a[0] * a[1] - b[0] * b[1] || b[0] - a[0],
-    );
+  // 3. Hypersleep Bay (auto-scaled 1 pod per employee; respects user moves/edits via zoneOverrides)
+  const hypersleepZone: ZoneBounds = {
+    zoneId: "hypersleep:0",
+    kind: "hypersleep",
+    zoneGroup: "hypersleep",
+    row: 0,
+    col: 2,
+    originX: HYPERSLEEP_ORIGIN.x,
+    originY: HYPERSLEEP_ORIGIN.y,
+    width: capsuleCols,
+    height: capsuleHeight,
   };
+  zones.push(hypersleepZone);
+  placeFurniture(
+    hypersleepZone,
+    zoneOverrides?.["hypersleep:0"] ?? createHypersleepFurniture(capsuleCount, capsuleCols),
+  );
 
-  type Placed = { col: number; row: number; w: number; h: number };
-  const tryPack = (
-    side: number,
-  ): { lots: Placed[]; commons: Placed[]; free: Array<[number, number]> } | null => {
-    const used = new Set<string>(["0,0", "0,1", `${COWORK_SLOT.col},${COWORK_SLOT.row}`]);
-    const fits = (c: number, r: number, w: number, h: number) => {
-      if (c + w > side || r + h > side) return false;
-      for (let y = r; y < r + h; y++) for (let x = c; x < c + w; x++) if (used.has(`${x},${y}`)) return false;
-      return true;
-    };
-    const take = (c: number, r: number, w: number, h: number) => {
-      for (let y = r; y < r + h; y++) for (let x = c; x < c + w; x++) used.add(`${x},${y}`);
-    };
-    // Candidate positions, nearest to the Boss Office corner first
-    const place = (w: number, h: number): Placed | null => {
-      let best: Placed | null = null;
-      let bestKey = Infinity;
-      for (let r = 0; r < side; r++) {
-        for (let c = 0; c < side; c++) {
-          if (!fits(c, r, w, h)) continue;
-          const key = Math.max(c + w, r + h) * side * side + r * side + c;
-          if (key < bestKey) {
-            bestKey = key;
-            best = { col: c, row: r, w, h };
-          }
-        }
-      }
-      if (best) take(best.col, best.row, w, h);
-      return best;
-    };
-
-    const lots: Placed[] = [];
-    for (const [, bays] of deptLots) {
-      let placed: Placed | null = null;
-      for (const [w, h] of lotShapes(bays.length, side)) {
-        placed = place(w, h);
-        if (placed) break;
-      }
-      if (!placed) return null;
-      lots.push(placed);
-    }
-    const commons: Placed[] = [];
-    for (let i = 0; i < extraCommonCount; i++) {
-      const p = place(1, 1);
-      if (!p) return null;
-      commons.push(p);
-    }
-    const free: Array<[number, number]> = [];
-    for (let r = 0; r < side; r++) for (let c = 0; c < side; c++) if (!used.has(`${c},${r}`)) free.push([c, r]);
-    free.sort((a, b) => Math.max(a[0], a[1]) - Math.max(b[0], b[1]) || a[1] - b[1] || a[0] - b[0]);
-    if (free.length < MIN_AMENITY_ROOMS) return null;
-    return { lots, commons, free };
+  // 4. Open Blank Floor (spans the entire campus as the catch-all editable decoration canvas)
+  const floorZone: ZoneBounds = {
+    zoneId: "floor:0",
+    kind: "floor",
+    zoneGroup: "floor",
+    row: 1,
+    col: 0,
+    originX: 0,
+    originY: 0,
+    width: widthTiles,
+    height: depthTiles,
   };
+  zones.push(floorZone);
+  placeFurniture(floorZone, zoneOverrides?.["floor:0"] ?? []);
 
-  let maxGridSide = 2;
-  let packed = tryPack(maxGridSide);
-  while (!packed) packed = tryPack(++maxGridSide);
-
-  packed.lots.forEach((lot, i) => {
-    const [dept, bays] = deptLots[i];
-    bays.forEach((bay, k) => {
-      const col = lot.col + (k % lot.w);
-      const row = lot.row + Math.floor(k / lot.w);
-      const bayZone: ZoneBounds = {
-        zoneId: `bay:${bay.id}`,
-        kind: "bay",
-        bayId: bay.id,
-        department: dept,
-        lotId: `dept:${dept}`,
-        row,
-        col,
-        originX: 0, // assigned in 3c
-        originY: 0,
-        width: ZONE_SIZE,
-        height: ZONE_SIZE,
-      };
-      zones.push(bayZone);
-      pushFurniture(bayZone, bay.furniture);
-    });
-  });
-
-  packed.commons.forEach((slot, i) => {
-    const cIdx = i + 1;
-    const cZone: ZoneBounds = {
-      zoneId: `common:${cIdx}`,
-      kind: "common",
-      row: slot.row,
-      col: slot.col,
-      originX: 0, // assigned in 3c
-      originY: 0,
-      width: ZONE_SIZE,
-      height: ZONE_SIZE,
-    };
-    zones.push(cZone);
-    pushFurniture(cZone, (wingByRow.get(cIdx) ?? createDefaultCommonWing(cIdx)).furniture);
-  });
-
-  // 3b. Themed amenity rooms (game, music, gym, lab, ...) fill EVERY free cell, cycling the themes, so
-  // the plan never leaves an empty slot showing as bare walkway inside the campus.
-  packed.free.forEach(([col, row], idx) => {
-    const amenityTheme = getAmenityTheme(idx);
-    const aZone: ZoneBounds = {
-      zoneId: `amenity:${idx}`,
-      kind: "amenity",
-      amenityTheme,
-      row,
-      col,
-      originX: 0, // assigned in 3c
-      originY: 0,
-      width: ZONE_SIZE,
-      height: ZONE_SIZE,
-    };
-    zones.push(aZone);
-    pushFurniture(aZone, zoneOverrides?.[aZone.zoneId] ?? createAmenityFurniture(idx, amenityTheme));
-  });
-
-  // 3c. Turn the cell grid into tiles. Each lot (a department block or a single room) becomes one block:
-  // projects inside a lot sit IN_LOT_GAP (1 tile: the low divider line) apart, while different lots keep
-  // a ZONE_GAP walkway (wall + 1 walkway tile + wall). Blocks are compacted toward the Boss Office corner,
-  // first along x, then along y, so the plan stays tight instead of following a fixed 9-tile grid.
-  const IN_LOT_GAP = 0;
-  type Block = { key: string; col: number; row: number; w: number; h: number; x: number; y: number; W: number; H: number };
-  const blocks = new Map<string, Block>();
-  const blockKeyOf = (z: ZoneBounds) => (z.kind === "bay" && z.lotId ? z.lotId : z.zoneId);
-  for (const z of zones) {
-    const key = blockKeyOf(z);
-    const b = blocks.get(key);
-    if (!b) {
-      blocks.set(key, { key, col: z.col, row: z.row, w: 1, h: 1, x: 0, y: 0, W: 0, H: 0 });
-    } else {
-      const c1 = Math.max(b.col + b.w, z.col + 1);
-      const r1 = Math.max(b.row + b.h, z.row + 1);
-      b.col = Math.min(b.col, z.col);
-      b.row = Math.min(b.row, z.row);
-      b.w = c1 - b.col;
-      b.h = r1 - b.row;
-    }
-  }
-  // Department lots keep their full packed rectangle (a spare cell stays part of the lot's floor footprint)
-  packed.lots.forEach((lot, i) => {
-    const b = blocks.get(`dept:${deptLots[i][0]}`);
-    if (b) Object.assign(b, { col: lot.col, row: lot.row, w: lot.w, h: lot.h });
-  });
-  const blockList = [...blocks.values()];
-  for (const b of blockList) {
-    b.W = b.w * ZONE_SIZE + (b.w - 1) * IN_LOT_GAP;
-    b.H = b.h * ZONE_SIZE + (b.h - 1) * IN_LOT_GAP;
-  }
-  const rowsOverlap = (a: Block, b: Block) => a.row < b.row + b.h && b.row < a.row + a.h;
-  for (const b of [...blockList].sort((p, q) => p.col - q.col || p.row - q.row)) {
-    b.x = 0;
-    for (const o of blockList) {
-      if (o !== b && o.col + o.w <= b.col && rowsOverlap(o, b)) b.x = Math.max(b.x, o.x + o.W + ZONE_GAP);
-    }
-  }
-  for (const b of [...blockList].sort((p, q) => p.row - q.row || p.col - q.col)) {
-    b.y = 0;
-    for (const o of blockList) {
-      const xClose = b.x < o.x + o.W + ZONE_GAP && o.x < b.x + b.W + ZONE_GAP;
-      if (o !== b && o.row + o.h <= b.row && xClose) b.y = Math.max(b.y, o.y + o.H + ZONE_GAP);
-    }
-  }
-  for (const z of zones) {
-    const b = blocks.get(blockKeyOf(z))!;
-    z.originX = b.x + (z.col - b.col) * (ZONE_SIZE + IN_LOT_GAP);
-    z.originY = b.y + (z.row - b.row) * (ZONE_SIZE + IN_LOT_GAP);
-  }
-  for (const { zone, items } of pendingFurniture) placeFurniture(zone, items);
-
-  // Campus is the real bounding box of every block; width and depth are independent (no square padding)
-  const widthTiles = Math.max(...blockList.map((b) => b.x + b.W));
-  const depthTiles = Math.max(...blockList.map((b) => b.y + b.H));
-
-  // 4. Rooms and walls. Zones are packed flush (ZONE_GAP = 0), so every tile inside the campus is room
-  // floor and a wall is no longer a tile of its own: it stands ON the line between two tiles. Each
-  // segment renders half a tile back from the tile it fronts and closes that single step for walking,
-  // so neither room loses floor to it and furniture can sit right against it.
-  const zoneAt = new Map<string, ZoneBounds>();
-  for (const z of zones) zoneAt.set(`${z.col},${z.row}`, z);
-
-  // Every zone is a walled room except the co-working area, which is an open bench of face-to-face desks
-  const isEnclosedKind = (z?: ZoneBounds): boolean => Boolean(z && z.kind !== "cowork");
-
-  const interiorTiles = new Map<string, ZoneBounds>();
-  for (const z of zones) {
-    for (let y = 0; y < ZONE_SIZE; y++)
-      for (let x = 0; x < ZONE_SIZE; x++) interiorTiles.set(`${z.originX + x},${z.originY + y}`, z);
-  }
-  /** Zone whose floor this tile is, else undefined (outside the campus footprint). */
-  const interiorZoneAt = (tx: number, ty: number): ZoneBounds | undefined =>
-    interiorTiles.get(`${tx},${ty}`);
-  /** Same, but only for rooms that are actually walled. */
-  const enclosedAt = (tx: number, ty: number): ZoneBounds | undefined => {
-    const z = interiorZoneAt(tx, ty);
-    return isEnclosedKind(z) ? z : undefined;
-  };
-
-  // One tile of doorway per side. A 2-tile opening on all four sides of a 6-tile room left only
-  // two-tile stubs at the corners, so rooms read as free-standing X partitions instead of rooms.
-  const isDoorOffset = (o: number) => o === 2;
-  const cubicleDividerAssetId = theme === "office" ? "divider-cubicle-amber" : "divider-low-glass";
-
+  // Emit zero-thickness boundary-line wall segments for every user-placed edge divider
+  // so pathfinding blocks crossing solid glass walls while furniture sits 100% flush on BOTH sides!
   const wallSegments: ComputedCampus["wallSegments"] = [];
-  /** Which boundary lines carry a full-height wall, so junctions know how many arms meet. */
-  const vWallAt = new Set<string>();
-  const hWallAt = new Set<string>();
-
-  // 4a. One segment per boundary between two different rooms (and around the campus edge).
-  // Vertical lines: x = bx separates tile (bx - 1, y) from (bx, y).
-  for (let bx = 0; bx <= widthTiles; bx++) {
-    for (let y = 0; y < depthTiles; y++) {
-      const left = interiorZoneAt(bx - 1, y);
-      const right = interiorZoneAt(bx, y);
-      if (left === right) continue;
-      // Campus edge: the diorama's own rear walls cover the back, the front is the open cutaway
-      if (!left || !right) continue;
-      const owner = enclosedAt(bx - 1, y) ?? enclosedAt(bx, y);
-      if (!owner) continue;
-      const isDoor = isDoorOffset(y - owner.originY);
-      const sameLot = Boolean(left && right && left.lotId && left.lotId === right.lotId);
+  for (const wf of worldFurniture) {
+    if (!isEdgeDividerAsset(wf.assetId)) continue;
+    const segs = expandEdgeDividerSegments(wf.assetId, wf.tx, wf.ty, wf.direction);
+    segs.forEach((seg, idx) => {
       wallSegments.push({
-        id: `sys-wall-v-${bx}-${y}`,
-        axis: "y",
-        rx: bx - 0.5,
-        ry: y,
-        assetId: isDoor ? "room-wall-door" : sameLot ? cubicleDividerAssetId : "room-wall-glass",
-        direction: "sw",
-        blocks: isDoor || sameLot ? null : { x: bx, y, side: "w" },
+        id: `ef:${wf.id}:${idx}`,
+        rx: seg.rx,
+        ry: seg.ry,
+        axis: seg.axis,
+        assetId: seg.assetId,
+        direction: seg.direction,
+        blocks: seg.blocks,
       });
-      vWallAt.add(`${bx},${y}`);
-    }
+    });
   }
-  // Horizontal lines: y = by separates tile (x, by - 1) from (x, by).
-  for (let by = 0; by <= depthTiles; by++) {
-    for (let x = 0; x < widthTiles; x++) {
-      const up = interiorZoneAt(x, by - 1);
-      const down = interiorZoneAt(x, by);
-      if (up === down) continue;
-      if (!up || !down) continue;
-      const owner = enclosedAt(x, by - 1) ?? enclosedAt(x, by);
-      if (!owner) continue;
-      const isDoor = isDoorOffset(x - owner.originX);
-      const sameLot = Boolean(up && down && up.lotId && up.lotId === down.lotId);
-      wallSegments.push({
-        id: `sys-wall-h-${x}-${by}`,
-        axis: "x",
-        rx: x,
-        ry: by - 0.5,
-        assetId: isDoor ? "room-wall-door" : sameLot ? cubicleDividerAssetId : "room-wall-glass",
-        direction: "se",
-        blocks: isDoor || sameLot ? null : { x, y: by, side: "n" },
-      });
-      hWallAt.add(`${x},${by}`);
-    }
-  }
+  const wallDecor: ComputedCampus["wallDecor"] = [];
 
-  // 4b. Junction pieces where two wall lines cross, so runs meet instead of ending in mid-air.
-  // The quadrant piece's arms point +x/+y at direction "se"; each further step rotates 90 degrees CW.
-  for (let bx = 0; bx <= widthTiles; bx++) {
-    for (let by = 0; by <= depthTiles; by++) {
-      const armNegY = vWallAt.has(`${bx},${by - 1}`);
-      const armPosY = vWallAt.has(`${bx},${by}`);
-      const armNegX = hWallAt.has(`${bx - 1},${by}`);
-      const armPosX = hWallAt.has(`${bx},${by}`);
-      const arms = [armNegX, armPosX, armNegY, armPosY].filter(Boolean).length;
-      if (arms < 2) continue;
-      const straightThrough = (armNegX && armPosX && arms === 2) || (armNegY && armPosY && arms === 2);
-      if (straightThrough) continue; // the two segments already meet along one line
-      let assetId = "room-junction-cross";
-      let direction: Direction = "se";
-      if (arms === 2) {
-        assetId = "room-junction-corner";
-        direction = armPosX && armPosY ? "se" : armNegX && armPosY ? "sw" : armNegX && armNegY ? "nw" : "ne";
-      }
-      wallSegments.push({
-        id: `sys-wall-j-${bx}-${by}`,
-        axis: "point",
-        rx: bx - 0.5,
-        ry: by - 0.5,
-        assetId,
-        direction,
-        blocks: null,
-      });
-    }
-  }
-
-  // 5. Seamless square floors with architectural room borders/thresholds and rug accents
-  const bossRugSet = new Set<string>();
-  for (let y = 1; y <= 4; y++) {
-    for (let x = 1; x <= 4; x++) {
-      bossRugSet.add(`${x},${y}`); // Boss Office executive rug
-    }
-  }
-  const loungeRugSet = new Set<string>();
-  for (const z of zones) {
-    if (z.kind !== "common") continue;
-    for (let ly = 3; ly <= 5; ly++) {
-      for (let lx = 3; lx <= 5; lx++) {
-        loungeRugSet.add(`${z.originX + lx},${z.originY + ly}`);
-      }
-    }
-  }
-
+  // Clean open floor with subtle visual cues for Boss rug and Hypersleep cryo deck
   const baseFloorAsset = theme === "office" ? "floor-office-carpet" : "floor-wood-plank";
   const bossRugAsset = theme === "office" ? "floor-boss-rug" : "floor-lounge-rug";
 
   const floors: ComputedCampus["floors"] = [];
+  const floorOverrides = opts?.floorTileOverrides;
   for (let ty = 0; ty < depthTiles; ty++) {
     for (let tx = 0; tx < widthTiles; tx++) {
-      const key = `${tx},${ty}`;
-      // A wall tile carries the floor of the room it encloses, so the strip either side of the wall reads
-      // as room floor instead of dead corridor. Only tiles touching no room at all stay walkway.
-      const isCorridor = !interiorZoneAt(tx, ty);
-      const assetId = isCorridor
-        ? "floor-corridor-tile"
-        : bossRugSet.has(key)
-          ? bossRugAsset
-          : loungeRugSet.has(key)
-            ? "floor-lounge-rug"
-            : baseFloorAsset;
+      const inBossRug = tx >= 1 && tx <= 4 && ty >= 1 && ty <= 4;
+      const inHypersleepDeck =
+        tx >= hypersleepZone.originX &&
+        tx < hypersleepZone.originX + hypersleepZone.width &&
+        ty >= hypersleepZone.originY &&
+        ty < hypersleepZone.originY + hypersleepZone.height;
+      const defaultAssetId = inBossRug
+        ? bossRugAsset
+        : inHypersleepDeck
+          ? "floor-corridor-tile"
+          : baseFloorAsset;
+      const override = floorOverrides?.[`${tx},${ty}`];
+      const assetId =
+        override && (catalogById.get(override)?.layer === "floor" || override.startsWith("floor-"))
+          ? override
+          : defaultAssetId;
       floors.push({
         tx,
         ty,
@@ -602,97 +398,7 @@ export function computeCampusLayout(
     }
   }
 
-  // 6. Mount rich wall decor (boards, TVs, clocks, charts, calendars, certificates, AC) flush along BOTH rear walls
-  // so perimeter windows never sit hidden behind wall decor
-  const wallDecor: ComputedCampus["wallDecor"] = [];
-  const decorBlockedTx = new Set<number>();
-  const decorBlockedTy = new Set<number>();
-
-  for (const z of zones) {
-    // Rear NE wall (ty = 0) for top-row rooms
-    if (z.row === 0) {
-      if (z.col > 0 && z.originX < widthTiles) {
-        wallDecor.push({
-          tx: z.originX,
-          ty: 0,
-          assetId: z.col % 2 === 1 ? "wall-chart-org" : "wall-calendar",
-          edge: "ne",
-        });
-        decorBlockedTx.add(z.originX);
-      }
-      if (z.originX + 2 < widthTiles) {
-        const useCorkboard =
-          z.kind === "bay" && (z.department === "erp" || z.department === "accounting" || z.col % 2 === 1);
-        const boardAsset = useCorkboard
-          ? "wall-corkboard"
-          : z.col > 0 && z.col % 2 === 0
-            ? "wall-tv-monitor"
-            : "whiteboard-arch";
-        const dtx = z.originX + 1;
-        wallDecor.push({ tx: dtx, ty: 0, assetId: boardAsset, edge: "ne" });
-        decorBlockedTx.add(dtx);
-        decorBlockedTx.add(dtx + 1);
-      }
-      if (z.originX + 3 < widthTiles) {
-        const midAsset =
-          z.kind === "boss" ? "wall-clock" : z.col % 2 === 1 ? "wall-calendar" : "wall-certificate";
-        wallDecor.push({ tx: z.originX + 3, ty: 0, assetId: midAsset, edge: "ne" });
-        decorBlockedTx.add(z.originX + 3);
-      }
-      if (z.originX + 5 < widthTiles) {
-        const dtx = z.originX + 4;
-        wallDecor.push({ tx: dtx, ty: 0, assetId: "wall-ac-unit", edge: "ne" });
-        decorBlockedTx.add(dtx);
-        decorBlockedTx.add(dtx + 1);
-      }
-    }
-
-    // Rear NW wall (tx = 0) for left-column rooms (keeps ty=2 window open in Boss Office)
-    if (z.col === 0) {
-      if (z.row === 0) {
-        if (1 < depthTiles) {
-          wallDecor.push({ tx: 0, ty: 1, assetId: "wall-certificate", edge: "nw" });
-          decorBlockedTy.add(1);
-        }
-        if (4 < depthTiles) {
-          wallDecor.push({ tx: 0, ty: 3, assetId: "wall-tv-monitor", edge: "nw" });
-          decorBlockedTy.add(3);
-          decorBlockedTy.add(4);
-        }
-      } else {
-        if (z.originY < depthTiles) {
-          wallDecor.push({
-            tx: 0,
-            ty: z.originY,
-            assetId: z.row % 2 === 1 ? "wall-clock" : "wall-certificate",
-            edge: "nw",
-          });
-          decorBlockedTy.add(z.originY);
-        }
-        if (z.originY + 2 < depthTiles) {
-          const dty = z.originY + 1;
-          wallDecor.push({
-            tx: 0,
-            ty: dty,
-            assetId: z.kind === "common" ? "wall-corkboard" : "wall-tv-monitor",
-            edge: "nw",
-          });
-          decorBlockedTy.add(dty);
-          decorBlockedTy.add(dty + 1);
-        }
-        if (z.originY + 4 < depthTiles) {
-          wallDecor.push({ tx: 0, ty: z.originY + 4, assetId: "wall-calendar", edge: "nw" });
-          decorBlockedTy.add(z.originY + 4);
-        }
-        if (z.originY + 5 < depthTiles) {
-          wallDecor.push({ tx: 0, ty: z.originY + 5, assetId: "wall-chart-org", edge: "nw" });
-          decorBlockedTy.add(z.originY + 5);
-        }
-      }
-    }
-  }
-
-  // Cutaway outer perimeter walls along full square rear edges: ty=0 (NE edge) and tx=0 (NW edge)
+  // Cutaway outer perimeter walls along full rear edges: ty=0 (NE edge) and tx=0 (NW edge)
   const walls: ComputedCampus["walls"] = [
     { tx: 0, ty: 0, assetId: "wall-corner-pillar", edge: "corner" },
     { tx: 0, ty: 0, assetId: "wall-slate-plain", edge: "nw" },
@@ -700,24 +406,16 @@ export function computeCampusLayout(
   ];
 
   for (let tx = 1; tx < widthTiles; tx++) {
-    // Keep windows over room interiors; corridors/room walls meet the perimeter as plain wall
-    const hitsInteriorWall = !interiorZoneAt(tx, 0);
-    const isWindowSlot = tx % 4 === 2 && !hitsInteriorWall;
-    const assetId = !isWindowSlot
-      ? "wall-slate-plain"
-      : decorBlockedTx.has(tx)
-        ? "wall-loft-clerestory"
-        : "wall-night-window";
+    const isWindowSlot = tx % 4 === 2;
     walls.push({
       tx,
       ty: 0,
-      assetId,
+      assetId: isWindowSlot ? "wall-night-window" : "wall-slate-plain",
       edge: "ne",
     });
   }
   for (let ty = 1; ty < depthTiles; ty++) {
-    const hitsInteriorWall = !interiorZoneAt(0, ty);
-    const isWindow = ty % 4 === 2 && !decorBlockedTy.has(ty) && !hitsInteriorWall;
+    const isWindow = ty % 4 === 2;
     walls.push({
       tx: 0,
       ty,
@@ -741,7 +439,24 @@ export function resolveWorldToZone(
   tx: number,
   ty: number,
 ): { zoneId: ZoneId; lx: number; ly: number } | null {
+  // In open-floor sandbox mode, resolve every in-bounds tile to `floor:0` (0..W x 0..D)
+  // so multi-tile furniture can sit flush against dividers or straddle former 6x6 edges cleanly.
+  const floorZone = campus.zones.find((z) => z.kind === "floor");
+  if (
+    floorZone &&
+    tx >= floorZone.originX &&
+    tx < floorZone.originX + floorZone.width &&
+    ty >= floorZone.originY &&
+    ty < floorZone.originY + floorZone.height
+  ) {
+    return {
+      zoneId: floorZone.zoneId,
+      lx: tx - floorZone.originX,
+      ly: ty - floorZone.originY,
+    };
+  }
   for (const z of campus.zones) {
+    if (z.kind === "hypersleep") continue;
     if (tx >= z.originX && tx < z.originX + z.width && ty >= z.originY && ty < z.originY + z.height) {
       return {
         zoneId: z.zoneId,
@@ -783,12 +498,12 @@ export function validateFurniturePlacement(
   if (
     candidate.lx < 0 ||
     candidate.ly < 0 ||
-    candidate.lx + fw > ZONE_SIZE ||
-    candidate.ly + fd > ZONE_SIZE
+    candidate.lx + fw > zone.width ||
+    candidate.ly + fd > zone.height
   ) {
     return {
       ok: false,
-      reason: `Furniture "${candidate.assetId}" (${fw}x${fd}) at (${candidate.lx},${candidate.ly}) overflows zone "${candidate.zoneId}" (${ZONE_SIZE}x${ZONE_SIZE})`,
+      reason: `Furniture "${candidate.assetId}" (${fw}x${fd}) at (${candidate.lx},${candidate.ly}) overflows zone "${candidate.zoneId}" (${zone.width}x${zone.height})`,
     };
   }
 
@@ -796,28 +511,36 @@ export function validateFurniturePlacement(
   if (candidateIsTabletop) {
     const surfaceTiles = new Set<string>();
     const tabletopOcc = new Set<string>();
-    for (const item of existingInZone) {
-      if (candidate.ignoreInstanceId && item.id === candidate.ignoreInstanceId) continue;
-      const itemCat = catalogById.get(item.assetId);
-      const [iw, id] = getRotatedFootprint(itemCat?.footprintTiles ?? [1, 1], item.direction);
-      const itemIsTop = isTabletopAsset(item.assetId, item.layer, itemCat);
+    const candWorldX = zone.originX + candidate.lx;
+    const candWorldY = zone.originY + candidate.ly;
+    const addHostOrTop = (wx: number, wy: number, assetId: string, layer: FurnitureInstance["layer"], dir: Direction) => {
+      const itemCat = catalogById.get(assetId);
+      const [iw, id] = getRotatedFootprint(itemCat?.footprintTiles ?? [1, 1], dir);
+      const itemIsTop = isTabletopAsset(assetId, layer, itemCat);
       if (itemIsTop) {
         for (let dy = 0; dy < id; dy++) {
-          for (let dx = 0; dx < iw; dx++) {
-            tabletopOcc.add(`${item.lx + dx},${item.ly + dy}`);
-          }
+          for (let dx = 0; dx < iw; dx++) tabletopOcc.add(`${wx + dx},${wy + dy}`);
         }
-      } else if (isSurfaceHostAsset(item.assetId, itemCat)) {
+      } else if (isSurfaceHostAsset(assetId, itemCat)) {
         for (let dy = 0; dy < id; dy++) {
-          for (let dx = 0; dx < iw; dx++) {
-            surfaceTiles.add(`${item.lx + dx},${item.ly + dy}`);
-          }
+          for (let dx = 0; dx < iw; dx++) surfaceTiles.add(`${wx + dx},${wy + dy}`);
         }
+      }
+    };
+    for (const item of existingInZone) {
+      if (candidate.ignoreInstanceId && item.id === candidate.ignoreInstanceId) continue;
+      addHostOrTop(zone.originX + item.lx, zone.originY + item.ly, item.assetId, item.layer, item.direction);
+    }
+    if (zone.kind === "floor") {
+      for (const wf of campus.worldFurniture) {
+        if (candidate.ignoreInstanceId && wf.id === candidate.ignoreInstanceId) continue;
+        if (wf.zoneId === zone.zoneId) continue;
+        addHostOrTop(wf.tx, wf.ty, wf.assetId, wf.layer, wf.direction);
       }
     }
     for (let dy = 0; dy < fd; dy++) {
       for (let dx = 0; dx < fw; dx++) {
-        const key = `${candidate.lx + dx},${candidate.ly + dy}`;
+        const key = `${candWorldX + dx},${candWorldY + dy}`;
         if (!surfaceTiles.has(key)) {
           return {
             ok: false,
@@ -835,27 +558,104 @@ export function validateFurniturePlacement(
     return { ok: true };
   }
 
+  // Edge-mounted glass dividers live on tile boundary lines: they never collide with floor furniture
+  // (lockers/desks sit 100% flush on both sides!), only with another edge-divider on the exact same edge.
+  if (isEdgeDividerAsset(candidate.assetId)) {
+    const candWorldX = zone.originX + candidate.lx;
+    const candWorldY = zone.originY + candidate.ly;
+    const candSegs = expandEdgeDividerSegments(candidate.assetId, candWorldX, candWorldY, candidate.direction);
+    for (const seg of candSegs) {
+      if (
+        seg.rx < -0.5 ||
+        seg.ry < -0.5 ||
+        seg.rx >= campus.widthTiles + 0.5 ||
+        seg.ry >= campus.depthTiles + 0.5
+      ) {
+        return {
+          ok: false,
+          reason: `Partition "${candidate.assetId}" at (${candWorldX},${candWorldY}) extends outside floor bounds`,
+        };
+      }
+    }
+    const existingEdgeKeys = new Set<string>();
+    for (const item of existingInZone) {
+      if (candidate.ignoreInstanceId && item.id === candidate.ignoreInstanceId) continue;
+      if (!isEdgeDividerAsset(item.assetId)) continue;
+      for (const seg of expandEdgeDividerSegments(
+        item.assetId,
+        zone.originX + item.lx,
+        zone.originY + item.ly,
+        item.direction,
+      )) {
+        existingEdgeKeys.add(seg.edgeKey);
+      }
+    }
+    if (zone.kind === "floor" || zone.kind === "hypersleep") {
+      for (const wf of campus.worldFurniture) {
+        if (candidate.ignoreInstanceId && wf.id === candidate.ignoreInstanceId) continue;
+        if (wf.zoneId === zone.zoneId || !isEdgeDividerAsset(wf.assetId)) continue;
+        for (const seg of expandEdgeDividerSegments(wf.assetId, wf.tx, wf.ty, wf.direction)) {
+          existingEdgeKeys.add(seg.edgeKey);
+        }
+      }
+    }
+    for (const seg of candSegs) {
+      if (existingEdgeKeys.has(seg.edgeKey)) {
+        return {
+          ok: false,
+          reason: `An edge partition already occupies edge ${seg.edgeKey}`,
+        };
+      }
+    }
+    return { ok: true };
+  }
+
+  const worldOcc = new Set<string>();
   const occ = new Set<string>();
   for (const item of existingInZone) {
     if (candidate.ignoreInstanceId && item.id === candidate.ignoreInstanceId) continue;
+    if (isEdgeDividerAsset(item.assetId)) continue;
     const itemCat = catalogById.get(item.assetId);
     if (isTabletopAsset(item.assetId, item.layer, itemCat)) continue;
     const [iw, id] = getRotatedFootprint(itemCat?.footprintTiles ?? [1, 1], item.direction);
     for (let dy = 0; dy < id; dy++) {
       for (let dx = 0; dx < iw; dx++) {
         occ.add(`${item.lx + dx},${item.ly + dy}`);
+        worldOcc.add(`${zone.originX + item.lx + dx},${zone.originY + item.ly + dy}`);
+      }
+    }
+  }
+  // On open floor & hypersleep zones, also prevent overlapping furniture belonging to neighbouring zones
+  if (zone.kind === "floor" || zone.kind === "hypersleep") {
+    for (const wf of campus.worldFurniture) {
+      if (candidate.ignoreInstanceId && wf.id === candidate.ignoreInstanceId) continue;
+      if (wf.zoneId === zone.zoneId) continue;
+      if (isEdgeDividerAsset(wf.assetId)) continue;
+      const itemCat = catalogById.get(wf.assetId);
+      if (isTabletopAsset(wf.assetId, wf.layer, itemCat)) continue;
+      const [iw, id] = wf.footprintTiles;
+      for (let dy = 0; dy < id; dy++) {
+        for (let dx = 0; dx < iw; dx++) {
+          worldOcc.add(`${wf.tx + dx},${wf.ty + dy}`);
+        }
       }
     }
   }
 
   for (let dy = 0; dy < fd; dy++) {
     for (let dx = 0; dx < fw; dx++) {
-      const key = `${candidate.lx + dx},${candidate.ly + dy}`;
-      if (occ.has(key)) {
+      const localKey = `${candidate.lx + dx},${candidate.ly + dy}`;
+      const worldKey = `${zone.originX + candidate.lx + dx},${zone.originY + candidate.ly + dy}`;
+      if (occ.has(localKey) || worldOcc.has(worldKey)) {
         return { ok: false, reason: `Tile (${candidate.lx + dx},${candidate.ly + dy}) in "${candidate.zoneId}" is already occupied` };
       }
-      occ.add(key);
+      occ.add(localKey);
     }
+  }
+
+  // Open sandbox areas have no walled 6x6 doorway constraints — decorate freely anywhere
+  if (zone.kind === "floor" || zone.kind === "boss" || zone.kind === "cowork" || zone.kind === "hypersleep") {
+    return { ok: true };
   }
 
   // Keep at least one entrance tile open at the front corridor side (ly = 5, lx ∈ {2, 3})

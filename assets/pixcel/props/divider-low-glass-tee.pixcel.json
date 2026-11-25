@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "divider-low-glass-tee",
+  "category": "architecture",
+  "layer": "object",
+  "outlineMode": "top-only",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-night",
+  "materials": {
+    "metal_dark": { "color": "#1d2432", "kind": "metal" },
+    "panel_base": { "color": "#283347", "kind": "matte" },
+    "glass_frost": { "color": "#2f5f87", "kind": "glass" },
+    "cap_dark": { "color": "#171c26", "kind": "matte" },
+    "trim_cyan": { "color": "#38bdf8", "kind": "emissive", "glowRadius": 1, "glowIntensity": 0.25 }
+  },
+  "ops": [
+    { "op": "box", "from": [0, 13, 0], "to": [31, 18, 2], "material": "metal_dark", "part": "base_x" },
+    { "op": "box", "from": [13, 13, 0], "to": [18, 31, 2], "material": "metal_dark", "part": "base_y" },
+    { "op": "box", "from": [2, 14, 3], "to": [13, 17, 18], "material": "panel_base", "part": "lower_xl" },
+    { "op": "box", "from": [18, 14, 3], "to": [29, 17, 18], "material": "panel_base", "part": "lower_xr" },
+    { "op": "box", "from": [14, 18, 3], "to": [17, 29, 18], "material": "panel_base", "part": "lower_yr" },
+    { "op": "box", "from": [3, 15, 19], "to": [12, 16, 19], "material": "trim_cyan", "part": "accent_xl" },
+    { "op": "box", "from": [19, 15, 19], "to": [28, 16, 19], "material": "trim_cyan", "part": "accent_xr" },
+    { "op": "box", "from": [15, 19, 19], "to": [16, 28, 19], "material": "trim_cyan", "part": "accent_yr" },
+    { "op": "box", "from": [0, 13, 20], "to": [31, 18, 21], "material": "metal_dark", "part": "mid_x" },
+    { "op": "box", "from": [13, 13, 20], "to": [18, 31, 21], "material": "metal_dark", "part": "mid_y" },
+    { "op": "box", "from": [2, 15, 22], "to": [13, 16, 53], "material": "glass_frost", "part": "glass_xl" },
+    { "op": "box", "from": [18, 15, 22], "to": [29, 16, 53], "material": "glass_frost", "part": "glass_xr" },
+    { "op": "box", "from": [15, 18, 22], "to": [16, 29, 53], "material": "glass_frost", "part": "glass_yr" },
+    { "op": "box", "from": [14, 14, 0], "to": [17, 17, 53], "material": "metal_dark", "part": "post_center" },
+    { "op": "box", "from": [0, 14, 0], "to": [1, 17, 53], "material": "metal_dark", "part": "post_xl" },
+    { "op": "box", "from": [30, 14, 0], "to": [31, 17, 53], "material": "metal_dark", "part": "post_xr" },
+    { "op": "box", "from": [14, 30, 0], "to": [17, 31, 53], "material": "metal_dark", "part": "post_yr" },
+    { "op": "box", "from": [0, 14, 54], "to": [31, 17, 56], "material": "cap_dark", "part": "cap_x" },
+    { "op": "box", "from": [14, 14, 54], "to": [17, 31, 56], "material": "cap_dark", "part": "cap_y" }
+  ]
+}

@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 import { buildWalkableGrid, findTilePath } from "../src/client/pathfinding.js";
 import { OfficeSimulation } from "../src/client/sim.js";
 import {
+  IN_ZONE_GAP,
   MODULE_PITCH_X,
   ZONE_GAP,
   ZONE_SIZE,
@@ -33,6 +34,7 @@ const catalog = new Map<string, CatalogEntry>([
   obj("plant-potted", [1, 1]),
   obj("server-rack", [1, 1]),
   obj("bookshelf-wood", [1, 1]),
+  obj("hypersleep-capsule", [1, 2]),
   obj("bay-sign-post", [1, 1]),
   obj("water-cooler", [1, 1]),
 ]);
@@ -65,72 +67,66 @@ describe("Corridors between rooms & shared co-working room", () => {
     campus.worldFurniture.some((f) => f.tx === x && f.ty === y && f.assetId.startsWith("room-"));
   const floorAt = (x: number, y: number) => campus.floors.find((f) => f.tx === x && f.ty === y)?.assetId;
 
-  it("packs areas flush: rooms share a boundary line, no tile is spent on the wall", () => {
-    expect(MODULE_PITCH_X).toBe(ZONE_SIZE + ZONE_GAP);
+  it("keeps the floor completely open with zero interior walls and clean walkable blank space", () => {
+    expect(IN_ZONE_GAP).toBe(0);
+    expect(MODULE_PITCH_X).toBe(ZONE_SIZE);
     expect(ZONE_GAP).toBe(0);
-    const boss = campus.zones.find((z) => z.kind === "boss")!;
+    expect(campus.wallSegments).toHaveLength(0);
+    expect(campus.wallDecor).toHaveLength(0);
+    expect(campus.zones.map((z) => z.kind)).toEqual(["boss", "cowork", "hypersleep", "floor"]);
+    expect(walkable(18, 18)).toBe(true);
+  });
+
+  it("spawns 1 hypersleep capsule per agent, supports moving/rotating pods, and auto-spawns for new agents", async () => {
+    const dir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-hypersleep-"));
+    const engine = new OfficeEngine({ store: new OfficeStore(dir), catalogById: catalog, now: () => 50_000 });
+    await engine.init();
+
+    expect(engine.getSnapshot().campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(1);
+
+    await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "s1", projectPath: "/work/a", eventType: "tool_start", toolName: "Edit" });
+    await engine.ingestEvent({ provider: "gemini", source: "antigravity", sessionId: "s2", projectPath: "/work/b", eventType: "tool_start", toolName: "Read" });
+    await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "s1", agentId: "sub-1", projectPath: "/work/a", eventType: "subagent_start" });
+    const snap = engine.getSnapshot();
+    const pods = snap.campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
+    expect(pods).toHaveLength(snap.state.employees.length);
+    expect(pods.length).toBe(3);
+
+    // Expand floor adds +6x+6 open space
+    const expanded = await engine.expandFloor({ addWidth: 6, addDepth: 6 });
+    expect(expanded.widthTiles).toBe(30);
+    expect(expanded.depthTiles).toBe(30);
+
+    // Moving & rotating a 1x2 hypersleep pod (even overlapping its previous footprint or onto open floor) must succeed
+    const pod0 = pods[0];
+    await engine.moveFurniture(pod0.id, { tx: pod0.tx, ty: pod0.ty + 1, direction: "se" });
+    await engine.moveFurniture(pod0.id, { tx: 4, ty: 12, direction: "sw" });
+    const afterMove = engine.getSnapshot();
+    const movedPod = afterMove.campus.worldFurniture.find((f) => f.id === pod0.id)!;
+    expect([movedPod.tx, movedPod.ty, movedPod.direction]).toEqual([4, 12, "sw"]);
+    expect(movedPod.footprintTiles).toEqual([2, 1]);
+
+    // Adding a new agent after customizing pods still spawns 1 new capsule without resetting the moved pod
+    await engine.ingestEvent({ provider: "gemini", source: "antigravity", sessionId: "s3", projectPath: "/work/c", eventType: "tool_start", toolName: "Edit" });
+    const afterNewAgent = engine.getSnapshot();
+    const podsAfter = afterNewAgent.campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
+    expect(podsAfter).toHaveLength(afterNewAgent.state.employees.length);
+    const stillMoved = podsAfter.find((f) => f.id === pod0.id)!;
+    expect([stillMoved.tx, stillMoved.ty, stillMoved.direction]).toEqual([4, 12, "sw"]);
+  });
+
+  it("connects Boss, Central Work Hub, and every Hypersleep Capsule via A* pathfinding", () => {
+    const bossTile: [number, number] = [2, 4];
     const cowork = campus.zones.find((z) => z.kind === "cowork")!;
-    // Boss Office floor ends at 5 and the next room's floor starts at 6: the wall stands on that line
-    expect(cowork.originX).toBe(boss.originX + ZONE_SIZE);
-    expect(wallAt(ZONE_SIZE, 0)).toBe(false); // no wall occupies a tile any more
-    expect(
-      campus.wallSegments.some((w) => w.blocks?.side === "w" && w.blocks.x === ZONE_SIZE && w.blocks.y === 0),
-    ).toBe(true);
-    // Nothing inside the plan is walkway: every tile is some room's floor
-    for (let ty = 0; ty < ZONE_SIZE; ty++) {
-      expect(floorAt(ZONE_SIZE, ty)).not.toBe("floor-corridor-tile");
-    }
-  });
+    const pods = campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
+    expect(pods).toHaveLength(5);
 
-  it("walls every lot (with a 1-tile doorway); only co-working is open plan", () => {
-    // The Boss Office's right-hand line is walled except the doorway at offset 2
-    const closedOffsets = [0, 1, 2, 3, 4, 5].filter((o) =>
-      campus.wallSegments.some((w) => w.blocks?.side === "w" && w.blocks.x === ZONE_SIZE && w.blocks.y === o),
-    );
-    expect(closedOffsets).toEqual([0, 1, 3, 4, 5]);
-    expect(campus.wallSegments.some((w) => w.assetId === "room-wall-glass")).toBe(true);
-    // Co-working is open plan: no wall closes a step between two of its own tiles
-    const cowork = campus.zones.find((z) => z.kind === "cowork")!;
-    const insideCowork = (x: number, y: number) =>
-      x > cowork.originX &&
-      x < cowork.originX + ZONE_SIZE &&
-      y >= cowork.originY &&
-      y < cowork.originY + ZONE_SIZE;
-    expect(campus.wallSegments.some((w) => w.blocks && insideCowork(w.blocks.x, w.blocks.y))).toBe(false);
-  });
+    const pathToHub = findTilePath(grid, bossTile, [cowork.originX + 2, cowork.originY + 1]);
+    expect(pathToHub.at(-1)).toEqual([cowork.originX + 2, cowork.originY + 1]);
 
-  it("packs projects of one department tight: only a low divider line between them", () => {
-    const bays = campus.zones.filter((z) => z.kind === "bay");
-    const a = bays.find((z) => bays.some((b) => b.col === z.col + 1 && b.row === z.row))!;
-    const b = bays.find((z) => z.col === a.col + 1 && z.row === a.row)!;
-    expect(b.originX - (a.originX + ZONE_SIZE)).toBe(0); // the neighbouring project starts immediately
-    const seamX = a.originX + ZONE_SIZE;
-    expect(floorAt(seamX, a.originY)).not.toBe("floor-corridor-tile");
-    // A low divider stands on the shared line and blocks nothing: one lot stays open plan inside
-    expect(
-      campus.wallSegments.some(
-        (w) =>
-          w.assetId.startsWith("divider-") &&
-          w.blocks === null &&
-          Math.abs(w.rx - (seamX - 0.5)) < 1e-6 &&
-          w.ry === a.originY,
-      ),
-    ).toBe(true);
-    expect(walkable(seamX, a.originY + 2)).toBe(true); // pass-through between the two projects
-  });
-
-  it("connects every room to every other room through doorways and corridors", () => {
-    // First walkable tile of the room's central cross (some rooms keep a desk on the exact centre)
-    const centre = (z: (typeof campus.zones)[number]): [number, number] => {
-      for (const [lx, ly] of [[2, 2], [3, 3], [2, 3], [3, 2], [2, 5], [3, 5], [2, 0], [3, 0]]) {
-        if (walkable(z.originX + lx, z.originY + ly)) return [z.originX + lx, z.originY + ly];
-      }
-      throw new Error(`no walkable centre in ${z.zoneId}`);
-    };
-    const boss = campus.zones.find((z) => z.kind === "boss")!;
-    for (const z of campus.zones) {
-      const pathTiles = findTilePath(grid, centre(boss), centre(z));
-      expect(pathTiles.at(-1), `unreachable ${z.zoneId}`).toEqual(centre(z));
+    for (const pod of pods) {
+      const p = findTilePath(grid, bossTile, [pod.tx, pod.ty]);
+      expect(p.at(-1), `unreachable pod ${pod.id}`).toEqual([pod.tx, pod.ty]);
     }
   });
 

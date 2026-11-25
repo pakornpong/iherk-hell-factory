@@ -5,7 +5,6 @@ import { OfficeEngine } from "../server/office-engine.js";
 import { PixcelBridge } from "../server/pixcel-bridge.js";
 import { OfficeStore } from "../server/store.js";
 import {
-  DepartmentIdSchema,
   DirectionSchema,
   RenderLayerSchema,
   TilePermissionSchema,
@@ -95,11 +94,11 @@ export function createArchitectMcpServer(opts: ArchitectMcpOptions): McpServer {
 
   server.tool(
     "place_furniture",
-    "Place a furniture item inside a bay or common wing using (zoneId, lx, ly) or world (tx, ty). Validates collisions and keeps walkways open.",
+    "Place a furniture item on the open floor ('floor:0'), Boss area ('boss:0'), or Central Hub ('cowork:0') using (zoneId, lx, ly) or world (tx, ty).",
     {
-      zoneId: z.string().optional().describe("Zone ID like 'bay:bay-0' or 'common:0'"),
-      lx: z.number().int().min(0).max(5).optional(),
-      ly: z.number().int().min(0).max(5).optional(),
+      zoneId: z.string().optional().describe("Zone ID like 'floor:0', 'boss:0', or 'cowork:0'"),
+      lx: z.number().int().min(0).max(127).optional(),
+      ly: z.number().int().min(0).max(127).optional(),
       tx: z.number().int().optional(),
       ty: z.number().int().optional(),
       assetId: z.string().min(1),
@@ -135,8 +134,8 @@ export function createArchitectMcpServer(opts: ArchitectMcpOptions): McpServer {
     {
       instanceId: z.string().min(1),
       zoneId: z.string().optional(),
-      lx: z.number().int().min(0).max(5).optional(),
-      ly: z.number().int().min(0).max(5).optional(),
+      lx: z.number().int().min(0).max(127).optional(),
+      ly: z.number().int().min(0).max(127).optional(),
       tx: z.number().int().optional(),
       ty: z.number().int().optional(),
       direction: DirectionSchema.optional(),
@@ -251,11 +250,10 @@ export function createArchitectMcpServer(opts: ArchitectMcpOptions): McpServer {
 
   server.tool(
     "manage_bay",
-    "Rename a project bay, assign its AI Org department (iherk/dev/erp/accounting/general), change its accent color, or archive/unarchive it.",
+    "Rename a project bay, change its accent color, or archive/unarchive it.",
     {
       bayId: z.string().min(1),
       displayName: z.string().min(1).max(128).optional(),
-      department: DepartmentIdSchema.optional(),
       accentColor: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
       archived: z.boolean().optional(),
     },
@@ -304,6 +302,29 @@ export function createArchitectMcpServer(opts: ArchitectMcpOptions): McpServer {
         const data = remote.reached
           ? remote.data
           : { ok: true, overrides: await withOfflineEngine((e) => e.setTilePermissionOverride(tx, ty, permission)) };
+        return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+      } catch (err) {
+        return {
+          isError: true,
+          content: [{ type: "text", text: err instanceof Error ? err.message : String(err) }],
+        };
+      }
+    },
+  );
+
+  server.tool(
+    "expand_floor",
+    "Expand the open customizable floor by adding width and/or depth tiles (defaults to +6x+6).",
+    {
+      addWidth: z.number().int().min(0).max(24).optional(),
+      addDepth: z.number().int().min(0).max(24).optional(),
+    },
+    async (args) => {
+      try {
+        const remote = await callServer<unknown>("POST", "/api/architect/floor/expand", args);
+        const data = remote.reached
+          ? remote.data
+          : { ok: true, ...(await withOfflineEngine((e) => e.expandFloor(args))) };
         return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
       } catch (err) {
         return {

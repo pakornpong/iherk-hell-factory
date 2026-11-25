@@ -1,16 +1,15 @@
 import type { RenderLayer, TilePermission } from "../shared/layers.js";
 import {
-  classifyDepartmentFromPath,
   AMENITY_THEME_META,
-  DEPARTMENT_META,
-  DEPARTMENT_ORDER,
+  CAMPUS_ZONE_GROUP_META,
   getOrgRoleMeta,
+  type CampusZoneGroup,
   type CatalogEntry,
   type ComputedCampus,
-  type DepartmentId,
+  type CustomZoneRecord,
+  type CustomZoneRole,
   type EmployeeRecord,
   type OfficeSnapshotPayload,
-  type ProjectBayRecord,
   type ThemeMode,
 } from "../shared/types.js";
 import type { AtlasManager } from "./atlas-loader.js";
@@ -26,8 +25,24 @@ export interface LayerEditorState {
   selectedFurnitureId: string | null;
 }
 
+export interface ZoneEditorState {
+  active: boolean;
+  startTile: [number, number] | null;
+  draftName: string;
+  draftIcon: string;
+  draftColor: string;
+  draftRole: CustomZoneRole;
+}
+
 export interface HudCallbacks {
   onFocusBay(bayId: string): void;
+  onFocusZoneGroup?(group: CampusZoneGroup): void;
+  onFocusCustomZone?(zone: CustomZoneRecord): void;
+  onDeleteCustomZone?(zoneId: string): void;
+  onResizeFloor?(delta: { deltaWidth?: number; deltaDepth?: number }): void;
+  onToggleZonePanel?(open?: boolean): void;
+  onZoneDraftChanged?(): void;
+  onFocusEmployee?(employeeId: string): void;
   onToggleArchive(bayId: string, archived: boolean): void;
   onSetTheme(theme: ThemeMode): void;
   onToggleDemo(): void;
@@ -63,12 +78,55 @@ export function nextThemeMode(current: ThemeMode): ThemeMode {
   return THEME_CYCLE[(idx + 1) % THEME_CYCLE.length];
 }
 
+export function isEmployeeActive(emp: EmployeeRecord): boolean {
+  return emp.visualState !== "resting";
+}
+
+const ACTIVE_STATE_PRIORITY: Record<string, number> = {
+  reporting: 0,
+  working: 1,
+  teamwork: 2,
+  assigning: 3,
+  meeting: 4,
+  resting: 5,
+};
+
+export function sortActiveAgents(employees: readonly EmployeeRecord[]): EmployeeRecord[] {
+  return [...employees].sort((a, b) => {
+    const aErr = a.toolCategory === "error" ? -1 : 0;
+    const bErr = b.toolCategory === "error" ? -1 : 0;
+    if (aErr !== bErr) return aErr - bErr;
+    const pa = ACTIVE_STATE_PRIORITY[a.visualState] ?? 9;
+    const pb = ACTIVE_STATE_PRIORITY[b.visualState] ?? 9;
+    if (pa !== pb) return pa - pb;
+    return b.lastUpdatedAt - a.lastUpdatedAt || a.displayName.localeCompare(b.displayName);
+  });
+}
+
+function agentStatusColor(emp: EmployeeRecord): string {
+  if (emp.toolCategory === "error") return "#ef4444";
+  switch (emp.visualState) {
+    case "working":
+    case "teamwork":
+      return "#22c55e";
+    case "assigning":
+      return "#38bdf8";
+    case "meeting":
+      return "#a855f7";
+    case "reporting":
+      return "#f59e0b";
+    default:
+      return "#64748b";
+  }
+}
+
 export class OfficeHud {
   private baySearch = "";
-  private deptFilter: DepartmentId | "all" = "all";
   private catalogSearch = "";
   private catalogCategory = "all";
   private showArchived = false;
+  private activeAgentsTab: "working" | "all" = "working";
+  private activeAgentsCollapsed = false;
   private minimapCanvas: HTMLCanvasElement;
   private minimapCtx: CanvasRenderingContext2D;
   private lastCampus: ComputedCampus | null = null;
@@ -108,8 +166,39 @@ export class OfficeHud {
       this.decorate.toggle();
       if (this.decorate.active) {
         this.cb.onLayerOverlayChange?.("off");
+        this.cb.onToggleZonePanel?.(false);
       }
       this.cb.onDecorateChanged();
+    });
+
+    document.getElementById("btn-shrink-floor")?.addEventListener("click", () => {
+      this.cb.onResizeFloor?.({ deltaWidth: -6, deltaDepth: -6 });
+    });
+    document.getElementById("btn-expand-floor")?.addEventListener("click", () => {
+      this.cb.onResizeFloor?.({ deltaWidth: 6, deltaDepth: 6 });
+    });
+
+    document.getElementById("btn-zones")?.addEventListener("click", () => {
+      this.cb.onToggleZonePanel?.();
+    });
+
+    document.getElementById("btn-floor-w-minus")?.addEventListener("click", () => {
+      this.cb.onResizeFloor?.({ deltaWidth: -2, deltaDepth: 0 });
+    });
+    document.getElementById("btn-floor-w-plus")?.addEventListener("click", () => {
+      this.cb.onResizeFloor?.({ deltaWidth: 2, deltaDepth: 0 });
+    });
+    document.getElementById("btn-floor-d-minus")?.addEventListener("click", () => {
+      this.cb.onResizeFloor?.({ deltaWidth: 0, deltaDepth: -2 });
+    });
+    document.getElementById("btn-floor-d-plus")?.addEventListener("click", () => {
+      this.cb.onResizeFloor?.({ deltaWidth: 0, deltaDepth: 2 });
+    });
+    document.getElementById("btn-floor-shrink6")?.addEventListener("click", () => {
+      this.cb.onResizeFloor?.({ deltaWidth: -6, deltaDepth: -6 });
+    });
+    document.getElementById("btn-floor-grow6")?.addEventListener("click", () => {
+      this.cb.onResizeFloor?.({ deltaWidth: 6, deltaDepth: 6 });
     });
 
     const btnLayers = document.getElementById("btn-layers") as HTMLButtonElement | null;
@@ -120,6 +209,7 @@ export class OfficeHud {
         this.cb.onLayerOverlayChange?.("off");
       } else {
         this.decorate.setActive(false);
+        this.cb.onToggleZonePanel?.(false);
         this.cb.onLayerOverlayChange?.("permissions");
       }
       this.cb.onDecorateChanged();
@@ -188,13 +278,28 @@ export class OfficeHud {
       void this.decorate.redo().then(() => this.cb.onDecorateChanged());
     });
 
-    const deptButtons = document.querySelectorAll<HTMLButtonElement>(".dept-filter-btn");
-    deptButtons.forEach((btn) => {
+    document.querySelectorAll<HTMLButtonElement>(".floor-brush-btn[data-size]").forEach((btn) => {
       btn.addEventListener("click", () => {
-        const val = (btn.dataset.dept ?? "all") as DepartmentId | "all";
-        this.deptFilter = val;
-        deptButtons.forEach((b) => b.classList.toggle("active", b === btn));
-        this.cb.onDecorateChanged();
+        const size = Number(btn.dataset.size);
+        if (size === 1 || size === 2 || size === 3) {
+          this.decorate.setFloorBrushSize(size);
+          this.cb.onDecorateChanged();
+        }
+      });
+    });
+
+    document.getElementById("btn-floor-reset")?.addEventListener("click", () => {
+      this.decorate.toggleFloorResetMode();
+      this.cb.onDecorateChanged();
+    });
+
+    const zoneButtons = document.querySelectorAll<HTMLButtonElement>(".zone-jump-btn");
+    zoneButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const val = btn.dataset.zone as CampusZoneGroup | undefined;
+        if (val === "hq" || val === "workspace" || val === "amenity" || val === "hypersleep" || val === "floor") {
+          this.cb.onFocusZoneGroup?.(val);
+        }
       });
     });
 
@@ -216,6 +321,20 @@ export class OfficeHud {
 
     document.getElementById("inspector-close")?.addEventListener("click", () => {
       this.cb.onSelectEmployee(null);
+    });
+
+    document.getElementById("btn-toggle-active-panel")?.addEventListener("click", () => {
+      this.activeAgentsCollapsed = !this.activeAgentsCollapsed;
+      this.cb.onDecorateChanged();
+    });
+
+    const activeTabBtns = document.querySelectorAll<HTMLButtonElement>(".active-tab-btn");
+    activeTabBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const tab = btn.dataset.tab === "all" ? "all" : "working";
+        this.activeAgentsTab = tab;
+        this.cb.onDecorateChanged();
+      });
     });
 
     this.minimapCanvas.addEventListener("click", (ev) => {
@@ -244,6 +363,7 @@ export class OfficeHud {
     currentZoom: number,
     layerState?: LayerEditorState,
     atlas?: AtlasManager,
+    zoneEditor?: ZoneEditorState,
   ): void {
     this.lastCampus = snapshot.campus;
     const { state, demoMode } = snapshot;
@@ -255,7 +375,7 @@ export class OfficeHud {
     ).length;
     const statsEl = document.getElementById("office-stats");
     if (statsEl) {
-      statsEl.textContent = `${activeBays.length} Bays · ${state.employees.length} Staff (${workingCount} active)`;
+      statsEl.textContent = `${snapshot.campus.widthTiles}×${snapshot.campus.depthTiles} · ${activeBays.length} Projects · ${state.employees.length} Staff (${workingCount} active)`;
     }
 
     // Top buttons
@@ -324,7 +444,81 @@ export class OfficeHud {
     if (hintEl) {
       hintEl.textContent = this.decorate.movingItem
         ? `Moving ${this.decorate.movingItem.item.assetId} · R: rotate · Esc: cancel`
-        : "R: rotate · Esc: exit";
+        : this.decorate.isFloorPainting()
+          ? this.decorate.floorResetMode
+            ? `Reset Floor (${this.decorate.floorBrushSize}×${this.decorate.floorBrushSize}) · Esc: exit`
+            : `Paint Floor (${this.decorate.floorBrushSize}×${this.decorate.floorBrushSize}) · Esc: exit`
+          : "R: rotate · Esc: exit";
+    }
+    const floorBrushBar = document.getElementById("floor-brush-bar");
+    if (floorBrushBar) {
+      const showFloorBar = this.decorate.isFloorPainting() || this.catalogCategory === "floor";
+      floorBrushBar.classList.toggle("hidden", !showFloorBar);
+      floorBrushBar.querySelectorAll<HTMLButtonElement>(".floor-brush-btn[data-size]").forEach((btn) => {
+        btn.classList.toggle("active", Number(btn.dataset.size) === this.decorate.floorBrushSize);
+      });
+      document.getElementById("btn-floor-reset")?.classList.toggle("active", this.decorate.floorResetMode);
+    }
+
+    // Zones & Floor Panel
+    const zoneOpen = Boolean(zoneEditor?.active);
+    document.getElementById("btn-zones")?.classList.toggle("active", zoneOpen);
+    const zonePanel = document.getElementById("zone-panel");
+    if (zonePanel) {
+      zonePanel.classList.toggle("hidden", !zoneOpen);
+      const sizeEl = document.getElementById("floor-size-readout");
+      if (sizeEl) sizeEl.textContent = `${snapshot.campus.widthTiles} × ${snapshot.campus.depthTiles}`;
+      const statusEl = document.getElementById("zone-draw-status");
+      if (statusEl && zoneEditor) {
+        statusEl.textContent = zoneEditor.startTile
+          ? `2. เลือกมุมตรงข้ามเพื่อสร้างโซน (เริ่มที่ ${zoneEditor.startTile[0]},${zoneEditor.startTile[1]} · Esc ยกเลิก)`
+          : "1. คลิกมุมแรกบนพื้นเพื่อเริ่มลากกรอบโซน";
+      }
+      const czs = state.customZones ?? [];
+      const countEl = document.getElementById("custom-zone-count");
+      if (countEl) countEl.textContent = String(czs.length);
+      const listEl = document.getElementById("custom-zone-list");
+      if (listEl) {
+        listEl.innerHTML = "";
+        if (czs.length === 0) {
+          listEl.innerHTML = '<div class="active-empty">ยังไม่มีโซนที่กำหนดเอง</div>';
+        } else {
+          for (const cz of czs) {
+            const row = document.createElement("div");
+            row.className = "custom-zone-row";
+            row.innerHTML = `
+              <div class="custom-zone-main">
+                <span class="bay-dot" style="background:${cz.color}"></span>
+                <span class="custom-zone-name">${escapeHtml(cz.icon)} ${escapeHtml(cz.name)}</span>
+                <span class="custom-zone-meta">${cz.width}×${cz.height}${cz.role === "work" ? " · WORK" : ""}</span>
+              </div>
+              <button class="custom-zone-del" title="Delete zone">×</button>
+            `;
+            row.querySelector(".custom-zone-main")?.addEventListener("click", () => {
+              this.cb.onFocusCustomZone?.(cz);
+            });
+            row.querySelector(".custom-zone-del")?.addEventListener("click", (e) => {
+              e.stopPropagation();
+              this.cb.onDeleteCustomZone?.(cz.id);
+            });
+            listEl.appendChild(row);
+          }
+        }
+      }
+    }
+
+    // Custom Zone quick-jump chips in left sidebar
+    const customJumpEl = document.getElementById("custom-zone-jumps");
+    if (customJumpEl) {
+      customJumpEl.innerHTML = "";
+      for (const cz of state.customZones ?? []) {
+        const chip = document.createElement("button");
+        chip.className = "zone-jump-btn";
+        chip.style.borderColor = cz.color;
+        chip.textContent = `${cz.icon} ${cz.name}`;
+        chip.addEventListener("click", () => this.cb.onFocusCustomZone?.(cz));
+        customJumpEl.appendChild(chip);
+      }
     }
     document.getElementById("btn-erase")!.classList.toggle("active", this.decorate.tool === "erase");
     (document.getElementById("btn-undo") as HTMLButtonElement).disabled = !this.decorate.canUndo();
@@ -334,82 +528,63 @@ export class OfficeHud {
       document.getElementById(`zoom-${z}`)?.classList.toggle("active", z === currentZoom);
     }
 
-    // Bay Quick-Jump list (grouped by AI Org Department)
+    // Bay Quick-Jump list (flat Workspace list — no departments)
     const bayListEl = document.getElementById("bay-list")!;
     bayListEl.innerHTML = "";
     const filteredBays = state.bays.filter((b) => {
       if (b.archived !== this.showArchived) return false;
-      const dept = b.department ?? classifyDepartmentFromPath(b.projectPath);
-      if (this.deptFilter !== "all" && dept !== this.deptFilter) return false;
       if (!this.baySearch) return true;
       return (
         b.displayName.toLowerCase().includes(this.baySearch) ||
-        dept.includes(this.baySearch) ||
         (b.projectPath?.toLowerCase().includes(this.baySearch) ?? false)
       );
     });
 
-    const grouped = new Map<DepartmentId, ProjectBayRecord[]>();
-    for (const deptId of DEPARTMENT_ORDER) grouped.set(deptId, []);
     for (const bay of filteredBays) {
-      const dept = bay.department ?? classifyDepartmentFromPath(bay.projectPath);
-      grouped.get(dept)?.push(bay);
+      const team = state.employees.filter((e) => e.bayId === bay.id);
+      const hasClaude = team.some((e) => e.provider === "claude");
+      const hasGemini = team.some((e) => e.provider === "gemini");
+      const row = document.createElement("div");
+      row.className = "bay-item";
+      row.innerHTML = `
+        <div class="bay-item-main">
+          <span class="bay-dot" style="background:${bay.accentColor}"></span>
+          <span class="bay-name">${escapeHtml(bay.displayName)}</span>
+        </div>
+        <div class="bay-item-meta">
+          ${hasClaude ? '<span class="badge claude">C</span>' : ""}
+          ${hasGemini ? '<span class="badge gemini">G</span>' : ""}
+          <span class="bay-count">${team.length}</span>
+          <button class="bay-arch-btn" title="${bay.archived ? "Restore" : "Archive"}">${bay.archived ? "↩" : "×"}</button>
+        </div>
+      `;
+      row.querySelector(".bay-item-main")?.addEventListener("click", () => {
+        if (!bay.archived) this.cb.onFocusBay(bay.id);
+      });
+      row.querySelector(".bay-arch-btn")?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.cb.onToggleArchive(bay.id, !bay.archived);
+      });
+      bayListEl.appendChild(row);
     }
 
-    for (const deptId of DEPARTMENT_ORDER) {
-      const groupBays = grouped.get(deptId) ?? [];
-      if (groupBays.length === 0) continue;
-      const meta = DEPARTMENT_META[deptId];
-
-      const header = document.createElement("div");
-      header.className = "dept-group-header";
-      header.style.color = meta.color;
-      header.innerHTML = `<span>${meta.icon} ${meta.label}</span><span>${groupBays.length}</span>`;
-      bayListEl.appendChild(header);
-
-      for (const bay of groupBays) {
-        const team = state.employees.filter((e) => e.bayId === bay.id);
-        const hasClaude = team.some((e) => e.provider === "claude");
-        const hasGemini = team.some((e) => e.provider === "gemini");
-        const row = document.createElement("div");
-        row.className = "bay-item";
-        row.innerHTML = `
-          <div class="bay-item-main">
-            <span class="bay-dot" style="background:${meta.color}"></span>
-            <span class="bay-name">${escapeHtml(bay.displayName)}</span>
-          </div>
-          <div class="bay-item-meta">
-            <span class="dept-badge" style="color:${meta.color}">${meta.shortLabel}</span>
-            ${hasClaude ? '<span class="badge claude">C</span>' : ""}
-            ${hasGemini ? '<span class="badge gemini">G</span>' : ""}
-            <span class="bay-count">${team.length}</span>
-            <button class="bay-arch-btn" title="${bay.archived ? "Restore" : "Archive"}">${bay.archived ? "↩" : "×"}</button>
-          </div>
-        `;
-        row.querySelector(".bay-item-main")?.addEventListener("click", () => {
-          if (!bay.archived) this.cb.onFocusBay(bay.id);
-        });
-        row.querySelector(".bay-arch-btn")?.addEventListener("click", (e) => {
-          e.stopPropagation();
-          this.cb.onToggleArchive(bay.id, !bay.archived);
-        });
-        bayListEl.appendChild(row);
-      }
-    }
-
-    // Furniture Catalog (when Decorate Mode is open)
+    // Furniture & Floor Catalog (when Decorate Mode is open)
     if (this.decorate.active) {
-      const placeables = catalog.filter(
-        (c) =>
-          (c.layer === "object" || c.layer === "tabletop") &&
-          c.source !== "character" &&
-          !c.id.endsWith("-back") &&
-          !c.id.startsWith("room-wall-") &&
-          !c.id.startsWith("room-junction-"),
-      );
+      const placeables = catalog
+        .filter(
+          (c) =>
+            (c.layer === "object" || c.layer === "tabletop" || c.layer === "floor") &&
+            c.source !== "character" &&
+            !c.id.endsWith("-back") &&
+            !c.id.endsWith("-front") &&
+            !c.id.startsWith("room-wall-") &&
+            !c.id.startsWith("room-junction-"),
+        )
+        .map((c) => (c.layer === "floor" ? { ...c, category: "floor" } : c));
 
       const categoryLabels: Record<string, string> = {
         all: "All",
+        floor: "🎨 Floor",
         tabletop: "💡 Tabletop",
         lab: "🧪 Lab",
         science: "🔬 Sci",
@@ -429,6 +604,7 @@ export class OfficeHud {
       };
       const categoryOrder = [
         "all",
+        "floor",
         "tabletop",
         "lab",
         "science",
@@ -486,7 +662,7 @@ export class OfficeHud {
             ${thumbHtml}
             <span class="cat-item-name">${escapeHtml(item.id)}</span>
           </span>
-          <span class="cat-tag">${item.source === "custom" ? "✨ Gemini" : item.layer === "tabletop" ? "💡 Top" : `${item.footprintTiles[0]}×${item.footprintTiles[1]}`}</span>
+          <span class="cat-tag">${item.source === "custom" ? "✨ Gemini" : item.layer === "floor" ? "🎨 Floor" : item.layer === "tabletop" ? "💡 Top" : `${item.footprintTiles[0]}×${item.footprintTiles[1]}`}</span>
         `;
         btn.addEventListener("click", () => {
           this.decorate.selectAsset(item.id);
@@ -495,6 +671,9 @@ export class OfficeHud {
         catEl.appendChild(btn);
       }
     }
+
+    // Top-right Active Agents panel (auto-hides when Decorate, Layer, or Zone panel occupies the top-right slot)
+    this.renderActiveAgentsPanel(snapshot, selectedEmployeeId, this.decorate.active || layerOpen || zoneOpen);
 
     // Employee Inspector Card
     const inspEl = document.getElementById("employee-inspector")!;
@@ -507,10 +686,111 @@ export class OfficeHud {
     }
   }
 
+  private renderActiveAgentsPanel(
+    snapshot: OfficeSnapshotPayload,
+    selectedEmployeeId: string | null,
+    hideForRightDrawer: boolean,
+  ): void {
+    const panel = document.getElementById("active-agents-panel");
+    if (!panel) return;
+    panel.classList.toggle("hidden", hideForRightDrawer);
+    if (hideForRightDrawer) return;
+
+    const { state } = snapshot;
+    const bayById = new Map(state.bays.map((b) => [b.id, b]));
+    const activeBayIds = new Set(state.bays.filter((b) => !b.archived).map((b) => b.id));
+    const visibleEmployees = state.employees.filter((e) => activeBayIds.has(e.bayId));
+    const workingEmployees = visibleEmployees.filter(isEmployeeActive);
+    const workingCount = workingEmployees.length;
+
+    panel.classList.toggle("collapsed", this.activeAgentsCollapsed);
+    document.getElementById("active-agents-body")?.classList.toggle("hidden", this.activeAgentsCollapsed);
+    const toggleBtn = document.getElementById("btn-toggle-active-panel");
+    if (toggleBtn) toggleBtn.textContent = this.activeAgentsCollapsed ? "+" : "−";
+
+    const dotEl = document.getElementById("active-agents-dot");
+    dotEl?.classList.toggle("live", workingCount > 0);
+    const countEl = document.getElementById("active-agents-count");
+    if (countEl) {
+      countEl.textContent = String(workingCount);
+      countEl.classList.toggle("live", workingCount > 0);
+    }
+
+    const tabWorking = document.getElementById("active-tab-working");
+    if (tabWorking) {
+      tabWorking.textContent = `⚡ Active (${workingCount})`;
+      tabWorking.classList.toggle("active", this.activeAgentsTab === "working");
+    }
+    const tabAll = document.getElementById("active-tab-all");
+    if (tabAll) {
+      tabAll.textContent = `👥 All (${visibleEmployees.length})`;
+      tabAll.classList.toggle("active", this.activeAgentsTab === "all");
+    }
+
+    if (this.activeAgentsCollapsed) return;
+
+    const listEl = document.getElementById("active-agents-list");
+    if (!listEl) return;
+    listEl.innerHTML = "";
+
+    const shown = sortActiveAgents(this.activeAgentsTab === "working" ? workingEmployees : visibleEmployees);
+    if (shown.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "active-empty";
+      empty.textContent =
+        this.activeAgentsTab === "working"
+          ? "ไม่มีเอเจนต์กำลังทำงานอยู่ (พักผ่อน ☕)"
+          : "ยังไม่มีเอเจนต์ในออฟฟิศ";
+      listEl.appendChild(empty);
+      return;
+    }
+
+    for (const emp of shown) {
+      const bay = bayById.get(emp.bayId);
+      const roleMeta = getOrgRoleMeta(emp.role);
+      const statusColor = agentStatusColor(emp);
+      const isErr = emp.toolCategory === "error";
+      const detailText = emp.detail || (emp.toolName ? `Running ${emp.toolName}` : "");
+
+      const item = document.createElement("div");
+      item.className = `active-agent-item ${emp.visualState === "resting" ? "resting" : ""} ${
+        selectedEmployeeId === emp.id ? "selected" : ""
+      }`;
+      item.style.borderLeftColor = statusColor;
+      item.innerHTML = `
+        <div class="active-agent-top">
+          <div class="active-agent-name-wrap">
+            <span class="agent-status-dot" style="background:${statusColor}"></span>
+            <span class="active-agent-name">${escapeHtml(emp.displayName)}</span>
+          </div>
+          <div class="active-agent-badges">
+            ${roleMeta ? `<span class="role-badge" style="color:${roleMeta.color}">${roleMeta.shortLabel}</span>` : ""}
+            <span class="badge ${emp.provider ?? "starter"}">${emp.provider === "claude" ? "C" : emp.provider === "gemini" ? "G" : "S"}</span>
+          </div>
+        </div>
+        <div class="active-agent-meta">
+          <span class="active-agent-project">
+            <span class="bay-dot" style="background:${bay?.accentColor ?? "#64748b"}"></span>
+            ${escapeHtml(bay?.displayName ?? emp.bayId)}
+          </span>
+          <span class="active-agent-state">${STATE_LABELS[emp.visualState] ?? emp.visualState}</span>
+        </div>
+        ${detailText ? `<div class="active-agent-detail ${isErr ? "error" : ""}">${escapeHtml(detailText)}</div>` : ""}
+      `;
+      item.addEventListener("click", () => {
+        if (this.cb.onFocusEmployee) {
+          this.cb.onFocusEmployee(emp.id);
+        } else {
+          this.cb.onSelectEmployee(emp.id);
+        }
+      });
+      listEl.appendChild(item);
+    }
+  }
+
   private renderInspector(emp: EmployeeRecord, snapshot: OfficeSnapshotPayload): void {
     const bay = snapshot.state.bays.find((b) => b.id === emp.bayId);
-    const deptId = bay ? (bay.department ?? classifyDepartmentFromPath(bay.projectPath)) : "general";
-    const deptMeta = DEPARTMENT_META[deptId];
+    const zoneMeta = emp.isEphemeral ? CAMPUS_ZONE_GROUP_META.hq : CAMPUS_ZONE_GROUP_META.workspace;
     const roleMeta = getOrgRoleMeta(emp.role);
     const logs = snapshot.state.activityLog.filter((l) => l.employeeId === emp.id).slice(0, 6);
     const body = document.getElementById("inspector-body")!;
@@ -518,7 +798,6 @@ export class OfficeHud {
       <div class="insp-header">
         <strong>${escapeHtml(emp.displayName)}</strong>
         <span class="badge ${emp.provider ?? "starter"}">${(emp.provider ?? "starter").toUpperCase()}</span>
-        <span class="dept-badge" style="color:${deptMeta.color}">${deptMeta.icon} ${deptMeta.shortLabel}</span>
       </div>
       <div class="insp-row">
         <span>Role:</span>
@@ -528,7 +807,7 @@ export class OfficeHud {
             : escapeHtml(emp.role)
         }</span>
       </div>
-      <div class="insp-row"><span>Department:</span><span style="color:${deptMeta.color}">${deptMeta.icon} ${deptMeta.label}</span></div>
+      <div class="insp-row"><span>Zone:</span><span style="color:${zoneMeta.color}">${zoneMeta.icon} ${emp.isEphemeral ? "CO-WORKING (HQ)" : zoneMeta.label}</span></div>
       <div class="insp-row"><span>State:</span><span>${STATE_LABELS[emp.visualState] ?? emp.visualState}</span></div>
       <div class="insp-row"><span>Project:</span><span>${escapeHtml(bay?.displayName ?? "-")}</span></div>
       <div class="insp-path">${escapeHtml(bay?.projectPath ?? "Unclaimed Starter Studio")}</div>
@@ -548,6 +827,7 @@ export class OfficeHud {
     const ctx = this.minimapCtx;
     const w = this.minimapCanvas.width;
     const h = this.minimapCanvas.height;
+    // Walkway / corridor background shows clearly between functional zones
     ctx.fillStyle = "#0b1120";
     ctx.fillRect(0, 0, w, h);
 
@@ -555,18 +835,26 @@ export class OfficeHud {
     const scaleY = h / Math.max(1, campus.depthTiles);
 
     for (const z of campus.zones) {
-      const deptMeta = z.department ? DEPARTMENT_META[z.department] : undefined;
+      const grpMeta = z.zoneGroup ? CAMPUS_ZONE_GROUP_META[z.zoneGroup] : undefined;
       ctx.fillStyle =
-        z.kind === "boss" ? "#92400e" : z.kind === "cowork" ? "#134e4a" : z.kind === "common" ? "#1e3a5f" : z.kind === "amenity" ? "#2e1065" : "#1e293b";
+        z.kind === "boss"
+          ? "#92400e"
+          : z.kind === "cowork"
+            ? "#134e4a"
+            : z.kind === "common"
+              ? "#1e3a5f"
+              : z.kind === "amenity"
+                ? "#2e1065"
+                : "#1e293b";
       ctx.fillRect(z.originX * scaleX, z.originY * scaleY, z.width * scaleX, z.height * scaleY);
       ctx.strokeStyle =
         z.kind === "boss"
           ? "#f59e0b"
           : z.kind === "cowork"
             ? "#14b8a6"
-          : z.amenityTheme
-            ? AMENITY_THEME_META[z.amenityTheme].color
-            : deptMeta?.color ?? "#334155";
+            : z.amenityTheme
+              ? AMENITY_THEME_META[z.amenityTheme].color
+              : grpMeta?.color ?? "#38bdf8";
       ctx.strokeRect(z.originX * scaleX, z.originY * scaleY, z.width * scaleX, z.height * scaleY);
     }
 

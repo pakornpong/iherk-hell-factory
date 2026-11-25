@@ -1,5 +1,7 @@
 import {
+  expandEdgeDividerSegments,
   getSurfaceHostHeightVoxels,
+  isEdgeDividerAsset,
   isTabletopAsset,
   isWalkablePermission,
   resolveAssetLayerConfig,
@@ -8,6 +10,8 @@ import {
 } from "../shared/layers.js";
 import type {
   CatalogEntry,
+  CustomZoneRecord,
+  CustomZoneRole,
   OfficeSnapshotPayload,
   ThemeMode,
   WsServerMessage,
@@ -15,9 +19,9 @@ import type {
 import { AtlasManager } from "./atlas-loader.js";
 import { IsoCamera } from "./camera.js";
 import { DecorateController, isEditableFurniture } from "./decorate.js";
-import { OfficeHud, type LayerBrush, type LayerEditorState } from "./hud.js";
+import { OfficeHud, type LayerBrush, type LayerEditorState, type ZoneEditorState } from "./hud.js";
 import { IsoRenderer, type LayerOverlayMode } from "./iso-renderer.js";
-import { OfficeSimulation } from "./sim.js";
+import { OfficeSimulation, type SimEmployeeVisual } from "./sim.js";
 
 declare global {
   interface Window {
@@ -54,9 +58,40 @@ async function bootstrap(): Promise<void> {
   let catalog: CatalogEntry[] = [];
   let catalogById = new Map<string, CatalogEntry>();
   let selectedEmployeeId: string | null = null;
+  let latestVisuals: SimEmployeeVisual[] = [];
   let hoverTile: [number, number] | null = null;
   let cameraInitialized = false;
   const layerState: LayerEditorState = { mode: "off", brush: "inspect", selectedFurnitureId: null };
+  const zoneEditorState: ZoneEditorState = {
+    active: false,
+    startTile: null,
+    draftName: "",
+    draftIcon: "🏷️",
+    draftColor: "#38bdf8",
+    draftRole: "label",
+  };
+
+  // Bind Zone Panel draft inputs (name, role, icon, color)
+  const zoneNameInput = document.getElementById("zone-name-input") as HTMLInputElement | null;
+  zoneNameInput?.addEventListener("input", () => {
+    zoneEditorState.draftName = zoneNameInput.value;
+  });
+  const zoneRoleSelect = document.getElementById("zone-role-select") as HTMLSelectElement | null;
+  zoneRoleSelect?.addEventListener("change", () => {
+    zoneEditorState.draftRole = (zoneRoleSelect.value as CustomZoneRole) || "label";
+  });
+  document.querySelectorAll<HTMLButtonElement>(".zone-icon-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      zoneEditorState.draftIcon = btn.dataset.icon ?? "🏷️";
+      document.querySelectorAll(".zone-icon-btn").forEach((b) => b.classList.toggle("active", b === btn));
+    });
+  });
+  document.querySelectorAll<HTMLButtonElement>(".zone-color-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      zoneEditorState.draftColor = btn.dataset.color ?? "#38bdf8";
+      document.querySelectorAll(".zone-color-btn").forEach((b) => b.classList.toggle("active", b === btn));
+    });
+  });
 
   const resize = () => {
     canvas.width = window.innerWidth;
@@ -85,11 +120,17 @@ async function bootstrap(): Promise<void> {
         method: "DELETE",
       });
     },
+    async paintFloorTiles(tiles) {
+      await architectFetch("/api/architect/floor-tiles", {
+        method: "PATCH",
+        body: JSON.stringify({ tiles }),
+      });
+    },
   });
 
   const refreshHud = () => {
     if (!snapshot) return;
-    hud.renderHud(snapshot, catalog, selectedEmployeeId, camera.zoom, layerState, atlas);
+    hud.renderHud(snapshot, catalog, selectedEmployeeId, camera.zoom, layerState, atlas, zoneEditorState);
   };
 
   const hud = new OfficeHud(decorate, {
@@ -97,6 +138,85 @@ async function bootstrap(): Promise<void> {
       const zone = snapshot?.campus.zones.find((z) => z.bayId === bayId);
       if (zone) {
         camera.glideToTile(zone.originX + 3, zone.originY + 3, canvas.width, canvas.height);
+        return;
+      }
+      const bayEmps = snapshot?.state.employees.filter((e) => e.bayId === bayId) ?? [];
+      const targetEmp = bayEmps.find((e) => e.visualState !== "resting") ?? bayEmps[0];
+      if (targetEmp) {
+        selectedEmployeeId = targetEmp.id;
+        refreshHud();
+        const vis = latestVisuals.find((v) => v.id === targetEmp.id);
+        if (vis) {
+          camera.glideToTile(vis.x, vis.y, canvas.width, canvas.height);
+          return;
+        }
+      }
+      const central = snapshot?.campus.zones.find((z) => z.kind === "cowork");
+      if (central) {
+        camera.glideToTile(central.originX + 3, central.originY + 3, canvas.width, canvas.height);
+      }
+    },
+    onFocusZoneGroup(group) {
+      if (group === "hq") {
+        const bossChair = snapshot?.campus.worldFurniture.find((f) => f.id === "boss:0-boss-chair");
+        if (bossChair) {
+          camera.glideToTile(bossChair.tx, bossChair.ty, canvas.width, canvas.height);
+          return;
+        }
+      }
+      const matching = snapshot?.campus.zones.filter((z) => z.zoneGroup === group);
+      if (matching && matching.length > 0) {
+        const minX = Math.min(...matching.map((z) => z.originX));
+        const maxX = Math.max(...matching.map((z) => z.originX + z.width));
+        const minY = Math.min(...matching.map((z) => z.originY));
+        const maxY = Math.max(...matching.map((z) => z.originY + z.height));
+        camera.glideToTile((minX + maxX) / 2, (minY + maxY) / 2, canvas.width, canvas.height);
+      }
+    },
+    onFocusCustomZone(zone: CustomZoneRecord) {
+      camera.glideToTile(zone.x + zone.width / 2, zone.y + zone.height / 2, canvas.width, canvas.height);
+    },
+    onDeleteCustomZone(zoneId: string) {
+      void architectFetch(`/api/architect/zones/${encodeURIComponent(zoneId)}`, { method: "DELETE" })
+        .then(() => hud.showToast("🗑️ ลบโซนแล้ว"))
+        .catch((e) => hud.showToast(e instanceof Error ? e.message : String(e), true));
+    },
+    onResizeFloor(delta) {
+      void architectFetch<{ widthTiles: number; depthTiles: number }>("/api/architect/floor/resize", {
+        method: "POST",
+        body: JSON.stringify(delta),
+      })
+        .then((res) => hud.showToast(`📐 ขนาดพื้นตอนนี้: ${res.widthTiles}×${res.depthTiles} tiles`))
+        .catch((e) => hud.showToast(e instanceof Error ? e.message : String(e), true));
+    },
+    onToggleZonePanel(open?: boolean) {
+      const next = open !== undefined ? open : !zoneEditorState.active;
+      zoneEditorState.active = next;
+      zoneEditorState.startTile = null;
+      if (next) {
+        decorate.setActive(false);
+        layerState.mode = "off";
+      }
+      refreshHud();
+    },
+    onFocusEmployee(employeeId) {
+      selectedEmployeeId = employeeId;
+      refreshHud();
+      const vis = latestVisuals.find((v) => v.id === employeeId);
+      if (vis) {
+        camera.glideToTile(vis.x, vis.y, canvas.width, canvas.height);
+        return;
+      }
+      const emp = snapshot?.state.employees.find((e) => e.id === employeeId);
+      if (!emp || !snapshot) return;
+      const targetZone =
+        emp.visualState === "reporting"
+          ? snapshot.campus.zones.find((z) => z.kind === "boss")
+          : emp.isEphemeral
+            ? snapshot.campus.zones.find((z) => z.kind === "cowork")
+            : snapshot.campus.zones.find((z) => z.bayId === emp.bayId);
+      if (targetZone) {
+        camera.glideToTile(targetZone.originX + 3, targetZone.originY + 3, canvas.width, canvas.height);
       }
     },
     onToggleArchive(bayId, archived) {
@@ -249,23 +369,73 @@ async function bootstrap(): Promise<void> {
     const sx = ev.clientX - rect.left;
     const sy = ev.clientY - rect.top;
 
+    if (zoneEditorState.active && hoverTile) {
+      const [tx, ty] = hoverTile;
+      if (tx < 0 || ty < 0 || tx >= snapshot.campus.widthTiles || ty >= snapshot.campus.depthTiles) return;
+      if (!zoneEditorState.startTile) {
+        zoneEditorState.startTile = [tx, ty];
+        hud.showToast(`📍 มุมแรก (${tx},${ty}) — คลิกมุมตรงข้ามเพื่อสร้างโซน`);
+        refreshHud();
+        return;
+      }
+      const [sx0, sy0] = zoneEditorState.startTile;
+      const x = Math.min(sx0, tx);
+      const y = Math.min(sy0, ty);
+      const width = Math.abs(tx - sx0) + 1;
+      const height = Math.abs(ty - sy0) + 1;
+      const name =
+        zoneEditorState.draftName.trim() ||
+        `Zone ${(snapshot.state.customZones?.length ?? 0) + 1}`;
+      zoneEditorState.startTile = null;
+      void architectFetch<{ zone: CustomZoneRecord }>("/api/architect/zones", {
+        method: "POST",
+        body: JSON.stringify({
+          name,
+          icon: zoneEditorState.draftIcon,
+          color: zoneEditorState.draftColor,
+          role: zoneEditorState.draftRole,
+          x,
+          y,
+          width,
+          height,
+        }),
+      })
+        .then((res) => {
+          hud.showToast(`✅ สร้างโซน "${res.zone.icon} ${res.zone.name}" (${width}×${height}) แล้ว`);
+          refreshHud();
+        })
+        .catch((err) => hud.showToast(err instanceof Error ? err.message : String(err), true));
+      return;
+    }
+
     if (decorate.active && hoverTile) {
       const [tx, ty] = hoverTile;
+      if (decorate.isFloorPainting()) {
+        void decorate
+          .paintFloorAt(
+            tx,
+            ty,
+            snapshot.campus.widthTiles,
+            snapshot.campus.depthTiles,
+            snapshot.state.floorTileOverrides,
+          )
+          .then(() => refreshHud())
+          .catch((err) => hud.showToast(err instanceof Error ? err.message : String(err), true));
+        return;
+      }
       const isPicking = decorate.tool === "erase" || (decorate.tool === "move" && !decorate.movingItem);
       const tileMatches = snapshot.campus.worldFurniture.filter(
         (f) =>
           isEditableFurniture(f) &&
+          !isEdgeDividerAsset(f.assetId) &&
           tx >= f.tx &&
           tx < f.tx + f.footprintTiles[0] &&
           ty >= f.ty &&
           ty < f.ty + f.footprintTiles[1],
       );
-      // Prefer tabletop props over their underlying host desk when picking or erasing
-      let existing =
-        tileMatches.find((f) => isTabletopAsset(f.assetId, f.layer, catalogById.get(f.assetId))) ??
-        tileMatches[0];
-      // Fallback to visual sprite hitbox when picking tall furniture or lifted tabletop props in Move/Erase mode
-      if (!existing && isPicking) {
+      // Prefer visual sprite hitbox first for edge-mounted dividers / tabletop props when picking in Move/Erase mode
+      let existing: (typeof snapshot.campus.worldFurniture)[number] | undefined;
+      if (isPicking) {
         for (let i = renderer.lastHitBoxes.length - 1; i >= 0; i--) {
           const box = renderer.lastHitBoxes[i];
           if (box.kind !== "furniture") continue;
@@ -279,6 +449,25 @@ async function bootstrap(): Promise<void> {
             }
           }
         }
+      }
+      if (!existing) {
+        existing =
+          tileMatches.find((f) => isTabletopAsset(f.assetId, f.layer, catalogById.get(f.assetId))) ??
+          tileMatches[0];
+      }
+      if (decorate.tool === "erase" && !existing && snapshot.state.floorTileOverrides?.[`${tx},${ty}`]) {
+        void decorate
+          .paintFloorAt(
+            tx,
+            ty,
+            snapshot.campus.widthTiles,
+            snapshot.campus.depthTiles,
+            snapshot.state.floorTileOverrides,
+            null,
+          )
+          .then(() => refreshHud())
+          .catch((err) => hud.showToast(err instanceof Error ? err.message : String(err), true));
+        return;
       }
       const wasHolding = Boolean(decorate.movingItem);
       void decorate
@@ -379,6 +568,8 @@ async function bootstrap(): Promise<void> {
       }
     } else if (ev.key === "l" || ev.key === "L") {
       if (decorate.active) decorate.setActive(false);
+      zoneEditorState.active = false;
+      zoneEditorState.startTile = null;
       layerState.mode =
         layerState.mode === "off"
           ? "permissions"
@@ -386,8 +577,23 @@ async function bootstrap(): Promise<void> {
             ? "layers"
             : "off";
       refreshHud();
+    } else if ((ev.key === "z" || ev.key === "Z") && !ev.metaKey && !ev.ctrlKey) {
+      zoneEditorState.active = !zoneEditorState.active;
+      zoneEditorState.startTile = null;
+      if (zoneEditorState.active) {
+        decorate.setActive(false);
+        layerState.mode = "off";
+      }
+      refreshHud();
     } else if (ev.key === "Escape") {
-      if (decorate.active) {
+      if (zoneEditorState.active) {
+        if (zoneEditorState.startTile) {
+          zoneEditorState.startTile = null;
+        } else {
+          zoneEditorState.active = false;
+        }
+        refreshHud();
+      } else if (decorate.active) {
         if (!decorate.cancelMove()) {
           decorate.setActive(false);
         }
@@ -424,160 +630,219 @@ async function bootstrap(): Promise<void> {
     const simStep = sim.step(dt);
     lastFrameTs = now;
 
-    const targetFps = camMoving || dragging || decorate.active || layerState.mode !== "off" ? 30 : simStep.targetFps;
+    const targetFps =
+      camMoving || dragging || decorate.active || zoneEditorState.active || layerState.mode !== "off"
+        ? 30
+        : simStep.targetFps;
     const minInterval = 1000 / targetFps;
     if (now - lastDrawTs < minInterval) return;
     lastDrawTs = now;
 
     let ghost = null;
-    const ghostAssetId =
-      decorate.tool === "place"
-        ? decorate.selectedAssetId
-        : decorate.tool === "move"
-          ? decorate.movingItem?.item.assetId ?? null
-          : null;
-    if (decorate.active && ghostAssetId && hoverTile) {
+    if (decorate.active && decorate.isFloorPainting() && hoverTile) {
       const [tx, ty] = hoverTile;
-      const zone = snapshot.campus.zones.find(
-        (z) => tx >= z.originX && tx < z.originX + z.width && ty >= z.originY && ty < z.originY + z.height,
-      );
-      const cat = catalogById.get(ghostAssetId);
-      const baseFp = cat?.footprintTiles ?? [1, 1];
-      const [fw, fd] =
-        decorate.direction === "sw" || decorate.direction === "ne" ? [baseFp[1], baseFp[0]] : [baseFp[0], baseFp[1]];
-      let valid = false;
-      let surfaceOffsetY = 0;
-      const ghostIsTabletop = isTabletopAsset(ghostAssetId, cat?.layer, cat);
-      if (zone) {
-        const lx = tx - zone.originX;
-        const ly = ty - zone.originY;
-        const inBounds = lx >= 0 && ly >= 0 && lx + fw <= zone.width && ly + fd <= zone.height;
-        const ignoreId = decorate.movingItem?.item.id;
-        const zoneFurn = snapshot.campus.worldFurniture.filter(
-          (f) => f.id !== ignoreId && f.zoneId === zone.zoneId && !f.id.startsWith("sys-div-"),
-        );
+      const inCampus =
+        tx >= 0 && ty >= 0 && tx < snapshot.campus.widthTiles && ty < snapshot.campus.depthTiles;
+      ghost = {
+        tx,
+        ty,
+        assetId: decorate.selectedAssetId ?? "floor-office-carpet",
+        direction: "se" as const,
+        valid: inCampus,
+        brushSize: decorate.floorBrushSize,
+        floorReset: decorate.floorResetMode,
+      };
+    } else {
+      const ghostAssetId =
+        decorate.tool === "place"
+          ? decorate.selectedAssetId
+          : decorate.tool === "move"
+            ? decorate.movingItem?.item.assetId ?? null
+            : null;
+      if (decorate.active && ghostAssetId && hoverTile) {
+        const [tx, ty] = hoverTile;
+        const zone =
+          snapshot.campus.zones.find(
+            (z) =>
+              z.kind === "floor" &&
+              tx >= z.originX &&
+              tx < z.originX + z.width &&
+              ty >= z.originY &&
+              ty < z.originY + z.height,
+          ) ??
+          snapshot.campus.zones.find(
+            (z) =>
+              z.kind !== "hypersleep" &&
+              tx >= z.originX &&
+              tx < z.originX + z.width &&
+              ty >= z.originY &&
+              ty < z.originY + z.height,
+          );
+        const cat = catalogById.get(ghostAssetId);
+        const baseFp = cat?.footprintTiles ?? [1, 1];
+        const [fw, fd] =
+          decorate.direction === "sw" || decorate.direction === "ne" ? [baseFp[1], baseFp[0]] : [baseFp[0], baseFp[1]];
+        let valid = false;
+        let surfaceOffsetY = 0;
+        const ghostIsTabletop = isTabletopAsset(ghostAssetId, cat?.layer, cat);
+        if (zone) {
+          const lx = tx - zone.originX;
+          const ly = ty - zone.originY;
+          const inBounds = lx >= 0 && ly >= 0 && lx + fw <= zone.width && ly + fd <= zone.height;
+          const ignoreId = decorate.movingItem?.item.id;
+          const isOpenSandboxZone =
+            zone.kind === "floor" || zone.kind === "boss" || zone.kind === "cowork" || zone.kind === "hypersleep";
+          const zoneFurn = snapshot.campus.worldFurniture.filter(
+            (f) => f.id !== ignoreId && (isOpenSandboxZone || f.zoneId === zone.zoneId) && !f.id.startsWith("sys-div-"),
+          );
 
-        if (ghostIsTabletop) {
-          const surfaceHeightByTile = new Map<string, number>();
-          const topOcc = new Set<string>();
-          for (const f of zoneFurn) {
-            const fCat = catalogById.get(f.assetId);
-            const fIsTop = isTabletopAsset(f.assetId, f.layer, fCat);
-            if (fIsTop) {
-              for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
-                for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
-                  topOcc.add(`${f.tx - zone.originX + dx},${f.ty - zone.originY + dy}`);
-                }
+          if (isEdgeDividerAsset(ghostAssetId)) {
+            const candSegs = expandEdgeDividerSegments(ghostAssetId, tx, ty, decorate.direction);
+            const existingEdges = new Set<string>();
+            for (const f of zoneFurn) {
+              if (!isEdgeDividerAsset(f.assetId)) continue;
+              for (const seg of expandEdgeDividerSegments(f.assetId, f.tx, f.ty, f.direction)) {
+                existingEdges.add(seg.edgeKey);
               }
-            } else {
-              const h = getSurfaceHostHeightVoxels(f.assetId, fCat);
-              if (h) {
+            }
+            const campusW = snapshot.campus.widthTiles;
+            const campusD = snapshot.campus.depthTiles;
+            const segsInBounds = candSegs.every(
+              (seg) =>
+                seg.rx >= -0.5 &&
+                seg.ry >= -0.5 &&
+                seg.rx < campusW + 0.5 &&
+                seg.ry < campusD + 0.5,
+            );
+            valid = segsInBounds && candSegs.every((seg) => !existingEdges.has(seg.edgeKey));
+          } else if (ghostIsTabletop) {
+            const surfaceHeightByTile = new Map<string, number>();
+            const topOcc = new Set<string>();
+            for (const f of zoneFurn) {
+              const fCat = catalogById.get(f.assetId);
+              const fIsTop = isTabletopAsset(f.assetId, f.layer, fCat);
+              if (fIsTop) {
                 for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
                   for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
-                    surfaceHeightByTile.set(`${f.tx - zone.originX + dx},${f.ty - zone.originY + dy}`, h);
+                    topOcc.add(`${f.tx + dx},${f.ty + dy}`);
+                  }
+                }
+              } else {
+                const h = getSurfaceHostHeightVoxels(f.assetId, fCat);
+                if (h) {
+                  for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
+                    for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
+                      surfaceHeightByTile.set(`${f.tx + dx},${f.ty + dy}`, h);
+                    }
                   }
                 }
               }
             }
-          }
-          let allOnSurface = inBounds;
-          let noTopOverlap = true;
-          let hostVoxels = 0;
-          for (let dy = 0; dy < fd; dy++) {
-            for (let dx = 0; dx < fw; dx++) {
-              const key = `${lx + dx},${ly + dy}`;
-              const h = surfaceHeightByTile.get(key);
-              if (!h) allOnSurface = false;
-              else hostVoxels = Math.max(hostVoxels, h);
-              if (topOcc.has(key)) noTopOverlap = false;
-            }
-          }
-          valid = allOnSurface && noTopOverlap;
-          if (hostVoxels > 0) surfaceOffsetY = surfaceVoxelsToWorldOffsetY(hostVoxels);
-        } else {
-          const floorFurn = zoneFurn.filter(
-            (f) => !isTabletopAsset(f.assetId, f.layer, catalogById.get(f.assetId)),
-          );
-          const collides = floorFurn.some(
-            (f) =>
-              tx < f.tx + f.footprintTiles[0] &&
-              tx + fw > f.tx &&
-              ty < f.ty + f.footprintTiles[1] &&
-              ty + fd > f.ty,
-          );
-          const occ = new Set<string>();
-          const walkBlocked = new Set<string>();
-          for (const f of floorFurn) {
-            const fCfg = resolveAssetLayerConfig(f.assetId, f.layer, catalogById.get(f.assetId));
-            const blocksWalk = !isWalkablePermission(fCfg.tilePermission);
-            for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
-              for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
-                const k = `${f.tx - zone.originX + dx},${f.ty - zone.originY + dy}`;
-                occ.add(k);
-                if (blocksWalk) walkBlocked.add(k);
+            let allOnSurface = inBounds;
+            let noTopOverlap = true;
+            let hostVoxels = 0;
+            for (let dy = 0; dy < fd; dy++) {
+              for (let dx = 0; dx < fw; dx++) {
+                const key = `${tx + dx},${ty + dy}`;
+                const h = surfaceHeightByTile.get(key);
+                if (!h) allOnSurface = false;
+                else hostVoxels = Math.max(hostVoxels, h);
+                if (topOcc.has(key)) noTopOverlap = false;
               }
             }
-          }
-          const candCfg = resolveAssetLayerConfig(ghostAssetId, cat?.layer, cat);
-          const candBlocksWalk = !isWalkablePermission(candCfg.tilePermission);
-          const blockedWithCand = new Set(walkBlocked);
-          for (let dy = 0; dy < fd; dy++) {
-            for (let dx = 0; dx < fw; dx++) {
-              const k = `${lx + dx},${ly + dy}`;
-              occ.add(k);
-              if (candBlocksWalk) blockedWithCand.add(k);
-            }
-          }
-          const openEntrances: Array<[number, number]> = [];
-          if (!occ.has("2,5")) openEntrances.push([2, 5]);
-          if (!occ.has("3,5")) openEntrances.push([3, 5]);
-          let sealsOff = false;
-          if (openEntrances.length > 0 && inBounds && !collides && candBlocksWalk) {
-            const reach = (blocked: Set<string>): Set<string> => {
-              const vis = new Set<string>();
-              const q: Array<[number, number]> = [];
-              for (const [ex, ey] of openEntrances) {
-                const k = `${ex},${ey}`;
-                if (!blocked.has(k)) {
-                  vis.add(k);
-                  q.push([ex, ey]);
+            valid = allOnSurface && noTopOverlap;
+            if (hostVoxels > 0) surfaceOffsetY = surfaceVoxelsToWorldOffsetY(hostVoxels);
+          } else {
+            const floorFurn = zoneFurn.filter(
+              (f) => !isEdgeDividerAsset(f.assetId) && !isTabletopAsset(f.assetId, f.layer, catalogById.get(f.assetId)),
+            );
+            const collides = floorFurn.some(
+              (f) =>
+                tx < f.tx + f.footprintTiles[0] &&
+                tx + fw > f.tx &&
+                ty < f.ty + f.footprintTiles[1] &&
+                ty + fd > f.ty,
+            );
+            if (isOpenSandboxZone) {
+              valid = inBounds && !collides;
+            } else {
+              const occ = new Set<string>();
+              const walkBlocked = new Set<string>();
+              for (const f of floorFurn) {
+                const fCfg = resolveAssetLayerConfig(f.assetId, f.layer, catalogById.get(f.assetId));
+                const blocksWalk = !isWalkablePermission(fCfg.tilePermission);
+                for (let dy = 0; dy < f.footprintTiles[1]; dy++) {
+                  for (let dx = 0; dx < f.footprintTiles[0]; dx++) {
+                    const k = `${f.tx - zone.originX + dx},${f.ty - zone.originY + dy}`;
+                    occ.add(k);
+                    if (blocksWalk) walkBlocked.add(k);
+                  }
                 }
               }
-              while (q.length > 0) {
-                const [cx, cy] = q.shift()!;
-                for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]] as const) {
-                  const nx = cx + dx;
-                  const ny = cy + dy;
-                  if (nx < 0 || nx >= zone.width || ny < 0 || ny >= zone.height) continue;
-                  const nk = `${nx},${ny}`;
-                  if (vis.has(nk) || blocked.has(nk)) continue;
-                  vis.add(nk);
-                  q.push([nx, ny]);
+              const candCfg = resolveAssetLayerConfig(ghostAssetId, cat?.layer, cat);
+              const candBlocksWalk = !isWalkablePermission(candCfg.tilePermission);
+              const blockedWithCand = new Set(walkBlocked);
+              for (let dy = 0; dy < fd; dy++) {
+                for (let dx = 0; dx < fw; dx++) {
+                  const k = `${lx + dx},${ly + dy}`;
+                  occ.add(k);
+                  if (candBlocksWalk) blockedWithCand.add(k);
                 }
               }
-              return vis;
-            };
-            const before = reach(walkBlocked);
-            const after = reach(blockedWithCand);
-            for (const tile of before) {
-              if (!blockedWithCand.has(tile) && !after.has(tile)) {
-                sealsOff = true;
-                break;
+              const openEntrances: Array<[number, number]> = [];
+              if (!occ.has("2,5")) openEntrances.push([2, 5]);
+              if (!occ.has("3,5")) openEntrances.push([3, 5]);
+              let sealsOff = false;
+              if (openEntrances.length > 0 && inBounds && !collides && candBlocksWalk) {
+                const reach = (blocked: Set<string>): Set<string> => {
+                  const vis = new Set<string>();
+                  const q: Array<[number, number]> = [];
+                  for (const [ex, ey] of openEntrances) {
+                    const k = `${ex},${ey}`;
+                    if (!blocked.has(k)) {
+                      vis.add(k);
+                      q.push([ex, ey]);
+                    }
+                  }
+                  while (q.length > 0) {
+                    const [cx, cy] = q.shift()!;
+                    for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]] as const) {
+                      const nx = cx + dx;
+                      const ny = cy + dy;
+                      if (nx < 0 || nx >= zone.width || ny < 0 || ny >= zone.height) continue;
+                      const nk = `${nx},${ny}`;
+                      if (vis.has(nk) || blocked.has(nk)) continue;
+                      vis.add(nk);
+                      q.push([nx, ny]);
+                    }
+                  }
+                  return vis;
+                };
+                const before = reach(walkBlocked);
+                const after = reach(blockedWithCand);
+                for (const tile of before) {
+                  if (!blockedWithCand.has(tile) && !after.has(tile)) {
+                    sealsOff = true;
+                    break;
+                  }
+                }
               }
+              valid = inBounds && !collides && openEntrances.length > 0 && !sealsOff;
             }
           }
-          valid = inBounds && !collides && openEntrances.length > 0 && !sealsOff;
         }
+        ghost = {
+          tx,
+          ty,
+          assetId: ghostAssetId,
+          direction: decorate.direction,
+          valid,
+          ...(surfaceOffsetY > 0 ? { surfaceOffsetY } : {}),
+        };
       }
-      ghost = {
-        tx,
-        ty,
-        assetId: ghostAssetId,
-        direction: decorate.direction,
-        valid,
-        ...(surfaceOffsetY > 0 ? { surfaceOffsetY } : {}),
-      };
     }
+
+    latestVisuals = simStep.visuals;
 
     renderer.render(ctx, {
       state: snapshot.state,
@@ -592,6 +857,15 @@ async function bootstrap(): Promise<void> {
       selectedLayerFurnitureId: layerState.mode === "layers" ? layerState.selectedFurnitureId : null,
       bayPopAnimations: sim.getBayPopAnimations(),
       ghost,
+      zoneEditor: zoneEditorState.active
+        ? {
+            active: true,
+            startTile: zoneEditorState.startTile,
+            hoverTile,
+            draftColor: zoneEditorState.draftColor,
+            draftLabel: `${zoneEditorState.draftIcon} ${zoneEditorState.draftName.trim() || "New Zone"}`,
+          }
+        : null,
       layerOverlayMode: layerState.mode,
       hoverTile,
       timeMs: now,

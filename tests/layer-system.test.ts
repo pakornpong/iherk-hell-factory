@@ -148,24 +148,22 @@ describe("Pokémon GBA-style Layer & Movement Permission System", () => {
     const permMap = buildTilePermissionMap(campus, undefined, MOCK_CATALOG);
     const w = permMap.width;
 
-    // Boss desk is BLOCKED (0), boss chair is SEAT (2), doorway between Boss (0,0) and Common (0,1) is DOOR (3)
+    // Boss desk is BLOCKED (0), boss chair & hypersleep capsule are SEAT (2)
     const bossDesk = campus.worldFurniture.find((f) => f.id === "boss:0-boss-desk")!;
     const bossChair = campus.worldFurniture.find((f) => f.id === "boss:0-boss-chair")!;
+    const pod0 = campus.worldFurniture.find((f) => f.assetId === "hypersleep-capsule")!;
     expect(permMap.permissions[bossDesk.ty * w + bossDesk.tx]).toBe(TILE_PERM.BLOCKED);
     expect(permMap.permissions[bossChair.ty * w + bossChair.tx]).toBe(TILE_PERM.SEAT);
+    expect(permMap.permissions[pod0.ty * w + pod0.tx]).toBe(TILE_PERM.SEAT);
     expect(bossChair.renderLayer).toBe(RENDER_LAYER.LOW);
     expect(bossDesk.renderLayer).toBe(RENDER_LAYER.CHARACTER);
 
-    // Doorway at x=2 between y=5 (Boss) and y=6 (Common) is marked DOOR (3)
-    expect(permMap.permissions[5 * w + 2]).toBe(TILE_PERM.DOOR);
-    expect(permMap.permissions[6 * w + 2]).toBe(TILE_PERM.DOOR);
-
-    // Path through doorway works normally
+    // Path across open floor works normally
     const openGrid = buildWalkableGrid(campus);
     const openPath = findTilePath(openGrid, [2, 4], [2, 7]);
     expect(openPath[openPath.length - 1]).toEqual([2, 7]);
 
-    // Manual override blocking (2, 5) with 0 forces pathfinding around or stops crossing that doorway
+    // Manual override blocking (2, 5) with 0 forces pathfinding around that tile
     const overriddenGrid = buildWalkableGrid(campus, { "2,5": TILE_PERM.BLOCKED });
     expect(overriddenGrid.permissions?.[5 * w + 2]).toBe(TILE_PERM.BLOCKED);
     expect(overriddenGrid.blocked[5 * w + 2]).toBe(1);
@@ -189,12 +187,12 @@ describe("Pokémon GBA-style Layer & Movement Permission System", () => {
     await expect(engine.setTilePermissionOverride(999, 999, TILE_PERM.BLOCKED)).rejects.toThrow(/outside campus bounds/i);
 
     // Update furniture renderLayer override
-    const bossPlant = snap1.state.bossOffice!.furniture.find((f) => f.assetId === "plant-potted")!;
-    const updated = await engine.moveFurniture(bossPlant.id, { renderLayer: RENDER_LAYER.FOREGROUND });
+    const bossVisitor = snap1.state.bossOffice!.furniture.find((f) => f.id === "boss:0-visitor-0")!;
+    const updated = await engine.moveFurniture(bossVisitor.id, { renderLayer: RENDER_LAYER.FOREGROUND });
     expect(updated.renderLayer).toBe(RENDER_LAYER.FOREGROUND);
     const snap2 = engine.getSnapshot();
-    const worldPlant = snap2.campus.worldFurniture.find((f) => f.id === bossPlant.id)!;
-    expect(worldPlant.renderLayer).toBe(RENDER_LAYER.FOREGROUND);
+    const worldVisitor = snap2.campus.worldFurniture.find((f) => f.id === bossVisitor.id)!;
+    expect(worldVisitor.renderLayer).toBe(RENDER_LAYER.FOREGROUND);
 
     // Reload from disk and verify persistence
     const engine2 = new OfficeEngine({ store, catalogById: MOCK_CATALOG });
@@ -259,6 +257,5 @@ describe("Pokémon GBA-style Layer & Movement Permission System", () => {
     expect(texts).toContain("0");
     expect(texts).toContain("1");
     expect(texts).toContain("2");
-    expect(texts).toContain("3");
   });
 });

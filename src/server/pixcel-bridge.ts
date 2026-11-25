@@ -215,7 +215,18 @@ export interface PixcelAssetLike {
   decals: unknown[];
   frames?: Array<{ name: string; durationMs: number; ops?: unknown[]; decals?: unknown[]; partTransforms?: unknown }>;
   parts?: unknown;
-  animations?: Record<string, { frames: Array<{ name: string; durationMs?: number }> } & Record<string, unknown>>;
+  animations?: Record<
+    string,
+    {
+      frames: Array<{
+        name: string;
+        durationMs?: number;
+        ops?: unknown[];
+        decals?: unknown[];
+        partTransforms?: unknown;
+      }>;
+    } & Record<string, unknown>
+  >;
 }
 
 type CompiledFrameLike = { name: string; durationMs: number; grid: unknown };
@@ -459,6 +470,159 @@ function frameNames(asset: PixcelAssetLike): string[] {
   return asset.frames?.map((f) => f.name) ?? ["default"];
 }
 
+/** Replace upright nap pose with a horizontal lying-down pose that fits inside the 1x2 Space Haven hypersleep pod. */
+function applyLyingHypersleepPose(asset: PixcelAssetLike, spec: CharacterBuilderSpec): PixcelAssetLike {
+  if (!asset.animations?.rest_sleep) return asset;
+  const hideAllParts = {
+    head: { hide: true },
+    torso: { hide: true },
+    arm_l: { hide: true },
+    arm_r: { hide: true },
+    leg_l: { hide: true },
+    leg_r: { hide: true },
+  };
+  const sleeveMat = spec.outfitStyle === "tshirt" ? "skin" : "outfit";
+  const buildLyingOps = (breath: number) => [
+    { op: "box", from: [12, 1, 10], to: [19, 3, 16], material: "hair" },
+    { op: "box", from: [11, 2, 11], to: [12, 8, 15], material: "hair" },
+    { op: "box", from: [19, 2, 11], to: [20, 8, 15], material: "hair" },
+    { op: "box", from: [12, 3, 10], to: [19, 9, 15], material: "skin" },
+    { op: "box", from: [12, 3, 15], to: [19, 4, 16], material: "hair" },
+    { op: "box", from: [13, 6, 15], to: [14, 6, 15], material: "eye" },
+    { op: "box", from: [17, 6, 15], to: [18, 6, 15], material: "eye" },
+    ...(spec.glasses
+      ? [
+          { op: "box", from: [12, 6, 16], to: [19, 6, 16], material: "glasses_frame" },
+          { op: "box", from: [13, 6, 16], to: [14, 6, 16], material: "glasses_lens" },
+          { op: "box", from: [17, 6, 16], to: [18, 6, 16], material: "glasses_lens" },
+        ]
+      : []),
+    { op: "box", from: [14, 10, 10], to: [17, 10, 12], material: "skin" },
+    { op: "box", from: [12, 11, 8], to: [19, 19, 13 + breath], material: "outfit" },
+    { op: "box", from: [14, 13, 13 + breath], to: [17, 16, 13 + breath], material: "accent" },
+    { op: "box", from: [10, 11, 8], to: [11, 17, 11], material: sleeveMat },
+    { op: "box", from: [10, 18, 8], to: [11, 19, 10], material: "skin" },
+    { op: "box", from: [20, 11, 8], to: [21, 17, 11], material: sleeveMat },
+    { op: "box", from: [20, 18, 8], to: [21, 19, 10], material: "skin" },
+    { op: "box", from: [12, 20, 8], to: [19, 22, 12], material: "pants" },
+    { op: "box", from: [12, 23, 8], to: [14, 28, 12], material: "pants" },
+    { op: "box", from: [17, 23, 8], to: [19, 28, 12], material: "pants" },
+    { op: "box", from: [12, 29, 8], to: [14, 30, 12], material: "shoe" },
+    { op: "box", from: [17, 29, 8], to: [19, 30, 12], material: "shoe" },
+  ];
+  asset.animations.rest_sleep = {
+    ...asset.animations.rest_sleep,
+    frames: [
+      { name: "rest_sleep_0", durationMs: 900, partTransforms: hideAllParts, ops: buildLyingOps(0), decals: [] },
+      { name: "rest_sleep_1", durationMs: 900, partTransforms: hideAllParts, ops: buildLyingOps(1), decals: [] },
+    ],
+  };
+  return asset;
+}
+
+/** Make glass voxels on Space Haven hypersleep pods genuinely translucent. */
+function renderHypersleepWithTranslucentGlass(
+  core: PixcelCoreModules,
+  asset: PixcelAssetLike,
+  grid: unknown,
+  dummyPalette: { name: string; colors: Record<string, string> },
+  renderDir: Direction,
+) {
+  const full = core.renderAssetFrame(asset, grid, dummyPalette, { direction: renderDir, emissiveMode: "both" });
+  const glassMatNames = new Set(
+    Object.entries(asset.materials)
+      .filter(([, def]) => def.kind === "glass")
+      .map(([name]) => name),
+  );
+  if (glassMatNames.size === 0) return full;
+
+  const maskAsset: PixcelAssetLike = {
+    ...structuredClone(asset),
+    outlineMode: "none",
+    materials: Object.fromEntries(
+      Object.entries(asset.materials).map(([name]) => [
+        name,
+        glassMatNames.has(name)
+          ? { color: "#ff00ff", kind: "emissive" as const, glowRadius: 0, glowIntensity: 0 }
+          : { color: "#000000", kind: "emissive" as const, glowRadius: 0, glowIntensity: 0 },
+      ]),
+    ),
+  };
+  const maskRendered = core.renderAssetFrame(maskAsset, grid, dummyPalette, { direction: renderDir, emissiveMode: "baked" });
+  const isOverlayCanopy = asset.id === "hypersleep-capsule-front";
+  const maskDx = full.anchor.x - maskRendered.anchor.x;
+  const maskDy = full.anchor.y - maskRendered.anchor.y;
+
+  let underImg: RGBAImageLike | null = null;
+  let underDx = 0;
+  let underDy = 0;
+  if (!isOverlayCanopy) {
+    const opaqueAsset = structuredClone(asset);
+    opaqueAsset.ops = opaqueAsset.ops.filter((op) => {
+      const mat = (op as { material?: string | null }).material;
+      return !mat || !glassMatNames.has(mat);
+    });
+    const opaqueFrames = compileFrames(core, opaqueAsset);
+    const opaqueRendered = core.renderAssetFrame(opaqueAsset, opaqueFrames[0].grid, dummyPalette, {
+      direction: renderDir,
+      emissiveMode: "baked",
+    });
+    underImg = opaqueRendered.main;
+    underDx = full.anchor.x - opaqueRendered.anchor.x;
+    underDy = full.anchor.y - opaqueRendered.anchor.y;
+  }
+
+  const out = full.main;
+  for (let y = 0; y < out.height; y++) {
+    const my = y - maskDy;
+    if (my < 0 || my >= maskRendered.main.height) continue;
+    for (let x = 0; x < out.width; x++) {
+      const mx = x - maskDx;
+      if (mx < 0 || mx >= maskRendered.main.width) continue;
+      const mi = (my * maskRendered.main.width + mx) * 4;
+      if (
+        maskRendered.main.data[mi + 3] < 200 ||
+        maskRendered.main.data[mi] < 200 ||
+        maskRendered.main.data[mi + 1] > 40 ||
+        maskRendered.main.data[mi + 2] < 200
+      ) {
+        continue;
+      }
+      const oi = (y * out.width + x) * 4;
+      const gr = out.data[oi];
+      const gg = out.data[oi + 1];
+      const gb = out.data[oi + 2];
+      const isHighlight = gr + gg + gb >= 600;
+      const glassAlpha = isOverlayCanopy ? (isHighlight ? 168 : 104) : isHighlight ? 185 : 122;
+
+      if (isOverlayCanopy || !underImg) {
+        out.data[oi + 3] = glassAlpha;
+      } else {
+        const ux = x - underDx;
+        const uy = y - underDy;
+        const hasUnder =
+          ux >= 0 &&
+          ux < underImg.width &&
+          uy >= 0 &&
+          uy < underImg.height &&
+          underImg.data[(uy * underImg.width + ux) * 4 + 3] > 0;
+        if (hasUnder) {
+          const ui = (uy * underImg.width + ux) * 4;
+          const a = glassAlpha / 255;
+          const inv = 1 - a;
+          out.data[oi] = Math.round(gr * a + underImg.data[ui] * inv);
+          out.data[oi + 1] = Math.round(gg * a + underImg.data[ui + 1] * inv);
+          out.data[oi + 2] = Math.round(gb * a + underImg.data[ui + 2] * inv);
+          out.data[oi + 3] = 255;
+        } else {
+          out.data[oi + 3] = glassAlpha;
+        }
+      }
+    }
+  }
+  return full;
+}
+
 export class PixcelBridge {
   private corePromise: Promise<PixcelCoreModules> | null = null;
   private readonly starterDir: string;
@@ -529,7 +693,7 @@ export class PixcelBridge {
   private async loadCharacterAssets(): Promise<Array<{ asset: PixcelAssetLike; source: CatalogEntry["source"] }>> {
     const core = await this.loadCore();
     const built = PHASE2_CHARACTER_SPECS.map((spec) => ({
-      asset: core.buildCharacterAsset(spec),
+      asset: applyLyingHypersleepPose(core.buildCharacterAsset(spec), spec),
       source: "character" as const,
     }));
     const builtIds = new Set(built.map((item) => item.asset.id));
@@ -560,12 +724,16 @@ export class PixcelBridge {
               : original;
       const frames = compileFrames(core, asset);
       const dirs: Direction[] = asset.layer === "floor" ? ["se"] : ALL_DIRECTIONS;
+      const useTranslucentGlass = asset.id.startsWith("hypersleep-capsule");
       for (const dir of dirs) {
+        const renderDir = pixcelRenderDirection(asset, dir);
         for (const frame of frames) {
-          const rendered = core.renderAssetFrame(asset, frame.grid, dummyPalette, {
-            direction: pixcelRenderDirection(asset, dir),
-            emissiveMode: "both",
-          });
+          const rendered = useTranslucentGlass
+            ? renderHypersleepWithTranslucentGlass(core, asset, frame.grid, dummyPalette, renderDir)
+            : core.renderAssetFrame(asset, frame.grid, dummyPalette, {
+                direction: renderDir,
+                emissiveMode: "both",
+              });
           sprites.push({
             key: `${asset.id}/${dir}/${frame.name}`,
             assetId: asset.id,

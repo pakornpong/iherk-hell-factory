@@ -9,7 +9,7 @@ import {
 } from "../shared/types.js";
 import type { RenderedEmployeeInput, SyncPacketVisual } from "./iso-renderer.js";
 import { buildWalkableGrid, findTilePath, type WalkableGrid } from "./pathfinding.js";
-import { bayLayoutKey, commonLayoutKey, facingToward, getRoomLayout } from "../shared/room-layouts.js";
+import { bayLayoutKeyForBay, commonLayoutKey, facingToward, getRoomLayout } from "../shared/room-layouts.js";
 
 export interface SimEmployeeVisual extends RenderedEmployeeInput {
   id: string;
@@ -69,16 +69,21 @@ export class OfficeSimulation {
     this.campus = campus;
     this.grid = buildWalkableGrid(campus, state.tilePermissionOverrides);
 
-    const activeBayIds = new Set(campus.zones.filter((z) => z.kind === "bay" && z.bayId).map((z) => z.bayId!));
+    const activeBayIds = new Set(state.bays.filter((b) => !b.archived).map((b) => b.id));
     const liveIds = new Set<string>();
+    const visibleEmployees = state.employees.filter((e) => activeBayIds.has(e.bayId));
+    const workingEmployees = visibleEmployees.filter(
+      (e) => e.visualState !== "resting" && e.visualState !== "reporting",
+    );
 
-    for (const emp of state.employees) {
-      if (!activeBayIds.has(emp.bayId)) continue;
+    for (let capsuleIdx = 0; capsuleIdx < visibleEmployees.length; capsuleIdx++) {
+      const emp = visibleEmployees[capsuleIdx];
       liveIds.add(emp.id);
+      const workSeatIdx = Math.max(0, workingEmployees.findIndex((e) => e.id === emp.id));
 
       let sim = this.agents.get(emp.id);
       if (!sim) {
-        const spawn = this.pickGoalForEmployee(emp, "coffee");
+        const spawn = this.pickGoalForEmployee(emp, "coffee", capsuleIdx, workSeatIdx);
         sim = {
           record: emp,
           x: spawn.tile[0],
@@ -93,22 +98,25 @@ export class OfficeSimulation {
           lastVisualState: emp.visualState,
         };
         this.agents.set(emp.id, sim);
-        // Walk from bay entrance when newly spawned into an active state
-        const bayZone = this.findBayZone(emp.bayId);
-        if (bayZone && emp.visualState !== "resting") {
-          sim.x = bayZone.originX + 2;
-          sim.y = bayZone.originY + 5;
-          this.routeAgentTo(sim, spawn.tile, spawn.facing);
+        // Walk from their hypersleep capsule to the Central Work Hub when newly spawned into an active state
+        if (emp.visualState !== "resting") {
+          const podGoal = this.pickHypersleepGoal(capsuleIdx);
+          if (podGoal) {
+            sim.x = podGoal.tile[0];
+            sim.y = podGoal.tile[1];
+            this.routeAgentTo(sim, spawn.tile, spawn.facing);
+          }
         }
       } else {
         const prevState = sim.lastVisualState;
         sim.record = emp;
         sim.lastVisualState = emp.visualState;
-        const desired = this.pickGoalForEmployee(emp, sim.restActivity);
+        const desired = this.pickGoalForEmployee(emp, sim.restActivity, capsuleIdx, workSeatIdx);
         const goalChanged =
           prevState !== emp.visualState ||
           desired.tile[0] !== sim.goalTile[0] ||
-          desired.tile[1] !== sim.goalTile[1];
+          desired.tile[1] !== sim.goalTile[1] ||
+          desired.facing !== sim.targetDirection;
         if (goalChanged) {
           this.routeAgentTo(sim, desired.tile, desired.facing);
         }
@@ -131,31 +139,134 @@ export class OfficeSimulation {
     return this.campus?.zones.find((z) => z.kind === "cowork");
   }
 
-  /** Subagents hot-desk in the shared co-working room: sit on its chairs, or wait at its centre when full. */
-  private pickCoworkGoal(emp: EmployeeRecord): { tile: [number, number]; facing: Direction } | null {
+  private pickHypersleepGoal(capsuleIndex: number): { tile: [number, number]; facing: Direction } | null {
+    if (!this.campus) return null;
+    const pods = this.campus.worldFurniture
+      .filter((f) => f.assetId === "hypersleep-capsule")
+      .sort((a, b) => a.ty - b.ty || a.tx - b.tx);
+    if (pods.length === 0) return null;
+    const pod = pods[capsuleIndex % pods.length];
+    return { tile: [pod.tx, pod.ty], facing: pod.direction };
+  }
+
+  /** Central Work Hub (+ moved Central chairs + user-defined Work Zones): working agents sit on swivel chairs, or stand nearby when full. */
+  private pickCoworkGoal(emp: EmployeeRecord, seatIndex: number): { tile: [number, number]; facing: Direction } | null {
     const cowork = this.findCoworkZone();
     if (!cowork || !this.campus) return null;
-    const isSitting =
-      emp.visualState === "working" || emp.visualState === "teamwork" || emp.visualState === "resting";
+    const isSitting = emp.visualState === "working" || emp.visualState === "teamwork";
     if (isSitting) {
+      const workCustomZones = (this.state?.customZones ?? []).filter((z) => z.role === "work");
+      const inCustomWorkZone = (tx: number, ty: number) =>
+        workCustomZones.some((z) => tx >= z.x && tx < z.x + z.width && ty >= z.y && ty < z.y + z.height);
       const chairs = this.campus.worldFurniture
-        .filter((f) => f.zoneId === cowork.zoneId && f.assetId === "chair-office-swivel")
+        .filter(
+          (f) =>
+            f.assetId === "chair-office-swivel" &&
+            f.id !== "boss:0-boss-chair" &&
+            (f.zoneId === cowork.zoneId || f.id.startsWith("cowork:0-") || inCustomWorkZone(f.tx, f.ty)),
+        )
         .sort((a, b) => a.ty - b.ty || a.tx - b.tx);
-      if (emp.deskIndex < chairs.length) {
-        const chair = chairs[emp.deskIndex];
+      if (seatIndex < chairs.length) {
+        const chair = chairs[seatIndex];
         return { tile: [chair.tx, chair.ty], facing: chair.direction };
       }
     }
-    // Assigning (or no free chair): stand in the walkable centre cross of the room
-    const spot = emp.deskIndex % 4;
+    const spot = seatIndex % 6;
     return {
-      tile: [cowork.originX + 2 + (spot % 2), cowork.originY + 2 + Math.floor(spot / 2)],
-      facing: "se",
+      tile: [cowork.originX + (spot % 6), cowork.originY + 5],
+      facing: "nw",
     };
   }
 
   private findBossZone(): ZoneBounds | undefined {
     return this.campus?.zones.find((z) => z.kind === "boss");
+  }
+
+  /** Compute walkable stand spots directly in front of Boss's actual chair position & facing direction. */
+  private pickBossReportGoal(emp: EmployeeRecord): { tile: [number, number]; facing: Direction } {
+    const bossChair = this.campus?.worldFurniture.find((f) => f.id === "boss:0-boss-chair");
+    const bossDesk = this.campus?.worldFurniture.find((f) => f.id === "boss:0-boss-desk");
+    const bossZone = this.findBossZone();
+
+    const bx = bossChair ? bossChair.tx : (bossZone?.originX ?? 0) + 2;
+    const by = bossChair ? bossChair.ty : (bossZone?.originY ?? 0) + 1;
+    const bossDir: Direction = bossChair?.direction ?? "se";
+
+    const dirVec: Record<Direction, [number, number]> = {
+      se: [0, 1],
+      nw: [0, -1],
+      ne: [1, 0],
+      sw: [-1, 0],
+    };
+    const oppositeDir: Record<Direction, Direction> = {
+      se: "nw",
+      nw: "se",
+      ne: "sw",
+      sw: "ne",
+    };
+    const [fx, fy] = dirVec[bossDir];
+    const [px, py] = [-fy, fx];
+
+    const frontX = bx + fx;
+    const frontY = by + fy;
+    const hasDeskInFront = Boolean(
+      bossDesk &&
+        frontX >= bossDesk.tx &&
+        frontX < bossDesk.tx + bossDesk.footprintTiles[0] &&
+        frontY >= bossDesk.ty &&
+        frontY < bossDesk.ty + bossDesk.footprintTiles[1],
+    );
+
+    const isWalkableTile = (x: number, y: number): boolean => {
+      if (!this.grid) return x >= 0 && y >= 0;
+      return x >= 0 && y >= 0 && x < this.grid.width && y < this.grid.height && this.grid.blocked[y * this.grid.width + x] === 0;
+    };
+
+    const ring1: Array<[number, number]> = [
+      [bx + fx, by + fy],
+      [bx + fx + px, by + fy + py],
+      [bx + fx - px, by + fy - py],
+    ];
+    const ring2: Array<[number, number]> = [
+      [bx + fx * 2, by + fy * 2],
+      [bx + fx * 2 + px, by + fy * 2 + py],
+      [bx + fx * 2 - px, by + fy * 2 - py],
+    ];
+    const ring3: Array<[number, number]> = [
+      [bx + px, by + py],
+      [bx - px, by - py],
+      [bx + fx * 3, by + fy * 3],
+      [bx - fx, by - fy],
+    ];
+
+    const preferredRings: Array<{ tiles: Array<[number, number]>; isFront: boolean }> = hasDeskInFront
+      ? [
+          { tiles: ring2, isFront: true },
+          { tiles: ring1, isFront: true },
+          { tiles: ring3, isFront: false },
+        ]
+      : [
+          { tiles: ring1, isFront: true },
+          { tiles: ring2, isFront: true },
+          { tiles: ring3, isFront: false },
+        ];
+
+    const lookTarget: [number, number] = hasDeskInFront && bossDesk
+      ? [bossDesk.tx + (bossDesk.footprintTiles[0] - 1) / 2, bossDesk.ty + (bossDesk.footprintTiles[1] - 1) / 2]
+      : [bx, by];
+
+    const reportingOrder = (this.state?.employees ?? []).filter((e) => e.visualState === "reporting");
+    const visitorRank = Math.max(0, reportingOrder.findIndex((e) => e.id === emp.id));
+
+    for (const ring of preferredRings) {
+      const open = ring.tiles.filter(([x, y]) => isWalkableTile(x, y));
+      if (open.length > 0) {
+        const tile = open[visitorRank % open.length];
+        return { tile, facing: ring.isFront ? oppositeDir[bossDir] : facingToward(tile, lookTarget) };
+      }
+    }
+    const fallback: [number, number] = [Math.max(0, bx + fx), Math.max(0, by + fy)];
+    return { tile: fallback, facing: oppositeDir[bossDir] };
   }
 
   private findCommonWingForRow(row: number): ZoneBounds | undefined {
@@ -192,18 +303,34 @@ export class OfficeSimulation {
 
   private pickGoalForEmployee(
     emp: EmployeeRecord,
-    restActivity: RestActivity,
+    _restActivity: RestActivity,
+    capsuleIdx = 0,
+    workSeatIdx = 0,
   ): { tile: [number, number]; facing: Direction } {
+    if (!this.campus) {
+      return { tile: [2, 2], facing: "se" };
+    }
+
+    // 1. Reporting -> walk directly in front of Boss's actual chair/desk and face Boss
+    if (emp.visualState === "reporting") {
+      return this.pickBossReportGoal(emp);
+    }
+
+    // 2. Resting (idle) -> sleep inside their dedicated Hypersleep Capsule!
+    if (emp.visualState === "resting") {
+      const podGoal = this.pickHypersleepGoal(capsuleIdx);
+      if (podGoal) return podGoal;
+    }
+
+    // 3. Working / Teamwork / Assigning / Meeting -> Central Work Hub (+ Custom Work Zones)
+    const centralGoal = this.pickCoworkGoal(emp, workSeatIdx);
+    if (centralGoal) return centralGoal;
+
     const bayZone = this.findBayZone(emp.bayId);
-    if (!bayZone || !this.campus) {
+    if (!bayZone) {
       return { tile: [2, 2], facing: "se" };
     }
     const common = this.findCommonWingForRow(bayZone.row) ?? bayZone;
-
-    if (emp.isEphemeral && emp.visualState !== "reporting" && emp.visualState !== "meeting") {
-      const coworkGoal = this.pickCoworkGoal(emp);
-      if (coworkGoal) return coworkGoal;
-    }
 
     // Resolve actual swivel chairs in this bay first so moved furniture updates seating
     const bayChairs = this.campus.worldFurniture.filter(
@@ -232,28 +359,12 @@ export class OfficeSimulation {
 
       case "assigning": {
         // Briefing spots come from the room's designed layout (mirrored with it)
-        const dept = bayZone.department ?? "general";
-        const { key, mirrored } = bayLayoutKey(dept, emp.bayId);
+        const { key, mirrored } = bayLayoutKeyForBay(emp.bayId);
         const spots = this.openSpots(bayZone, getRoomLayout(key, mirrored).standSpots);
         if (spots.length > 0) {
           return { tile: spots[emp.deskIndex % spots.length], facing: "se" };
         }
         return { tile: [bayZone.originX + 2 + (emp.deskIndex % 2), bayZone.originY + 4], facing: "se" };
-      }
-
-      case "reporting": {
-        const boss = this.findBossZone();
-        if (boss) {
-          // Visitors stand in front of the boss desk, looking at it
-          const spots = this.openSpots(boss, getRoomLayout("boss").standSpots);
-          const desk = this.furnitureCentre(boss, (f) => f.id === "boss:0-boss-desk");
-          if (spots.length > 0) {
-            const tile = spots[(emp.deskIndex + this.hashSlot(emp.id)) % spots.length];
-            return { tile, facing: desk ? facingToward(tile, desk) : "nw" };
-          }
-          return { tile: [boss.originX + 1, boss.originY + 3], facing: "nw" };
-        }
-        return { tile: [1, 3], facing: "nw" };
       }
 
       case "meeting": {

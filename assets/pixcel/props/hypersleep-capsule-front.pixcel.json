@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "hypersleep-capsule-front",
+  "category": "tech",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 2],
+  "palette": "office-night",
+  "materials": {
+    "hull_mid": { "color": "#90acb8", "kind": "metal" },
+    "hull_light": { "color": "#d8eaef", "kind": "metal" },
+    "med_green": { "color": "#25b875", "kind": "matte" },
+    "med_green_dark": { "color": "#14784c", "kind": "matte" },
+    "canopy_glass": { "color": "#b4e3f2", "kind": "glass" },
+    "stasis_led": { "color": "#3ef5cc", "kind": "emissive", "glowRadius": 2, "glowIntensity": 0.65 }
+  },
+  "ops": [
+    { "op": "slope", "from": [6, 16, 11], "to": [7, 49, 18], "axis": "-Y", "material": "canopy_glass", "part": "canopy_dome" },
+    { "op": "slope", "from": [24, 16, 11], "to": [25, 49, 18], "axis": "-Y", "material": "canopy_glass", "part": "canopy_dome" },
+    { "op": "slope", "from": [7, 16, 13], "to": [9, 49, 20], "axis": "-Y", "material": "canopy_glass", "part": "canopy_dome" },
+    { "op": "slope", "from": [22, 16, 13], "to": [24, 49, 20], "axis": "-Y", "material": "canopy_glass", "part": "canopy_dome" },
+    { "op": "slope", "from": [9, 16, 14], "to": [22, 49, 21], "axis": "-Y", "material": "canopy_glass", "part": "canopy_dome" },
+    { "op": "slope", "from": [8, 16, 12], "to": [23, 49, 19], "axis": "-Y", "material": null, "part": "canopy_dome" },
+    { "op": "box", "from": [6, 16, 0], "to": [25, 49, 11], "material": null, "part": "canopy_dome" },
+
+    { "op": "slope", "from": [4, 15, 9], "to": [6, 51, 15], "axis": "-Y", "material": "hull_mid", "part": "canopy_rib_l" },
+    { "op": "slope", "from": [4, 15, 11], "to": [6, 51, 18], "axis": "-Y", "material": "hull_light", "part": "canopy_rib_l" },
+    { "op": "slope", "from": [4, 15, 7], "to": [6, 51, 11], "axis": "-Y", "material": null, "part": "canopy_rib_l" },
+    { "op": "box", "from": [4, 15, 0], "to": [6, 51, 7], "material": null, "part": "canopy_rib_l" },
+
+    { "op": "slope", "from": [25, 15, 9], "to": [27, 51, 15], "axis": "-Y", "material": "hull_mid", "part": "canopy_rib_r" },
+    { "op": "slope", "from": [25, 15, 11], "to": [27, 51, 18], "axis": "-Y", "material": "hull_light", "part": "canopy_rib_r" },
+    { "op": "slope", "from": [25, 15, 7], "to": [27, 51, 11], "axis": "-Y", "material": null, "part": "canopy_rib_r" },
+    { "op": "box", "from": [25, 15, 0], "to": [27, 51, 7], "material": null, "part": "canopy_rib_r" },
+
+    { "op": "box", "from": [4, 14, 14], "to": [6, 18, 19], "material": "med_green", "part": "head_arch" },
+    { "op": "box", "from": [25, 14, 14], "to": [27, 18, 19], "material": "med_green", "part": "head_arch" },
+    { "op": "box", "from": [6, 14, 19], "to": [9, 18, 21], "material": "med_green", "part": "head_arch" },
+    { "op": "box", "from": [22, 14, 19], "to": [25, 18, 21], "material": "med_green", "part": "head_arch" },
+    { "op": "box", "from": [9, 14, 20], "to": [22, 18, 22], "material": "med_green", "part": "head_arch" },
+    { "op": "box", "from": [9, 18, 21], "to": [22, 18, 22], "material": "hull_light", "part": "head_arch" },
+
+    { "op": "box", "from": [4, 48, 8], "to": [6, 54, 12], "material": "med_green", "part": "foot_arch" },
+    { "op": "box", "from": [25, 48, 8], "to": [27, 54, 12], "material": "med_green", "part": "foot_arch" },
+    { "op": "box", "from": [6, 48, 11], "to": [9, 54, 14], "material": "med_green", "part": "foot_arch" },
+    { "op": "box", "from": [22, 48, 11], "to": [25, 54, 14], "material": "med_green", "part": "foot_arch" },
+    { "op": "box", "from": [9, 48, 13], "to": [22, 54, 15], "material": "med_green", "part": "foot_arch" },
+    { "op": "box", "from": [6, 48, 11], "to": [25, 48, 13], "material": "med_green_dark", "part": "foot_arch" },
+    { "op": "box", "from": [5, 54, 8], "to": [26, 55, 11], "material": "hull_light", "part": "foot_arch" },
+    { "op": "box", "from": [8, 54, 11], "to": [23, 55, 13], "material": "hull_light", "part": "foot_arch" },
+
+    { "op": "box", "from": [12, 55, 9], "to": [19, 55, 10], "material": "stasis_led", "part": "stasis_leds" },
+    { "op": "box", "from": [4, 32, 12], "to": [4, 35, 12], "material": "stasis_led", "part": "stasis_leds" },
+    { "op": "box", "from": [27, 32, 12], "to": [27, 35, 12], "material": "stasis_led", "part": "stasis_leds" }
+  ]
+}

@@ -14,8 +14,6 @@ import {
   createDefaultBayFurniture,
   createDefaultBossOffice,
   createDefaultCommonWing,
-  MODULE_PITCH_X,
-  MODULE_PITCH_Y,
 } from "../src/server/layout-engine.js";
 import { OfficeEngine } from "../src/server/office-engine.js";
 import {
@@ -236,95 +234,48 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
     expect(classifyDepartmentFromPath(null)).toBe("general");
   });
 
-  it("groups active bays clockwise by department (iherk -> dev -> erp -> accounting -> general) with office theme floors, dividers & dept furniture", () => {
+  it("groups campus into 3 functional zones (hq, amenity, workspace) with no departments, separated by 2-tile walkways", () => {
     const bays: ProjectBayRecord[] = [
-      makeDeptBay("bay-gen", "/work/misc", "general", 1),
-      makeDeptBay("bay-acc", "/demo/accounting-vat", "accounting", 2),
-      makeDeptBay("bay-dev", "/demo/msv-frontend", "dev", 3),
-      makeDeptBay("bay-erp", "/demo/erp-loh-pc", "erp", 4),
-      makeDeptBay("bay-iherk-1", "/demo/iherk-hell-factory", "iherk", 5),
-      makeDeptBay("bay-iherk-2", "/demo/iherk-pixcel", "iherk", 6),
+      makeDeptBay("bay-1", "/work/misc", "general", 1),
+      makeDeptBay("bay-2", "/demo/accounting-vat", "accounting", 2),
+      makeDeptBay("bay-3", "/demo/msv-frontend", "dev", 3),
+      makeDeptBay("bay-4", "/demo/erp-loh-pc", "erp", 4),
+      makeDeptBay("bay-5", "/demo/iherk-hell-factory", "iherk", 5),
+      makeDeptBay("bay-6", "/demo/iherk-pixcel", "iherk", 6),
     ];
 
     const officeCampus = computeCampusLayout(
       bays,
-      [createDefaultCommonWing(0)],
+      [createDefaultCommonWing(0), createDefaultCommonWing(1)],
       mockCatalog,
       createDefaultBossOffice(),
       "office",
     );
 
-    const bayZones = officeCampus.zones.filter((z) => z.kind === "bay");
-    expect(bayZones.map((z) => z.bayId)).toEqual([
-      "bay-iherk-1",
-      "bay-iherk-2",
-      "bay-dev",
-      "bay-erp",
-      "bay-acc",
-      "bay-gen",
-    ]);
-    expect(bayZones.map((z) => z.department)).toEqual([
-      "iherk",
-      "iherk",
-      "dev",
-      "erp",
-      "accounting",
-      "general",
-    ]);
-    // Each department is one lot; its bays sit in neighbouring cells of that lot
-    for (const dept of ["iherk", "dev", "erp", "accounting", "general"]) {
-      const deptZones = bayZones.filter((z) => z.department === dept);
-      expect(new Set(deptZones.map((z) => z.lotId))).toEqual(new Set([`dept:${dept}`]));
-    }
-    const [i1, i2] = bayZones.filter((z) => z.department === "iherk");
-    expect(Math.abs(i1.col - i2.col) + Math.abs(i1.row - i2.row)).toBe(1);
-
-    // Office theme floors, room threshold strips, boss rug, architectural room walls, junctions & same-dept amber dividers
+    // Open customizable campus: Boss Corner + Central Work Hub + Auto-scaled Hypersleep Bay + Blank Floor
+    expect(officeCampus.zones.map((z) => z.kind)).toEqual(["boss", "cowork", "hypersleep", "floor"]);
+    expect(officeCampus.wallSegments).toHaveLength(0);
     expect(officeCampus.floors.some((f) => f.assetId === "floor-office-carpet")).toBe(true);
-    // Rooms sit flush now: every tile inside the campus belongs to a room, so no walkway tile is left
-    expect(officeCampus.floors.some((f) => f.assetId === "floor-corridor-tile")).toBe(false);
+    expect(officeCampus.floors.some((f) => f.assetId === "floor-corridor-tile")).toBe(true);
     expect(officeCampus.floors.some((f) => f.assetId === "floor-boss-rug")).toBe(true);
-    // Walls stand on the boundary lines, so they are wallSegments rather than tile furniture
-    expect(officeCampus.wallSegments.some((w) => w.assetId === "room-wall-glass")).toBe(true);
-    // Four rooms meeting at a crossing need the full cross so the wall never breaks
-    expect(officeCampus.wallSegments.some((w) => w.assetId === "room-junction-cross")).toBe(true);
-    // Projects of one department share an open-plan lot split by low amber cubicle dividers
-    expect(officeCampus.wallSegments.some((w) => w.assetId === "divider-cubicle-amber")).toBe(true);
-    expect(officeCampus.worldFurniture.some((f) => f.assetId === "filing-cabinet")).toBe(true);
-    expect(officeCampus.worldFurniture.some((f) => f.assetId === "printer-copier")).toBe(true);
-    expect(officeCampus.worldFurniture.some((f) => f.assetId === "robot-vacuum")).toBe(true);
-    expect(officeCampus.wallDecor.some((d) => d.assetId === "wall-ac-unit")).toBe(true);
-    expect(officeCampus.wallDecor.some((d) => d.assetId === "wall-corkboard")).toBe(true);
+    expect(officeCampus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(6);
 
-    // Outer perimeter windows only sit over room interiors, never over room walls or corridors
-    expect(
-      officeCampus.walls.some(
-        (w) =>
-          w.assetId === "wall-night-window" &&
-          ((w.ty === 0 && w.tx % MODULE_PITCH_X >= 6) || (w.tx === 0 && w.ty % MODULE_PITCH_Y >= 6)),
-      ),
-    ).toBe(false);
-
-    // Every occupied room must be reachable from Boss Office (2,4) through open 2-tile doorways via A*
     const walkGrid = buildWalkableGrid(officeCampus);
-    for (const z of officeCampus.zones) {
-      const target: [number, number] = [z.originX + 2, z.originY + 2];
-      const path = findTilePath(walkGrid, [2, 4], target);
-      const end = path[path.length - 1];
-      expect(Math.abs(end[0] - target[0]) + Math.abs(end[1] - target[1]), `Room ${z.zoneId} reachable`).toBeLessThanOrEqual(1);
+    for (const pod of officeCampus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")) {
+      const path = findTilePath(walkGrid, [2, 4], [pod.tx, pod.ty]);
+      expect(path[path.length - 1], `Pod ${pod.id} reachable`).toEqual([pod.tx, pod.ty]);
     }
 
-    // Night theme still uses wood plank + architectural walls + low glass dividers between same-dept bays
     const nightCampus = computeCampusLayout(
       bays,
-      [createDefaultCommonWing(0)],
+      [createDefaultCommonWing(0), createDefaultCommonWing(1)],
       mockCatalog,
       createDefaultBossOffice(),
       "night",
     );
     expect(nightCampus.floors.some((f) => f.assetId === "floor-wood-plank")).toBe(true);
-    expect(nightCampus.wallSegments.some((w) => w.assetId === "room-wall-glass")).toBe(true);
-    expect(nightCampus.wallSegments.some((w) => w.assetId === "room-junction-cross")).toBe(true);
+    expect(nightCampus.floors.some((f) => f.assetId === "floor-corridor-tile")).toBe(true);
+    expect(nightCampus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(6);
   });
 
   it("uses Phase 2 1:1 facing directions in OfficeSimulation, supports AI Org roles, manageBay(department), and 4-dept DemoSimulator", async () => {
@@ -388,11 +339,9 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
     );
     let stepOut = restSim.step(50);
     for (let i = 0; i < 400; i++) stepOut = restSim.step(50);
-    const bayChair = restCampus.worldFurniture.find(
-      (f) => f.zoneId === "bay:bay-rest" && f.assetId === "chair-office-swivel",
-    )!;
-    expect(Math.round(stepOut.visuals[0].x)).toBe(bayChair.tx);
-    expect(Math.round(stepOut.visuals[0].y)).toBe(bayChair.ty);
+    const pod0 = restCampus.worldFurniture.find((f) => f.assetId === "hypersleep-capsule")!;
+    expect(Math.round(stepOut.visuals[0].x)).toBe(pod0.tx);
+    expect(Math.round(stepOut.visuals[0].y)).toBe(pod0.ty);
     expect(stepOut.visuals[0].clipName).toMatch(/^rest_sleep_/);
     expect(stepOut.visuals[0].bubbleIcon).toBe("💤");
 
@@ -438,15 +387,17 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
     });
 
     const snap = engine.getSnapshot();
-    const iherkBay = snap.state.bays.find((b) => b.projectPath === "/demo/iherk-hell-factory");
-    const accBay = snap.state.bays.find((b) => b.projectPath === "/work/monthly-close");
-    expect(iherkBay?.department).toBe("iherk");
-    expect(accBay?.department).toBe("accounting");
+    const projA = snap.state.bays.find((b) => b.projectPath === "/demo/iherk-hell-factory");
+    const projB = snap.state.bays.find((b) => b.projectPath === "/work/monthly-close");
+    expect(projA).toBeDefined();
+    expect(projB).toBeDefined();
+    expect(projA?.department).toBeUndefined();
+    expect(projB?.department).toBeUndefined();
 
-    // manageBay updates department
-    const updated = await engine.manageBay(accBay!.id, { department: "erp" });
-    expect(updated.department).toBe("erp");
-    expect(updated.accentColor).toBe(DEPARTMENT_META.erp.color);
+    // manageBay updates displayName & accentColor cleanly without departments
+    const updated = await engine.manageBay(projB!.id, { displayName: "Monthly Close", accentColor: "#10b981" });
+    expect(updated.displayName).toBe("Monthly Close");
+    expect(updated.accentColor).toBe("#10b981");
 
     // Simulation facing: subagent faces across its pod, visitor reporting to Boss faces the boss desk
     const sim = new OfficeSimulation();
@@ -470,9 +421,10 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
     );
     expect(reportingVisual?.bubbleIcon).toBe("❓");
 
-    // DEMO_SCRIPT covers all 4 departments, AI Org roles, HITL (waiting_user), and Report (turn_stop)
-    const demoDepts = new Set(DEMO_SCRIPT.map((s) => s.event.department));
-    expect(demoDepts).toEqual(new Set(["iherk", "dev", "erp", "accounting"]));
+    // DEMO_SCRIPT covers 4 projects (department-free), AI Org roles, HITL (waiting_user), and Report (turn_stop)
+    const demoProjects = new Set(DEMO_SCRIPT.map((s) => s.event.projectPath));
+    expect(demoProjects.size).toBe(4);
+    expect(DEMO_SCRIPT.every((s) => s.event.department === undefined)).toBe(true);
     const demoRoles = new Set(DEMO_SCRIPT.map((s) => s.event.agentRole).filter(Boolean));
     expect(demoRoles).toEqual(new Set(["Orchestrator", "org-researcher", "org-worker", "org-qa"]));
     expect(DEMO_SCRIPT.some((s) => s.event.eventType === "waiting_user")).toBe(true);

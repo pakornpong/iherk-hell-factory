@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "floor-grass-turf",
+  "category": "floor",
+  "layer": "floor",
+  "outlineMode": "none",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-day",
+  "materials": {
+    "grass_a": { "color": "#3b8c47", "kind": "matte" },
+    "grass_b": { "color": "#469e53", "kind": "matte" },
+    "tuft": { "color": "#2d7037", "kind": "matte" },
+    "clover": { "color": "#65bd68", "kind": "matte" }
+  },
+  "ops": [
+    { "op": "box", "from": [0, 0, 0], "to": [31, 15, 0], "material": "grass_a" },
+    { "op": "box", "from": [0, 16, 0], "to": [31, 31, 0], "material": "grass_b" },
+    { "op": "box", "from": [4, 4, 0], "to": [6, 5, 0], "material": "tuft" },
+    { "op": "box", "from": [20, 9, 0], "to": [22, 10, 0], "material": "clover" },
+    { "op": "box", "from": [11, 21, 0], "to": [13, 22, 0], "material": "tuft" },
+    { "op": "box", "from": [25, 25, 0], "to": [27, 26, 0], "material": "clover" },
+    { "op": "box", "from": [7, 27, 0], "to": [8, 28, 0], "material": "clover" }
+  ]
+}

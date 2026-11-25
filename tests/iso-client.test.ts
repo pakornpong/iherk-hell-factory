@@ -1,12 +1,15 @@
 import { describe, expect, it } from "vitest";
 import { IsoCamera, tileToWorld, worldToTile } from "../src/client/camera.js";
+import { isEmployeeActive, sortActiveAgents } from "../src/client/hud.js";
 import {
   computeFloorSlabGeometry,
   FLOOR_SLAB_PALETTES,
+  getZoneCenterWorld,
   isInWorldBounds,
   IsoRenderer,
   sortUnifiedIsoEntities,
 } from "../src/client/iso-renderer.js";
+import type { EmployeeRecord } from "../src/shared/types.js";
 
 describe("IsoCamera & unified topological depth-sorter", () => {
   it("round-trips tile <-> world <-> screen picking across integer zooms 1..4", () => {
@@ -126,5 +129,37 @@ describe("IsoCamera & unified topological depth-sorter", () => {
       expect(usedColors.has(pal.faceRight)).toBe(true);
       expect(usedColors.has(pal.outline)).toBe(true);
     }
+  });
+
+  it("identifies active agents and sorts them by urgency (error -> reporting -> working -> resting)", () => {
+    const mk = (id: string, visualState: EmployeeRecord["visualState"], toolCategory: EmployeeRecord["toolCategory"] = "idle", lastUpdatedAt = 100): EmployeeRecord => ({
+      id,
+      bayId: "bay-0",
+      provider: "claude",
+      spriteId: "agent-claude",
+      displayName: id,
+      role: "Lead",
+      isEphemeral: false,
+      deskIndex: 0,
+      visualState,
+      toolCategory,
+      lastUpdatedAt,
+    });
+    const list = [
+      mk("rest", "resting", "idle", 500),
+      mk("work-old", "working", "code", 100),
+      mk("work-new", "working", "code", 300),
+      mk("report", "reporting", "idle", 200),
+      mk("err", "working", "error", 50),
+    ];
+    expect(list.filter(isEmployeeActive).map((e) => e.id)).toEqual(["work-old", "work-new", "report", "err"]);
+    expect(sortActiveAgents(list).map((e) => e.id)).toEqual(["err", "report", "work-new", "work-old", "rest"]);
+  });
+
+  it("computes the exact isometric diamond center for room nameplates", () => {
+    // 6x6 block at (0,0): top vertex (0,-32), bottom vertex (0,160), left (-192,64), right (192,64) -> center (0,64)
+    expect(getZoneCenterWorld({ originX: 0, originY: 0, width: 6, height: 6 })).toEqual([0, 64]);
+    // Shifted 6x6 block at (6,14): center shifts by ((6-14)*32, (6+14)*16) = (-256, 320) -> (-256, 384)
+    expect(getZoneCenterWorld({ originX: 6, originY: 14, width: 6, height: 6 })).toEqual([-256, 384]);
   });
 });

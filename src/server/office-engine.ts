@@ -4,12 +4,12 @@ import path from "node:path";
 import { isSurfaceHostAsset, isTabletopAsset, toTileKey, type RenderLayer, type TilePermission } from "../shared/layers.js";
 import {
   AgentTelemetryEventSchema,
-  classifyDepartmentFromPath,
-  DEPARTMENT_META,
   type ActivityLogEntry,
   type AgentTelemetryEvent,
   type CatalogEntry,
   type ComputedCampus,
+  type CustomZoneRecord,
+  type CustomZoneRole,
   type DepartmentId,
   type Direction,
   type EmployeeRecord,
@@ -30,8 +30,14 @@ import {
   createDefaultBossOffice,
   createDefaultCommonWing,
   createExtraBayWorkstations,
+  createHypersleepFurniture,
+  DEFAULT_FLOOR_DEPTH,
+  DEFAULT_FLOOR_WIDTH,
+  FLOOR_EXPAND_STEP,
   getAmenityTheme,
   getRotatedFootprint,
+  MAX_FLOOR_SIDE,
+  MIN_FLOOR_SIDE,
   resolveWorldToZone,
   validateFurniturePlacement,
 } from "./layout-engine.js";
@@ -143,14 +149,26 @@ export class OfficeEngine extends EventEmitter {
     this.restCooldownMs = opts.restCooldownMs ?? 15_000;
     this.assignDurationMs = opts.assignDurationMs ?? 2_500;
     this.state = this.createFreshState();
-    this.campus = computeCampusLayout(
-      this.state.bays,
-      this.state.commonWings,
+    this.campus = this.computeLayoutForState(this.state);
+  }
+
+  private computeLayoutForState(state: OfficeState): ComputedCampus {
+    const activeBayIds = new Set(state.bays.filter((b) => !b.archived).map((b) => b.id));
+    const employeeCount = state.employees.filter((e) => activeBayIds.has(e.bayId)).length;
+    return computeCampusLayout(
+      state.bays,
+      state.commonWings,
       this.catalogById,
-      this.state.bossOffice,
-      this.state.theme,
-      this.state.tilePermissionOverrides,
-      this.state.zoneOverrides,
+      state.bossOffice,
+      state.theme,
+      state.tilePermissionOverrides,
+      state.zoneOverrides,
+      {
+        employeeCount,
+        floorWidthTiles: state.floorWidthTiles,
+        floorDepthTiles: state.floorDepthTiles,
+        floorTileOverrides: state.floorTileOverrides,
+      },
     );
   }
 
@@ -161,17 +179,16 @@ export class OfficeEngine extends EventEmitter {
       version: 1,
       theme: "office",
       bossOffice: createDefaultBossOffice(),
-      commonWings: [createDefaultCommonWing(0)],
+      commonWings: [createDefaultCommonWing(0), createDefaultCommonWing(1)],
       bays: [
         {
           id: starterBayId,
           projectPath: null,
           displayName: "Starter Studio",
-          department: "general",
           accentColor: BAY_ACCENT_PALETTE[0],
           archived: false,
           deskSlots: 2,
-          furniture: createDefaultBayFurniture(starterBayId, "general"),
+          furniture: createDefaultBayFurniture(starterBayId),
           createdAt: ts,
           lastActiveAt: ts,
         },
@@ -205,13 +222,10 @@ export class OfficeEngine extends EventEmitter {
         loaded.bossOffice = { ...createDefaultBossOffice(), displayName: loaded.bossOffice?.displayName ?? "BOSS OFFICE" };
       }
       for (const b of loaded.bays) {
-        if (!b.department) {
-          b.department = classifyDepartmentFromPath(b.projectPath);
-        }
-        // Refresh untouched rooms so new default props (themed decor) reach existing saves.
+        // Refresh untouched rooms so new default props reach existing saves.
         if (b.furniture.every((f) => f.placedBy === "system")) {
-          const base = createDefaultBayFurniture(b.id, b.department);
-          b.furniture = [...base, ...createExtraBayWorkstations(b.id, b.deskSlots, base, b.department)];
+          const base = createDefaultBayFurniture(b.id);
+          b.furniture = [...base, ...createExtraBayWorkstations(b.id, b.deskSlots, base)];
         }
       }
       for (const w of loaded.commonWings) {
@@ -281,21 +295,12 @@ export class OfficeEngine extends EventEmitter {
   }
 
   private recomputeCampus(): void {
-    this.campus = computeCampusLayout(
-      this.state.bays,
-      this.state.commonWings,
-      this.catalogById,
-      this.state.bossOffice,
-      this.state.theme,
-      this.state.tilePermissionOverrides,
-      this.state.zoneOverrides,
-    );
+    this.campus = this.computeLayoutForState(this.state);
   }
 
   private ensureCommonWingsForActiveRows(): void {
-    const activeCount = Math.max(1, this.state.bays.filter((b) => !b.archived).length);
-    const neededWings = Math.max(1, 1 + Math.floor(activeCount / 10));
-    for (let idx = 0; idx < neededWings; idx++) {
+    // HQ & Hub zone always contains two lounges (common:0 and common:1)
+    for (let idx = 0; idx < 2; idx++) {
       if (!this.state.commonWings.some((w) => w.row === idx)) {
         this.state.commonWings.push(createDefaultCommonWing(idx));
       }
@@ -324,21 +329,13 @@ export class OfficeEngine extends EventEmitter {
   private getOrCreateBayForProject(
     projectPath: string,
     projectName: string | undefined,
-    explicitDepartment: DepartmentId | undefined,
     ts: number,
   ): { bay: ProjectBayRecord; expanded: boolean } {
-    const dept = classifyDepartmentFromPath(projectPath, explicitDepartment);
     const existing = this.state.bays.find((b) => b.projectPath === projectPath);
     if (existing) {
       const wasArchived = existing.archived;
       existing.archived = false;
       existing.lastActiveAt = ts;
-      if (explicitDepartment && existing.department !== explicitDepartment) {
-        existing.department = explicitDepartment;
-        existing.accentColor = DEPARTMENT_META[explicitDepartment].color;
-      } else if (!existing.department) {
-        existing.department = dept;
-      }
       if (wasArchived) {
         this.ensureCommonWingsForActiveRows();
       }
@@ -351,10 +348,9 @@ export class OfficeEngine extends EventEmitter {
     if (starterBay) {
       starterBay.projectPath = projectPath;
       starterBay.displayName = displayName;
-      starterBay.department = dept;
-      starterBay.accentColor = DEPARTMENT_META[dept].color;
+      starterBay.accentColor = BAY_ACCENT_PALETTE[0];
       if (starterBay.furniture.every((f) => f.placedBy === "system")) {
-        starterBay.furniture = createDefaultBayFurniture(starterBay.id, dept);
+        starterBay.furniture = createDefaultBayFurniture(starterBay.id);
       }
       starterBay.archived = false;
       starterBay.lastActiveAt = ts;
@@ -368,11 +364,10 @@ export class OfficeEngine extends EventEmitter {
       id: bayId,
       projectPath,
       displayName,
-      department: dept,
-      accentColor: DEPARTMENT_META[dept].color ?? BAY_ACCENT_PALETTE[nextIndex % BAY_ACCENT_PALETTE.length],
+      accentColor: BAY_ACCENT_PALETTE[nextIndex % BAY_ACCENT_PALETTE.length],
       archived: false,
       deskSlots: 2,
-      furniture: createDefaultBayFurniture(bayId, dept),
+      furniture: createDefaultBayFurniture(bayId),
       createdAt: ts,
       lastActiveAt: ts,
     };
@@ -449,6 +444,7 @@ export class OfficeEngine extends EventEmitter {
       // Subagents work from the shared co-working room, so the project's own room does not grow desks
       this.state.employees.push(emp);
       this.recomputeCampus();
+      this.ensureHypersleepPodForNewEmployee();
       return emp;
     }
 
@@ -490,8 +486,83 @@ export class OfficeEngine extends EventEmitter {
     };
     this.state.employees.push(emp);
     this.recomputeCampus();
+    this.ensureHypersleepPodForNewEmployee();
     this.ensureBayDesksForTeam(bay);
     return emp;
+  }
+
+  /**
+   * When the user has customized hypersleep:0 (moved/rotated pods), keep auto-spawning 1 new capsule
+   * whenever a new agent joins and total capsules on campus are fewer than the active employee count.
+   */
+  private ensureHypersleepPodForNewEmployee(): void {
+    const customPods = this.state.zoneOverrides?.["hypersleep:0"];
+    if (!customPods) return;
+    const activeBayIds = new Set(this.state.bays.filter((b) => !b.archived).map((b) => b.id));
+    const empCount = this.state.employees.filter((e) => activeBayIds.has(e.bayId)).length;
+    const totalPods = this.campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule").length;
+    if (totalPods >= empCount) return;
+
+    const hsZone = this.campus.zones.find((z) => z.zoneId === "hypersleep:0");
+    const floorZone = this.campus.zones.find((z) => z.zoneId === "floor:0");
+    if (!hsZone && !floorZone) return;
+
+    const occupied = new Set<string>();
+    for (const wf of this.campus.worldFurniture) {
+      const cat = this.catalogById.get(wf.assetId);
+      if (isTabletopAsset(wf.assetId, wf.layer, cat)) continue;
+      for (let dy = 0; dy < wf.footprintTiles[1]; dy++) {
+        for (let dx = 0; dx < wf.footprintTiles[0]; dx++) {
+          occupied.add(`${wf.tx + dx},${wf.ty + dy}`);
+        }
+      }
+    }
+
+    const podId = `hypersleep:0-pod-${Date.now()}-${crypto.randomBytes(2).toString("hex")}`;
+    if (hsZone) {
+      for (let ly = 0; ly + 2 <= hsZone.height; ly += 3) {
+        for (let lx = 0; lx < hsZone.width; lx++) {
+          const wx = hsZone.originX + lx;
+          const wy = hsZone.originY + ly;
+          if (!occupied.has(`${wx},${wy}`) && !occupied.has(`${wx},${wy + 1}`)) {
+            customPods.push({
+              id: podId,
+              zoneId: "hypersleep:0",
+              lx,
+              ly,
+              assetId: "hypersleep-capsule",
+              direction: "se",
+              layer: "object",
+              placedBy: "system",
+            });
+            this.recomputeCampus();
+            return;
+          }
+        }
+      }
+    }
+    if (floorZone) {
+      const floorList = this.getZoneFurnitureArray("floor:0");
+      if (!floorList) return;
+      for (let y = 1; y + 2 <= floorZone.height; y += 3) {
+        for (let x = 1; x < floorZone.width - 1; x++) {
+          if (!occupied.has(`${x},${y}`) && !occupied.has(`${x},${y + 1}`)) {
+            floorList.push({
+              id: podId,
+              zoneId: "floor:0",
+              lx: x,
+              ly: y,
+              assetId: "hypersleep-capsule",
+              direction: "se",
+              layer: "object",
+              placedBy: "system",
+            });
+            this.recomputeCampus();
+            return;
+          }
+        }
+      }
+    }
   }
 
   private ensureBayDesksForTeam(bay: ProjectBayRecord): void {
@@ -503,7 +574,6 @@ export class OfficeEngine extends EventEmitter {
         bay.id,
         desired,
         bay.furniture,
-        bay.department ?? classifyDepartmentFromPath(bay.projectPath),
       );
       for (const f of added) {
         // Only add if spot is currently free (respects user/Gemini custom furniture!)
@@ -570,7 +640,7 @@ export class OfficeEngine extends EventEmitter {
       return;
     }
 
-    const { bay, expanded } = this.getOrCreateBayForProject(normalizedPath, ev.projectName, ev.department, ts);
+    const { bay, expanded } = this.getOrCreateBayForProject(normalizedPath, ev.projectName, ts);
     if (expanded) this.recomputeCampus();
     const emp = this.resolveOrSpawnEmployee(bay, ev, ts);
     if (!emp) return;
@@ -810,10 +880,42 @@ export class OfficeEngine extends EventEmitter {
       const bay = this.state.bays.find((b) => b.id === bayId);
       return bay ? bay.furniture : null;
     }
+    if (zoneId === "floor:0") {
+      if (!this.state.zoneOverrides) this.state.zoneOverrides = {};
+      if (!this.state.zoneOverrides[zoneId]) {
+        this.state.zoneOverrides[zoneId] = [];
+      }
+      return this.state.zoneOverrides[zoneId];
+    }
     if (zoneId === "cowork:0") {
       if (!this.state.zoneOverrides) this.state.zoneOverrides = {};
       if (!this.state.zoneOverrides[zoneId]) {
         this.state.zoneOverrides[zoneId] = createCoworkFurniture();
+      }
+      return this.state.zoneOverrides[zoneId];
+    }
+    if (zoneId === "hypersleep:0") {
+      if (!this.state.zoneOverrides) this.state.zoneOverrides = {};
+      if (!this.state.zoneOverrides[zoneId]) {
+        const hsZone = this.campus.zones.find((z) => z.zoneId === "hypersleep:0");
+        const existing = this.campus.worldFurniture
+          .filter((f) => f.zoneId === "hypersleep:0")
+          .map((f): FurnitureInstance => ({
+            id: f.id,
+            zoneId: "hypersleep:0",
+            lx: f.lx,
+            ly: f.ly,
+            assetId: f.assetId,
+            direction: f.direction,
+            layer: f.layer,
+            ...(f.renderLayer !== undefined ? { renderLayer: f.renderLayer } : {}),
+            ...(f.surfaceHostId ? { surfaceHostId: f.surfaceHostId } : {}),
+            placedBy: f.placedBy,
+          }));
+        this.state.zoneOverrides[zoneId] =
+          existing.length > 0
+            ? existing
+            : createHypersleepFurniture(Math.max(1, this.state.employees.length), hsZone?.width ?? 10);
       }
       return this.state.zoneOverrides[zoneId];
     }
@@ -942,7 +1044,7 @@ export class OfficeEngine extends EventEmitter {
           ly: targetCoord.ly,
           assetId: found.item.assetId,
           direction: nextDir,
-          ignoreInstanceId: found.item.zoneId === targetCoord.zoneId ? instanceId : undefined,
+          ignoreInstanceId: instanceId,
         },
         this.catalogById,
       );
@@ -1086,6 +1188,55 @@ export class OfficeEngine extends EventEmitter {
     });
   }
 
+  /** Paint one or more floor tiles with a `floor-*` asset (or pass `assetId: null` to restore default). */
+  async setFloorTiles(
+    tiles: Array<{ tx: number; ty: number; assetId: string | null }>,
+  ): Promise<Record<string, string>> {
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const next: Record<string, string> = { ...(this.state.floorTileOverrides ?? {}) };
+      for (const t of tiles) {
+        if (
+          !Number.isInteger(t.tx) ||
+          !Number.isInteger(t.ty) ||
+          t.tx < 0 ||
+          t.ty < 0 ||
+          t.tx >= this.campus.widthTiles ||
+          t.ty >= this.campus.depthTiles
+        ) {
+          throw new Error(
+            `Tile (${t.tx}, ${t.ty}) is outside campus bounds (${this.campus.widthTiles}x${this.campus.depthTiles})`,
+          );
+        }
+        const key = toTileKey(t.tx, t.ty);
+        if (t.assetId === null) {
+          delete next[key];
+        } else {
+          const cat = this.catalogById.get(t.assetId);
+          if (!cat || cat.layer !== "floor") {
+            throw new Error(`Asset "${t.assetId}" is not a valid floor tile`);
+          }
+          next[key] = t.assetId;
+        }
+      }
+      this.state.floorTileOverrides = Object.keys(next).length > 0 ? next : undefined;
+      this.recomputeCampus();
+      await this.persist();
+      this.emitSnapshot();
+      return structuredClone(this.state.floorTileOverrides ?? {});
+    });
+  }
+
+  async clearFloorTileOverrides(): Promise<void> {
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      this.state.floorTileOverrides = undefined;
+      this.recomputeCampus();
+      await this.persist();
+      this.emitSnapshot();
+    });
+  }
+
   async removeFurniture(instanceId: string): Promise<void> {
     return this.runSerialized(async () => {
       this.assertNotDemoMode();
@@ -1145,9 +1296,12 @@ export class OfficeEngine extends EventEmitter {
         if (idx !== -1) return { item: list[idx], list, index: idx };
       }
     }
-    // Lazily materialize cowork / amenity zones into state.zoneOverrides when editing one of their default items
+    // Lazily materialize cowork / hypersleep / amenity zones into state.zoneOverrides when editing one of their default items
     const worldHit = this.campus.worldFurniture.find((f) => f.id === instanceId);
-    if (worldHit && (worldHit.zoneId === "cowork:0" || worldHit.zoneId.startsWith("amenity:"))) {
+    if (
+      worldHit &&
+      (worldHit.zoneId === "cowork:0" || worldHit.zoneId === "hypersleep:0" || worldHit.zoneId.startsWith("amenity:"))
+    ) {
       const list = this.getZoneFurnitureArray(worldHit.zoneId);
       if (list) {
         const idx = list.findIndex((f) => f.id === instanceId);
@@ -1166,12 +1320,6 @@ export class OfficeEngine extends EventEmitter {
       const bay = this.state.bays.find((b) => b.id === bayId);
       if (!bay) throw new Error(`Bay "${bayId}" not found`);
       if (patch.displayName !== undefined) bay.displayName = patch.displayName.slice(0, 128);
-      if (patch.department !== undefined) {
-        bay.department = patch.department;
-        if (patch.accentColor === undefined) {
-          bay.accentColor = DEPARTMENT_META[patch.department].color;
-        }
-      }
       if (patch.accentColor !== undefined) {
         if (!/^#[0-9a-fA-F]{6}$/.test(patch.accentColor)) {
           throw new Error(`Invalid hex color "${patch.accentColor}"`);
@@ -1188,6 +1336,235 @@ export class OfficeEngine extends EventEmitter {
       await this.persist();
       this.emitSnapshot();
       return structuredClone(bay);
+    });
+  }
+
+  async resizeFloor(input?: {
+    deltaWidth?: number;
+    deltaDepth?: number;
+    widthTiles?: number;
+    depthTiles?: number;
+  }): Promise<{ widthTiles: number; depthTiles: number }> {
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const curW = this.campus.widthTiles;
+      const curD = this.campus.depthTiles;
+
+      const rawNextW =
+        input?.widthTiles !== undefined
+          ? Math.round(input.widthTiles)
+          : curW + Math.round(input?.deltaWidth ?? 0);
+      const rawNextD =
+        input?.depthTiles !== undefined
+          ? Math.round(input.depthTiles)
+          : curD + Math.round(input?.deltaDepth ?? 0);
+
+      let nextW = Math.max(MIN_FLOOR_SIDE, Math.min(MAX_FLOOR_SIDE, rawNextW));
+      let nextD = Math.max(MIN_FLOOR_SIDE, Math.min(MAX_FLOOR_SIDE, rawNextD));
+
+      const shrinkingW = nextW < curW;
+      const shrinkingD = nextD < curD;
+
+      if (shrinkingW || shrinkingD) {
+        let minOccupiedW = MIN_FLOOR_SIDE;
+        let minOccupiedD = MIN_FLOOR_SIDE;
+        let blockerW: string | null = null;
+        let blockerD: string | null = null;
+
+        const hasCustomHypersleep = this.state.zoneOverrides?.["hypersleep:0"] !== undefined;
+        for (const wf of this.campus.worldFurniture) {
+          if (!hasCustomHypersleep && wf.zoneId === "hypersleep:0") continue;
+          const endX = wf.tx + wf.footprintTiles[0];
+          const endY = wf.ty + wf.footprintTiles[1];
+          if (endX > minOccupiedW) {
+            minOccupiedW = endX;
+            blockerW = `${wf.assetId} (${wf.tx},${wf.ty})`;
+          }
+          if (endY > minOccupiedD) {
+            minOccupiedD = endY;
+            blockerD = `${wf.assetId} (${wf.tx},${wf.ty})`;
+          }
+        }
+        for (const cz of this.state.customZones ?? []) {
+          const endX = cz.x + cz.width;
+          const endY = cz.y + cz.height;
+          if (endX > minOccupiedW) {
+            minOccupiedW = endX;
+            blockerW = `zone "${cz.name}"`;
+          }
+          if (endY > minOccupiedD) {
+            minOccupiedD = endY;
+            blockerD = `zone "${cz.name}"`;
+          }
+        }
+
+        if (shrinkingW && nextW < minOccupiedW) {
+          if (curW <= minOccupiedW) {
+            throw new Error(`ลดความกว้างไม่ได้แล้ว (ติด ${blockerW ?? "เฟอร์นิเจอร์"} ที่ขอบ x=${minOccupiedW})`);
+          }
+          nextW = minOccupiedW;
+        }
+        if (shrinkingD && nextD < minOccupiedD) {
+          if (curD <= minOccupiedD) {
+            throw new Error(`ลดความลึกไม่ได้แล้ว (ติด ${blockerD ?? "เฟอร์นิเจอร์"} ที่ขอบ y=${minOccupiedD})`);
+          }
+          nextD = minOccupiedD;
+        }
+      }
+
+      const prevW = this.state.floorWidthTiles;
+      const prevD = this.state.floorDepthTiles;
+      this.state.floorWidthTiles = nextW;
+      this.state.floorDepthTiles = nextD;
+      this.recomputeCampus();
+
+      if ((shrinkingW || shrinkingD) && this.campus.widthTiles >= curW && this.campus.depthTiles >= curD) {
+        this.state.floorWidthTiles = prevW;
+        this.state.floorDepthTiles = prevD;
+        this.recomputeCampus();
+        throw new Error(
+          `ลดขนาดพื้นไม่ได้แล้ว — ขอบต่ำสุดตอนนี้คือ ${this.campus.widthTiles}×${this.campus.depthTiles} (ย้าย/ลบของที่ชิดขอบก่อนลดเพิ่ม)`,
+        );
+      }
+
+      if (this.state.floorTileOverrides) {
+        const kept: Record<string, string> = {};
+        for (const [k, v] of Object.entries(this.state.floorTileOverrides)) {
+          const [tx, ty] = k.split(",").map(Number);
+          if (tx >= 0 && ty >= 0 && tx < this.campus.widthTiles && ty < this.campus.depthTiles) {
+            kept[k] = v;
+          }
+        }
+        this.state.floorTileOverrides = Object.keys(kept).length > 0 ? kept : undefined;
+      }
+      if (this.state.tilePermissionOverrides) {
+        const kept: Record<string, TilePermission> = {};
+        for (const [k, v] of Object.entries(this.state.tilePermissionOverrides)) {
+          const [tx, ty] = k.split(",").map(Number);
+          if (tx >= 0 && ty >= 0 && tx < this.campus.widthTiles && ty < this.campus.depthTiles) {
+            kept[k] = v;
+          }
+        }
+        this.state.tilePermissionOverrides = Object.keys(kept).length > 0 ? kept : undefined;
+      }
+
+      this.recomputeCampus();
+      await this.persist();
+      this.emitSnapshot();
+      return { widthTiles: this.campus.widthTiles, depthTiles: this.campus.depthTiles };
+    });
+  }
+
+  async expandFloor(input?: { addWidth?: number; addDepth?: number }): Promise<{ widthTiles: number; depthTiles: number }> {
+    const addW = Math.max(0, Math.min(24, Math.round(input?.addWidth ?? FLOOR_EXPAND_STEP)));
+    const addD = Math.max(0, Math.min(24, Math.round(input?.addDepth ?? FLOOR_EXPAND_STEP)));
+    return this.resizeFloor({ deltaWidth: addW, deltaDepth: addD });
+  }
+
+  async createCustomZone(input: {
+    name: string;
+    icon?: string;
+    color?: string;
+    role?: CustomZoneRole;
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  }): Promise<CustomZoneRecord> {
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const name = input.name.trim().slice(0, 64);
+      if (!name) throw new Error("Zone name is required");
+      const x = Math.round(input.x);
+      const y = Math.round(input.y);
+      const width = Math.round(input.width);
+      const height = Math.round(input.height);
+      if (
+        x < 0 ||
+        y < 0 ||
+        width < 1 ||
+        height < 1 ||
+        x + width > this.campus.widthTiles ||
+        y + height > this.campus.depthTiles
+      ) {
+        throw new Error(
+          `Zone (${x},${y} ${width}×${height}) is outside campus bounds (${this.campus.widthTiles}×${this.campus.depthTiles})`,
+        );
+      }
+      const color = input.color && /^#[0-9a-fA-F]{6}$/.test(input.color) ? input.color : "#38bdf8";
+      const zone: CustomZoneRecord = {
+        id: `cz-${Date.now()}-${crypto.randomBytes(2).toString("hex")}`,
+        name,
+        icon: (input.icon?.trim() || "🏷️").slice(0, 8),
+        color,
+        role: input.role ?? "label",
+        x,
+        y,
+        width,
+        height,
+      };
+      if (!this.state.customZones) this.state.customZones = [];
+      this.state.customZones.push(zone);
+      await this.persist();
+      this.emitSnapshot();
+      return structuredClone(zone);
+    });
+  }
+
+  async updateCustomZone(
+    id: string,
+    patch: Partial<Pick<CustomZoneRecord, "name" | "icon" | "color" | "role" | "x" | "y" | "width" | "height">>,
+  ): Promise<CustomZoneRecord> {
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const list = this.state.customZones ?? [];
+      const zone = list.find((z) => z.id === id);
+      if (!zone) throw new Error(`Custom zone "${id}" not found`);
+      const nextX = patch.x !== undefined ? Math.round(patch.x) : zone.x;
+      const nextY = patch.y !== undefined ? Math.round(patch.y) : zone.y;
+      const nextW = patch.width !== undefined ? Math.round(patch.width) : zone.width;
+      const nextH = patch.height !== undefined ? Math.round(patch.height) : zone.height;
+      if (
+        nextX < 0 ||
+        nextY < 0 ||
+        nextW < 1 ||
+        nextH < 1 ||
+        nextX + nextW > this.campus.widthTiles ||
+        nextY + nextH > this.campus.depthTiles
+      ) {
+        throw new Error(`Updated zone bounds exceed campus (${this.campus.widthTiles}×${this.campus.depthTiles})`);
+      }
+      if (patch.name !== undefined) {
+        const trimmed = patch.name.trim().slice(0, 64);
+        if (!trimmed) throw new Error("Zone name cannot be empty");
+        zone.name = trimmed;
+      }
+      if (patch.icon !== undefined) zone.icon = (patch.icon.trim() || "🏷️").slice(0, 8);
+      if (patch.color !== undefined) {
+        if (!/^#[0-9a-fA-F]{6}$/.test(patch.color)) throw new Error(`Invalid hex color "${patch.color}"`);
+        zone.color = patch.color;
+      }
+      if (patch.role !== undefined) zone.role = patch.role;
+      zone.x = nextX;
+      zone.y = nextY;
+      zone.width = nextW;
+      zone.height = nextH;
+      await this.persist();
+      this.emitSnapshot();
+      return structuredClone(zone);
+    });
+  }
+
+  async deleteCustomZone(id: string): Promise<void> {
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const list = this.state.customZones ?? [];
+      const idx = list.findIndex((z) => z.id === id);
+      if (idx === -1) throw new Error(`Custom zone "${id}" not found`);
+      list.splice(idx, 1);
+      if (list.length === 0) this.state.customZones = undefined;
+      await this.persist();
+      this.emitSnapshot();
     });
   }
 

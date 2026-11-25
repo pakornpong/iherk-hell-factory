@@ -57,13 +57,8 @@ describe("Final Review Fix Verification (Critical #1-#4 & Important #5-#10)", ()
     expect(campus.walls.some((w) => w.tx === 2 && w.ty === 0 && w.edge === "ne")).toBe(true);
     // tx = 0 runs along +Y (SW) -> NW edge
     expect(campus.walls.some((w) => w.tx === 0 && w.ty === 2 && w.edge === "nw")).toBe(true);
-    // Wall decor mounts flush along rear NE (ty = 0) and NW (tx = 0) perimeter walls
-    expect(campus.wallDecor.length).toBeGreaterThan(0);
-    expect(campus.wallDecor.some((d) => d.ty === 0 && d.edge === "ne")).toBe(true);
-    expect(campus.wallDecor.some((d) => d.tx === 0 && d.edge === "nw")).toBe(true);
-    expect(
-      campus.wallDecor.every((d) => (d.ty === 0 && d.edge === "ne") || (d.tx === 0 && d.edge === "nw")),
-    ).toBe(true);
+    // Open customizable floor keeps perimeter walls clean with zero auto-clutter wall decor
+    expect(campus.wallDecor).toHaveLength(0);
   });
 
   it("#2: resolves actual frame names for server-rack (blink_*), desk-security-ops (alert_*), and custom animated assets", () => {
@@ -128,18 +123,23 @@ describe("Final Review Fix Verification (Critical #1-#4 & Important #5-#10)", ()
     sim.syncFromServer(state, campus);
     let out = sim.step(50);
     for (let i = 0; i < 400; i++) out = sim.step(50);
-    // Seated worker faces exactly where their chair faces (chair-0 of whichever layout variant the bay got)
-    const chair0 = campus.worldFurniture.find((f) => f.id === "bay:b0-chair-0")!;
-    expect(out.visuals[0].direction).toBe(chair0.direction);
+    // Working -> sits at Central Work Hub chair facing its direction
+    const centralChairs = campus.worldFurniture
+      .filter((f) => f.zoneId === "cowork:0" && f.assetId === "chair-office-swivel")
+      .sort((a, b) => a.ty - b.ty || a.tx - b.tx);
+    expect(Math.round(out.visuals[0].x)).toBe(centralChairs[0].tx);
+    expect(Math.round(out.visuals[0].y)).toBe(centralChairs[0].ty);
+    expect(out.visuals[0].direction).toBe(centralChairs[0].direction);
 
-    state.employees[0].visualState = "meeting";
+    // Resting -> walks into Hypersleep Capsule and sleeps inside!
+    state.employees[0].visualState = "resting";
     sim.syncFromServer(state, campus);
     for (let i = 0; i < 400; i++) out = sim.step(50);
-    // Stand-up: looks toward the lounge's meeting table
-    const table = campus.worldFurniture.find((f) => f.zoneId === "common:0" && f.assetId === "table-conference")!;
-    const centre: [number, number] = [table.tx + (table.footprintTiles[0] - 1) / 2, table.ty + (table.footprintTiles[1] - 1) / 2];
-    const v = out.visuals[0];
-    expect(v.direction).toBe(facingToward([Math.round(v.x), Math.round(v.y)], centre));
+    const pod0 = campus.worldFurniture.find((f) => f.assetId === "hypersleep-capsule")!;
+    expect(Math.round(out.visuals[0].x)).toBe(pod0.tx);
+    expect(Math.round(out.visuals[0].y)).toBe(pod0.ty);
+    expect(out.visuals[0].clipName).toMatch(/^rest_sleep_/);
+    expect(out.visuals[0].bubbleIcon).toBe("💤");
   });
 
   it("#5 & #7: prevents subagent resurrection after stop, ignores stray session_end for unknown projects, cleans subagents on parent turn_stop, and seats subagents on unique co-working hot desks", async () => {

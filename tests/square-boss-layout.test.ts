@@ -42,38 +42,44 @@ function makeBay(i: number): ProjectBayRecord {
 }
 
 describe("Square Clockwise Expansion & Boss Office (0,0)", () => {
-  it("places Boss Office at (0,0), Lounge at (0,1), packs a department into one lot, and keeps overall floor square", () => {
+  it("places Boss Corner at (0,0), Central Work Hub at (1,0), auto-scaled Hypersleep Bay, and blank open floor", () => {
     const bays = Array.from({ length: 7 }, (_, i) => makeBay(i));
-    const campus = computeCampusLayout(bays, [createDefaultCommonWing(0)], catalog, createDefaultBossOffice());
+    const campus = computeCampusLayout(bays, [], catalog, createDefaultBossOffice(), "office", undefined, undefined, {
+      employeeCount: 7,
+    });
 
-    // Exact square campus
-    expect(campus.widthTiles).toBe(campus.depthTiles);
+    expect(campus.widthTiles).toBeGreaterThanOrEqual(24);
+    expect(campus.depthTiles).toBeGreaterThanOrEqual(24);
 
-    // Top-most corner (0,0) is Boss Office
     const boss = campus.zones.find((z) => z.kind === "boss");
     expect(boss).toBeDefined();
-    expect(boss?.col).toBe(0);
-    expect(boss?.row).toBe(0);
-    expect(boss?.originX).toBe(0);
-    expect(boss?.originY).toBe(0);
+    expect([boss?.originX, boss?.originY]).toEqual([0, 0]);
 
-    // Common Lounge is at (0,1)
-    const lounge = campus.zones.find((z) => z.zoneId === "common:0");
-    expect(lounge?.col).toBe(0);
-    expect(lounge?.row).toBe(1);
-
-    // Co-working area for subagents is fixed at (1,0), right next to the Boss Office
     const cowork = campus.zones.find((z) => z.kind === "cowork");
     expect([cowork?.col, cowork?.row]).toEqual([1, 0]);
 
-    // All 7 bays share one department -> one rectangular open-plan lot sized to fit them (at most 2 spare cells)
-    const activeBays = campus.zones.filter((z) => z.kind === "bay");
-    expect(new Set(activeBays.map((z) => z.lotId)).size).toBe(1);
-    const cols = activeBays.map((z) => z.col);
-    const rows = activeBays.map((z) => z.row);
-    const lotArea = (Math.max(...cols) - Math.min(...cols) + 1) * (Math.max(...rows) - Math.min(...rows) + 1);
-    expect(lotArea - activeBays.length).toBeLessThanOrEqual(2);
-    expect(new Set(activeBays.map((z) => `${z.col},${z.row}`)).size).toBe(7);
+    const pods = campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
+    expect(pods).toHaveLength(7);
+  });
+
+  it("dynamically routes reporting agents directly in front of Boss after Boss chair is moved and rotated", async () => {
+    const dir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-boss-move-"));
+    let clock = 10_000;
+    const engine = new OfficeEngine({ store: new OfficeStore(dir), catalogById: catalog, now: () => clock });
+    await engine.init();
+
+    await engine.moveFurniture("boss:0-boss-chair", { tx: 14, ty: 14, direction: "ne" });
+    await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "s1", projectPath: "/work/a", eventType: "tool_start", toolName: "Edit" });
+    await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "s1", projectPath: "/work/a", eventType: "turn_stop", detail: "Finished" });
+
+    const snap = engine.getSnapshot();
+    const sim = new OfficeSimulation();
+    sim.syncFromServer(snap.state, snap.campus);
+    let out = sim.step(50);
+    for (let i = 0; i < 400; i++) out = sim.step(50);
+    const rep = out.visuals[0];
+    expect([Math.round(rep.x), Math.round(rep.y)]).toEqual([15, 14]);
+    expect(rep.direction).toBe("sw");
   });
 
   it("routes employees to Boss Office (0,0) when reporting finished work or asking questions", async () => {

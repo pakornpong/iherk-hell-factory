@@ -2,7 +2,7 @@ import type { AgentTelemetryEvent } from "../shared/types.js";
 import type { OfficeEngine } from "./office-engine.js";
 
 export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }> = [
-  // 1. IHERK Dept: Orchestrator -> org-researcher -> org-worker -> org-qa
+  // 1. Project A: Orchestrator -> org-researcher -> org-worker -> org-qa
   {
     delayMs: 350,
     event: {
@@ -10,7 +10,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       source: "simulator",
       sessionId: "demo-iherk",
       agentRole: "Orchestrator",
-      department: "iherk",
       projectPath: "/demo/iherk-hell-factory",
       eventType: "prompt_submit",
       detail: "Plan office theme & Phase 2 chars",
@@ -25,7 +24,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       agentId: "iherk-res",
       parentAgentId: "demo-iherk",
       agentRole: "org-researcher",
-      department: "iherk",
       projectPath: "/demo/iherk-hell-factory",
       eventType: "subagent_start",
       detail: "Scanning iherk-pixcel exports",
@@ -39,7 +37,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       sessionId: "demo-iherk",
       agentId: "iherk-res",
       agentRole: "org-researcher",
-      department: "iherk",
       projectPath: "/demo/iherk-hell-factory",
       eventType: "tool_start",
       toolName: "Read",
@@ -47,7 +44,7 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
     },
   },
 
-  // 2. DEV Dept (MSV): Gemini Orchestrator + org-worker
+  // 2. Project B: Gemini Orchestrator + org-worker
   {
     delayMs: 1600,
     event: {
@@ -55,7 +52,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       source: "simulator",
       sessionId: "demo-dev",
       agentRole: "Orchestrator",
-      department: "dev",
       projectPath: "/demo/msv-frontend",
       eventType: "prompt_submit",
       detail: "Dispatch MSV dashboard update",
@@ -70,7 +66,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       agentId: "dev-wrk",
       parentAgentId: "demo-dev",
       agentRole: "org-worker",
-      department: "dev",
       projectPath: "/demo/msv-frontend",
       eventType: "subagent_start",
       detail: "Implementing MSV widget",
@@ -84,7 +79,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       sessionId: "demo-dev",
       agentId: "dev-wrk",
       agentRole: "org-worker",
-      department: "dev",
       projectPath: "/demo/msv-frontend",
       eventType: "tool_start",
       toolName: "edit_file",
@@ -92,7 +86,7 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
     },
   },
 
-  // 3. ERP Dept: Claude Orchestrator + org-researcher (read-only audit)
+  // 3. Project C: Claude Orchestrator + org-researcher (read-only audit)
   {
     delayMs: 1600,
     event: {
@@ -100,7 +94,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       source: "simulator",
       sessionId: "demo-erp",
       agentRole: "Orchestrator",
-      department: "erp",
       projectPath: "/demo/erp-loh-pc",
       eventType: "prompt_submit",
       detail: "Audit GRDN stock flow",
@@ -115,7 +108,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       agentId: "erp-res",
       parentAgentId: "demo-erp",
       agentRole: "org-researcher",
-      department: "erp",
       projectPath: "/demo/erp-loh-pc",
       eventType: "subagent_start",
       detail: "Reading ERP stock ledgers",
@@ -129,7 +121,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       sessionId: "demo-erp",
       agentId: "erp-res",
       agentRole: "org-researcher",
-      department: "erp",
       projectPath: "/demo/erp-loh-pc",
       eventType: "tool_start",
       toolName: "Read",
@@ -137,7 +128,7 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
     },
   },
 
-  // 4. ACCOUNTING Dept: Gemini Orchestrator + org-researcher + org-qa
+  // 4. Project D: Gemini Orchestrator + org-qa
   {
     delayMs: 1600,
     event: {
@@ -145,7 +136,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       source: "simulator",
       sessionId: "demo-acc",
       agentRole: "Orchestrator",
-      department: "accounting",
       projectPath: "/demo/accounting-vat",
       eventType: "prompt_submit",
       detail: "Prepare monthly VAT summary",
@@ -160,7 +150,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       agentId: "acc-qa",
       parentAgentId: "demo-acc",
       agentRole: "org-qa",
-      department: "accounting",
       projectPath: "/demo/accounting-vat",
       eventType: "subagent_start",
       detail: "Cross-checking VAT totals",
@@ -174,7 +163,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       sessionId: "demo-acc",
       agentId: "acc-qa",
       agentRole: "org-qa",
-      department: "accounting",
       projectPath: "/demo/accounting-vat",
       eventType: "tool_start",
       toolName: "Read",
@@ -182,7 +170,7 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
     },
   },
 
-  // 5. IHERK handoff: org-researcher -> org-worker -> org-qa
+  // 5. Handoff: org-researcher -> org-worker -> org-qa
   {
     delayMs: 1800,
     event: {
@@ -190,7 +178,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       source: "simulator",
       sessionId: "demo-iherk",
       agentId: "iherk-res",
-      department: "iherk",
       projectPath: "/demo/iherk-hell-factory",
       eventType: "subagent_stop",
     },
@@ -204,7 +191,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       agentId: "iherk-wrk",
       parentAgentId: "demo-iherk",
       agentRole: "org-worker",
-      department: "iherk",
       projectPath: "/demo/iherk-hell-factory",
       eventType: "subagent_start",
       detail: "Building atlas-office sprites",
@@ -218,7 +204,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       sessionId: "demo-iherk",
       agentId: "iherk-wrk",
       agentRole: "org-worker",
-      department: "iherk",
       projectPath: "/demo/iherk-hell-factory",
       eventType: "tool_start",
       toolName: "Edit",
@@ -234,7 +219,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       agentId: "iherk-qa",
       parentAgentId: "demo-iherk",
       agentRole: "org-qa",
-      department: "iherk",
       projectPath: "/demo/iherk-hell-factory",
       eventType: "subagent_start",
       detail: "Running vitest verification",
@@ -248,7 +232,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       sessionId: "demo-iherk",
       agentId: "iherk-qa",
       agentRole: "org-qa",
-      department: "iherk",
       projectPath: "/demo/iherk-hell-factory",
       eventType: "tool_start",
       toolName: "Bash",
@@ -256,7 +239,7 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
     },
   },
 
-  // 6. HITL gate (❓) -> ERP & Accounting walk up to Boss Office
+  // 6. HITL gate (❓) -> walk up to Boss Office via inter-zone corridor
   {
     delayMs: 2200,
     event: {
@@ -264,7 +247,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       source: "simulator",
       sessionId: "demo-erp",
       agentRole: "Orchestrator",
-      department: "erp",
       projectPath: "/demo/erp-loh-pc",
       eventType: "waiting_user",
       detail: "HITL: Approve ERP DB script?",
@@ -277,14 +259,13 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       source: "simulator",
       sessionId: "demo-acc",
       agentRole: "Orchestrator",
-      department: "accounting",
       projectPath: "/demo/accounting-vat",
       eventType: "waiting_user",
       detail: "HITL: Approve VAT filing?",
     },
   },
 
-  // 7. DEV org-qa check & IHERK Report (✅) -> walks up to Boss Office
+  // 7. QA check & Report (✅) -> walks up to Boss Office
   {
     delayMs: 2000,
     event: {
@@ -294,7 +275,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       agentId: "dev-qa",
       parentAgentId: "demo-dev",
       agentRole: "org-qa",
-      department: "dev",
       projectPath: "/demo/msv-frontend",
       eventType: "subagent_start",
       detail: "QA checking MSV build",
@@ -308,7 +288,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       sessionId: "demo-dev",
       agentId: "dev-qa",
       agentRole: "org-qa",
-      department: "dev",
       projectPath: "/demo/msv-frontend",
       eventType: "tool_start",
       toolName: "Read",
@@ -322,7 +301,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       source: "simulator",
       sessionId: "demo-iherk",
       agentRole: "Orchestrator",
-      department: "iherk",
       projectPath: "/demo/iherk-hell-factory",
       eventType: "turn_stop",
       detail: "Report: Office theme ready!",
@@ -335,7 +313,6 @@ export const DEMO_SCRIPT: Array<{ delayMs: number; event: AgentTelemetryEvent }>
       source: "simulator",
       sessionId: "demo-dev",
       agentRole: "Orchestrator",
-      department: "dev",
       projectPath: "/demo/msv-frontend",
       eventType: "turn_stop",
       detail: "Report: MSV QA passed!",

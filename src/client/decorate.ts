@@ -14,6 +14,9 @@ export interface DecorateApiClient {
     req: { tx: number; ty: number; direction?: Direction },
   ): Promise<FurnitureInstance>;
   removeFurniture(instanceId: string): Promise<void>;
+  paintFloorTiles?(
+    tiles: Array<{ tx: number; ty: number; assetId: string | null }>,
+  ): Promise<void>;
 }
 
 type HistoryAction =
@@ -28,10 +31,18 @@ type HistoryAction =
       toTx: number;
       toTy: number;
       toDir: Direction;
+    }
+  | {
+      kind: "floor";
+      changes: Array<{ tx: number; ty: number; before: string | null; after: string | null }>;
     };
 
 export function isEditableFurniture(item?: FurnitureInstance): item is FurnitureInstance {
   return Boolean(item && !item.id.startsWith("sys-div-"));
+}
+
+export function isFloorAssetId(assetId?: string | null): boolean {
+  return Boolean(assetId && assetId.startsWith("floor-"));
 }
 
 export class DecorateController {
@@ -39,11 +50,29 @@ export class DecorateController {
   tool: "place" | "move" | "erase" = "place";
   selectedAssetId: string | null = "plant-potted";
   direction: Direction = "se";
+  floorBrushSize: 1 | 2 | 3 = 1;
+  floorResetMode = false;
   movingItem: { item: FurnitureInstance; originTx: number; originTy: number } | null = null;
   private undoStack: HistoryAction[] = [];
   private redoStack: HistoryAction[] = [];
 
   constructor(private readonly api: DecorateApiClient) {}
+
+  isFloorPainting(): boolean {
+    return this.tool === "place" && (this.floorResetMode || isFloorAssetId(this.selectedAssetId));
+  }
+
+  setFloorBrushSize(size: 1 | 2 | 3): void {
+    this.floorBrushSize = size;
+  }
+
+  toggleFloorResetMode(): void {
+    this.floorResetMode = !this.floorResetMode;
+    if (this.floorResetMode) {
+      this.tool = "place";
+      this.movingItem = null;
+    }
+  }
 
   toggle(): void {
     this.active = !this.active;
@@ -58,6 +87,7 @@ export class DecorateController {
   setTool(tool: "place" | "move" | "erase"): void {
     this.tool = tool;
     this.movingItem = null;
+    if (tool !== "place") this.floorResetMode = false;
   }
 
   cancelMove(): boolean {
@@ -70,6 +100,7 @@ export class DecorateController {
     this.selectedAssetId = assetId;
     this.tool = "place";
     this.movingItem = null;
+    this.floorResetMode = false;
   }
 
   rotateCw(): void {
@@ -139,6 +170,40 @@ export class DecorateController {
     this.redoStack.length = 0;
   }
 
+  async paintFloorAt(
+    tx: number,
+    ty: number,
+    campusWidth: number,
+    campusHeight: number,
+    currentOverrides?: Record<string, string>,
+    overrideAssetId?: string | null,
+  ): Promise<boolean> {
+    if (!this.active || !this.api.paintFloorTiles) return false;
+    const targetAsset =
+      overrideAssetId !== undefined ? overrideAssetId : this.floorResetMode ? null : this.selectedAssetId;
+    if (targetAsset !== null && !isFloorAssetId(targetAsset)) return false;
+
+    const size = overrideAssetId !== undefined ? 1 : this.floorBrushSize;
+    const changes: Array<{ tx: number; ty: number; before: string | null; after: string | null }> = [];
+    const payload: Array<{ tx: number; ty: number; assetId: string | null }> = [];
+    for (let dy = 0; dy < size; dy++) {
+      for (let dx = 0; dx < size; dx++) {
+        const cx = tx + dx;
+        const cy = ty + dy;
+        if (cx < 0 || cy < 0 || cx >= campusWidth || cy >= campusHeight) continue;
+        const before = currentOverrides?.[`${cx},${cy}`] ?? null;
+        if (before === targetAsset) continue;
+        changes.push({ tx: cx, ty: cy, before, after: targetAsset });
+        payload.push({ tx: cx, ty: cy, assetId: targetAsset });
+      }
+    }
+    if (payload.length === 0) return false;
+    await this.api.paintFloorTiles(payload);
+    this.undoStack.push({ kind: "floor", changes });
+    this.redoStack.length = 0;
+    return true;
+  }
+
   async undo(): Promise<void> {
     const action = this.undoStack.pop();
     if (!action) return;
@@ -159,6 +224,9 @@ export class DecorateController {
         ty: action.fromTy,
         direction: action.fromDir,
       });
+      this.redoStack.push(action);
+    } else if (action.kind === "floor" && this.api.paintFloorTiles) {
+      await this.api.paintFloorTiles(action.changes.map((c) => ({ tx: c.tx, ty: c.ty, assetId: c.before })));
       this.redoStack.push(action);
     }
   }
@@ -183,6 +251,9 @@ export class DecorateController {
         ty: action.toTy,
         direction: action.toDir,
       });
+      this.undoStack.push(action);
+    } else if (action.kind === "floor" && this.api.paintFloorTiles) {
+      await this.api.paintFloorTiles(action.changes.map((c) => ({ tx: c.tx, ty: c.ty, assetId: c.after })));
       this.undoStack.push(action);
     }
   }

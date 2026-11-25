@@ -571,6 +571,18 @@ export function getRoomLayout(key: string, mirrored = false): RoomLayout {
   };
 }
 
+const BAY_LAYOUT_KEYS = Object.keys(ROOM_LAYOUTS)
+  .filter((k) => k.startsWith("bay-"))
+  .sort();
+
+/** Department-free per-project layout selection across all 15 designed bay interiors (x2 mirrors = 30 looks). */
+export function bayLayoutKeyForBay(bayId: string): { key: string; mirrored: boolean } {
+  const h = hashString(bayId);
+  const key = BAY_LAYOUT_KEYS[h % BAY_LAYOUT_KEYS.length] ?? "bay-general-v0";
+  const mirrored = ((h >>> 8) & 1) === 1;
+  return { key, mirrored };
+}
+
 export function bayLayoutKey(department: DepartmentId, bayId: string): { key: string; mirrored: boolean } {
   const { variant, mirrored } = bayLayoutChoice(bayId);
   return { key: `bay-${department}-v${variant}`, mirrored };

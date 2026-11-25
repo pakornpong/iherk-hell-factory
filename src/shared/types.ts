@@ -30,6 +30,25 @@ export type ToolCategory = z.infer<typeof ToolCategorySchema>;
 export const ThemeModeSchema = z.enum(["office", "night", "day"]);
 export type ThemeMode = z.infer<typeof ThemeModeSchema>;
 
+export const CampusZoneGroupSchema = z.enum(["hq", "workspace", "amenity", "hypersleep", "floor"]);
+export type CampusZoneGroup = z.infer<typeof CampusZoneGroupSchema>;
+
+export interface CampusZoneGroupMeta {
+  id: CampusZoneGroup;
+  label: string;
+  shortLabel: string;
+  icon: string;
+  color: string;
+}
+
+export const CAMPUS_ZONE_GROUP_META: Record<CampusZoneGroup, CampusZoneGroupMeta> = {
+  hq: { id: "hq", label: "BOSS", shortLabel: "BOSS", icon: "👑", color: "#f59e0b" },
+  workspace: { id: "workspace", label: "CENTRAL WORK HUB", shortLabel: "CENTRAL", icon: "💻", color: "#38bdf8" },
+  amenity: { id: "amenity", label: "AMENITY", shortLabel: "AMENITY", icon: "🕹️", color: "#a855f7" },
+  hypersleep: { id: "hypersleep", label: "HYPERSLEEP BAY", shortLabel: "CAPSULES", icon: "🧊", color: "#22d3ee" },
+  floor: { id: "floor", label: "OPEN FLOOR", shortLabel: "FLOOR", icon: "📐", color: "#94a3b8" },
+};
+
 export const DepartmentIdSchema = z.enum(["iherk", "dev", "erp", "accounting", "general"]);
 export type DepartmentId = z.infer<typeof DepartmentIdSchema>;
 
@@ -140,8 +159,8 @@ export type RenderLayerValue = z.infer<typeof RenderLayerSchema>;
 export const ZoneIdSchema = z
   .string()
   .regex(
-    /^(boss:0|cowork:0|bay:[a-z0-9-_]+|common:\d+|amenity:\d+)$/i,
-    "zoneId must be 'boss:0', 'cowork:0', 'bay:<id>', 'common:<row>', or 'amenity:<idx>'",
+    /^(boss:0|cowork:0|floor:0|hypersleep:0|bay:[a-z0-9-_]+|common:\d+|amenity:\d+)$/i,
+    "zoneId must be 'boss:0', 'cowork:0', 'floor:0', 'hypersleep:0', 'bay:<id>', 'common:<row>', or 'amenity:<idx>'",
   );
 export type ZoneId = z.infer<typeof ZoneIdSchema>;
 
@@ -182,8 +201,8 @@ export type AgentTelemetryEvent = z.infer<typeof AgentTelemetryEventSchema>;
 export const FurnitureInstanceSchema = z.object({
   id: z.string().min(1).max(128),
   zoneId: ZoneIdSchema,
-  lx: z.number().int().min(0).max(5),
-  ly: z.number().int().min(0).max(5),
+  lx: z.number().int().min(0).max(127),
+  ly: z.number().int().min(0).max(127),
   assetId: z.string().min(1).max(128),
   direction: DirectionSchema.default("se"),
   layer: AssetLayerSchema.default("object"),
@@ -259,6 +278,22 @@ export const ActivityLogEntrySchema = z.object({
 });
 export type ActivityLogEntry = z.infer<typeof ActivityLogEntrySchema>;
 
+export const CustomZoneRoleSchema = z.enum(["label", "work", "hypersleep", "lounge"]);
+export type CustomZoneRole = z.infer<typeof CustomZoneRoleSchema>;
+
+export const CustomZoneRecordSchema = z.object({
+  id: z.string().min(1).max(64),
+  name: z.string().min(1).max(64),
+  icon: z.string().min(1).max(8).default("🏷️"),
+  color: z.string().regex(/^#[0-9a-fA-F]{6}$/).default("#38bdf8"),
+  role: CustomZoneRoleSchema.default("label"),
+  x: z.number().int().min(0).max(127),
+  y: z.number().int().min(0).max(127),
+  width: z.number().int().min(1).max(96),
+  height: z.number().int().min(1).max(96),
+});
+export type CustomZoneRecord = z.infer<typeof CustomZoneRecordSchema>;
+
 export const OfficeStateSchema = z.object({
   version: z.literal(1).default(1),
   theme: ThemeModeSchema.default("office"),
@@ -269,8 +304,15 @@ export const OfficeStateSchema = z.object({
   activityLog: z.array(ActivityLogEntrySchema).max(100).default([]),
   /** Optional Pokémon GBA-style per-tile movement permission overrides keyed by "tx,ty" (0=blocked, 1=walkable, 2=seat, 3=door). */
   tilePermissionOverrides: z.record(z.string(), TilePermissionSchema).optional(),
-  /** Optional persisted furniture overrides for non-bay zones (e.g. "cowork:0", "amenity:0") once edited by user/architect. */
+  /** Optional persisted furniture overrides for non-bay zones (e.g. "floor:0", "cowork:0", "hypersleep:0", "amenity:0") once edited by user/architect. */
   zoneOverrides: z.record(z.string(), z.array(FurnitureInstanceSchema)).optional(),
+  /** Optional per-tile custom floor material overrides keyed by "tx,ty" (e.g. "floor-wood-plank", "floor-scifi-deck"). */
+  floorTileOverrides: z.record(z.string(), z.string().min(1).max(128)).optional(),
+  /** User-defined custom rectangular zones with centered nameplates & optional functional roles. */
+  customZones: z.array(CustomZoneRecordSchema).optional(),
+  /** Expandable/shrinkable open floor dimensions (in tiles). */
+  floorWidthTiles: z.number().int().min(12).max(96).optional(),
+  floorDepthTiles: z.number().int().min(12).max(96).optional(),
 });
 export type OfficeState = z.infer<typeof OfficeStateSchema>;
 
@@ -322,9 +364,11 @@ export const AMENITY_THEME_META: Record<AmenityThemeId, AmenityThemeMeta> = {
 
 export interface ZoneBounds {
   zoneId: ZoneId;
-  kind: "boss" | "common" | "bay" | "amenity" | "cowork";
+  kind: "boss" | "common" | "bay" | "amenity" | "cowork" | "hypersleep" | "floor";
+  /** Functional campus zone group (hq / workspace / amenity); distinct groups are separated by walkways. */
+  zoneGroup?: CampusZoneGroup;
   amenityTheme?: AmenityThemeId;
-  /** Open-plan lot this zone belongs to (e.g. "dept:dev"); zones of one lot share floor with no corridor. */
+  /** Open-plan lot this zone belongs to (e.g. "zone:workspace"); rooms of one lot share low dividers. */
   lotId?: string;
   bayId?: string;
   department?: DepartmentId;

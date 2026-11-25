@@ -98,21 +98,17 @@ describe("Gemini-Only Office Architect MCP Server", () => {
       await new Promise((r) => setTimeout(r, 80));
       expect(wsMessages.some((m) => m.type === "atlas:updated" && m.payload?.customAssetId === "gemini-arcade")).toBe(true);
 
-      // 2. Place crafted asset in common:0 on the first tile the lounge layout leaves free
+      // 2. Place crafted asset on open floor (floor:0)
       type ToolRes = Awaited<ReturnType<typeof client.callTool>>;
       const tryPlace = (lx: number, ly: number) =>
         client.callTool({
           name: "place_furniture",
-          arguments: { zoneId: "common:0", lx, ly, assetId: "gemini-arcade", direction: "se" },
+          arguments: { zoneId: "floor:0", lx, ly, assetId: "gemini-arcade", direction: "se" },
         });
-      let placeRes: ToolRes | undefined;
-      let at: [number, number] = [0, 0];
-      for (let i = 0; i < 36 && !(placeRes && !placeRes.isError); i++) {
-        at = [i % 6, Math.floor(i / 6)];
-        placeRes = await tryPlace(at[0], at[1]);
-      }
-      expect(placeRes?.isError, JSON.stringify(placeRes?.content)).toBeFalsy();
-      const placed = JSON.parse(((placeRes!.content as Array<{ text: string }>)[0]).text);
+      const at: [number, number] = [10, 14];
+      const placeRes: ToolRes = await tryPlace(at[0], at[1]);
+      expect(placeRes.isError, JSON.stringify(placeRes.content)).toBeFalsy();
+      const placed = JSON.parse(((placeRes.content as Array<{ text: string }>)[0]).text);
       expect(placed.furniture.placedBy).toBe("gemini");
 
       // 3. Collision at same tile fails cleanly
@@ -120,14 +116,10 @@ describe("Gemini-Only Office Architect MCP Server", () => {
       expect(dupRes.isError).toBe(true);
 
       // 4. Move (to any other free tile) and remove furniture
-      let moveRes: ToolRes | undefined;
-      for (let i = 35; i >= 0 && !(moveRes && !moveRes.isError); i--) {
-        if (i % 6 === at[0] && Math.floor(i / 6) === at[1]) continue;
-        moveRes = await client.callTool({
-          name: "move_furniture",
-          arguments: { instanceId: placed.furniture.id, zoneId: "common:0", lx: i % 6, ly: Math.floor(i / 6), direction: "sw" },
-        });
-      }
+      const moveRes: ToolRes = await client.callTool({
+        name: "move_furniture",
+        arguments: { instanceId: placed.furniture.id, zoneId: "floor:0", lx: 12, ly: 14, direction: "sw" },
+      });
       expect(moveRes?.isError).toBeFalsy();
 
       const rmRes = await client.callTool({

@@ -7,6 +7,7 @@ import { WebSocket, WebSocketServer } from "ws";
 import { z } from "zod";
 import {
   AgentTelemetryEventSchema,
+  CustomZoneRoleSchema,
   DepartmentIdSchema,
   DirectionSchema,
   RenderLayerSchema,
@@ -85,6 +86,43 @@ const ManageBayBodySchema = z.object({
 const ThemeBodySchema = z.object({
   theme: ThemeModeSchema,
 });
+
+const ExpandFloorBodySchema = z.object({
+  addWidth: z.number().int().min(0).max(24).optional(),
+  addDepth: z.number().int().min(0).max(24).optional(),
+});
+
+const ResizeFloorBodySchema = z.object({
+  deltaWidth: z.number().int().min(-24).max(24).optional(),
+  deltaDepth: z.number().int().min(-24).max(24).optional(),
+  widthTiles: z.number().int().min(12).max(96).optional(),
+  depthTiles: z.number().int().min(12).max(96).optional(),
+});
+
+const FloorTileOpSchema = z.object({
+  tx: z.number().int(),
+  ty: z.number().int(),
+  assetId: z.string().min(1).max(128).nullable(),
+});
+
+const FloorTilesBodySchema = z.union([
+  z.object({ resetAll: z.literal(true) }),
+  FloorTileOpSchema,
+  z.object({ tiles: z.array(FloorTileOpSchema).min(1).max(256) }),
+]);
+
+const CreateCustomZoneBodySchema = z.object({
+  name: z.string().min(1).max(64),
+  icon: z.string().min(1).max(8).optional(),
+  color: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
+  role: CustomZoneRoleSchema.optional(),
+  x: z.number().int().min(0).max(127),
+  y: z.number().int().min(0).max(127),
+  width: z.number().int().min(1).max(96),
+  height: z.number().int().min(1).max(96),
+});
+
+const UpdateCustomZoneBodySchema = CreateCustomZoneBodySchema.partial();
 
 function timingSafeMatch(a: string, b: string): boolean {
   const ba = Buffer.from(a);
@@ -340,6 +378,55 @@ export async function createHellFactoryServer(opts: {
           const body = ManageBayBodySchema.parse(await readJsonBody(req));
           const bay = await opts.engine.manageBay(bayId, body);
           sendJson(res, 200, { ok: true, bay });
+          return;
+        }
+
+        if (method === "POST" && pathname === "/api/architect/floor/expand") {
+          const body = ExpandFloorBodySchema.parse(await readJsonBody(req));
+          const size = await opts.engine.expandFloor(body);
+          sendJson(res, 200, { ok: true, ...size });
+          return;
+        }
+
+        if (method === "POST" && pathname === "/api/architect/floor/resize") {
+          const body = ResizeFloorBodySchema.parse(await readJsonBody(req));
+          const size = await opts.engine.resizeFloor(body);
+          sendJson(res, 200, { ok: true, ...size });
+          return;
+        }
+
+        if (method === "PATCH" && pathname === "/api/architect/floor-tiles") {
+          const body = FloorTilesBodySchema.parse(await readJsonBody(req));
+          if ("resetAll" in body) {
+            await opts.engine.clearFloorTileOverrides();
+            sendJson(res, 200, { ok: true, floorTileOverrides: {} });
+            return;
+          }
+          const tiles = "tiles" in body ? body.tiles : [body];
+          const floorTileOverrides = await opts.engine.setFloorTiles(tiles);
+          sendJson(res, 200, { ok: true, floorTileOverrides });
+          return;
+        }
+
+        if (method === "POST" && pathname === "/api/architect/zones") {
+          const body = CreateCustomZoneBodySchema.parse(await readJsonBody(req));
+          const zone = await opts.engine.createCustomZone(body);
+          sendJson(res, 200, { ok: true, zone });
+          return;
+        }
+
+        const customZoneMatch = pathname.match(/^\/api\/architect\/zones\/([^/]+)$/);
+        if (customZoneMatch && method === "PATCH") {
+          const id = decodeURIComponent(customZoneMatch[1]);
+          const body = UpdateCustomZoneBodySchema.parse(await readJsonBody(req));
+          const zone = await opts.engine.updateCustomZone(id, body);
+          sendJson(res, 200, { ok: true, zone });
+          return;
+        }
+        if (customZoneMatch && method === "DELETE") {
+          const id = decodeURIComponent(customZoneMatch[1]);
+          await opts.engine.deleteCustomZone(id);
+          sendJson(res, 200, { ok: true });
           return;
         }
 

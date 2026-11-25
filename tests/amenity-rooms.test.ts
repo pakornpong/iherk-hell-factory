@@ -90,22 +90,15 @@ describe("themed amenity rooms", () => {
     },
   );
 
-  it("always shows at least 4 themed rooms, even when the bay ring is exactly full", () => {
+  it("uses open customizable floor with Boss, Central Hub, and 1 hypersleep capsule per agent", () => {
     for (const count of [1, 2, 7, 13]) {
       const bays = Array.from({ length: count }, (_, i) => makeBay(i));
-      const campus = computeCampusLayout(bays, [createDefaultCommonWing(0), createDefaultCommonWing(1)], catalog);
-      const amenities = campus.zones.filter((z) => z.kind === "amenity");
-      expect(amenities.length, `bays=${count}`).toBeGreaterThanOrEqual(4);
-      expect(amenities.length).toBeLessThanOrEqual(AMENITY_THEME_ORDER.length);
-      expect(new Set(amenities.map((z) => z.amenityTheme)).size).toBe(amenities.length);
-      expect(campus.zones.filter((z) => z.kind === "bay")).toHaveLength(count);
-      const cells = new Set(campus.zones.map((z) => `${z.col},${z.row}`));
-      expect(cells.size).toBe(campus.zones.length);
-      for (const z of amenities) {
-        expect(z.amenityTheme).toBeDefined();
-        expect((z.col + 1) * ZONE_SIZE).toBeLessThanOrEqual(campus.widthTiles);
-        expect((z.row + 1) * ZONE_SIZE).toBeLessThanOrEqual(campus.depthTiles);
-      }
+      const campus = computeCampusLayout(bays, [], catalog, undefined, "office", undefined, undefined, {
+        employeeCount: count,
+      });
+      expect(campus.zones.map((z) => z.kind)).toEqual(["boss", "cowork", "hypersleep", "floor"]);
+      expect(campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(count);
+      expect(campus.wallSegments).toHaveLength(0);
     }
   });
 });

@@ -158,6 +158,107 @@ const FLAT_FLOOR_PROP_IDS = new Set([
   "gym-yoga-mat-corner",
 ]);
 
+const WALKABLE_DOOR_PROP_IDS = new Set([
+  "divider-low-glass-door",
+  "room-wall-door",
+]);
+
+const EDGE_DIVIDER_PROP_IDS = new Set([
+  "divider-low-glass",
+  "divider-low-glass-door",
+  "divider-low-glass-corner",
+  "divider-low-glass-tee",
+  "divider-low-glass-cross",
+  "divider-cubicle-amber",
+]);
+
+export interface EdgeDividerSegment {
+  /** Canonical edge key for exact-edge deduplication & collision checking (e.g. "x:4,4.5" or "y:3.5,5"). */
+  edgeKey: string;
+  axis: "x" | "y";
+  rx: number;
+  ry: number;
+  assetId: string;
+  direction: Direction;
+  blocks: { x: number; y: number; side: "w" | "n" } | null;
+}
+
+export function isEdgeDividerAsset(assetId: string): boolean {
+  return EDGE_DIVIDER_PROP_IDS.has(assetId);
+}
+
+/**
+ * Expand a tile-edge partition prop at (tx, ty) into its exact zero-thickness boundary-line segment(s).
+ * This allows furniture on BOTH sides of every glass wall, door, L-corner, T-junction, and +-cross
+ * to sit 100% flush against the glass with zero half-tile gap and exact isometric depth sorting.
+ */
+export function expandEdgeDividerSegments(
+  assetId: string,
+  tx: number,
+  ty: number,
+  direction: Direction,
+): EdgeDividerSegment[] {
+  if (!EDGE_DIVIDER_PROP_IDS.has(assetId)) return [];
+
+  const isDoor = assetId === "divider-low-glass-door";
+  const panelAsset =
+    assetId === "divider-cubicle-amber"
+      ? "divider-cubicle-amber"
+      : isDoor
+        ? "divider-low-glass-door"
+        : "divider-low-glass";
+
+  const makeNorth = (x: number, y: number): EdgeDividerSegment => ({
+    edgeKey: `x:${x},${y - 0.5}`,
+    axis: "x",
+    rx: x,
+    ry: y - 0.5,
+    assetId: panelAsset,
+    direction: "se",
+    blocks: isDoor ? null : { x, y, side: "n" },
+  });
+  const makeWest = (x: number, y: number): EdgeDividerSegment => ({
+    edgeKey: `y:${x - 0.5},${y}`,
+    axis: "y",
+    rx: x - 0.5,
+    ry: y,
+    assetId: panelAsset,
+    direction: "sw",
+    blocks: isDoor ? null : { x, y, side: "w" },
+  });
+
+  if (assetId === "divider-low-glass" || assetId === "divider-low-glass-door" || assetId === "divider-cubicle-amber") {
+    if (direction === "se") return [makeNorth(tx, ty)];
+    if (direction === "sw") return [makeWest(tx, ty)];
+    if (direction === "nw") return [makeNorth(tx, ty + 1)];
+    return [makeWest(tx + 1, ty)]; // "ne" -> East edge
+  }
+
+  if (assetId === "divider-low-glass-corner") {
+    // 2 perpendicular edges of tile (tx, ty): se=┌, sw=┐, nw=┘, ne=└
+    if (direction === "se") return [makeNorth(tx, ty), makeWest(tx, ty)];
+    if (direction === "sw") return [makeNorth(tx, ty), makeWest(tx + 1, ty)];
+    if (direction === "nw") return [makeNorth(tx, ty + 1), makeWest(tx + 1, ty)];
+    return [makeNorth(tx, ty + 1), makeWest(tx, ty)];
+  }
+
+  if (assetId === "divider-low-glass-tee") {
+    // 3 edges meeting at vertex (tx, ty): se=┬, sw=┤, nw=┴, ne=├
+    if (direction === "se") return [makeNorth(tx - 1, ty), makeNorth(tx, ty), makeWest(tx, ty)];
+    if (direction === "sw") return [makeWest(tx, ty - 1), makeWest(tx, ty), makeNorth(tx - 1, ty)];
+    if (direction === "nw") return [makeNorth(tx - 1, ty), makeNorth(tx, ty), makeWest(tx, ty - 1)];
+    return [makeWest(tx, ty - 1), makeWest(tx, ty), makeNorth(tx, ty)];
+  }
+
+  // divider-low-glass-cross: 4-way + intersection centered at vertex (tx, ty)
+  return [
+    makeNorth(tx - 1, ty),
+    makeNorth(tx, ty),
+    makeWest(tx, ty - 1),
+    makeWest(tx, ty),
+  ];
+}
+
 const TABLETOP_PROP_IDS = new Set([
   "prop-desk-lamp",
   "prop-laptop",
@@ -172,6 +273,12 @@ const SEAT_PROP_CONFIGS: Record<string, AssetLayerConfig> = {
     tilePermission: TILE_PERM.SEAT,
     foregroundAssetId: "chair-office-swivel-back",
     foregroundDirections: ["nw", "sw"],
+  },
+  "hypersleep-capsule": {
+    renderLayer: RENDER_LAYER.LOW,
+    tilePermission: TILE_PERM.SEAT,
+    foregroundAssetId: "hypersleep-capsule-front",
+    foregroundDirections: ["se", "ne", "sw", "nw"],
   },
 };
 
@@ -235,7 +342,7 @@ export function resolveAssetLayerConfig(
     };
   }
 
-  if (effectiveLayer === "foreground" || assetId.endsWith("-back")) {
+  if (effectiveLayer === "foreground" || assetId.endsWith("-back") || assetId === "hypersleep-capsule-front") {
     return {
       renderLayer: catalogEntry?.renderLayer ?? RENDER_LAYER.FOREGROUND,
       tilePermission: catalogEntry?.tilePermission ?? TILE_PERM.WALKABLE,
@@ -249,10 +356,17 @@ export function resolveAssetLayerConfig(
     };
   }
 
-  // 2. Special furniture rules (flat mats, seats with split backrests)
+  // 2. Special furniture rules (flat mats, walkable doorways, seats with split backrests)
   if (FLAT_FLOOR_PROP_IDS.has(assetId)) {
     return {
       renderLayer: catalogEntry?.renderLayer ?? RENDER_LAYER.FLOOR,
+      tilePermission: catalogEntry?.tilePermission ?? TILE_PERM.WALKABLE,
+    };
+  }
+
+  if (WALKABLE_DOOR_PROP_IDS.has(assetId)) {
+    return {
+      renderLayer: catalogEntry?.renderLayer ?? RENDER_LAYER.CHARACTER,
       tilePermission: catalogEntry?.tilePermission ?? TILE_PERM.WALKABLE,
     };
   }
@@ -337,6 +451,24 @@ export function buildTilePermissionMap(
   const blockedN = new Uint8Array(size);
 
   for (const w of campus.wallSegments ?? []) {
+    if (w.assetId === "room-wall-door" || w.assetId === "divider-low-glass-door") {
+      if (w.axis === "y") {
+        const bx = Math.round(w.rx + 0.5);
+        const y = Math.round(w.ry);
+        if (y >= 0 && y < height) {
+          if (bx - 1 >= 0 && bx - 1 < width) permissions[y * width + (bx - 1)] = TILE_PERM.DOOR;
+          if (bx >= 0 && bx < width) permissions[y * width + bx] = TILE_PERM.DOOR;
+        }
+      } else if (w.axis === "x") {
+        const x = Math.round(w.rx);
+        const by = Math.round(w.ry + 0.5);
+        if (x >= 0 && x < width) {
+          if (by - 1 >= 0 && by - 1 < height) permissions[(by - 1) * width + x] = TILE_PERM.DOOR;
+          if (by >= 0 && by < height) permissions[by * width + x] = TILE_PERM.DOOR;
+        }
+      }
+      continue;
+    }
     if (!w.blocks) continue;
     const { x, y, side } = w.blocks;
     if (x < 0 || x >= width || y < 0 || y >= height) continue;
@@ -378,9 +510,16 @@ export function buildTilePermissionMap(
     }
   }
 
-  // Apply furniture permissions (tabletop & foreground do not override floor permissions)
+  // Apply furniture permissions (tabletop, foreground & edge-mounted dividers do not block the tile interior)
   for (const f of campus.worldFurniture ?? []) {
-    if (f.layer === "floor" || f.layer === "wall" || f.layer === "wall-decor" || f.layer === "tabletop" || f.layer === "foreground") {
+    if (
+      f.layer === "floor" ||
+      f.layer === "wall" ||
+      f.layer === "wall-decor" ||
+      f.layer === "tabletop" ||
+      f.layer === "foreground" ||
+      isEdgeDividerAsset(f.assetId)
+    ) {
       continue;
     }
     const cfg = resolveAssetLayerConfig(f.assetId, f.layer, catalogById?.get(f.assetId));
