@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "id": "marina-navigation-light-pedestal-yard-wide-twin-bearer-skids",
+  "category": "maritime",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a4866b"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#698294"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9caaa9"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596672"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#40494e"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#ad6d56"
+    },
+    "ochre": {
+      "kind": "matte",
+      "color": "#c19e62"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b69c7e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba7b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        9,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        0
+      ],
+      "to": [
+        55,
+        24,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        4
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        14
+      ],
+      "zFrom": 8,
+      "zTo": 28,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        14
+      ],
+      "zFrom": 28,
+      "zTo": 30,
+      "radius": 3,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        14
+      ],
+      "zFrom": 31,
+      "zTo": 35,
+      "radius": 3,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        14
+      ],
+      "zFrom": 36,
+      "zTo": 37,
+      "radius": 3,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        14
+      ],
+      "zFrom": 8,
+      "zTo": 28,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        14
+      ],
+      "zFrom": 28,
+      "zTo": 30,
+      "radius": 3,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        14
+      ],
+      "zFrom": 31,
+      "zTo": 35,
+      "radius": 3,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        14
+      ],
+      "zFrom": 36,
+      "zTo": 37,
+      "radius": 3,
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        14,
+        15
+      ],
+      "to": [
+        49,
+        14,
+        15
+      ],
+      "material": "gray"
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "id": "vet-induction-recovery-cubby-clinic-span-sanitary-floor",
+  "category": "veterinary",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9fa9a9",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#5a6773",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#414a50",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#dad4c5",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#647e94",
+      "kind": "matte"
+    },
+    "tan": {
+      "color": "#ad9a83",
+      "kind": "matte"
+    },
+    "oak": {
+      "color": "#a88461",
+      "kind": "wood"
+    },
+    "glass": {
+      "color": "#8dabb7",
+      "kind": "glass"
+    },
+    "rust": {
+      "color": "#a96a58",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#ded4bf",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#bc9e67",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        2
+      ],
+      "to": [
+        54,
+        24,
+        2
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        27
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        7
+      ],
+      "to": [
+        53,
+        25,
+        23
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        9
+      ],
+      "to": [
+        52,
+        25,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        20
+      ],
+      "to": [
+        52,
+        25,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        23,
+        10
+      ],
+      "to": [
+        51,
+        24,
+        12
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        12
+      ],
+      "zFrom": 27,
+      "zTo": 29,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        12,
+        29
+      ],
+      "to": [
+        52,
+        18,
+        31
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        14,
+        6
+      ],
+      "to": [
+        51,
+        22,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        15,
+        11
+      ],
+      "to": [
+        50,
+        21,
+        12
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        16,
+        12
+      ],
+      "to": [
+        48,
+        19,
+        15
+      ],
+      "material": "blue"
+    }
+  ]
+}

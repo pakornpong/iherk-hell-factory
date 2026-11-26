@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "id": "pet-fixture-cat-climb-tree-wide-washable-rubber",
+  "category": "pet-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ad8663"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#755844"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b9a891"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b99470"
+    },
+    "navy": {
+      "kind": "matte",
+      "color": "#607183"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#ded4c0"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#495359"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ca7a9"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a97561"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8fadb8"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bca475"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        55,
+        26,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        2
+      ],
+      "to": [
+        54,
+        6,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        2
+      ],
+      "to": [
+        54,
+        10,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        14,
+        2
+      ],
+      "to": [
+        54,
+        14,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        18,
+        2
+      ],
+      "to": [
+        54,
+        18,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        2
+      ],
+      "to": [
+        54,
+        22,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        13
+      ],
+      "zFrom": 7,
+      "zTo": 34,
+      "radius": 2,
+      "material": "tan"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        17
+      ],
+      "zFrom": 7,
+      "zTo": 26,
+      "radius": 2,
+      "material": "tan"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        24
+      ],
+      "to": [
+        17,
+        19,
+        27
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        10,
+        27
+      ],
+      "to": [
+        55,
+        24,
+        29
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        34
+      ],
+      "to": [
+        19,
+        20,
+        37
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        36
+      ],
+      "to": [
+        17,
+        18,
+        38
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        13,
+        36
+      ],
+      "to": [
+        18,
+        13,
+        30
+      ],
+      "material": "tan"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        13
+      ],
+      "zFrom": 28,
+      "zTo": 30,
+      "radius": 1,
+      "material": "clay"
+    },
+    {
+      "op": "slope",
+      "from": [
+        6,
+        19,
+        6
+      ],
+      "to": [
+        17,
+        25,
+        23
+      ],
+      "axis": "+X",
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        20,
+        19
+      ],
+      "to": [
+        16,
+        24,
+        20
+      ],
+      "material": "rubber"
+    }
+  ]
+}

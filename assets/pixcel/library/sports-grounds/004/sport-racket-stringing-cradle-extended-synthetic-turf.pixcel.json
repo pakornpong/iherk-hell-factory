@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "id": "sport-racket-stringing-cradle-extended-synthetic-turf",
+  "category": "sports",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "metal",
+      "color": "#8d9ba3"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#596772"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#404a51"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#ddd2bf"
+    },
+    "court": {
+      "kind": "matte",
+      "color": "#a67259"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d92"
+    },
+    "turf": {
+      "kind": "matte",
+      "color": "#718063"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b79c7b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a57d58"
+    },
+    "rope": {
+      "kind": "matte",
+      "color": "#b5a28a"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c9a468"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "turf"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        2
+      ],
+      "to": [
+        55,
+        9,
+        2
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        2
+      ],
+      "to": [
+        55,
+        15,
+        2
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        2
+      ],
+      "to": [
+        55,
+        21,
+        2
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        7
+      ],
+      "to": [
+        52,
+        23,
+        11
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 12,
+      "zTo": 15,
+      "radius": 5,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 15,
+      "zTo": 15,
+      "radius": 4,
+      "material": "charcoal"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        17,
+        14
+      ],
+      "to": [
+        52,
+        22,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        10,
+        11
+      ],
+      "to": [
+        52,
+        15,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        15,
+        14
+      ],
+      "to": [
+        51,
+        17,
+        16
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        22,
+        4
+      ],
+      "to": [
+        53,
+        24,
+        18
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        22,
+        16
+      ],
+      "to": [
+        53,
+        25,
+        19
+      ],
+      "material": "amber"
+    }
+  ]
+}

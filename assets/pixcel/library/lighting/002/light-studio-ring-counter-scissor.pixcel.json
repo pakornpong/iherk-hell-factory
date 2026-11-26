@@ -1,0 +1,983 @@
+{
+  "schemaVersion": 1,
+  "id": "light-studio-ring-counter-scissor",
+  "category": "lighting",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "black": {
+      "kind": "matte",
+      "color": "#323a47"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8599a8"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99258"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a95548"
+    },
+    "case": {
+      "kind": "matte",
+      "color": "#4c6872"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#b0c3cb"
+    },
+    "lamp": {
+      "kind": "emissive",
+      "color": "#fff1ca",
+      "glowRadius": 1,
+      "glowIntensity": 0.2
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        26,
+        23,
+        1
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        2
+      ],
+      "to": [
+        25,
+        22,
+        4
+      ],
+      "material": "case"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        13
+      ],
+      "zFrom": 5,
+      "zTo": 8,
+      "radius": 4,
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        13,
+        8
+      ],
+      "to": [
+        14,
+        21,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        21,
+        18
+      ],
+      "to": [
+        14,
+        10,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        10,
+        28
+      ],
+      "to": [
+        14,
+        14,
+        36
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        13,
+        8
+      ],
+      "to": [
+        16,
+        21,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        21,
+        18
+      ],
+      "to": [
+        16,
+        10,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        10,
+        28
+      ],
+      "to": [
+        16,
+        14,
+        36
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        13,
+        43
+      ],
+      "to": [
+        24,
+        15,
+        45
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        16,
+        44
+      ],
+      "to": [
+        24,
+        16,
+        45
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        13,
+        45
+      ],
+      "to": [
+        24,
+        15,
+        47
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        16,
+        46
+      ],
+      "to": [
+        24,
+        16,
+        47
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        13,
+        46
+      ],
+      "to": [
+        23,
+        15,
+        48
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        16,
+        47
+      ],
+      "to": [
+        23,
+        16,
+        48
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        13,
+        48
+      ],
+      "to": [
+        22,
+        15,
+        50
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        16,
+        49
+      ],
+      "to": [
+        22,
+        16,
+        50
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        13,
+        49
+      ],
+      "to": [
+        21,
+        15,
+        51
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        16,
+        50
+      ],
+      "to": [
+        21,
+        16,
+        51
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        13,
+        50
+      ],
+      "to": [
+        19,
+        15,
+        52
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        16,
+        51
+      ],
+      "to": [
+        19,
+        16,
+        52
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        13,
+        51
+      ],
+      "to": [
+        18,
+        15,
+        53
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        16,
+        52
+      ],
+      "to": [
+        18,
+        16,
+        53
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        51
+      ],
+      "to": [
+        16,
+        15,
+        53
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        16,
+        52
+      ],
+      "to": [
+        16,
+        16,
+        53
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        13,
+        51
+      ],
+      "to": [
+        14,
+        15,
+        53
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        16,
+        52
+      ],
+      "to": [
+        14,
+        16,
+        53
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        13,
+        50
+      ],
+      "to": [
+        13,
+        15,
+        52
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        16,
+        51
+      ],
+      "to": [
+        13,
+        16,
+        52
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        49
+      ],
+      "to": [
+        11,
+        15,
+        51
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        16,
+        50
+      ],
+      "to": [
+        11,
+        16,
+        51
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        48
+      ],
+      "to": [
+        10,
+        15,
+        50
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        16,
+        49
+      ],
+      "to": [
+        10,
+        16,
+        50
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        46
+      ],
+      "to": [
+        9,
+        15,
+        48
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        16,
+        47
+      ],
+      "to": [
+        9,
+        16,
+        48
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        13,
+        45
+      ],
+      "to": [
+        8,
+        15,
+        47
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        16,
+        46
+      ],
+      "to": [
+        8,
+        16,
+        47
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        13,
+        43
+      ],
+      "to": [
+        8,
+        15,
+        45
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        16,
+        44
+      ],
+      "to": [
+        8,
+        16,
+        45
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        13,
+        41
+      ],
+      "to": [
+        8,
+        15,
+        43
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        16,
+        42
+      ],
+      "to": [
+        8,
+        16,
+        43
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        40
+      ],
+      "to": [
+        9,
+        15,
+        42
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        16,
+        41
+      ],
+      "to": [
+        9,
+        16,
+        42
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        38
+      ],
+      "to": [
+        10,
+        15,
+        40
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        16,
+        39
+      ],
+      "to": [
+        10,
+        16,
+        40
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        37
+      ],
+      "to": [
+        11,
+        15,
+        39
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        16,
+        38
+      ],
+      "to": [
+        11,
+        16,
+        39
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        13,
+        36
+      ],
+      "to": [
+        13,
+        15,
+        38
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        16,
+        37
+      ],
+      "to": [
+        13,
+        16,
+        38
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        13,
+        35
+      ],
+      "to": [
+        14,
+        15,
+        37
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        16,
+        36
+      ],
+      "to": [
+        14,
+        16,
+        37
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        35
+      ],
+      "to": [
+        16,
+        15,
+        37
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        16,
+        36
+      ],
+      "to": [
+        16,
+        16,
+        37
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        13,
+        35
+      ],
+      "to": [
+        18,
+        15,
+        37
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        16,
+        36
+      ],
+      "to": [
+        18,
+        16,
+        37
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        13,
+        36
+      ],
+      "to": [
+        19,
+        15,
+        38
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        16,
+        37
+      ],
+      "to": [
+        19,
+        16,
+        38
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        13,
+        37
+      ],
+      "to": [
+        21,
+        15,
+        39
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        16,
+        38
+      ],
+      "to": [
+        21,
+        16,
+        39
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        13,
+        38
+      ],
+      "to": [
+        22,
+        15,
+        40
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        16,
+        39
+      ],
+      "to": [
+        22,
+        16,
+        40
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        13,
+        40
+      ],
+      "to": [
+        23,
+        15,
+        42
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        16,
+        41
+      ],
+      "to": [
+        23,
+        16,
+        42
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        13,
+        41
+      ],
+      "to": [
+        24,
+        15,
+        43
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        16,
+        42
+      ],
+      "to": [
+        24,
+        16,
+        43
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        34
+      ],
+      "to": [
+        16,
+        15,
+        36
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        41
+      ],
+      "to": [
+        16,
+        13,
+        45
+      ],
+      "material": "steel"
+    }
+  ]
+}

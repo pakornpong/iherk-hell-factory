@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "id": "salon-dryer-hood-chair",
+  "category": "personal-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "color": "#e5e3d6",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#a0b0bc",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#445361",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#272f3b",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#49798f",
+      "kind": "matte"
+    },
+    "aqua": {
+      "color": "#78c5c4",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#b85446",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#ac784e",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e0ad58",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#f2ecdc",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        16
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 10,
+      "material": "metal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        16
+      ],
+      "zFrom": 3,
+      "zTo": 12,
+      "radius": 3,
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        12
+      ],
+      "to": [
+        24,
+        23,
+        17
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        16
+      ],
+      "to": [
+        23,
+        11,
+        25
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        17
+      ],
+      "to": [
+        9,
+        22,
+        22
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        10,
+        17
+      ],
+      "to": [
+        24,
+        22,
+        22
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        5,
+        15
+      ],
+      "to": [
+        17,
+        7,
+        41
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        6,
+        38
+      ],
+      "to": [
+        17,
+        16,
+        41
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        17
+      ],
+      "zFrom": 33,
+      "zTo": 40,
+      "radius": 8,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        17
+      ],
+      "zFrom": 31,
+      "zTo": 32,
+      "radius": 7,
+      "material": "frame"
+    }
+  ]
+}

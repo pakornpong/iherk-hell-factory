@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "id": "plumbing-fold-away-utility-basin-compact-wall-riser",
+  "category": "plumbing",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "white": {
+      "kind": "matte",
+      "color": "#dedbd1"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#ada69b"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a1aaae"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#87959e"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99c66"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#59636c"
+    },
+    "blue": {
+      "kind": "glass",
+      "color": "#9eafb4"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a17d5a"
+    },
+    "grout": {
+      "kind": "matte",
+      "color": "#7e7b75"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c3b5a2"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        8,
+        41
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        18
+      ],
+      "to": [
+        25,
+        25,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        20
+      ],
+      "to": [
+        25,
+        10,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        20
+      ],
+      "to": [
+        25,
+        25,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        11,
+        20
+      ],
+      "to": [
+        6,
+        23,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        11,
+        20
+      ],
+      "to": [
+        25,
+        23,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        10,
+        15
+      ],
+      "to": [
+        6,
+        23,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        10,
+        15
+      ],
+      "to": [
+        24,
+        23,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        8,
+        28
+      ],
+      "to": [
+        23,
+        10,
+        33
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        17
+      ],
+      "zFrom": 20,
+      "zTo": 20,
+      "radius": 2,
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        7,
+        14
+      ],
+      "to": [
+        21,
+        8,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        8,
+        39
+      ],
+      "to": [
+        21,
+        15,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        16
+      ],
+      "zFrom": 38,
+      "zTo": 39,
+      "radius": 3,
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        9,
+        22
+      ],
+      "to": [
+        22,
+        11,
+        24
+      ],
+      "material": "chrome"
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "id": "event-small-pa-riser-function-room-courtyard-deck",
+  "category": "events",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#99a4a7"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#59656e"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3f494f"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a8835e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#755945"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#bcae9a"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#ddd4bf"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657c93"
+    },
+    "terra": {
+      "kind": "matte",
+      "color": "#a66453"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bea16b"
+    },
+    "display": {
+      "kind": "glass",
+      "color": "#92acba"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        54,
+        25,
+        1
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        54,
+        8,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        2
+      ],
+      "to": [
+        54,
+        12,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        14,
+        2
+      ],
+      "to": [
+        54,
+        16,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        18,
+        2
+      ],
+      "to": [
+        54,
+        20,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        2
+      ],
+      "to": [
+        54,
+        24,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        5
+      ],
+      "to": [
+        16,
+        23,
+        14
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        8,
+        5
+      ],
+      "to": [
+        52,
+        23,
+        14
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 23,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        22
+      ],
+      "to": [
+        15,
+        21,
+        36
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        21,
+        23
+      ],
+      "to": [
+        14,
+        21,
+        35
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        21,
+        25
+      ],
+      "to": [
+        13,
+        22,
+        30
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 23,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        10,
+        22
+      ],
+      "to": [
+        51,
+        21,
+        36
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        21,
+        23
+      ],
+      "to": [
+        50,
+        21,
+        35
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        21,
+        25
+      ],
+      "to": [
+        49,
+        22,
+        30
+      ],
+      "material": "steel"
+    }
+  ]
+}

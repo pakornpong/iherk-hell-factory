@@ -1,0 +1,532 @@
+{
+  "schemaVersion": 1,
+  "id": "growhouse-irrigation-tap-manifold-long-slatted-bench",
+  "category": "horticulture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a17f5c"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#606b73"
+    },
+    "soil": {
+      "kind": "matte",
+      "color": "#655142"
+    },
+    "fern": {
+      "kind": "matte",
+      "color": "#627c58"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#809664"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7388"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76b56"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a267"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8ccb6"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aeb9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#424a4e"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        56,
+        9,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        23,
+        0
+      ],
+      "to": [
+        56,
+        25,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        10
+      ],
+      "to": [
+        57,
+        9,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        10
+      ],
+      "to": [
+        57,
+        14,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        10
+      ],
+      "to": [
+        57,
+        19,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        10
+      ],
+      "to": [
+        57,
+        24,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        12
+      ],
+      "to": [
+        56,
+        24,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        16
+      ],
+      "to": [
+        55,
+        10,
+        36
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        31
+      ],
+      "to": [
+        53,
+        13,
+        33
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        12
+      ],
+      "zFrom": 27,
+      "zTo": 34,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        34
+      ],
+      "to": [
+        11,
+        13,
+        35
+      ],
+      "material": "clay"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        12,
+        27
+      ],
+      "to": [
+        10,
+        20,
+        17
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        12
+      ],
+      "zFrom": 27,
+      "zTo": 34,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        11,
+        34
+      ],
+      "to": [
+        17,
+        13,
+        35
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        12,
+        27
+      ],
+      "to": [
+        16,
+        20,
+        17
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        12
+      ],
+      "zFrom": 27,
+      "zTo": 34,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        11,
+        34
+      ],
+      "to": [
+        23,
+        13,
+        35
+      ],
+      "material": "clay"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        12,
+        27
+      ],
+      "to": [
+        22,
+        20,
+        17
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        28,
+        12
+      ],
+      "zFrom": 27,
+      "zTo": 34,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        11,
+        34
+      ],
+      "to": [
+        29,
+        13,
+        35
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        12,
+        27
+      ],
+      "to": [
+        28,
+        20,
+        17
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        12
+      ],
+      "zFrom": 27,
+      "zTo": 34,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        11,
+        34
+      ],
+      "to": [
+        35,
+        13,
+        35
+      ],
+      "material": "clay"
+    },
+    {
+      "op": "line",
+      "from": [
+        34,
+        12,
+        27
+      ],
+      "to": [
+        34,
+        20,
+        17
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        40,
+        12
+      ],
+      "zFrom": 27,
+      "zTo": 34,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        11,
+        34
+      ],
+      "to": [
+        41,
+        13,
+        35
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        40,
+        12,
+        27
+      ],
+      "to": [
+        40,
+        20,
+        17
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        46,
+        12
+      ],
+      "zFrom": 27,
+      "zTo": 34,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        11,
+        34
+      ],
+      "to": [
+        47,
+        13,
+        35
+      ],
+      "material": "clay"
+    },
+    {
+      "op": "line",
+      "from": [
+        46,
+        12,
+        27
+      ],
+      "to": [
+        46,
+        20,
+        17
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        52,
+        12
+      ],
+      "zFrom": 27,
+      "zTo": 34,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        11,
+        34
+      ],
+      "to": [
+        53,
+        13,
+        35
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        12,
+        27
+      ],
+      "to": [
+        52,
+        20,
+        17
+      ],
+      "material": "slate"
+    }
+  ]
+}

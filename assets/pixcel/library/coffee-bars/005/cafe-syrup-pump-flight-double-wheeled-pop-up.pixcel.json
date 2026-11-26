@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 1,
+  "id": "cafe-syrup-pump-flight-double-wheeled-pop-up",
+  "category": "coffee-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa815d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#725543"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3f4649"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0a8a9"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b47d5e"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7caba"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#a5a09a"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aab4"
+    },
+    "coffee": {
+      "kind": "matte",
+      "color": "#675143"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a76a57"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89f7a"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7387"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        10,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        10,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        25,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        5
+      ],
+      "to": [
+        54,
+        25,
+        8
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        8,
+        8
+      ],
+      "to": [
+        55,
+        23,
+        11
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        10
+      ],
+      "to": [
+        54,
+        24,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        14
+      ],
+      "to": [
+        54,
+        12,
+        18
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        18
+      ],
+      "zFrom": 14,
+      "zTo": 24,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        18
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "coffee"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        18
+      ],
+      "zFrom": 25,
+      "zTo": 28,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        18,
+        28
+      ],
+      "to": [
+        9,
+        21,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        11
+      ],
+      "zFrom": 18,
+      "zTo": 28,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        11
+      ],
+      "zFrom": 23,
+      "zTo": 26,
+      "radius": 1,
+      "material": "rust"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        11
+      ],
+      "zFrom": 29,
+      "zTo": 32,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        11,
+        32
+      ],
+      "to": [
+        14,
+        14,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        18
+      ],
+      "zFrom": 14,
+      "zTo": 24,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        18
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "coffee"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        18
+      ],
+      "zFrom": 25,
+      "zTo": 28,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        18,
+        28
+      ],
+      "to": [
+        19,
+        21,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        11
+      ],
+      "zFrom": 18,
+      "zTo": 28,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        11
+      ],
+      "zFrom": 23,
+      "zTo": 26,
+      "radius": 1,
+      "material": "rust"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        11
+      ],
+      "zFrom": 29,
+      "zTo": 32,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        32
+      ],
+      "to": [
+        24,
+        14,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        28,
+        18
+      ],
+      "zFrom": 14,
+      "zTo": 24,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        28,
+        18
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "coffee"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        28,
+        18
+      ],
+      "zFrom": 25,
+      "zTo": 28,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        18,
+        28
+      ],
+      "to": [
+        29,
+        21,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        33,
+        11
+      ],
+      "zFrom": 18,
+      "zTo": 28,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        33,
+        11
+      ],
+      "zFrom": 23,
+      "zTo": 26,
+      "radius": 1,
+      "material": "rust"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        33,
+        11
+      ],
+      "zFrom": 29,
+      "zTo": 32,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        11,
+        32
+      ],
+      "to": [
+        34,
+        14,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        38,
+        18
+      ],
+      "zFrom": 14,
+      "zTo": 24,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        38,
+        18
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "coffee"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        38,
+        18
+      ],
+      "zFrom": 25,
+      "zTo": 28,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        18,
+        28
+      ],
+      "to": [
+        39,
+        21,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        43,
+        11
+      ],
+      "zFrom": 18,
+      "zTo": 28,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        43,
+        11
+      ],
+      "zFrom": 23,
+      "zTo": 26,
+      "radius": 1,
+      "material": "rust"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        43,
+        11
+      ],
+      "zFrom": 29,
+      "zTo": 32,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        11,
+        32
+      ],
+      "to": [
+        44,
+        14,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        18
+      ],
+      "zFrom": 14,
+      "zTo": 24,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        18
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "coffee"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        18
+      ],
+      "zFrom": 25,
+      "zTo": 28,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        18,
+        28
+      ],
+      "to": [
+        49,
+        21,
+        28
+      ],
+      "material": "steel"
+    }
+  ]
+}

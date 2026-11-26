@@ -1,0 +1,592 @@
+{
+  "schemaVersion": 1,
+  "id": "music-waveform-modular-wedge-stage-road-dolly",
+  "category": "music",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#545d65"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#98a4ae"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#33343c"
+    },
+    "cherry": {
+      "kind": "wood",
+      "color": "#945f49"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#b28159"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#e0d8c9"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#c4a05a"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#aa5d56"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#536e8a"
+    },
+    "lcd": {
+      "kind": "emissive",
+      "color": "#a2b6c9",
+      "glowRadius": 1,
+      "glowIntensity": 0.13
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        57,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        23,
+        0
+      ],
+      "to": [
+        57,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        4
+      ],
+      "to": [
+        58,
+        27,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        8
+      ],
+      "to": [
+        7,
+        6,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        5,
+        8
+      ],
+      "to": [
+        56,
+        6,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        17
+      ],
+      "to": [
+        56,
+        6,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        9
+      ],
+      "to": [
+        58,
+        26,
+        13
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        13
+      ],
+      "to": [
+        57,
+        8,
+        19
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        3,
+        6,
+        18
+      ],
+      "to": [
+        3,
+        24,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        58,
+        6,
+        18
+      ],
+      "to": [
+        58,
+        24,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        13
+      ],
+      "to": [
+        10,
+        25,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        13
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        19
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        22,
+        14
+      ],
+      "to": [
+        10,
+        24,
+        16
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        13
+      ],
+      "to": [
+        17,
+        25,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        13
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        19
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        22,
+        14
+      ],
+      "to": [
+        17,
+        24,
+        16
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        10,
+        13
+      ],
+      "to": [
+        24,
+        25,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        13
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        19
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        22,
+        14
+      ],
+      "to": [
+        24,
+        24,
+        16
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        10,
+        13
+      ],
+      "to": [
+        31,
+        25,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        28,
+        13
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        28,
+        19
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        22,
+        14
+      ],
+      "to": [
+        31,
+        24,
+        16
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        10,
+        13
+      ],
+      "to": [
+        38,
+        25,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        35,
+        13
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        35,
+        19
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        35,
+        22,
+        14
+      ],
+      "to": [
+        38,
+        24,
+        16
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        10,
+        13
+      ],
+      "to": [
+        45,
+        25,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        42,
+        13
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        42,
+        19
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        22,
+        14
+      ],
+      "to": [
+        45,
+        24,
+        16
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        10,
+        13
+      ],
+      "to": [
+        52,
+        25,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        13
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        19
+      ],
+      "zFrom": 14,
+      "zTo": 15,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        22,
+        14
+      ],
+      "to": [
+        52,
+        24,
+        16
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        14
+      ],
+      "to": [
+        13,
+        8,
+        14
+      ],
+      "material": "lcd"
+    }
+  ]
+}

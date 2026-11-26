@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "id": "garage-desktop-parts-blaster-bench",
+  "category": "garage",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#91a6b0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#4c6071"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#283541"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#dea957"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#53667a"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac594a"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbddcf"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#86bdd0",
+      "glowRadius": 1,
+      "glowIntensity": 0.14
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        23,
+        0
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        1
+      ],
+      "to": [
+        25,
+        25,
+        20
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        20
+      ],
+      "to": [
+        25,
+        21,
+        26
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        21,
+        22
+      ],
+      "to": [
+        22,
+        22,
+        25
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        5
+      ],
+      "to": [
+        24,
+        26,
+        19
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        26,
+        9
+      ],
+      "to": [
+        13,
+        27,
+        13
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        26,
+        9
+      ],
+      "to": [
+        22,
+        27,
+        13
+      ],
+      "material": "rubber"
+    }
+  ]
+}

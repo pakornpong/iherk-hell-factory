@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "id": "instrument-vacuum-desiccator-pedestal-module",
+  "category": "lab",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "kind": "matte",
+      "color": "#dbd8cf"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#303c4b"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8c9eae"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#788491"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#af6556"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#76b2bb"
+    },
+    "solution": {
+      "kind": "glass",
+      "color": "#7aa589"
+    },
+    "amber": {
+      "kind": "glass",
+      "color": "#d5a365"
+    },
+    "display": {
+      "kind": "emissive",
+      "color": "#a4bac9",
+      "glowRadius": 1,
+      "glowIntensity": 0.12
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        26,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        3
+      ],
+      "to": [
+        22,
+        23,
+        10
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        10
+      ],
+      "to": [
+        27,
+        26,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        23,
+        6
+      ],
+      "to": [
+        20,
+        24,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        12
+      ],
+      "to": [
+        26,
+        25,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 16,
+      "zTo": 18,
+      "radius": 10,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 19,
+      "zTo": 25,
+      "radius": 9,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 26,
+      "zTo": 29,
+      "radius": 8,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 30,
+      "zTo": 31,
+      "radius": 6,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 32,
+      "zTo": 34,
+      "radius": 3,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        14,
+        33
+      ],
+      "to": [
+        24,
+        16,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        33
+      ],
+      "to": [
+        25,
+        17,
+        34
+      ],
+      "material": "red"
+    }
+  ]
+}

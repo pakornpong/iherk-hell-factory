@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "id": "rec-slot-car-raceway-steel-folding",
+  "category": "recreation",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#b0855d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745444"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#38424c"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#839099"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded9c8"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a75b50"
+    },
+    "felt": {
+      "kind": "matte",
+      "color": "#526b83"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bb995d"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        7,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        24,
+        0
+      ],
+      "to": [
+        7,
+        7,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        55,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        24,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        55,
+        24,
+        0
+      ],
+      "to": [
+        55,
+        7,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        17
+      ],
+      "to": [
+        55,
+        7,
+        17
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        17
+      ],
+      "to": [
+        55,
+        24,
+        17
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        18
+      ],
+      "to": [
+        60,
+        26,
+        22
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        22
+      ],
+      "to": [
+        58,
+        24,
+        22
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        22
+      ],
+      "to": [
+        51,
+        19,
+        22
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        23
+      ],
+      "to": [
+        55,
+        9,
+        23
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        22,
+        23
+      ],
+      "to": [
+        55,
+        22,
+        23
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        7,
+        23
+      ],
+      "to": [
+        19,
+        11,
+        24
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        20,
+        23
+      ],
+      "to": [
+        48,
+        24,
+        24
+      ],
+      "material": "felt"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        8,
+        23
+      ],
+      "to": [
+        32,
+        9,
+        30
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        22,
+        23
+      ],
+      "to": [
+        32,
+        23,
+        30
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        8,
+        29
+      ],
+      "to": [
+        32,
+        23,
+        30
+      ],
+      "material": "ivory"
+    }
+  ]
+}

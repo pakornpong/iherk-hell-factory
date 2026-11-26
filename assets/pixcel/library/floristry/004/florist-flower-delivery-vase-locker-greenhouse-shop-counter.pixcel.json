@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 1,
+  "id": "florist-flower-delivery-vase-locker-greenhouse-shop-counter",
+  "category": "florist",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a98461",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#755a48",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9da9ad",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#5a6774",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#414a51",
+      "kind": "matte"
+    },
+    "ivory": {
+      "color": "#ded4bf",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#b8a68c",
+      "kind": "matte"
+    },
+    "pink": {
+      "color": "#ad7480",
+      "kind": "matte"
+    },
+    "rose": {
+      "color": "#a05f5f",
+      "kind": "matte"
+    },
+    "leaf": {
+      "color": "#637c55",
+      "kind": "matte"
+    },
+    "paleLeaf": {
+      "color": "#819069",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#90acb6",
+      "kind": "glass"
+    },
+    "amber": {
+      "color": "#c1a06b",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a6735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        55,
+        25,
+        13
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        4
+      ],
+      "to": [
+        52,
+        25,
+        9
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        54,
+        24,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        17
+      ],
+      "to": [
+        53,
+        25,
+        29
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        21
+      ],
+      "to": [
+        13,
+        26,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        25,
+        21
+      ],
+      "to": [
+        52,
+        26,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        33
+      ],
+      "to": [
+        54,
+        24,
+        35
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        14
+      ],
+      "zFrom": 36,
+      "zTo": 42,
+      "radius": 3,
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        14,
+        41
+      ],
+      "to": [
+        10,
+        13,
+        49
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        14,
+        41
+      ],
+      "to": [
+        14,
+        15,
+        52
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        14,
+        41
+      ],
+      "to": [
+        13,
+        12,
+        54
+      ],
+      "material": "paleLeaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        13
+      ],
+      "zFrom": 49,
+      "zTo": 51,
+      "radius": 1,
+      "material": "pink"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 52,
+      "zTo": 53,
+      "radius": 1,
+      "material": "pink"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        12
+      ],
+      "zFrom": 54,
+      "zTo": 55,
+      "radius": 1,
+      "material": "pink"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        15,
+        45
+      ],
+      "to": [
+        14,
+        16,
+        46
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        14
+      ],
+      "zFrom": 36,
+      "zTo": 43,
+      "radius": 3,
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        14,
+        42
+      ],
+      "to": [
+        47,
+        13,
+        50
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        14,
+        42
+      ],
+      "to": [
+        51,
+        15,
+        53
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        14,
+        42
+      ],
+      "to": [
+        50,
+        12,
+        55
+      ],
+      "material": "paleLeaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        13
+      ],
+      "zFrom": 50,
+      "zTo": 52,
+      "radius": 1,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        51,
+        15
+      ],
+      "zFrom": 53,
+      "zTo": 54,
+      "radius": 1,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        12
+      ],
+      "zFrom": 55,
+      "zTo": 56,
+      "radius": 1,
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        15,
+        46
+      ],
+      "to": [
+        51,
+        16,
+        47
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        19,
+        17
+      ],
+      "to": [
+        52,
+        23,
+        19
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        19,
+        19
+      ],
+      "to": [
+        51,
+        23,
+        20
+      ],
+      "material": "ivory"
+    }
+  ]
+}

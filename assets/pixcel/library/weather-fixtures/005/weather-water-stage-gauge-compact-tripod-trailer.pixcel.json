@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-water-stage-gauge-compact-tripod-trailer",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        0
+      ],
+      "to": [
+        28,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        7
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        13,
+        3
+      ],
+      "to": [
+        33,
+        16,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        28,
+        24,
+        11
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        12
+      ],
+      "to": [
+        8,
+        23,
+        38
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        18,
+        13
+      ],
+      "to": [
+        27,
+        24,
+        14
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        12
+      ],
+      "to": [
+        12,
+        12,
+        44
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        12,
+        16
+      ],
+      "to": [
+        13,
+        13,
+        16
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        12,
+        22
+      ],
+      "to": [
+        13,
+        13,
+        22
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        12,
+        28
+      ],
+      "to": [
+        13,
+        13,
+        28
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        12,
+        34
+      ],
+      "to": [
+        13,
+        13,
+        34
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        12,
+        40
+      ],
+      "to": [
+        13,
+        13,
+        40
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        14
+      ],
+      "zFrom": 13,
+      "zTo": 25,
+      "radius": 3,
+      "material": "silver"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        14,
+        26
+      ],
+      "to": [
+        25,
+        14,
+        31
+      ],
+      "material": "frame"
+    }
+  ]
+}

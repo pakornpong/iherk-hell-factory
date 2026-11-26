@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "facilities-hvac-air-handler-paired-vibration-pads",
+  "category": "building-services",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "galv": {
+      "color": "#a4a9a9",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#647080",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#41484e",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#cbc6b8",
+      "kind": "matte"
+    },
+    "white": {
+      "color": "#ded9cd",
+      "kind": "matte"
+    },
+    "ochre": {
+      "color": "#bd9b5b",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a35d50",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8aa7b3",
+      "kind": "glass"
+    },
+    "copper": {
+      "color": "#b58165",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#3b4145",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        10,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        57,
+        10,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        22,
+        0
+      ],
+      "to": [
+        57,
+        25,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        56,
+        24,
+        21
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        5
+      ],
+      "to": [
+        55,
+        25,
+        19
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        7
+      ],
+      "to": [
+        53,
+        25,
+        7
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        10
+      ],
+      "to": [
+        53,
+        25,
+        10
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        13
+      ],
+      "to": [
+        53,
+        25,
+        13
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        16
+      ],
+      "to": [
+        53,
+        25,
+        16
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        21
+      ],
+      "to": [
+        18,
+        22,
+        25
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        9,
+        21
+      ],
+      "to": [
+        53,
+        18,
+        26
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        10,
+        26
+      ],
+      "to": [
+        51,
+        16,
+        32
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        25
+      ],
+      "to": [
+        16,
+        19,
+        28
+      ],
+      "material": "slate"
+    }
+  ]
+}

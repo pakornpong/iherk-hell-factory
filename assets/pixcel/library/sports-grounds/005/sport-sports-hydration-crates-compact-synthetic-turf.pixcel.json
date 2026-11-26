@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "id": "sport-sports-hydration-crates-compact-synthetic-turf",
+  "category": "sports",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "metal",
+      "color": "#8d9ba3"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#596772"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#404a51"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#ddd2bf"
+    },
+    "court": {
+      "kind": "matte",
+      "color": "#a67259"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d92"
+    },
+    "turf": {
+      "kind": "matte",
+      "color": "#718063"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b79c7b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a57d58"
+    },
+    "rope": {
+      "kind": "matte",
+      "color": "#b5a28a"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c9a468"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "turf"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        2
+      ],
+      "to": [
+        29,
+        9,
+        2
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        2
+      ],
+      "to": [
+        29,
+        15,
+        2
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        2
+      ],
+      "to": [
+        29,
+        21,
+        2
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        28,
+        25,
+        7
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        28,
+        9,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        7
+      ],
+      "to": [
+        28,
+        25,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        11
+      ],
+      "zFrom": 8,
+      "zTo": 17,
+      "radius": 2,
+      "material": "chalk"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        11
+      ],
+      "zFrom": 18,
+      "zTo": 19,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        11
+      ],
+      "zFrom": 8,
+      "zTo": 17,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        11
+      ],
+      "zFrom": 18,
+      "zTo": 19,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        11
+      ],
+      "zFrom": 8,
+      "zTo": 17,
+      "radius": 2,
+      "material": "chalk"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        11
+      ],
+      "zFrom": 18,
+      "zTo": 19,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        11
+      ],
+      "zFrom": 8,
+      "zTo": 17,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        11
+      ],
+      "zFrom": 18,
+      "zTo": 19,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        18
+      ],
+      "zFrom": 8,
+      "zTo": 17,
+      "radius": 2,
+      "material": "chalk"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        18
+      ],
+      "zFrom": 18,
+      "zTo": 19,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        18
+      ],
+      "zFrom": 8,
+      "zTo": 17,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        18
+      ],
+      "zFrom": 18,
+      "zTo": 19,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        18
+      ],
+      "zFrom": 8,
+      "zTo": 17,
+      "radius": 2,
+      "material": "chalk"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        18
+      ],
+      "zFrom": 18,
+      "zTo": 19,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        18
+      ],
+      "zFrom": 8,
+      "zTo": 17,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        18
+      ],
+      "zFrom": 18,
+      "zTo": 19,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        22,
+        4
+      ],
+      "to": [
+        27,
+        24,
+        18
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        22,
+        16
+      ],
+      "to": [
+        27,
+        25,
+        19
+      ],
+      "material": "amber"
+    }
+  ]
+}

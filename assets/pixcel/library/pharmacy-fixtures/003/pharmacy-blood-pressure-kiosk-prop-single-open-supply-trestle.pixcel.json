@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "id": "pharmacy-blood-pressure-kiosk-prop-single-open-supply-trestle",
+  "category": "pharmacy",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a78363"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c8"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9aa4a7"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#5e6975"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#424952"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#677f94"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#bc9466"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a76757"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d9c9ac"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91adb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        5,
+        15,
+        13
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        5,
+        15,
+        13
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        7,
+        0
+      ],
+      "to": [
+        24,
+        15,
+        13
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        23,
+        0
+      ],
+      "to": [
+        24,
+        15,
+        13
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        27,
+        25,
+        13
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        5
+      ],
+      "to": [
+        25,
+        24,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        7
+      ],
+      "to": [
+        17,
+        20,
+        9
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        26,
+        24,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        19
+      ],
+      "to": [
+        25,
+        11,
+        39
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        27
+      ],
+      "to": [
+        23,
+        11,
+        35
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        29
+      ],
+      "to": [
+        21,
+        11,
+        31
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 25,
+      "radius": 4,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        17
+      ],
+      "zFrom": 25,
+      "zTo": 25,
+      "radius": 3,
+      "material": "dark"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        17,
+        25
+      ],
+      "to": [
+        23,
+        19,
+        21
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        19,
+        21
+      ],
+      "to": [
+        22,
+        13,
+        25
+      ],
+      "material": "dark"
+    }
+  ]
+}

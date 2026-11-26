@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "id": "textile-pattern-cutting-mat-wide-machine-frame",
+  "category": "textile",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#745741"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaaa"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#53606b"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d8d0bd"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#aa9a86"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#687e91"
+    },
+    "terracotta": {
+      "kind": "matte",
+      "color": "#a96557"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404850"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bc9d65"
+    },
+    "pale": {
+      "kind": "glass",
+      "color": "#9ab1b8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        1
+      ],
+      "to": [
+        7,
+        11,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        20,
+        1
+      ],
+      "to": [
+        54,
+        22,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        13
+      ],
+      "to": [
+        55,
+        25,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        21,
+        0
+      ],
+      "to": [
+        18,
+        25,
+        1
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        15
+      ],
+      "to": [
+        54,
+        24,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        18
+      ],
+      "to": [
+        52,
+        23,
+        18
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        18
+      ],
+      "to": [
+        51,
+        9,
+        18
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        18
+      ],
+      "to": [
+        51,
+        13,
+        18
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        17,
+        18
+      ],
+      "to": [
+        51,
+        17,
+        18
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        21,
+        18
+      ],
+      "to": [
+        51,
+        21,
+        18
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        19
+      ],
+      "to": [
+        19,
+        21,
+        19
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        10,
+        19
+      ],
+      "to": [
+        18,
+        20,
+        19
+      ],
+      "material": "terracotta"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        14
+      ],
+      "zFrom": 19,
+      "zTo": 20,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        47,
+        14,
+        20
+      ],
+      "to": [
+        51,
+        18,
+        20
+      ],
+      "material": "brass"
+    }
+  ]
+}

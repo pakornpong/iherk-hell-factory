@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "id": "sport-portable-basket-hoop-compact-sideline-plinth",
+  "category": "sports",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "metal",
+      "color": "#8d9ba3"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#596772"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#404a51"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#ddd2bf"
+    },
+    "court": {
+      "kind": "matte",
+      "color": "#a67259"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d92"
+    },
+    "turf": {
+      "kind": "matte",
+      "color": "#718063"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b79c7b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a57d58"
+    },
+    "rope": {
+      "kind": "matte",
+      "color": "#b5a28a"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c9a468"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        4
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        4
+      ],
+      "to": [
+        28,
+        24,
+        4
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        5
+      ],
+      "to": [
+        24,
+        23,
+        8
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        8
+      ],
+      "to": [
+        10,
+        11,
+        49
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        10,
+        43
+      ],
+      "to": [
+        15,
+        13,
+        49
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        39
+      ],
+      "to": [
+        25,
+        13,
+        49
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        13,
+        40
+      ],
+      "to": [
+        24,
+        13,
+        48
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        13,
+        39
+      ],
+      "to": [
+        21,
+        14,
+        39
+      ],
+      "material": "court"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        16,
+        39
+      ],
+      "to": [
+        16,
+        16,
+        40
+      ],
+      "material": "court"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        16,
+        39
+      ],
+      "to": [
+        22,
+        16,
+        40
+      ],
+      "material": "court"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        19,
+        39
+      ],
+      "to": [
+        19,
+        19,
+        40
+      ],
+      "material": "court"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        16,
+        39
+      ],
+      "to": [
+        19,
+        19,
+        39
+      ],
+      "material": "court"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        16,
+        39
+      ],
+      "to": [
+        19,
+        19,
+        39
+      ],
+      "material": "court"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        6
+      ],
+      "to": [
+        17,
+        25,
+        11
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        11
+      ],
+      "to": [
+        16,
+        24,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        23
+      ],
+      "zFrom": 13,
+      "zTo": 16,
+      "radius": 2,
+      "material": "court"
+    }
+  ]
+}

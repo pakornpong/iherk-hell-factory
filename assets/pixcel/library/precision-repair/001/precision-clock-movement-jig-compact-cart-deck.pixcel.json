@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "id": "precision-clock-movement-jig-compact-cart-deck",
+  "category": "precision-repair",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa815e",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#755847",
+      "kind": "wood"
+    },
+    "frame": {
+      "color": "#596673",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#a0a9aa",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#3d464b",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#dfd3ba",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#a6937d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fabb5",
+      "kind": "glass"
+    },
+    "blue": {
+      "color": "#627b91",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#b99b68",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a06254",
+      "kind": "matte"
+    },
+    "copper": {
+      "color": "#ab795d",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        0
+      ],
+      "to": [
+        28,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        7,
+        7
+      ],
+      "to": [
+        29,
+        23,
+        10
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        28,
+        24,
+        12
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        12
+      ],
+      "to": [
+        8,
+        21,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        12
+      ],
+      "to": [
+        27,
+        21,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        30
+      ],
+      "to": [
+        27,
+        11,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        17
+      ],
+      "to": [
+        22,
+        13,
+        28
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        13
+      ],
+      "zFrom": 22,
+      "zTo": 23,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        13,
+        19
+      ],
+      "to": [
+        17,
+        13,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        13
+      ],
+      "zFrom": 12,
+      "zTo": 13,
+      "radius": 2,
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        17,
+        12
+      ],
+      "to": [
+        24,
+        20,
+        13
+      ],
+      "material": "cloth"
+    }
+  ]
+}

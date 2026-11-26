@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "id": "bath-storage-linen-dresser-drawers-narrow-service-caster",
+  "category": "bathroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a6815e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#775a48"
+    },
+    "paint": {
+      "kind": "matte",
+      "color": "#b4ab9d"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c9baab"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5e7182"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad5c9"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#9da9ad"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#54616d"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b29c70"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a0b3b7"
+    },
+    "rose": {
+      "kind": "matte",
+      "color": "#a87976"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#9d6f58"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        24,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        9,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        22,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        26,
+        25,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        7
+      ],
+      "to": [
+        26,
+        23,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        8
+      ],
+      "to": [
+        25,
+        24,
+        37
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        10
+      ],
+      "to": [
+        24,
+        25,
+        14
+      ],
+      "material": "paint"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        13
+      ],
+      "to": [
+        20,
+        26,
+        13
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        16
+      ],
+      "to": [
+        24,
+        25,
+        20
+      ],
+      "material": "paint"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        19
+      ],
+      "to": [
+        20,
+        26,
+        19
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        22
+      ],
+      "to": [
+        24,
+        25,
+        26
+      ],
+      "material": "paint"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        25
+      ],
+      "to": [
+        20,
+        26,
+        25
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        29
+      ],
+      "to": [
+        24,
+        25,
+        33
+      ],
+      "material": "paint"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        32
+      ],
+      "to": [
+        20,
+        26,
+        32
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        36
+      ],
+      "to": [
+        26,
+        25,
+        38
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        38
+      ],
+      "to": [
+        19,
+        22,
+        40
+      ],
+      "material": "linen"
+    }
+  ]
+}

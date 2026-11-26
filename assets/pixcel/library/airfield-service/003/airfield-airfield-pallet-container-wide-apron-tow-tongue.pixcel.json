@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "id": "airfield-airfield-pallet-container-wide-apron-tow-tongue",
+  "category": "aviation",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a1a9ac"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#606e7b"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e484e"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#ded6c3"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c3a05f"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a96153"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657e92"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a78460"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab5"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        0
+      ],
+      "to": [
+        11,
+        9,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        0
+      ],
+      "to": [
+        11,
+        25,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        6,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        25,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        56,
+        25,
+        5
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        13,
+        3
+      ],
+      "to": [
+        60,
+        16,
+        4
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        6
+      ],
+      "to": [
+        55,
+        24,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "slope",
+      "from": [
+        6,
+        7,
+        22
+      ],
+      "to": [
+        54,
+        23,
+        28
+      ],
+      "axis": "+X",
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        9
+      ],
+      "to": [
+        54,
+        25,
+        19
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        11
+      ],
+      "to": [
+        53,
+        25,
+        12
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        9,
+        9
+      ],
+      "to": [
+        55,
+        21,
+        19
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        14,
+        12
+      ],
+      "to": [
+        55,
+        17,
+        13
+      ],
+      "material": "black"
+    }
+  ]
+}

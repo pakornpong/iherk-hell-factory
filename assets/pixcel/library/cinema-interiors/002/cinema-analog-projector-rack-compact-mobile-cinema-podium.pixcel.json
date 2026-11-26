@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "id": "cinema-analog-projector-rack-compact-mobile-cinema-podium",
+  "category": "cinema",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#3b444d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9aa6a7"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9d6057"
+    },
+    "velvet": {
+      "kind": "matte",
+      "color": "#765157"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b5a38e"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#dcd0ba"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a7805e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77594a"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bda16c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#90a9b3"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d93"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        10,
+        3
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        3
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        10,
+        3
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        0
+      ],
+      "to": [
+        28,
+        25,
+        3
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        5
+      ],
+      "to": [
+        28,
+        26,
+        6
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        28,
+        24,
+        11
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        12
+      ],
+      "to": [
+        24,
+        21,
+        22
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        20,
+        15
+      ],
+      "to": [
+        16,
+        25,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        16
+      ],
+      "to": [
+        15,
+        25,
+        19
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        13
+      ],
+      "zFrom": 23,
+      "zTo": 25,
+      "radius": 5,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        13
+      ],
+      "zFrom": 23,
+      "zTo": 25,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        13
+      ],
+      "zFrom": 25,
+      "zTo": 25,
+      "radius": 2,
+      "material": "ink"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        13
+      ],
+      "zFrom": 25,
+      "zTo": 25,
+      "radius": 2,
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        13,
+        25
+      ],
+      "to": [
+        20,
+        14,
+        25
+      ],
+      "material": "ink"
+    }
+  ]
+}

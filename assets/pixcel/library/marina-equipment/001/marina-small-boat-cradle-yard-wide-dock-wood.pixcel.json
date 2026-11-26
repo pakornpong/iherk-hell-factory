@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 1,
+  "id": "marina-small-boat-cradle-yard-wide-dock-wood",
+  "category": "maritime",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a4866b"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#698294"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9caaa9"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596672"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#40494e"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#ad6d56"
+    },
+    "ochre": {
+      "kind": "matte",
+      "color": "#c19e62"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b69c7e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba7b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        9,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        2
+      ],
+      "to": [
+        55,
+        14,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        2
+      ],
+      "to": [
+        55,
+        19,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        2
+      ],
+      "to": [
+        55,
+        24,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        54,
+        24,
+        7
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        8,
+        7
+      ],
+      "to": [
+        8,
+        13,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        22,
+        7
+      ],
+      "to": [
+        8,
+        18,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        8,
+        7
+      ],
+      "to": [
+        49,
+        13,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        22,
+        7
+      ],
+      "to": [
+        49,
+        18,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        11
+      ],
+      "to": [
+        50,
+        19,
+        14
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        14
+      ],
+      "to": [
+        52,
+        20,
+        17
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        17
+      ],
+      "to": [
+        53,
+        21,
+        19
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        19
+      ],
+      "to": [
+        9,
+        20,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        11,
+        19
+      ],
+      "to": [
+        52,
+        20,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        19
+      ],
+      "to": [
+        52,
+        12,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        19,
+        19
+      ],
+      "to": [
+        52,
+        20,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        19
+      ],
+      "to": [
+        49,
+        18,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        13,
+        20
+      ],
+      "to": [
+        46,
+        18,
+        22
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        12,
+        20
+      ],
+      "to": [
+        48,
+        19,
+        26
+      ],
+      "material": "glass"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "id": "access-portable-listening-station-compact-stone-entry",
+  "category": "accessibility",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "concrete": {
+      "kind": "matte",
+      "color": "#aaa5a0"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a7805d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9da8aa"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#677481"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c7"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#414a50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a366"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c98"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac6a55"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        28,
+        26,
+        2
+      ],
+      "material": "concrete"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        3
+      ],
+      "to": [
+        28,
+        8,
+        3
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        3
+      ],
+      "to": [
+        27,
+        25,
+        3
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        26,
+        23,
+        12
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        13
+      ],
+      "to": [
+        25,
+        11,
+        33
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        25
+      ],
+      "to": [
+        23,
+        11,
+        30
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        14,
+        12
+      ],
+      "to": [
+        16,
+        21,
+        17
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        15,
+        17
+      ],
+      "to": [
+        13,
+        15,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        15,
+        28
+      ],
+      "to": [
+        21,
+        16,
+        29
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        16,
+        25
+      ],
+      "to": [
+        23,
+        17,
+        29
+      ],
+      "material": "slate"
+    }
+  ]
+}

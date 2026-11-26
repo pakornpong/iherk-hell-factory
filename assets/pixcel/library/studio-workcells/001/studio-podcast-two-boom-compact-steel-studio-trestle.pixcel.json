@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "id": "studio-podcast-two-boom-compact-steel-studio-trestle",
+  "category": "studio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a8805d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785b48"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404951"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#737e87"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a3a9aa"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8d0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#a18e7e"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a86959"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#658099"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99d70"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#88a6b3"
+    },
+    "display": {
+      "kind": "emissive",
+      "color": "#a1bccb",
+      "glowRadius": 1,
+      "glowIntensity": 0.09
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        23,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        7,
+        0
+      ],
+      "to": [
+        23,
+        15,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        23,
+        0
+      ],
+      "to": [
+        23,
+        15,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        27,
+        25,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        4
+      ],
+      "to": [
+        25,
+        22,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        26,
+        24,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        18
+      ],
+      "to": [
+        25,
+        10,
+        26
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        10
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 2,
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        10,
+        21
+      ],
+      "to": [
+        9,
+        13,
+        37
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        13,
+        37
+      ],
+      "to": [
+        9,
+        20,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        19,
+        31
+      ],
+      "to": [
+        10,
+        21,
+        34
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        10
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 2,
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        10,
+        21
+      ],
+      "to": [
+        23,
+        13,
+        37
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        13,
+        37
+      ],
+      "to": [
+        23,
+        20,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        19,
+        31
+      ],
+      "to": [
+        24,
+        21,
+        34
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        14,
+        19
+      ],
+      "to": [
+        20,
+        22,
+        20
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        15,
+        21
+      ],
+      "to": [
+        19,
+        18,
+        21
+      ],
+      "material": "display"
+    }
+  ]
+}

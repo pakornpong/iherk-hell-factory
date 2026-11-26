@@ -1,0 +1,412 @@
+{
+  "schemaVersion": 1,
+  "id": "conservation-wet-document-drying-rack-double-width-archive-table",
+  "category": "conservation",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9ca5a7"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#566470"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a7805d"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3d454c"
+    },
+    "paste": {
+      "kind": "matte",
+      "color": "#d4ccba"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#dfd7be"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627991"
+    },
+    "taupe": {
+      "kind": "matte",
+      "color": "#b09b84"
+    },
+    "oxblood": {
+      "kind": "matte",
+      "color": "#9c5d52"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#98aeb4"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bea272"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        12
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        12
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        12
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        12
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        11
+      ],
+      "to": [
+        55,
+        25,
+        12
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        5
+      ],
+      "to": [
+        53,
+        23,
+        6
+      ],
+      "material": "taupe"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        13
+      ],
+      "to": [
+        6,
+        8,
+        44
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        13
+      ],
+      "to": [
+        6,
+        23,
+        44
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        13
+      ],
+      "to": [
+        54,
+        8,
+        44
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        22,
+        13
+      ],
+      "to": [
+        54,
+        23,
+        44
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        17
+      ],
+      "to": [
+        54,
+        24,
+        18
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        19
+      ],
+      "to": [
+        51,
+        19,
+        19
+      ],
+      "material": "taupe"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        21,
+        19
+      ],
+      "to": [
+        53,
+        24,
+        19
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        23
+      ],
+      "to": [
+        54,
+        24,
+        24
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        25
+      ],
+      "to": [
+        51,
+        19,
+        25
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        21,
+        25
+      ],
+      "to": [
+        53,
+        24,
+        25
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        29
+      ],
+      "to": [
+        54,
+        24,
+        30
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        31
+      ],
+      "to": [
+        51,
+        19,
+        31
+      ],
+      "material": "taupe"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        21,
+        31
+      ],
+      "to": [
+        53,
+        24,
+        31
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        35
+      ],
+      "to": [
+        54,
+        24,
+        36
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        37
+      ],
+      "to": [
+        51,
+        19,
+        37
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        21,
+        37
+      ],
+      "to": [
+        53,
+        24,
+        37
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        41
+      ],
+      "to": [
+        54,
+        24,
+        42
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        43
+      ],
+      "to": [
+        51,
+        19,
+        43
+      ],
+      "material": "taupe"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        21,
+        43
+      ],
+      "to": [
+        53,
+        24,
+        43
+      ],
+      "material": "iron"
+    }
+  ]
+}

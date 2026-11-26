@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "id": "garage-diagnostic-oscilloscope-bench",
+  "category": "garage",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#91a6b0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#4c6071"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#283541"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#dea957"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#53667a"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac594a"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbddcf"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#86bdd0",
+      "glowRadius": 1,
+      "glowIntensity": 0.14
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        23,
+        0
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        1
+      ],
+      "to": [
+        27,
+        23,
+        18
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        17
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        6
+      ],
+      "to": [
+        18,
+        25,
+        15
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        25,
+        9
+      ],
+      "to": [
+        11,
+        25,
+        12
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        25,
+        12
+      ],
+      "to": [
+        14,
+        25,
+        8
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        25,
+        8
+      ],
+      "to": [
+        17,
+        25,
+        11
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        6
+      ],
+      "to": [
+        23,
+        25,
+        7
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        11
+      ],
+      "to": [
+        23,
+        25,
+        12
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        15
+      ],
+      "to": [
+        23,
+        25,
+        16
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        18
+      ],
+      "to": [
+        22,
+        10,
+        21
+      ],
+      "material": "frame"
+    }
+  ]
+}

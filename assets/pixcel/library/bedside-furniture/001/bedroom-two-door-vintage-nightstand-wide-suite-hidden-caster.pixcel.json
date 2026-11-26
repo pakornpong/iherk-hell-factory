@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "id": "bedroom-two-door-vintage-nightstand-wide-suite-hidden-caster",
+  "category": "bedroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#ac825d",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#795b47",
+      "kind": "wood"
+    },
+    "linen": {
+      "color": "#b5a18d",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#e0d4bf",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d1c6b2",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#637b90",
+      "kind": "matte"
+    },
+    "iron": {
+      "color": "#535f67",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9da8a9",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda271",
+      "kind": "metal"
+    },
+    "glass": {
+      "color": "#91acb5",
+      "kind": "glass"
+    },
+    "brick": {
+      "color": "#aa695c",
+      "kind": "matte"
+    },
+    "marble": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        6,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 3,
+      "radius": 2,
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        6,
+        21
+      ],
+      "zFrom": 0,
+      "zTo": 3,
+      "radius": 2,
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        51,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 3,
+      "radius": 2,
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        51,
+        21
+      ],
+      "zFrom": 0,
+      "zTo": 3,
+      "radius": 2,
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        54,
+        24,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        7
+      ],
+      "to": [
+        54,
+        24,
+        28
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        10
+      ],
+      "to": [
+        29,
+        25,
+        26
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        24,
+        10
+      ],
+      "to": [
+        53,
+        25,
+        26
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        25,
+        16
+      ],
+      "to": [
+        27,
+        26,
+        20
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        25,
+        16
+      ],
+      "to": [
+        33,
+        26,
+        20
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        27
+      ],
+      "to": [
+        55,
+        25,
+        29
+      ],
+      "material": "marble"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        9,
+        10
+      ],
+      "to": [
+        52,
+        21,
+        13
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        10,
+        14
+      ],
+      "to": [
+        51,
+        20,
+        15
+      ],
+      "material": "linen"
+    }
+  ]
+}

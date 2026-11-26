@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "id": "cookware-enameled-roaster-apron-display-bench",
+  "category": "kitchen",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "kind": "metal",
+      "color": "#596168"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#a4acab"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#aa7e56"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795e4c"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#41464b"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d0bb"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#607d97"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78260"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda16b"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ab6652"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aeba"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        2
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        6,
+        25,
+        1
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        1
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        2
+      ],
+      "to": [
+        5,
+        23,
+        7
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        8,
+        2
+      ],
+      "to": [
+        27,
+        23,
+        7
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        2
+      ],
+      "to": [
+        24,
+        23,
+        5
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        6
+      ],
+      "to": [
+        8,
+        23,
+        9
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        6
+      ],
+      "to": [
+        24,
+        23,
+        9
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        6
+      ],
+      "to": [
+        23,
+        8,
+        9
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        22,
+        6
+      ],
+      "to": [
+        23,
+        23,
+        9
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        9
+      ],
+      "to": [
+        23,
+        22,
+        10
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        13,
+        11
+      ],
+      "to": [
+        19,
+        17,
+        12
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        5
+      ],
+      "to": [
+        7,
+        17,
+        6
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        12,
+        5
+      ],
+      "to": [
+        27,
+        17,
+        6
+      ],
+      "material": "silver"
+    }
+  ]
+}

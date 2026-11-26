@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "id": "access-lowered-check-in-counter-wide-rubber-hallway",
+  "category": "accessibility",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "concrete": {
+      "kind": "matte",
+      "color": "#aaa5a0"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a7805d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9da8aa"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#677481"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c7"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#414a50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a366"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c98"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac6a55"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        1
+      ],
+      "to": [
+        55,
+        7,
+        1
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        2
+      ],
+      "to": [
+        9,
+        24,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        7,
+        2
+      ],
+      "to": [
+        55,
+        24,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        18
+      ],
+      "to": [
+        55,
+        24,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        22
+      ],
+      "to": [
+        54,
+        9,
+        29
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        12,
+        22
+      ],
+      "to": [
+        16,
+        19,
+        23
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        23
+      ],
+      "to": [
+        14,
+        15,
+        31
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        14,
+        29
+      ],
+      "to": [
+        17,
+        17,
+        35
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        17,
+        30
+      ],
+      "to": [
+        16,
+        17,
+        34
+      ],
+      "material": "glass"
+    }
+  ]
+}

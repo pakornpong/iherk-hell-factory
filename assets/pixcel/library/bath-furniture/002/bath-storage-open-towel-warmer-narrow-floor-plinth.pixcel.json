@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "id": "bath-storage-open-towel-warmer-narrow-floor-plinth",
+  "category": "bathroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a6815e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#775a48"
+    },
+    "paint": {
+      "kind": "matte",
+      "color": "#978577"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c9baab"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5e7182"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad5c9"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#9da9ad"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#54616d"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b29c70"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a0b3b7"
+    },
+    "rose": {
+      "kind": "matte",
+      "color": "#a87976"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#9d6f58"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        25,
+        24,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        3
+      ],
+      "to": [
+        26,
+        25,
+        3
+      ],
+      "material": "paint"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        14
+      ],
+      "zFrom": 4,
+      "zTo": 37,
+      "radius": 1,
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        14
+      ],
+      "zFrom": 4,
+      "zTo": 37,
+      "radius": 1,
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        9
+      ],
+      "to": [
+        23,
+        15,
+        10
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        14
+      ],
+      "to": [
+        23,
+        15,
+        15
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        19
+      ],
+      "to": [
+        23,
+        15,
+        20
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        24
+      ],
+      "to": [
+        23,
+        15,
+        25
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        29
+      ],
+      "to": [
+        23,
+        15,
+        30
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        34
+      ],
+      "to": [
+        23,
+        15,
+        35
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        15,
+        20
+      ],
+      "to": [
+        17,
+        17,
+        31
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        16,
+        17
+      ],
+      "to": [
+        16,
+        18,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        10
+      ],
+      "to": [
+        21,
+        18,
+        21
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        14
+      ],
+      "zFrom": 38,
+      "zTo": 39,
+      "radius": 1,
+      "material": "brass"
+    }
+  ]
+}

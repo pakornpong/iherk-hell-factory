@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "id": "commercial-floor-burnisher",
+  "category": "maintenance",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "color": "#e5e3d6",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#a0b0bc",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#445361",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#272f3b",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#49798f",
+      "kind": "matte"
+    },
+    "aqua": {
+      "color": "#78c5c4",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#b85446",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#ac784e",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e0ad58",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#f2ecdc",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        19
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 10,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        19
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 9,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        19
+      ],
+      "zFrom": 7,
+      "zTo": 13,
+      "radius": 5,
+      "material": "cream"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        12,
+        8
+      ],
+      "to": [
+        14,
+        3,
+        34
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        12,
+        8
+      ],
+      "to": [
+        15,
+        3,
+        34
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        3,
+        34
+      ],
+      "to": [
+        21,
+        4,
+        36
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        4,
+        31
+      ],
+      "to": [
+        17,
+        7,
+        34
+      ],
+      "material": "red"
+    }
+  ]
+}

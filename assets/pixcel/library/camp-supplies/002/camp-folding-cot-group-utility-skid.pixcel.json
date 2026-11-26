@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "id": "camp-folding-cot-group-utility-skid",
+  "category": "camping",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a3805e",
+      "kind": "wood"
+    },
+    "tan": {
+      "color": "#ae987d",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#d2c7af",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#627b90",
+      "kind": "matte"
+    },
+    "rust": {
+      "color": "#a86955",
+      "kind": "matte"
+    },
+    "olive": {
+      "color": "#737f64",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca8aa",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#596771",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#414a4f",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#bdab8b",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8b755d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8daab8",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        9,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        0
+      ],
+      "to": [
+        55,
+        24,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        8,
+        6
+      ],
+      "to": [
+        7,
+        23,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        23,
+        6
+      ],
+      "to": [
+        7,
+        8,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        8,
+        6
+      ],
+      "to": [
+        52,
+        23,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        23,
+        6
+      ],
+      "to": [
+        52,
+        8,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        17
+      ],
+      "to": [
+        54,
+        24,
+        19
+      ],
+      "material": "tan"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        19
+      ],
+      "to": [
+        14,
+        23,
+        21
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        8,
+        19
+      ],
+      "to": [
+        53,
+        23,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        20
+      ],
+      "to": [
+        13,
+        22,
+        23
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        17,
+        9
+      ],
+      "to": [
+        52,
+        23,
+        15
+      ],
+      "material": "olive"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        18,
+        15
+      ],
+      "to": [
+        51,
+        22,
+        16
+      ],
+      "material": "tan"
+    }
+  ]
+}

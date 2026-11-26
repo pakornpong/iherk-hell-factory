@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "id": "garage-arbor-press-bench",
+  "category": "garage",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#91a6b0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#4c6071"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#283541"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#dea957"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#70746b"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac594a"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbddcf"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#86bdd0",
+      "glowRadius": 1,
+      "glowIntensity": 0.14
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        23,
+        0
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        1
+      ],
+      "to": [
+        26,
+        25,
+        4
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        5
+      ],
+      "to": [
+        24,
+        11,
+        24
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        24
+      ],
+      "to": [
+        24,
+        19,
+        28
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        15,
+        14
+      ],
+      "to": [
+        18,
+        18,
+        26
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        14,
+        4
+      ],
+      "to": [
+        21,
+        21,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        18,
+        23
+      ],
+      "to": [
+        28,
+        18,
+        31
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        17,
+        30
+      ],
+      "to": [
+        30,
+        19,
+        32
+      ],
+      "material": "red"
+    }
+  ]
+}

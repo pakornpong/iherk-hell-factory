@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "id": "cafe-pastry-dome-display-single-backbar-shelf",
+  "category": "coffee-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa815d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#725543"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3f4649"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0a8a9"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b47d5e"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7caba"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#a5a09a"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aab4"
+    },
+    "coffee": {
+      "kind": "matte",
+      "color": "#675143"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a76a57"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89f7a"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7387"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        9,
+        31
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        10
+      ],
+      "to": [
+        27,
+        25,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        27
+      ],
+      "to": [
+        27,
+        16,
+        28
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        29
+      ],
+      "to": [
+        13,
+        14,
+        32
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        11,
+        29
+      ],
+      "to": [
+        24,
+        14,
+        32
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        12
+      ],
+      "to": [
+        26,
+        24,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 16,
+      "zTo": 17,
+      "radius": 4,
+      "material": "copper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 18,
+      "zTo": 21,
+      "radius": 3,
+      "material": "rust"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 18,
+      "zTo": 24,
+      "radius": 4,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 25,
+      "zTo": 26,
+      "radius": 3,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 27,
+      "zTo": 28,
+      "radius": 1,
+      "material": "copper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        15
+      ],
+      "zFrom": 16,
+      "zTo": 17,
+      "radius": 4,
+      "material": "copper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        15
+      ],
+      "zFrom": 18,
+      "zTo": 21,
+      "radius": 3,
+      "material": "kraft"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        15
+      ],
+      "zFrom": 18,
+      "zTo": 24,
+      "radius": 4,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        15
+      ],
+      "zFrom": 25,
+      "zTo": 26,
+      "radius": 3,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        15
+      ],
+      "zFrom": 27,
+      "zTo": 28,
+      "radius": 1,
+      "material": "copper"
+    }
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "id": "metalshop-portable-mig-case-prop-shop-span-steel-trestle",
+  "category": "metalworking",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea7a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#565f67"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3c454b"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#61778c"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78262"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a45e50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a066"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d0bb"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#9d7a5c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8daab4"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        5,
+        15,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        5,
+        15,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        52,
+        15,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        23,
+        0
+      ],
+      "to": [
+        52,
+        15,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        55,
+        25,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        4
+      ],
+      "to": [
+        52,
+        23,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        14
+      ],
+      "to": [
+        23,
+        22,
+        32
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        32
+      ],
+      "to": [
+        22,
+        11,
+        34
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        8,
+        34
+      ],
+      "to": [
+        19,
+        10,
+        35
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        18
+      ],
+      "to": [
+        22,
+        24,
+        29
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        25
+      ],
+      "to": [
+        15,
+        24,
+        27
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        23
+      ],
+      "zFrom": 27,
+      "zTo": 29,
+      "radius": 1,
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        24,
+        18
+      ],
+      "to": [
+        49,
+        26,
+        17
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        26,
+        17
+      ],
+      "to": [
+        51,
+        23,
+        17
+      ],
+      "material": "black"
+    }
+  ]
+}

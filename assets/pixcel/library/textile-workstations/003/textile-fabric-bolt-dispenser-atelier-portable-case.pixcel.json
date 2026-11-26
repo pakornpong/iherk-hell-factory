@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "id": "textile-fabric-bolt-dispenser-atelier-portable-case",
+  "category": "textile",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#745741"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaaa"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#53606b"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d8d0bd"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#aa9a86"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#687e91"
+    },
+    "terracotta": {
+      "kind": "matte",
+      "color": "#a96557"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404850"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bc9d65"
+    },
+    "pale": {
+      "kind": "glass",
+      "color": "#9ab1b8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        25,
+        0
+      ],
+      "to": [
+        26,
+        25,
+        3
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        2
+      ],
+      "to": [
+        13,
+        26,
+        3
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        26,
+        24,
+        7
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        7
+      ],
+      "to": [
+        8,
+        21,
+        33
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        7
+      ],
+      "to": [
+        25,
+        21,
+        33
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        13
+      ],
+      "to": [
+        24,
+        14,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        11
+      ],
+      "to": [
+        23,
+        16,
+        15
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        21
+      ],
+      "to": [
+        24,
+        14,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        19
+      ],
+      "to": [
+        23,
+        16,
+        23
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        29
+      ],
+      "to": [
+        24,
+        14,
+        30
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        27
+      ],
+      "to": [
+        23,
+        16,
+        31
+      ],
+      "material": "terracotta"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        16,
+        11
+      ],
+      "to": [
+        22,
+        20,
+        12
+      ],
+      "material": "linen"
+    }
+  ]
+}

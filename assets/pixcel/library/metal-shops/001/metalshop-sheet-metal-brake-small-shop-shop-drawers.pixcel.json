@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "id": "metalshop-sheet-metal-brake-small-shop-shop-drawers",
+  "category": "metalworking",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea7a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#565f67"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3c454b"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#61778c"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78262"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a45e50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a066"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d0bb"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#9d7a5c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8daab4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        24,
+        11
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        4
+      ],
+      "to": [
+        27,
+        25,
+        6
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        8
+      ],
+      "to": [
+        27,
+        25,
+        10
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        11
+      ],
+      "to": [
+        29,
+        25,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        7
+      ],
+      "to": [
+        24,
+        26,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        13
+      ],
+      "to": [
+        28,
+        24,
+        19
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        20
+      ],
+      "to": [
+        27,
+        20,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        23
+      ],
+      "to": [
+        26,
+        12,
+        26
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        23
+      ],
+      "to": [
+        25,
+        24,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        22,
+        24
+      ],
+      "to": [
+        25,
+        23,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        12,
+        24
+      ],
+      "to": [
+        7,
+        25,
+        33
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        12,
+        24
+      ],
+      "to": [
+        26,
+        25,
+        33
+      ],
+      "material": "frame"
+    }
+  ]
+}

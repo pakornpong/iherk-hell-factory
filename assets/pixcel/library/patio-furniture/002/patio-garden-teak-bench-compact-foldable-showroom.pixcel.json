@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "id": "patio-garden-teak-bench-compact-foldable-showroom",
+  "category": "patio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a87e58",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#745743",
+      "kind": "wood"
+    },
+    "stone": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d8ceba",
+      "kind": "matte"
+    },
+    "fabric": {
+      "color": "#aa9985",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca9ab",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#586671",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#637e94",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a46454",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a9765f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fadb8",
+      "kind": "glass"
+    },
+    "plant": {
+      "color": "#6d805f",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8a735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        0
+      ],
+      "to": [
+        28,
+        24,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        5
+      ],
+      "to": [
+        29,
+        25,
+        6
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        6
+      ],
+      "to": [
+        6,
+        12,
+        18
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        22,
+        6
+      ],
+      "to": [
+        6,
+        18,
+        18
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        8,
+        6
+      ],
+      "to": [
+        27,
+        12,
+        18
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        22,
+        6
+      ],
+      "to": [
+        27,
+        18,
+        18
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        11,
+        17
+      ],
+      "to": [
+        28,
+        13,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        17
+      ],
+      "to": [
+        28,
+        17,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        19,
+        17
+      ],
+      "to": [
+        28,
+        21,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        17
+      ],
+      "to": [
+        28,
+        25,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        18
+      ],
+      "to": [
+        8,
+        10,
+        31
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        8,
+        18
+      ],
+      "to": [
+        28,
+        10,
+        31
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        23
+      ],
+      "to": [
+        28,
+        10,
+        24
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        27
+      ],
+      "to": [
+        28,
+        10,
+        28
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        31
+      ],
+      "to": [
+        28,
+        10,
+        32
+      ],
+      "material": "oak"
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "id": "service-shop-glass-display-watch-trays-store-span-inset",
+  "category": "service-retail",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a78260",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#735744",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9da8ab",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#586671",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#41494f",
+      "kind": "matte"
+    },
+    "ivory": {
+      "color": "#d9d1c0",
+      "kind": "matte"
+    },
+    "canvas": {
+      "color": "#b3a58e",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a76354",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#657d94",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#c0a373",
+      "kind": "metal"
+    },
+    "glass": {
+      "color": "#8facb6",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#aaa298",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        1
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        1
+      ],
+      "to": [
+        54,
+        24,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        8
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        8
+      ],
+      "to": [
+        53,
+        9,
+        26
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        8
+      ],
+      "to": [
+        7,
+        23,
+        26
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        9,
+        8
+      ],
+      "to": [
+        53,
+        23,
+        26
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        25
+      ],
+      "to": [
+        53,
+        23,
+        26
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        16
+      ],
+      "zFrom": 9,
+      "zTo": 13,
+      "radius": 2,
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        16
+      ],
+      "zFrom": 9,
+      "zTo": 13,
+      "radius": 2,
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        14,
+        8
+      ],
+      "to": [
+        51,
+        20,
+        9
+      ],
+      "material": "canvas"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        15,
+        7
+      ],
+      "to": [
+        52,
+        23,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        16,
+        13
+      ],
+      "to": [
+        51,
+        22,
+        14
+      ],
+      "material": "canvas"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        17,
+        14
+      ],
+      "to": [
+        49,
+        20,
+        16
+      ],
+      "material": "ivory"
+    }
+  ]
+}

@@ -1,0 +1,548 @@
+[
+  {
+    "id": "facilities-hvac-air-handler-single-vibration-pads",
+    "category": "building-services",
+    "file": "001/facilities-hvac-air-handler-single-vibration-pads.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "facilities-hvac-air-handler-single-concrete-curb",
+    "category": "building-services",
+    "file": "001/facilities-hvac-air-handler-single-concrete-curb.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "facilities-hvac-air-handler-single-plant-skid",
+    "category": "building-services",
+    "file": "001/facilities-hvac-air-handler-single-plant-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "facilities-hvac-air-handler-single-subfloor-frame",
+    "category": "building-services",
+    "file": "001/facilities-hvac-air-handler-single-subfloor-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "facilities-hvac-air-handler-paired-vibration-pads",
+    "category": "building-services",
+    "file": "001/facilities-hvac-air-handler-paired-vibration-pads.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "facilities-hvac-air-handler-paired-concrete-curb",
+    "category": "building-services",
+    "file": "001/facilities-hvac-air-handler-paired-concrete-curb.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "facilities-hvac-air-handler-paired-plant-skid",
+    "category": "building-services",
+    "file": "001/facilities-hvac-air-handler-paired-plant-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "facilities-hvac-air-handler-paired-subfloor-frame",
+    "category": "building-services",
+    "file": "001/facilities-hvac-air-handler-paired-subfloor-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "facilities-circulation-pump-bank-single-vibration-pads",
+    "category": "building-services",
+    "file": "001/facilities-circulation-pump-bank-single-vibration-pads.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "facilities-circulation-pump-bank-single-concrete-curb",
+    "category": "building-services",
+    "file": "001/facilities-circulation-pump-bank-single-concrete-curb.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "facilities-circulation-pump-bank-single-plant-skid",
+    "category": "building-services",
+    "file": "001/facilities-circulation-pump-bank-single-plant-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "facilities-circulation-pump-bank-single-subfloor-frame",
+    "category": "building-services",
+    "file": "001/facilities-circulation-pump-bank-single-subfloor-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "facilities-circulation-pump-bank-paired-vibration-pads",
+    "category": "building-services",
+    "file": "001/facilities-circulation-pump-bank-paired-vibration-pads.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "facilities-circulation-pump-bank-paired-concrete-curb",
+    "category": "building-services",
+    "file": "001/facilities-circulation-pump-bank-paired-concrete-curb.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "facilities-circulation-pump-bank-paired-plant-skid",
+    "category": "building-services",
+    "file": "001/facilities-circulation-pump-bank-paired-plant-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "facilities-circulation-pump-bank-paired-subfloor-frame",
+    "category": "building-services",
+    "file": "001/facilities-circulation-pump-bank-paired-subfloor-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "facilities-expansion-tank-hydronic-single-vibration-pads",
+    "category": "building-services",
+    "file": "001/facilities-expansion-tank-hydronic-single-vibration-pads.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "facilities-expansion-tank-hydronic-single-concrete-curb",
+    "category": "building-services",
+    "file": "001/facilities-expansion-tank-hydronic-single-concrete-curb.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "facilities-expansion-tank-hydronic-single-plant-skid",
+    "category": "building-services",
+    "file": "001/facilities-expansion-tank-hydronic-single-plant-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "facilities-expansion-tank-hydronic-single-subfloor-frame",
+    "category": "building-services",
+    "file": "001/facilities-expansion-tank-hydronic-single-subfloor-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "facilities-expansion-tank-hydronic-paired-vibration-pads",
+    "category": "building-services",
+    "file": "002/facilities-expansion-tank-hydronic-paired-vibration-pads.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "facilities-expansion-tank-hydronic-paired-concrete-curb",
+    "category": "building-services",
+    "file": "002/facilities-expansion-tank-hydronic-paired-concrete-curb.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "facilities-expansion-tank-hydronic-paired-plant-skid",
+    "category": "building-services",
+    "file": "002/facilities-expansion-tank-hydronic-paired-plant-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "facilities-expansion-tank-hydronic-paired-subfloor-frame",
+    "category": "building-services",
+    "file": "002/facilities-expansion-tank-hydronic-paired-subfloor-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "facilities-solar-storage-inverter-single-vibration-pads",
+    "category": "building-services",
+    "file": "002/facilities-solar-storage-inverter-single-vibration-pads.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "facilities-solar-storage-inverter-single-concrete-curb",
+    "category": "building-services",
+    "file": "002/facilities-solar-storage-inverter-single-concrete-curb.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "facilities-solar-storage-inverter-single-plant-skid",
+    "category": "building-services",
+    "file": "002/facilities-solar-storage-inverter-single-plant-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "facilities-solar-storage-inverter-single-subfloor-frame",
+    "category": "building-services",
+    "file": "002/facilities-solar-storage-inverter-single-subfloor-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "facilities-solar-storage-inverter-paired-vibration-pads",
+    "category": "building-services",
+    "file": "002/facilities-solar-storage-inverter-paired-vibration-pads.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "facilities-solar-storage-inverter-paired-concrete-curb",
+    "category": "building-services",
+    "file": "002/facilities-solar-storage-inverter-paired-concrete-curb.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "facilities-solar-storage-inverter-paired-plant-skid",
+    "category": "building-services",
+    "file": "002/facilities-solar-storage-inverter-paired-plant-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "facilities-solar-storage-inverter-paired-subfloor-frame",
+    "category": "building-services",
+    "file": "002/facilities-solar-storage-inverter-paired-subfloor-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "facilities-booster-water-filter-single-vibration-pads",
+    "category": "building-services",
+    "file": "002/facilities-booster-water-filter-single-vibration-pads.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "facilities-booster-water-filter-single-concrete-curb",
+    "category": "building-services",
+    "file": "002/facilities-booster-water-filter-single-concrete-curb.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "facilities-booster-water-filter-single-plant-skid",
+    "category": "building-services",
+    "file": "002/facilities-booster-water-filter-single-plant-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "facilities-booster-water-filter-single-subfloor-frame",
+    "category": "building-services",
+    "file": "002/facilities-booster-water-filter-single-subfloor-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "facilities-booster-water-filter-paired-vibration-pads",
+    "category": "building-services",
+    "file": "002/facilities-booster-water-filter-paired-vibration-pads.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "facilities-booster-water-filter-paired-concrete-curb",
+    "category": "building-services",
+    "file": "002/facilities-booster-water-filter-paired-concrete-curb.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "facilities-booster-water-filter-paired-plant-skid",
+    "category": "building-services",
+    "file": "002/facilities-booster-water-filter-paired-plant-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "facilities-booster-water-filter-paired-subfloor-frame",
+    "category": "building-services",
+    "file": "002/facilities-booster-water-filter-paired-subfloor-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "facilities-fire-service-standpipe-single-vibration-pads",
+    "category": "building-services",
+    "file": "003/facilities-fire-service-standpipe-single-vibration-pads.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "facilities-fire-service-standpipe-single-concrete-curb",
+    "category": "building-services",
+    "file": "003/facilities-fire-service-standpipe-single-concrete-curb.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "facilities-fire-service-standpipe-single-plant-skid",
+    "category": "building-services",
+    "file": "003/facilities-fire-service-standpipe-single-plant-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "facilities-fire-service-standpipe-single-subfloor-frame",
+    "category": "building-services",
+    "file": "003/facilities-fire-service-standpipe-single-subfloor-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "facilities-fire-service-standpipe-paired-vibration-pads",
+    "category": "building-services",
+    "file": "003/facilities-fire-service-standpipe-paired-vibration-pads.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "facilities-fire-service-standpipe-paired-concrete-curb",
+    "category": "building-services",
+    "file": "003/facilities-fire-service-standpipe-paired-concrete-curb.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "facilities-fire-service-standpipe-paired-plant-skid",
+    "category": "building-services",
+    "file": "003/facilities-fire-service-standpipe-paired-plant-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "facilities-fire-service-standpipe-paired-subfloor-frame",
+    "category": "building-services",
+    "file": "003/facilities-fire-service-standpipe-paired-subfloor-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "facilities-metered-distribution-panel-single-vibration-pads",
+    "category": "building-services",
+    "file": "003/facilities-metered-distribution-panel-single-vibration-pads.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "facilities-metered-distribution-panel-single-concrete-curb",
+    "category": "building-services",
+    "file": "003/facilities-metered-distribution-panel-single-concrete-curb.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "facilities-metered-distribution-panel-single-plant-skid",
+    "category": "building-services",
+    "file": "003/facilities-metered-distribution-panel-single-plant-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "facilities-metered-distribution-panel-single-subfloor-frame",
+    "category": "building-services",
+    "file": "003/facilities-metered-distribution-panel-single-subfloor-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "facilities-metered-distribution-panel-paired-vibration-pads",
+    "category": "building-services",
+    "file": "003/facilities-metered-distribution-panel-paired-vibration-pads.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "facilities-metered-distribution-panel-paired-concrete-curb",
+    "category": "building-services",
+    "file": "003/facilities-metered-distribution-panel-paired-concrete-curb.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "facilities-metered-distribution-panel-paired-plant-skid",
+    "category": "building-services",
+    "file": "003/facilities-metered-distribution-panel-paired-plant-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "facilities-metered-distribution-panel-paired-subfloor-frame",
+    "category": "building-services",
+    "file": "003/facilities-metered-distribution-panel-paired-subfloor-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "facilities-commercial-exhaust-blower-single-vibration-pads",
+    "category": "building-services",
+    "file": "003/facilities-commercial-exhaust-blower-single-vibration-pads.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "facilities-commercial-exhaust-blower-single-concrete-curb",
+    "category": "building-services",
+    "file": "003/facilities-commercial-exhaust-blower-single-concrete-curb.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "facilities-commercial-exhaust-blower-single-plant-skid",
+    "category": "building-services",
+    "file": "003/facilities-commercial-exhaust-blower-single-plant-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "facilities-commercial-exhaust-blower-single-subfloor-frame",
+    "category": "building-services",
+    "file": "003/facilities-commercial-exhaust-blower-single-subfloor-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "facilities-commercial-exhaust-blower-paired-vibration-pads",
+    "category": "building-services",
+    "file": "004/facilities-commercial-exhaust-blower-paired-vibration-pads.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "facilities-commercial-exhaust-blower-paired-concrete-curb",
+    "category": "building-services",
+    "file": "004/facilities-commercial-exhaust-blower-paired-concrete-curb.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "facilities-commercial-exhaust-blower-paired-plant-skid",
+    "category": "building-services",
+    "file": "004/facilities-commercial-exhaust-blower-paired-plant-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "facilities-commercial-exhaust-blower-paired-subfloor-frame",
+    "category": "building-services",
+    "file": "004/facilities-commercial-exhaust-blower-paired-subfloor-frame.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "facilities-capped-manifold-loop-single-vibration-pads",
+    "category": "building-services",
+    "file": "004/facilities-capped-manifold-loop-single-vibration-pads.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "facilities-capped-manifold-loop-single-concrete-curb",
+    "category": "building-services",
+    "file": "004/facilities-capped-manifold-loop-single-concrete-curb.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "facilities-capped-manifold-loop-single-plant-skid",
+    "category": "building-services",
+    "file": "004/facilities-capped-manifold-loop-single-plant-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "facilities-capped-manifold-loop-single-subfloor-frame",
+    "category": "building-services",
+    "file": "004/facilities-capped-manifold-loop-single-subfloor-frame.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "facilities-capped-manifold-loop-paired-vibration-pads",
+    "category": "building-services",
+    "file": "004/facilities-capped-manifold-loop-paired-vibration-pads.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "facilities-capped-manifold-loop-paired-concrete-curb",
+    "category": "building-services",
+    "file": "004/facilities-capped-manifold-loop-paired-concrete-curb.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "facilities-capped-manifold-loop-paired-plant-skid",
+    "category": "building-services",
+    "file": "004/facilities-capped-manifold-loop-paired-plant-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "facilities-capped-manifold-loop-paired-subfloor-frame",
+    "category": "building-services",
+    "file": "004/facilities-capped-manifold-loop-paired-subfloor-frame.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "facilities-wall-air-curtain-single-vibration-pads",
+    "category": "building-services",
+    "file": "004/facilities-wall-air-curtain-single-vibration-pads.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "facilities-wall-air-curtain-single-concrete-curb",
+    "category": "building-services",
+    "file": "004/facilities-wall-air-curtain-single-concrete-curb.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "facilities-wall-air-curtain-single-plant-skid",
+    "category": "building-services",
+    "file": "004/facilities-wall-air-curtain-single-plant-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "facilities-wall-air-curtain-paired-vibration-pads",
+    "category": "building-services",
+    "file": "004/facilities-wall-air-curtain-paired-vibration-pads.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "facilities-wall-air-curtain-paired-concrete-curb",
+    "category": "building-services",
+    "file": "004/facilities-wall-air-curtain-paired-concrete-curb.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "facilities-wall-air-curtain-paired-plant-skid",
+    "category": "building-services",
+    "file": "004/facilities-wall-air-curtain-paired-plant-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  }
+]

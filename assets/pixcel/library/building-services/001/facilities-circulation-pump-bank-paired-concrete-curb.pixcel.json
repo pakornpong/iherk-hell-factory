@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "id": "facilities-circulation-pump-bank-paired-concrete-curb",
+  "category": "building-services",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "galv": {
+      "color": "#a4a9a9",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#647080",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#41484e",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#cbc6b8",
+      "kind": "matte"
+    },
+    "white": {
+      "color": "#ded9cd",
+      "kind": "matte"
+    },
+    "ochre": {
+      "color": "#bd9b5b",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a35d50",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8aa7b3",
+      "kind": "glass"
+    },
+    "copper": {
+      "color": "#b58165",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#3b4145",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        58,
+        26,
+        1
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        57,
+        25,
+        5
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        25,
+        2
+      ],
+      "to": [
+        56,
+        26,
+        2
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        56,
+        24,
+        10
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        16
+      ],
+      "zFrom": 10,
+      "zTo": 19,
+      "radius": 5,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        16
+      ],
+      "zFrom": 20,
+      "zTo": 25,
+      "radius": 3,
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        14
+      ],
+      "to": [
+        16,
+        21,
+        17
+      ],
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        17
+      ],
+      "zFrom": 25,
+      "zTo": 30,
+      "radius": 1,
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        29
+      ],
+      "to": [
+        14,
+        19,
+        30
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        16
+      ],
+      "zFrom": 10,
+      "zTo": 19,
+      "radius": 5,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        16
+      ],
+      "zFrom": 20,
+      "zTo": 25,
+      "radius": 3,
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        12,
+        14
+      ],
+      "to": [
+        53,
+        21,
+        17
+      ],
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        17
+      ],
+      "zFrom": 25,
+      "zTo": 30,
+      "radius": 1,
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        15,
+        29
+      ],
+      "to": [
+        51,
+        19,
+        30
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        7,
+        25
+      ],
+      "to": [
+        51,
+        9,
+        27
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        8,
+        26
+      ],
+      "to": [
+        12,
+        15,
+        24
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        8,
+        26
+      ],
+      "to": [
+        49,
+        15,
+        24
+      ],
+      "material": "galv"
+    }
+  ]
+}

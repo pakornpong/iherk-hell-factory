@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "id": "worktable-packing-oval-mobile-cabinet",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#bb8250"
+    },
+    "shaded": {
+      "kind": "wood",
+      "color": "#87563e"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#465462"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6bac4"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#857b71"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b95142"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#293343"
+    },
+    "ceramic": {
+      "kind": "matte",
+      "color": "#e3e3d7"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#e5ac54"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        4
+      ],
+      "to": [
+        23,
+        23,
+        18
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        8,
+        4
+      ],
+      "to": [
+        57,
+        23,
+        18
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        0
+      ],
+      "to": [
+        10,
+        11,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        0
+      ],
+      "to": [
+        10,
+        22,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        9,
+        0
+      ],
+      "to": [
+        22,
+        11,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        20,
+        0
+      ],
+      "to": [
+        22,
+        22,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        9,
+        0
+      ],
+      "to": [
+        44,
+        11,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        20,
+        0
+      ],
+      "to": [
+        44,
+        22,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        9,
+        0
+      ],
+      "to": [
+        56,
+        11,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        20,
+        0
+      ],
+      "to": [
+        56,
+        22,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        24,
+        14
+      ],
+      "to": [
+        17,
+        25,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        24,
+        14
+      ],
+      "to": [
+        51,
+        25,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        4,
+        19
+      ],
+      "to": [
+        48,
+        28,
+        21
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        16
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 12,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        16
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 12,
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        7,
+        22
+      ],
+      "to": [
+        16,
+        10,
+        41
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        7,
+        22
+      ],
+      "to": [
+        50,
+        10,
+        41
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        8,
+        37
+      ],
+      "to": [
+        47,
+        9,
+        38
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        33,
+        10
+      ],
+      "zFrom": 35,
+      "zTo": 40,
+      "radius": 5,
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        12,
+        40
+      ],
+      "to": [
+        47,
+        17,
+        41
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        13,
+        22
+      ],
+      "to": [
+        29,
+        22,
+        29
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        13,
+        29
+      ],
+      "to": [
+        24,
+        22,
+        29
+      ],
+      "material": "ceramic"
+    }
+  ]
+}

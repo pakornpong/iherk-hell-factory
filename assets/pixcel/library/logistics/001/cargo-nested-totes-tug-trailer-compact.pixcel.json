@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "id": "cargo-nested-totes-tug-trailer-compact",
+  "category": "logistics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a5afb0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#556471"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#303841"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a07750"
+    },
+    "cardboard": {
+      "kind": "matte",
+      "color": "#ae8e65"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d9d0bc"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#637589"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#c49f56"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a95c4c"
+    },
+    "film": {
+      "kind": "glass",
+      "color": "#a2b6b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        0
+      ],
+      "to": [
+        10,
+        8,
+        5
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        0
+      ],
+      "to": [
+        10,
+        26,
+        5
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        5,
+        0
+      ],
+      "to": [
+        24,
+        8,
+        5
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        23,
+        0
+      ],
+      "to": [
+        24,
+        26,
+        5
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        5
+      ],
+      "to": [
+        25,
+        27,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        13,
+        3
+      ],
+      "to": [
+        29,
+        17,
+        5
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        14,
+        5
+      ],
+      "to": [
+        29,
+        16,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        14,
+        24,
+        18
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        17
+      ],
+      "to": [
+        15,
+        25,
+        18
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        18
+      ],
+      "to": [
+        13,
+        23,
+        18
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        13
+      ],
+      "to": [
+        11,
+        25,
+        14
+      ],
+      "material": "paper"
+    }
+  ]
+}

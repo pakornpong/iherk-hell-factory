@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "id": "planter-barrel-cactus-steel-tub",
+  "category": "gardening",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "soil": {
+      "kind": "matte",
+      "color": "#5d4635"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#597451"
+    },
+    "leafLight": {
+      "kind": "matte",
+      "color": "#7e915d"
+    },
+    "leafDark": {
+      "kind": "matte",
+      "color": "#424f3f"
+    },
+    "bark": {
+      "kind": "wood",
+      "color": "#82664b"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76851"
+    },
+    "limewash": {
+      "kind": "matte",
+      "color": "#ccc3af"
+    },
+    "cement": {
+      "kind": "matte",
+      "color": "#929183"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a18160"
+    },
+    "plum": {
+      "kind": "matte",
+      "color": "#9e657b"
+    },
+    "flower": {
+      "kind": "matte",
+      "color": "#d6ae54"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#5f6468"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        1
+      ],
+      "to": [
+        25,
+        22,
+        9
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        9
+      ],
+      "to": [
+        25,
+        23,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        10
+      ],
+      "to": [
+        23,
+        21,
+        10
+      ],
+      "material": "soil"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        13,
+        7
+      ],
+      "to": [
+        5,
+        17,
+        9
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        13,
+        7
+      ],
+      "to": [
+        26,
+        17,
+        9
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 11,
+      "zTo": 16,
+      "radius": 5,
+      "material": "leafDark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 23,
+      "radius": 6,
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 24,
+      "zTo": 26,
+      "radius": 4,
+      "material": "leafLight"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 27,
+      "zTo": 28,
+      "radius": 2,
+      "material": "flower"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        17,
+        15
+      ],
+      "to": [
+        19,
+        17,
+        23
+      ],
+      "material": "leafLight"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        17,
+        15
+      ],
+      "to": [
+        11,
+        17,
+        23
+      ],
+      "material": "leafLight"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        20,
+        15
+      ],
+      "to": [
+        16,
+        20,
+        23
+      ],
+      "material": "leafLight"
+    }
+  ]
+}

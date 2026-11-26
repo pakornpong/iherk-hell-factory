@@ -1,0 +1,828 @@
+[
+  {
+    "id": "bakery-two-deck-stone-oven-compact-balance-feet",
+    "category": "bakery",
+    "file": "001/bakery-two-deck-stone-oven-compact-balance-feet.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "bakery-two-deck-stone-oven-compact-washdown-stand",
+    "category": "bakery",
+    "file": "001/bakery-two-deck-stone-oven-compact-washdown-stand.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "bakery-two-deck-stone-oven-compact-stone-counter",
+    "category": "bakery",
+    "file": "001/bakery-two-deck-stone-oven-compact-stone-counter.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "bakery-two-deck-stone-oven-compact-proofing-base",
+    "category": "bakery",
+    "file": "001/bakery-two-deck-stone-oven-compact-proofing-base.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "bakery-two-deck-stone-oven-production-balance-feet",
+    "category": "bakery",
+    "file": "001/bakery-two-deck-stone-oven-production-balance-feet.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "bakery-two-deck-stone-oven-production-washdown-stand",
+    "category": "bakery",
+    "file": "001/bakery-two-deck-stone-oven-production-washdown-stand.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "bakery-two-deck-stone-oven-production-stone-counter",
+    "category": "bakery",
+    "file": "001/bakery-two-deck-stone-oven-production-stone-counter.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "bakery-two-deck-stone-oven-production-proofing-base",
+    "category": "bakery",
+    "file": "001/bakery-two-deck-stone-oven-production-proofing-base.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "bakery-bread-proofing-cabinet-compact-balance-feet",
+    "category": "bakery",
+    "file": "001/bakery-bread-proofing-cabinet-compact-balance-feet.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "bakery-bread-proofing-cabinet-compact-washdown-stand",
+    "category": "bakery",
+    "file": "001/bakery-bread-proofing-cabinet-compact-washdown-stand.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "bakery-bread-proofing-cabinet-compact-mobile-baker-rack",
+    "category": "bakery",
+    "file": "001/bakery-bread-proofing-cabinet-compact-mobile-baker-rack.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "bakery-bread-proofing-cabinet-compact-stone-counter",
+    "category": "bakery",
+    "file": "001/bakery-bread-proofing-cabinet-compact-stone-counter.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "bakery-bread-proofing-cabinet-compact-proofing-base",
+    "category": "bakery",
+    "file": "001/bakery-bread-proofing-cabinet-compact-proofing-base.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "bakery-bread-proofing-cabinet-production-balance-feet",
+    "category": "bakery",
+    "file": "001/bakery-bread-proofing-cabinet-production-balance-feet.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "bakery-bread-proofing-cabinet-production-washdown-stand",
+    "category": "bakery",
+    "file": "001/bakery-bread-proofing-cabinet-production-washdown-stand.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "bakery-bread-proofing-cabinet-production-mobile-baker-rack",
+    "category": "bakery",
+    "file": "001/bakery-bread-proofing-cabinet-production-mobile-baker-rack.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "bakery-bread-proofing-cabinet-production-stone-counter",
+    "category": "bakery",
+    "file": "001/bakery-bread-proofing-cabinet-production-stone-counter.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "bakery-bread-proofing-cabinet-production-proofing-base",
+    "category": "bakery",
+    "file": "001/bakery-bread-proofing-cabinet-production-proofing-base.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "bakery-rolling-dough-sheeter-compact-balance-feet",
+    "category": "bakery",
+    "file": "001/bakery-rolling-dough-sheeter-compact-balance-feet.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "bakery-rolling-dough-sheeter-compact-washdown-stand",
+    "category": "bakery",
+    "file": "001/bakery-rolling-dough-sheeter-compact-washdown-stand.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "bakery-rolling-dough-sheeter-compact-mobile-baker-rack",
+    "category": "bakery",
+    "file": "002/bakery-rolling-dough-sheeter-compact-mobile-baker-rack.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "bakery-rolling-dough-sheeter-compact-stone-counter",
+    "category": "bakery",
+    "file": "002/bakery-rolling-dough-sheeter-compact-stone-counter.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "bakery-rolling-dough-sheeter-compact-proofing-base",
+    "category": "bakery",
+    "file": "002/bakery-rolling-dough-sheeter-compact-proofing-base.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "bakery-rolling-dough-sheeter-production-balance-feet",
+    "category": "bakery",
+    "file": "002/bakery-rolling-dough-sheeter-production-balance-feet.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "bakery-rolling-dough-sheeter-production-washdown-stand",
+    "category": "bakery",
+    "file": "002/bakery-rolling-dough-sheeter-production-washdown-stand.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "bakery-rolling-dough-sheeter-production-mobile-baker-rack",
+    "category": "bakery",
+    "file": "002/bakery-rolling-dough-sheeter-production-mobile-baker-rack.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "bakery-rolling-dough-sheeter-production-stone-counter",
+    "category": "bakery",
+    "file": "002/bakery-rolling-dough-sheeter-production-stone-counter.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "bakery-rolling-dough-sheeter-production-proofing-base",
+    "category": "bakery",
+    "file": "002/bakery-rolling-dough-sheeter-production-proofing-base.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "bakery-divider-rounder-compact-balance-feet",
+    "category": "bakery",
+    "file": "002/bakery-divider-rounder-compact-balance-feet.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "bakery-divider-rounder-compact-washdown-stand",
+    "category": "bakery",
+    "file": "002/bakery-divider-rounder-compact-washdown-stand.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "bakery-divider-rounder-compact-mobile-baker-rack",
+    "category": "bakery",
+    "file": "002/bakery-divider-rounder-compact-mobile-baker-rack.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "bakery-divider-rounder-compact-stone-counter",
+    "category": "bakery",
+    "file": "002/bakery-divider-rounder-compact-stone-counter.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "bakery-divider-rounder-compact-proofing-base",
+    "category": "bakery",
+    "file": "002/bakery-divider-rounder-compact-proofing-base.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "bakery-divider-rounder-production-balance-feet",
+    "category": "bakery",
+    "file": "002/bakery-divider-rounder-production-balance-feet.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "bakery-divider-rounder-production-washdown-stand",
+    "category": "bakery",
+    "file": "002/bakery-divider-rounder-production-washdown-stand.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "bakery-divider-rounder-production-mobile-baker-rack",
+    "category": "bakery",
+    "file": "002/bakery-divider-rounder-production-mobile-baker-rack.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "bakery-divider-rounder-production-stone-counter",
+    "category": "bakery",
+    "file": "002/bakery-divider-rounder-production-stone-counter.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "bakery-divider-rounder-production-proofing-base",
+    "category": "bakery",
+    "file": "002/bakery-divider-rounder-production-proofing-base.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "bakery-bread-tray-cooling-rack-compact-balance-feet",
+    "category": "bakery",
+    "file": "002/bakery-bread-tray-cooling-rack-compact-balance-feet.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "bakery-bread-tray-cooling-rack-compact-washdown-stand",
+    "category": "bakery",
+    "file": "002/bakery-bread-tray-cooling-rack-compact-washdown-stand.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "bakery-bread-tray-cooling-rack-compact-mobile-baker-rack",
+    "category": "bakery",
+    "file": "003/bakery-bread-tray-cooling-rack-compact-mobile-baker-rack.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "bakery-bread-tray-cooling-rack-compact-stone-counter",
+    "category": "bakery",
+    "file": "003/bakery-bread-tray-cooling-rack-compact-stone-counter.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "bakery-bread-tray-cooling-rack-compact-proofing-base",
+    "category": "bakery",
+    "file": "003/bakery-bread-tray-cooling-rack-compact-proofing-base.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "bakery-bread-tray-cooling-rack-production-balance-feet",
+    "category": "bakery",
+    "file": "003/bakery-bread-tray-cooling-rack-production-balance-feet.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "bakery-bread-tray-cooling-rack-production-washdown-stand",
+    "category": "bakery",
+    "file": "003/bakery-bread-tray-cooling-rack-production-washdown-stand.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "bakery-bread-tray-cooling-rack-production-mobile-baker-rack",
+    "category": "bakery",
+    "file": "003/bakery-bread-tray-cooling-rack-production-mobile-baker-rack.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "bakery-bread-tray-cooling-rack-production-stone-counter",
+    "category": "bakery",
+    "file": "003/bakery-bread-tray-cooling-rack-production-stone-counter.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "bakery-bread-tray-cooling-rack-production-proofing-base",
+    "category": "bakery",
+    "file": "003/bakery-bread-tray-cooling-rack-production-proofing-base.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "bakery-flour-sifter-mill-compact-balance-feet",
+    "category": "bakery",
+    "file": "003/bakery-flour-sifter-mill-compact-balance-feet.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "bakery-flour-sifter-mill-compact-washdown-stand",
+    "category": "bakery",
+    "file": "003/bakery-flour-sifter-mill-compact-washdown-stand.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "bakery-flour-sifter-mill-compact-mobile-baker-rack",
+    "category": "bakery",
+    "file": "003/bakery-flour-sifter-mill-compact-mobile-baker-rack.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "bakery-flour-sifter-mill-compact-stone-counter",
+    "category": "bakery",
+    "file": "003/bakery-flour-sifter-mill-compact-stone-counter.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "bakery-flour-sifter-mill-compact-proofing-base",
+    "category": "bakery",
+    "file": "003/bakery-flour-sifter-mill-compact-proofing-base.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "bakery-flour-sifter-mill-production-balance-feet",
+    "category": "bakery",
+    "file": "003/bakery-flour-sifter-mill-production-balance-feet.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "bakery-flour-sifter-mill-production-washdown-stand",
+    "category": "bakery",
+    "file": "003/bakery-flour-sifter-mill-production-washdown-stand.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "bakery-flour-sifter-mill-production-mobile-baker-rack",
+    "category": "bakery",
+    "file": "003/bakery-flour-sifter-mill-production-mobile-baker-rack.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "bakery-flour-sifter-mill-production-stone-counter",
+    "category": "bakery",
+    "file": "003/bakery-flour-sifter-mill-production-stone-counter.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "bakery-flour-sifter-mill-production-proofing-base",
+    "category": "bakery",
+    "file": "003/bakery-flour-sifter-mill-production-proofing-base.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "bakery-glaze-table-with-turntable-compact-balance-feet",
+    "category": "bakery",
+    "file": "003/bakery-glaze-table-with-turntable-compact-balance-feet.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "bakery-glaze-table-with-turntable-compact-washdown-stand",
+    "category": "bakery",
+    "file": "003/bakery-glaze-table-with-turntable-compact-washdown-stand.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "bakery-glaze-table-with-turntable-compact-mobile-baker-rack",
+    "category": "bakery",
+    "file": "004/bakery-glaze-table-with-turntable-compact-mobile-baker-rack.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "bakery-glaze-table-with-turntable-compact-stone-counter",
+    "category": "bakery",
+    "file": "004/bakery-glaze-table-with-turntable-compact-stone-counter.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "bakery-glaze-table-with-turntable-compact-proofing-base",
+    "category": "bakery",
+    "file": "004/bakery-glaze-table-with-turntable-compact-proofing-base.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "bakery-glaze-table-with-turntable-production-balance-feet",
+    "category": "bakery",
+    "file": "004/bakery-glaze-table-with-turntable-production-balance-feet.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "bakery-glaze-table-with-turntable-production-washdown-stand",
+    "category": "bakery",
+    "file": "004/bakery-glaze-table-with-turntable-production-washdown-stand.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "bakery-glaze-table-with-turntable-production-mobile-baker-rack",
+    "category": "bakery",
+    "file": "004/bakery-glaze-table-with-turntable-production-mobile-baker-rack.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "bakery-glaze-table-with-turntable-production-stone-counter",
+    "category": "bakery",
+    "file": "004/bakery-glaze-table-with-turntable-production-stone-counter.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "bakery-glaze-table-with-turntable-production-proofing-base",
+    "category": "bakery",
+    "file": "004/bakery-glaze-table-with-turntable-production-proofing-base.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "bakery-baguette-fluted-pans-compact-balance-feet",
+    "category": "bakery",
+    "file": "004/bakery-baguette-fluted-pans-compact-balance-feet.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "bakery-baguette-fluted-pans-compact-washdown-stand",
+    "category": "bakery",
+    "file": "004/bakery-baguette-fluted-pans-compact-washdown-stand.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "bakery-baguette-fluted-pans-compact-mobile-baker-rack",
+    "category": "bakery",
+    "file": "004/bakery-baguette-fluted-pans-compact-mobile-baker-rack.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "bakery-baguette-fluted-pans-compact-stone-counter",
+    "category": "bakery",
+    "file": "004/bakery-baguette-fluted-pans-compact-stone-counter.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "bakery-baguette-fluted-pans-compact-proofing-base",
+    "category": "bakery",
+    "file": "004/bakery-baguette-fluted-pans-compact-proofing-base.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "bakery-baguette-fluted-pans-production-balance-feet",
+    "category": "bakery",
+    "file": "004/bakery-baguette-fluted-pans-production-balance-feet.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "bakery-baguette-fluted-pans-production-washdown-stand",
+    "category": "bakery",
+    "file": "004/bakery-baguette-fluted-pans-production-washdown-stand.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "bakery-baguette-fluted-pans-production-mobile-baker-rack",
+    "category": "bakery",
+    "file": "004/bakery-baguette-fluted-pans-production-mobile-baker-rack.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "bakery-baguette-fluted-pans-production-stone-counter",
+    "category": "bakery",
+    "file": "004/bakery-baguette-fluted-pans-production-stone-counter.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "bakery-baguette-fluted-pans-production-proofing-base",
+    "category": "bakery",
+    "file": "004/bakery-baguette-fluted-pans-production-proofing-base.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "bakery-cake-finishing-light-box-compact-balance-feet",
+    "category": "bakery",
+    "file": "004/bakery-cake-finishing-light-box-compact-balance-feet.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "bakery-cake-finishing-light-box-compact-washdown-stand",
+    "category": "bakery",
+    "file": "004/bakery-cake-finishing-light-box-compact-washdown-stand.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "bakery-cake-finishing-light-box-compact-mobile-baker-rack",
+    "category": "bakery",
+    "file": "005/bakery-cake-finishing-light-box-compact-mobile-baker-rack.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "bakery-cake-finishing-light-box-compact-stone-counter",
+    "category": "bakery",
+    "file": "005/bakery-cake-finishing-light-box-compact-stone-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "bakery-cake-finishing-light-box-compact-proofing-base",
+    "category": "bakery",
+    "file": "005/bakery-cake-finishing-light-box-compact-proofing-base.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "bakery-cake-finishing-light-box-production-balance-feet",
+    "category": "bakery",
+    "file": "005/bakery-cake-finishing-light-box-production-balance-feet.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "bakery-cake-finishing-light-box-production-washdown-stand",
+    "category": "bakery",
+    "file": "005/bakery-cake-finishing-light-box-production-washdown-stand.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "bakery-cake-finishing-light-box-production-mobile-baker-rack",
+    "category": "bakery",
+    "file": "005/bakery-cake-finishing-light-box-production-mobile-baker-rack.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "bakery-cake-finishing-light-box-production-stone-counter",
+    "category": "bakery",
+    "file": "005/bakery-cake-finishing-light-box-production-stone-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "bakery-cake-finishing-light-box-production-proofing-base",
+    "category": "bakery",
+    "file": "005/bakery-cake-finishing-light-box-production-proofing-base.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "bakery-bread-slicer-feed-chute-compact-balance-feet",
+    "category": "bakery",
+    "file": "005/bakery-bread-slicer-feed-chute-compact-balance-feet.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "bakery-bread-slicer-feed-chute-compact-washdown-stand",
+    "category": "bakery",
+    "file": "005/bakery-bread-slicer-feed-chute-compact-washdown-stand.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "bakery-bread-slicer-feed-chute-compact-mobile-baker-rack",
+    "category": "bakery",
+    "file": "005/bakery-bread-slicer-feed-chute-compact-mobile-baker-rack.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "bakery-bread-slicer-feed-chute-compact-stone-counter",
+    "category": "bakery",
+    "file": "005/bakery-bread-slicer-feed-chute-compact-stone-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "bakery-bread-slicer-feed-chute-compact-proofing-base",
+    "category": "bakery",
+    "file": "005/bakery-bread-slicer-feed-chute-compact-proofing-base.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "bakery-bread-slicer-feed-chute-production-balance-feet",
+    "category": "bakery",
+    "file": "005/bakery-bread-slicer-feed-chute-production-balance-feet.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "bakery-bread-slicer-feed-chute-production-washdown-stand",
+    "category": "bakery",
+    "file": "005/bakery-bread-slicer-feed-chute-production-washdown-stand.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "bakery-bread-slicer-feed-chute-production-mobile-baker-rack",
+    "category": "bakery",
+    "file": "005/bakery-bread-slicer-feed-chute-production-mobile-baker-rack.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "bakery-bread-slicer-feed-chute-production-stone-counter",
+    "category": "bakery",
+    "file": "005/bakery-bread-slicer-feed-chute-production-stone-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "bakery-bread-slicer-feed-chute-production-proofing-base",
+    "category": "bakery",
+    "file": "005/bakery-bread-slicer-feed-chute-production-proofing-base.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "bakery-ingredient-bin-bank-compact-balance-feet",
+    "category": "bakery",
+    "file": "005/bakery-ingredient-bin-bank-compact-balance-feet.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "bakery-ingredient-bin-bank-compact-washdown-stand",
+    "category": "bakery",
+    "file": "005/bakery-ingredient-bin-bank-compact-washdown-stand.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "bakery-ingredient-bin-bank-compact-mobile-baker-rack",
+    "category": "bakery",
+    "file": "006/bakery-ingredient-bin-bank-compact-mobile-baker-rack.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "bakery-ingredient-bin-bank-compact-stone-counter",
+    "category": "bakery",
+    "file": "006/bakery-ingredient-bin-bank-compact-stone-counter.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "bakery-ingredient-bin-bank-compact-proofing-base",
+    "category": "bakery",
+    "file": "006/bakery-ingredient-bin-bank-compact-proofing-base.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "bakery-ingredient-bin-bank-production-balance-feet",
+    "category": "bakery",
+    "file": "006/bakery-ingredient-bin-bank-production-balance-feet.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "bakery-ingredient-bin-bank-production-washdown-stand",
+    "category": "bakery",
+    "file": "006/bakery-ingredient-bin-bank-production-washdown-stand.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "bakery-ingredient-bin-bank-production-mobile-baker-rack",
+    "category": "bakery",
+    "file": "006/bakery-ingredient-bin-bank-production-mobile-baker-rack.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "bakery-ingredient-bin-bank-production-stone-counter",
+    "category": "bakery",
+    "file": "006/bakery-ingredient-bin-bank-production-stone-counter.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "bakery-ingredient-bin-bank-production-proofing-base",
+    "category": "bakery",
+    "file": "006/bakery-ingredient-bin-bank-production-proofing-base.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "bakery-bag-sealing-packing-board-compact-balance-feet",
+    "category": "bakery",
+    "file": "006/bakery-bag-sealing-packing-board-compact-balance-feet.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "bakery-bag-sealing-packing-board-compact-washdown-stand",
+    "category": "bakery",
+    "file": "006/bakery-bag-sealing-packing-board-compact-washdown-stand.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "bakery-bag-sealing-packing-board-compact-mobile-baker-rack",
+    "category": "bakery",
+    "file": "006/bakery-bag-sealing-packing-board-compact-mobile-baker-rack.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "bakery-bag-sealing-packing-board-compact-stone-counter",
+    "category": "bakery",
+    "file": "006/bakery-bag-sealing-packing-board-compact-stone-counter.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "bakery-bag-sealing-packing-board-compact-proofing-base",
+    "category": "bakery",
+    "file": "006/bakery-bag-sealing-packing-board-compact-proofing-base.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "bakery-bag-sealing-packing-board-production-balance-feet",
+    "category": "bakery",
+    "file": "006/bakery-bag-sealing-packing-board-production-balance-feet.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "bakery-bag-sealing-packing-board-production-washdown-stand",
+    "category": "bakery",
+    "file": "006/bakery-bag-sealing-packing-board-production-washdown-stand.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "bakery-bag-sealing-packing-board-production-mobile-baker-rack",
+    "category": "bakery",
+    "file": "006/bakery-bag-sealing-packing-board-production-mobile-baker-rack.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "bakery-bag-sealing-packing-board-production-stone-counter",
+    "category": "bakery",
+    "file": "006/bakery-bag-sealing-packing-board-production-stone-counter.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "bakery-bag-sealing-packing-board-production-proofing-base",
+    "category": "bakery",
+    "file": "006/bakery-bag-sealing-packing-board-production-proofing-base.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 18
+  }
+]

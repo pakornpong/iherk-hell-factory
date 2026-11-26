@@ -1,0 +1,351 @@
+{
+  "schemaVersion": 1,
+  "id": "winter-winter-boot-dryer-locker-compact-service-cart",
+  "category": "winter-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa8560",
+      "kind": "wood"
+    },
+    "ice": {
+      "color": "#b8c6c9",
+      "kind": "matte"
+    },
+    "snow": {
+      "color": "#dfdfd4",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ba8ac",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#5c6873",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#40484e",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#ae9d83",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#668096",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a76555",
+      "kind": "matte"
+    },
+    "gold": {
+      "color": "#c0a46e",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#aba08f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#91abb5",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        4
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        4
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        4
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        0
+      ],
+      "to": [
+        28,
+        24,
+        4
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        7,
+        7
+      ],
+      "to": [
+        29,
+        23,
+        10
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        28,
+        24,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        12
+      ],
+      "to": [
+        27,
+        10,
+        36
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        24
+      ],
+      "to": [
+        27,
+        23,
+        25
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        14
+      ],
+      "zFrom": 13,
+      "zTo": 18,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        18
+      ],
+      "to": [
+        12,
+        21,
+        20
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        20
+      ],
+      "to": [
+        12,
+        15,
+        27
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        27
+      ],
+      "to": [
+        12,
+        15,
+        28
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        14
+      ],
+      "zFrom": 13,
+      "zTo": 18,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        11,
+        18
+      ],
+      "to": [
+        19,
+        21,
+        20
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        11,
+        20
+      ],
+      "to": [
+        19,
+        15,
+        27
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        11,
+        27
+      ],
+      "to": [
+        19,
+        15,
+        28
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        14
+      ],
+      "zFrom": 13,
+      "zTo": 18,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        11,
+        18
+      ],
+      "to": [
+        25,
+        21,
+        20
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        11,
+        20
+      ],
+      "to": [
+        25,
+        15,
+        27
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        11,
+        27
+      ],
+      "to": [
+        25,
+        15,
+        28
+      ],
+      "material": "cloth"
+    }
+  ]
+}

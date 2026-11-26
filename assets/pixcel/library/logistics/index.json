@@ -1,0 +1,492 @@
+[
+  {
+    "id": "cargo-flat-parcel-stacks-flat-platform-compact",
+    "category": "logistics",
+    "file": "001/cargo-flat-parcel-stacks-flat-platform-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "cargo-flat-parcel-stacks-flat-platform-double-deck",
+    "category": "logistics",
+    "file": "001/cargo-flat-parcel-stacks-flat-platform-double-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "cargo-flat-parcel-stacks-deep-cage-compact",
+    "category": "logistics",
+    "file": "001/cargo-flat-parcel-stacks-deep-cage-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "cargo-flat-parcel-stacks-deep-cage-double-deck",
+    "category": "logistics",
+    "file": "001/cargo-flat-parcel-stacks-deep-cage-double-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "cargo-flat-parcel-stacks-runner-skid-compact",
+    "category": "logistics",
+    "file": "001/cargo-flat-parcel-stacks-runner-skid-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "cargo-flat-parcel-stacks-runner-skid-double-deck",
+    "category": "logistics",
+    "file": "001/cargo-flat-parcel-stacks-runner-skid-double-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "cargo-flat-parcel-stacks-tug-trailer-compact",
+    "category": "logistics",
+    "file": "001/cargo-flat-parcel-stacks-tug-trailer-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "cargo-flat-parcel-stacks-tug-trailer-double-deck",
+    "category": "logistics",
+    "file": "001/cargo-flat-parcel-stacks-tug-trailer-double-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "cargo-flat-parcel-stacks-deck-with-ramps-compact",
+    "category": "logistics",
+    "file": "001/cargo-flat-parcel-stacks-deck-with-ramps-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "cargo-flat-parcel-stacks-deck-with-ramps-double-deck",
+    "category": "logistics",
+    "file": "001/cargo-flat-parcel-stacks-deck-with-ramps-double-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "cargo-nested-totes-flat-platform-compact",
+    "category": "logistics",
+    "file": "001/cargo-nested-totes-flat-platform-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "cargo-nested-totes-flat-platform-double-deck",
+    "category": "logistics",
+    "file": "001/cargo-nested-totes-flat-platform-double-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "cargo-nested-totes-deep-cage-compact",
+    "category": "logistics",
+    "file": "001/cargo-nested-totes-deep-cage-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "cargo-nested-totes-deep-cage-double-deck",
+    "category": "logistics",
+    "file": "001/cargo-nested-totes-deep-cage-double-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "cargo-nested-totes-runner-skid-compact",
+    "category": "logistics",
+    "file": "001/cargo-nested-totes-runner-skid-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "cargo-nested-totes-runner-skid-double-deck",
+    "category": "logistics",
+    "file": "001/cargo-nested-totes-runner-skid-double-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "cargo-nested-totes-tug-trailer-compact",
+    "category": "logistics",
+    "file": "001/cargo-nested-totes-tug-trailer-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "cargo-nested-totes-tug-trailer-double-deck",
+    "category": "logistics",
+    "file": "001/cargo-nested-totes-tug-trailer-double-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "cargo-nested-totes-deck-with-ramps-compact",
+    "category": "logistics",
+    "file": "001/cargo-nested-totes-deck-with-ramps-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "cargo-nested-totes-deck-with-ramps-double-deck",
+    "category": "logistics",
+    "file": "001/cargo-nested-totes-deck-with-ramps-double-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "cargo-rolled-material-flat-platform-compact",
+    "category": "logistics",
+    "file": "002/cargo-rolled-material-flat-platform-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "cargo-rolled-material-flat-platform-double-deck",
+    "category": "logistics",
+    "file": "002/cargo-rolled-material-flat-platform-double-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "cargo-rolled-material-deep-cage-compact",
+    "category": "logistics",
+    "file": "002/cargo-rolled-material-deep-cage-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "cargo-rolled-material-deep-cage-double-deck",
+    "category": "logistics",
+    "file": "002/cargo-rolled-material-deep-cage-double-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "cargo-rolled-material-runner-skid-compact",
+    "category": "logistics",
+    "file": "002/cargo-rolled-material-runner-skid-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "cargo-rolled-material-runner-skid-double-deck",
+    "category": "logistics",
+    "file": "002/cargo-rolled-material-runner-skid-double-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "cargo-rolled-material-tug-trailer-compact",
+    "category": "logistics",
+    "file": "002/cargo-rolled-material-tug-trailer-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "cargo-rolled-material-tug-trailer-double-deck",
+    "category": "logistics",
+    "file": "002/cargo-rolled-material-tug-trailer-double-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "cargo-rolled-material-deck-with-ramps-compact",
+    "category": "logistics",
+    "file": "002/cargo-rolled-material-deck-with-ramps-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "cargo-rolled-material-deck-with-ramps-double-deck",
+    "category": "logistics",
+    "file": "002/cargo-rolled-material-deck-with-ramps-double-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "cargo-cylinder-bank-flat-platform-compact",
+    "category": "logistics",
+    "file": "002/cargo-cylinder-bank-flat-platform-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "cargo-cylinder-bank-flat-platform-double-deck",
+    "category": "logistics",
+    "file": "002/cargo-cylinder-bank-flat-platform-double-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "cargo-cylinder-bank-deep-cage-compact",
+    "category": "logistics",
+    "file": "002/cargo-cylinder-bank-deep-cage-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "cargo-cylinder-bank-deep-cage-double-deck",
+    "category": "logistics",
+    "file": "002/cargo-cylinder-bank-deep-cage-double-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "cargo-cylinder-bank-runner-skid-compact",
+    "category": "logistics",
+    "file": "002/cargo-cylinder-bank-runner-skid-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "cargo-cylinder-bank-runner-skid-double-deck",
+    "category": "logistics",
+    "file": "002/cargo-cylinder-bank-runner-skid-double-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "cargo-cylinder-bank-tug-trailer-compact",
+    "category": "logistics",
+    "file": "002/cargo-cylinder-bank-tug-trailer-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "cargo-cylinder-bank-tug-trailer-double-deck",
+    "category": "logistics",
+    "file": "002/cargo-cylinder-bank-tug-trailer-double-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "cargo-cylinder-bank-deck-with-ramps-compact",
+    "category": "logistics",
+    "file": "002/cargo-cylinder-bank-deck-with-ramps-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "cargo-cylinder-bank-deck-with-ramps-double-deck",
+    "category": "logistics",
+    "file": "002/cargo-cylinder-bank-deck-with-ramps-double-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "cargo-parcel-lockbox-flat-platform-compact",
+    "category": "logistics",
+    "file": "003/cargo-parcel-lockbox-flat-platform-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "cargo-parcel-lockbox-flat-platform-double-deck",
+    "category": "logistics",
+    "file": "003/cargo-parcel-lockbox-flat-platform-double-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "cargo-parcel-lockbox-deep-cage-compact",
+    "category": "logistics",
+    "file": "003/cargo-parcel-lockbox-deep-cage-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "cargo-parcel-lockbox-deep-cage-double-deck",
+    "category": "logistics",
+    "file": "003/cargo-parcel-lockbox-deep-cage-double-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "cargo-parcel-lockbox-runner-skid-compact",
+    "category": "logistics",
+    "file": "003/cargo-parcel-lockbox-runner-skid-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "cargo-parcel-lockbox-runner-skid-double-deck",
+    "category": "logistics",
+    "file": "003/cargo-parcel-lockbox-runner-skid-double-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "cargo-parcel-lockbox-tug-trailer-compact",
+    "category": "logistics",
+    "file": "003/cargo-parcel-lockbox-tug-trailer-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "cargo-parcel-lockbox-tug-trailer-double-deck",
+    "category": "logistics",
+    "file": "003/cargo-parcel-lockbox-tug-trailer-double-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "cargo-parcel-lockbox-deck-with-ramps-compact",
+    "category": "logistics",
+    "file": "003/cargo-parcel-lockbox-deck-with-ramps-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "cargo-parcel-lockbox-deck-with-ramps-double-deck",
+    "category": "logistics",
+    "file": "003/cargo-parcel-lockbox-deck-with-ramps-double-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "cargo-strapped-shipping-crate-flat-platform-compact",
+    "category": "logistics",
+    "file": "003/cargo-strapped-shipping-crate-flat-platform-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "cargo-strapped-shipping-crate-flat-platform-double-deck",
+    "category": "logistics",
+    "file": "003/cargo-strapped-shipping-crate-flat-platform-double-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "cargo-strapped-shipping-crate-deep-cage-compact",
+    "category": "logistics",
+    "file": "003/cargo-strapped-shipping-crate-deep-cage-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "cargo-strapped-shipping-crate-deep-cage-double-deck",
+    "category": "logistics",
+    "file": "003/cargo-strapped-shipping-crate-deep-cage-double-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "cargo-strapped-shipping-crate-runner-skid-compact",
+    "category": "logistics",
+    "file": "003/cargo-strapped-shipping-crate-runner-skid-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "cargo-strapped-shipping-crate-runner-skid-double-deck",
+    "category": "logistics",
+    "file": "003/cargo-strapped-shipping-crate-runner-skid-double-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "cargo-strapped-shipping-crate-tug-trailer-compact",
+    "category": "logistics",
+    "file": "003/cargo-strapped-shipping-crate-tug-trailer-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "cargo-strapped-shipping-crate-tug-trailer-double-deck",
+    "category": "logistics",
+    "file": "003/cargo-strapped-shipping-crate-tug-trailer-double-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "cargo-strapped-shipping-crate-deck-with-ramps-compact",
+    "category": "logistics",
+    "file": "003/cargo-strapped-shipping-crate-deck-with-ramps-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "cargo-strapped-shipping-crate-deck-with-ramps-double-deck",
+    "category": "logistics",
+    "file": "003/cargo-strapped-shipping-crate-deck-with-ramps-double-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "cargo-upright-appliance-flat-platform-compact",
+    "category": "logistics",
+    "file": "004/cargo-upright-appliance-flat-platform-compact.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "cargo-upright-appliance-flat-platform-double-deck",
+    "category": "logistics",
+    "file": "004/cargo-upright-appliance-flat-platform-double-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "cargo-upright-appliance-deep-cage-compact",
+    "category": "logistics",
+    "file": "004/cargo-upright-appliance-deep-cage-compact.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "cargo-upright-appliance-deep-cage-double-deck",
+    "category": "logistics",
+    "file": "004/cargo-upright-appliance-deep-cage-double-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "cargo-upright-appliance-runner-skid-compact",
+    "category": "logistics",
+    "file": "004/cargo-upright-appliance-runner-skid-compact.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "cargo-upright-appliance-runner-skid-double-deck",
+    "category": "logistics",
+    "file": "004/cargo-upright-appliance-runner-skid-double-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "cargo-upright-appliance-tug-trailer-compact",
+    "category": "logistics",
+    "file": "004/cargo-upright-appliance-tug-trailer-compact.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "cargo-upright-appliance-tug-trailer-double-deck",
+    "category": "logistics",
+    "file": "004/cargo-upright-appliance-tug-trailer-double-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "cargo-upright-appliance-deck-with-ramps-compact",
+    "category": "logistics",
+    "file": "004/cargo-upright-appliance-deck-with-ramps-compact.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "cargo-upright-appliance-deck-with-ramps-double-deck",
+    "category": "logistics",
+    "file": "004/cargo-upright-appliance-deck-with-ramps-double-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  }
+]

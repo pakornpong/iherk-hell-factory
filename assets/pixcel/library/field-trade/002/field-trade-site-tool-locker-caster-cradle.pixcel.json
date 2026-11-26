@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "id": "field-trade-site-tool-locker-caster-cradle",
+  "category": "trades",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        9,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        0
+      ],
+      "to": [
+        9,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        23,
+        0
+      ],
+      "to": [
+        26,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        27,
+        25,
+        5
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        6
+      ],
+      "to": [
+        26,
+        24,
+        35
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        8
+      ],
+      "to": [
+        25,
+        25,
+        21
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        23
+      ],
+      "to": [
+        25,
+        25,
+        33
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        25,
+        14
+      ],
+      "to": [
+        19,
+        26,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        25,
+        28
+      ],
+      "to": [
+        19,
+        26,
+        29
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        35
+      ],
+      "to": [
+        26,
+        24,
+        36
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        36
+      ],
+      "to": [
+        12,
+        18,
+        38
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        12,
+        36
+      ],
+      "to": [
+        23,
+        21,
+        38
+      ],
+      "material": "amber"
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "id": "craft-framers-miter-guillotine-craft-cabinet-standalone",
+  "category": "craft-workshop",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ab8159"
+    },
+    "nut": {
+      "kind": "wood",
+      "color": "#745644"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9af"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596471"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#dbd2be"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a86550"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9d5553"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e798a"
+    },
+    "soot": {
+      "kind": "matte",
+      "color": "#3a4046"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#a89779"
+    },
+    "buff": {
+      "kind": "matte",
+      "color": "#c7a969"
+    },
+    "pane": {
+      "kind": "glass",
+      "color": "#87a6b0"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        44,
+        25,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        3
+      ],
+      "to": [
+        43,
+        24,
+        11
+      ],
+      "material": "nut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        11
+      ],
+      "to": [
+        44,
+        25,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        4
+      ],
+      "to": [
+        23,
+        25,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        24,
+        4
+      ],
+      "to": [
+        42,
+        25,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        25,
+        8
+      ],
+      "to": [
+        18,
+        26,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        25,
+        8
+      ],
+      "to": [
+        35,
+        26,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        13
+      ],
+      "to": [
+        44,
+        25,
+        16
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        17
+      ],
+      "to": [
+        43,
+        23,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        11,
+        19
+      ],
+      "to": [
+        23,
+        20,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        37,
+        11,
+        19
+      ],
+      "to": [
+        23,
+        20,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        9,
+        19
+      ],
+      "to": [
+        26,
+        12,
+        37
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        12,
+        30
+      ],
+      "to": [
+        26,
+        17,
+        35
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        12,
+        35
+      ],
+      "to": [
+        38,
+        19,
+        41
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        17,
+        40
+      ],
+      "to": [
+        41,
+        21,
+        42
+      ],
+      "material": "red"
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "id": "patio-modular-patio-planter-seat-wide-foldable-showroom",
+  "category": "patio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a87e58",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#745743",
+      "kind": "wood"
+    },
+    "stone": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d8ceba",
+      "kind": "matte"
+    },
+    "fabric": {
+      "color": "#aa9985",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca9ab",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#586671",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#637e94",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a46454",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a9765f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fadb8",
+      "kind": "glass"
+    },
+    "plant": {
+      "color": "#6d805f",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8a735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        7,
+        0
+      ],
+      "to": [
+        52,
+        9,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        22,
+        0
+      ],
+      "to": [
+        52,
+        24,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        53,
+        25,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        5
+      ],
+      "to": [
+        53,
+        25,
+        6
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        52,
+        24,
+        9
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        10
+      ],
+      "to": [
+        16,
+        23,
+        21
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        21
+      ],
+      "to": [
+        15,
+        22,
+        21
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 21,
+      "zTo": 30,
+      "radius": 3,
+      "material": "plant"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        9,
+        13
+      ],
+      "to": [
+        51,
+        22,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        8,
+        10
+      ],
+      "to": [
+        51,
+        23,
+        15
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        9,
+        16
+      ],
+      "to": [
+        50,
+        12,
+        22
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        19,
+        6
+      ],
+      "to": [
+        51,
+        24,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        19,
+        11
+      ],
+      "to": [
+        50,
+        24,
+        12
+      ],
+      "material": "cream"
+    }
+  ]
+}

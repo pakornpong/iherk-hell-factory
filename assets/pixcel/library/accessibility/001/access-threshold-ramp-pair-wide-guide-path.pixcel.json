@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "id": "access-threshold-ramp-pair-wide-guide-path",
+  "category": "accessibility",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "concrete": {
+      "kind": "matte",
+      "color": "#aaa5a0"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a7805d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9da8aa"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#677481"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c7"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#414a50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a366"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c98"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac6a55"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        2
+      ],
+      "material": "concrete"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        22,
+        2
+      ],
+      "to": [
+        56,
+        26,
+        2
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        5,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        25,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        29,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        33,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        37,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        41,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        45,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        53,
+        23
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "slope",
+      "from": [
+        4,
+        7,
+        3
+      ],
+      "to": [
+        55,
+        25,
+        13
+      ],
+      "axis": "+X",
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        12
+      ],
+      "to": [
+        55,
+        25,
+        13
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "line",
+      "from": [
+        4,
+        7,
+        4
+      ],
+      "to": [
+        55,
+        7,
+        14
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        4,
+        24,
+        4
+      ],
+      "to": [
+        55,
+        24,
+        14
+      ],
+      "material": "slate"
+    }
+  ]
+}

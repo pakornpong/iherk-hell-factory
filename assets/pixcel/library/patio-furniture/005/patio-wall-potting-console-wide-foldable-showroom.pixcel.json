@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "id": "patio-wall-potting-console-wide-foldable-showroom",
+  "category": "patio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a87e58",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#745743",
+      "kind": "wood"
+    },
+    "stone": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d8ceba",
+      "kind": "matte"
+    },
+    "fabric": {
+      "color": "#aa9985",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca9ab",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#586671",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#637e94",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a46454",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a9765f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fadb8",
+      "kind": "glass"
+    },
+    "plant": {
+      "color": "#6d805f",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8a735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        7,
+        0
+      ],
+      "to": [
+        52,
+        9,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        22,
+        0
+      ],
+      "to": [
+        52,
+        24,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        53,
+        25,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        5
+      ],
+      "to": [
+        53,
+        25,
+        6
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        52,
+        10,
+        37
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        18
+      ],
+      "to": [
+        52,
+        24,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        28
+      ],
+      "to": [
+        52,
+        16,
+        30
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        10
+      ],
+      "to": [
+        51,
+        22,
+        12
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 20,
+      "zTo": 25,
+      "radius": 3,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 25,
+      "zTo": 28,
+      "radius": 2,
+      "material": "plant"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        12
+      ],
+      "zFrom": 30,
+      "zTo": 34,
+      "radius": 2,
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        15
+      ],
+      "zFrom": 20,
+      "zTo": 25,
+      "radius": 3,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        15
+      ],
+      "zFrom": 25,
+      "zTo": 28,
+      "radius": 2,
+      "material": "plant"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        12
+      ],
+      "zFrom": 30,
+      "zTo": 34,
+      "radius": 2,
+      "material": "clay"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        19,
+        6
+      ],
+      "to": [
+        51,
+        24,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        19,
+        11
+      ],
+      "to": [
+        50,
+        24,
+        12
+      ],
+      "material": "cream"
+    }
+  ]
+}

@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "id": "sport-practice-goal-frame-compact-synthetic-turf",
+  "category": "sports",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "metal",
+      "color": "#8d9ba3"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#596772"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#404a51"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#ddd2bf"
+    },
+    "court": {
+      "kind": "matte",
+      "color": "#a67259"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d92"
+    },
+    "turf": {
+      "kind": "matte",
+      "color": "#718063"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b79c7b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a57d58"
+    },
+    "rope": {
+      "kind": "matte",
+      "color": "#b5a28a"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c9a468"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "turf"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        2
+      ],
+      "to": [
+        29,
+        9,
+        2
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        2
+      ],
+      "to": [
+        29,
+        15,
+        2
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        2
+      ],
+      "to": [
+        29,
+        21,
+        2
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        3
+      ],
+      "to": [
+        7,
+        11,
+        30
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        9,
+        3
+      ],
+      "to": [
+        28,
+        11,
+        30
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        28
+      ],
+      "to": [
+        28,
+        11,
+        30
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        10,
+        28
+      ],
+      "to": [
+        6,
+        23,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        10,
+        28
+      ],
+      "to": [
+        27,
+        23,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        4
+      ],
+      "to": [
+        27,
+        24,
+        5
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        10,
+        27
+      ],
+      "to": [
+        7,
+        23,
+        5
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        10,
+        27
+      ],
+      "to": [
+        12,
+        23,
+        5
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        10,
+        27
+      ],
+      "to": [
+        17,
+        23,
+        5
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        10,
+        27
+      ],
+      "to": [
+        22,
+        23,
+        5
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        19,
+        9
+      ],
+      "to": [
+        27,
+        19,
+        9
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        17,
+        13
+      ],
+      "to": [
+        27,
+        17,
+        13
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        15,
+        17
+      ],
+      "to": [
+        27,
+        15,
+        17
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        13,
+        21
+      ],
+      "to": [
+        27,
+        13,
+        21
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        10,
+        20
+      ],
+      "to": [
+        6,
+        25,
+        4
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        10,
+        20
+      ],
+      "to": [
+        27,
+        25,
+        4
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        3
+      ],
+      "to": [
+        8,
+        26,
+        6
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        24,
+        3
+      ],
+      "to": [
+        28,
+        26,
+        6
+      ],
+      "material": "amber"
+    }
+  ]
+}

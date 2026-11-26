@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "id": "clinical-equipment-medication-dispensing-pigeonholes-bench-insert",
+  "category": "medical",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        1
+      ],
+      "to": [
+        25,
+        24,
+        2
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        26,
+        10,
+        32
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        3
+      ],
+      "to": [
+        6,
+        24,
+        32
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        10,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        32
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        4
+      ],
+      "to": [
+        25,
+        23,
+        5
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        13
+      ],
+      "to": [
+        25,
+        23,
+        14
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        22
+      ],
+      "to": [
+        25,
+        23,
+        23
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        31
+      ],
+      "to": [
+        25,
+        23,
+        32
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        17
+      ],
+      "zFrom": 6,
+      "zTo": 10,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        17
+      ],
+      "zFrom": 6,
+      "zTo": 10,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        17
+      ],
+      "zFrom": 6,
+      "zTo": 10,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        17
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        17
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        17
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        17
+      ],
+      "zFrom": 24,
+      "zTo": 28,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        17
+      ],
+      "zFrom": 24,
+      "zTo": 28,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        17
+      ],
+      "zFrom": 24,
+      "zTo": 28,
+      "radius": 2,
+      "material": "steel"
+    }
+  ]
+}

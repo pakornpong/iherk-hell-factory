@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "id": "airfield-mobile-ramp-light-tower-wide-apron-tow-tongue",
+  "category": "aviation",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a1a9ac"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#606e7b"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e484e"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#ded6c3"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c3a05f"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a96153"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657e92"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a78460"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab5"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        0
+      ],
+      "to": [
+        11,
+        9,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        0
+      ],
+      "to": [
+        11,
+        25,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        6,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        25,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        56,
+        25,
+        5
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        13,
+        3
+      ],
+      "to": [
+        60,
+        16,
+        4
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        6
+      ],
+      "to": [
+        55,
+        24,
+        14
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        14
+      ],
+      "to": [
+        19,
+        15,
+        18
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        13
+      ],
+      "zFrom": 18,
+      "zTo": 46,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        44
+      ],
+      "to": [
+        18,
+        15,
+        46
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        44
+      ],
+      "to": [
+        11,
+        16,
+        51
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        16,
+        45
+      ],
+      "to": [
+        11,
+        16,
+        50
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        12,
+        44
+      ],
+      "to": [
+        19,
+        16,
+        51
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        16,
+        45
+      ],
+      "to": [
+        19,
+        16,
+        50
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        24,
+        9
+      ],
+      "to": [
+        53,
+        25,
+        12
+      ],
+      "material": "steel"
+    }
+  ]
+}

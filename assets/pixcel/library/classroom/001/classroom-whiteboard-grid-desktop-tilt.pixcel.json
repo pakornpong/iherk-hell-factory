@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "id": "classroom-whiteboard-grid-desktop-tilt",
+  "category": "education",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#ae7c50"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#e2dbca"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#748892"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#354653"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#646c78"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b66653"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#dfa958"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#6c9cb4"
+    },
+    "pink": {
+      "kind": "matte",
+      "color": "#c28387"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        2
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        9,
+        2
+      ],
+      "to": [
+        6,
+        13,
+        28
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        9,
+        2
+      ],
+      "to": [
+        25,
+        13,
+        28
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        6
+      ],
+      "to": [
+        26,
+        15,
+        7
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        1,
+        11,
+        10
+      ],
+      "to": [
+        30,
+        14,
+        23
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        14,
+        11
+      ],
+      "to": [
+        29,
+        14,
+        22
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        11
+      ],
+      "to": [
+        7,
+        14,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        14,
+        11
+      ],
+      "to": [
+        11,
+        14,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        14,
+        11
+      ],
+      "to": [
+        15,
+        14,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        14,
+        11
+      ],
+      "to": [
+        19,
+        14,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        14,
+        11
+      ],
+      "to": [
+        23,
+        14,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        14,
+        12
+      ],
+      "to": [
+        24,
+        14,
+        12
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        14,
+        16
+      ],
+      "to": [
+        24,
+        14,
+        16
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        14,
+        20
+      ],
+      "to": [
+        24,
+        14,
+        20
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        15,
+        12
+      ],
+      "to": [
+        14,
+        15,
+        18
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        15,
+        18
+      ],
+      "to": [
+        22,
+        15,
+        15
+      ],
+      "material": "red"
+    }
+  ]
+}

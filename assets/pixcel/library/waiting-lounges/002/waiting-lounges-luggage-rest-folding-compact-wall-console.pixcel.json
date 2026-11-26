@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "id": "waiting-lounges-luggage-rest-folding-compact-wall-console",
+  "category": "lounge",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#a77c56",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#755644",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ba6aa",
+      "kind": "metal"
+    },
+    "charcoal": {
+      "color": "#49535c",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#ddd5c3",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#aa9a88",
+      "kind": "matte"
+    },
+    "graphite": {
+      "color": "#363e43",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#bda16c",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a65c50",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#6b8090",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#89a8b4",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#a8a09a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        7,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        11
+      ],
+      "to": [
+        27,
+        26,
+        12
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        2
+      ],
+      "to": [
+        6,
+        22,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        8,
+        2
+      ],
+      "to": [
+        25,
+        22,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        7,
+        13
+      ],
+      "to": [
+        7,
+        22,
+        29
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        22,
+        13
+      ],
+      "to": [
+        7,
+        7,
+        29
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        7,
+        13
+      ],
+      "to": [
+        25,
+        22,
+        29
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        22,
+        13
+      ],
+      "to": [
+        25,
+        7,
+        29
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        29
+      ],
+      "to": [
+        26,
+        9,
+        30
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        29
+      ],
+      "to": [
+        26,
+        13,
+        30
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        16,
+        29
+      ],
+      "to": [
+        26,
+        17,
+        30
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        20,
+        29
+      ],
+      "to": [
+        26,
+        21,
+        30
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        31
+      ],
+      "to": [
+        23,
+        21,
+        42
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        20,
+        36
+      ],
+      "to": [
+        21,
+        22,
+        38
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        42
+      ],
+      "to": [
+        19,
+        15,
+        43
+      ],
+      "material": "steel"
+    }
+  ]
+}

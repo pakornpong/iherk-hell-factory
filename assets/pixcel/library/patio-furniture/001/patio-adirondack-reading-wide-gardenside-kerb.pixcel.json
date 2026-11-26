@@ -1,0 +1,560 @@
+{
+  "schemaVersion": 1,
+  "id": "patio-adirondack-reading-wide-gardenside-kerb",
+  "category": "patio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a87e58",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#745743",
+      "kind": "wood"
+    },
+    "stone": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d8ceba",
+      "kind": "matte"
+    },
+    "fabric": {
+      "color": "#aa9985",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca9ab",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#586671",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#637e94",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a46454",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a9765f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fadb8",
+      "kind": "glass"
+    },
+    "plant": {
+      "color": "#6d805f",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8a735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        54,
+        26,
+        1
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        53,
+        25,
+        3
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        53,
+        8,
+        3
+      ],
+      "material": "plant"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        3
+      ],
+      "to": [
+        53,
+        25,
+        3
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        7,
+        4
+      ],
+      "to": [
+        7,
+        13,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        23,
+        4
+      ],
+      "to": [
+        7,
+        18,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        50,
+        7,
+        4
+      ],
+      "to": [
+        50,
+        13,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        50,
+        23,
+        4
+      ],
+      "to": [
+        50,
+        18,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        13
+      ],
+      "to": [
+        51,
+        23,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        13,
+        15
+      ],
+      "to": [
+        7,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        13,
+        15
+      ],
+      "to": [
+        8,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        13,
+        15
+      ],
+      "to": [
+        11,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        13,
+        15
+      ],
+      "to": [
+        12,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        13,
+        15
+      ],
+      "to": [
+        15,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        13,
+        15
+      ],
+      "to": [
+        16,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        19,
+        13,
+        15
+      ],
+      "to": [
+        19,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        13,
+        15
+      ],
+      "to": [
+        20,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        13,
+        15
+      ],
+      "to": [
+        23,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        13,
+        15
+      ],
+      "to": [
+        24,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        13,
+        15
+      ],
+      "to": [
+        27,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        13,
+        15
+      ],
+      "to": [
+        28,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        31,
+        13,
+        15
+      ],
+      "to": [
+        31,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        32,
+        13,
+        15
+      ],
+      "to": [
+        32,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        35,
+        13,
+        15
+      ],
+      "to": [
+        35,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        36,
+        13,
+        15
+      ],
+      "to": [
+        36,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        39,
+        13,
+        15
+      ],
+      "to": [
+        39,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        40,
+        13,
+        15
+      ],
+      "to": [
+        40,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        13,
+        15
+      ],
+      "to": [
+        43,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        44,
+        13,
+        15
+      ],
+      "to": [
+        44,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        47,
+        13,
+        15
+      ],
+      "to": [
+        47,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        13,
+        15
+      ],
+      "to": [
+        48,
+        7,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        19
+      ],
+      "to": [
+        8,
+        22,
+        21
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        12,
+        19
+      ],
+      "to": [
+        51,
+        22,
+        21
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        19,
+        4
+      ],
+      "to": [
+        51,
+        24,
+        9
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        19,
+        9
+      ],
+      "to": [
+        50,
+        24,
+        10
+      ],
+      "material": "cream"
+    }
+  ]
+}

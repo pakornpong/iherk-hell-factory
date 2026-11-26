@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-forecast-display-desk-station-wide-soil-reference-plot",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        7
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        8
+      ],
+      "to": [
+        53,
+        11,
+        31
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        11
+      ],
+      "to": [
+        52,
+        12,
+        29
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        14
+      ],
+      "to": [
+        14,
+        12,
+        20
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        18
+      ],
+      "to": [
+        50,
+        12,
+        21
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        12,
+        24
+      ],
+      "to": [
+        50,
+        12,
+        25
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        15,
+        8
+      ],
+      "to": [
+        51,
+        22,
+        9
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        16,
+        9
+      ],
+      "to": [
+        18,
+        21,
+        9
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        8,
+        7
+      ],
+      "to": [
+        50,
+        12,
+        23
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        12,
+        19
+      ],
+      "to": [
+        49,
+        18,
+        22
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        18,
+        20
+      ],
+      "to": [
+        48,
+        18,
+        21
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        45,
+        15,
+        18
+      ],
+      "to": [
+        48,
+        20,
+        11
+      ],
+      "material": "dark"
+    }
+  ]
+}

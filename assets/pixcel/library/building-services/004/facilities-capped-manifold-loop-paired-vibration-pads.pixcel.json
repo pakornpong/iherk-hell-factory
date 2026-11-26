@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "id": "facilities-capped-manifold-loop-paired-vibration-pads",
+  "category": "building-services",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "galv": {
+      "color": "#a4a9a9",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#647080",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#41484e",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#cbc6b8",
+      "kind": "matte"
+    },
+    "white": {
+      "color": "#ded9cd",
+      "kind": "matte"
+    },
+    "ochre": {
+      "color": "#bd9b5b",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a35d50",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8aa7b3",
+      "kind": "glass"
+    },
+    "copper": {
+      "color": "#b58165",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#3b4145",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        10,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        57,
+        10,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        22,
+        0
+      ],
+      "to": [
+        57,
+        25,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        57,
+        25,
+        6
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        56,
+        9,
+        37
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        29
+      ],
+      "to": [
+        54,
+        12,
+        31
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        16
+      ],
+      "to": [
+        54,
+        12,
+        18
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        12
+      ],
+      "zFrom": 17,
+      "zTo": 30,
+      "radius": 1,
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        25
+      ],
+      "to": [
+        10,
+        16,
+        27
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        15,
+        26
+      ],
+      "to": [
+        11,
+        16,
+        27
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        12
+      ],
+      "zFrom": 17,
+      "zTo": 30,
+      "radius": 1,
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        12,
+        25
+      ],
+      "to": [
+        18,
+        16,
+        27
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        26
+      ],
+      "to": [
+        19,
+        16,
+        27
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        25,
+        12
+      ],
+      "zFrom": 17,
+      "zTo": 30,
+      "radius": 1,
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        12,
+        25
+      ],
+      "to": [
+        26,
+        16,
+        27
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        15,
+        26
+      ],
+      "to": [
+        27,
+        16,
+        27
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        53,
+        12
+      ],
+      "zFrom": 17,
+      "zTo": 30,
+      "radius": 1,
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        12,
+        25
+      ],
+      "to": [
+        54,
+        16,
+        27
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        15,
+        26
+      ],
+      "to": [
+        55,
+        16,
+        27
+      ],
+      "material": "ochre"
+    }
+  ]
+}

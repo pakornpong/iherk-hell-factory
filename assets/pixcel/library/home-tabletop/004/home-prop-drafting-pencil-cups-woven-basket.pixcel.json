@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "id": "home-prop-drafting-pencil-cups-woven-basket",
+  "category": "household",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "china": {
+      "kind": "matte",
+      "color": "#d4cbb7"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#59646c"
+    },
+    "nickel": {
+      "kind": "metal",
+      "color": "#a4aaa8"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a9815e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785a48"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b29978"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#667f93"
+    },
+    "terra": {
+      "kind": "matte",
+      "color": "#a66654"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8aa9b6"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bd9c62"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e2dac4"
+    },
+    "wax": {
+      "kind": "matte",
+      "color": "#d1bd8d"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#a5bec9",
+      "glowRadius": 1,
+      "glowIntensity": 0.12
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        26,
+        1
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        1
+      ],
+      "to": [
+        5,
+        26,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        6,
+        1
+      ],
+      "to": [
+        27,
+        26,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        1
+      ],
+      "to": [
+        26,
+        7,
+        4
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        25,
+        1
+      ],
+      "to": [
+        26,
+        26,
+        4
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        12
+      ],
+      "zFrom": 1,
+      "zTo": 10,
+      "radius": 4,
+      "material": "nickel"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        11,
+        10
+      ],
+      "to": [
+        10,
+        12,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        11,
+        10
+      ],
+      "to": [
+        12,
+        12,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        11,
+        10
+      ],
+      "to": [
+        14,
+        12,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        14,
+        1
+      ],
+      "to": [
+        25,
+        21,
+        4
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        15,
+        5
+      ],
+      "to": [
+        24,
+        20,
+        5
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        15,
+        6
+      ],
+      "to": [
+        22,
+        16,
+        7
+      ],
+      "material": "terra"
+    }
+  ]
+}

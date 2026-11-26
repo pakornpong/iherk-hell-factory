@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "id": "recycle-return-can-vending-facility-timber-skid",
+  "category": "recycling",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "color": "#596975",
+      "kind": "metal"
+    },
+    "zinc": {
+      "color": "#9aa6a8",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#424e55",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#647f96",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#c29f65",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#9e8569",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#a7835e",
+      "kind": "wood"
+    },
+    "gray": {
+      "color": "#a4a09a",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#d7cbb1",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#aa6957",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8eabb6",
+      "kind": "glass"
+    },
+    "cream": {
+      "color": "#d7d1c3",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        9,
+        2
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        0
+      ],
+      "to": [
+        55,
+        24,
+        2
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        55,
+        25,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        37
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        9
+      ],
+      "to": [
+        53,
+        25,
+        35
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        21
+      ],
+      "zFrom": 18,
+      "zTo": 22,
+      "radius": 4,
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        16
+      ],
+      "to": [
+        16,
+        26,
+        24
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        26,
+        17
+      ],
+      "to": [
+        15,
+        26,
+        23
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        25,
+        26
+      ],
+      "to": [
+        51,
+        25,
+        31
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        25,
+        12
+      ],
+      "to": [
+        50,
+        26,
+        16
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        12,
+        7
+      ],
+      "to": [
+        51,
+        20,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        12,
+        13
+      ],
+      "to": [
+        50,
+        20,
+        14
+      ],
+      "material": "amber"
+    }
+  ]
+}

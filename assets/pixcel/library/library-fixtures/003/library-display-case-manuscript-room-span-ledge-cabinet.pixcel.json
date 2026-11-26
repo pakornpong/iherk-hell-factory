@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "library-display-case-manuscript-room-span-ledge-cabinet",
+  "category": "library",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ae8258"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795c48"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9dabab"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#44515b"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#cec0ac"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e2dac6"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a0645a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#667990"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c3a371"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#92adb9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        56,
+        25,
+        10
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        10
+      ],
+      "to": [
+        57,
+        26,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        3
+      ],
+      "to": [
+        53,
+        25,
+        8
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        7
+      ],
+      "to": [
+        17,
+        26,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        12
+      ],
+      "to": [
+        55,
+        24,
+        22
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        22
+      ],
+      "to": [
+        55,
+        24,
+        24
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        26
+      ],
+      "to": [
+        55,
+        7,
+        36
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        26
+      ],
+      "to": [
+        6,
+        23,
+        36
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        26
+      ],
+      "to": [
+        55,
+        23,
+        36
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        26
+      ],
+      "to": [
+        55,
+        24,
+        36
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        36
+      ],
+      "to": [
+        55,
+        24,
+        36
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        37
+      ],
+      "to": [
+        54,
+        23,
+        37
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        25
+      ],
+      "to": [
+        50,
+        19,
+        26
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        13,
+        27
+      ],
+      "to": [
+        47,
+        13,
+        27
+      ],
+      "material": "black"
+    }
+  ]
+}

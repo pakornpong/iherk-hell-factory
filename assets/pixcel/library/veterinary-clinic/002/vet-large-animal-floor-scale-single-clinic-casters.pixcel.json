@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "id": "vet-large-animal-floor-scale-single-clinic-casters",
+  "category": "veterinary",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9fa9a9",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#5a6773",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#414a50",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#dad4c5",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#647e94",
+      "kind": "matte"
+    },
+    "tan": {
+      "color": "#ad9a83",
+      "kind": "matte"
+    },
+    "oak": {
+      "color": "#a88461",
+      "kind": "wood"
+    },
+    "glass": {
+      "color": "#8dabb7",
+      "kind": "glass"
+    },
+    "rust": {
+      "color": "#a96a58",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#ded4bf",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#bc9e67",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        0
+      ],
+      "to": [
+        28,
+        24,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        7,
+        7
+      ],
+      "to": [
+        29,
+        22,
+        10
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        28,
+        24,
+        12
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        12
+      ],
+      "to": [
+        27,
+        23,
+        13
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        13
+      ],
+      "to": [
+        26,
+        9,
+        13
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        13
+      ],
+      "to": [
+        26,
+        13,
+        13
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        17,
+        13
+      ],
+      "to": [
+        26,
+        17,
+        13
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        21,
+        13
+      ],
+      "to": [
+        26,
+        21,
+        13
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        10
+      ],
+      "zFrom": 13,
+      "zTo": 32,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        10,
+        31
+      ],
+      "to": [
+        26,
+        14,
+        35
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        14,
+        32
+      ],
+      "to": [
+        25,
+        14,
+        34
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        10,
+        14
+      ],
+      "to": [
+        26,
+        19,
+        12
+      ],
+      "material": "rubber"
+    }
+  ]
+}

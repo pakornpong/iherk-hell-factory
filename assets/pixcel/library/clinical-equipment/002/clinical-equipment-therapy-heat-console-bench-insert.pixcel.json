@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "id": "clinical-equipment-therapy-heat-console-bench-insert",
+  "category": "medical",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        1
+      ],
+      "to": [
+        25,
+        24,
+        2
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        3
+      ],
+      "to": [
+        24,
+        24,
+        14
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        14
+      ],
+      "to": [
+        22,
+        13,
+        25
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        13,
+        17
+      ],
+      "to": [
+        20,
+        13,
+        23
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        18
+      ],
+      "zFrom": 14,
+      "zTo": 17,
+      "radius": 2,
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        18
+      ],
+      "zFrom": 14,
+      "zTo": 16,
+      "radius": 1,
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        15,
+        11
+      ],
+      "to": [
+        27,
+        20,
+        20
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        19,
+        19
+      ],
+      "to": [
+        29,
+        24,
+        21
+      ],
+      "material": "ivory"
+    }
+  ]
+}

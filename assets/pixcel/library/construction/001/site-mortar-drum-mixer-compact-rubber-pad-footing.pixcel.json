@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "id": "site-mortar-drum-mixer-compact-rubber-pad-footing",
+  "category": "construction",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaab"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#56616b"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#3d444b"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c79e56"
+    },
+    "safety": {
+      "kind": "matte",
+      "color": "#ad6e4b"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#637787"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a16a59"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b8a385"
+    },
+    "timber": {
+      "kind": "wood",
+      "color": "#a4805e"
+    },
+    "concrete": {
+      "kind": "matte",
+      "color": "#a39f97"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d1be"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba9b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        9,
+        9,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        0
+      ],
+      "to": [
+        9,
+        25,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        23,
+        0
+      ],
+      "to": [
+        28,
+        25,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        3
+      ],
+      "to": [
+        24,
+        24,
+        7
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        7
+      ],
+      "to": [
+        10,
+        13,
+        19
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        11,
+        7
+      ],
+      "to": [
+        23,
+        13,
+        20
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        15
+      ],
+      "to": [
+        22,
+        22,
+        20
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        10,
+        20
+      ],
+      "to": [
+        20,
+        21,
+        26
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        26
+      ],
+      "to": [
+        19,
+        20,
+        28
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        22,
+        16
+      ],
+      "to": [
+        21,
+        25,
+        19
+      ],
+      "material": "safety"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        6,
+        15
+      ],
+      "zFrom": 13,
+      "zTo": 15,
+      "radius": 3,
+      "material": "steel"
+    }
+  ]
+}

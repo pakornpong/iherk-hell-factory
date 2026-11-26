@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "id": "kitchen-spiral-mixer-open-stand",
+  "category": "kitchen",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#adb1b1"
+    },
+    "brushed": {
+      "kind": "metal",
+      "color": "#7a8081"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#344252"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dfd8c1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#8d8d87"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b2604d"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#7daeba"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#cfac62"
+    },
+    "light": {
+      "kind": "emissive",
+      "color": "#e6c280",
+      "glowRadius": 1,
+      "glowIntensity": 0.2
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        9
+      ],
+      "to": [
+        27,
+        26,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        7,
+        8,
+        9
+      ],
+      "material": "brushed"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        9
+      ],
+      "material": "brushed"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        6,
+        0
+      ],
+      "to": [
+        26,
+        8,
+        9
+      ],
+      "material": "brushed"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        23,
+        0
+      ],
+      "to": [
+        26,
+        25,
+        9
+      ],
+      "material": "brushed"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        3
+      ],
+      "to": [
+        25,
+        23,
+        4
+      ],
+      "material": "brushed"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        11
+      ],
+      "to": [
+        26,
+        25,
+        15
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        5,
+        15
+      ],
+      "to": [
+        24,
+        10,
+        37
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        34
+      ],
+      "to": [
+        24,
+        20,
+        39
+      ],
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        16
+      ],
+      "zFrom": 16,
+      "zTo": 23,
+      "radius": 8,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        16
+      ],
+      "zFrom": 24,
+      "zTo": 25,
+      "radius": 8,
+      "material": "brushed"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        16
+      ],
+      "zFrom": 24,
+      "zTo": 25,
+      "radius": 6,
+      "material": null
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        16
+      ],
+      "zFrom": 25,
+      "zTo": 34,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        18
+      ],
+      "zFrom": 36,
+      "zTo": 39,
+      "radius": 2,
+      "material": "gold"
+    }
+  ]
+}

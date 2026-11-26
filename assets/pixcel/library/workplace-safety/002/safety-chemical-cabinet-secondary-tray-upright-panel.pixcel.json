@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "id": "safety-chemical-cabinet-secondary-tray-upright-panel",
+  "category": "workplace-safety",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#667783"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0a8a7"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd8c8"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#454b51"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#c3844e"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#c9ac61"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#aa5d4f"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5a778e"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#9a9891"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#94aeb6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        9,
+        37
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        5
+      ],
+      "to": [
+        27,
+        19,
+        9
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        36
+      ],
+      "to": [
+        27,
+        9,
+        38
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        10
+      ],
+      "to": [
+        26,
+        24,
+        37
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        13
+      ],
+      "to": [
+        15,
+        25,
+        34
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        24,
+        13
+      ],
+      "to": [
+        25,
+        25,
+        34
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        25,
+        21
+      ],
+      "to": [
+        15,
+        26,
+        26
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        25,
+        21
+      ],
+      "to": [
+        18,
+        26,
+        26
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        29
+      ],
+      "to": [
+        13,
+        25,
+        32
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        10
+      ],
+      "to": [
+        27,
+        25,
+        13
+      ],
+      "material": "frame"
+    }
+  ]
+}

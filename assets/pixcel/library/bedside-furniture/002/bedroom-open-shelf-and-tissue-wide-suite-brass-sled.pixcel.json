@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "id": "bedroom-open-shelf-and-tissue-wide-suite-brass-sled",
+  "category": "bedroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#ac825d",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#795b47",
+      "kind": "wood"
+    },
+    "linen": {
+      "color": "#b5a18d",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#e0d4bf",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d1c6b2",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#637b90",
+      "kind": "matte"
+    },
+    "iron": {
+      "color": "#535f67",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9da8a9",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda271",
+      "kind": "metal"
+    },
+    "glass": {
+      "color": "#91acb5",
+      "kind": "glass"
+    },
+    "brick": {
+      "color": "#aa695c",
+      "kind": "matte"
+    },
+    "marble": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        1
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        1
+      ],
+      "to": [
+        7,
+        8,
+        6
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        1
+      ],
+      "to": [
+        7,
+        24,
+        6
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        0
+      ],
+      "to": [
+        52,
+        24,
+        1
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        1
+      ],
+      "to": [
+        52,
+        8,
+        6
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        23,
+        1
+      ],
+      "to": [
+        52,
+        24,
+        6
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        7,
+        24,
+        29
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        7
+      ],
+      "to": [
+        54,
+        24,
+        29
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        8
+      ],
+      "to": [
+        53,
+        23,
+        9
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        17
+      ],
+      "to": [
+        53,
+        23,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        28
+      ],
+      "to": [
+        53,
+        23,
+        29
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        10
+      ],
+      "to": [
+        15,
+        20,
+        13
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        13
+      ],
+      "to": [
+        12,
+        14,
+        16
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        19
+      ],
+      "to": [
+        17,
+        19,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        9,
+        10
+      ],
+      "to": [
+        52,
+        21,
+        13
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        10,
+        14
+      ],
+      "to": [
+        51,
+        20,
+        15
+      ],
+      "material": "linen"
+    }
+  ]
+}

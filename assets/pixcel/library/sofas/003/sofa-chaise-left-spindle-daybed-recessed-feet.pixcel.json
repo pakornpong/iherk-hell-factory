@@ -1,0 +1,498 @@
+{
+  "schemaVersion": 1,
+  "id": "sofa-chaise-left-spindle-daybed-recessed-feet",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    2
+  ],
+  "palette": "office-night",
+  "materials": {
+    "timber": {
+      "kind": "wood",
+      "color": "#9d6a49"
+    },
+    "charcoal": {
+      "kind": "metal",
+      "color": "#434f58"
+    },
+    "jade": {
+      "kind": "matte",
+      "color": "#535f70"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#535f70"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#778699"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#cfa567"
+    },
+    "shade": {
+      "kind": "matte",
+      "color": "#384353"
+    },
+    "pink": {
+      "kind": "matte",
+      "color": "#b7a086"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        0
+      ],
+      "to": [
+        13,
+        13,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        24,
+        0
+      ],
+      "to": [
+        13,
+        27,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        10,
+        0
+      ],
+      "to": [
+        52,
+        13,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        24,
+        0
+      ],
+      "to": [
+        52,
+        27,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        6
+      ],
+      "to": [
+        58,
+        28,
+        11
+      ],
+      "material": "shade"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        27,
+        6
+      ],
+      "to": [
+        22,
+        48,
+        11
+      ],
+      "material": "shade"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        27,
+        12
+      ],
+      "to": [
+        21,
+        47,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        43,
+        0
+      ],
+      "to": [
+        9,
+        45,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        12
+      ],
+      "to": [
+        21,
+        26,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        29
+      ],
+      "to": [
+        21,
+        9,
+        31
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        13
+      ],
+      "to": [
+        8,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        7,
+        13
+      ],
+      "to": [
+        11,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        7,
+        13
+      ],
+      "to": [
+        14,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        7,
+        13
+      ],
+      "to": [
+        17,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        12
+      ],
+      "to": [
+        38,
+        26,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        6,
+        29
+      ],
+      "to": [
+        38,
+        9,
+        31
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        13
+      ],
+      "to": [
+        24,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        7,
+        13
+      ],
+      "to": [
+        27,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        7,
+        13
+      ],
+      "to": [
+        30,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        7,
+        13
+      ],
+      "to": [
+        33,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        7,
+        13
+      ],
+      "to": [
+        36,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        11,
+        12
+      ],
+      "to": [
+        55,
+        26,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        6,
+        29
+      ],
+      "to": [
+        55,
+        9,
+        31
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        7,
+        13
+      ],
+      "to": [
+        41,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        7,
+        13
+      ],
+      "to": [
+        44,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        7,
+        13
+      ],
+      "to": [
+        47,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        7,
+        13
+      ],
+      "to": [
+        50,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        13
+      ],
+      "to": [
+        53,
+        8,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        6,
+        27,
+        22
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        56,
+        6,
+        12
+      ],
+      "to": [
+        58,
+        27,
+        22
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        15
+      ],
+      "to": [
+        13,
+        16,
+        22
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        13,
+        15
+      ],
+      "to": [
+        54,
+        16,
+        22
+      ],
+      "material": "pink"
+    }
+  ]
+}

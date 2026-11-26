@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "id": "craft-bookbinding-screw-press-kneehole-desk-project-shelf",
+  "category": "craft-workshop",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ab8159"
+    },
+    "nut": {
+      "kind": "wood",
+      "color": "#745644"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9af"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596471"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#dbd2be"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a86550"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9d5553"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e798a"
+    },
+    "soot": {
+      "kind": "matte",
+      "color": "#3a4046"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#a89779"
+    },
+    "buff": {
+      "kind": "matte",
+      "color": "#c7a969"
+    },
+    "pane": {
+      "kind": "glass",
+      "color": "#87a6b0"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        14,
+        24,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        6,
+        0
+      ],
+      "to": [
+        44,
+        24,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        13
+      ],
+      "to": [
+        45,
+        26,
+        14
+      ],
+      "material": "nut"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        4
+      ],
+      "to": [
+        12,
+        25,
+        11
+      ],
+      "material": "nut"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        24,
+        4
+      ],
+      "to": [
+        42,
+        25,
+        11
+      ],
+      "material": "nut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        15
+      ],
+      "to": [
+        43,
+        25,
+        19
+      ],
+      "material": "nut"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        20
+      ],
+      "to": [
+        10,
+        24,
+        42
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        7,
+        20
+      ],
+      "to": [
+        41,
+        24,
+        42
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        40
+      ],
+      "to": [
+        41,
+        22,
+        43
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        15
+      ],
+      "zFrom": 34,
+      "zTo": 48,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        14,
+        47
+      ],
+      "to": [
+        31,
+        16,
+        48
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        9,
+        27
+      ],
+      "to": [
+        36,
+        23,
+        29
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        11,
+        20
+      ],
+      "to": [
+        33,
+        21,
+        25
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        11,
+        25
+      ],
+      "to": [
+        34,
+        22,
+        26
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        8,
+        0
+      ],
+      "to": [
+        60,
+        23,
+        2
+      ],
+      "material": "nut"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        9,
+        2
+      ],
+      "to": [
+        48,
+        22,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        58,
+        9,
+        2
+      ],
+      "to": [
+        60,
+        22,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        9,
+        18
+      ],
+      "to": [
+        59,
+        22,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        9,
+        30
+      ],
+      "to": [
+        59,
+        22,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        12,
+        20
+      ],
+      "to": [
+        55,
+        20,
+        23
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        10,
+        33
+      ],
+      "to": [
+        57,
+        20,
+        36
+      ],
+      "material": "chalk"
+    }
+  ]
+}

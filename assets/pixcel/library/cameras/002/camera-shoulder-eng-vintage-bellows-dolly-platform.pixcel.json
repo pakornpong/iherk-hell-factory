@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "id": "camera-shoulder-eng-vintage-bellows-dolly-platform",
+  "category": "media",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "black": {
+      "kind": "matte",
+      "color": "#293542"
+    },
+    "metal": {
+      "kind": "metal",
+      "color": "#768a96"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#4f626e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#bd5e49"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#b89b5e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#75b4c3"
+    },
+    "lcd": {
+      "kind": "emissive",
+      "color": "#90bebe",
+      "glowRadius": 1,
+      "glowIntensity": 0.15
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        7,
+        7,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        7,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        23,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        3
+      ],
+      "to": [
+        28,
+        27,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        14
+      ],
+      "zFrom": 6,
+      "zTo": 17,
+      "radius": 3,
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        16
+      ],
+      "to": [
+        22,
+        18,
+        17
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        7,
+        5
+      ],
+      "to": [
+        25,
+        2,
+        20
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        2,
+        20
+      ],
+      "to": [
+        28,
+        3,
+        21
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        3,
+        18
+      ],
+      "to": [
+        23,
+        16,
+        28
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        2,
+        17
+      ],
+      "to": [
+        22,
+        8,
+        19
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        3,
+        21
+      ],
+      "to": [
+        22,
+        6,
+        30
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        25
+      ],
+      "to": [
+        9,
+        13,
+        31
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        28
+      ],
+      "to": [
+        6,
+        12,
+        30
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        17,
+        20
+      ],
+      "to": [
+        21,
+        18,
+        27
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        19,
+        20
+      ],
+      "to": [
+        20,
+        20,
+        27
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        21,
+        20
+      ],
+      "to": [
+        21,
+        22,
+        27
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        23,
+        20
+      ],
+      "to": [
+        20,
+        24,
+        27
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        20
+      ],
+      "to": [
+        21,
+        26,
+        27
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        27,
+        21
+      ],
+      "to": [
+        20,
+        27,
+        26
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        27,
+        22
+      ],
+      "to": [
+        19,
+        27,
+        25
+      ],
+      "material": "glass"
+    }
+  ]
+}

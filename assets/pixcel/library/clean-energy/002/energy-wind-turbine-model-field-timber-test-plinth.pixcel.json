@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "id": "energy-wind-turbine-model-field-timber-test-plinth",
+  "category": "renewable-energy",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9ea8aa",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#566674",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#587287",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#424b51",
+      "kind": "matte"
+    },
+    "tan": {
+      "color": "#ac9679",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d9d3c7",
+      "kind": "matte"
+    },
+    "anodized": {
+      "color": "#8798a2",
+      "kind": "metal"
+    },
+    "amber": {
+      "color": "#b89b65",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8b755d",
+      "kind": "matte"
+    },
+    "oak": {
+      "color": "#9d7e60",
+      "kind": "wood"
+    },
+    "copper": {
+      "color": "#b37e61",
+      "kind": "metal"
+    },
+    "glass": {
+      "color": "#91aeb7",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        29,
+        9,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        3
+      ],
+      "to": [
+        29,
+        14,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        3
+      ],
+      "to": [
+        29,
+        19,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        3
+      ],
+      "to": [
+        29,
+        24,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        14
+      ],
+      "zFrom": 6,
+      "zTo": 8,
+      "radius": 6,
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        14
+      ],
+      "zFrom": 9,
+      "zTo": 45,
+      "radius": 2,
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        45
+      ],
+      "to": [
+        20,
+        19,
+        50
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        17
+      ],
+      "zFrom": 47,
+      "zTo": 48,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        18,
+        47
+      ],
+      "to": [
+        17,
+        18,
+        62
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        18,
+        47
+      ],
+      "to": [
+        7,
+        18,
+        38
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        18,
+        47
+      ],
+      "to": [
+        27,
+        18,
+        38
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        17,
+        55
+      ],
+      "to": [
+        18,
+        18,
+        63
+      ],
+      "material": "cream"
+    }
+  ]
+}

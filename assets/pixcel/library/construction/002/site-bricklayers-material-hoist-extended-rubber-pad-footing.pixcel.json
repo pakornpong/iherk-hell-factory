@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "id": "site-bricklayers-material-hoist-extended-rubber-pad-footing",
+  "category": "construction",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaab"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#56616b"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#3d444b"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c79e56"
+    },
+    "safety": {
+      "kind": "matte",
+      "color": "#ad6e4b"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#637787"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a16a59"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b8a385"
+    },
+    "timber": {
+      "kind": "wood",
+      "color": "#a4805e"
+    },
+    "concrete": {
+      "kind": "matte",
+      "color": "#a39f97"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d1be"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba9b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        9,
+        9,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        0
+      ],
+      "to": [
+        9,
+        25,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        23,
+        0
+      ],
+      "to": [
+        54,
+        25,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        3
+      ],
+      "to": [
+        23,
+        23,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        6
+      ],
+      "to": [
+        10,
+        12,
+        49
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        9,
+        6
+      ],
+      "to": [
+        22,
+        12,
+        49
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        48
+      ],
+      "to": [
+        22,
+        12,
+        49
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        10,
+        12
+      ],
+      "to": [
+        20,
+        10,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        10,
+        21
+      ],
+      "to": [
+        20,
+        10,
+        29
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        10,
+        30
+      ],
+      "to": [
+        20,
+        10,
+        38
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        10,
+        39
+      ],
+      "to": [
+        20,
+        10,
+        47
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        16
+      ],
+      "to": [
+        21,
+        23,
+        18
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        14,
+        19
+      ],
+      "to": [
+        19,
+        21,
+        23
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        7
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        9,
+        7
+      ],
+      "to": [
+        36,
+        14,
+        10
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        16,
+        7
+      ],
+      "to": [
+        36,
+        22,
+        10
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        9,
+        7
+      ],
+      "to": [
+        43,
+        14,
+        10
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        16,
+        7
+      ],
+      "to": [
+        43,
+        22,
+        10
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        9,
+        7
+      ],
+      "to": [
+        50,
+        14,
+        10
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        16,
+        7
+      ],
+      "to": [
+        50,
+        22,
+        10
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        8,
+        7
+      ],
+      "to": [
+        29,
+        23,
+        22
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        21,
+        21
+      ],
+      "to": [
+        52,
+        21,
+        21
+      ],
+      "material": "iron"
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "id": "dressing-cosmetic-vanity-and-light-strip-personal-brass-legs",
+  "category": "dressing-room",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745844"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#99a6a7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda174"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#56626c"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#ad9b87"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c92"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#465056"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a16357"
+    },
+    "mirror": {
+      "kind": "glass",
+      "color": "#9db1b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        9,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        22,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        7
+      ],
+      "to": [
+        27,
+        25,
+        7
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        10,
+        23,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        7,
+        8
+      ],
+      "to": [
+        26,
+        23,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        18
+      ],
+      "to": [
+        26,
+        24,
+        20
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        21
+      ],
+      "to": [
+        23,
+        10,
+        39
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        22
+      ],
+      "to": [
+        22,
+        10,
+        37
+      ],
+      "material": "mirror"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        23
+      ],
+      "to": [
+        9,
+        11,
+        23
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        10,
+        23
+      ],
+      "to": [
+        23,
+        11,
+        23
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        27
+      ],
+      "to": [
+        9,
+        11,
+        27
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        10,
+        27
+      ],
+      "to": [
+        23,
+        11,
+        27
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        31
+      ],
+      "to": [
+        9,
+        11,
+        31
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        10,
+        31
+      ],
+      "to": [
+        23,
+        11,
+        31
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        35
+      ],
+      "to": [
+        9,
+        11,
+        35
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        10,
+        35
+      ],
+      "to": [
+        23,
+        11,
+        35
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        17
+      ],
+      "zFrom": 21,
+      "zTo": 25,
+      "radius": 2,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        18
+      ],
+      "zFrom": 21,
+      "zTo": 24,
+      "radius": 2,
+      "material": "brass"
+    }
+  ]
+}

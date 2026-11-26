@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "id": "marina-wetsuit-drying-rail-yard-wide-stamped-service-tray",
+  "category": "maritime",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a4866b"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#698294"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9caaa9"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596672"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#40494e"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#ad6d56"
+    },
+    "ochre": {
+      "kind": "matte",
+      "color": "#c19e62"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b69c7e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba7b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        54,
+        24,
+        4
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        4
+      ],
+      "to": [
+        54,
+        25,
+        5
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        8
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        9
+      ],
+      "to": [
+        8,
+        11,
+        44
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        9,
+        9
+      ],
+      "to": [
+        53,
+        11,
+        44
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        43
+      ],
+      "to": [
+        53,
+        11,
+        45
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        10,
+        43
+      ],
+      "to": [
+        9,
+        14,
+        38
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        25
+      ],
+      "to": [
+        11,
+        17,
+        38
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        18
+      ],
+      "to": [
+        9,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        13,
+        18
+      ],
+      "to": [
+        11,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        10,
+        43
+      ],
+      "to": [
+        15,
+        14,
+        38
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        25
+      ],
+      "to": [
+        17,
+        17,
+        38
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        13,
+        18
+      ],
+      "to": [
+        15,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        13,
+        18
+      ],
+      "to": [
+        17,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        10,
+        43
+      ],
+      "to": [
+        21,
+        14,
+        38
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        12,
+        25
+      ],
+      "to": [
+        23,
+        17,
+        38
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        13,
+        18
+      ],
+      "to": [
+        21,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        13,
+        18
+      ],
+      "to": [
+        23,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        10,
+        43
+      ],
+      "to": [
+        27,
+        14,
+        38
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        12,
+        25
+      ],
+      "to": [
+        29,
+        17,
+        38
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        13,
+        18
+      ],
+      "to": [
+        27,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        13,
+        18
+      ],
+      "to": [
+        29,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        33,
+        10,
+        43
+      ],
+      "to": [
+        33,
+        14,
+        38
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        12,
+        25
+      ],
+      "to": [
+        35,
+        17,
+        38
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        13,
+        18
+      ],
+      "to": [
+        33,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        13,
+        18
+      ],
+      "to": [
+        35,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        39,
+        10,
+        43
+      ],
+      "to": [
+        39,
+        14,
+        38
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        12,
+        25
+      ],
+      "to": [
+        41,
+        17,
+        38
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        13,
+        18
+      ],
+      "to": [
+        39,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        13,
+        18
+      ],
+      "to": [
+        41,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        45,
+        10,
+        43
+      ],
+      "to": [
+        45,
+        14,
+        38
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        12,
+        25
+      ],
+      "to": [
+        47,
+        17,
+        38
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        13,
+        18
+      ],
+      "to": [
+        45,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        13,
+        18
+      ],
+      "to": [
+        47,
+        17,
+        26
+      ],
+      "material": "black"
+    }
+  ]
+}

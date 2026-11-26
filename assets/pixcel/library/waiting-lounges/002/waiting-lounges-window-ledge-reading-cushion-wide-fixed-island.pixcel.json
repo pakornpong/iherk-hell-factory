@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "id": "waiting-lounges-window-ledge-reading-cushion-wide-fixed-island",
+  "category": "lounge",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#a77c56",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#755644",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ba6aa",
+      "kind": "metal"
+    },
+    "charcoal": {
+      "color": "#49535c",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#ddd5c3",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#aa9a88",
+      "kind": "matte"
+    },
+    "graphite": {
+      "color": "#363e43",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#bda16c",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a65c50",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#6b8090",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#89a8b4",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#a8a09a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        53,
+        24,
+        2
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        53,
+        24,
+        12
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        5
+      ],
+      "to": [
+        51,
+        25,
+        11
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        8
+      ],
+      "to": [
+        47,
+        26,
+        9
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        12
+      ],
+      "to": [
+        54,
+        25,
+        13
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        14
+      ],
+      "to": [
+        54,
+        24,
+        20
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        20
+      ],
+      "to": [
+        53,
+        23,
+        25
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        25
+      ],
+      "to": [
+        13,
+        11,
+        31
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        8,
+        25
+      ],
+      "to": [
+        51,
+        12,
+        31
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        5,
+        14
+      ],
+      "to": [
+        52,
+        7,
+        44
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        30
+      ],
+      "to": [
+        51,
+        7,
+        42
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        7,
+        36
+      ],
+      "to": [
+        47,
+        8,
+        37
+      ],
+      "material": "cream"
+    }
+  ]
+}

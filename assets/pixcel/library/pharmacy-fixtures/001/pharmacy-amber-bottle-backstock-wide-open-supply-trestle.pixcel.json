@@ -1,0 +1,848 @@
+{
+  "schemaVersion": 1,
+  "id": "pharmacy-amber-bottle-backstock-wide-open-supply-trestle",
+  "category": "pharmacy",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a78363"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c8"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9aa4a7"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#5e6975"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#424952"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#677f94"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#bc9466"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a76757"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d9c9ac"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91adb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        5,
+        15,
+        13
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        5,
+        15,
+        13
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        52,
+        15,
+        13
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        23,
+        0
+      ],
+      "to": [
+        52,
+        15,
+        13
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        55,
+        25,
+        13
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        5
+      ],
+      "to": [
+        53,
+        24,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        7
+      ],
+      "to": [
+        17,
+        20,
+        9
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        14
+      ],
+      "to": [
+        54,
+        9,
+        45
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        14
+      ],
+      "to": [
+        7,
+        24,
+        45
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        9,
+        14
+      ],
+      "to": [
+        54,
+        24,
+        45
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        16
+      ],
+      "to": [
+        53,
+        24,
+        17
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        25
+      ],
+      "to": [
+        53,
+        24,
+        26
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        34
+      ],
+      "to": [
+        53,
+        24,
+        35
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        44
+      ],
+      "to": [
+        53,
+        24,
+        45
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 18,
+      "zTo": 22,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 18,
+      "zTo": 22,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 18,
+      "zTo": 22,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        16
+      ],
+      "zFrom": 18,
+      "zTo": 22,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        16
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        29,
+        16
+      ],
+      "zFrom": 18,
+      "zTo": 22,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        29,
+        16
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        16
+      ],
+      "zFrom": 18,
+      "zTo": 22,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        16
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        39,
+        16
+      ],
+      "zFrom": 18,
+      "zTo": 22,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        39,
+        16
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        16
+      ],
+      "zFrom": 18,
+      "zTo": 22,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        16
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        16
+      ],
+      "zFrom": 18,
+      "zTo": 22,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        16
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 27,
+      "zTo": 31,
+      "radius": 2,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 32,
+      "zTo": 33,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 27,
+      "zTo": 31,
+      "radius": 2,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 32,
+      "zTo": 33,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 27,
+      "zTo": 31,
+      "radius": 2,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 32,
+      "zTo": 33,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        16
+      ],
+      "zFrom": 27,
+      "zTo": 31,
+      "radius": 2,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        16
+      ],
+      "zFrom": 32,
+      "zTo": 33,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        29,
+        16
+      ],
+      "zFrom": 27,
+      "zTo": 31,
+      "radius": 2,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        29,
+        16
+      ],
+      "zFrom": 32,
+      "zTo": 33,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        16
+      ],
+      "zFrom": 27,
+      "zTo": 31,
+      "radius": 2,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        16
+      ],
+      "zFrom": 32,
+      "zTo": 33,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        39,
+        16
+      ],
+      "zFrom": 27,
+      "zTo": 31,
+      "radius": 2,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        39,
+        16
+      ],
+      "zFrom": 32,
+      "zTo": 33,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        16
+      ],
+      "zFrom": 27,
+      "zTo": 31,
+      "radius": 2,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        16
+      ],
+      "zFrom": 32,
+      "zTo": 33,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        16
+      ],
+      "zFrom": 27,
+      "zTo": 31,
+      "radius": 2,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        16
+      ],
+      "zFrom": 32,
+      "zTo": 33,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 40,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 41,
+      "zTo": 42,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 40,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 41,
+      "zTo": 42,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 40,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 41,
+      "zTo": 42,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 40,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        16
+      ],
+      "zFrom": 41,
+      "zTo": 42,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        29,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 40,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        29,
+        16
+      ],
+      "zFrom": 41,
+      "zTo": 42,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 40,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        16
+      ],
+      "zFrom": 41,
+      "zTo": 42,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        39,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 40,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        39,
+        16
+      ],
+      "zFrom": 41,
+      "zTo": 42,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 40,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        16
+      ],
+      "zFrom": 41,
+      "zTo": 42,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 40,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        16
+      ],
+      "zFrom": 41,
+      "zTo": 42,
+      "radius": 1,
+      "material": "gray"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "id": "outdoor-irrigation-hose-reel",
+  "category": "gardening",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "color": "#e5e3d6",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#a0b0bc",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#445361",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#272f3b",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#49798f",
+      "kind": "matte"
+    },
+    "aqua": {
+      "color": "#78c5c4",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#b85446",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#ac784e",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e0ad58",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#f2ecdc",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        0
+      ],
+      "to": [
+        24,
+        25,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        2
+      ],
+      "to": [
+        8,
+        17,
+        21
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        14,
+        2
+      ],
+      "to": [
+        24,
+        17,
+        21
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        8
+      ],
+      "to": [
+        23,
+        21,
+        20
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        11
+      ],
+      "to": [
+        22,
+        22,
+        17
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        9
+      ],
+      "to": [
+        9,
+        20,
+        19
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        11,
+        9
+      ],
+      "to": [
+        23,
+        20,
+        19
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        20,
+        12
+      ],
+      "to": [
+        25,
+        27,
+        2
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        26,
+        2
+      ],
+      "to": [
+        28,
+        28,
+        4
+      ],
+      "material": "yellow"
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "id": "chair-support-shell-slatted-spring-cantilever",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#ad784c"
+    },
+    "metal": {
+      "kind": "metal",
+      "color": "#657985"
+    },
+    "foot": {
+      "kind": "matte",
+      "color": "#293240"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#b09984"
+    },
+    "edge": {
+      "kind": "matte",
+      "color": "#c9b29b"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#d4a35d"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        0
+      ],
+      "to": [
+        25,
+        11,
+        1
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        0
+      ],
+      "to": [
+        7,
+        27,
+        1
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        26,
+        1
+      ],
+      "to": [
+        7,
+        27,
+        13
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        12
+      ],
+      "to": [
+        7,
+        26,
+        13
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        10,
+        0
+      ],
+      "to": [
+        25,
+        27,
+        1
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        26,
+        1
+      ],
+      "to": [
+        25,
+        27,
+        13
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        12
+      ],
+      "to": [
+        25,
+        26,
+        13
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        12
+      ],
+      "to": [
+        24,
+        9,
+        14
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        12
+      ],
+      "to": [
+        24,
+        24,
+        14
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        8,
+        12
+      ],
+      "to": [
+        18,
+        23,
+        14
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        13
+      ],
+      "to": [
+        8,
+        24,
+        16
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        13
+      ],
+      "to": [
+        25,
+        24,
+        16
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        16
+      ],
+      "to": [
+        24,
+        8,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        16
+      ],
+      "to": [
+        24,
+        12,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        15,
+        16
+      ],
+      "to": [
+        24,
+        16,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        19,
+        16
+      ],
+      "to": [
+        24,
+        20,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        23,
+        16
+      ],
+      "to": [
+        24,
+        24,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        18
+      ],
+      "to": [
+        25,
+        8,
+        30
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        5,
+        31
+      ],
+      "to": [
+        22,
+        8,
+        34
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        19
+      ],
+      "to": [
+        8,
+        13,
+        28
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        19
+      ],
+      "to": [
+        25,
+        13,
+        28
+      ],
+      "material": "cloth"
+    }
+  ]
+}

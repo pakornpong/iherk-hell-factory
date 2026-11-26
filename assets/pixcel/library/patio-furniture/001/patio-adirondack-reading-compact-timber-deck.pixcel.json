@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "id": "patio-adirondack-reading-compact-timber-deck",
+  "category": "patio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a87e58",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#745743",
+      "kind": "wood"
+    },
+    "stone": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d8ceba",
+      "kind": "matte"
+    },
+    "fabric": {
+      "color": "#aa9985",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca9ab",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#586671",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#637e94",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a46454",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a9765f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fadb8",
+      "kind": "glass"
+    },
+    "plant": {
+      "color": "#6d805f",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8a735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        29,
+        9,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        3
+      ],
+      "to": [
+        29,
+        14,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        3
+      ],
+      "to": [
+        29,
+        19,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        3
+      ],
+      "to": [
+        29,
+        24,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        7,
+        5
+      ],
+      "to": [
+        7,
+        13,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        23,
+        5
+      ],
+      "to": [
+        7,
+        18,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        7,
+        5
+      ],
+      "to": [
+        26,
+        13,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        23,
+        5
+      ],
+      "to": [
+        26,
+        18,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        14
+      ],
+      "to": [
+        27,
+        23,
+        17
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        13,
+        16
+      ],
+      "to": [
+        7,
+        7,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        13,
+        16
+      ],
+      "to": [
+        8,
+        7,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        13,
+        16
+      ],
+      "to": [
+        11,
+        7,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        13,
+        16
+      ],
+      "to": [
+        12,
+        7,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        13,
+        16
+      ],
+      "to": [
+        15,
+        7,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        13,
+        16
+      ],
+      "to": [
+        16,
+        7,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        19,
+        13,
+        16
+      ],
+      "to": [
+        19,
+        7,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        13,
+        16
+      ],
+      "to": [
+        20,
+        7,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        13,
+        16
+      ],
+      "to": [
+        23,
+        7,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        13,
+        16
+      ],
+      "to": [
+        24,
+        7,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        20
+      ],
+      "to": [
+        8,
+        22,
+        22
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        12,
+        20
+      ],
+      "to": [
+        27,
+        22,
+        22
+      ],
+      "material": "walnut"
+    }
+  ]
+}

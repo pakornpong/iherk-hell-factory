@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "id": "electronics-portable-digital-scale-compact-retail-cradle",
+  "category": "electronics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "charcoal": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#606e77"
+    },
+    "alloy": {
+      "kind": "metal",
+      "color": "#9facad"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd2bc"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627e94"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a46151"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#a59078"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a68058"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda16c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab7"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#a8c1cf",
+      "glowRadius": 1,
+      "glowIntensity": 0.09
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        26,
+        24,
+        6
+      ],
+      "material": "tan"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        3
+      ],
+      "to": [
+        13,
+        25,
+        4
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        6
+      ],
+      "to": [
+        26,
+        10,
+        13
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        7
+      ],
+      "to": [
+        26,
+        24,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        11
+      ],
+      "to": [
+        25,
+        19,
+        12
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        11
+      ],
+      "to": [
+        18,
+        23,
+        13
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        22,
+        13
+      ],
+      "to": [
+        17,
+        23,
+        13
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 13,
+      "radius": 1,
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        7
+      ],
+      "to": [
+        7,
+        9,
+        17
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        15
+      ],
+      "to": [
+        13,
+        9,
+        18
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        16
+      ],
+      "to": [
+        12,
+        9,
+        17
+      ],
+      "material": "blue"
+    }
+  ]
+}

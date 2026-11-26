@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "id": "facilities-expansion-tank-hydronic-paired-subfloor-frame",
+  "category": "building-services",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "galv": {
+      "color": "#a4a9a9",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#647080",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#41484e",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#cbc6b8",
+      "kind": "matte"
+    },
+    "white": {
+      "color": "#ded9cd",
+      "kind": "matte"
+    },
+    "ochre": {
+      "color": "#bd9b5b",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a35d50",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8aa7b3",
+      "kind": "glass"
+    },
+    "copper": {
+      "color": "#b58165",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#3b4145",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        11
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        11
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        9,
+        11
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        23,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        11
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        10
+      ],
+      "to": [
+        57,
+        26,
+        11
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        24,
+        1
+      ],
+      "to": [
+        54,
+        24,
+        10
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        4
+      ],
+      "to": [
+        51,
+        18,
+        6
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 12,
+      "zTo": 33,
+      "radius": 7,
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 33,
+      "zTo": 36,
+      "radius": 6,
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 37,
+      "zTo": 39,
+      "radius": 2,
+      "material": "galv"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        15
+      ],
+      "zFrom": 12,
+      "zTo": 38,
+      "radius": 7,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        15
+      ],
+      "zFrom": 39,
+      "zTo": 41,
+      "radius": 4,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        15
+      ],
+      "zFrom": 41,
+      "zTo": 44,
+      "radius": 2,
+      "material": "galv"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        15,
+        39
+      ],
+      "to": [
+        12,
+        9,
+        43
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        9,
+        43
+      ],
+      "to": [
+        49,
+        9,
+        43
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        9,
+        43
+      ],
+      "to": [
+        49,
+        15,
+        44
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        8
+      ],
+      "zFrom": 43,
+      "zTo": 46,
+      "radius": 1,
+      "material": "ochre"
+    }
+  ]
+}

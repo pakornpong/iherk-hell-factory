@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "retail-footwear-stepped-endcap-caster-rail",
+  "category": "retail",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9da5a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#535a60"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad825d"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89775"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#34383d"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#d9d3c4"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a55b50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a167"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#63798c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eacb6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        6,
+        0
+      ],
+      "to": [
+        25,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        22,
+        0
+      ],
+      "to": [
+        25,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        4
+      ],
+      "to": [
+        26,
+        26,
+        7
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        5,
+        8
+      ],
+      "to": [
+        25,
+        6,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        8
+      ],
+      "to": [
+        25,
+        25,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        14
+      ],
+      "to": [
+        25,
+        11,
+        23
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        17,
+        14
+      ],
+      "to": [
+        11,
+        24,
+        15
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        21,
+        16
+      ],
+      "to": [
+        11,
+        24,
+        18
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        24
+      ],
+      "to": [
+        11,
+        11,
+        27
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        17,
+        14
+      ],
+      "to": [
+        20,
+        24,
+        15
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        21,
+        16
+      ],
+      "to": [
+        20,
+        24,
+        18
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        7,
+        24
+      ],
+      "to": [
+        20,
+        11,
+        27
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        17,
+        14
+      ],
+      "to": [
+        22,
+        24,
+        15
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        21,
+        16
+      ],
+      "to": [
+        22,
+        24,
+        18
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        7,
+        24
+      ],
+      "to": [
+        22,
+        11,
+        27
+      ],
+      "material": "kraft"
+    }
+  ]
+}

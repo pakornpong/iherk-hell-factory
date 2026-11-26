@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "id": "music-fixture-compact-drum-kit-ensemble-studio-platform",
+  "category": "musical-instruments",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a8825e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785b47"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b424a"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#88949a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6adad"
+    },
+    "yellow": {
+      "kind": "metal",
+      "color": "#c1a164"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#a87b60"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd3be"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#8c6f5d"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a8e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a36153"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        56,
+        25,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        56,
+        9,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        3
+      ],
+      "to": [
+        56,
+        14,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        3
+      ],
+      "to": [
+        56,
+        19,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        3
+      ],
+      "to": [
+        56,
+        24,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 5,
+      "zTo": 18,
+      "radius": 8,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 18,
+      "zTo": 19,
+      "radius": 8,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        18
+      ],
+      "zFrom": 13,
+      "zTo": 22,
+      "radius": 5,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        18
+      ],
+      "zFrom": 22,
+      "zTo": 23,
+      "radius": 5,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        18
+      ],
+      "zFrom": 5,
+      "zTo": 13,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        9
+      ],
+      "zFrom": 5,
+      "zTo": 31,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        9
+      ],
+      "zFrom": 31,
+      "zTo": 32,
+      "radius": 5,
+      "material": "yellow"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        52,
+        9
+      ],
+      "zFrom": 5,
+      "zTo": 35,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        52,
+        9
+      ],
+      "zFrom": 35,
+      "zTo": 36,
+      "radius": 4,
+      "material": "yellow"
+    }
+  ]
+}

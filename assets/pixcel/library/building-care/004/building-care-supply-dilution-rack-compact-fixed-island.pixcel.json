@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "id": "building-care-supply-dilution-rack-compact-fixed-island",
+  "category": "cleaning",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#a77c56",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#755644",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ba6aa",
+      "kind": "metal"
+    },
+    "charcoal": {
+      "color": "#49535c",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#ddd5c3",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#aa9a88",
+      "kind": "matte"
+    },
+    "graphite": {
+      "color": "#363e43",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#bda16c",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a65c50",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#6b8090",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#89a8b4",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#a8a09a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        2
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        12
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        5
+      ],
+      "to": [
+        24,
+        25,
+        11
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        8
+      ],
+      "to": [
+        20,
+        26,
+        9
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        12
+      ],
+      "to": [
+        27,
+        25,
+        13
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        14
+      ],
+      "to": [
+        27,
+        10,
+        45
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        18
+      ],
+      "to": [
+        26,
+        24,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        16
+      ],
+      "zFrom": 20,
+      "zTo": 29,
+      "radius": 2,
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 20,
+      "zTo": 30,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        16
+      ],
+      "zFrom": 20,
+      "zTo": 29,
+      "radius": 2,
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        38
+      ],
+      "to": [
+        26,
+        16,
+        41
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        14,
+        36
+      ],
+      "to": [
+        10,
+        15,
+        30
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        14,
+        36
+      ],
+      "to": [
+        22,
+        15,
+        30
+      ],
+      "material": "charcoal"
+    }
+  ]
+}

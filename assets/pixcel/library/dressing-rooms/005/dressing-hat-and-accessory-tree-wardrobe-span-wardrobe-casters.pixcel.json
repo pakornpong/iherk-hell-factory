@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "id": "dressing-hat-and-accessory-tree-wardrobe-span-wardrobe-casters",
+  "category": "dressing-room",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745844"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#99a6a7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda174"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#56626c"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#ad9b87"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c92"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#465056"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a16357"
+    },
+    "mirror": {
+      "kind": "glass",
+      "color": "#9db1b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        8,
+        6
+      ],
+      "to": [
+        55,
+        22,
+        10
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 7,
+      "zTo": 10,
+      "radius": 7,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 11,
+      "zTo": 44,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        29
+      ],
+      "to": [
+        8,
+        11,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        11
+      ],
+      "zFrom": 32,
+      "zTo": 32,
+      "radius": 4,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        11
+      ],
+      "zFrom": 33,
+      "zTo": 35,
+      "radius": 3,
+      "material": "cloth"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        25
+      ],
+      "to": [
+        50,
+        14,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        14
+      ],
+      "zFrom": 28,
+      "zTo": 28,
+      "radius": 4,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        14
+      ],
+      "zFrom": 29,
+      "zTo": 31,
+      "radius": 3,
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        35
+      ],
+      "to": [
+        30,
+        21,
+        38
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        21
+      ],
+      "zFrom": 38,
+      "zTo": 38,
+      "radius": 4,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        21
+      ],
+      "zFrom": 39,
+      "zTo": 41,
+      "radius": 3,
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        9
+      ],
+      "to": [
+        15,
+        24,
+        14
+      ],
+      "material": "red"
+    }
+  ]
+}

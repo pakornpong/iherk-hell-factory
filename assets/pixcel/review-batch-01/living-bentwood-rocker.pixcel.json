@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "id": "living-bentwood-rocker",
+  "category": "living",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#b87942",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#795035",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e1ad52",
+      "kind": "matte"
+    },
+    "fabric": {
+      "color": "#49647e",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        1
+      ],
+      "to": [
+        8,
+        26,
+        2
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        4,
+        4
+      ],
+      "to": [
+        7,
+        7,
+        1
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        26,
+        1
+      ],
+      "to": [
+        7,
+        29,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        9,
+        2
+      ],
+      "to": [
+        7,
+        18,
+        13
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        23,
+        2
+      ],
+      "to": [
+        7,
+        18,
+        13
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        16,
+        13
+      ],
+      "to": [
+        7,
+        9,
+        32
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        18
+      ],
+      "to": [
+        8,
+        23,
+        19
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        6,
+        1
+      ],
+      "to": [
+        24,
+        26,
+        2
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        4,
+        4
+      ],
+      "to": [
+        23,
+        7,
+        1
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        26,
+        1
+      ],
+      "to": [
+        23,
+        29,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        9,
+        2
+      ],
+      "to": [
+        23,
+        18,
+        13
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        23,
+        2
+      ],
+      "to": [
+        23,
+        18,
+        13
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        16,
+        13
+      ],
+      "to": [
+        23,
+        9,
+        32
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        18
+      ],
+      "to": [
+        24,
+        23,
+        19
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        12
+      ],
+      "to": [
+        23,
+        22,
+        15
+      ],
+      "material": "fabric"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        25
+      ],
+      "to": [
+        23,
+        12,
+        32
+      ],
+      "material": "fabric"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        12,
+        24
+      ],
+      "to": [
+        23,
+        12,
+        24
+      ],
+      "material": "yellow"
+    }
+  ]
+}

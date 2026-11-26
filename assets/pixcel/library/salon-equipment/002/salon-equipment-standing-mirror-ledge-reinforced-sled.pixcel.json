@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "id": "salon-equipment-standing-mirror-ledge-reinforced-sled",
+  "category": "personal-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        9,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        2
+      ],
+      "to": [
+        25,
+        24,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        3
+      ],
+      "to": [
+        25,
+        24,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        6
+      ],
+      "to": [
+        9,
+        10,
+        40
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        8,
+        6
+      ],
+      "to": [
+        24,
+        10,
+        40
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        19
+      ],
+      "to": [
+        24,
+        11,
+        40
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        21
+      ],
+      "to": [
+        22,
+        11,
+        38
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        15
+      ],
+      "to": [
+        25,
+        19,
+        17
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        16,
+        17
+      ],
+      "to": [
+        19,
+        18,
+        22
+      ],
+      "material": "red"
+    }
+  ]
+}

@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-fog-collection-screen-station-wide-tripod-trailer",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        7
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        13,
+        3
+      ],
+      "to": [
+        59,
+        16,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        54,
+        24,
+        11
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        11
+      ],
+      "to": [
+        7,
+        10,
+        43
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        8,
+        11
+      ],
+      "to": [
+        53,
+        10,
+        43
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        41
+      ],
+      "to": [
+        53,
+        10,
+        43
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        22
+      ],
+      "to": [
+        52,
+        9,
+        22
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        26
+      ],
+      "to": [
+        52,
+        9,
+        26
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        30
+      ],
+      "to": [
+        52,
+        9,
+        30
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        34
+      ],
+      "to": [
+        52,
+        9,
+        34
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        38
+      ],
+      "to": [
+        52,
+        9,
+        38
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        20
+      ],
+      "to": [
+        9,
+        9,
+        41
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        9,
+        20
+      ],
+      "to": [
+        13,
+        9,
+        41
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        9,
+        20
+      ],
+      "to": [
+        17,
+        9,
+        41
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        9,
+        20
+      ],
+      "to": [
+        21,
+        9,
+        41
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        9,
+        20
+      ],
+      "to": [
+        25,
+        9,
+        41
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        9,
+        20
+      ],
+      "to": [
+        29,
+        9,
+        41
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        9,
+        20
+      ],
+      "to": [
+        33,
+        9,
+        41
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        9,
+        20
+      ],
+      "to": [
+        37,
+        9,
+        41
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        9,
+        20
+      ],
+      "to": [
+        41,
+        9,
+        41
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        9,
+        20
+      ],
+      "to": [
+        45,
+        9,
+        41
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        9,
+        20
+      ],
+      "to": [
+        49,
+        9,
+        41
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        16
+      ],
+      "to": [
+        52,
+        14,
+        18
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "line",
+      "from": [
+        51,
+        12,
+        18
+      ],
+      "to": [
+        50,
+        20,
+        11
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        12,
+        11
+      ],
+      "to": [
+        50,
+        21,
+        23
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        21,
+        17
+      ],
+      "to": [
+        49,
+        21,
+        20
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        14,
+        23
+      ],
+      "to": [
+        48,
+        14,
+        37
+      ],
+      "material": "silver"
+    }
+  ]
+}

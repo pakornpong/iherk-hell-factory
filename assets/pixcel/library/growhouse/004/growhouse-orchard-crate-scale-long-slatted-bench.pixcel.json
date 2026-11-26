@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "id": "growhouse-orchard-crate-scale-long-slatted-bench",
+  "category": "horticulture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a17f5c"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#606b73"
+    },
+    "soil": {
+      "kind": "matte",
+      "color": "#655142"
+    },
+    "fern": {
+      "kind": "matte",
+      "color": "#627c58"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#809664"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7388"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76b56"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a267"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8ccb6"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aeb9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#424a4e"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        56,
+        9,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        23,
+        0
+      ],
+      "to": [
+        56,
+        25,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        10
+      ],
+      "to": [
+        57,
+        9,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        10
+      ],
+      "to": [
+        57,
+        14,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        10
+      ],
+      "to": [
+        57,
+        19,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        10
+      ],
+      "to": [
+        57,
+        24,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        57,
+        25,
+        16
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        17
+      ],
+      "to": [
+        23,
+        23,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        20
+      ],
+      "to": [
+        21,
+        21,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 25,
+      "zTo": 27,
+      "radius": 2,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        15
+      ],
+      "zFrom": 25,
+      "zTo": 27,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        15
+      ],
+      "zFrom": 25,
+      "zTo": 27,
+      "radius": 2,
+      "material": "clay"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        16
+      ],
+      "to": [
+        53,
+        9,
+        32
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        7,
+        31
+      ],
+      "to": [
+        55,
+        12,
+        36
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        12,
+        32
+      ],
+      "to": [
+        54,
+        12,
+        35
+      ],
+      "material": "glass"
+    }
+  ]
+}

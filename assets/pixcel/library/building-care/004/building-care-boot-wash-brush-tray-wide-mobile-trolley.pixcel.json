@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "id": "building-care-boot-wash-brush-tray-wide-mobile-trolley",
+  "category": "cleaning",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#a77c56",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#755644",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ba6aa",
+      "kind": "metal"
+    },
+    "charcoal": {
+      "color": "#49535c",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#ddd5c3",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#aa9a88",
+      "kind": "matte"
+    },
+    "graphite": {
+      "color": "#363e43",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#bda16c",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a65c50",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#6b8090",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#89a8b4",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#a8a09a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        3
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        3
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        23,
+        0
+      ],
+      "to": [
+        54,
+        25,
+        3
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        7,
+        9,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        4
+      ],
+      "to": [
+        7,
+        25,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        4
+      ],
+      "to": [
+        53,
+        9,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        23,
+        4
+      ],
+      "to": [
+        53,
+        25,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        4
+      ],
+      "to": [
+        54,
+        26,
+        5
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        8
+      ],
+      "to": [
+        54,
+        26,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        6,
+        9
+      ],
+      "to": [
+        54,
+        23,
+        10
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        10
+      ],
+      "to": [
+        54,
+        26,
+        14
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        14
+      ],
+      "to": [
+        53,
+        25,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        15
+      ],
+      "to": [
+        51,
+        10,
+        17
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        14,
+        15
+      ],
+      "to": [
+        51,
+        15,
+        17
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        19,
+        15
+      ],
+      "to": [
+        51,
+        20,
+        17
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        15
+      ],
+      "to": [
+        51,
+        25,
+        17
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        7,
+        9,
+        36
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        35
+      ],
+      "to": [
+        15,
+        8,
+        35
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        8,
+        35
+      ],
+      "to": [
+        15,
+        14,
+        30
+      ],
+      "material": "steel"
+    }
+  ]
+}

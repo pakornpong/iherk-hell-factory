@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "id": "precision-watchmakers-magnifier-compact-drawer-bench",
+  "category": "precision-repair",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa815e",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#755847",
+      "kind": "wood"
+    },
+    "frame": {
+      "color": "#596673",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#a0a9aa",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#3d464b",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#dfd3ba",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#a6937d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fabb5",
+      "kind": "glass"
+    },
+    "blue": {
+      "color": "#627b91",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#b99b68",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a06254",
+      "kind": "matte"
+    },
+    "copper": {
+      "color": "#ab795d",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        24,
+        11
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        11
+      ],
+      "to": [
+        29,
+        25,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        4
+      ],
+      "to": [
+        27,
+        25,
+        9
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        7
+      ],
+      "to": [
+        24,
+        26,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        13
+      ],
+      "to": [
+        28,
+        24,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 17,
+      "zTo": 18,
+      "radius": 6,
+      "material": "cloth"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 18,
+      "zTo": 20,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 20,
+      "zTo": 20,
+      "radius": 3,
+      "material": "paper"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        16,
+        20
+      ],
+      "to": [
+        15,
+        15,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        17,
+        19
+      ],
+      "to": [
+        16,
+        20,
+        19
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        10
+      ],
+      "zFrom": 17,
+      "zTo": 19,
+      "radius": 3,
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        10,
+        19
+      ],
+      "to": [
+        24,
+        14,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        13,
+        35
+      ],
+      "to": [
+        26,
+        18,
+        37
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        14,
+        36
+      ],
+      "to": [
+        25,
+        17,
+        36
+      ],
+      "material": "glass"
+    }
+  ]
+}

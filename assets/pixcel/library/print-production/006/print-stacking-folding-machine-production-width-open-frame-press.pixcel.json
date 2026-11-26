@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "id": "print-stacking-folding-machine-production-width-open-frame-press",
+  "category": "printmaking",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "metal": {
+      "color": "#95a1a3",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#555f69",
+      "kind": "metal"
+    },
+    "paper": {
+      "color": "#dfd3bc",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#64798d",
+      "kind": "matte"
+    },
+    "oxide": {
+      "color": "#9d6054",
+      "kind": "matte"
+    },
+    "iron": {
+      "color": "#3f464c",
+      "kind": "matte"
+    },
+    "oak": {
+      "color": "#a58162",
+      "kind": "wood"
+    },
+    "linen": {
+      "color": "#b6a38c",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8babb6",
+      "kind": "glass"
+    },
+    "graphite": {
+      "color": "#676d70",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#c0a170",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        13
+      ],
+      "to": [
+        55,
+        25,
+        14
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        5
+      ],
+      "to": [
+        53,
+        23,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        7
+      ],
+      "to": [
+        17,
+        19,
+        9
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        15
+      ],
+      "to": [
+        55,
+        24,
+        19
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        20
+      ],
+      "to": [
+        53,
+        15,
+        32
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        15,
+        25
+      ],
+      "to": [
+        52,
+        20,
+        28
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        19,
+        20
+      ],
+      "to": [
+        52,
+        27,
+        21
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        22
+      ],
+      "to": [
+        51,
+        25,
+        23
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        8,
+        32
+      ],
+      "to": [
+        50,
+        12,
+        33
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        15,
+        30
+      ],
+      "to": [
+        51,
+        15,
+        31
+      ],
+      "material": "glass"
+    }
+  ]
+}

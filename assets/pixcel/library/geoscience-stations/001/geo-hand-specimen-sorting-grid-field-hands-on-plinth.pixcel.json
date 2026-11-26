@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "id": "geo-hand-specimen-sorting-grid-field-hands-on-plinth",
+  "category": "geoscience",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#566674"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9fa9aa"
+    },
+    "soil": {
+      "kind": "matte",
+      "color": "#8a6e58"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#a09a91"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a5815d"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ddd2bb"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a06b"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404a51"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#647f94"
+    },
+    "oxide": {
+      "kind": "matte",
+      "color": "#a66956"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8baab5"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        28,
+        24,
+        3
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        28,
+        24,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        8
+      ],
+      "to": [
+        27,
+        23,
+        9
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        10
+      ],
+      "to": [
+        26,
+        10,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        16,
+        10
+      ],
+      "to": [
+        26,
+        16,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        10
+      ],
+      "to": [
+        26,
+        22,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        10
+      ],
+      "to": [
+        7,
+        22,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        13
+      ],
+      "zFrom": 10,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        19
+      ],
+      "zFrom": 10,
+      "zTo": 12,
+      "radius": 1,
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        8,
+        10
+      ],
+      "to": [
+        12,
+        22,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        13
+      ],
+      "zFrom": 10,
+      "zTo": 13,
+      "radius": 1,
+      "material": "stone"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        19
+      ],
+      "zFrom": 10,
+      "zTo": 12,
+      "radius": 1,
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        8,
+        10
+      ],
+      "to": [
+        17,
+        22,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        13
+      ],
+      "zFrom": 10,
+      "zTo": 12,
+      "radius": 1,
+      "material": "oxide"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        19
+      ],
+      "zFrom": 10,
+      "zTo": 12,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        8,
+        10
+      ],
+      "to": [
+        22,
+        22,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        13
+      ],
+      "zFrom": 10,
+      "zTo": 13,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        19
+      ],
+      "zFrom": 10,
+      "zTo": 12,
+      "radius": 1,
+      "material": "stone"
+    }
+  ]
+}

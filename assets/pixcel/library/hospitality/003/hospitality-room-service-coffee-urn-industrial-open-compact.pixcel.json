@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "id": "hospitality-room-service-coffee-urn-industrial-open-compact",
+  "category": "hospitality",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a77854"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#715443"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3d454d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#929ca2"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#b4aaa0"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded5c4"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#a3a098"
+    },
+    "bronze": {
+      "kind": "metal",
+      "color": "#ba9a61"
+    },
+    "oxblood": {
+      "kind": "matte",
+      "color": "#9c6155"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#90adb8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        0
+      ],
+      "to": [
+        7,
+        10,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        0
+      ],
+      "to": [
+        25,
+        10,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        23,
+        0
+      ],
+      "to": [
+        25,
+        25,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        4
+      ],
+      "to": [
+        26,
+        25,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        14
+      ],
+      "to": [
+        26,
+        23,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        6,
+        20
+      ],
+      "to": [
+        27,
+        26,
+        22
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        14
+      ],
+      "zFrom": 23,
+      "zTo": 25,
+      "radius": 8,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        14
+      ],
+      "zFrom": 26,
+      "zTo": 39,
+      "radius": 6,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        14
+      ],
+      "zFrom": 40,
+      "zTo": 41,
+      "radius": 6,
+      "material": "bronze"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        14
+      ],
+      "zFrom": 42,
+      "zTo": 43,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        20,
+        29
+      ],
+      "to": [
+        15,
+        25,
+        30
+      ],
+      "material": "bronze"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        25,
+        28
+      ],
+      "to": [
+        15,
+        26,
+        29
+      ],
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        18
+      ],
+      "zFrom": 23,
+      "zTo": 26,
+      "radius": 3,
+      "material": "ivory"
+    }
+  ]
+}

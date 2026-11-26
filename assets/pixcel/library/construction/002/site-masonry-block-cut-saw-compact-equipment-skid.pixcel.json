@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "id": "site-masonry-block-cut-saw-compact-equipment-skid",
+  "category": "construction",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaab"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#56616b"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#3d444b"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c79e56"
+    },
+    "safety": {
+      "kind": "matte",
+      "color": "#ad6e4b"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#637787"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a16a59"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b8a385"
+    },
+    "timber": {
+      "kind": "wood",
+      "color": "#a4805e"
+    },
+    "concrete": {
+      "kind": "matte",
+      "color": "#a39f97"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d1be"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba9b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        0
+      ],
+      "to": [
+        29,
+        9,
+        2
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        0
+      ],
+      "to": [
+        29,
+        24,
+        2
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        3
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        4
+      ],
+      "to": [
+        28,
+        25,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        9
+      ],
+      "to": [
+        27,
+        23,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        11
+      ],
+      "to": [
+        20,
+        21,
+        14
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        9,
+        10
+      ],
+      "to": [
+        22,
+        13,
+        28
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        25
+      ],
+      "to": [
+        22,
+        14,
+        28
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        11,
+        17
+      ],
+      "to": [
+        17,
+        14,
+        26
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        10,
+        22
+      ],
+      "to": [
+        17,
+        15,
+        26
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "line",
+      "from": [
+        19,
+        20,
+        26
+      ],
+      "to": [
+        27,
+        23,
+        29
+      ],
+      "material": "rubber"
+    }
+  ]
+}

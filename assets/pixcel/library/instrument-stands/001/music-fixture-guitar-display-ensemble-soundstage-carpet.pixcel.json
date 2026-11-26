@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "id": "music-fixture-guitar-display-ensemble-soundstage-carpet",
+  "category": "musical-instruments",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a8825e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785b47"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b424a"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#88949a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6adad"
+    },
+    "yellow": {
+      "kind": "metal",
+      "color": "#c1a164"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#a87b60"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd3be"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#8c6f5d"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a8e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a36153"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        57,
+        26,
+        1
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        1
+      ],
+      "to": [
+        56,
+        25,
+        1
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        12,
+        3
+      ],
+      "to": [
+        13,
+        16,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        3
+      ],
+      "to": [
+        15,
+        16,
+        9
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        13
+      ],
+      "to": [
+        11,
+        15,
+        30
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        29
+      ],
+      "to": [
+        12,
+        15,
+        34
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        16,
+        8
+      ],
+      "to": [
+        10,
+        16,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        10,
+        2
+      ],
+      "to": [
+        4,
+        21,
+        9
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        10,
+        2
+      ],
+      "to": [
+        17,
+        21,
+        9
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        12,
+        3
+      ],
+      "to": [
+        53,
+        16,
+        15
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        12,
+        3
+      ],
+      "to": [
+        55,
+        16,
+        9
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        13,
+        13
+      ],
+      "to": [
+        51,
+        15,
+        30
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        13,
+        29
+      ],
+      "to": [
+        52,
+        15,
+        34
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        50,
+        16,
+        8
+      ],
+      "to": [
+        50,
+        16,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        10,
+        2
+      ],
+      "to": [
+        44,
+        21,
+        9
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        56,
+        10,
+        2
+      ],
+      "to": [
+        57,
+        21,
+        9
+      ],
+      "material": "black"
+    }
+  ]
+}

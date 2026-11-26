@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "id": "dressing-full-length-swivel-mirror-wardrobe-span-wardrobe-casters",
+  "category": "dressing-room",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745844"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#99a6a7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda174"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#56626c"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#ad9b87"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c92"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#465056"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a16357"
+    },
+    "mirror": {
+      "kind": "glass",
+      "color": "#9db1b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        8,
+        6
+      ],
+      "to": [
+        55,
+        22,
+        10
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        54,
+        24,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        11
+      ],
+      "to": [
+        8,
+        12,
+        50
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        8,
+        11
+      ],
+      "to": [
+        54,
+        12,
+        50
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        12
+      ],
+      "to": [
+        52,
+        13,
+        49
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        14
+      ],
+      "to": [
+        51,
+        13,
+        47
+      ],
+      "material": "mirror"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        13,
+        30
+      ],
+      "to": [
+        49,
+        13,
+        45
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        12,
+        29
+      ],
+      "to": [
+        9,
+        14,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        12,
+        29
+      ],
+      "to": [
+        53,
+        14,
+        31
+      ],
+      "material": "steel"
+    }
+  ]
+}

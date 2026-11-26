@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "id": "studio-motion-control-slider-suite-width-steel-studio-trestle",
+  "category": "studio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a8805d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785b48"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404951"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#737e87"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a3a9aa"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8d0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#a18e7e"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a86959"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#658099"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99d70"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#88a6b3"
+    },
+    "display": {
+      "kind": "emissive",
+      "color": "#a1bccb",
+      "glowRadius": 1,
+      "glowIntensity": 0.09
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        23,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        51,
+        7,
+        0
+      ],
+      "to": [
+        51,
+        15,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        51,
+        23,
+        0
+      ],
+      "to": [
+        51,
+        15,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        55,
+        25,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        4
+      ],
+      "to": [
+        53,
+        22,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        54,
+        24,
+        17
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        18
+      ],
+      "to": [
+        53,
+        12,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        19,
+        18
+      ],
+      "to": [
+        53,
+        21,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        10,
+        21
+      ],
+      "to": [
+        20,
+        21,
+        23
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        13,
+        23
+      ],
+      "to": [
+        19,
+        19,
+        31
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        18,
+        26
+      ],
+      "to": [
+        18,
+        22,
+        30
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        22,
+        27
+      ],
+      "to": [
+        17,
+        22,
+        29
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        9,
+        21
+      ],
+      "to": [
+        53,
+        9,
+        21
+      ],
+      "material": "brass"
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-snow-depth-marker-station-wide-roof-service-deck",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        4
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        4
+      ],
+      "to": [
+        54,
+        8,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        4
+      ],
+      "to": [
+        54,
+        25,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        8
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        9
+      ],
+      "to": [
+        53,
+        23,
+        9
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        9
+      ],
+      "to": [
+        10,
+        12,
+        42
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        13
+      ],
+      "to": [
+        11,
+        12,
+        13
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        19
+      ],
+      "to": [
+        11,
+        12,
+        19
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        25
+      ],
+      "to": [
+        11,
+        12,
+        25
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        31
+      ],
+      "to": [
+        11,
+        12,
+        31
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        37
+      ],
+      "to": [
+        11,
+        12,
+        37
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        14
+      ],
+      "zFrom": 9,
+      "zTo": 17,
+      "radius": 4,
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        14,
+        17
+      ],
+      "to": [
+        49,
+        15,
+        27
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        15,
+        27
+      ],
+      "to": [
+        48,
+        21,
+        27
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        14
+      ],
+      "zFrom": 8,
+      "zTo": 29,
+      "radius": 1,
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        13,
+        25
+      ],
+      "to": [
+        47,
+        15,
+        27
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        13,
+        28
+      ],
+      "to": [
+        46,
+        15,
+        30
+      ],
+      "material": "pale"
+    }
+  ]
+}

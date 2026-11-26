@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "id": "garage-hydraulic-floor-jack",
+  "category": "garage",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "color": "#2d3443",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#879aaa",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#be5543",
+      "kind": "matte"
+    },
+    "yellow": {
+      "color": "#e1ad52",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#202530",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        3
+      ],
+      "to": [
+        27,
+        23,
+        5
+      ],
+      "material": "red"
+    },
+    {
+      "op": "slope",
+      "from": [
+        7,
+        10,
+        6
+      ],
+      "to": [
+        24,
+        21,
+        13
+      ],
+      "axis": "-X",
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        0
+      ],
+      "to": [
+        8,
+        10,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        0
+      ],
+      "to": [
+        26,
+        10,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        21,
+        0
+      ],
+      "to": [
+        8,
+        23,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        21,
+        0
+      ],
+      "to": [
+        26,
+        23,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        15
+      ],
+      "zFrom": 12,
+      "zTo": 14,
+      "radius": 4,
+      "material": "ink"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        15
+      ],
+      "zFrom": 15,
+      "zTo": 16,
+      "radius": 3,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        15,
+        7
+      ],
+      "to": [
+        29,
+        15,
+        27
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        15,
+        7
+      ],
+      "to": [
+        28,
+        15,
+        27
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        12,
+        27
+      ],
+      "to": [
+        30,
+        18,
+        28
+      ],
+      "material": "yellow"
+    }
+  ]
+}

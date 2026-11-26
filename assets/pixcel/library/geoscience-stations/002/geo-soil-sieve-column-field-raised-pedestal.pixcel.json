@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "id": "geo-soil-sieve-column-field-raised-pedestal",
+  "category": "geoscience",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#566674"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9fa9aa"
+    },
+    "soil": {
+      "kind": "matte",
+      "color": "#8a6e58"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#a09a91"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a5815d"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ddd2bb"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a06b"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404a51"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#647f94"
+    },
+    "oxide": {
+      "kind": "matte",
+      "color": "#a66956"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8baab5"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        3
+      ],
+      "to": [
+        26,
+        23,
+        8
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        28,
+        24,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        10
+      ],
+      "to": [
+        28,
+        24,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 25,
+      "radius": 7,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 15,
+      "zTo": 15,
+      "radius": 8,
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 19,
+      "zTo": 19,
+      "radius": 8,
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 23,
+      "zTo": 23,
+      "radius": 8,
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 26,
+      "zTo": 26,
+      "radius": 8,
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 27,
+      "zTo": 28,
+      "radius": 6,
+      "material": "soil"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        8,
+        14
+      ],
+      "to": [
+        22,
+        12,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        10,
+        34
+      ],
+      "to": [
+        15,
+        13,
+        33
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        13
+      ],
+      "zFrom": 29,
+      "zTo": 32,
+      "radius": 1,
+      "material": "steel"
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "facilities-wall-air-curtain-single-concrete-curb",
+  "category": "building-services",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "galv": {
+      "color": "#a4a9a9",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#647080",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#41484e",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#cbc6b8",
+      "kind": "matte"
+    },
+    "white": {
+      "color": "#ded9cd",
+      "kind": "matte"
+    },
+    "ochre": {
+      "color": "#bd9b5b",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a35d50",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8aa7b3",
+      "kind": "glass"
+    },
+    "copper": {
+      "color": "#b58165",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#3b4145",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        35,
+        26,
+        1
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        34,
+        25,
+        5
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        25,
+        2
+      ],
+      "to": [
+        33,
+        26,
+        2
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        6
+      ],
+      "to": [
+        34,
+        8,
+        43
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        35
+      ],
+      "to": [
+        34,
+        18,
+        43
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        18,
+        36
+      ],
+      "to": [
+        32,
+        19,
+        41
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        19,
+        36
+      ],
+      "to": [
+        7,
+        19,
+        41
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        19,
+        36
+      ],
+      "to": [
+        11,
+        19,
+        41
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        19,
+        36
+      ],
+      "to": [
+        15,
+        19,
+        41
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        19,
+        36
+      ],
+      "to": [
+        19,
+        19,
+        41
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        19,
+        36
+      ],
+      "to": [
+        23,
+        19,
+        41
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        19,
+        36
+      ],
+      "to": [
+        27,
+        19,
+        41
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        15,
+        13
+      ],
+      "to": [
+        31,
+        18,
+        21
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        12,
+        21
+      ],
+      "to": [
+        28,
+        10,
+        35
+      ],
+      "material": "galv"
+    }
+  ]
+}

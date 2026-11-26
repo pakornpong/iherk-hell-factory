@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "id": "dentist-stool-tool-tray",
+  "category": "medical",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "color": "#e5e3d6",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#a0b0bc",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#445361",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#272f3b",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#49798f",
+      "kind": "matte"
+    },
+    "aqua": {
+      "color": "#78c5c4",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#b85446",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#ac784e",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e0ad58",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#f2ecdc",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        0
+      ],
+      "to": [
+        9,
+        11,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        0
+      ],
+      "to": [
+        9,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        8,
+        0
+      ],
+      "to": [
+        23,
+        11,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        22,
+        0
+      ],
+      "to": [
+        23,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        3
+      ],
+      "to": [
+        24,
+        24,
+        4
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        16
+      ],
+      "zFrom": 5,
+      "zTo": 28,
+      "radius": 2,
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        28
+      ],
+      "to": [
+        26,
+        24,
+        31
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        31
+      ],
+      "to": [
+        24,
+        22,
+        31
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        32
+      ],
+      "to": [
+        11,
+        19,
+        32
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        10,
+        32
+      ],
+      "to": [
+        15,
+        20,
+        32
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        10,
+        32
+      ],
+      "to": [
+        20,
+        19,
+        32
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        10,
+        32
+      ],
+      "to": [
+        23,
+        19,
+        32
+      ],
+      "material": "cream"
+    }
+  ]
+}

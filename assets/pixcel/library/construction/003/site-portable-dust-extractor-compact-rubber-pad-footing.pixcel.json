@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "id": "site-portable-dust-extractor-compact-rubber-pad-footing",
+  "category": "construction",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaab"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#56616b"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#3d444b"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c79e56"
+    },
+    "safety": {
+      "kind": "matte",
+      "color": "#ad6e4b"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#637787"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a16a59"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b8a385"
+    },
+    "timber": {
+      "kind": "wood",
+      "color": "#a4805e"
+    },
+    "concrete": {
+      "kind": "matte",
+      "color": "#a39f97"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d1be"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba9b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        9,
+        9,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        0
+      ],
+      "to": [
+        9,
+        25,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        23,
+        0
+      ],
+      "to": [
+        28,
+        25,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 9,
+      "material": "rubber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 7,
+      "zTo": 23,
+      "radius": 8,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 24,
+      "zTo": 28,
+      "radius": 7,
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        15,
+        15
+      ],
+      "to": [
+        24,
+        17,
+        19
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        16,
+        18
+      ],
+      "to": [
+        26,
+        22,
+        14
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        22,
+        14
+      ],
+      "to": [
+        27,
+        26,
+        7
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        25,
+        6
+      ],
+      "to": [
+        28,
+        27,
+        7
+      ],
+      "material": "iron"
+    }
+  ]
+}

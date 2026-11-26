@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "id": "textile-quilt-press-frame-atelier-oak-cutting-table",
+  "category": "textile",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#745741"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaaa"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#53606b"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d8d0bd"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#aa9a86"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#687e91"
+    },
+    "terracotta": {
+      "kind": "matte",
+      "color": "#a96557"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404850"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bc9d65"
+    },
+    "pale": {
+      "kind": "glass",
+      "color": "#9ab1b8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        13
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        13
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        9,
+        13
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        22,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        13
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        27,
+        25,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        5
+      ],
+      "to": [
+        26,
+        23,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        26,
+        24,
+        17
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        18
+      ],
+      "to": [
+        8,
+        23,
+        36
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        18
+      ],
+      "to": [
+        25,
+        23,
+        36
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        34
+      ],
+      "to": [
+        24,
+        23,
+        36
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        27
+      ],
+      "to": [
+        22,
+        21,
+        30
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        14
+      ],
+      "zFrom": 30,
+      "zTo": 39,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        18
+      ],
+      "to": [
+        11,
+        19,
+        19
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        18
+      ],
+      "to": [
+        15,
+        19,
+        19
+      ],
+      "material": "terracotta"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        10,
+        18
+      ],
+      "to": [
+        19,
+        19,
+        19
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        18
+      ],
+      "to": [
+        23,
+        19,
+        19
+      ],
+      "material": "terracotta"
+    }
+  ]
+}

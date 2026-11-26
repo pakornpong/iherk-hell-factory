@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 1,
+  "id": "it-maintenance-diagnostic-rack-wide-enclosure-raised-fan-plenum-equipment-feet",
+  "category": "it-infrastructure",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#929fa7"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#58616c"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#333c46"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#767e83"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#d2ccbc"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a37a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627791"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ab6658"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#88adb7"
+    },
+    "led": {
+      "kind": "emissive",
+      "color": "#a4c6d6",
+      "glowRadius": 1,
+      "glowIntensity": 0.1
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        1
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        1
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        0
+      ],
+      "to": [
+        53,
+        9,
+        1
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        22,
+        0
+      ],
+      "to": [
+        53,
+        24,
+        1
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        2
+      ],
+      "to": [
+        53,
+        9,
+        30
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        2
+      ],
+      "to": [
+        7,
+        24,
+        30
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        9,
+        2
+      ],
+      "to": [
+        53,
+        24,
+        30
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        2
+      ],
+      "to": [
+        53,
+        24,
+        4
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        30
+      ],
+      "to": [
+        53,
+        24,
+        36
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 36,
+      "radius": 4,
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 36,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 36,
+      "radius": 4,
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        16
+      ],
+      "zFrom": 36,
+      "zTo": 36,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        4
+      ],
+      "to": [
+        50,
+        23,
+        7
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        8
+      ],
+      "to": [
+        49,
+        15,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        10
+      ],
+      "to": [
+        48,
+        15,
+        27
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        16,
+        10
+      ],
+      "to": [
+        48,
+        20,
+        11
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        17,
+        12
+      ],
+      "to": [
+        47,
+        19,
+        12
+      ],
+      "material": "offwhite"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        21,
+        8
+      ],
+      "to": [
+        17,
+        24,
+        9
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        31
+      ],
+      "to": [
+        17,
+        16,
+        36
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        16,
+        32
+      ],
+      "to": [
+        16,
+        16,
+        35
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        17,
+        31
+      ],
+      "to": [
+        17,
+        21,
+        32
+      ],
+      "material": "gray"
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "id": "ice-cream-push-cart-canopy",
+  "category": "food-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "color": "#e5e3d6",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#a0b0bc",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#445361",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#272f3b",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#49798f",
+      "kind": "matte"
+    },
+    "aqua": {
+      "color": "#78c5c4",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#b85446",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#ac784e",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e0ad58",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#f2ecdc",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        6,
+        8,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        0
+      ],
+      "to": [
+        6,
+        26,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        8,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        23,
+        0
+      ],
+      "to": [
+        26,
+        26,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        4
+      ],
+      "to": [
+        28,
+        27,
+        17
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        18
+      ],
+      "to": [
+        28,
+        27,
+        20
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        21
+      ],
+      "to": [
+        4,
+        5,
+        39
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        25,
+        21
+      ],
+      "to": [
+        4,
+        25,
+        39
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        5,
+        21
+      ],
+      "to": [
+        27,
+        5,
+        39
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        25,
+        21
+      ],
+      "to": [
+        27,
+        25,
+        39
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        3,
+        39
+      ],
+      "to": [
+        5,
+        28,
+        41
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        3,
+        39
+      ],
+      "to": [
+        9,
+        28,
+        41
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        3,
+        39
+      ],
+      "to": [
+        13,
+        28,
+        41
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        3,
+        39
+      ],
+      "to": [
+        17,
+        28,
+        41
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        3,
+        39
+      ],
+      "to": [
+        21,
+        28,
+        41
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        3,
+        39
+      ],
+      "to": [
+        25,
+        28,
+        41
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        3,
+        39
+      ],
+      "to": [
+        29,
+        28,
+        41
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        21
+      ],
+      "to": [
+        23,
+        19,
+        21
+      ],
+      "material": "aqua"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        26,
+        9
+      ],
+      "to": [
+        23,
+        27,
+        13
+      ],
+      "material": "paper"
+    }
+  ]
+}

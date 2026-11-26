@@ -1,0 +1,807 @@
+[
+  {
+    "id": "lounge-seat-reading-wingback-accent-turned-walnut",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-accent-turned-walnut.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "lounge-seat-reading-wingback-accent-metal-sled",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-accent-metal-sled.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "lounge-seat-reading-wingback-accent-platform-plinth",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-accent-platform-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "lounge-seat-reading-wingback-accent-angled-timber",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-accent-angled-timber.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "lounge-seat-reading-wingback-accent-recessed-blocks",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-accent-recessed-blocks.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "lounge-seat-reading-wingback-snug-turned-walnut",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-snug-turned-walnut.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "lounge-seat-reading-wingback-snug-metal-sled",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-snug-metal-sled.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "lounge-seat-reading-wingback-snug-platform-plinth",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-snug-platform-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "lounge-seat-reading-wingback-snug-angled-timber",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-snug-angled-timber.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "lounge-seat-reading-wingback-snug-recessed-blocks",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-snug-recessed-blocks.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "lounge-seat-reading-wingback-wide-turned-walnut",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-wide-turned-walnut.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "lounge-seat-reading-wingback-wide-metal-sled",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-wide-metal-sled.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "lounge-seat-reading-wingback-wide-platform-plinth",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-wide-platform-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "lounge-seat-reading-wingback-wide-angled-timber",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-wide-angled-timber.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "lounge-seat-reading-wingback-wide-recessed-blocks",
+    "category": "furniture",
+    "file": "001/lounge-seat-reading-wingback-wide-recessed-blocks.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-accent-turned-walnut",
+    "category": "furniture",
+    "file": "001/lounge-seat-deep-tub-chair-accent-turned-walnut.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-accent-metal-sled",
+    "category": "furniture",
+    "file": "001/lounge-seat-deep-tub-chair-accent-metal-sled.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-accent-platform-plinth",
+    "category": "furniture",
+    "file": "001/lounge-seat-deep-tub-chair-accent-platform-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-accent-angled-timber",
+    "category": "furniture",
+    "file": "001/lounge-seat-deep-tub-chair-accent-angled-timber.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-accent-recessed-blocks",
+    "category": "furniture",
+    "file": "001/lounge-seat-deep-tub-chair-accent-recessed-blocks.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-snug-turned-walnut",
+    "category": "furniture",
+    "file": "002/lounge-seat-deep-tub-chair-snug-turned-walnut.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-snug-metal-sled",
+    "category": "furniture",
+    "file": "002/lounge-seat-deep-tub-chair-snug-metal-sled.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-snug-platform-plinth",
+    "category": "furniture",
+    "file": "002/lounge-seat-deep-tub-chair-snug-platform-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-snug-angled-timber",
+    "category": "furniture",
+    "file": "002/lounge-seat-deep-tub-chair-snug-angled-timber.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-snug-recessed-blocks",
+    "category": "furniture",
+    "file": "002/lounge-seat-deep-tub-chair-snug-recessed-blocks.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-wide-turned-walnut",
+    "category": "furniture",
+    "file": "002/lounge-seat-deep-tub-chair-wide-turned-walnut.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-wide-metal-sled",
+    "category": "furniture",
+    "file": "002/lounge-seat-deep-tub-chair-wide-metal-sled.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-wide-platform-plinth",
+    "category": "furniture",
+    "file": "002/lounge-seat-deep-tub-chair-wide-platform-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-wide-angled-timber",
+    "category": "furniture",
+    "file": "002/lounge-seat-deep-tub-chair-wide-angled-timber.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "lounge-seat-deep-tub-chair-wide-recessed-blocks",
+    "category": "furniture",
+    "file": "002/lounge-seat-deep-tub-chair-wide-recessed-blocks.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-accent-turned-walnut",
+    "category": "furniture",
+    "file": "002/lounge-seat-open-cane-settee-accent-turned-walnut.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-accent-metal-sled",
+    "category": "furniture",
+    "file": "002/lounge-seat-open-cane-settee-accent-metal-sled.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-accent-platform-plinth",
+    "category": "furniture",
+    "file": "002/lounge-seat-open-cane-settee-accent-platform-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-accent-angled-timber",
+    "category": "furniture",
+    "file": "002/lounge-seat-open-cane-settee-accent-angled-timber.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-accent-recessed-blocks",
+    "category": "furniture",
+    "file": "002/lounge-seat-open-cane-settee-accent-recessed-blocks.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-snug-turned-walnut",
+    "category": "furniture",
+    "file": "002/lounge-seat-open-cane-settee-snug-turned-walnut.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-snug-metal-sled",
+    "category": "furniture",
+    "file": "002/lounge-seat-open-cane-settee-snug-metal-sled.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-snug-platform-plinth",
+    "category": "furniture",
+    "file": "002/lounge-seat-open-cane-settee-snug-platform-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-snug-angled-timber",
+    "category": "furniture",
+    "file": "002/lounge-seat-open-cane-settee-snug-angled-timber.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-snug-recessed-blocks",
+    "category": "furniture",
+    "file": "002/lounge-seat-open-cane-settee-snug-recessed-blocks.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-wide-turned-walnut",
+    "category": "furniture",
+    "file": "003/lounge-seat-open-cane-settee-wide-turned-walnut.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-wide-metal-sled",
+    "category": "furniture",
+    "file": "003/lounge-seat-open-cane-settee-wide-metal-sled.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-wide-platform-plinth",
+    "category": "furniture",
+    "file": "003/lounge-seat-open-cane-settee-wide-platform-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-wide-angled-timber",
+    "category": "furniture",
+    "file": "003/lounge-seat-open-cane-settee-wide-angled-timber.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "lounge-seat-open-cane-settee-wide-recessed-blocks",
+    "category": "furniture",
+    "file": "003/lounge-seat-open-cane-settee-wide-recessed-blocks.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-accent-turned-walnut",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-accent-turned-walnut.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-accent-metal-sled",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-accent-metal-sled.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-accent-platform-plinth",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-accent-platform-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-accent-angled-timber",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-accent-angled-timber.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-accent-recessed-blocks",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-accent-recessed-blocks.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-snug-turned-walnut",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-snug-turned-walnut.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-snug-metal-sled",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-snug-metal-sled.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-snug-platform-plinth",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-snug-platform-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-snug-angled-timber",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-snug-angled-timber.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-snug-recessed-blocks",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-snug-recessed-blocks.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-wide-turned-walnut",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-wide-turned-walnut.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-wide-metal-sled",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-wide-metal-sled.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-wide-platform-plinth",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-wide-platform-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-wide-angled-timber",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-wide-angled-timber.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "lounge-seat-daybed-bolster-wide-recessed-blocks",
+    "category": "furniture",
+    "file": "003/lounge-seat-daybed-bolster-wide-recessed-blocks.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-accent-turned-walnut",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-accent-turned-walnut.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-accent-metal-sled",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-accent-metal-sled.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-accent-platform-plinth",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-accent-platform-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-accent-angled-timber",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-accent-angled-timber.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-accent-recessed-blocks",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-accent-recessed-blocks.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-snug-turned-walnut",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-snug-turned-walnut.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-snug-metal-sled",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-snug-metal-sled.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-snug-platform-plinth",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-snug-platform-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-snug-angled-timber",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-snug-angled-timber.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-snug-recessed-blocks",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-snug-recessed-blocks.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-wide-turned-walnut",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-wide-turned-walnut.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-wide-metal-sled",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-wide-metal-sled.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-wide-platform-plinth",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-wide-platform-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-wide-angled-timber",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-wide-angled-timber.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "lounge-seat-low-armless-modular-wide-recessed-blocks",
+    "category": "furniture",
+    "file": "004/lounge-seat-low-armless-modular-wide-recessed-blocks.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "lounge-seat-zero-wall-recliner-accent-turned-walnut",
+    "category": "furniture",
+    "file": "004/lounge-seat-zero-wall-recliner-accent-turned-walnut.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "lounge-seat-zero-wall-recliner-accent-metal-sled",
+    "category": "furniture",
+    "file": "004/lounge-seat-zero-wall-recliner-accent-metal-sled.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "lounge-seat-zero-wall-recliner-accent-platform-plinth",
+    "category": "furniture",
+    "file": "004/lounge-seat-zero-wall-recliner-accent-platform-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "lounge-seat-zero-wall-recliner-accent-angled-timber",
+    "category": "furniture",
+    "file": "004/lounge-seat-zero-wall-recliner-accent-angled-timber.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "lounge-seat-zero-wall-recliner-accent-recessed-blocks",
+    "category": "furniture",
+    "file": "004/lounge-seat-zero-wall-recliner-accent-recessed-blocks.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "lounge-seat-zero-wall-recliner-snug-turned-walnut",
+    "category": "furniture",
+    "file": "005/lounge-seat-zero-wall-recliner-snug-turned-walnut.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "lounge-seat-zero-wall-recliner-snug-metal-sled",
+    "category": "furniture",
+    "file": "005/lounge-seat-zero-wall-recliner-snug-metal-sled.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "lounge-seat-zero-wall-recliner-snug-platform-plinth",
+    "category": "furniture",
+    "file": "005/lounge-seat-zero-wall-recliner-snug-platform-plinth.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "lounge-seat-zero-wall-recliner-snug-angled-timber",
+    "category": "furniture",
+    "file": "005/lounge-seat-zero-wall-recliner-snug-angled-timber.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "lounge-seat-zero-wall-recliner-snug-recessed-blocks",
+    "category": "furniture",
+    "file": "005/lounge-seat-zero-wall-recliner-snug-recessed-blocks.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-accent-turned-walnut",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-accent-turned-walnut.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-accent-metal-sled",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-accent-metal-sled.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-accent-platform-plinth",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-accent-platform-plinth.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-accent-angled-timber",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-accent-angled-timber.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-accent-recessed-blocks",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-accent-recessed-blocks.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-snug-turned-walnut",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-snug-turned-walnut.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-snug-metal-sled",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-snug-metal-sled.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-snug-platform-plinth",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-snug-platform-plinth.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-snug-angled-timber",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-snug-angled-timber.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-snug-recessed-blocks",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-snug-recessed-blocks.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-wide-turned-walnut",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-wide-turned-walnut.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-wide-metal-sled",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-wide-metal-sled.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-wide-platform-plinth",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-wide-platform-plinth.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-wide-angled-timber",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-wide-angled-timber.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "lounge-seat-channel-tufted-chaise-wide-recessed-blocks",
+    "category": "furniture",
+    "file": "005/lounge-seat-channel-tufted-chaise-wide-recessed-blocks.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-accent-turned-walnut",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-accent-turned-walnut.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-accent-metal-sled",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-accent-metal-sled.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-accent-platform-plinth",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-accent-platform-plinth.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-accent-angled-timber",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-accent-angled-timber.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-accent-recessed-blocks",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-accent-recessed-blocks.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-snug-turned-walnut",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-snug-turned-walnut.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-snug-metal-sled",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-snug-metal-sled.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-snug-platform-plinth",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-snug-platform-plinth.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-snug-angled-timber",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-snug-angled-timber.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-snug-recessed-blocks",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-snug-recessed-blocks.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-wide-turned-walnut",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-wide-turned-walnut.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-wide-metal-sled",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-wide-metal-sled.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-wide-platform-plinth",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-wide-platform-plinth.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-wide-angled-timber",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-wide-angled-timber.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "lounge-seat-storage-ottoman-wide-recessed-blocks",
+    "category": "furniture",
+    "file": "006/lounge-seat-storage-ottoman-wide-recessed-blocks.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 15
+  }
+]

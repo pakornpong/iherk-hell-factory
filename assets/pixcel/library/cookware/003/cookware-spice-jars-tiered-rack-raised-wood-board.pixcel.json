@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "id": "cookware-spice-jars-tiered-rack-raised-wood-board",
+  "category": "kitchen",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "kind": "metal",
+      "color": "#596168"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#a4acab"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#aa7e56"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795e4c"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#41464b"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d0bb"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#607d97"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78260"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda16b"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ab6652"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aeba"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        26,
+        1
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        1
+      ],
+      "to": [
+        26,
+        25,
+        1
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        5,
+        9,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        0
+      ],
+      "to": [
+        27,
+        26,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        2
+      ],
+      "to": [
+        26,
+        23,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        26,
+        13,
+        9
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        17
+      ],
+      "zFrom": 5,
+      "zTo": 9,
+      "radius": 2,
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        17
+      ],
+      "zFrom": 10,
+      "zTo": 10,
+      "radius": 2,
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        10
+      ],
+      "zFrom": 10,
+      "zTo": 14,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        10
+      ],
+      "zFrom": 15,
+      "zTo": 15,
+      "radius": 2,
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        17
+      ],
+      "zFrom": 5,
+      "zTo": 9,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        17
+      ],
+      "zFrom": 10,
+      "zTo": 10,
+      "radius": 2,
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        10
+      ],
+      "zFrom": 10,
+      "zTo": 14,
+      "radius": 2,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        10
+      ],
+      "zFrom": 15,
+      "zTo": 15,
+      "radius": 2,
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        17
+      ],
+      "zFrom": 5,
+      "zTo": 9,
+      "radius": 2,
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        17
+      ],
+      "zFrom": 10,
+      "zTo": 10,
+      "radius": 2,
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        10
+      ],
+      "zFrom": 10,
+      "zTo": 14,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        10
+      ],
+      "zFrom": 15,
+      "zTo": 15,
+      "radius": 2,
+      "material": "silver"
+    }
+  ]
+}

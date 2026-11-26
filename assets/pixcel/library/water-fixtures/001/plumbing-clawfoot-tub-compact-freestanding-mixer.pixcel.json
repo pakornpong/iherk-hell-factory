@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "id": "plumbing-clawfoot-tub-compact-freestanding-mixer",
+  "category": "plumbing",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "white": {
+      "kind": "matte",
+      "color": "#dedbd1"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#ada69b"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a1aaae"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#87959e"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99c66"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#59636c"
+    },
+    "blue": {
+      "kind": "glass",
+      "color": "#9eafb4"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a17d5a"
+    },
+    "grout": {
+      "kind": "matte",
+      "color": "#7e7b75"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c3b5a2"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 5,
+      "radius": 2,
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        22
+      ],
+      "zFrom": 0,
+      "zTo": 5,
+      "radius": 2,
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 5,
+      "radius": 2,
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        22
+      ],
+      "zFrom": 0,
+      "zTo": 5,
+      "radius": 2,
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        5
+      ],
+      "to": [
+        26,
+        26,
+        6
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        7
+      ],
+      "to": [
+        26,
+        6,
+        18
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        25,
+        7
+      ],
+      "to": [
+        26,
+        26,
+        18
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        7
+      ],
+      "to": [
+        5,
+        24,
+        18
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        7
+      ],
+      "to": [
+        26,
+        24,
+        18
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        18
+      ],
+      "to": [
+        26,
+        7,
+        19
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        18
+      ],
+      "to": [
+        26,
+        26,
+        19
+      ],
+      "material": "white"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        15
+      ],
+      "zFrom": 7,
+      "zTo": 7,
+      "radius": 2,
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        10
+      ],
+      "zFrom": 0,
+      "zTo": 27,
+      "radius": 1,
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        26,
+        10
+      ],
+      "zFrom": 0,
+      "zTo": 27,
+      "radius": 1,
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        9,
+        26
+      ],
+      "to": [
+        26,
+        11,
+        28
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        27
+      ],
+      "to": [
+        25,
+        17,
+        28
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        17
+      ],
+      "zFrom": 26,
+      "zTo": 27,
+      "radius": 1,
+      "material": "chrome"
+    }
+  ]
+}

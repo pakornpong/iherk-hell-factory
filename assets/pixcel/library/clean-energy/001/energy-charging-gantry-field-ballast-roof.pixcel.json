@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "id": "energy-charging-gantry-field-ballast-roof",
+  "category": "renewable-energy",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9ea8aa",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#566674",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#587287",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#424b51",
+      "kind": "matte"
+    },
+    "tan": {
+      "color": "#ac9679",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d9d3c7",
+      "kind": "matte"
+    },
+    "anodized": {
+      "color": "#8798a2",
+      "kind": "metal"
+    },
+    "amber": {
+      "color": "#b89b65",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8b755d",
+      "kind": "matte"
+    },
+    "oak": {
+      "color": "#9d7e60",
+      "kind": "wood"
+    },
+    "copper": {
+      "color": "#b37e61",
+      "kind": "metal"
+    },
+    "glass": {
+      "color": "#91aeb7",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        2
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        2
+      ],
+      "to": [
+        11,
+        24,
+        3
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        2
+      ],
+      "to": [
+        29,
+        24,
+        3
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        4
+      ],
+      "to": [
+        8,
+        10,
+        38
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        4
+      ],
+      "to": [
+        28,
+        10,
+        38
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        36
+      ],
+      "to": [
+        28,
+        11,
+        38
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        38
+      ],
+      "to": [
+        27,
+        23,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        7
+      ],
+      "to": [
+        14,
+        13,
+        27
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        20
+      ],
+      "to": [
+        12,
+        14,
+        24
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        13,
+        22
+      ],
+      "to": [
+        15,
+        19,
+        12
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        19
+      ],
+      "zFrom": 11,
+      "zTo": 13,
+      "radius": 1,
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        9,
+        7
+      ],
+      "to": [
+        25,
+        13,
+        27
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        13,
+        20
+      ],
+      "to": [
+        23,
+        14,
+        24
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        13,
+        22
+      ],
+      "to": [
+        26,
+        19,
+        12
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        26,
+        19
+      ],
+      "zFrom": 11,
+      "zTo": 13,
+      "radius": 1,
+      "material": "slate"
+    }
+  ]
+}

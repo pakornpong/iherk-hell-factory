@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "id": "metalshop-bench-metal-lathe-shop-span-back-wall-rail",
+  "category": "metalworking",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea7a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#565f67"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3c454b"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#61778c"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78262"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a45e50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a066"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d0bb"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#9d7a5c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8daab4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        55,
+        7,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        9
+      ],
+      "to": [
+        55,
+        25,
+        10
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        3
+      ],
+      "to": [
+        6,
+        22,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        53,
+        7,
+        3
+      ],
+      "to": [
+        53,
+        22,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        11
+      ],
+      "to": [
+        54,
+        24,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        11,
+        16
+      ],
+      "to": [
+        53,
+        14,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        19
+      ],
+      "to": [
+        13,
+        20,
+        33
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        9,
+        19
+      ],
+      "to": [
+        53,
+        20,
+        27
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        13,
+        24
+      ],
+      "to": [
+        48,
+        16,
+        26
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        12,
+        23
+      ],
+      "to": [
+        45,
+        17,
+        27
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        17,
+        19
+      ],
+      "to": [
+        21,
+        21,
+        23
+      ],
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        20
+      ],
+      "zFrom": 23,
+      "zTo": 25,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        10,
+        32
+      ],
+      "to": [
+        14,
+        8,
+        33
+      ],
+      "material": "black"
+    }
+  ]
+}

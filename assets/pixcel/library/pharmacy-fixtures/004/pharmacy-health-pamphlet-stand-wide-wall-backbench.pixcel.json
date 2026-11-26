@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "id": "pharmacy-health-pamphlet-stand-wide-wall-backbench",
+  "category": "pharmacy",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a78363"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c8"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9aa4a7"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#5e6975"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#424952"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#677f94"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#bc9466"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a76757"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d9c9ac"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91adb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        55,
+        8,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        9
+      ],
+      "to": [
+        55,
+        25,
+        10
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        3
+      ],
+      "to": [
+        6,
+        22,
+        9
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        53,
+        8,
+        3
+      ],
+      "to": [
+        53,
+        22,
+        9
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        11
+      ],
+      "to": [
+        54,
+        24,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        15
+      ],
+      "to": [
+        54,
+        10,
+        40
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        16
+      ],
+      "to": [
+        53,
+        22,
+        17
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        21,
+        17
+      ],
+      "to": [
+        53,
+        23,
+        18
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        17,
+        18
+      ],
+      "to": [
+        17,
+        20,
+        22
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        16,
+        18
+      ],
+      "to": [
+        50,
+        20,
+        23
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        23
+      ],
+      "to": [
+        53,
+        22,
+        24
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        21,
+        24
+      ],
+      "to": [
+        53,
+        23,
+        25
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        17,
+        25
+      ],
+      "to": [
+        17,
+        20,
+        29
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        16,
+        25
+      ],
+      "to": [
+        50,
+        20,
+        30
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        30
+      ],
+      "to": [
+        53,
+        22,
+        31
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        21,
+        31
+      ],
+      "to": [
+        53,
+        23,
+        32
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        17,
+        32
+      ],
+      "to": [
+        17,
+        20,
+        36
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        16,
+        32
+      ],
+      "to": [
+        50,
+        20,
+        37
+      ],
+      "material": "blue"
+    }
+  ]
+}

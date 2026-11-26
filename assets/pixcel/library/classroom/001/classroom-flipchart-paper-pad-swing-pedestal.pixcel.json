@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "id": "classroom-flipchart-paper-pad-swing-pedestal",
+  "category": "education",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#ae7c50"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#e2dbca"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#748892"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#354653"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#646c78"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b66653"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#dfa958"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#6c9cb4"
+    },
+    "pink": {
+      "kind": "matte",
+      "color": "#c28387"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        13
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 9,
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        13
+      ],
+      "zFrom": 3,
+      "zTo": 21,
+      "radius": 2,
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        19
+      ],
+      "to": [
+        27,
+        13,
+        21
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        12,
+        18
+      ],
+      "to": [
+        5,
+        14,
+        22
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        12,
+        18
+      ],
+      "to": [
+        28,
+        14,
+        22
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        11,
+        15
+      ],
+      "to": [
+        25,
+        13,
+        36
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        16
+      ],
+      "to": [
+        24,
+        14,
+        35
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        14,
+        35
+      ],
+      "to": [
+        25,
+        15,
+        36
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        14,
+        15
+      ],
+      "to": [
+        23,
+        15,
+        17
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        21
+      ],
+      "to": [
+        19,
+        15,
+        21
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        25
+      ],
+      "to": [
+        20,
+        15,
+        25
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        27
+      ],
+      "to": [
+        19,
+        15,
+        27
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        30
+      ],
+      "to": [
+        19,
+        15,
+        30
+      ],
+      "material": "teal"
+    }
+  ]
+}

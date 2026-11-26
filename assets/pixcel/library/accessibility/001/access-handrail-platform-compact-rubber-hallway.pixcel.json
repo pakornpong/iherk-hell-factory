@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "id": "access-handrail-platform-compact-rubber-hallway",
+  "category": "accessibility",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "concrete": {
+      "kind": "matte",
+      "color": "#aaa5a0"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a7805d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9da8aa"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#677481"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c7"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#414a50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a366"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c98"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac6a55"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        28,
+        26,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        1
+      ],
+      "to": [
+        27,
+        7,
+        1
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "slope",
+      "from": [
+        4,
+        7,
+        2
+      ],
+      "to": [
+        22,
+        25,
+        13
+      ],
+      "axis": "+X",
+      "material": "concrete"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        7,
+        2
+      ],
+      "to": [
+        27,
+        25,
+        13
+      ],
+      "material": "concrete"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        2
+      ],
+      "to": [
+        6,
+        8,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        12
+      ],
+      "to": [
+        26,
+        8,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        7,
+        22
+      ],
+      "to": [
+        26,
+        7,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        7,
+        19
+      ],
+      "to": [
+        26,
+        7,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        2
+      ],
+      "to": [
+        6,
+        25,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        24,
+        12
+      ],
+      "to": [
+        26,
+        25,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        24,
+        22
+      ],
+      "to": [
+        26,
+        24,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        24,
+        19
+      ],
+      "to": [
+        26,
+        24,
+        28
+      ],
+      "material": "steel"
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "id": "pharmacy-cold-display-with-drawers-wide-clinical-island",
+  "category": "pharmacy",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a78363"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c8"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9aa4a7"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#5e6975"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#424952"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#677f94"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#bc9466"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a76757"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d9c9ac"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91adb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        11
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        5
+      ],
+      "to": [
+        52,
+        25,
+        9
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        11
+      ],
+      "to": [
+        55,
+        25,
+        12
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        13
+      ],
+      "to": [
+        54,
+        24,
+        42
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        24
+      ],
+      "to": [
+        53,
+        25,
+        40
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        15
+      ],
+      "to": [
+        53,
+        25,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        27
+      ],
+      "to": [
+        52,
+        25,
+        27
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        31
+      ],
+      "to": [
+        52,
+        25,
+        31
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        35
+      ],
+      "to": [
+        52,
+        25,
+        35
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        19
+      ],
+      "to": [
+        52,
+        26,
+        19
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        42
+      ],
+      "to": [
+        16,
+        16,
+        44
+      ],
+      "material": "gray"
+    }
+  ]
+}

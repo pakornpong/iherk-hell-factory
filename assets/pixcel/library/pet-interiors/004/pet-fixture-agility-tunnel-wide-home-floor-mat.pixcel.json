@@ -1,0 +1,930 @@
+{
+  "schemaVersion": 1,
+  "id": "pet-fixture-agility-tunnel-wide-home-floor-mat",
+  "category": "pet-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ad8663"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#755844"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b9a891"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b99470"
+    },
+    "navy": {
+      "kind": "matte",
+      "color": "#607183"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#ded4c0"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#495359"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ca7a9"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a97561"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8fadb8"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bca475"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        1
+      ],
+      "to": [
+        54,
+        25,
+        1
+      ],
+      "material": "tan"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        2
+      ],
+      "to": [
+        7,
+        22,
+        5
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        6
+      ],
+      "to": [
+        7,
+        10,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        20,
+        6
+      ],
+      "to": [
+        7,
+        22,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        18
+      ],
+      "to": [
+        7,
+        20,
+        21
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        20
+      ],
+      "to": [
+        8,
+        21,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        2
+      ],
+      "to": [
+        11,
+        22,
+        5
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        6
+      ],
+      "to": [
+        11,
+        10,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        20,
+        6
+      ],
+      "to": [
+        11,
+        22,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        18
+      ],
+      "to": [
+        11,
+        20,
+        21
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        20
+      ],
+      "to": [
+        12,
+        21,
+        21
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        8,
+        2
+      ],
+      "to": [
+        15,
+        22,
+        5
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        8,
+        6
+      ],
+      "to": [
+        15,
+        10,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        20,
+        6
+      ],
+      "to": [
+        15,
+        22,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        18
+      ],
+      "to": [
+        15,
+        20,
+        21
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        9,
+        20
+      ],
+      "to": [
+        16,
+        21,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        8,
+        2
+      ],
+      "to": [
+        19,
+        22,
+        5
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        8,
+        6
+      ],
+      "to": [
+        19,
+        10,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        20,
+        6
+      ],
+      "to": [
+        19,
+        22,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        10,
+        18
+      ],
+      "to": [
+        19,
+        20,
+        21
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        9,
+        20
+      ],
+      "to": [
+        20,
+        21,
+        21
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        8,
+        2
+      ],
+      "to": [
+        23,
+        22,
+        5
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        8,
+        6
+      ],
+      "to": [
+        23,
+        10,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        20,
+        6
+      ],
+      "to": [
+        23,
+        22,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        10,
+        18
+      ],
+      "to": [
+        23,
+        20,
+        21
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        9,
+        20
+      ],
+      "to": [
+        24,
+        21,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        8,
+        2
+      ],
+      "to": [
+        27,
+        22,
+        5
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        8,
+        6
+      ],
+      "to": [
+        27,
+        10,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        20,
+        6
+      ],
+      "to": [
+        27,
+        22,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        10,
+        18
+      ],
+      "to": [
+        27,
+        20,
+        21
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        9,
+        20
+      ],
+      "to": [
+        28,
+        21,
+        21
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        8,
+        2
+      ],
+      "to": [
+        31,
+        22,
+        5
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        8,
+        6
+      ],
+      "to": [
+        31,
+        10,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        20,
+        6
+      ],
+      "to": [
+        31,
+        22,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        10,
+        18
+      ],
+      "to": [
+        31,
+        20,
+        21
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        9,
+        20
+      ],
+      "to": [
+        32,
+        21,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        8,
+        2
+      ],
+      "to": [
+        35,
+        22,
+        5
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        8,
+        6
+      ],
+      "to": [
+        35,
+        10,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        20,
+        6
+      ],
+      "to": [
+        35,
+        22,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        10,
+        18
+      ],
+      "to": [
+        35,
+        20,
+        21
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        9,
+        20
+      ],
+      "to": [
+        36,
+        21,
+        21
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        8,
+        2
+      ],
+      "to": [
+        39,
+        22,
+        5
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        8,
+        6
+      ],
+      "to": [
+        39,
+        10,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        20,
+        6
+      ],
+      "to": [
+        39,
+        22,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        10,
+        18
+      ],
+      "to": [
+        39,
+        20,
+        21
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        9,
+        20
+      ],
+      "to": [
+        40,
+        21,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        8,
+        2
+      ],
+      "to": [
+        43,
+        22,
+        5
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        8,
+        6
+      ],
+      "to": [
+        43,
+        10,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        20,
+        6
+      ],
+      "to": [
+        43,
+        22,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        10,
+        18
+      ],
+      "to": [
+        43,
+        20,
+        21
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        9,
+        20
+      ],
+      "to": [
+        44,
+        21,
+        21
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        8,
+        2
+      ],
+      "to": [
+        47,
+        22,
+        5
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        8,
+        6
+      ],
+      "to": [
+        47,
+        10,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        20,
+        6
+      ],
+      "to": [
+        47,
+        22,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        10,
+        18
+      ],
+      "to": [
+        47,
+        20,
+        21
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        9,
+        20
+      ],
+      "to": [
+        48,
+        21,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        8,
+        2
+      ],
+      "to": [
+        51,
+        22,
+        5
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        8,
+        6
+      ],
+      "to": [
+        51,
+        10,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        20,
+        6
+      ],
+      "to": [
+        51,
+        22,
+        18
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        10,
+        18
+      ],
+      "to": [
+        51,
+        20,
+        21
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        9,
+        20
+      ],
+      "to": [
+        52,
+        21,
+        21
+      ],
+      "material": "rubber"
+    }
+  ]
+}

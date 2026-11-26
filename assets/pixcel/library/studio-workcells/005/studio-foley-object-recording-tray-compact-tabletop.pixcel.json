@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "studio-foley-object-recording-tray-compact-tabletop",
+  "category": "studio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a8805d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785b48"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404951"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#737e87"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a3a9aa"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8d0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#a18e7e"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a86959"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#658099"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99d70"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#88a6b3"
+    },
+    "display": {
+      "kind": "emissive",
+      "color": "#a1bccb",
+      "glowRadius": 1,
+      "glowIntensity": 0.09
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        1
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        1
+      ],
+      "to": [
+        26,
+        24,
+        2
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        26,
+        23,
+        7
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        7
+      ],
+      "to": [
+        15,
+        22,
+        9
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        8,
+        7
+      ],
+      "to": [
+        25,
+        22,
+        9
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 10,
+      "zTo": 13,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        10,
+        10
+      ],
+      "to": [
+        23,
+        20,
+        11
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        7
+      ],
+      "to": [
+        9,
+        11,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        9,
+        23
+      ],
+      "to": [
+        16,
+        13,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        13,
+        20
+      ],
+      "to": [
+        17,
+        14,
+        22
+      ],
+      "material": "dark"
+    }
+  ]
+}

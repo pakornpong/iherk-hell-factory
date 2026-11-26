@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "id": "camp-portable-sink-and-dishes-group-boardwalk",
+  "category": "camping",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a3805e",
+      "kind": "wood"
+    },
+    "tan": {
+      "color": "#ae987d",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#d2c7af",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#627b90",
+      "kind": "matte"
+    },
+    "rust": {
+      "color": "#a86955",
+      "kind": "matte"
+    },
+    "olive": {
+      "color": "#737f64",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca8aa",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#596771",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#414a4f",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#bdab8b",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8b755d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8daab8",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        55,
+        9,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        3
+      ],
+      "to": [
+        55,
+        14,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        3
+      ],
+      "to": [
+        55,
+        19,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        3
+      ],
+      "to": [
+        55,
+        24,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        9
+      ],
+      "to": [
+        53,
+        23,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        16
+      ],
+      "to": [
+        51,
+        21,
+        16
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 17,
+      "radius": 3,
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        16
+      ],
+      "zFrom": 17,
+      "zTo": 18,
+      "radius": 3,
+      "material": "linen"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        9,
+        16
+      ],
+      "to": [
+        49,
+        9,
+        27
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        9,
+        27
+      ],
+      "to": [
+        49,
+        15,
+        26
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        17,
+        8
+      ],
+      "to": [
+        52,
+        23,
+        14
+      ],
+      "material": "olive"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        18,
+        14
+      ],
+      "to": [
+        51,
+        22,
+        15
+      ],
+      "material": "tan"
+    }
+  ]
+}

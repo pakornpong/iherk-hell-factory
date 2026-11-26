@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "id": "bedroom-platform-storage-bed",
+  "category": "bedroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    2
+  ],
+  "palette": "office-night",
+  "materials": {
+    "chrome": {
+      "color": "#d2dbe0",
+      "kind": "metal"
+    },
+    "white": {
+      "color": "#ece9db",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#b87942",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#795035",
+      "kind": "wood"
+    },
+    "blue": {
+      "color": "#397694",
+      "kind": "matte"
+    },
+    "teal": {
+      "color": "#80909d",
+      "kind": "matte"
+    },
+    "yellow": {
+      "color": "#e1ad52",
+      "kind": "matte"
+    },
+    "fabric": {
+      "color": "#49647e",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        0
+      ],
+      "to": [
+        56,
+        58,
+        4
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        5
+      ],
+      "to": [
+        58,
+        59,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        10
+      ],
+      "to": [
+        58,
+        8,
+        30
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        14
+      ],
+      "to": [
+        54,
+        9,
+        25
+      ],
+      "material": "fabric"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        10
+      ],
+      "to": [
+        55,
+        56,
+        16
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        11,
+        16
+      ],
+      "to": [
+        29,
+        21,
+        19
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        11,
+        16
+      ],
+      "to": [
+        51,
+        21,
+        19
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        16
+      ],
+      "to": [
+        55,
+        57,
+        18
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        23,
+        18
+      ],
+      "to": [
+        54,
+        27,
+        19
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        52,
+        18
+      ],
+      "to": [
+        55,
+        54,
+        18
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        59,
+        6
+      ],
+      "to": [
+        29,
+        60,
+        8
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        59,
+        6
+      ],
+      "to": [
+        52,
+        60,
+        8
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        60,
+        7
+      ],
+      "to": [
+        22,
+        60,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        60,
+        7
+      ],
+      "to": [
+        45,
+        60,
+        7
+      ],
+      "material": "chrome"
+    }
+  ]
+}

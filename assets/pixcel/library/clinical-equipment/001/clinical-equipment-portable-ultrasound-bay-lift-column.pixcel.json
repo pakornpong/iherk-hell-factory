@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "id": "clinical-equipment-portable-ultrasound-bay-lift-column",
+  "category": "medical",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        25,
+        24,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        3
+      ],
+      "to": [
+        20,
+        19,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        11
+      ],
+      "to": [
+        27,
+        26,
+        12
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        20,
+        3
+      ],
+      "to": [
+        10,
+        23,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        13
+      ],
+      "to": [
+        26,
+        23,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        23
+      ],
+      "to": [
+        23,
+        10,
+        39
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        26
+      ],
+      "to": [
+        21,
+        10,
+        37
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        23
+      ],
+      "to": [
+        24,
+        21,
+        24
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        16,
+        25
+      ],
+      "to": [
+        11,
+        17,
+        25
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        16,
+        25
+      ],
+      "to": [
+        15,
+        17,
+        25
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        16,
+        25
+      ],
+      "to": [
+        19,
+        17,
+        25
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        16,
+        25
+      ],
+      "to": [
+        23,
+        17,
+        25
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        18,
+        25
+      ],
+      "to": [
+        26,
+        23,
+        22
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        23,
+        21
+      ],
+      "to": [
+        26,
+        26,
+        23
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        20
+      ],
+      "zFrom": 25,
+      "zTo": 26,
+      "radius": 1,
+      "material": "amber"
+    }
+  ]
+}

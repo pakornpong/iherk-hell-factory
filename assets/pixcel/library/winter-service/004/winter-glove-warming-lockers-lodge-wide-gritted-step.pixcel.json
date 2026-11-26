@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "id": "winter-glove-warming-lockers-lodge-wide-gritted-step",
+  "category": "winter-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa8560",
+      "kind": "wood"
+    },
+    "ice": {
+      "color": "#b8c6c9",
+      "kind": "matte"
+    },
+    "snow": {
+      "color": "#dfdfd4",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ba8ac",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#5c6873",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#40484e",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#ae9d83",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#668096",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a76555",
+      "kind": "matte"
+    },
+    "gold": {
+      "color": "#c0a46e",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#aba08f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#91abb5",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        55,
+        25,
+        5
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        5
+      ],
+      "to": [
+        54,
+        25,
+        5
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        54,
+        24,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        10
+      ],
+      "to": [
+        53,
+        25,
+        31
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        14
+      ],
+      "to": [
+        52,
+        25,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        21
+      ],
+      "to": [
+        52,
+        25,
+        21
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        28
+      ],
+      "to": [
+        52,
+        25,
+        28
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        15
+      ],
+      "to": [
+        12,
+        26,
+        18
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        26
+      ],
+      "zFrom": 21,
+      "zTo": 23,
+      "radius": 1,
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        25,
+        15
+      ],
+      "to": [
+        19,
+        26,
+        18
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        26
+      ],
+      "zFrom": 21,
+      "zTo": 23,
+      "radius": 1,
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        25,
+        15
+      ],
+      "to": [
+        51,
+        26,
+        18
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        26
+      ],
+      "zFrom": 21,
+      "zTo": 23,
+      "radius": 1,
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        34
+      ],
+      "to": [
+        52,
+        24,
+        36
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        14,
+        8
+      ],
+      "to": [
+        52,
+        23,
+        15
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        14,
+        15
+      ],
+      "to": [
+        51,
+        23,
+        17
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "line",
+      "from": [
+        47,
+        17,
+        17
+      ],
+      "to": [
+        52,
+        20,
+        23
+      ],
+      "material": "steel"
+    }
+  ]
+}

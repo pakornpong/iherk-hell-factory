@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "id": "craft-tilting-wood-lathe-rolling-bench-standalone",
+  "category": "craft-workshop",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ab8159"
+    },
+    "nut": {
+      "kind": "wood",
+      "color": "#745644"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9af"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596471"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#dbd2be"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a86550"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9d5553"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e798a"
+    },
+    "soot": {
+      "kind": "matte",
+      "color": "#3a4046"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#a89779"
+    },
+    "buff": {
+      "kind": "matte",
+      "color": "#c7a969"
+    },
+    "pane": {
+      "kind": "glass",
+      "color": "#87a6b0"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        0
+      ],
+      "to": [
+        10,
+        9,
+        3
+      ],
+      "material": "soot"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        23,
+        0
+      ],
+      "to": [
+        10,
+        25,
+        3
+      ],
+      "material": "soot"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        7,
+        0
+      ],
+      "to": [
+        45,
+        9,
+        3
+      ],
+      "material": "soot"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        23,
+        0
+      ],
+      "to": [
+        45,
+        25,
+        3
+      ],
+      "material": "soot"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        4
+      ],
+      "to": [
+        44,
+        25,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        7
+      ],
+      "to": [
+        44,
+        25,
+        9
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        5,
+        10
+      ],
+      "to": [
+        42,
+        6,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        10
+      ],
+      "to": [
+        45,
+        25,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        11,
+        14
+      ],
+      "to": [
+        43,
+        13,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        16
+      ],
+      "to": [
+        15,
+        21,
+        30
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        8,
+        16
+      ],
+      "to": [
+        43,
+        21,
+        28
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        20
+      ],
+      "to": [
+        38,
+        15,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        12,
+        19
+      ],
+      "to": [
+        35,
+        16,
+        23
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        11,
+        18
+      ],
+      "to": [
+        29,
+        17,
+        24
+      ],
+      "material": "nut"
+    },
+    {
+      "op": "line",
+      "from": [
+        29,
+        21,
+        16
+      ],
+      "to": [
+        31,
+        16,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        13
+      ],
+      "zFrom": 30,
+      "zTo": 31,
+      "radius": 1,
+      "material": "red"
+    }
+  ]
+}

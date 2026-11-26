@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 1,
+  "id": "travel-picnic-provision-carrier-upright-interlocking-hard-shell-locker-cradle",
+  "category": "travel",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cloth": {
+      "kind": "matte",
+      "color": "#74675e"
+    },
+    "edge": {
+      "kind": "matte",
+      "color": "#434b53"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#8f9c9f"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8ceba"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d1c1a4"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bea071"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a26657"
+    },
+    "lining": {
+      "kind": "matte",
+      "color": "#9b7d66"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#aa845e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eabb9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        5,
+        9,
+        43
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        6,
+        3
+      ],
+      "to": [
+        27,
+        9,
+        43
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        43
+      ],
+      "to": [
+        27,
+        9,
+        44
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        2
+      ],
+      "to": [
+        27,
+        25,
+        7
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        2
+      ],
+      "to": [
+        24,
+        21,
+        37
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        4
+      ],
+      "to": [
+        25,
+        20,
+        35
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        37
+      ],
+      "to": [
+        23,
+        21,
+        38
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        3
+      ],
+      "to": [
+        24,
+        22,
+        36
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        23,
+        5
+      ],
+      "to": [
+        11,
+        23,
+        34
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        23,
+        5
+      ],
+      "to": [
+        15,
+        23,
+        34
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        23,
+        5
+      ],
+      "to": [
+        19,
+        23,
+        34
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        22,
+        34
+      ],
+      "to": [
+        23,
+        23,
+        35
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        4
+      ],
+      "to": [
+        25,
+        24,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        33
+      ],
+      "to": [
+        24,
+        25,
+        35
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        13
+      ],
+      "zFrom": 38,
+      "zTo": 44,
+      "radius": 2,
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        13
+      ],
+      "zFrom": 38,
+      "zTo": 43,
+      "radius": 2,
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        16,
+        38
+      ],
+      "to": [
+        20,
+        20,
+        40
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        4
+      ],
+      "to": [
+        25,
+        25,
+        35
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        5
+      ],
+      "to": [
+        24,
+        25,
+        5
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        8
+      ],
+      "to": [
+        24,
+        25,
+        8
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        11
+      ],
+      "to": [
+        24,
+        25,
+        11
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        14
+      ],
+      "to": [
+        24,
+        25,
+        14
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        17
+      ],
+      "to": [
+        24,
+        25,
+        17
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        20
+      ],
+      "to": [
+        24,
+        25,
+        20
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        23
+      ],
+      "to": [
+        24,
+        25,
+        23
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        26
+      ],
+      "to": [
+        24,
+        25,
+        26
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        29
+      ],
+      "to": [
+        24,
+        25,
+        29
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        32
+      ],
+      "to": [
+        24,
+        25,
+        32
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        38
+      ],
+      "to": [
+        7,
+        20,
+        40
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        9,
+        38
+      ],
+      "to": [
+        26,
+        20,
+        40
+      ],
+      "material": "oak"
+    }
+  ]
+}

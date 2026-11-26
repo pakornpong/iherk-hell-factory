@@ -1,0 +1,2446 @@
+{
+  "schemaVersion": 1,
+  "id": "cycle-electric-step-through-small-wheelbase-shop-display",
+  "category": "bicycle",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "tire": {
+      "kind": "matte",
+      "color": "#42494e"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#a2a9a9"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#627786"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#737e86"
+    },
+    "saddle": {
+      "kind": "matte",
+      "color": "#66574e"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a46755"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d0be"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a9805e"
+    },
+    "concrete": {
+      "kind": "matte",
+      "color": "#a6a19b"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b49b79"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bca16b"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        44,
+        26,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        43,
+        25,
+        5
+      ],
+      "material": "concrete"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        5
+      ],
+      "to": [
+        13,
+        25,
+        6
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        15,
+        13
+      ],
+      "to": [
+        44,
+        16,
+        13
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        15,
+        14
+      ],
+      "to": [
+        44,
+        16,
+        14
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        15,
+        15
+      ],
+      "to": [
+        44,
+        16,
+        15
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        15,
+        17
+      ],
+      "to": [
+        43,
+        16,
+        17
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        15,
+        17
+      ],
+      "to": [
+        42,
+        16,
+        17
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        15,
+        18
+      ],
+      "to": [
+        41,
+        16,
+        18
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        15,
+        19
+      ],
+      "to": [
+        41,
+        16,
+        19
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        15,
+        20
+      ],
+      "to": [
+        39,
+        16,
+        20
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        15,
+        20
+      ],
+      "to": [
+        38,
+        16,
+        20
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        15,
+        20
+      ],
+      "to": [
+        37,
+        16,
+        20
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        15,
+        20
+      ],
+      "to": [
+        36,
+        16,
+        20
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        15,
+        20
+      ],
+      "to": [
+        35,
+        16,
+        20
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        15,
+        19
+      ],
+      "to": [
+        34,
+        16,
+        19
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        15,
+        18
+      ],
+      "to": [
+        33,
+        16,
+        18
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        15,
+        17
+      ],
+      "to": [
+        32,
+        16,
+        17
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        15,
+        17
+      ],
+      "to": [
+        31,
+        16,
+        17
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        15,
+        15
+      ],
+      "to": [
+        30,
+        16,
+        15
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        15,
+        14
+      ],
+      "to": [
+        30,
+        16,
+        14
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        15,
+        13
+      ],
+      "to": [
+        30,
+        16,
+        13
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        15,
+        12
+      ],
+      "to": [
+        30,
+        16,
+        12
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        15,
+        11
+      ],
+      "to": [
+        30,
+        16,
+        11
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        15,
+        10
+      ],
+      "to": [
+        31,
+        16,
+        10
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        15,
+        9
+      ],
+      "to": [
+        32,
+        16,
+        9
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        15,
+        8
+      ],
+      "to": [
+        33,
+        16,
+        8
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        15,
+        7
+      ],
+      "to": [
+        34,
+        16,
+        7
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        15,
+        6
+      ],
+      "to": [
+        35,
+        16,
+        6
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        15,
+        6
+      ],
+      "to": [
+        36,
+        16,
+        6
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        15,
+        6
+      ],
+      "to": [
+        37,
+        16,
+        6
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        15,
+        6
+      ],
+      "to": [
+        38,
+        16,
+        6
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        15,
+        6
+      ],
+      "to": [
+        39,
+        16,
+        6
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        15,
+        7
+      ],
+      "to": [
+        41,
+        16,
+        7
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        15,
+        8
+      ],
+      "to": [
+        41,
+        16,
+        8
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        15,
+        9
+      ],
+      "to": [
+        42,
+        16,
+        9
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        15,
+        9
+      ],
+      "to": [
+        43,
+        16,
+        9
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        15,
+        11
+      ],
+      "to": [
+        44,
+        16,
+        11
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        15,
+        12
+      ],
+      "to": [
+        44,
+        16,
+        12
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        15,
+        13
+      ],
+      "to": [
+        43,
+        16,
+        13
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        15,
+        14
+      ],
+      "to": [
+        43,
+        16,
+        14
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        15,
+        15
+      ],
+      "to": [
+        43,
+        16,
+        15
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        15,
+        16
+      ],
+      "to": [
+        42,
+        16,
+        16
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        15,
+        17
+      ],
+      "to": [
+        42,
+        16,
+        17
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        15,
+        18
+      ],
+      "to": [
+        41,
+        16,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        15,
+        18
+      ],
+      "to": [
+        40,
+        16,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        15,
+        19
+      ],
+      "to": [
+        39,
+        16,
+        19
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        15,
+        19
+      ],
+      "to": [
+        38,
+        16,
+        19
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        15,
+        19
+      ],
+      "to": [
+        37,
+        16,
+        19
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        15,
+        19
+      ],
+      "to": [
+        36,
+        16,
+        19
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        15,
+        19
+      ],
+      "to": [
+        35,
+        16,
+        19
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        15,
+        18
+      ],
+      "to": [
+        34,
+        16,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        15,
+        18
+      ],
+      "to": [
+        33,
+        16,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        15,
+        17
+      ],
+      "to": [
+        32,
+        16,
+        17
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        15,
+        16
+      ],
+      "to": [
+        32,
+        16,
+        16
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        15,
+        15
+      ],
+      "to": [
+        31,
+        16,
+        15
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        15,
+        14
+      ],
+      "to": [
+        31,
+        16,
+        14
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        15,
+        13
+      ],
+      "to": [
+        31,
+        16,
+        13
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        15,
+        12
+      ],
+      "to": [
+        31,
+        16,
+        12
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        15,
+        11
+      ],
+      "to": [
+        31,
+        16,
+        11
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        15,
+        10
+      ],
+      "to": [
+        32,
+        16,
+        10
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        15,
+        9
+      ],
+      "to": [
+        32,
+        16,
+        9
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        15,
+        8
+      ],
+      "to": [
+        33,
+        16,
+        8
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        15,
+        8
+      ],
+      "to": [
+        34,
+        16,
+        8
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        15,
+        7
+      ],
+      "to": [
+        35,
+        16,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        15,
+        7
+      ],
+      "to": [
+        36,
+        16,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        15,
+        7
+      ],
+      "to": [
+        37,
+        16,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        15,
+        7
+      ],
+      "to": [
+        38,
+        16,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        15,
+        7
+      ],
+      "to": [
+        39,
+        16,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        15,
+        8
+      ],
+      "to": [
+        40,
+        16,
+        8
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        15,
+        8
+      ],
+      "to": [
+        41,
+        16,
+        8
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        15,
+        9
+      ],
+      "to": [
+        42,
+        16,
+        9
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        15,
+        10
+      ],
+      "to": [
+        42,
+        16,
+        10
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        15,
+        11
+      ],
+      "to": [
+        43,
+        16,
+        11
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        15,
+        12
+      ],
+      "to": [
+        43,
+        16,
+        12
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "line",
+      "from": [
+        37,
+        15,
+        13
+      ],
+      "to": [
+        32,
+        15,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        37,
+        15,
+        13
+      ],
+      "to": [
+        42,
+        15,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        37,
+        15,
+        13
+      ],
+      "to": [
+        37,
+        15,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        37,
+        15,
+        13
+      ],
+      "to": [
+        37,
+        15,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        15,
+        12
+      ],
+      "to": [
+        38,
+        16,
+        14
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        15,
+        13
+      ],
+      "to": [
+        17,
+        16,
+        13
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        15,
+        14
+      ],
+      "to": [
+        17,
+        16,
+        14
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        15,
+        15
+      ],
+      "to": [
+        17,
+        16,
+        15
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        15,
+        17
+      ],
+      "to": [
+        16,
+        16,
+        17
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        17
+      ],
+      "to": [
+        15,
+        16,
+        17
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        15,
+        18
+      ],
+      "to": [
+        14,
+        16,
+        18
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        15,
+        19
+      ],
+      "to": [
+        14,
+        16,
+        19
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        15,
+        20
+      ],
+      "to": [
+        12,
+        16,
+        20
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        15,
+        20
+      ],
+      "to": [
+        11,
+        16,
+        20
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        20
+      ],
+      "to": [
+        10,
+        16,
+        20
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        15,
+        20
+      ],
+      "to": [
+        9,
+        16,
+        20
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        15,
+        20
+      ],
+      "to": [
+        8,
+        16,
+        20
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        15,
+        19
+      ],
+      "to": [
+        7,
+        16,
+        19
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        15,
+        18
+      ],
+      "to": [
+        6,
+        16,
+        18
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        17
+      ],
+      "to": [
+        5,
+        16,
+        17
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        17
+      ],
+      "to": [
+        4,
+        16,
+        17
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        15,
+        15
+      ],
+      "to": [
+        3,
+        16,
+        15
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        15,
+        14
+      ],
+      "to": [
+        3,
+        16,
+        14
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        15,
+        13
+      ],
+      "to": [
+        3,
+        16,
+        13
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        15,
+        12
+      ],
+      "to": [
+        3,
+        16,
+        12
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        15,
+        11
+      ],
+      "to": [
+        3,
+        16,
+        11
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        10
+      ],
+      "to": [
+        4,
+        16,
+        10
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        9
+      ],
+      "to": [
+        5,
+        16,
+        9
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        15,
+        8
+      ],
+      "to": [
+        6,
+        16,
+        8
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        15,
+        7
+      ],
+      "to": [
+        6,
+        16,
+        7
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        15,
+        6
+      ],
+      "to": [
+        8,
+        16,
+        6
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        15,
+        6
+      ],
+      "to": [
+        9,
+        16,
+        6
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        6
+      ],
+      "to": [
+        10,
+        16,
+        6
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        15,
+        6
+      ],
+      "to": [
+        11,
+        16,
+        6
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        15,
+        6
+      ],
+      "to": [
+        12,
+        16,
+        6
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        15,
+        7
+      ],
+      "to": [
+        14,
+        16,
+        7
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        15,
+        8
+      ],
+      "to": [
+        14,
+        16,
+        8
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        9
+      ],
+      "to": [
+        15,
+        16,
+        9
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        15,
+        9
+      ],
+      "to": [
+        16,
+        16,
+        9
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        15,
+        11
+      ],
+      "to": [
+        17,
+        16,
+        11
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        15,
+        12
+      ],
+      "to": [
+        17,
+        16,
+        12
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        15,
+        13
+      ],
+      "to": [
+        16,
+        16,
+        13
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        15,
+        14
+      ],
+      "to": [
+        16,
+        16,
+        14
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        15,
+        15
+      ],
+      "to": [
+        16,
+        16,
+        15
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        16
+      ],
+      "to": [
+        15,
+        16,
+        16
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        17
+      ],
+      "to": [
+        15,
+        16,
+        17
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        15,
+        18
+      ],
+      "to": [
+        14,
+        16,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        15,
+        18
+      ],
+      "to": [
+        13,
+        16,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        15,
+        19
+      ],
+      "to": [
+        12,
+        16,
+        19
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        15,
+        19
+      ],
+      "to": [
+        11,
+        16,
+        19
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        19
+      ],
+      "to": [
+        10,
+        16,
+        19
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        15,
+        19
+      ],
+      "to": [
+        9,
+        16,
+        19
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        15,
+        19
+      ],
+      "to": [
+        8,
+        16,
+        19
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        15,
+        18
+      ],
+      "to": [
+        7,
+        16,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        15,
+        18
+      ],
+      "to": [
+        6,
+        16,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        17
+      ],
+      "to": [
+        5,
+        16,
+        17
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        16
+      ],
+      "to": [
+        5,
+        16,
+        16
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        15
+      ],
+      "to": [
+        4,
+        16,
+        15
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        14
+      ],
+      "to": [
+        4,
+        16,
+        14
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        13
+      ],
+      "to": [
+        4,
+        16,
+        13
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        12
+      ],
+      "to": [
+        4,
+        16,
+        12
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        11
+      ],
+      "to": [
+        4,
+        16,
+        11
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        10
+      ],
+      "to": [
+        5,
+        16,
+        10
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        9
+      ],
+      "to": [
+        5,
+        16,
+        9
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        15,
+        8
+      ],
+      "to": [
+        6,
+        16,
+        8
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        15,
+        8
+      ],
+      "to": [
+        7,
+        16,
+        8
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        15,
+        7
+      ],
+      "to": [
+        8,
+        16,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        15,
+        7
+      ],
+      "to": [
+        9,
+        16,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        7
+      ],
+      "to": [
+        10,
+        16,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        15,
+        7
+      ],
+      "to": [
+        11,
+        16,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        15,
+        7
+      ],
+      "to": [
+        12,
+        16,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        15,
+        8
+      ],
+      "to": [
+        13,
+        16,
+        8
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        15,
+        8
+      ],
+      "to": [
+        14,
+        16,
+        8
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        9
+      ],
+      "to": [
+        15,
+        16,
+        9
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        10
+      ],
+      "to": [
+        15,
+        16,
+        10
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        15,
+        11
+      ],
+      "to": [
+        16,
+        16,
+        11
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        15,
+        12
+      ],
+      "to": [
+        16,
+        16,
+        12
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        15,
+        13
+      ],
+      "to": [
+        5,
+        15,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        15,
+        13
+      ],
+      "to": [
+        15,
+        15,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        15,
+        13
+      ],
+      "to": [
+        10,
+        15,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        15,
+        13
+      ],
+      "to": [
+        10,
+        15,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        15,
+        12
+      ],
+      "to": [
+        11,
+        16,
+        14
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        15,
+        13
+      ],
+      "to": [
+        21,
+        15,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        15,
+        13
+      ],
+      "to": [
+        19,
+        15,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        19,
+        15,
+        25
+      ],
+      "to": [
+        21,
+        15,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        15,
+        12
+      ],
+      "to": [
+        31,
+        15,
+        24
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        37,
+        15,
+        13
+      ],
+      "to": [
+        31,
+        15,
+        26
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "line",
+      "from": [
+        31,
+        15,
+        26
+      ],
+      "to": [
+        30,
+        15,
+        29
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        11,
+        29
+      ],
+      "to": [
+        31,
+        20,
+        29
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        19,
+        15,
+        25
+      ],
+      "to": [
+        18,
+        15,
+        29
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        14,
+        29
+      ],
+      "to": [
+        21,
+        17,
+        30
+      ],
+      "material": "saddle"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        13,
+        11
+      ],
+      "to": [
+        22,
+        18,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        14,
+        13
+      ],
+      "to": [
+        25,
+        16,
+        18
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        12,
+        21
+      ],
+      "to": [
+        16,
+        18,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        14,
+        26
+      ],
+      "to": [
+        33,
+        16,
+        28
+      ],
+      "material": "cream"
+    }
+  ]
+}

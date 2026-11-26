@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "id": "garage-diagnostic-oscilloscope-wall-rail",
+  "category": "garage",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#91a6b0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#4c6071"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#283541"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#dea957"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#53667a"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac594a"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbddcf"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#86bdd0",
+      "glowRadius": 1,
+      "glowIntensity": 0.14
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        7,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        7
+      ],
+      "to": [
+        27,
+        26,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        1
+      ],
+      "to": [
+        9,
+        19,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        7,
+        1
+      ],
+      "to": [
+        24,
+        19,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        9
+      ],
+      "to": [
+        27,
+        23,
+        26
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        11
+      ],
+      "to": [
+        26,
+        24,
+        25
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        14
+      ],
+      "to": [
+        18,
+        25,
+        23
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        25,
+        17
+      ],
+      "to": [
+        11,
+        25,
+        20
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        25,
+        20
+      ],
+      "to": [
+        14,
+        25,
+        16
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        25,
+        16
+      ],
+      "to": [
+        17,
+        25,
+        19
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        14
+      ],
+      "to": [
+        23,
+        25,
+        15
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        19
+      ],
+      "to": [
+        23,
+        25,
+        20
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        23
+      ],
+      "to": [
+        23,
+        25,
+        24
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        26
+      ],
+      "to": [
+        22,
+        10,
+        29
+      ],
+      "material": "frame"
+    }
+  ]
+}

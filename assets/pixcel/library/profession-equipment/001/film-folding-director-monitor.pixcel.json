@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "id": "film-folding-director-monitor",
+  "category": "media",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "color": "#e5e3d6",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#a0b0bc",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#445361",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#272f3b",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#49798f",
+      "kind": "matte"
+    },
+    "aqua": {
+      "color": "#78c5c4",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#b85446",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#ac784e",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e0ad58",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#f2ecdc",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        6,
+        24,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        24,
+        0
+      ],
+      "to": [
+        6,
+        7,
+        15
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        7,
+        0
+      ],
+      "to": [
+        24,
+        24,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        24,
+        0
+      ],
+      "to": [
+        24,
+        7,
+        15
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        15
+      ],
+      "to": [
+        25,
+        24,
+        17
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        18
+      ],
+      "to": [
+        24,
+        11,
+        34
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        20
+      ],
+      "to": [
+        22,
+        11,
+        32
+      ],
+      "material": "aqua"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        11,
+        33
+      ],
+      "to": [
+        24,
+        17,
+        34
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        20
+      ],
+      "to": [
+        7,
+        17,
+        33
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        20
+      ],
+      "to": [
+        24,
+        17,
+        33
+      ],
+      "material": "black"
+    }
+  ]
+}

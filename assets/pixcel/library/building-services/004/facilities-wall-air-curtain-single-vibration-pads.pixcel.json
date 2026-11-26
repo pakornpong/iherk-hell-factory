@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "id": "facilities-wall-air-curtain-single-vibration-pads",
+  "category": "building-services",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "galv": {
+      "color": "#a4a9a9",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#647080",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#41484e",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#cbc6b8",
+      "kind": "matte"
+    },
+    "white": {
+      "color": "#ded9cd",
+      "kind": "matte"
+    },
+    "ochre": {
+      "color": "#bd9b5b",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a35d50",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8aa7b3",
+      "kind": "glass"
+    },
+    "copper": {
+      "color": "#b58165",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#3b4145",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        10,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        7,
+        0
+      ],
+      "to": [
+        34,
+        10,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        22,
+        0
+      ],
+      "to": [
+        34,
+        25,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        34,
+        8,
+        40
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        32
+      ],
+      "to": [
+        34,
+        18,
+        40
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        18,
+        33
+      ],
+      "to": [
+        32,
+        19,
+        38
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        19,
+        33
+      ],
+      "to": [
+        7,
+        19,
+        38
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        19,
+        33
+      ],
+      "to": [
+        11,
+        19,
+        38
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        19,
+        33
+      ],
+      "to": [
+        15,
+        19,
+        38
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        19,
+        33
+      ],
+      "to": [
+        19,
+        19,
+        38
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        19,
+        33
+      ],
+      "to": [
+        23,
+        19,
+        38
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        19,
+        33
+      ],
+      "to": [
+        27,
+        19,
+        38
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        15,
+        10
+      ],
+      "to": [
+        31,
+        18,
+        18
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        12,
+        18
+      ],
+      "to": [
+        28,
+        10,
+        32
+      ],
+      "material": "galv"
+    }
+  ]
+}

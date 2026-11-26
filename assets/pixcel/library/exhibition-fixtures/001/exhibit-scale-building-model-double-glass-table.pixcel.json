@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "id": "exhibit-scale-building-model-double-glass-table",
+  "category": "museum",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a67e58"
+    },
+    "plaster": {
+      "kind": "matte",
+      "color": "#d8cfc1"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3d454d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaad"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#9cb5ba"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78268"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a90"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b8aa96"
+    },
+    "ceramic": {
+      "kind": "matte",
+      "color": "#ab6854"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e0d8c7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        9
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        9
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        0
+      ],
+      "to": [
+        53,
+        9,
+        9
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        22,
+        0
+      ],
+      "to": [
+        53,
+        24,
+        9
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        8
+      ],
+      "to": [
+        54,
+        25,
+        9
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        10
+      ],
+      "to": [
+        54,
+        6,
+        31
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        10
+      ],
+      "to": [
+        5,
+        25,
+        30
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        6,
+        10
+      ],
+      "to": [
+        54,
+        25,
+        30
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        25,
+        10
+      ],
+      "to": [
+        54,
+        25,
+        30
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        31
+      ],
+      "to": [
+        54,
+        25,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        10
+      ],
+      "to": [
+        52,
+        24,
+        11
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        12
+      ],
+      "to": [
+        17,
+        20,
+        22
+      ],
+      "material": "plaster"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        22
+      ],
+      "to": [
+        16,
+        18,
+        24
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        10,
+        12
+      ],
+      "to": [
+        49,
+        18,
+        19
+      ],
+      "material": "plaster"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        13,
+        20
+      ],
+      "to": [
+        48,
+        15,
+        25
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        21,
+        12
+      ],
+      "to": [
+        50,
+        21,
+        12
+      ],
+      "material": "black"
+    }
+  ]
+}

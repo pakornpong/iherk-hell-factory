@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "id": "dressing-full-length-swivel-mirror-personal-wall-cleat",
+  "category": "dressing-room",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745844"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#99a6a7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda174"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#56626c"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#ad9b87"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c92"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#465056"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a16357"
+    },
+    "mirror": {
+      "kind": "glass",
+      "color": "#9db1b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        8,
+        27
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        9
+      ],
+      "to": [
+        27,
+        25,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        3
+      ],
+      "to": [
+        6,
+        20,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        8,
+        3
+      ],
+      "to": [
+        25,
+        20,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        11
+      ],
+      "to": [
+        26,
+        24,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        15
+      ],
+      "to": [
+        8,
+        12,
+        54
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        8,
+        15
+      ],
+      "to": [
+        26,
+        12,
+        54
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        16
+      ],
+      "to": [
+        24,
+        13,
+        53
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        18
+      ],
+      "to": [
+        23,
+        13,
+        51
+      ],
+      "material": "mirror"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        13,
+        34
+      ],
+      "to": [
+        21,
+        13,
+        49
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        12,
+        33
+      ],
+      "to": [
+        9,
+        14,
+        35
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        33
+      ],
+      "to": [
+        25,
+        14,
+        35
+      ],
+      "material": "steel"
+    }
+  ]
+}

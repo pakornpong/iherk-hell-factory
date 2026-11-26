@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "id": "plumbing-step-in-shower-compact-wall-riser",
+  "category": "plumbing",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "white": {
+      "kind": "matte",
+      "color": "#dedbd1"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#ada69b"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a1aaae"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#87959e"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99c66"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#59636c"
+    },
+    "blue": {
+      "kind": "glass",
+      "color": "#9eafb4"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a17d5a"
+    },
+    "grout": {
+      "kind": "matte",
+      "color": "#7e7b75"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c3b5a2"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        26,
+        1
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        2
+      ],
+      "to": [
+        26,
+        6,
+        4
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        25,
+        2
+      ],
+      "to": [
+        26,
+        26,
+        4
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        2
+      ],
+      "to": [
+        5,
+        24,
+        4
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        2
+      ],
+      "to": [
+        26,
+        24,
+        4
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        6,
+        24,
+        37
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        26,
+        8,
+        42
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        10
+      ],
+      "to": [
+        25,
+        8,
+        40
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        4
+      ],
+      "to": [
+        6,
+        25,
+        41
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        4
+      ],
+      "to": [
+        26,
+        25,
+        42
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        17
+      ],
+      "zFrom": 2,
+      "zTo": 2,
+      "radius": 2,
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        7,
+        14
+      ],
+      "to": [
+        21,
+        8,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        8,
+        39
+      ],
+      "to": [
+        21,
+        15,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        16
+      ],
+      "zFrom": 38,
+      "zTo": 39,
+      "radius": 3,
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        9,
+        22
+      ],
+      "to": [
+        22,
+        11,
+        24
+      ],
+      "material": "chrome"
+    }
+  ]
+}

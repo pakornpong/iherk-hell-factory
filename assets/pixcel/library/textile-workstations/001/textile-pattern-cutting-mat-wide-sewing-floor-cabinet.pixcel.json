@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "id": "textile-pattern-cutting-mat-wide-sewing-floor-cabinet",
+  "category": "textile",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#745741"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaaa"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#53606b"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d8d0bd"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#aa9a86"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#687e91"
+    },
+    "terracotta": {
+      "kind": "matte",
+      "color": "#a96557"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404850"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bc9d65"
+    },
+    "pale": {
+      "kind": "glass",
+      "color": "#9ab1b8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        10
+      ],
+      "to": [
+        55,
+        25,
+        10
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        4
+      ],
+      "to": [
+        52,
+        25,
+        8
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        7
+      ],
+      "to": [
+        48,
+        26,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        11
+      ],
+      "to": [
+        54,
+        24,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        14
+      ],
+      "to": [
+        52,
+        23,
+        14
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        14
+      ],
+      "to": [
+        51,
+        9,
+        14
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        14
+      ],
+      "to": [
+        51,
+        13,
+        14
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        17,
+        14
+      ],
+      "to": [
+        51,
+        17,
+        14
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        21,
+        14
+      ],
+      "to": [
+        51,
+        21,
+        14
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        15
+      ],
+      "to": [
+        19,
+        21,
+        15
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        10,
+        15
+      ],
+      "to": [
+        18,
+        20,
+        15
+      ],
+      "material": "terracotta"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        14
+      ],
+      "zFrom": 15,
+      "zTo": 16,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        47,
+        14,
+        16
+      ],
+      "to": [
+        51,
+        18,
+        16
+      ],
+      "material": "brass"
+    }
+  ]
+}

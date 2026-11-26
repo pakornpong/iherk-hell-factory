@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "id": "metalshop-drill-vise-pillar-small-shop-field-service-caster",
+  "category": "metalworking",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea7a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#565f67"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3c454b"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#61778c"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78262"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a45e50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a066"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d0bb"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#9d7a5c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8daab4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        0
+      ],
+      "to": [
+        28,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        25,
+        5
+      ],
+      "to": [
+        14,
+        26,
+        6
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        28,
+        24,
+        11
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        10
+      ],
+      "zFrom": 12,
+      "zTo": 37,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        33
+      ],
+      "to": [
+        21,
+        18,
+        39
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        16
+      ],
+      "zFrom": 26,
+      "zTo": 33,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        16
+      ],
+      "zFrom": 22,
+      "zTo": 26,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        18
+      ],
+      "to": [
+        23,
+        22,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        21
+      ],
+      "to": [
+        21,
+        20,
+        23
+      ],
+      "material": "frame"
+    }
+  ]
+}

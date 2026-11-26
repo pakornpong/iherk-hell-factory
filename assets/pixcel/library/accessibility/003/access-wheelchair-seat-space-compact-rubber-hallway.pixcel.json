@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "id": "access-wheelchair-seat-space-compact-rubber-hallway",
+  "category": "accessibility",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "concrete": {
+      "kind": "matte",
+      "color": "#aaa5a0"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a7805d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9da8aa"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#677481"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c7"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#414a50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a366"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c98"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac6a55"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        28,
+        26,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        1
+      ],
+      "to": [
+        27,
+        7,
+        1
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        2
+      ],
+      "to": [
+        27,
+        24,
+        4
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        4
+      ],
+      "to": [
+        26,
+        23,
+        4
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        4
+      ],
+      "to": [
+        24,
+        22,
+        4
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        14
+      ],
+      "zFrom": 5,
+      "zTo": 5,
+      "radius": 3,
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        14,
+        5
+      ],
+      "to": [
+        17,
+        18,
+        5
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        6,
+        8,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        5
+      ],
+      "to": [
+        26,
+        8,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        22
+      ],
+      "to": [
+        26,
+        9,
+        23
+      ],
+      "material": "steel"
+    }
+  ]
+}

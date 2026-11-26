@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "id": "cycle-basket-replacement-rack-long-wheelbase-maintenance-platform",
+  "category": "bicycle",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "tire": {
+      "kind": "matte",
+      "color": "#42494e"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#a2a9a9"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#627786"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#737e86"
+    },
+    "saddle": {
+      "kind": "matte",
+      "color": "#66574e"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a46755"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d0be"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a9805e"
+    },
+    "concrete": {
+      "kind": "matte",
+      "color": "#a6a19b"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b49b79"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bca16b"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        57,
+        25,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        56,
+        24,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        7
+      ],
+      "to": [
+        7,
+        23,
+        9
+      ],
+      "material": "rust"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        8,
+        7
+      ],
+      "to": [
+        56,
+        23,
+        9
+      ],
+      "material": "rust"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        56,
+        24,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        11
+      ],
+      "to": [
+        55,
+        10,
+        32
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        12
+      ],
+      "to": [
+        54,
+        23,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        14
+      ],
+      "to": [
+        19,
+        21,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        11,
+        14
+      ],
+      "to": [
+        53,
+        22,
+        20
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        22
+      ],
+      "to": [
+        54,
+        23,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        24
+      ],
+      "to": [
+        19,
+        21,
+        30
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        11,
+        24
+      ],
+      "to": [
+        53,
+        22,
+        30
+      ],
+      "material": "sand"
+    }
+  ]
+}

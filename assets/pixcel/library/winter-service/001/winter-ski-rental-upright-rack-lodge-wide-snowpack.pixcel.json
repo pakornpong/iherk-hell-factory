@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "id": "winter-ski-rental-upright-rack-lodge-wide-snowpack",
+  "category": "winter-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa8560",
+      "kind": "wood"
+    },
+    "ice": {
+      "color": "#b8c6c9",
+      "kind": "matte"
+    },
+    "snow": {
+      "color": "#dfdfd4",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ba8ac",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#5c6873",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#40484e",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#ae9d83",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#668096",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a76555",
+      "kind": "matte"
+    },
+    "gold": {
+      "color": "#c0a46e",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#aba08f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#91abb5",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "snow"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        54,
+        9,
+        37
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        20
+      ],
+      "to": [
+        53,
+        14,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        13,
+        7
+      ],
+      "to": [
+        9,
+        10,
+        38
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        13,
+        7
+      ],
+      "to": [
+        11,
+        10,
+        39
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        19
+      ],
+      "to": [
+        11,
+        14,
+        21
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        13,
+        7
+      ],
+      "to": [
+        15,
+        10,
+        38
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        13,
+        7
+      ],
+      "to": [
+        17,
+        10,
+        39
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        19
+      ],
+      "to": [
+        17,
+        14,
+        21
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "line",
+      "from": [
+        50,
+        13,
+        7
+      ],
+      "to": [
+        50,
+        10,
+        38
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        13,
+        7
+      ],
+      "to": [
+        52,
+        10,
+        39
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        12,
+        19
+      ],
+      "to": [
+        52,
+        14,
+        21
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        14,
+        5
+      ],
+      "to": [
+        52,
+        23,
+        12
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        14,
+        12
+      ],
+      "to": [
+        51,
+        23,
+        14
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "line",
+      "from": [
+        47,
+        17,
+        14
+      ],
+      "to": [
+        52,
+        20,
+        20
+      ],
+      "material": "steel"
+    }
+  ]
+}

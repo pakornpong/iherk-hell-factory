@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "id": "music-fixture-upright-string-bass-ensemble-soundstage-carpet",
+  "category": "musical-instruments",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a8825e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785b47"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b424a"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#88949a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6adad"
+    },
+    "yellow": {
+      "kind": "metal",
+      "color": "#c1a164"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#a87b60"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd3be"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#8c6f5d"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a8e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a36153"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        57,
+        26,
+        1
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        1
+      ],
+      "to": [
+        56,
+        25,
+        1
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        10,
+        4
+      ],
+      "to": [
+        36,
+        18,
+        25
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        11,
+        6
+      ],
+      "to": [
+        39,
+        17,
+        17
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        10,
+        21
+      ],
+      "to": [
+        35,
+        18,
+        30
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        12,
+        27
+      ],
+      "to": [
+        31,
+        15,
+        46
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        12,
+        45
+      ],
+      "to": [
+        32,
+        15,
+        48
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        18,
+        13
+      ],
+      "to": [
+        30,
+        16,
+        46
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        16,
+        12
+      ],
+      "to": [
+        34,
+        18,
+        14
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        13,
+        2
+      ],
+      "to": [
+        31,
+        14,
+        6
+      ],
+      "material": "steel"
+    }
+  ]
+}

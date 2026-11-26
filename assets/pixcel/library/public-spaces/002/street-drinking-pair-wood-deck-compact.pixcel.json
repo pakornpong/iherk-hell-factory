@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "id": "street-drinking-pair-wood-deck-compact",
+  "category": "public-space",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a07f60"
+    },
+    "darkwood": {
+      "kind": "wood",
+      "color": "#755943"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#929fa5"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#505d66"
+    },
+    "paved": {
+      "kind": "matte",
+      "color": "#ada99e"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#444d52"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbd7c8"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#647d91"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#9f7060"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b29d7b"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#97b5bf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        0
+      ],
+      "to": [
+        27,
+        27,
+        1
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        2
+      ],
+      "to": [
+        27,
+        7,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        10,
+        2
+      ],
+      "to": [
+        27,
+        12,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        15,
+        2
+      ],
+      "to": [
+        27,
+        17,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        20,
+        2
+      ],
+      "to": [
+        27,
+        22,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        25,
+        2
+      ],
+      "to": [
+        27,
+        27,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        3
+      ],
+      "to": [
+        22,
+        22,
+        7
+      ],
+      "material": "paved"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 7,
+      "zTo": 23,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 7,
+      "zTo": 19,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 23,
+      "zTo": 26,
+      "radius": 6,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 6,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        26
+      ],
+      "to": [
+        13,
+        14,
+        29
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        11,
+        22
+      ],
+      "to": [
+        20,
+        13,
+        25
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        7
+      ],
+      "to": [
+        22,
+        20,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        20,
+        15
+      ],
+      "to": [
+        21,
+        22,
+        17
+      ],
+      "material": "darkwood"
+    }
+  ]
+}

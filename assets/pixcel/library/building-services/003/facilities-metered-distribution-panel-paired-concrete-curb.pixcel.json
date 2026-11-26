@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "facilities-metered-distribution-panel-paired-concrete-curb",
+  "category": "building-services",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "galv": {
+      "color": "#a4a9a9",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#647080",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#41484e",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#cbc6b8",
+      "kind": "matte"
+    },
+    "white": {
+      "color": "#ded9cd",
+      "kind": "matte"
+    },
+    "ochre": {
+      "color": "#bd9b5b",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a35d50",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8aa7b3",
+      "kind": "glass"
+    },
+    "copper": {
+      "color": "#b58165",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#3b4145",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        58,
+        26,
+        1
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        57,
+        25,
+        5
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        25,
+        2
+      ],
+      "to": [
+        56,
+        26,
+        2
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        6
+      ],
+      "to": [
+        56,
+        23,
+        36
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        8
+      ],
+      "to": [
+        55,
+        24,
+        34
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        25
+      ],
+      "to": [
+        11,
+        25,
+        30
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        26
+      ],
+      "to": [
+        10,
+        25,
+        29
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        14
+      ],
+      "to": [
+        10,
+        25,
+        20
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        24,
+        25
+      ],
+      "to": [
+        21,
+        25,
+        30
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        25,
+        26
+      ],
+      "to": [
+        20,
+        25,
+        29
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        24,
+        14
+      ],
+      "to": [
+        20,
+        25,
+        20
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        24,
+        25
+      ],
+      "to": [
+        54,
+        25,
+        30
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        25,
+        26
+      ],
+      "to": [
+        53,
+        25,
+        29
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        24,
+        14
+      ],
+      "to": [
+        53,
+        25,
+        20
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        32
+      ],
+      "to": [
+        53,
+        25,
+        33
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        8,
+        36
+      ],
+      "to": [
+        12,
+        12,
+        43
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        8,
+        36
+      ],
+      "to": [
+        51,
+        12,
+        43
+      ],
+      "material": "galv"
+    }
+  ]
+}

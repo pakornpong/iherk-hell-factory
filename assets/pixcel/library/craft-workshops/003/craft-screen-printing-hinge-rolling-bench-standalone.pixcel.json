@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "id": "craft-screen-printing-hinge-rolling-bench-standalone",
+  "category": "craft-workshop",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ab8159"
+    },
+    "nut": {
+      "kind": "wood",
+      "color": "#745644"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9af"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596471"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#dbd2be"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a86550"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9d5553"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e798a"
+    },
+    "soot": {
+      "kind": "matte",
+      "color": "#3a4046"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#a89779"
+    },
+    "buff": {
+      "kind": "matte",
+      "color": "#c7a969"
+    },
+    "pane": {
+      "kind": "glass",
+      "color": "#87a6b0"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        0
+      ],
+      "to": [
+        10,
+        9,
+        3
+      ],
+      "material": "soot"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        23,
+        0
+      ],
+      "to": [
+        10,
+        25,
+        3
+      ],
+      "material": "soot"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        7,
+        0
+      ],
+      "to": [
+        45,
+        9,
+        3
+      ],
+      "material": "soot"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        23,
+        0
+      ],
+      "to": [
+        45,
+        25,
+        3
+      ],
+      "material": "soot"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        4
+      ],
+      "to": [
+        44,
+        25,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        7
+      ],
+      "to": [
+        44,
+        25,
+        9
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        5,
+        10
+      ],
+      "to": [
+        42,
+        6,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        10
+      ],
+      "to": [
+        44,
+        26,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        15
+      ],
+      "to": [
+        40,
+        9,
+        18
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        15
+      ],
+      "to": [
+        39,
+        24,
+        16
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        9,
+        18
+      ],
+      "to": [
+        9,
+        22,
+        30
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        39,
+        9,
+        18
+      ],
+      "to": [
+        39,
+        22,
+        30
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        21,
+        29
+      ],
+      "to": [
+        39,
+        23,
+        30
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        9,
+        18
+      ],
+      "to": [
+        38,
+        9,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        10,
+        19
+      ],
+      "to": [
+        12,
+        21,
+        29
+      ],
+      "material": "pane"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        10,
+        19
+      ],
+      "to": [
+        15,
+        21,
+        29
+      ],
+      "material": "pane"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        10,
+        19
+      ],
+      "to": [
+        18,
+        21,
+        29
+      ],
+      "material": "pane"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        10,
+        19
+      ],
+      "to": [
+        21,
+        21,
+        29
+      ],
+      "material": "pane"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        10,
+        19
+      ],
+      "to": [
+        24,
+        21,
+        29
+      ],
+      "material": "pane"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        10,
+        19
+      ],
+      "to": [
+        27,
+        21,
+        29
+      ],
+      "material": "pane"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        10,
+        19
+      ],
+      "to": [
+        30,
+        21,
+        29
+      ],
+      "material": "pane"
+    },
+    {
+      "op": "line",
+      "from": [
+        33,
+        10,
+        19
+      ],
+      "to": [
+        33,
+        21,
+        29
+      ],
+      "material": "pane"
+    },
+    {
+      "op": "line",
+      "from": [
+        36,
+        10,
+        19
+      ],
+      "to": [
+        36,
+        21,
+        29
+      ],
+      "material": "pane"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        17,
+        16
+      ],
+      "to": [
+        24,
+        23,
+        17
+      ],
+      "material": "red"
+    }
+  ]
+}

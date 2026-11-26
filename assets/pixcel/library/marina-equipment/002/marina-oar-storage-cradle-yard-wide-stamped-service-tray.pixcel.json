@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "id": "marina-oar-storage-cradle-yard-wide-stamped-service-tray",
+  "category": "maritime",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a4866b"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#698294"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9caaa9"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596672"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#40494e"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#ad6d56"
+    },
+    "ochre": {
+      "kind": "matte",
+      "color": "#c19e62"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b69c7e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba7b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        54,
+        24,
+        4
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        4
+      ],
+      "to": [
+        54,
+        25,
+        5
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        8
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        8
+      ],
+      "to": [
+        9,
+        24,
+        21
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        7,
+        8
+      ],
+      "to": [
+        53,
+        24,
+        21
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        10,
+        18
+      ],
+      "to": [
+        52,
+        11,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        9,
+        18
+      ],
+      "to": [
+        53,
+        12,
+        19
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        15,
+        19
+      ],
+      "to": [
+        52,
+        16,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        14,
+        19
+      ],
+      "to": [
+        53,
+        17,
+        20
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        20,
+        18
+      ],
+      "to": [
+        52,
+        21,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        19,
+        18
+      ],
+      "to": [
+        53,
+        22,
+        19
+      ],
+      "material": "marine"
+    }
+  ]
+}

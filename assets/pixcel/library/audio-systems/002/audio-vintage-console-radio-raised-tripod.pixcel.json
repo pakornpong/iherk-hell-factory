@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 1,
+  "id": "audio-vintage-console-radio-raised-tripod",
+  "category": "audio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cabinet": {
+      "kind": "wood",
+      "color": "#8f6952"
+    },
+    "burl": {
+      "kind": "wood",
+      "color": "#ac815f"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#353941"
+    },
+    "grille": {
+      "kind": "matte",
+      "color": "#5f5b58"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#4d5159"
+    },
+    "aluminum": {
+      "kind": "metal",
+      "color": "#a1a8aa"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c2a166"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d2cbb6"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9e594f"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        18
+      ],
+      "to": [
+        5,
+        23,
+        0
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        18
+      ],
+      "to": [
+        26,
+        23,
+        0
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        18
+      ],
+      "to": [
+        15,
+        4,
+        0
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 18,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        18
+      ],
+      "to": [
+        24,
+        24,
+        18
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        19
+      ],
+      "to": [
+        26,
+        23,
+        36
+      ],
+      "material": "cabinet"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        36
+      ],
+      "to": [
+        24,
+        22,
+        38
+      ],
+      "material": "burl"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        23,
+        21
+      ],
+      "to": [
+        23,
+        23,
+        30
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        23
+      ],
+      "to": [
+        22,
+        24,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        26
+      ],
+      "to": [
+        22,
+        24,
+        26
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        29
+      ],
+      "to": [
+        22,
+        24,
+        29
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        23,
+        32
+      ],
+      "to": [
+        18,
+        23,
+        34
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        24,
+        31
+      ],
+      "to": [
+        22,
+        24,
+        31
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        32
+      ],
+      "to": [
+        23,
+        24,
+        32
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        24,
+        33
+      ],
+      "to": [
+        24,
+        24,
+        33
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        34
+      ],
+      "to": [
+        23,
+        24,
+        34
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        24,
+        35
+      ],
+      "to": [
+        22,
+        24,
+        35
+      ],
+      "material": "aluminum"
+    }
+  ]
+}

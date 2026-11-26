@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "id": "conservation-digitization-overhead-copy-double-width-mobile-pedestal",
+  "category": "conservation",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9ca5a7"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#566470"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a7805d"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3d454c"
+    },
+    "paste": {
+      "kind": "matte",
+      "color": "#d4ccba"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#dfd7be"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627991"
+    },
+    "taupe": {
+      "kind": "matte",
+      "color": "#b09b84"
+    },
+    "oxblood": {
+      "kind": "matte",
+      "color": "#9c5d52"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#98aeb4"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bea272"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        7
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        7
+      ],
+      "to": [
+        55,
+        22,
+        9
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        54,
+        24,
+        11
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        12
+      ],
+      "to": [
+        52,
+        21,
+        13
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        12
+      ],
+      "to": [
+        8,
+        8,
+        41
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        8,
+        40
+      ],
+      "to": [
+        30,
+        13,
+        38
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        12,
+        34
+      ],
+      "to": [
+        35,
+        18,
+        39
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 32,
+      "zTo": 34,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        53,
+        10,
+        13
+      ],
+      "to": [
+        53,
+        12,
+        28
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        11,
+        27
+      ],
+      "to": [
+        53,
+        18,
+        29
+      ],
+      "material": "paste"
+    }
+  ]
+}

@@ -1,0 +1,560 @@
+{
+  "schemaVersion": 1,
+  "id": "headset-compact-oval-telescoping-band-over-ear",
+  "category": "electronics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#788e9f"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#303c4b"
+    },
+    "cushion": {
+      "kind": "matte",
+      "color": "#5e6b7d"
+    },
+    "mesh": {
+      "kind": "matte",
+      "color": "#929498"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c3a25d"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#493e36"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        2
+      ],
+      "to": [
+        7,
+        15,
+        2
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        13,
+        3
+      ],
+      "to": [
+        7,
+        17,
+        3
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        13,
+        4
+      ],
+      "to": [
+        7,
+        17,
+        4
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        5
+      ],
+      "to": [
+        7,
+        18,
+        5
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        6
+      ],
+      "to": [
+        7,
+        18,
+        6
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        7
+      ],
+      "to": [
+        7,
+        18,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        8
+      ],
+      "to": [
+        7,
+        18,
+        8
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        9
+      ],
+      "to": [
+        7,
+        19,
+        9
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        10
+      ],
+      "to": [
+        7,
+        18,
+        10
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        11
+      ],
+      "to": [
+        7,
+        18,
+        11
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        12
+      ],
+      "to": [
+        7,
+        18,
+        12
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        13
+      ],
+      "to": [
+        7,
+        18,
+        13
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        13,
+        14
+      ],
+      "to": [
+        7,
+        17,
+        14
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        13,
+        15
+      ],
+      "to": [
+        7,
+        17,
+        15
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        16
+      ],
+      "to": [
+        7,
+        15,
+        16
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        15,
+        2
+      ],
+      "to": [
+        26,
+        15,
+        2
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        13,
+        3
+      ],
+      "to": [
+        26,
+        17,
+        3
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        13,
+        4
+      ],
+      "to": [
+        26,
+        17,
+        4
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        5
+      ],
+      "to": [
+        26,
+        18,
+        5
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        6
+      ],
+      "to": [
+        26,
+        18,
+        6
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        7
+      ],
+      "to": [
+        26,
+        18,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        8
+      ],
+      "to": [
+        26,
+        18,
+        8
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        9
+      ],
+      "to": [
+        26,
+        19,
+        9
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        10
+      ],
+      "to": [
+        26,
+        18,
+        10
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        11
+      ],
+      "to": [
+        26,
+        18,
+        11
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        12
+      ],
+      "to": [
+        26,
+        18,
+        12
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        13
+      ],
+      "to": [
+        26,
+        18,
+        13
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        13,
+        14
+      ],
+      "to": [
+        26,
+        17,
+        14
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        13,
+        15
+      ],
+      "to": [
+        26,
+        17,
+        15
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        15,
+        16
+      ],
+      "to": [
+        26,
+        15,
+        16
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        4
+      ],
+      "to": [
+        9,
+        20,
+        14
+      ],
+      "material": "cushion"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        10,
+        4
+      ],
+      "to": [
+        23,
+        20,
+        14
+      ],
+      "material": "cushion"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        15,
+        13
+      ],
+      "to": [
+        8,
+        15,
+        24
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        15,
+        13
+      ],
+      "to": [
+        22,
+        15,
+        24
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        19
+      ],
+      "to": [
+        9,
+        17,
+        24
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        13,
+        19
+      ],
+      "to": [
+        23,
+        17,
+        24
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        24
+      ],
+      "to": [
+        21,
+        18,
+        27
+      ],
+      "material": "leather"
+    }
+  ]
+}

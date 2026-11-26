@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "id": "terminal-crt-bell-arm-mounted-operator-levers",
+  "category": "computers",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "matte",
+      "color": "#a4acb1"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#ded7bd"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#737d6e"
+    },
+    "dark": {
+      "kind": "metal",
+      "color": "#384252"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#232b39"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#c68744"
+    },
+    "display": {
+      "kind": "emissive",
+      "color": "#a3b9cc",
+      "glowRadius": 1,
+      "glowIntensity": 0.2
+    },
+    "ink": {
+      "kind": "matte",
+      "color": "#465763"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        0
+      ],
+      "to": [
+        27,
+        7,
+        19
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        17
+      ],
+      "to": [
+        12,
+        14,
+        20
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        12,
+        16
+      ],
+      "to": [
+        22,
+        16,
+        21
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        16
+      ],
+      "to": [
+        24,
+        14,
+        24
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        15,
+        17
+      ],
+      "to": [
+        23,
+        23,
+        18
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        21
+      ],
+      "to": [
+        21,
+        14,
+        24
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        22
+      ],
+      "to": [
+        25,
+        16,
+        36
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        2,
+        24
+      ],
+      "to": [
+        22,
+        5,
+        34
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        16,
+        23
+      ],
+      "to": [
+        24,
+        17,
+        35
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        17,
+        25
+      ],
+      "to": [
+        22,
+        17,
+        33
+      ],
+      "material": "display"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        17,
+        28
+      ],
+      "to": [
+        18,
+        17,
+        28
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        17,
+        30
+      ],
+      "to": [
+        20,
+        17,
+        30
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        18,
+        20
+      ],
+      "to": [
+        25,
+        27,
+        21
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        23
+      ],
+      "zFrom": 22,
+      "zTo": 23,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        23
+      ],
+      "zFrom": 24,
+      "zTo": 26,
+      "radius": 0,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        23
+      ],
+      "zFrom": 27,
+      "zTo": 28,
+      "radius": 1,
+      "material": "orange"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        23
+      ],
+      "zFrom": 22,
+      "zTo": 23,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        23
+      ],
+      "zFrom": 24,
+      "zTo": 26,
+      "radius": 0,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        23
+      ],
+      "zFrom": 27,
+      "zTo": 28,
+      "radius": 1,
+      "material": "orange"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        23
+      ],
+      "zFrom": 22,
+      "zTo": 23,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        23
+      ],
+      "zFrom": 24,
+      "zTo": 26,
+      "radius": 0,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        23
+      ],
+      "zFrom": 27,
+      "zTo": 28,
+      "radius": 1,
+      "material": "orange"
+    }
+  ]
+}

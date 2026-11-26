@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "id": "pharmacy-counter-payment-and-bag-wide-wall-backbench",
+  "category": "pharmacy",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a78363"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c8"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9aa4a7"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#5e6975"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#424952"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#677f94"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#bc9466"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a76757"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d9c9ac"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91adb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        55,
+        8,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        9
+      ],
+      "to": [
+        55,
+        25,
+        10
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        3
+      ],
+      "to": [
+        6,
+        22,
+        9
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        53,
+        8,
+        3
+      ],
+      "to": [
+        53,
+        22,
+        9
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        11
+      ],
+      "to": [
+        54,
+        24,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        16
+      ],
+      "to": [
+        19,
+        19,
+        19
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        19
+      ],
+      "to": [
+        17,
+        11,
+        28
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        23
+      ],
+      "to": [
+        17,
+        11,
+        27
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        14,
+        20
+      ],
+      "to": [
+        18,
+        19,
+        20
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        11,
+        16
+      ],
+      "to": [
+        53,
+        22,
+        27
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        12,
+        27
+      ],
+      "to": [
+        52,
+        13,
+        30
+      ],
+      "material": "amber"
+    }
+  ]
+}

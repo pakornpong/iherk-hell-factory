@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "id": "patio-swing-bench-pergola-wide-timber-deck",
+  "category": "patio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a87e58",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#745743",
+      "kind": "wood"
+    },
+    "stone": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d8ceba",
+      "kind": "matte"
+    },
+    "fabric": {
+      "color": "#aa9985",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca9ab",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#586671",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#637e94",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a46454",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a9765f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fadb8",
+      "kind": "glass"
+    },
+    "plant": {
+      "color": "#6d805f",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8a735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        53,
+        25,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        53,
+        9,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        3
+      ],
+      "to": [
+        53,
+        14,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        3
+      ],
+      "to": [
+        53,
+        19,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        3
+      ],
+      "to": [
+        53,
+        24,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        5
+      ],
+      "to": [
+        7,
+        9,
+        42
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        5
+      ],
+      "to": [
+        7,
+        25,
+        42
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        5
+      ],
+      "to": [
+        52,
+        9,
+        42
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        23,
+        5
+      ],
+      "to": [
+        52,
+        25,
+        42
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        40
+      ],
+      "to": [
+        53,
+        10,
+        42
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        40
+      ],
+      "to": [
+        53,
+        25,
+        42
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        42
+      ],
+      "to": [
+        8,
+        25,
+        43
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        7,
+        42
+      ],
+      "to": [
+        13,
+        25,
+        43
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        7,
+        42
+      ],
+      "to": [
+        18,
+        25,
+        43
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        7,
+        42
+      ],
+      "to": [
+        23,
+        25,
+        43
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        7,
+        42
+      ],
+      "to": [
+        28,
+        25,
+        43
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        7,
+        42
+      ],
+      "to": [
+        33,
+        25,
+        43
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        7,
+        42
+      ],
+      "to": [
+        38,
+        25,
+        43
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        7,
+        42
+      ],
+      "to": [
+        43,
+        25,
+        43
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        7,
+        42
+      ],
+      "to": [
+        48,
+        25,
+        43
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        15
+      ],
+      "to": [
+        49,
+        23,
+        17
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        17
+      ],
+      "to": [
+        49,
+        12,
+        27
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        11,
+        18
+      ],
+      "to": [
+        9,
+        9,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        22,
+        18
+      ],
+      "to": [
+        9,
+        22,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        11,
+        18
+      ],
+      "to": [
+        48,
+        9,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        22,
+        18
+      ],
+      "to": [
+        48,
+        22,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        19,
+        5
+      ],
+      "to": [
+        51,
+        24,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        19,
+        10
+      ],
+      "to": [
+        50,
+        24,
+        11
+      ],
+      "material": "cream"
+    }
+  ]
+}

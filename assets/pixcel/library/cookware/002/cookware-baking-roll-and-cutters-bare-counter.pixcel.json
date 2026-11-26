@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "id": "cookware-baking-roll-and-cutters-bare-counter",
+  "category": "kitchen",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "kind": "metal",
+      "color": "#596168"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#a4acab"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#aa7e56"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795e4c"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#41464b"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d0bb"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#607d97"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78260"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda16b"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ab6652"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aeba"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        1
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        2
+      ],
+      "to": [
+        22,
+        12,
+        6
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        3
+      ],
+      "to": [
+        8,
+        11,
+        4
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        9,
+        3
+      ],
+      "to": [
+        26,
+        11,
+        4
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        19
+      ],
+      "zFrom": 2,
+      "zTo": 4,
+      "radius": 3,
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        19
+      ],
+      "zFrom": 3,
+      "zTo": 4,
+      "radius": 2,
+      "material": null
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        21
+      ],
+      "zFrom": 2,
+      "zTo": 5,
+      "radius": 4,
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        21
+      ],
+      "zFrom": 3,
+      "zTo": 5,
+      "radius": 3,
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        15,
+        2
+      ],
+      "to": [
+        17,
+        18,
+        2
+      ],
+      "material": "cream"
+    }
+  ]
+}

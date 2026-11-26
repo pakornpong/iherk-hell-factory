@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-wind-vane-and-cup-mast-station-wide-soil-reference-plot",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        14,
+        21
+      ],
+      "to": [
+        6,
+        23,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        14,
+        21
+      ],
+      "to": [
+        52,
+        23,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        14,
+        21
+      ],
+      "to": [
+        30,
+        6,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        14
+      ],
+      "zFrom": 18,
+      "zTo": 45,
+      "radius": 1,
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        14,
+        38
+      ],
+      "to": [
+        38,
+        15,
+        40
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        13,
+        37
+      ],
+      "to": [
+        38,
+        16,
+        41
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        14,
+        45
+      ],
+      "to": [
+        25,
+        14,
+        45
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        25,
+        14
+      ],
+      "zFrom": 45,
+      "zTo": 47,
+      "radius": 2,
+      "material": "dark"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        14,
+        45
+      ],
+      "to": [
+        34,
+        10,
+        45
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        10
+      ],
+      "zFrom": 45,
+      "zTo": 47,
+      "radius": 2,
+      "material": "dark"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        14,
+        45
+      ],
+      "to": [
+        34,
+        19,
+        45
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        19
+      ],
+      "zFrom": 45,
+      "zTo": 47,
+      "radius": 2,
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        14
+      ],
+      "zFrom": 6,
+      "zTo": 27,
+      "radius": 1,
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        13,
+        23
+      ],
+      "to": [
+        47,
+        15,
+        25
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        13,
+        26
+      ],
+      "to": [
+        46,
+        15,
+        28
+      ],
+      "material": "pale"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "id": "cinema-popcorn-kettle-display-compact-aisle-carpet",
+  "category": "cinema",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#3b444d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9aa6a7"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9d6057"
+    },
+    "velvet": {
+      "kind": "matte",
+      "color": "#765157"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b5a38e"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#dcd0ba"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a7805e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77594a"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bda16c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#90a9b3"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d93"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        1
+      ],
+      "material": "velvet"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        1
+      ],
+      "to": [
+        28,
+        7,
+        1
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        2
+      ],
+      "to": [
+        28,
+        24,
+        7
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        7,
+        24,
+        30
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        7
+      ],
+      "to": [
+        28,
+        24,
+        30
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        28,
+        8,
+        30
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        30
+      ],
+      "to": [
+        28,
+        24,
+        33
+      ],
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        14
+      ],
+      "zFrom": 10,
+      "zTo": 17,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        13,
+        17
+      ],
+      "to": [
+        15,
+        15,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        7
+      ],
+      "to": [
+        25,
+        22,
+        8
+      ],
+      "material": "offwhite"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        30
+      ],
+      "to": [
+        26,
+        24,
+        32
+      ],
+      "material": "offwhite"
+    }
+  ]
+}

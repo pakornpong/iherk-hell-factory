@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 1,
+  "id": "bath-storage-open-toiletry-compartments-room-width-steel-stretcher",
+  "category": "bathroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a6815e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#775a48"
+    },
+    "paint": {
+      "kind": "matte",
+      "color": "#b4ab9d"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c9baab"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5e7182"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad5c9"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#9da9ad"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#54616d"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b29c70"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a0b3b7"
+    },
+    "rose": {
+      "kind": "matte",
+      "color": "#a87976"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#9d6f58"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        6,
+        8,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        6,
+        23,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        0
+      ],
+      "to": [
+        52,
+        8,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        22,
+        0
+      ],
+      "to": [
+        52,
+        23,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        52,
+        8,
+        4
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        3
+      ],
+      "to": [
+        52,
+        23,
+        4
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        8
+      ],
+      "to": [
+        54,
+        25,
+        8
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        9
+      ],
+      "to": [
+        53,
+        24,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        12
+      ],
+      "to": [
+        53,
+        9,
+        36
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        12
+      ],
+      "to": [
+        7,
+        24,
+        35
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        9,
+        12
+      ],
+      "to": [
+        53,
+        24,
+        35
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        18
+      ],
+      "to": [
+        51,
+        24,
+        19
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        26
+      ],
+      "to": [
+        51,
+        24,
+        27
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        34
+      ],
+      "to": [
+        51,
+        24,
+        35
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 13,
+      "zTo": 18,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        17
+      ],
+      "zFrom": 13,
+      "zTo": 17,
+      "radius": 2,
+      "material": "rose"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        11,
+        13
+      ],
+      "to": [
+        49,
+        21,
+        15
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 20,
+      "zTo": 25,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        17
+      ],
+      "zFrom": 20,
+      "zTo": 24,
+      "radius": 2,
+      "material": "rose"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        11,
+        20
+      ],
+      "to": [
+        49,
+        21,
+        22
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 28,
+      "zTo": 33,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        17
+      ],
+      "zFrom": 28,
+      "zTo": 32,
+      "radius": 2,
+      "material": "rose"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        11,
+        28
+      ],
+      "to": [
+        49,
+        21,
+        30
+      ],
+      "material": "linen"
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "id": "patio-garden-wicker-sofa-compact-gardenside-kerb",
+  "category": "patio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a87e58",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#745743",
+      "kind": "wood"
+    },
+    "stone": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d8ceba",
+      "kind": "matte"
+    },
+    "fabric": {
+      "color": "#aa9985",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca9ab",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#586671",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#637e94",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a46454",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a9765f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fadb8",
+      "kind": "glass"
+    },
+    "plant": {
+      "color": "#6d805f",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8a735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        1
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        3
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        29,
+        8,
+        3
+      ],
+      "material": "plant"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        3
+      ],
+      "to": [
+        29,
+        25,
+        3
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        28,
+        24,
+        9
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        9
+      ],
+      "to": [
+        28,
+        10,
+        25
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        9
+      ],
+      "to": [
+        27,
+        23,
+        13
+      ],
+      "material": "fabric"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        10
+      ],
+      "to": [
+        8,
+        23,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        10,
+        10
+      ],
+      "to": [
+        28,
+        23,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        14
+      ],
+      "to": [
+        27,
+        8,
+        14
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        17
+      ],
+      "to": [
+        27,
+        8,
+        17
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        20
+      ],
+      "to": [
+        27,
+        8,
+        20
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        23
+      ],
+      "to": [
+        27,
+        8,
+        23
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        14
+      ],
+      "to": [
+        14,
+        14,
+        20
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        10,
+        14
+      ],
+      "to": [
+        23,
+        14,
+        20
+      ],
+      "material": "cream"
+    }
+  ]
+}

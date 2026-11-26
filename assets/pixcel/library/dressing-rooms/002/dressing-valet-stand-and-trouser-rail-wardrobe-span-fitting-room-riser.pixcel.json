@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "id": "dressing-valet-stand-and-trouser-rail-wardrobe-span-fitting-room-riser",
+  "category": "dressing-room",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745844"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#99a6a7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda174"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#56626c"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#ad9b87"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c92"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#465056"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a16357"
+    },
+    "mirror": {
+      "kind": "glass",
+      "color": "#9db1b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        3
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        5
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        4
+      ],
+      "to": [
+        14,
+        27,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        54,
+        24,
+        9
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        13
+      ],
+      "zFrom": 10,
+      "zTo": 39,
+      "radius": 1,
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        13,
+        38
+      ],
+      "to": [
+        23,
+        14,
+        35
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        13,
+        38
+      ],
+      "to": [
+        37,
+        14,
+        35
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        14,
+        35
+      ],
+      "to": [
+        37,
+        15,
+        36
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        16,
+        28
+      ],
+      "to": [
+        36,
+        17,
+        29
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        16,
+        19
+      ],
+      "to": [
+        35,
+        18,
+        28
+      ],
+      "material": "blue"
+    }
+  ]
+}

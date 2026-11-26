@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "id": "washbasin-tube-frame-ceramic-trough-wall-spout",
+  "category": "bathroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "porcelain": {
+      "kind": "matte",
+      "color": "#e4e5de"
+    },
+    "shadow": {
+      "kind": "matte",
+      "color": "#b6b9b6"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#98aeb9"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#515354"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a97a53"
+    },
+    "tile": {
+      "kind": "matte",
+      "color": "#737d6e"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c2a060"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#78aebc"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        6,
+        7,
+        20
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        0
+      ],
+      "to": [
+        6,
+        25,
+        20
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        6,
+        0
+      ],
+      "to": [
+        25,
+        7,
+        20
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        24,
+        0
+      ],
+      "to": [
+        25,
+        25,
+        20
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        4
+      ],
+      "to": [
+        25,
+        7,
+        5
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        10
+      ],
+      "to": [
+        25,
+        25,
+        11
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        9
+      ],
+      "to": [
+        15,
+        25,
+        13
+      ],
+      "material": "porcelain"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        20
+      ],
+      "to": [
+        27,
+        27,
+        21
+      ],
+      "material": "porcelain"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        22
+      ],
+      "to": [
+        27,
+        10,
+        25
+      ],
+      "material": "porcelain"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        11,
+        22
+      ],
+      "to": [
+        5,
+        25,
+        25
+      ],
+      "material": "porcelain"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        11,
+        22
+      ],
+      "to": [
+        27,
+        25,
+        25
+      ],
+      "material": "porcelain"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        25,
+        22
+      ],
+      "to": [
+        27,
+        27,
+        25
+      ],
+      "material": "porcelain"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        18
+      ],
+      "zFrom": 22,
+      "zTo": 22,
+      "radius": 2,
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        22
+      ],
+      "to": [
+        26,
+        6,
+        33
+      ],
+      "material": "tile"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        6,
+        28
+      ],
+      "to": [
+        16,
+        14,
+        29
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        14
+      ],
+      "zFrom": 27,
+      "zTo": 28,
+      "radius": 1,
+      "material": "chrome"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "id": "survey-total-station-tripod",
+  "category": "surveying",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "color": "#e5e3d6",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#a0b0bc",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#445361",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#272f3b",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#49798f",
+      "kind": "matte"
+    },
+    "aqua": {
+      "color": "#78c5c4",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#b85446",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#ac784e",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e0ad58",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#f2ecdc",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        23
+      ],
+      "to": [
+        5,
+        24,
+        0
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        23
+      ],
+      "to": [
+        24,
+        24,
+        0
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        23
+      ],
+      "to": [
+        15,
+        5,
+        0
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        22
+      ],
+      "to": [
+        18,
+        18,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        25
+      ],
+      "to": [
+        21,
+        19,
+        36
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        19,
+        28
+      ],
+      "to": [
+        19,
+        21,
+        34
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        21,
+        30
+      ],
+      "to": [
+        17,
+        21,
+        32
+      ],
+      "material": "aqua"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        11,
+        37
+      ],
+      "to": [
+        20,
+        12,
+        38
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        11,
+        36
+      ],
+      "to": [
+        12,
+        12,
+        37
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        11,
+        36
+      ],
+      "to": [
+        20,
+        12,
+        37
+      ],
+      "material": "frame"
+    }
+  ]
+}

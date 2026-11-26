@@ -1,0 +1,828 @@
+[
+  {
+    "id": "service-shop-key-blank-hook-wall-small-shop-inset",
+    "category": "service-retail",
+    "file": "001/service-shop-key-blank-hook-wall-small-shop-inset.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "service-shop-key-blank-hook-wall-small-shop-drawer-counter",
+    "category": "service-retail",
+    "file": "001/service-shop-key-blank-hook-wall-small-shop-drawer-counter.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "service-shop-key-blank-hook-wall-small-shop-casters",
+    "category": "service-retail",
+    "file": "001/service-shop-key-blank-hook-wall-small-shop-casters.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "service-shop-key-blank-hook-wall-small-shop-workshop-trestle",
+    "category": "service-retail",
+    "file": "001/service-shop-key-blank-hook-wall-small-shop-workshop-trestle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "service-shop-key-blank-hook-wall-small-shop-panelled-backline",
+    "category": "service-retail",
+    "file": "001/service-shop-key-blank-hook-wall-small-shop-panelled-backline.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "service-shop-key-blank-hook-wall-store-span-inset",
+    "category": "service-retail",
+    "file": "001/service-shop-key-blank-hook-wall-store-span-inset.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "service-shop-key-blank-hook-wall-store-span-drawer-counter",
+    "category": "service-retail",
+    "file": "001/service-shop-key-blank-hook-wall-store-span-drawer-counter.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "service-shop-key-blank-hook-wall-store-span-casters",
+    "category": "service-retail",
+    "file": "001/service-shop-key-blank-hook-wall-store-span-casters.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "service-shop-key-blank-hook-wall-store-span-workshop-trestle",
+    "category": "service-retail",
+    "file": "001/service-shop-key-blank-hook-wall-store-span-workshop-trestle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "service-shop-key-blank-hook-wall-store-span-panelled-backline",
+    "category": "service-retail",
+    "file": "001/service-shop-key-blank-hook-wall-store-span-panelled-backline.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "service-shop-parts-bin-cashwrap-small-shop-inset",
+    "category": "service-retail",
+    "file": "001/service-shop-parts-bin-cashwrap-small-shop-inset.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "service-shop-parts-bin-cashwrap-small-shop-drawer-counter",
+    "category": "service-retail",
+    "file": "001/service-shop-parts-bin-cashwrap-small-shop-drawer-counter.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "service-shop-parts-bin-cashwrap-small-shop-casters",
+    "category": "service-retail",
+    "file": "001/service-shop-parts-bin-cashwrap-small-shop-casters.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "service-shop-parts-bin-cashwrap-small-shop-workshop-trestle",
+    "category": "service-retail",
+    "file": "001/service-shop-parts-bin-cashwrap-small-shop-workshop-trestle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "service-shop-parts-bin-cashwrap-small-shop-panelled-backline",
+    "category": "service-retail",
+    "file": "001/service-shop-parts-bin-cashwrap-small-shop-panelled-backline.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "service-shop-parts-bin-cashwrap-store-span-inset",
+    "category": "service-retail",
+    "file": "001/service-shop-parts-bin-cashwrap-store-span-inset.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "service-shop-parts-bin-cashwrap-store-span-drawer-counter",
+    "category": "service-retail",
+    "file": "001/service-shop-parts-bin-cashwrap-store-span-drawer-counter.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "service-shop-parts-bin-cashwrap-store-span-casters",
+    "category": "service-retail",
+    "file": "001/service-shop-parts-bin-cashwrap-store-span-casters.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "service-shop-parts-bin-cashwrap-store-span-workshop-trestle",
+    "category": "service-retail",
+    "file": "001/service-shop-parts-bin-cashwrap-store-span-workshop-trestle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "service-shop-parts-bin-cashwrap-store-span-panelled-backline",
+    "category": "service-retail",
+    "file": "001/service-shop-parts-bin-cashwrap-store-span-panelled-backline.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "service-shop-rental-equipment-return-small-shop-inset",
+    "category": "service-retail",
+    "file": "002/service-shop-rental-equipment-return-small-shop-inset.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "service-shop-rental-equipment-return-small-shop-drawer-counter",
+    "category": "service-retail",
+    "file": "002/service-shop-rental-equipment-return-small-shop-drawer-counter.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "service-shop-rental-equipment-return-small-shop-casters",
+    "category": "service-retail",
+    "file": "002/service-shop-rental-equipment-return-small-shop-casters.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "service-shop-rental-equipment-return-small-shop-workshop-trestle",
+    "category": "service-retail",
+    "file": "002/service-shop-rental-equipment-return-small-shop-workshop-trestle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "service-shop-rental-equipment-return-small-shop-panelled-backline",
+    "category": "service-retail",
+    "file": "002/service-shop-rental-equipment-return-small-shop-panelled-backline.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "service-shop-rental-equipment-return-store-span-inset",
+    "category": "service-retail",
+    "file": "002/service-shop-rental-equipment-return-store-span-inset.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "service-shop-rental-equipment-return-store-span-drawer-counter",
+    "category": "service-retail",
+    "file": "002/service-shop-rental-equipment-return-store-span-drawer-counter.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "service-shop-rental-equipment-return-store-span-casters",
+    "category": "service-retail",
+    "file": "002/service-shop-rental-equipment-return-store-span-casters.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "service-shop-rental-equipment-return-store-span-workshop-trestle",
+    "category": "service-retail",
+    "file": "002/service-shop-rental-equipment-return-store-span-workshop-trestle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "service-shop-rental-equipment-return-store-span-panelled-backline",
+    "category": "service-retail",
+    "file": "002/service-shop-rental-equipment-return-store-span-panelled-backline.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "service-shop-bag-repair-intake-small-shop-inset",
+    "category": "service-retail",
+    "file": "002/service-shop-bag-repair-intake-small-shop-inset.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "service-shop-bag-repair-intake-small-shop-drawer-counter",
+    "category": "service-retail",
+    "file": "002/service-shop-bag-repair-intake-small-shop-drawer-counter.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "service-shop-bag-repair-intake-small-shop-casters",
+    "category": "service-retail",
+    "file": "002/service-shop-bag-repair-intake-small-shop-casters.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "service-shop-bag-repair-intake-small-shop-workshop-trestle",
+    "category": "service-retail",
+    "file": "002/service-shop-bag-repair-intake-small-shop-workshop-trestle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "service-shop-bag-repair-intake-small-shop-panelled-backline",
+    "category": "service-retail",
+    "file": "002/service-shop-bag-repair-intake-small-shop-panelled-backline.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "service-shop-bag-repair-intake-store-span-inset",
+    "category": "service-retail",
+    "file": "002/service-shop-bag-repair-intake-store-span-inset.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "service-shop-bag-repair-intake-store-span-drawer-counter",
+    "category": "service-retail",
+    "file": "002/service-shop-bag-repair-intake-store-span-drawer-counter.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "service-shop-bag-repair-intake-store-span-casters",
+    "category": "service-retail",
+    "file": "002/service-shop-bag-repair-intake-store-span-casters.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "service-shop-bag-repair-intake-store-span-workshop-trestle",
+    "category": "service-retail",
+    "file": "002/service-shop-bag-repair-intake-store-span-workshop-trestle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "service-shop-bag-repair-intake-store-span-panelled-backline",
+    "category": "service-retail",
+    "file": "002/service-shop-bag-repair-intake-store-span-panelled-backline.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "service-shop-framing-moulding-sample-fan-small-shop-inset",
+    "category": "service-retail",
+    "file": "003/service-shop-framing-moulding-sample-fan-small-shop-inset.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "service-shop-framing-moulding-sample-fan-small-shop-drawer-counter",
+    "category": "service-retail",
+    "file": "003/service-shop-framing-moulding-sample-fan-small-shop-drawer-counter.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "service-shop-framing-moulding-sample-fan-small-shop-casters",
+    "category": "service-retail",
+    "file": "003/service-shop-framing-moulding-sample-fan-small-shop-casters.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "service-shop-framing-moulding-sample-fan-small-shop-workshop-trestle",
+    "category": "service-retail",
+    "file": "003/service-shop-framing-moulding-sample-fan-small-shop-workshop-trestle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "service-shop-framing-moulding-sample-fan-small-shop-panelled-backline",
+    "category": "service-retail",
+    "file": "003/service-shop-framing-moulding-sample-fan-small-shop-panelled-backline.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "service-shop-framing-moulding-sample-fan-store-span-inset",
+    "category": "service-retail",
+    "file": "003/service-shop-framing-moulding-sample-fan-store-span-inset.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "service-shop-framing-moulding-sample-fan-store-span-drawer-counter",
+    "category": "service-retail",
+    "file": "003/service-shop-framing-moulding-sample-fan-store-span-drawer-counter.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "service-shop-framing-moulding-sample-fan-store-span-casters",
+    "category": "service-retail",
+    "file": "003/service-shop-framing-moulding-sample-fan-store-span-casters.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "service-shop-framing-moulding-sample-fan-store-span-workshop-trestle",
+    "category": "service-retail",
+    "file": "003/service-shop-framing-moulding-sample-fan-store-span-workshop-trestle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "service-shop-framing-moulding-sample-fan-store-span-panelled-backline",
+    "category": "service-retail",
+    "file": "003/service-shop-framing-moulding-sample-fan-store-span-panelled-backline.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "service-shop-paint-sample-swing-arms-small-shop-inset",
+    "category": "service-retail",
+    "file": "003/service-shop-paint-sample-swing-arms-small-shop-inset.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "service-shop-paint-sample-swing-arms-small-shop-drawer-counter",
+    "category": "service-retail",
+    "file": "003/service-shop-paint-sample-swing-arms-small-shop-drawer-counter.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "service-shop-paint-sample-swing-arms-small-shop-casters",
+    "category": "service-retail",
+    "file": "003/service-shop-paint-sample-swing-arms-small-shop-casters.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "service-shop-paint-sample-swing-arms-small-shop-workshop-trestle",
+    "category": "service-retail",
+    "file": "003/service-shop-paint-sample-swing-arms-small-shop-workshop-trestle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "service-shop-paint-sample-swing-arms-small-shop-panelled-backline",
+    "category": "service-retail",
+    "file": "003/service-shop-paint-sample-swing-arms-small-shop-panelled-backline.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "service-shop-paint-sample-swing-arms-store-span-inset",
+    "category": "service-retail",
+    "file": "003/service-shop-paint-sample-swing-arms-store-span-inset.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "service-shop-paint-sample-swing-arms-store-span-drawer-counter",
+    "category": "service-retail",
+    "file": "003/service-shop-paint-sample-swing-arms-store-span-drawer-counter.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "service-shop-paint-sample-swing-arms-store-span-casters",
+    "category": "service-retail",
+    "file": "003/service-shop-paint-sample-swing-arms-store-span-casters.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "service-shop-paint-sample-swing-arms-store-span-workshop-trestle",
+    "category": "service-retail",
+    "file": "003/service-shop-paint-sample-swing-arms-store-span-workshop-trestle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "service-shop-paint-sample-swing-arms-store-span-panelled-backline",
+    "category": "service-retail",
+    "file": "003/service-shop-paint-sample-swing-arms-store-span-panelled-backline.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "service-shop-glass-display-watch-trays-small-shop-inset",
+    "category": "service-retail",
+    "file": "004/service-shop-glass-display-watch-trays-small-shop-inset.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "service-shop-glass-display-watch-trays-small-shop-drawer-counter",
+    "category": "service-retail",
+    "file": "004/service-shop-glass-display-watch-trays-small-shop-drawer-counter.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "service-shop-glass-display-watch-trays-small-shop-casters",
+    "category": "service-retail",
+    "file": "004/service-shop-glass-display-watch-trays-small-shop-casters.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "service-shop-glass-display-watch-trays-small-shop-workshop-trestle",
+    "category": "service-retail",
+    "file": "004/service-shop-glass-display-watch-trays-small-shop-workshop-trestle.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "service-shop-glass-display-watch-trays-small-shop-panelled-backline",
+    "category": "service-retail",
+    "file": "004/service-shop-glass-display-watch-trays-small-shop-panelled-backline.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "service-shop-glass-display-watch-trays-store-span-inset",
+    "category": "service-retail",
+    "file": "004/service-shop-glass-display-watch-trays-store-span-inset.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "service-shop-glass-display-watch-trays-store-span-drawer-counter",
+    "category": "service-retail",
+    "file": "004/service-shop-glass-display-watch-trays-store-span-drawer-counter.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "service-shop-glass-display-watch-trays-store-span-casters",
+    "category": "service-retail",
+    "file": "004/service-shop-glass-display-watch-trays-store-span-casters.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "service-shop-glass-display-watch-trays-store-span-workshop-trestle",
+    "category": "service-retail",
+    "file": "004/service-shop-glass-display-watch-trays-store-span-workshop-trestle.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "service-shop-glass-display-watch-trays-store-span-panelled-backline",
+    "category": "service-retail",
+    "file": "004/service-shop-glass-display-watch-trays-store-span-panelled-backline.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "service-shop-hardware-bin-tilt-shelf-small-shop-inset",
+    "category": "service-retail",
+    "file": "004/service-shop-hardware-bin-tilt-shelf-small-shop-inset.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "service-shop-hardware-bin-tilt-shelf-small-shop-drawer-counter",
+    "category": "service-retail",
+    "file": "004/service-shop-hardware-bin-tilt-shelf-small-shop-drawer-counter.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "service-shop-hardware-bin-tilt-shelf-small-shop-casters",
+    "category": "service-retail",
+    "file": "004/service-shop-hardware-bin-tilt-shelf-small-shop-casters.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "service-shop-hardware-bin-tilt-shelf-small-shop-workshop-trestle",
+    "category": "service-retail",
+    "file": "004/service-shop-hardware-bin-tilt-shelf-small-shop-workshop-trestle.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "service-shop-hardware-bin-tilt-shelf-small-shop-panelled-backline",
+    "category": "service-retail",
+    "file": "004/service-shop-hardware-bin-tilt-shelf-small-shop-panelled-backline.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "service-shop-hardware-bin-tilt-shelf-store-span-inset",
+    "category": "service-retail",
+    "file": "004/service-shop-hardware-bin-tilt-shelf-store-span-inset.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "service-shop-hardware-bin-tilt-shelf-store-span-drawer-counter",
+    "category": "service-retail",
+    "file": "004/service-shop-hardware-bin-tilt-shelf-store-span-drawer-counter.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "service-shop-hardware-bin-tilt-shelf-store-span-casters",
+    "category": "service-retail",
+    "file": "004/service-shop-hardware-bin-tilt-shelf-store-span-casters.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "service-shop-hardware-bin-tilt-shelf-store-span-workshop-trestle",
+    "category": "service-retail",
+    "file": "004/service-shop-hardware-bin-tilt-shelf-store-span-workshop-trestle.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "service-shop-hardware-bin-tilt-shelf-store-span-panelled-backline",
+    "category": "service-retail",
+    "file": "004/service-shop-hardware-bin-tilt-shelf-store-span-panelled-backline.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "service-shop-alteration-fitting-mirror-small-shop-inset",
+    "category": "service-retail",
+    "file": "005/service-shop-alteration-fitting-mirror-small-shop-inset.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "service-shop-alteration-fitting-mirror-small-shop-drawer-counter",
+    "category": "service-retail",
+    "file": "005/service-shop-alteration-fitting-mirror-small-shop-drawer-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "service-shop-alteration-fitting-mirror-small-shop-workshop-trestle",
+    "category": "service-retail",
+    "file": "005/service-shop-alteration-fitting-mirror-small-shop-workshop-trestle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "service-shop-alteration-fitting-mirror-small-shop-panelled-backline",
+    "category": "service-retail",
+    "file": "005/service-shop-alteration-fitting-mirror-small-shop-panelled-backline.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "service-shop-alteration-fitting-mirror-store-span-inset",
+    "category": "service-retail",
+    "file": "005/service-shop-alteration-fitting-mirror-store-span-inset.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "service-shop-alteration-fitting-mirror-store-span-drawer-counter",
+    "category": "service-retail",
+    "file": "005/service-shop-alteration-fitting-mirror-store-span-drawer-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "service-shop-alteration-fitting-mirror-store-span-workshop-trestle",
+    "category": "service-retail",
+    "file": "005/service-shop-alteration-fitting-mirror-store-span-workshop-trestle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "service-shop-alteration-fitting-mirror-store-span-panelled-backline",
+    "category": "service-retail",
+    "file": "005/service-shop-alteration-fitting-mirror-store-span-panelled-backline.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "service-shop-engraving-sample-station-small-shop-inset",
+    "category": "service-retail",
+    "file": "005/service-shop-engraving-sample-station-small-shop-inset.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "service-shop-engraving-sample-station-small-shop-drawer-counter",
+    "category": "service-retail",
+    "file": "005/service-shop-engraving-sample-station-small-shop-drawer-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "service-shop-engraving-sample-station-small-shop-casters",
+    "category": "service-retail",
+    "file": "005/service-shop-engraving-sample-station-small-shop-casters.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "service-shop-engraving-sample-station-small-shop-workshop-trestle",
+    "category": "service-retail",
+    "file": "005/service-shop-engraving-sample-station-small-shop-workshop-trestle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "service-shop-engraving-sample-station-small-shop-panelled-backline",
+    "category": "service-retail",
+    "file": "005/service-shop-engraving-sample-station-small-shop-panelled-backline.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "service-shop-engraving-sample-station-store-span-inset",
+    "category": "service-retail",
+    "file": "005/service-shop-engraving-sample-station-store-span-inset.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "service-shop-engraving-sample-station-store-span-drawer-counter",
+    "category": "service-retail",
+    "file": "005/service-shop-engraving-sample-station-store-span-drawer-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "service-shop-engraving-sample-station-store-span-casters",
+    "category": "service-retail",
+    "file": "005/service-shop-engraving-sample-station-store-span-casters.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "service-shop-engraving-sample-station-store-span-workshop-trestle",
+    "category": "service-retail",
+    "file": "005/service-shop-engraving-sample-station-store-span-workshop-trestle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "service-shop-engraving-sample-station-store-span-panelled-backline",
+    "category": "service-retail",
+    "file": "005/service-shop-engraving-sample-station-store-span-panelled-backline.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "service-shop-courier-locker-transfer-bins-small-shop-inset",
+    "category": "service-retail",
+    "file": "005/service-shop-courier-locker-transfer-bins-small-shop-inset.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "service-shop-courier-locker-transfer-bins-small-shop-drawer-counter",
+    "category": "service-retail",
+    "file": "005/service-shop-courier-locker-transfer-bins-small-shop-drawer-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "service-shop-courier-locker-transfer-bins-small-shop-casters",
+    "category": "service-retail",
+    "file": "006/service-shop-courier-locker-transfer-bins-small-shop-casters.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "service-shop-courier-locker-transfer-bins-small-shop-workshop-trestle",
+    "category": "service-retail",
+    "file": "006/service-shop-courier-locker-transfer-bins-small-shop-workshop-trestle.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "service-shop-courier-locker-transfer-bins-small-shop-panelled-backline",
+    "category": "service-retail",
+    "file": "006/service-shop-courier-locker-transfer-bins-small-shop-panelled-backline.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "service-shop-courier-locker-transfer-bins-store-span-inset",
+    "category": "service-retail",
+    "file": "006/service-shop-courier-locker-transfer-bins-store-span-inset.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "service-shop-courier-locker-transfer-bins-store-span-drawer-counter",
+    "category": "service-retail",
+    "file": "006/service-shop-courier-locker-transfer-bins-store-span-drawer-counter.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "service-shop-courier-locker-transfer-bins-store-span-casters",
+    "category": "service-retail",
+    "file": "006/service-shop-courier-locker-transfer-bins-store-span-casters.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "service-shop-courier-locker-transfer-bins-store-span-workshop-trestle",
+    "category": "service-retail",
+    "file": "006/service-shop-courier-locker-transfer-bins-store-span-workshop-trestle.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "service-shop-courier-locker-transfer-bins-store-span-panelled-backline",
+    "category": "service-retail",
+    "file": "006/service-shop-courier-locker-transfer-bins-store-span-panelled-backline.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "service-shop-cash-counter-feedback-stand-small-shop-inset",
+    "category": "service-retail",
+    "file": "006/service-shop-cash-counter-feedback-stand-small-shop-inset.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "service-shop-cash-counter-feedback-stand-small-shop-drawer-counter",
+    "category": "service-retail",
+    "file": "006/service-shop-cash-counter-feedback-stand-small-shop-drawer-counter.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "service-shop-cash-counter-feedback-stand-small-shop-casters",
+    "category": "service-retail",
+    "file": "006/service-shop-cash-counter-feedback-stand-small-shop-casters.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "service-shop-cash-counter-feedback-stand-small-shop-workshop-trestle",
+    "category": "service-retail",
+    "file": "006/service-shop-cash-counter-feedback-stand-small-shop-workshop-trestle.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "service-shop-cash-counter-feedback-stand-small-shop-panelled-backline",
+    "category": "service-retail",
+    "file": "006/service-shop-cash-counter-feedback-stand-small-shop-panelled-backline.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "service-shop-cash-counter-feedback-stand-store-span-inset",
+    "category": "service-retail",
+    "file": "006/service-shop-cash-counter-feedback-stand-store-span-inset.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "service-shop-cash-counter-feedback-stand-store-span-drawer-counter",
+    "category": "service-retail",
+    "file": "006/service-shop-cash-counter-feedback-stand-store-span-drawer-counter.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "service-shop-cash-counter-feedback-stand-store-span-casters",
+    "category": "service-retail",
+    "file": "006/service-shop-cash-counter-feedback-stand-store-span-casters.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "service-shop-cash-counter-feedback-stand-store-span-workshop-trestle",
+    "category": "service-retail",
+    "file": "006/service-shop-cash-counter-feedback-stand-store-span-workshop-trestle.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "service-shop-cash-counter-feedback-stand-store-span-panelled-backline",
+    "category": "service-retail",
+    "file": "006/service-shop-cash-counter-feedback-stand-store-span-panelled-backline.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 18
+  }
+]

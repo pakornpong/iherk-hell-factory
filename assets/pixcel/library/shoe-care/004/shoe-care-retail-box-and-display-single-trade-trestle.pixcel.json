@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "id": "shoe-care-retail-box-and-display-single-trade-trestle",
+  "category": "shoe-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#765746"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad835e"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ca6a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#57656d"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#825f49"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#3d464f"
+    },
+    "fabric": {
+      "kind": "matte",
+      "color": "#a79885"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#ba9f7b"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8cdb7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c0a16d"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a76454"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#607b91"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        23,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        7,
+        0
+      ],
+      "to": [
+        23,
+        15,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        23,
+        0
+      ],
+      "to": [
+        23,
+        15,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        27,
+        25,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        5
+      ],
+      "to": [
+        25,
+        24,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        26,
+        24,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        18
+      ],
+      "to": [
+        26,
+        10,
+        31
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        18
+      ],
+      "to": [
+        12,
+        21,
+        20
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        21
+      ],
+      "to": [
+        12,
+        21,
+        23
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        24
+      ],
+      "to": [
+        12,
+        16,
+        26
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        14,
+        26
+      ],
+      "to": [
+        11,
+        15,
+        26
+      ],
+      "material": "fabric"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        11,
+        18
+      ],
+      "to": [
+        22,
+        21,
+        20
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        12,
+        21
+      ],
+      "to": [
+        22,
+        21,
+        23
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        12,
+        24
+      ],
+      "to": [
+        22,
+        16,
+        28
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        14,
+        28
+      ],
+      "to": [
+        21,
+        15,
+        28
+      ],
+      "material": "fabric"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        31
+      ],
+      "to": [
+        18,
+        13,
+        34
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        7,
+        31
+      ],
+      "to": [
+        24,
+        12,
+        36
+      ],
+      "material": "ivory"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "id": "instrument-burette-stand-bench-unit",
+  "category": "lab",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "kind": "matte",
+      "color": "#dbd8cf"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#303c4b"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8c9eae"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#788491"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#af6556"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#76b2bb"
+    },
+    "solution": {
+      "kind": "glass",
+      "color": "#7aa589"
+    },
+    "amber": {
+      "kind": "glass",
+      "color": "#d5a365"
+    },
+    "display": {
+      "kind": "emissive",
+      "color": "#a4bac9",
+      "glowRadius": 1,
+      "glowIntensity": 0.12
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        0
+      ],
+      "to": [
+        25,
+        24,
+        0
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        1
+      ],
+      "to": [
+        27,
+        25,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        5
+      ],
+      "to": [
+        8,
+        9,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        27
+      ],
+      "to": [
+        18,
+        9,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        10
+      ],
+      "zFrom": 13,
+      "zTo": 33,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        10
+      ],
+      "zFrom": 20,
+      "zTo": 27,
+      "radius": 1,
+      "material": "solution"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        10,
+        14
+      ],
+      "to": [
+        21,
+        11,
+        15
+      ],
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        11
+      ],
+      "zFrom": 5,
+      "zTo": 10,
+      "radius": 4,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        11
+      ],
+      "zFrom": 5,
+      "zTo": 6,
+      "radius": 3,
+      "material": "solution"
+    }
+  ]
+}

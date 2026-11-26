@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "retail-electronic-demo-riser-endcap-solid-plinth",
+  "category": "retail",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9da5a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#535a60"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad825d"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89775"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#34383d"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#d9d3c4"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a55b50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a167"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#63798c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eacb6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        26,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        25,
+        24,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        6
+      ],
+      "to": [
+        22,
+        25,
+        9
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        13
+      ],
+      "to": [
+        25,
+        24,
+        17
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        17
+      ],
+      "to": [
+        25,
+        11,
+        26
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        18
+      ],
+      "to": [
+        10,
+        20,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        14,
+        19
+      ],
+      "to": [
+        8,
+        13,
+        24
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        23
+      ],
+      "to": [
+        10,
+        14,
+        30
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        24
+      ],
+      "to": [
+        9,
+        14,
+        29
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        18
+      ],
+      "to": [
+        19,
+        20,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        14,
+        19
+      ],
+      "to": [
+        17,
+        13,
+        24
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        23
+      ],
+      "to": [
+        19,
+        14,
+        30
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        14,
+        24
+      ],
+      "to": [
+        18,
+        14,
+        29
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        12,
+        18
+      ],
+      "to": [
+        22,
+        20,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        14,
+        19
+      ],
+      "to": [
+        20,
+        13,
+        24
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        12,
+        23
+      ],
+      "to": [
+        22,
+        14,
+        30
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        14,
+        24
+      ],
+      "to": [
+        21,
+        14,
+        29
+      ],
+      "material": "glass"
+    }
+  ]
+}

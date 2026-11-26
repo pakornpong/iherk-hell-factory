@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "id": "warehouse-roller-conveyor-compact-bolted-frame",
+  "category": "warehouse",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9fa8aa"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#586673"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b444d"
+    },
+    "safety": {
+      "kind": "matte",
+      "color": "#bd9255"
+    },
+    "timber": {
+      "kind": "wood",
+      "color": "#a78564"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b29979"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#d6d0bc"
+    },
+    "darkred": {
+      "kind": "matte",
+      "color": "#9b584a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e7489"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba8b6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        29,
+        9,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        23,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        3
+      ],
+      "to": [
+        29,
+        26,
+        4
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        5
+      ],
+      "to": [
+        29,
+        25,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        8
+      ],
+      "to": [
+        29,
+        8,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        8
+      ],
+      "to": [
+        29,
+        25,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        8
+      ],
+      "to": [
+        7,
+        22,
+        10
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        8
+      ],
+      "to": [
+        11,
+        22,
+        10
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        9,
+        8
+      ],
+      "to": [
+        15,
+        22,
+        10
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        9,
+        8
+      ],
+      "to": [
+        19,
+        22,
+        10
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        9,
+        8
+      ],
+      "to": [
+        23,
+        22,
+        10
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        9,
+        8
+      ],
+      "to": [
+        27,
+        22,
+        10
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        11
+      ],
+      "to": [
+        20,
+        20,
+        16
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        11,
+        16
+      ],
+      "to": [
+        15,
+        20,
+        16
+      ],
+      "material": "white"
+    }
+  ]
+}

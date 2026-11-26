@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "id": "winter-frosted-salt-bin-and-scoop-compact-snowpack",
+  "category": "winter-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa8560",
+      "kind": "wood"
+    },
+    "ice": {
+      "color": "#b8c6c9",
+      "kind": "matte"
+    },
+    "snow": {
+      "color": "#dfdfd4",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ba8ac",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#5c6873",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#40484e",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#ae9d83",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#668096",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a76555",
+      "kind": "matte"
+    },
+    "gold": {
+      "color": "#c0a46e",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#aba08f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#91abb5",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        1
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "snow"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        28,
+        24,
+        17
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        17
+      ],
+      "to": [
+        28,
+        10,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        17
+      ],
+      "to": [
+        27,
+        22,
+        17
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        17
+      ],
+      "to": [
+        27,
+        24,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        14,
+        18
+      ],
+      "to": [
+        25,
+        20,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        17
+      ],
+      "to": [
+        15,
+        18,
+        19
+      ],
+      "material": "frame"
+    }
+  ]
+}

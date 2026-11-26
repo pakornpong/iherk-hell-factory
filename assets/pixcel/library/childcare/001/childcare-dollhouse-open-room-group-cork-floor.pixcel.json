@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "id": "childcare-dollhouse-open-room-group-cork-floor",
+  "category": "childcare",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#b58b64"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#9b7555"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b7a58e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac6c5c"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#6d8498"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8f9ba1"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#c4a463"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#4a535a"
+    },
+    "pink": {
+      "kind": "matte",
+      "color": "#a97880"
+    },
+    "mats": {
+      "kind": "matte",
+      "color": "#978d86"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "mats"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        1
+      ],
+      "to": [
+        55,
+        25,
+        1
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        2
+      ],
+      "to": [
+        54,
+        25,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        2
+      ],
+      "to": [
+        54,
+        9,
+        26
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        5
+      ],
+      "to": [
+        7,
+        24,
+        26
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        6,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        26
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        14
+      ],
+      "to": [
+        52,
+        23,
+        15
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        11,
+        6
+      ],
+      "to": [
+        14,
+        18,
+        9
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        11,
+        16
+      ],
+      "to": [
+        13,
+        18,
+        19
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        11,
+        6
+      ],
+      "to": [
+        49,
+        18,
+        9
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        11,
+        16
+      ],
+      "to": [
+        48,
+        18,
+        19
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        7,
+        26
+      ],
+      "to": [
+        30,
+        7,
+        36
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        54,
+        7,
+        26
+      ],
+      "to": [
+        30,
+        7,
+        36
+      ],
+      "material": "red"
+    }
+  ]
+}

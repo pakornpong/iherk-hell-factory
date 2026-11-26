@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "exhibit-framed-print-stack-single-glass-table",
+  "category": "museum",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a67e58"
+    },
+    "plaster": {
+      "kind": "matte",
+      "color": "#d8cfc1"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3d454d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaad"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#9cb5ba"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78268"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a90"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b8aa96"
+    },
+    "ceramic": {
+      "kind": "matte",
+      "color": "#ab6854"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e0d8c7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        9
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        9
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        0
+      ],
+      "to": [
+        25,
+        9,
+        9
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        22,
+        0
+      ],
+      "to": [
+        25,
+        24,
+        9
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        8
+      ],
+      "to": [
+        26,
+        25,
+        9
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        10
+      ],
+      "to": [
+        26,
+        6,
+        31
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        10
+      ],
+      "to": [
+        5,
+        25,
+        30
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        6,
+        10
+      ],
+      "to": [
+        26,
+        25,
+        30
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        25,
+        10
+      ],
+      "to": [
+        26,
+        25,
+        30
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        31
+      ],
+      "to": [
+        26,
+        25,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        10
+      ],
+      "to": [
+        24,
+        24,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        13
+      ],
+      "to": [
+        22,
+        11,
+        35
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        14
+      ],
+      "to": [
+        21,
+        11,
+        34
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        17
+      ],
+      "to": [
+        20,
+        11,
+        31
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        13
+      ],
+      "to": [
+        20,
+        16,
+        28
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        16,
+        14
+      ],
+      "to": [
+        19,
+        16,
+        26
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        16,
+        17
+      ],
+      "to": [
+        18,
+        16,
+        24
+      ],
+      "material": "copper"
+    }
+  ]
+}

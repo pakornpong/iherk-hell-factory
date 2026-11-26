@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "id": "electronics-field-gps-antenna-compact-portable-stand",
+  "category": "electronics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "charcoal": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#606e77"
+    },
+    "alloy": {
+      "kind": "metal",
+      "color": "#9facad"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd2bc"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627e94"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a46151"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#a59078"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a68058"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda16c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab7"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#a8c1cf",
+      "glowRadius": 1,
+      "glowIntensity": 0.09
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        7
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        24,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        7
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        7,
+        0
+      ],
+      "to": [
+        24,
+        15,
+        7
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        24,
+        0
+      ],
+      "to": [
+        24,
+        15,
+        7
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        26,
+        24,
+        7
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        26,
+        24,
+        11
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        12
+      ],
+      "to": [
+        14,
+        21,
+        18
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        18
+      ],
+      "to": [
+        13,
+        18,
+        18
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        13
+      ],
+      "zFrom": 12,
+      "zTo": 26,
+      "radius": 1,
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        13
+      ],
+      "zFrom": 26,
+      "zTo": 29,
+      "radius": 5,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        13
+      ],
+      "zFrom": 29,
+      "zTo": 30,
+      "radius": 4,
+      "material": "alloy"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        14,
+        15
+      ],
+      "to": [
+        22,
+        21,
+        13
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        21,
+        6
+      ],
+      "to": [
+        12,
+        24,
+        10
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        23,
+        10
+      ],
+      "to": [
+        15,
+        25,
+        11
+      ],
+      "material": "charcoal"
+    }
+  ]
+}

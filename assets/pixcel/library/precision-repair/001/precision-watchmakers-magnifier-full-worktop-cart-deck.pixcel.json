@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "id": "precision-watchmakers-magnifier-full-worktop-cart-deck",
+  "category": "precision-repair",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa815e",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#755847",
+      "kind": "wood"
+    },
+    "frame": {
+      "color": "#596673",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#a0a9aa",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#3d464b",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#dfd3ba",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#a6937d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fabb5",
+      "kind": "glass"
+    },
+    "blue": {
+      "color": "#627b91",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#b99b68",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a06254",
+      "kind": "matte"
+    },
+    "copper": {
+      "color": "#ab795d",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        7
+      ],
+      "to": [
+        55,
+        23,
+        10
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        54,
+        24,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 12,
+      "zTo": 13,
+      "radius": 6,
+      "material": "cloth"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 13,
+      "zTo": 15,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 15,
+      "zTo": 15,
+      "radius": 3,
+      "material": "paper"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        16,
+        15
+      ],
+      "to": [
+        15,
+        15,
+        15
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        17,
+        14
+      ],
+      "to": [
+        16,
+        20,
+        14
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        10
+      ],
+      "zFrom": 12,
+      "zTo": 14,
+      "radius": 3,
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        50,
+        10,
+        14
+      ],
+      "to": [
+        50,
+        14,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        13,
+        30
+      ],
+      "to": [
+        52,
+        18,
+        32
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        14,
+        31
+      ],
+      "to": [
+        51,
+        17,
+        31
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        9,
+        12
+      ],
+      "to": [
+        52,
+        20,
+        18
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        10,
+        18
+      ],
+      "to": [
+        51,
+        19,
+        19
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        12,
+        19
+      ],
+      "to": [
+        50,
+        15,
+        20
+      ],
+      "material": "steel"
+    }
+  ]
+}

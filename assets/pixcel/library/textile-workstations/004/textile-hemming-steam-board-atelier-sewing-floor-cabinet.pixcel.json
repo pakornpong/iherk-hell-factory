@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "id": "textile-hemming-steam-board-atelier-sewing-floor-cabinet",
+  "category": "textile",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#745741"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaaa"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#53606b"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d8d0bd"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#aa9a86"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#687e91"
+    },
+    "terracotta": {
+      "kind": "matte",
+      "color": "#a96557"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404850"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bc9d65"
+    },
+    "pale": {
+      "kind": "glass",
+      "color": "#9ab1b8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        2
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        10
+      ],
+      "to": [
+        27,
+        25,
+        10
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        4
+      ],
+      "to": [
+        24,
+        25,
+        8
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        7
+      ],
+      "to": [
+        20,
+        26,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        11
+      ],
+      "to": [
+        26,
+        23,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        15
+      ],
+      "to": [
+        24,
+        22,
+        17
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        18
+      ],
+      "to": [
+        21,
+        17,
+        18
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        18
+      ],
+      "to": [
+        22,
+        19,
+        21
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        14,
+        21
+      ],
+      "to": [
+        21,
+        15,
+        24
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        8,
+        15
+      ],
+      "to": [
+        24,
+        10,
+        29
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        9,
+        29
+      ],
+      "to": [
+        19,
+        14,
+        24
+      ],
+      "material": "dark"
+    }
+  ]
+}

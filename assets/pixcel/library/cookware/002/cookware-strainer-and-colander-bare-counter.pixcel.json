@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "id": "cookware-strainer-and-colander-bare-counter",
+  "category": "kitchen",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "kind": "metal",
+      "color": "#596168"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#a4acab"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#aa7e56"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795e4c"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#41464b"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d0bb"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#607d97"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78260"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda16b"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ab6652"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aeba"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        1
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        14
+      ],
+      "zFrom": 2,
+      "zTo": 3,
+      "radius": 5,
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        14
+      ],
+      "zFrom": 4,
+      "zTo": 9,
+      "radius": 7,
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        14
+      ],
+      "zFrom": 5,
+      "zTo": 9,
+      "radius": 6,
+      "material": null
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        14
+      ],
+      "zFrom": 5,
+      "zTo": 5,
+      "radius": 3,
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        7
+      ],
+      "to": [
+        7,
+        16,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        12,
+        7
+      ],
+      "to": [
+        24,
+        16,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        20
+      ],
+      "zFrom": 2,
+      "zTo": 3,
+      "radius": 3,
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        20
+      ],
+      "zFrom": 3,
+      "zTo": 3,
+      "radius": 2,
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        22,
+        3
+      ],
+      "to": [
+        24,
+        28,
+        3
+      ],
+      "material": "iron"
+    }
+  ]
+}

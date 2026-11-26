@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "id": "street-park-slatted-bench-paving-compact",
+  "category": "public-space",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a07f60"
+    },
+    "darkwood": {
+      "kind": "wood",
+      "color": "#755943"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#929fa5"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#505d66"
+    },
+    "paved": {
+      "kind": "matte",
+      "color": "#ada99e"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#444d52"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbd7c8"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#647d91"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#9f7060"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b29d7b"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#97b5bf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        2,
+        3,
+        0
+      ],
+      "to": [
+        28,
+        28,
+        1
+      ],
+      "material": "paved"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        8,
+        1
+      ],
+      "to": [
+        27,
+        8,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        15,
+        1
+      ],
+      "to": [
+        27,
+        15,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        22,
+        1
+      ],
+      "to": [
+        27,
+        22,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        2
+      ],
+      "to": [
+        8,
+        11,
+        12
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        21,
+        2
+      ],
+      "to": [
+        8,
+        23,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        11
+      ],
+      "to": [
+        8,
+        23,
+        12
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        9,
+        12
+      ],
+      "to": [
+        6,
+        7,
+        27
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        9,
+        2
+      ],
+      "to": [
+        24,
+        11,
+        12
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        21,
+        2
+      ],
+      "to": [
+        24,
+        23,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        8,
+        11
+      ],
+      "to": [
+        24,
+        23,
+        12
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        9,
+        12
+      ],
+      "to": [
+        22,
+        7,
+        27
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        13
+      ],
+      "to": [
+        26,
+        12,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        14,
+        13
+      ],
+      "to": [
+        26,
+        16,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        18,
+        13
+      ],
+      "to": [
+        26,
+        20,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        13
+      ],
+      "to": [
+        26,
+        24,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        18
+      ],
+      "to": [
+        26,
+        9,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        23
+      ],
+      "to": [
+        26,
+        9,
+        25
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        27
+      ],
+      "to": [
+        26,
+        9,
+        29
+      ],
+      "material": "oak"
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "id": "cafe-cash-and-ticket-counter-single-fluted-front-bar",
+  "category": "coffee-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa815d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#725543"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3f4649"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0a8a9"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b47d5e"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7caba"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#a5a09a"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aab4"
+    },
+    "coffee": {
+      "kind": "matte",
+      "color": "#675143"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a76a57"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89f7a"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7387"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        26,
+        23,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        3
+      ],
+      "to": [
+        6,
+        25,
+        14
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        24,
+        3
+      ],
+      "to": [
+        9,
+        25,
+        14
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        24,
+        3
+      ],
+      "to": [
+        12,
+        25,
+        14
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        24,
+        3
+      ],
+      "to": [
+        15,
+        25,
+        14
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        24,
+        3
+      ],
+      "to": [
+        18,
+        25,
+        14
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        3
+      ],
+      "to": [
+        21,
+        25,
+        14
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        24,
+        3
+      ],
+      "to": [
+        24,
+        25,
+        14
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        15
+      ],
+      "to": [
+        27,
+        25,
+        15
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        16
+      ],
+      "to": [
+        26,
+        24,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        20
+      ],
+      "to": [
+        18,
+        19,
+        25
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        25
+      ],
+      "to": [
+        17,
+        12,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        28
+      ],
+      "to": [
+        16,
+        12,
+        32
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        11,
+        20
+      ],
+      "to": [
+        25,
+        20,
+        26
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        20,
+        22
+      ],
+      "to": [
+        24,
+        21,
+        23
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        21,
+        22
+      ],
+      "to": [
+        23,
+        25,
+        22
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        9
+      ],
+      "zFrom": 20,
+      "zTo": 21,
+      "radius": 2,
+      "material": "copper"
+    }
+  ]
+}

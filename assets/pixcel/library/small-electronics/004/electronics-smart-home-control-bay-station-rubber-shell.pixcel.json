@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "id": "electronics-smart-home-control-bay-station-rubber-shell",
+  "category": "electronics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "charcoal": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#606e77"
+    },
+    "alloy": {
+      "kind": "metal",
+      "color": "#9facad"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd2bc"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627e94"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a46151"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#a59078"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a68058"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda16c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab7"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#a8c1cf",
+      "glowRadius": 1,
+      "glowIntensity": 0.09
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        38,
+        24,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        1
+      ],
+      "to": [
+        37,
+        23,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        2
+      ],
+      "to": [
+        38,
+        24,
+        6
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        7
+      ],
+      "to": [
+        37,
+        10,
+        23
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        11
+      ],
+      "to": [
+        35,
+        11,
+        21
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        14
+      ],
+      "to": [
+        33,
+        11,
+        15
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        17
+      ],
+      "zFrom": 7,
+      "zTo": 9,
+      "radius": 1,
+      "material": "alloy"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        17
+      ],
+      "zFrom": 7,
+      "zTo": 9,
+      "radius": 1,
+      "material": "alloy"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        17
+      ],
+      "zFrom": 7,
+      "zTo": 9,
+      "radius": 1,
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        9,
+        7
+      ],
+      "to": [
+        38,
+        17,
+        14
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        17,
+        9
+      ],
+      "to": [
+        37,
+        17,
+        12
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        11,
+        14
+      ],
+      "to": [
+        35,
+        14,
+        15
+      ],
+      "material": "alloy"
+    }
+  ]
+}

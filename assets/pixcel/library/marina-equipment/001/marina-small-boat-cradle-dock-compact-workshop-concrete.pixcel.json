@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "marina-small-boat-cradle-dock-compact-workshop-concrete",
+  "category": "maritime",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a4866b"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#698294"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9caaa9"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596672"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#40494e"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#ad6d56"
+    },
+    "ochre": {
+      "kind": "matte",
+      "color": "#c19e62"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b69c7e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba7b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        2
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        28,
+        24,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        8,
+        6
+      ],
+      "to": [
+        8,
+        13,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        22,
+        6
+      ],
+      "to": [
+        8,
+        18,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        8,
+        6
+      ],
+      "to": [
+        23,
+        13,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        22,
+        6
+      ],
+      "to": [
+        23,
+        18,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        10
+      ],
+      "to": [
+        24,
+        19,
+        13
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        13
+      ],
+      "to": [
+        26,
+        20,
+        16
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        16
+      ],
+      "to": [
+        27,
+        21,
+        18
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        18
+      ],
+      "to": [
+        9,
+        20,
+        20
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        11,
+        18
+      ],
+      "to": [
+        26,
+        20,
+        20
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        18
+      ],
+      "to": [
+        26,
+        12,
+        20
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        19,
+        18
+      ],
+      "to": [
+        26,
+        20,
+        20
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        18
+      ],
+      "to": [
+        23,
+        18,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        19
+      ],
+      "to": [
+        20,
+        18,
+        21
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        12,
+        19
+      ],
+      "to": [
+        22,
+        19,
+        25
+      ],
+      "material": "glass"
+    }
+  ]
+}

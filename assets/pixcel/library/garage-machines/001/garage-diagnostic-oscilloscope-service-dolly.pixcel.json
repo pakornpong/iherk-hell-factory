@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "id": "garage-diagnostic-oscilloscope-service-dolly",
+  "category": "garage",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#91a6b0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#4c6071"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#283541"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#dea957"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#53667a"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac594a"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbddcf"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#86bdd0",
+      "glowRadius": 1,
+      "glowIntensity": 0.14
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        7,
+        8,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        8,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        22,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        4
+      ],
+      "to": [
+        28,
+        26,
+        7
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        8
+      ],
+      "to": [
+        6,
+        5,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        4,
+        8
+      ],
+      "to": [
+        25,
+        5,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        18
+      ],
+      "to": [
+        25,
+        6,
+        19
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        8
+      ],
+      "to": [
+        27,
+        23,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        10
+      ],
+      "to": [
+        26,
+        24,
+        24
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        13
+      ],
+      "to": [
+        18,
+        25,
+        22
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        25,
+        16
+      ],
+      "to": [
+        11,
+        25,
+        19
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        25,
+        19
+      ],
+      "to": [
+        14,
+        25,
+        15
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        25,
+        15
+      ],
+      "to": [
+        17,
+        25,
+        18
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        13
+      ],
+      "to": [
+        23,
+        25,
+        14
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        18
+      ],
+      "to": [
+        23,
+        25,
+        19
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        22
+      ],
+      "to": [
+        23,
+        25,
+        23
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        25
+      ],
+      "to": [
+        22,
+        10,
+        28
+      ],
+      "material": "frame"
+    }
+  ]
+}

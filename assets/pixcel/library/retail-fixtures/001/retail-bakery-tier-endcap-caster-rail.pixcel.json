@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "id": "retail-bakery-tier-endcap-caster-rail",
+  "category": "retail",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9da5a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#535a60"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad825d"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89775"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#34383d"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#d9d3c4"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a55b50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a167"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#63798c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eacb6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        6,
+        0
+      ],
+      "to": [
+        25,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        22,
+        0
+      ],
+      "to": [
+        25,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        4
+      ],
+      "to": [
+        26,
+        26,
+        7
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        5,
+        8
+      ],
+      "to": [
+        25,
+        6,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        8
+      ],
+      "to": [
+        25,
+        24,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        25,
+        17,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        20
+      ],
+      "to": [
+        25,
+        10,
+        27
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 13,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        20
+      ],
+      "to": [
+        10,
+        16,
+        21
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        8
+      ],
+      "zFrom": 28,
+      "zTo": 30,
+      "radius": 2,
+      "material": "kraft"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 13,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        20
+      ],
+      "to": [
+        19,
+        16,
+        21
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        8
+      ],
+      "zFrom": 28,
+      "zTo": 30,
+      "radius": 2,
+      "material": "kraft"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 13,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        12,
+        20
+      ],
+      "to": [
+        23,
+        16,
+        21
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        8
+      ],
+      "zFrom": 28,
+      "zTo": 30,
+      "radius": 2,
+      "material": "kraft"
+    }
+  ]
+}

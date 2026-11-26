@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "id": "chair-spindle-fan-bolstered-spring-cantilever",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#ad784c"
+    },
+    "metal": {
+      "kind": "metal",
+      "color": "#657985"
+    },
+    "foot": {
+      "kind": "matte",
+      "color": "#293240"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#535f70"
+    },
+    "edge": {
+      "kind": "matte",
+      "color": "#778699"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#d4a35d"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        0
+      ],
+      "to": [
+        25,
+        11,
+        1
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        0
+      ],
+      "to": [
+        7,
+        27,
+        1
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        26,
+        1
+      ],
+      "to": [
+        7,
+        27,
+        13
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        12
+      ],
+      "to": [
+        7,
+        26,
+        13
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        10,
+        0
+      ],
+      "to": [
+        25,
+        27,
+        1
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        26,
+        1
+      ],
+      "to": [
+        25,
+        27,
+        13
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        12
+      ],
+      "to": [
+        25,
+        26,
+        13
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        13
+      ],
+      "to": [
+        25,
+        24,
+        16
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        16
+      ],
+      "to": [
+        9,
+        23,
+        20
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        7,
+        16
+      ],
+      "to": [
+        25,
+        23,
+        20
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        8,
+        16
+      ],
+      "to": [
+        21,
+        23,
+        18
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        32
+      ],
+      "to": [
+        25,
+        8,
+        34
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        7,
+        16
+      ],
+      "to": [
+        8,
+        7,
+        32
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        7,
+        16
+      ],
+      "to": [
+        12,
+        7,
+        32
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        7,
+        16
+      ],
+      "to": [
+        16,
+        7,
+        32
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        7,
+        16
+      ],
+      "to": [
+        20,
+        7,
+        32
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        7,
+        16
+      ],
+      "to": [
+        24,
+        7,
+        32
+      ],
+      "material": "wood"
+    }
+  ]
+}

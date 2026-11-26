@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "id": "camp-portable-camp-kitchen-personal-utility-skid",
+  "category": "camping",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a3805e",
+      "kind": "wood"
+    },
+    "tan": {
+      "color": "#ae987d",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#d2c7af",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#627b90",
+      "kind": "matte"
+    },
+    "rust": {
+      "color": "#a86955",
+      "kind": "matte"
+    },
+    "olive": {
+      "color": "#737f64",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca8aa",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#596771",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#414a4f",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#bdab8b",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8b755d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8daab8",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        0
+      ],
+      "to": [
+        29,
+        9,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        0
+      ],
+      "to": [
+        29,
+        24,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        28,
+        24,
+        9
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        9
+      ],
+      "to": [
+        6,
+        22,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        22,
+        9
+      ],
+      "to": [
+        6,
+        8,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        8,
+        9
+      ],
+      "to": [
+        27,
+        22,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        22,
+        9
+      ],
+      "to": [
+        27,
+        8,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        20
+      ],
+      "to": [
+        28,
+        23,
+        22
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 22,
+      "zTo": 26,
+      "radius": 3,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        14,
+        23
+      ],
+      "to": [
+        18,
+        16,
+        24
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        10,
+        22
+      ],
+      "to": [
+        26,
+        21,
+        23
+      ],
+      "material": "tan"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        13,
+        23
+      ],
+      "to": [
+        25,
+        19,
+        24
+      ],
+      "material": "linen"
+    }
+  ]
+}

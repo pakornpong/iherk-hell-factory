@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "id": "shoe-care-heel-sole-press-single-trade-trestle",
+  "category": "shoe-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#765746"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad835e"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ca6a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#57656d"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#825f49"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#3d464f"
+    },
+    "fabric": {
+      "kind": "matte",
+      "color": "#a79885"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#ba9f7b"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8cdb7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c0a16d"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a76454"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#607b91"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        23,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        7,
+        0
+      ],
+      "to": [
+        23,
+        15,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        23,
+        0
+      ],
+      "to": [
+        23,
+        15,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        27,
+        25,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        5
+      ],
+      "to": [
+        25,
+        24,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        26,
+        24,
+        18
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        19
+      ],
+      "to": [
+        8,
+        22,
+        38
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        19
+      ],
+      "to": [
+        26,
+        22,
+        38
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        37
+      ],
+      "to": [
+        26,
+        22,
+        39
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        14
+      ],
+      "zFrom": 27,
+      "zTo": 38,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        25
+      ],
+      "to": [
+        20,
+        19,
+        27
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        19
+      ],
+      "to": [
+        20,
+        18,
+        21
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        12,
+        39
+      ],
+      "to": [
+        24,
+        19,
+        42
+      ],
+      "material": "iron"
+    }
+  ]
+}

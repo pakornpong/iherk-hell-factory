@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "id": "terminal-sun-hood-rack-case-scanner-slot",
+  "category": "computers",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "matte",
+      "color": "#a4acb1"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#ded7bd"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#a59a8d"
+    },
+    "dark": {
+      "kind": "metal",
+      "color": "#384252"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#232b39"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#c68744"
+    },
+    "display": {
+      "kind": "emissive",
+      "color": "#a3b9cc",
+      "glowRadius": 1,
+      "glowIntensity": 0.2
+    },
+    "ink": {
+      "kind": "matte",
+      "color": "#465763"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        26,
+        2
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        14
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        5
+      ],
+      "to": [
+        24,
+        25,
+        5
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        8
+      ],
+      "to": [
+        24,
+        25,
+        8
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        11
+      ],
+      "to": [
+        24,
+        25,
+        11
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        15
+      ],
+      "to": [
+        25,
+        25,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        19
+      ],
+      "to": [
+        19,
+        15,
+        24
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        22
+      ],
+      "to": [
+        27,
+        13,
+        38
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        24
+      ],
+      "to": [
+        25,
+        13,
+        36
+      ],
+      "material": "display"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        13,
+        37
+      ],
+      "to": [
+        27,
+        21,
+        39
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        13,
+        24
+      ],
+      "to": [
+        6,
+        20,
+        37
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        13,
+        24
+      ],
+      "to": [
+        27,
+        20,
+        37
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        28
+      ],
+      "to": [
+        22,
+        13,
+        31
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        18,
+        20
+      ],
+      "to": [
+        22,
+        24,
+        26
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        24,
+        22
+      ],
+      "to": [
+        20,
+        24,
+        23
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        24,
+        22
+      ],
+      "to": [
+        19,
+        27,
+        22
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        21,
+        26
+      ],
+      "to": [
+        13,
+        22,
+        26
+      ],
+      "material": "display"
+    }
+  ]
+}

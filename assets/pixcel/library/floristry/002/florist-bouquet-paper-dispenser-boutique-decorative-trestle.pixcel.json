@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "id": "florist-bouquet-paper-dispenser-boutique-decorative-trestle",
+  "category": "florist",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a98461",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#755a48",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9da9ad",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#5a6774",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#414a51",
+      "kind": "matte"
+    },
+    "ivory": {
+      "color": "#ded4bf",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#b8a68c",
+      "kind": "matte"
+    },
+    "pink": {
+      "color": "#ad7480",
+      "kind": "matte"
+    },
+    "rose": {
+      "color": "#a05f5f",
+      "kind": "matte"
+    },
+    "leaf": {
+      "color": "#637c55",
+      "kind": "matte"
+    },
+    "paleLeaf": {
+      "color": "#819069",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#90acb6",
+      "kind": "glass"
+    },
+    "amber": {
+      "color": "#c1a06b",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a6735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        12
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        24,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        12
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        7,
+        0
+      ],
+      "to": [
+        25,
+        15,
+        12
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        24,
+        0
+      ],
+      "to": [
+        25,
+        15,
+        12
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        11
+      ],
+      "to": [
+        29,
+        25,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        4
+      ],
+      "to": [
+        27,
+        23,
+        5
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        13
+      ],
+      "to": [
+        28,
+        24,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        17
+      ],
+      "to": [
+        8,
+        11,
+        45
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        8,
+        17
+      ],
+      "to": [
+        27,
+        11,
+        45
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        24
+      ],
+      "to": [
+        26,
+        11,
+        25
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        22
+      ],
+      "to": [
+        25,
+        14,
+        26
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        32
+      ],
+      "to": [
+        26,
+        11,
+        33
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        30
+      ],
+      "to": [
+        25,
+        14,
+        34
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        40
+      ],
+      "to": [
+        26,
+        11,
+        41
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        38
+      ],
+      "to": [
+        25,
+        14,
+        42
+      ],
+      "material": "pink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        15,
+        17
+      ],
+      "to": [
+        25,
+        23,
+        18
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        18
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 2,
+      "material": "amber"
+    }
+  ]
+}

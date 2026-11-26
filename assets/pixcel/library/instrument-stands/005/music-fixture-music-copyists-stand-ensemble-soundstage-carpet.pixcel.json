@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "id": "music-fixture-music-copyists-stand-ensemble-soundstage-carpet",
+  "category": "musical-instruments",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a8825e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785b47"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b424a"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#88949a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6adad"
+    },
+    "yellow": {
+      "kind": "metal",
+      "color": "#c1a164"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#a87b60"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd3be"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#8c6f5d"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a8e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a36153"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        57,
+        26,
+        1
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        1
+      ],
+      "to": [
+        56,
+        25,
+        1
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        14
+      ],
+      "to": [
+        6,
+        23,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        14
+      ],
+      "to": [
+        55,
+        23,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        14
+      ],
+      "to": [
+        30,
+        7,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 13,
+      "zTo": 33,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        11,
+        21
+      ],
+      "to": [
+        56,
+        14,
+        33
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        14,
+        22
+      ],
+      "to": [
+        54,
+        14,
+        32
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        14,
+        24
+      ],
+      "to": [
+        52,
+        14,
+        24
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        14,
+        27
+      ],
+      "to": [
+        52,
+        14,
+        27
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        14,
+        29
+      ],
+      "to": [
+        52,
+        14,
+        29
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        20
+      ],
+      "to": [
+        55,
+        16,
+        21
+      ],
+      "material": "black"
+    }
+  ]
+}

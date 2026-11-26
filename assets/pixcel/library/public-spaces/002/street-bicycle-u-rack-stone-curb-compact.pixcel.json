@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "id": "street-bicycle-u-rack-stone-curb-compact",
+  "category": "public-space",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a07f60"
+    },
+    "darkwood": {
+      "kind": "wood",
+      "color": "#755943"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#929fa5"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#505d66"
+    },
+    "paved": {
+      "kind": "matte",
+      "color": "#ada99e"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#444d52"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbd7c8"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#647d91"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#9f7060"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b29d7b"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#97b5bf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        2,
+        3,
+        0
+      ],
+      "to": [
+        28,
+        28,
+        3
+      ],
+      "material": "paved"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        3,
+        3
+      ],
+      "to": [
+        28,
+        5,
+        3
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        27,
+        3
+      ],
+      "to": [
+        28,
+        28,
+        3
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        26,
+        26,
+        3
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        4
+      ],
+      "to": [
+        7,
+        10,
+        23
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        21,
+        4
+      ],
+      "to": [
+        7,
+        22,
+        23
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        22
+      ],
+      "to": [
+        7,
+        21,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        4
+      ],
+      "to": [
+        8,
+        11,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        20,
+        4
+      ],
+      "to": [
+        8,
+        23,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        9,
+        4
+      ],
+      "to": [
+        17,
+        10,
+        23
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        21,
+        4
+      ],
+      "to": [
+        17,
+        22,
+        23
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        10,
+        22
+      ],
+      "to": [
+        17,
+        21,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        8,
+        4
+      ],
+      "to": [
+        18,
+        11,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        20,
+        4
+      ],
+      "to": [
+        18,
+        23,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        4
+      ],
+      "to": [
+        6,
+        24,
+        28
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        28
+      ],
+      "to": [
+        25,
+        9,
+        29
+      ],
+      "material": "steel"
+    }
+  ]
+}

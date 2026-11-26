@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "id": "travel-field-mapping-kit-extended-interlocking-hard-shell-leaning-shoulder-strap",
+  "category": "travel",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cloth": {
+      "kind": "matte",
+      "color": "#74675e"
+    },
+    "edge": {
+      "kind": "matte",
+      "color": "#434b53"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#8f9c9f"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8ceba"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d1c1a4"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bea071"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a26657"
+    },
+    "lining": {
+      "kind": "matte",
+      "color": "#9b7d66"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#aa845e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eabb9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        1
+      ],
+      "to": [
+        25,
+        22,
+        2
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        17,
+        25
+      ],
+      "to": [
+        10,
+        16,
+        36
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        16,
+        36
+      ],
+      "to": [
+        20,
+        16,
+        36
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        16,
+        36
+      ],
+      "to": [
+        25,
+        17,
+        26
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        16,
+        36
+      ],
+      "to": [
+        17,
+        17,
+        37
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        2
+      ],
+      "to": [
+        24,
+        21,
+        28
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        4
+      ],
+      "to": [
+        25,
+        20,
+        26
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        28
+      ],
+      "to": [
+        23,
+        21,
+        29
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        3
+      ],
+      "to": [
+        24,
+        22,
+        27
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        23,
+        5
+      ],
+      "to": [
+        11,
+        23,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        23,
+        5
+      ],
+      "to": [
+        15,
+        23,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        23,
+        5
+      ],
+      "to": [
+        19,
+        23,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        22,
+        25
+      ],
+      "to": [
+        23,
+        23,
+        26
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        15,
+        25
+      ],
+      "to": [
+        13,
+        22,
+        31
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        16,
+        31
+      ],
+      "to": [
+        12,
+        21,
+        33
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        19
+      ],
+      "zFrom": 5,
+      "zTo": 30,
+      "radius": 2,
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        18,
+        30
+      ],
+      "to": [
+        24,
+        20,
+        32
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        10,
+        4
+      ],
+      "to": [
+        29,
+        15,
+        34
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        10,
+        7
+      ],
+      "to": [
+        29,
+        15,
+        8
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        10,
+        24
+      ],
+      "to": [
+        29,
+        15,
+        25
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        27,
+        12
+      ],
+      "zFrom": 34,
+      "zTo": 37,
+      "radius": 2,
+      "material": "paper"
+    }
+  ]
+}

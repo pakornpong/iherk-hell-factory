@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-wind-vane-and-cup-mast-station-wide-tripod-trailer",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        7
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        13,
+        3
+      ],
+      "to": [
+        59,
+        16,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        14,
+        26
+      ],
+      "to": [
+        6,
+        23,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        14,
+        26
+      ],
+      "to": [
+        52,
+        23,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        14,
+        26
+      ],
+      "to": [
+        30,
+        6,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        14
+      ],
+      "zFrom": 23,
+      "zTo": 50,
+      "radius": 1,
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        14,
+        43
+      ],
+      "to": [
+        38,
+        15,
+        45
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        13,
+        42
+      ],
+      "to": [
+        38,
+        16,
+        46
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        14,
+        50
+      ],
+      "to": [
+        25,
+        14,
+        50
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        25,
+        14
+      ],
+      "zFrom": 50,
+      "zTo": 52,
+      "radius": 2,
+      "material": "dark"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        14,
+        50
+      ],
+      "to": [
+        34,
+        10,
+        50
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        10
+      ],
+      "zFrom": 50,
+      "zTo": 52,
+      "radius": 2,
+      "material": "dark"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        14,
+        50
+      ],
+      "to": [
+        34,
+        19,
+        50
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        19
+      ],
+      "zFrom": 50,
+      "zTo": 52,
+      "radius": 2,
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        14
+      ],
+      "zFrom": 11,
+      "zTo": 32,
+      "radius": 1,
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        13,
+        28
+      ],
+      "to": [
+        47,
+        15,
+        30
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        13,
+        31
+      ],
+      "to": [
+        46,
+        15,
+        33
+      ],
+      "material": "pale"
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "id": "worktable-service-bench-corner-return-trestle",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#bb8250"
+    },
+    "shaded": {
+      "kind": "wood",
+      "color": "#87563e"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#465462"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6bac4"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#aa8d75"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b95142"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#293343"
+    },
+    "ceramic": {
+      "kind": "matte",
+      "color": "#e3e3d7"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#e5ac54"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        10,
+        26,
+        2
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        2
+      ],
+      "to": [
+        9,
+        19,
+        20
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        18
+      ],
+      "to": [
+        10,
+        25,
+        20
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        2
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        13,
+        2
+      ],
+      "to": [
+        55,
+        19,
+        20
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        8,
+        18
+      ],
+      "to": [
+        56,
+        25,
+        20
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        15,
+        5
+      ],
+      "to": [
+        53,
+        17,
+        7
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        21
+      ],
+      "to": [
+        60,
+        22,
+        23
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        23,
+        21
+      ],
+      "to": [
+        25,
+        30,
+        23
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        7,
+        24
+      ],
+      "to": [
+        50,
+        9,
+        37
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        10,
+        27
+      ],
+      "to": [
+        19,
+        10,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        10,
+        28
+      ],
+      "to": [
+        25,
+        10,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        10,
+        27
+      ],
+      "to": [
+        32,
+        10,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        10,
+        28
+      ],
+      "to": [
+        40,
+        10,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        10,
+        27
+      ],
+      "to": [
+        48,
+        10,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        17,
+        24
+      ],
+      "to": [
+        51,
+        23,
+        26
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        19,
+        27
+      ],
+      "to": [
+        46,
+        22,
+        31
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        19,
+        27
+      ],
+      "to": [
+        51,
+        22,
+        31
+      ],
+      "material": "red"
+    }
+  ]
+}

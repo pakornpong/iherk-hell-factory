@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "id": "field-trade-portable-generator-rollframe-tripod-trestle",
+  "category": "trades",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        6,
+        16,
+        13
+      ],
+      "to": [
+        6,
+        7,
+        0
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        16,
+        13
+      ],
+      "to": [
+        6,
+        24,
+        0
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        13,
+        12
+      ],
+      "to": [
+        8,
+        19,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        16,
+        13
+      ],
+      "to": [
+        23,
+        7,
+        0
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        16,
+        13
+      ],
+      "to": [
+        23,
+        24,
+        0
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        13,
+        12
+      ],
+      "to": [
+        25,
+        19,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        13
+      ],
+      "to": [
+        27,
+        24,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        15
+      ],
+      "to": [
+        26,
+        24,
+        18
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        18
+      ],
+      "to": [
+        25,
+        22,
+        30
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        30
+      ],
+      "to": [
+        25,
+        22,
+        33
+      ],
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        12
+      ],
+      "zFrom": 33,
+      "zTo": 34,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        18
+      ],
+      "to": [
+        7,
+        7,
+        38
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        18
+      ],
+      "to": [
+        7,
+        23,
+        38
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        38
+      ],
+      "to": [
+        7,
+        23,
+        39
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        6,
+        18
+      ],
+      "to": [
+        26,
+        7,
+        38
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        22,
+        18
+      ],
+      "to": [
+        26,
+        23,
+        38
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        6,
+        38
+      ],
+      "to": [
+        26,
+        23,
+        39
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        22,
+        21
+      ],
+      "to": [
+        23,
+        24,
+        27
+      ],
+      "material": "slate"
+    }
+  ]
+}

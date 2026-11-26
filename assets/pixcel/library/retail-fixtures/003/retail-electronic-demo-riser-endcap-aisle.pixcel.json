@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "id": "retail-electronic-demo-riser-endcap-aisle",
+  "category": "retail",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9da5a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#535a60"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad825d"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89775"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#34383d"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#d9d3c4"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a55b50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a167"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#63798c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eacb6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        26,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        3
+      ],
+      "to": [
+        25,
+        24,
+        5
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        6
+      ],
+      "to": [
+        25,
+        24,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        10
+      ],
+      "to": [
+        25,
+        11,
+        19
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        11
+      ],
+      "to": [
+        10,
+        20,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        14,
+        12
+      ],
+      "to": [
+        8,
+        13,
+        17
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        16
+      ],
+      "to": [
+        10,
+        14,
+        23
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        17
+      ],
+      "to": [
+        9,
+        14,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        11
+      ],
+      "to": [
+        19,
+        20,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        14,
+        12
+      ],
+      "to": [
+        17,
+        13,
+        17
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        16
+      ],
+      "to": [
+        19,
+        14,
+        23
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        14,
+        17
+      ],
+      "to": [
+        18,
+        14,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        12,
+        11
+      ],
+      "to": [
+        22,
+        20,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        14,
+        12
+      ],
+      "to": [
+        20,
+        13,
+        17
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        12,
+        16
+      ],
+      "to": [
+        22,
+        14,
+        23
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        14,
+        17
+      ],
+      "to": [
+        21,
+        14,
+        22
+      ],
+      "material": "glass"
+    }
+  ]
+}

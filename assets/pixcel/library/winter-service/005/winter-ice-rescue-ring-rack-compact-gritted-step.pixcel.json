@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "id": "winter-ice-rescue-ring-rack-compact-gritted-step",
+  "category": "winter-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa8560",
+      "kind": "wood"
+    },
+    "ice": {
+      "color": "#b8c6c9",
+      "kind": "matte"
+    },
+    "snow": {
+      "color": "#dfdfd4",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ba8ac",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#5c6873",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#40484e",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#ae9d83",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#668096",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a76555",
+      "kind": "matte"
+    },
+    "gold": {
+      "color": "#c0a46e",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#aba08f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#91abb5",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        29,
+        25,
+        5
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        5
+      ],
+      "to": [
+        28,
+        25,
+        5
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        28,
+        24,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        10
+      ],
+      "to": [
+        8,
+        11,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        8,
+        10
+      ],
+      "to": [
+        27,
+        11,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        36
+      ],
+      "to": [
+        27,
+        11,
+        38
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        19
+      ],
+      "to": [
+        22,
+        12,
+        21
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        24
+      ],
+      "to": [
+        22,
+        12,
+        26
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        29
+      ],
+      "to": [
+        22,
+        12,
+        31
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        11,
+        19
+      ],
+      "to": [
+        13,
+        12,
+        30
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        11,
+        19
+      ],
+      "to": [
+        23,
+        12,
+        30
+      ],
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        20
+      ],
+      "zFrom": 10,
+      "zTo": 13,
+      "radius": 3,
+      "material": "cloth"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        18,
+        13
+      ],
+      "to": [
+        23,
+        12,
+        21
+      ],
+      "material": "cloth"
+    }
+  ]
+}

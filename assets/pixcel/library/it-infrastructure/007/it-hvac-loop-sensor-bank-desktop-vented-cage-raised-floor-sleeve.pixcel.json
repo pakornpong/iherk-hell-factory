@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "id": "it-hvac-loop-sensor-bank-desktop-vented-cage-raised-floor-sleeve",
+  "category": "it-infrastructure",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#929fa7"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#58616c"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#333c46"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#767e83"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#d2ccbc"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a37a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627791"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ab6658"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#88adb7"
+    },
+    "led": {
+      "kind": "emissive",
+      "color": "#a4c6d6",
+      "glowRadius": 1,
+      "glowIntensity": 0.1
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        25,
+        2
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        25,
+        24,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        4
+      ],
+      "to": [
+        13,
+        25,
+        5
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        24,
+        4
+      ],
+      "to": [
+        24,
+        25,
+        5
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        6
+      ],
+      "to": [
+        24,
+        8,
+        27
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        6
+      ],
+      "to": [
+        7,
+        24,
+        27
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        8,
+        6
+      ],
+      "to": [
+        24,
+        24,
+        27
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        27
+      ],
+      "to": [
+        24,
+        24,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        24,
+        24,
+        8
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        10
+      ],
+      "to": [
+        6,
+        25,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        14
+      ],
+      "to": [
+        6,
+        25,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        18
+      ],
+      "to": [
+        6,
+        25,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        22
+      ],
+      "to": [
+        6,
+        25,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        9
+      ],
+      "to": [
+        21,
+        23,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        15
+      ],
+      "to": [
+        20,
+        13,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        17
+      ],
+      "zFrom": 14,
+      "zTo": 23,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        16,
+        24
+      ],
+      "to": [
+        12,
+        18,
+        25
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        19,
+        15
+      ],
+      "to": [
+        11,
+        25,
+        12
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        17
+      ],
+      "zFrom": 14,
+      "zTo": 23,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        16,
+        24
+      ],
+      "to": [
+        16,
+        18,
+        25
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        19,
+        15
+      ],
+      "to": [
+        16,
+        25,
+        12
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        17
+      ],
+      "zFrom": 14,
+      "zTo": 23,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        16,
+        24
+      ],
+      "to": [
+        19,
+        18,
+        25
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        19,
+        15
+      ],
+      "to": [
+        20,
+        25,
+        12
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        12,
+        28
+      ],
+      "to": [
+        24,
+        15,
+        36
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        15,
+        32
+      ],
+      "to": [
+        24,
+        16,
+        35
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        16,
+        29
+      ],
+      "to": [
+        23,
+        20,
+        23
+      ],
+      "material": "gray"
+    }
+  ]
+}

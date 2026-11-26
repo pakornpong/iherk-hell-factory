@@ -1,0 +1,512 @@
+{
+  "schemaVersion": 1,
+  "id": "growhouse-hydroponic-channel-long-galvanized-cart",
+  "category": "horticulture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a17f5c"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#606b73"
+    },
+    "soil": {
+      "kind": "matte",
+      "color": "#655142"
+    },
+    "fern": {
+      "kind": "matte",
+      "color": "#627c58"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#809664"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7388"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76b56"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a267"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8ccb6"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aeb9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#424a4e"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        56,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        23,
+        0
+      ],
+      "to": [
+        56,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        4
+      ],
+      "to": [
+        57,
+        26,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        8
+      ],
+      "to": [
+        7,
+        23,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        13
+      ],
+      "to": [
+        56,
+        11,
+        15
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        10
+      ],
+      "zFrom": 15,
+      "zTo": 18,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        10
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        10
+      ],
+      "zFrom": 15,
+      "zTo": 18,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        26,
+        10
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        32,
+        10
+      ],
+      "zFrom": 15,
+      "zTo": 18,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        38,
+        10
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        10
+      ],
+      "zFrom": 15,
+      "zTo": 18,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        10
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        16,
+        13
+      ],
+      "to": [
+        56,
+        18,
+        15
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        17
+      ],
+      "zFrom": 15,
+      "zTo": 18,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        17
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        17
+      ],
+      "zFrom": 15,
+      "zTo": 18,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        26,
+        17
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        32,
+        17
+      ],
+      "zFrom": 15,
+      "zTo": 18,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        38,
+        17
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        17
+      ],
+      "zFrom": 15,
+      "zTo": 18,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        17
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        13
+      ],
+      "to": [
+        56,
+        24,
+        15
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        23
+      ],
+      "zFrom": 15,
+      "zTo": 18,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        23
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        23
+      ],
+      "zFrom": 15,
+      "zTo": 18,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        26,
+        23
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        32,
+        23
+      ],
+      "zFrom": 15,
+      "zTo": 18,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        38,
+        23
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        23
+      ],
+      "zFrom": 15,
+      "zTo": 18,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        23
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        7,
+        24,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        8
+      ],
+      "to": [
+        56,
+        24,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        8
+      ],
+      "to": [
+        17,
+        15,
+        12
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        10,
+        12
+      ],
+      "to": [
+        5,
+        10,
+        14
+      ],
+      "material": "steel"
+    }
+  ]
+}

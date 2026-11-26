@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "id": "winter-field-avalanche-safety-post-lodge-wide-snowpack",
+  "category": "winter-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa8560",
+      "kind": "wood"
+    },
+    "ice": {
+      "color": "#b8c6c9",
+      "kind": "matte"
+    },
+    "snow": {
+      "color": "#dfdfd4",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ba8ac",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#5c6873",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#40484e",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#ae9d83",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#668096",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a76555",
+      "kind": "matte"
+    },
+    "gold": {
+      "color": "#c0a46e",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#aba08f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#91abb5",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "snow"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        14
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 7,
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        14
+      ],
+      "zFrom": 6,
+      "zTo": 35,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        13,
+        21
+      ],
+      "to": [
+        37,
+        16,
+        30
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        16,
+        23
+      ],
+      "to": [
+        35,
+        16,
+        28
+      ],
+      "material": "snow"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        16,
+        24
+      ],
+      "to": [
+        31,
+        16,
+        27
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        18,
+        3
+      ],
+      "to": [
+        51,
+        24,
+        11
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        14,
+        5
+      ],
+      "to": [
+        52,
+        23,
+        12
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        14,
+        12
+      ],
+      "to": [
+        51,
+        23,
+        14
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "line",
+      "from": [
+        47,
+        17,
+        14
+      ],
+      "to": [
+        52,
+        20,
+        20
+      ],
+      "material": "steel"
+    }
+  ]
+}

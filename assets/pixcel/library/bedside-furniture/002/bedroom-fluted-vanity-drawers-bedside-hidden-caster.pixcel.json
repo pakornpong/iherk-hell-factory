@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "id": "bedroom-fluted-vanity-drawers-bedside-hidden-caster",
+  "category": "bedroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#ac825d",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#795b47",
+      "kind": "wood"
+    },
+    "linen": {
+      "color": "#b5a18d",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#e0d4bf",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d1c6b2",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#637b90",
+      "kind": "matte"
+    },
+    "iron": {
+      "color": "#535f67",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9da8a9",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda271",
+      "kind": "metal"
+    },
+    "glass": {
+      "color": "#91acb5",
+      "kind": "glass"
+    },
+    "brick": {
+      "color": "#aa695c",
+      "kind": "matte"
+    },
+    "marble": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        6,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 3,
+      "radius": 2,
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        6,
+        21
+      ],
+      "zFrom": 0,
+      "zTo": 3,
+      "radius": 2,
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 3,
+      "radius": 2,
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        21
+      ],
+      "zFrom": 0,
+      "zTo": 3,
+      "radius": 2,
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        27,
+        25,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        26,
+        24,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        26,
+        24,
+        30
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        11
+      ],
+      "to": [
+        25,
+        25,
+        17
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        19
+      ],
+      "to": [
+        25,
+        25,
+        26
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        11
+      ],
+      "to": [
+        7,
+        25,
+        26
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        11
+      ],
+      "to": [
+        10,
+        25,
+        26
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        25,
+        11
+      ],
+      "to": [
+        13,
+        25,
+        26
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        25,
+        11
+      ],
+      "to": [
+        16,
+        25,
+        26
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        25,
+        11
+      ],
+      "to": [
+        19,
+        25,
+        26
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        25,
+        11
+      ],
+      "to": [
+        22,
+        25,
+        26
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        26,
+        15
+      ],
+      "to": [
+        16,
+        26,
+        16
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        26,
+        23
+      ],
+      "to": [
+        16,
+        26,
+        24
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        29
+      ],
+      "to": [
+        27,
+        25,
+        31
+      ],
+      "material": "marble"
+    }
+  ]
+}

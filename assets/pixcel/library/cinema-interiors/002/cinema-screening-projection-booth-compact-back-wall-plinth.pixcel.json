@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "id": "cinema-screening-projection-booth-compact-back-wall-plinth",
+  "category": "cinema",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#3b444d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9aa6a7"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9d6057"
+    },
+    "velvet": {
+      "kind": "matte",
+      "color": "#765157"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b5a38e"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#dcd0ba"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a7805e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77594a"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bda16c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#90a9b3"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d93"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        29,
+        7,
+        26
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        3
+      ],
+      "to": [
+        29,
+        25,
+        4
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        28,
+        8,
+        5
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        28,
+        24,
+        9
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        10
+      ],
+      "to": [
+        26,
+        11,
+        29
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        15
+      ],
+      "to": [
+        24,
+        12,
+        25
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        14,
+        10
+      ],
+      "to": [
+        23,
+        21,
+        19
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        21,
+        13
+      ],
+      "to": [
+        16,
+        23,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        23,
+        14
+      ],
+      "to": [
+        15,
+        23,
+        16
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 2,
+      "material": "steel"
+    }
+  ]
+}

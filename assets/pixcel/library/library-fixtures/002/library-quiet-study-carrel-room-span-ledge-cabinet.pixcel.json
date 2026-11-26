@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "id": "library-quiet-study-carrel-room-span-ledge-cabinet",
+  "category": "library",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ae8258"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795c48"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9dabab"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#44515b"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#cec0ac"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e2dac6"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a0645a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#667990"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c3a371"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#92adb9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        56,
+        25,
+        10
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        10
+      ],
+      "to": [
+        57,
+        26,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        3
+      ],
+      "to": [
+        53,
+        25,
+        8
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        7
+      ],
+      "to": [
+        17,
+        26,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        12
+      ],
+      "to": [
+        55,
+        10,
+        43
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        13
+      ],
+      "to": [
+        7,
+        24,
+        43
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        9,
+        13
+      ],
+      "to": [
+        55,
+        24,
+        43
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        28
+      ],
+      "to": [
+        53,
+        24,
+        30
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        13
+      ],
+      "zFrom": 30,
+      "zTo": 31,
+      "radius": 3,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        31
+      ],
+      "to": [
+        10,
+        13,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        39
+      ],
+      "to": [
+        15,
+        14,
+        41
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        31
+      ],
+      "to": [
+        23,
+        21,
+        32
+      ],
+      "material": "paper"
+    }
+  ]
+}

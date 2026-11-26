@@ -1,0 +1,394 @@
+[
+  {
+    "id": "street-park-slatted-bench-paving-compact",
+    "category": "public-space",
+    "file": "001/street-park-slatted-bench-paving-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "street-park-slatted-bench-paving-wide",
+    "category": "public-space",
+    "file": "001/street-park-slatted-bench-paving-wide.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "street-park-slatted-bench-brick-island-compact",
+    "category": "public-space",
+    "file": "001/street-park-slatted-bench-brick-island-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "street-park-slatted-bench-brick-island-wide",
+    "category": "public-space",
+    "file": "001/street-park-slatted-bench-brick-island-wide.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "street-park-slatted-bench-stone-curb-compact",
+    "category": "public-space",
+    "file": "001/street-park-slatted-bench-stone-curb-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "street-park-slatted-bench-stone-curb-wide",
+    "category": "public-space",
+    "file": "001/street-park-slatted-bench-stone-curb-wide.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "street-park-slatted-bench-wood-deck-compact",
+    "category": "public-space",
+    "file": "001/street-park-slatted-bench-wood-deck-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "street-park-slatted-bench-wood-deck-wide",
+    "category": "public-space",
+    "file": "001/street-park-slatted-bench-wood-deck-wide.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "street-bus-shelter-paving-compact",
+    "category": "public-space",
+    "file": "001/street-bus-shelter-paving-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "street-bus-shelter-paving-wide",
+    "category": "public-space",
+    "file": "001/street-bus-shelter-paving-wide.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "street-bus-shelter-brick-island-compact",
+    "category": "public-space",
+    "file": "001/street-bus-shelter-brick-island-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "street-bus-shelter-brick-island-wide",
+    "category": "public-space",
+    "file": "001/street-bus-shelter-brick-island-wide.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "street-bus-shelter-stone-curb-compact",
+    "category": "public-space",
+    "file": "001/street-bus-shelter-stone-curb-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "street-bus-shelter-stone-curb-wide",
+    "category": "public-space",
+    "file": "001/street-bus-shelter-stone-curb-wide.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "street-bus-shelter-wood-deck-compact",
+    "category": "public-space",
+    "file": "001/street-bus-shelter-wood-deck-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "street-bus-shelter-wood-deck-wide",
+    "category": "public-space",
+    "file": "001/street-bus-shelter-wood-deck-wide.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "street-bicycle-u-rack-paving-compact",
+    "category": "public-space",
+    "file": "001/street-bicycle-u-rack-paving-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "street-bicycle-u-rack-paving-wide",
+    "category": "public-space",
+    "file": "001/street-bicycle-u-rack-paving-wide.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "street-bicycle-u-rack-brick-island-compact",
+    "category": "public-space",
+    "file": "001/street-bicycle-u-rack-brick-island-compact.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "street-bicycle-u-rack-brick-island-wide",
+    "category": "public-space",
+    "file": "001/street-bicycle-u-rack-brick-island-wide.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "street-bicycle-u-rack-stone-curb-compact",
+    "category": "public-space",
+    "file": "002/street-bicycle-u-rack-stone-curb-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "street-bicycle-u-rack-stone-curb-wide",
+    "category": "public-space",
+    "file": "002/street-bicycle-u-rack-stone-curb-wide.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "street-bicycle-u-rack-wood-deck-compact",
+    "category": "public-space",
+    "file": "002/street-bicycle-u-rack-wood-deck-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "street-bicycle-u-rack-wood-deck-wide",
+    "category": "public-space",
+    "file": "002/street-bicycle-u-rack-wood-deck-wide.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "street-drinking-pair-paving-compact",
+    "category": "public-space",
+    "file": "002/street-drinking-pair-paving-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "street-drinking-pair-paving-wide",
+    "category": "public-space",
+    "file": "002/street-drinking-pair-paving-wide.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "street-drinking-pair-brick-island-compact",
+    "category": "public-space",
+    "file": "002/street-drinking-pair-brick-island-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "street-drinking-pair-brick-island-wide",
+    "category": "public-space",
+    "file": "002/street-drinking-pair-brick-island-wide.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "street-drinking-pair-stone-curb-compact",
+    "category": "public-space",
+    "file": "002/street-drinking-pair-stone-curb-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "street-drinking-pair-stone-curb-wide",
+    "category": "public-space",
+    "file": "002/street-drinking-pair-stone-curb-wide.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "street-drinking-pair-wood-deck-compact",
+    "category": "public-space",
+    "file": "002/street-drinking-pair-wood-deck-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "street-drinking-pair-wood-deck-wide",
+    "category": "public-space",
+    "file": "002/street-drinking-pair-wood-deck-wide.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "street-waste-sort-bank-paving-compact",
+    "category": "public-space",
+    "file": "002/street-waste-sort-bank-paving-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "street-waste-sort-bank-paving-wide",
+    "category": "public-space",
+    "file": "002/street-waste-sort-bank-paving-wide.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "street-waste-sort-bank-brick-island-compact",
+    "category": "public-space",
+    "file": "002/street-waste-sort-bank-brick-island-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "street-waste-sort-bank-brick-island-wide",
+    "category": "public-space",
+    "file": "002/street-waste-sort-bank-brick-island-wide.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "street-waste-sort-bank-stone-curb-compact",
+    "category": "public-space",
+    "file": "002/street-waste-sort-bank-stone-curb-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "street-waste-sort-bank-stone-curb-wide",
+    "category": "public-space",
+    "file": "002/street-waste-sort-bank-stone-curb-wide.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "street-waste-sort-bank-wood-deck-compact",
+    "category": "public-space",
+    "file": "002/street-waste-sort-bank-wood-deck-compact.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "street-waste-sort-bank-wood-deck-wide",
+    "category": "public-space",
+    "file": "002/street-waste-sort-bank-wood-deck-wide.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "street-notice-map-board-paving-compact",
+    "category": "public-space",
+    "file": "003/street-notice-map-board-paving-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "street-notice-map-board-paving-wide",
+    "category": "public-space",
+    "file": "003/street-notice-map-board-paving-wide.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "street-notice-map-board-brick-island-compact",
+    "category": "public-space",
+    "file": "003/street-notice-map-board-brick-island-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "street-notice-map-board-brick-island-wide",
+    "category": "public-space",
+    "file": "003/street-notice-map-board-brick-island-wide.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "street-notice-map-board-stone-curb-compact",
+    "category": "public-space",
+    "file": "003/street-notice-map-board-stone-curb-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "street-notice-map-board-stone-curb-wide",
+    "category": "public-space",
+    "file": "003/street-notice-map-board-stone-curb-wide.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "street-notice-map-board-wood-deck-compact",
+    "category": "public-space",
+    "file": "003/street-notice-map-board-wood-deck-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "street-notice-map-board-wood-deck-wide",
+    "category": "public-space",
+    "file": "003/street-notice-map-board-wood-deck-wide.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "street-parcel-collection-drop-paving-compact",
+    "category": "public-space",
+    "file": "003/street-parcel-collection-drop-paving-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "street-parcel-collection-drop-paving-wide",
+    "category": "public-space",
+    "file": "003/street-parcel-collection-drop-paving-wide.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "street-parcel-collection-drop-brick-island-compact",
+    "category": "public-space",
+    "file": "003/street-parcel-collection-drop-brick-island-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "street-parcel-collection-drop-brick-island-wide",
+    "category": "public-space",
+    "file": "003/street-parcel-collection-drop-brick-island-wide.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "street-parcel-collection-drop-stone-curb-compact",
+    "category": "public-space",
+    "file": "003/street-parcel-collection-drop-stone-curb-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "street-parcel-collection-drop-stone-curb-wide",
+    "category": "public-space",
+    "file": "003/street-parcel-collection-drop-stone-curb-wide.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "street-parcel-collection-drop-wood-deck-compact",
+    "category": "public-space",
+    "file": "003/street-parcel-collection-drop-wood-deck-compact.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "street-parcel-collection-drop-wood-deck-wide",
+    "category": "public-space",
+    "file": "003/street-parcel-collection-drop-wood-deck-wide.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  }
+]

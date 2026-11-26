@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "id": "rec-air-hockey-table",
+  "category": "recreation",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    2
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "color": "#2d3443",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#879aaa",
+      "kind": "metal"
+    },
+    "white": {
+      "color": "#ece9db",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#397694",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#be5543",
+      "kind": "matte"
+    },
+    "screen": {
+      "color": "#79e1ea",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.24
+    },
+    "black": {
+      "color": "#202530",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        0
+      ],
+      "to": [
+        10,
+        11,
+        14
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        51,
+        0
+      ],
+      "to": [
+        10,
+        53,
+        14
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        9,
+        0
+      ],
+      "to": [
+        55,
+        11,
+        14
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        51,
+        0
+      ],
+      "to": [
+        55,
+        53,
+        14
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        13
+      ],
+      "to": [
+        58,
+        56,
+        19
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        20
+      ],
+      "to": [
+        56,
+        54,
+        20
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        20
+      ],
+      "to": [
+        7,
+        56,
+        23
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        56,
+        6,
+        20
+      ],
+      "to": [
+        58,
+        56,
+        23
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        20
+      ],
+      "to": [
+        22,
+        8,
+        23
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        6,
+        20
+      ],
+      "to": [
+        56,
+        8,
+        23
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        54,
+        20
+      ],
+      "to": [
+        22,
+        56,
+        23
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        54,
+        20
+      ],
+      "to": [
+        56,
+        56,
+        23
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        31,
+        20
+      ],
+      "to": [
+        55,
+        31,
+        20
+      ],
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        18
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 4,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        44
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 4,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        31,
+        35
+      ],
+      "zFrom": 21,
+      "zTo": 21,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        6,
+        24
+      ],
+      "to": [
+        33,
+        8,
+        33
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        6,
+        33
+      ],
+      "to": [
+        37,
+        9,
+        37
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        9,
+        34
+      ],
+      "to": [
+        35,
+        9,
+        36
+      ],
+      "material": "screen"
+    }
+  ]
+}

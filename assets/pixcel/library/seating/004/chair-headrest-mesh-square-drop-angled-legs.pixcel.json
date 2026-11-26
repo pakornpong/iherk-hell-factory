@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "id": "chair-headrest-mesh-square-drop-angled-legs",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#ad784c"
+    },
+    "metal": {
+      "kind": "metal",
+      "color": "#657985"
+    },
+    "foot": {
+      "kind": "matte",
+      "color": "#293240"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#52545a"
+    },
+    "edge": {
+      "kind": "matte",
+      "color": "#777982"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#d4a35d"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        7,
+        7,
+        13
+      ],
+      "to": [
+        4,
+        4,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        7,
+        13
+      ],
+      "to": [
+        5,
+        4,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        24,
+        13
+      ],
+      "to": [
+        4,
+        27,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        24,
+        13
+      ],
+      "to": [
+        5,
+        27,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        7,
+        13
+      ],
+      "to": [
+        27,
+        4,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        7,
+        13
+      ],
+      "to": [
+        28,
+        4,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        24,
+        13
+      ],
+      "to": [
+        27,
+        27,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        24,
+        13
+      ],
+      "to": [
+        28,
+        27,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        13
+      ],
+      "to": [
+        25,
+        25,
+        15
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        16
+      ],
+      "to": [
+        24,
+        24,
+        19
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        5,
+        15
+      ],
+      "to": [
+        24,
+        7,
+        32
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        7,
+        20
+      ],
+      "to": [
+        22,
+        7,
+        30
+      ],
+      "material": "foot"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        21
+      ],
+      "to": [
+        22,
+        8,
+        21
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        24
+      ],
+      "to": [
+        22,
+        8,
+        24
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        27
+      ],
+      "to": [
+        22,
+        8,
+        27
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        30
+      ],
+      "to": [
+        22,
+        8,
+        30
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        5,
+        32
+      ],
+      "to": [
+        17,
+        7,
+        37
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        5,
+        36
+      ],
+      "to": [
+        21,
+        8,
+        41
+      ],
+      "material": "cloth"
+    }
+  ]
+}

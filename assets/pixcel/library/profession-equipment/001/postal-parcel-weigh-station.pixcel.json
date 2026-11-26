@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "id": "postal-parcel-weigh-station",
+  "category": "logistics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "color": "#e5e3d6",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#a0b0bc",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#445361",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#272f3b",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#49798f",
+      "kind": "matte"
+    },
+    "aqua": {
+      "color": "#78c5c4",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#b85446",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#ac784e",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e0ad58",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#f2ecdc",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        5
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        6
+      ],
+      "to": [
+        20,
+        20,
+        18
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        7,
+        18
+      ],
+      "to": [
+        13,
+        20,
+        18
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        6
+      ],
+      "to": [
+        25,
+        9,
+        23
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        7,
+        22
+      ],
+      "to": [
+        28,
+        11,
+        26
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        11,
+        23
+      ],
+      "to": [
+        27,
+        11,
+        25
+      ],
+      "material": "aqua"
+    }
+  ]
+}

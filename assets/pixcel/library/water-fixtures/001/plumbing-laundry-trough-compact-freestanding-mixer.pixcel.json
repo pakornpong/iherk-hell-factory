@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "id": "plumbing-laundry-trough-compact-freestanding-mixer",
+  "category": "plumbing",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "white": {
+      "kind": "matte",
+      "color": "#dedbd1"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#ada69b"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a1aaae"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#87959e"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99c66"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#59636c"
+    },
+    "blue": {
+      "kind": "glass",
+      "color": "#9eafb4"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a17d5a"
+    },
+    "grout": {
+      "kind": "matte",
+      "color": "#7e7b75"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c3b5a2"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        12
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        24,
+        12
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        0
+      ],
+      "to": [
+        25,
+        9,
+        12
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        22,
+        0
+      ],
+      "to": [
+        25,
+        24,
+        12
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        12
+      ],
+      "to": [
+        26,
+        25,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        14
+      ],
+      "to": [
+        26,
+        6,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        14
+      ],
+      "to": [
+        26,
+        25,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        14
+      ],
+      "to": [
+        5,
+        23,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        14
+      ],
+      "to": [
+        26,
+        23,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        22
+      ],
+      "to": [
+        25,
+        8,
+        31
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        20,
+        20
+      ],
+      "to": [
+        15,
+        23,
+        21
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 14,
+      "radius": 2,
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        10
+      ],
+      "zFrom": 0,
+      "zTo": 27,
+      "radius": 1,
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        26,
+        10
+      ],
+      "zFrom": 0,
+      "zTo": 27,
+      "radius": 1,
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        9,
+        26
+      ],
+      "to": [
+        26,
+        11,
+        28
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        27
+      ],
+      "to": [
+        25,
+        17,
+        28
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        17
+      ],
+      "zFrom": 26,
+      "zTo": 27,
+      "radius": 1,
+      "material": "chrome"
+    }
+  ]
+}

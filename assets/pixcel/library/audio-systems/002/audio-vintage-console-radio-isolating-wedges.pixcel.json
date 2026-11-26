@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "id": "audio-vintage-console-radio-isolating-wedges",
+  "category": "audio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cabinet": {
+      "kind": "wood",
+      "color": "#8f6952"
+    },
+    "burl": {
+      "kind": "wood",
+      "color": "#ac815f"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#353941"
+    },
+    "grille": {
+      "kind": "matte",
+      "color": "#5f5b58"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#4d5159"
+    },
+    "aluminum": {
+      "kind": "metal",
+      "color": "#a1a8aa"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c2a166"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d2cbb6"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9e594f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        0
+      ],
+      "to": [
+        10,
+        23,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        2
+      ],
+      "to": [
+        10,
+        17,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        9,
+        0
+      ],
+      "to": [
+        23,
+        23,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        9,
+        2
+      ],
+      "to": [
+        23,
+        17,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        26,
+        23,
+        20
+      ],
+      "material": "cabinet"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        20
+      ],
+      "to": [
+        24,
+        22,
+        22
+      ],
+      "material": "burl"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        23,
+        5
+      ],
+      "to": [
+        23,
+        23,
+        14
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        7
+      ],
+      "to": [
+        22,
+        24,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        10
+      ],
+      "to": [
+        22,
+        24,
+        10
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        13
+      ],
+      "to": [
+        22,
+        24,
+        13
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        23,
+        16
+      ],
+      "to": [
+        18,
+        23,
+        18
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        24,
+        15
+      ],
+      "to": [
+        22,
+        24,
+        15
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        16
+      ],
+      "to": [
+        23,
+        24,
+        16
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        24,
+        17
+      ],
+      "to": [
+        24,
+        24,
+        17
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        24,
+        18
+      ],
+      "to": [
+        23,
+        24,
+        18
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        24,
+        19
+      ],
+      "to": [
+        22,
+        24,
+        19
+      ],
+      "material": "aluminum"
+    }
+  ]
+}

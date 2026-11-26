@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "id": "energy-heat-pump-compressor-facility-trailer-bed",
+  "category": "renewable-energy",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9ea8aa",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#566674",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#587287",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#424b51",
+      "kind": "matte"
+    },
+    "tan": {
+      "color": "#ac9679",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d9d3c7",
+      "kind": "matte"
+    },
+    "anodized": {
+      "color": "#8798a2",
+      "kind": "metal"
+    },
+    "amber": {
+      "color": "#b89b65",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8b755d",
+      "kind": "matte"
+    },
+    "oak": {
+      "color": "#9d7e60",
+      "kind": "wood"
+    },
+    "copper": {
+      "color": "#b37e61",
+      "kind": "metal"
+    },
+    "glass": {
+      "color": "#91aeb7",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        0
+      ],
+      "to": [
+        9,
+        8,
+        4
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        0
+      ],
+      "to": [
+        9,
+        24,
+        4
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        6,
+        0
+      ],
+      "to": [
+        53,
+        8,
+        4
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        22,
+        0
+      ],
+      "to": [
+        53,
+        24,
+        4
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        13,
+        4
+      ],
+      "to": [
+        59,
+        16,
+        6
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        54,
+        24,
+        30
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        10
+      ],
+      "to": [
+        53,
+        25,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        14
+      ],
+      "to": [
+        51,
+        25,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        18
+      ],
+      "to": [
+        51,
+        25,
+        18
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        22
+      ],
+      "to": [
+        51,
+        25,
+        22
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        26
+      ],
+      "to": [
+        51,
+        25,
+        26
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 30,
+      "zTo": 31,
+      "radius": 4,
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 31,
+      "zTo": 31,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        15
+      ],
+      "zFrom": 30,
+      "zTo": 31,
+      "radius": 4,
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        15
+      ],
+      "zFrom": 31,
+      "zTo": 31,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        51,
+        24,
+        14
+      ],
+      "to": [
+        54,
+        27,
+        13
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "line",
+      "from": [
+        54,
+        27,
+        13
+      ],
+      "to": [
+        54,
+        27,
+        20
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        18,
+        10
+      ],
+      "to": [
+        52,
+        24,
+        16
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        24,
+        13
+      ],
+      "to": [
+        51,
+        24,
+        14
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        45,
+        20,
+        15
+      ],
+      "to": [
+        41,
+        17,
+        20
+      ],
+      "material": "copper"
+    }
+  ]
+}

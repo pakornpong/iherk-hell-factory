@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "id": "pharmacy-standalone-weighing-station-single-wall-backbench",
+  "category": "pharmacy",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a78363"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c8"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9aa4a7"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#5e6975"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#424952"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#677f94"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#bc9466"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a76757"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d9c9ac"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91adb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        8,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        9
+      ],
+      "to": [
+        27,
+        25,
+        10
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        3
+      ],
+      "to": [
+        6,
+        22,
+        9
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        8,
+        3
+      ],
+      "to": [
+        25,
+        22,
+        9
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        11
+      ],
+      "to": [
+        26,
+        24,
+        14
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        15
+      ],
+      "to": [
+        20,
+        23,
+        18
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        15
+      ],
+      "zFrom": 19,
+      "zTo": 20,
+      "radius": 6,
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        9,
+        15
+      ],
+      "to": [
+        20,
+        11,
+        33
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        8,
+        32
+      ],
+      "to": [
+        23,
+        12,
+        36
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        33
+      ],
+      "to": [
+        21,
+        12,
+        35
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        11,
+        15
+      ],
+      "to": [
+        16,
+        18,
+        17
+      ],
+      "material": "slate"
+    }
+  ]
+}

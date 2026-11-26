@@ -1,0 +1,702 @@
+[
+  {
+    "id": "craft-pottery-wheel-counter-insert-standalone",
+    "category": "craft-workshop",
+    "file": "001/craft-pottery-wheel-counter-insert-standalone.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "craft-pottery-wheel-counter-insert-project-shelf",
+    "category": "craft-workshop",
+    "file": "001/craft-pottery-wheel-counter-insert-project-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "craft-pottery-wheel-industrial-trestle-standalone",
+    "category": "craft-workshop",
+    "file": "001/craft-pottery-wheel-industrial-trestle-standalone.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "craft-pottery-wheel-industrial-trestle-project-shelf",
+    "category": "craft-workshop",
+    "file": "001/craft-pottery-wheel-industrial-trestle-project-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "craft-pottery-wheel-craft-cabinet-standalone",
+    "category": "craft-workshop",
+    "file": "001/craft-pottery-wheel-craft-cabinet-standalone.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "craft-pottery-wheel-craft-cabinet-project-shelf",
+    "category": "craft-workshop",
+    "file": "001/craft-pottery-wheel-craft-cabinet-project-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "craft-pottery-wheel-rolling-bench-standalone",
+    "category": "craft-workshop",
+    "file": "001/craft-pottery-wheel-rolling-bench-standalone.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "craft-pottery-wheel-rolling-bench-project-shelf",
+    "category": "craft-workshop",
+    "file": "001/craft-pottery-wheel-rolling-bench-project-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "craft-pottery-wheel-kneehole-desk-standalone",
+    "category": "craft-workshop",
+    "file": "001/craft-pottery-wheel-kneehole-desk-standalone.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "craft-pottery-wheel-kneehole-desk-project-shelf",
+    "category": "craft-workshop",
+    "file": "001/craft-pottery-wheel-kneehole-desk-project-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "craft-bookbinding-screw-press-counter-insert-standalone",
+    "category": "craft-workshop",
+    "file": "001/craft-bookbinding-screw-press-counter-insert-standalone.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "craft-bookbinding-screw-press-counter-insert-project-shelf",
+    "category": "craft-workshop",
+    "file": "001/craft-bookbinding-screw-press-counter-insert-project-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "craft-bookbinding-screw-press-industrial-trestle-standalone",
+    "category": "craft-workshop",
+    "file": "001/craft-bookbinding-screw-press-industrial-trestle-standalone.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "craft-bookbinding-screw-press-industrial-trestle-project-shelf",
+    "category": "craft-workshop",
+    "file": "001/craft-bookbinding-screw-press-industrial-trestle-project-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "craft-bookbinding-screw-press-craft-cabinet-standalone",
+    "category": "craft-workshop",
+    "file": "001/craft-bookbinding-screw-press-craft-cabinet-standalone.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "craft-bookbinding-screw-press-craft-cabinet-project-shelf",
+    "category": "craft-workshop",
+    "file": "001/craft-bookbinding-screw-press-craft-cabinet-project-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "craft-bookbinding-screw-press-rolling-bench-standalone",
+    "category": "craft-workshop",
+    "file": "001/craft-bookbinding-screw-press-rolling-bench-standalone.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "craft-bookbinding-screw-press-rolling-bench-project-shelf",
+    "category": "craft-workshop",
+    "file": "001/craft-bookbinding-screw-press-rolling-bench-project-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "craft-bookbinding-screw-press-kneehole-desk-standalone",
+    "category": "craft-workshop",
+    "file": "001/craft-bookbinding-screw-press-kneehole-desk-standalone.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "craft-bookbinding-screw-press-kneehole-desk-project-shelf",
+    "category": "craft-workshop",
+    "file": "001/craft-bookbinding-screw-press-kneehole-desk-project-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "craft-weavers-shuttle-loom-counter-insert-standalone",
+    "category": "craft-workshop",
+    "file": "002/craft-weavers-shuttle-loom-counter-insert-standalone.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "craft-weavers-shuttle-loom-counter-insert-project-shelf",
+    "category": "craft-workshop",
+    "file": "002/craft-weavers-shuttle-loom-counter-insert-project-shelf.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "craft-weavers-shuttle-loom-industrial-trestle-standalone",
+    "category": "craft-workshop",
+    "file": "002/craft-weavers-shuttle-loom-industrial-trestle-standalone.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "craft-weavers-shuttle-loom-industrial-trestle-project-shelf",
+    "category": "craft-workshop",
+    "file": "002/craft-weavers-shuttle-loom-industrial-trestle-project-shelf.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "craft-weavers-shuttle-loom-craft-cabinet-standalone",
+    "category": "craft-workshop",
+    "file": "002/craft-weavers-shuttle-loom-craft-cabinet-standalone.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "craft-weavers-shuttle-loom-craft-cabinet-project-shelf",
+    "category": "craft-workshop",
+    "file": "002/craft-weavers-shuttle-loom-craft-cabinet-project-shelf.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "craft-weavers-shuttle-loom-rolling-bench-standalone",
+    "category": "craft-workshop",
+    "file": "002/craft-weavers-shuttle-loom-rolling-bench-standalone.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "craft-weavers-shuttle-loom-rolling-bench-project-shelf",
+    "category": "craft-workshop",
+    "file": "002/craft-weavers-shuttle-loom-rolling-bench-project-shelf.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "craft-weavers-shuttle-loom-kneehole-desk-standalone",
+    "category": "craft-workshop",
+    "file": "002/craft-weavers-shuttle-loom-kneehole-desk-standalone.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "craft-weavers-shuttle-loom-kneehole-desk-project-shelf",
+    "category": "craft-workshop",
+    "file": "002/craft-weavers-shuttle-loom-kneehole-desk-project-shelf.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "craft-foot-treadle-leather-stitcher-counter-insert-standalone",
+    "category": "craft-workshop",
+    "file": "002/craft-foot-treadle-leather-stitcher-counter-insert-standalone.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "craft-foot-treadle-leather-stitcher-counter-insert-project-shelf",
+    "category": "craft-workshop",
+    "file": "002/craft-foot-treadle-leather-stitcher-counter-insert-project-shelf.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "craft-foot-treadle-leather-stitcher-industrial-trestle-standalone",
+    "category": "craft-workshop",
+    "file": "002/craft-foot-treadle-leather-stitcher-industrial-trestle-standalone.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "craft-foot-treadle-leather-stitcher-industrial-trestle-project-shelf",
+    "category": "craft-workshop",
+    "file": "002/craft-foot-treadle-leather-stitcher-industrial-trestle-project-shelf.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "craft-foot-treadle-leather-stitcher-craft-cabinet-standalone",
+    "category": "craft-workshop",
+    "file": "002/craft-foot-treadle-leather-stitcher-craft-cabinet-standalone.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "craft-foot-treadle-leather-stitcher-craft-cabinet-project-shelf",
+    "category": "craft-workshop",
+    "file": "002/craft-foot-treadle-leather-stitcher-craft-cabinet-project-shelf.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "craft-foot-treadle-leather-stitcher-rolling-bench-standalone",
+    "category": "craft-workshop",
+    "file": "002/craft-foot-treadle-leather-stitcher-rolling-bench-standalone.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "craft-foot-treadle-leather-stitcher-rolling-bench-project-shelf",
+    "category": "craft-workshop",
+    "file": "002/craft-foot-treadle-leather-stitcher-rolling-bench-project-shelf.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "craft-foot-treadle-leather-stitcher-kneehole-desk-standalone",
+    "category": "craft-workshop",
+    "file": "002/craft-foot-treadle-leather-stitcher-kneehole-desk-standalone.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "craft-foot-treadle-leather-stitcher-kneehole-desk-project-shelf",
+    "category": "craft-workshop",
+    "file": "002/craft-foot-treadle-leather-stitcher-kneehole-desk-project-shelf.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "craft-jewelry-polishing-motor-counter-insert-standalone",
+    "category": "craft-workshop",
+    "file": "003/craft-jewelry-polishing-motor-counter-insert-standalone.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "craft-jewelry-polishing-motor-counter-insert-project-shelf",
+    "category": "craft-workshop",
+    "file": "003/craft-jewelry-polishing-motor-counter-insert-project-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "craft-jewelry-polishing-motor-industrial-trestle-standalone",
+    "category": "craft-workshop",
+    "file": "003/craft-jewelry-polishing-motor-industrial-trestle-standalone.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "craft-jewelry-polishing-motor-industrial-trestle-project-shelf",
+    "category": "craft-workshop",
+    "file": "003/craft-jewelry-polishing-motor-industrial-trestle-project-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "craft-jewelry-polishing-motor-craft-cabinet-standalone",
+    "category": "craft-workshop",
+    "file": "003/craft-jewelry-polishing-motor-craft-cabinet-standalone.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "craft-jewelry-polishing-motor-craft-cabinet-project-shelf",
+    "category": "craft-workshop",
+    "file": "003/craft-jewelry-polishing-motor-craft-cabinet-project-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "craft-jewelry-polishing-motor-rolling-bench-standalone",
+    "category": "craft-workshop",
+    "file": "003/craft-jewelry-polishing-motor-rolling-bench-standalone.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "craft-jewelry-polishing-motor-rolling-bench-project-shelf",
+    "category": "craft-workshop",
+    "file": "003/craft-jewelry-polishing-motor-rolling-bench-project-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "craft-jewelry-polishing-motor-kneehole-desk-standalone",
+    "category": "craft-workshop",
+    "file": "003/craft-jewelry-polishing-motor-kneehole-desk-standalone.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "craft-jewelry-polishing-motor-kneehole-desk-project-shelf",
+    "category": "craft-workshop",
+    "file": "003/craft-jewelry-polishing-motor-kneehole-desk-project-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "craft-screen-printing-hinge-counter-insert-standalone",
+    "category": "craft-workshop",
+    "file": "003/craft-screen-printing-hinge-counter-insert-standalone.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "craft-screen-printing-hinge-counter-insert-project-shelf",
+    "category": "craft-workshop",
+    "file": "003/craft-screen-printing-hinge-counter-insert-project-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "craft-screen-printing-hinge-industrial-trestle-standalone",
+    "category": "craft-workshop",
+    "file": "003/craft-screen-printing-hinge-industrial-trestle-standalone.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "craft-screen-printing-hinge-industrial-trestle-project-shelf",
+    "category": "craft-workshop",
+    "file": "003/craft-screen-printing-hinge-industrial-trestle-project-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "craft-screen-printing-hinge-craft-cabinet-standalone",
+    "category": "craft-workshop",
+    "file": "003/craft-screen-printing-hinge-craft-cabinet-standalone.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "craft-screen-printing-hinge-craft-cabinet-project-shelf",
+    "category": "craft-workshop",
+    "file": "003/craft-screen-printing-hinge-craft-cabinet-project-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "craft-screen-printing-hinge-rolling-bench-standalone",
+    "category": "craft-workshop",
+    "file": "003/craft-screen-printing-hinge-rolling-bench-standalone.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "craft-screen-printing-hinge-rolling-bench-project-shelf",
+    "category": "craft-workshop",
+    "file": "003/craft-screen-printing-hinge-rolling-bench-project-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "craft-screen-printing-hinge-kneehole-desk-standalone",
+    "category": "craft-workshop",
+    "file": "003/craft-screen-printing-hinge-kneehole-desk-standalone.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "craft-screen-printing-hinge-kneehole-desk-project-shelf",
+    "category": "craft-workshop",
+    "file": "003/craft-screen-printing-hinge-kneehole-desk-project-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "craft-enameling-kiln-counter-insert-standalone",
+    "category": "craft-workshop",
+    "file": "004/craft-enameling-kiln-counter-insert-standalone.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "craft-enameling-kiln-counter-insert-project-shelf",
+    "category": "craft-workshop",
+    "file": "004/craft-enameling-kiln-counter-insert-project-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "craft-enameling-kiln-industrial-trestle-standalone",
+    "category": "craft-workshop",
+    "file": "004/craft-enameling-kiln-industrial-trestle-standalone.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "craft-enameling-kiln-industrial-trestle-project-shelf",
+    "category": "craft-workshop",
+    "file": "004/craft-enameling-kiln-industrial-trestle-project-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "craft-enameling-kiln-craft-cabinet-standalone",
+    "category": "craft-workshop",
+    "file": "004/craft-enameling-kiln-craft-cabinet-standalone.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "craft-enameling-kiln-craft-cabinet-project-shelf",
+    "category": "craft-workshop",
+    "file": "004/craft-enameling-kiln-craft-cabinet-project-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "craft-enameling-kiln-rolling-bench-standalone",
+    "category": "craft-workshop",
+    "file": "004/craft-enameling-kiln-rolling-bench-standalone.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "craft-enameling-kiln-rolling-bench-project-shelf",
+    "category": "craft-workshop",
+    "file": "004/craft-enameling-kiln-rolling-bench-project-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "craft-enameling-kiln-kneehole-desk-standalone",
+    "category": "craft-workshop",
+    "file": "004/craft-enameling-kiln-kneehole-desk-standalone.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "craft-enameling-kiln-kneehole-desk-project-shelf",
+    "category": "craft-workshop",
+    "file": "004/craft-enameling-kiln-kneehole-desk-project-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "craft-tilting-wood-lathe-counter-insert-standalone",
+    "category": "craft-workshop",
+    "file": "004/craft-tilting-wood-lathe-counter-insert-standalone.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "craft-tilting-wood-lathe-counter-insert-project-shelf",
+    "category": "craft-workshop",
+    "file": "004/craft-tilting-wood-lathe-counter-insert-project-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "craft-tilting-wood-lathe-industrial-trestle-standalone",
+    "category": "craft-workshop",
+    "file": "004/craft-tilting-wood-lathe-industrial-trestle-standalone.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "craft-tilting-wood-lathe-industrial-trestle-project-shelf",
+    "category": "craft-workshop",
+    "file": "004/craft-tilting-wood-lathe-industrial-trestle-project-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "craft-tilting-wood-lathe-craft-cabinet-standalone",
+    "category": "craft-workshop",
+    "file": "004/craft-tilting-wood-lathe-craft-cabinet-standalone.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "craft-tilting-wood-lathe-craft-cabinet-project-shelf",
+    "category": "craft-workshop",
+    "file": "004/craft-tilting-wood-lathe-craft-cabinet-project-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "craft-tilting-wood-lathe-rolling-bench-standalone",
+    "category": "craft-workshop",
+    "file": "004/craft-tilting-wood-lathe-rolling-bench-standalone.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "craft-tilting-wood-lathe-rolling-bench-project-shelf",
+    "category": "craft-workshop",
+    "file": "004/craft-tilting-wood-lathe-rolling-bench-project-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "craft-tilting-wood-lathe-kneehole-desk-standalone",
+    "category": "craft-workshop",
+    "file": "004/craft-tilting-wood-lathe-kneehole-desk-standalone.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "craft-tilting-wood-lathe-kneehole-desk-project-shelf",
+    "category": "craft-workshop",
+    "file": "004/craft-tilting-wood-lathe-kneehole-desk-project-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "craft-ceramic-glaze-dipping-counter-insert-standalone",
+    "category": "craft-workshop",
+    "file": "005/craft-ceramic-glaze-dipping-counter-insert-standalone.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "craft-ceramic-glaze-dipping-counter-insert-project-shelf",
+    "category": "craft-workshop",
+    "file": "005/craft-ceramic-glaze-dipping-counter-insert-project-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "craft-ceramic-glaze-dipping-industrial-trestle-standalone",
+    "category": "craft-workshop",
+    "file": "005/craft-ceramic-glaze-dipping-industrial-trestle-standalone.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "craft-ceramic-glaze-dipping-industrial-trestle-project-shelf",
+    "category": "craft-workshop",
+    "file": "005/craft-ceramic-glaze-dipping-industrial-trestle-project-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "craft-ceramic-glaze-dipping-craft-cabinet-standalone",
+    "category": "craft-workshop",
+    "file": "005/craft-ceramic-glaze-dipping-craft-cabinet-standalone.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "craft-ceramic-glaze-dipping-craft-cabinet-project-shelf",
+    "category": "craft-workshop",
+    "file": "005/craft-ceramic-glaze-dipping-craft-cabinet-project-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "craft-ceramic-glaze-dipping-rolling-bench-standalone",
+    "category": "craft-workshop",
+    "file": "005/craft-ceramic-glaze-dipping-rolling-bench-standalone.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "craft-ceramic-glaze-dipping-rolling-bench-project-shelf",
+    "category": "craft-workshop",
+    "file": "005/craft-ceramic-glaze-dipping-rolling-bench-project-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "craft-ceramic-glaze-dipping-kneehole-desk-standalone",
+    "category": "craft-workshop",
+    "file": "005/craft-ceramic-glaze-dipping-kneehole-desk-standalone.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "craft-ceramic-glaze-dipping-kneehole-desk-project-shelf",
+    "category": "craft-workshop",
+    "file": "005/craft-ceramic-glaze-dipping-kneehole-desk-project-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "craft-framers-miter-guillotine-counter-insert-standalone",
+    "category": "craft-workshop",
+    "file": "005/craft-framers-miter-guillotine-counter-insert-standalone.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "craft-framers-miter-guillotine-counter-insert-project-shelf",
+    "category": "craft-workshop",
+    "file": "005/craft-framers-miter-guillotine-counter-insert-project-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "craft-framers-miter-guillotine-industrial-trestle-standalone",
+    "category": "craft-workshop",
+    "file": "005/craft-framers-miter-guillotine-industrial-trestle-standalone.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "craft-framers-miter-guillotine-industrial-trestle-project-shelf",
+    "category": "craft-workshop",
+    "file": "005/craft-framers-miter-guillotine-industrial-trestle-project-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "craft-framers-miter-guillotine-craft-cabinet-standalone",
+    "category": "craft-workshop",
+    "file": "005/craft-framers-miter-guillotine-craft-cabinet-standalone.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "craft-framers-miter-guillotine-craft-cabinet-project-shelf",
+    "category": "craft-workshop",
+    "file": "005/craft-framers-miter-guillotine-craft-cabinet-project-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "craft-framers-miter-guillotine-rolling-bench-standalone",
+    "category": "craft-workshop",
+    "file": "005/craft-framers-miter-guillotine-rolling-bench-standalone.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "craft-framers-miter-guillotine-rolling-bench-project-shelf",
+    "category": "craft-workshop",
+    "file": "005/craft-framers-miter-guillotine-rolling-bench-project-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "craft-framers-miter-guillotine-kneehole-desk-standalone",
+    "category": "craft-workshop",
+    "file": "005/craft-framers-miter-guillotine-kneehole-desk-standalone.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "craft-framers-miter-guillotine-kneehole-desk-project-shelf",
+    "category": "craft-workshop",
+    "file": "005/craft-framers-miter-guillotine-kneehole-desk-project-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 20
+  }
+]

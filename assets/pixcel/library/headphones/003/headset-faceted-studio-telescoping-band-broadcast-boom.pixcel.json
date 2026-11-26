@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "id": "headset-faceted-studio-telescoping-band-broadcast-boom",
+  "category": "electronics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#788e9f"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#303c4b"
+    },
+    "cushion": {
+      "kind": "matte",
+      "color": "#5e6b7d"
+    },
+    "mesh": {
+      "kind": "matte",
+      "color": "#7b8070"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c3a25d"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#424f3b"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        6
+      ],
+      "to": [
+        7,
+        22,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        3
+      ],
+      "to": [
+        7,
+        20,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        4
+      ],
+      "to": [
+        7,
+        18,
+        14
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        8
+      ],
+      "to": [
+        7,
+        8,
+        10
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        6
+      ],
+      "to": [
+        26,
+        22,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        3
+      ],
+      "to": [
+        26,
+        20,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        4
+      ],
+      "to": [
+        26,
+        18,
+        14
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        8
+      ],
+      "to": [
+        26,
+        8,
+        10
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        5
+      ],
+      "to": [
+        8,
+        20,
+        14
+      ],
+      "material": "cushion"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        10,
+        5
+      ],
+      "to": [
+        23,
+        20,
+        14
+      ],
+      "material": "cushion"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        18,
+        8
+      ],
+      "to": [
+        9,
+        25,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        25,
+        7
+      ],
+      "to": [
+        16,
+        27,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        26,
+        7
+      ],
+      "to": [
+        18,
+        28,
+        9
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        15,
+        13
+      ],
+      "to": [
+        8,
+        15,
+        24
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        15,
+        13
+      ],
+      "to": [
+        22,
+        15,
+        24
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        19
+      ],
+      "to": [
+        9,
+        17,
+        24
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        13,
+        19
+      ],
+      "to": [
+        23,
+        17,
+        24
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        24
+      ],
+      "to": [
+        21,
+        18,
+        27
+      ],
+      "material": "leather"
+    }
+  ]
+}

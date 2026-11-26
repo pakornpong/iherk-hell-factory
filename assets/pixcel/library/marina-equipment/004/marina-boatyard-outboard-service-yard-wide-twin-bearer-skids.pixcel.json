@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "id": "marina-boatyard-outboard-service-yard-wide-twin-bearer-skids",
+  "category": "maritime",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a4866b"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#698294"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9caaa9"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596672"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#40494e"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#ad6d56"
+    },
+    "ochre": {
+      "kind": "matte",
+      "color": "#c19e62"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b69c7e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba7b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        9,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        0
+      ],
+      "to": [
+        55,
+        24,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        4
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        9
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        9
+      ],
+      "to": [
+        8,
+        11,
+        33
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        9,
+        9
+      ],
+      "to": [
+        53,
+        11,
+        33
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        31
+      ],
+      "to": [
+        52,
+        11,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        14
+      ],
+      "zFrom": 29,
+      "zTo": 39,
+      "radius": 5,
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        14,
+        15
+      ],
+      "to": [
+        16,
+        16,
+        30
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        16
+      ],
+      "to": [
+        20,
+        17,
+        17
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        16,
+        16
+      ],
+      "to": [
+        22,
+        18,
+        18
+      ],
+      "material": "gray"
+    }
+  ]
+}

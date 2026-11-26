@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "id": "craft-foot-treadle-leather-stitcher-industrial-trestle-standalone",
+  "category": "craft-workshop",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ab8159"
+    },
+    "nut": {
+      "kind": "wood",
+      "color": "#745644"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9af"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596471"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#dbd2be"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a86550"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9d5553"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e798a"
+    },
+    "soot": {
+      "kind": "matte",
+      "color": "#3a4046"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#a89779"
+    },
+    "buff": {
+      "kind": "matte",
+      "color": "#c7a969"
+    },
+    "pane": {
+      "kind": "glass",
+      "color": "#87a6b0"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        0
+      ],
+      "to": [
+        9,
+        25,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        8,
+        1
+      ],
+      "to": [
+        7,
+        15,
+        16
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        24,
+        1
+      ],
+      "to": [
+        7,
+        15,
+        16
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        6,
+        0
+      ],
+      "to": [
+        44,
+        25,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        8,
+        1
+      ],
+      "to": [
+        42,
+        15,
+        16
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        24,
+        1
+      ],
+      "to": [
+        42,
+        15,
+        16
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        15
+      ],
+      "to": [
+        44,
+        24,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        17
+      ],
+      "to": [
+        44,
+        25,
+        21
+      ],
+      "material": "nut"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        21
+      ],
+      "to": [
+        40,
+        22,
+        23
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        8,
+        23
+      ],
+      "to": [
+        36,
+        16,
+        40
+      ],
+      "material": "soot"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        9,
+        38
+      ],
+      "to": [
+        36,
+        16,
+        42
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        10,
+        33
+      ],
+      "to": [
+        22,
+        15,
+        39
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        12,
+        28
+      ],
+      "to": [
+        19,
+        13,
+        33
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        31,
+        13
+      ],
+      "zFrom": 42,
+      "zTo": 47,
+      "radius": 2,
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        34,
+        10,
+        36
+      ],
+      "to": [
+        37,
+        10,
+        21
+      ],
+      "material": "soot"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        9,
+        23
+      ],
+      "to": [
+        30,
+        17,
+        24
+      ],
+      "material": "sand"
+    }
+  ]
+}

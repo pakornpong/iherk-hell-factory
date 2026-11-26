@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "id": "lounge-seat-channel-tufted-chaise-accent-angled-timber",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a27955"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795743"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b8a06d"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#636c72"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#43464b"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#7a6759"
+    },
+    "piping": {
+      "kind": "matte",
+      "color": "#9d8570"
+    },
+    "pillow": {
+      "kind": "matte",
+      "color": "#d0b59a"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        6,
+        6,
+        0
+      ],
+      "to": [
+        8,
+        8,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        24,
+        0
+      ],
+      "to": [
+        8,
+        22,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        6,
+        0
+      ],
+      "to": [
+        20,
+        8,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        24,
+        0
+      ],
+      "to": [
+        20,
+        22,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        7
+      ],
+      "to": [
+        25,
+        27,
+        13
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "slope",
+      "from": [
+        6,
+        6,
+        13
+      ],
+      "to": [
+        24,
+        13,
+        30
+      ],
+      "axis": "-Y",
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        13
+      ],
+      "to": [
+        23,
+        15,
+        15
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        17,
+        13
+      ],
+      "to": [
+        23,
+        19,
+        15
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        21,
+        13
+      ],
+      "to": [
+        23,
+        23,
+        15
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        13
+      ],
+      "to": [
+        23,
+        27,
+        15
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        15
+      ],
+      "to": [
+        9,
+        22,
+        21
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        17
+      ],
+      "to": [
+        23,
+        12,
+        22
+      ],
+      "material": "pillow"
+    }
+  ]
+}

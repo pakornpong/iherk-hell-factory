@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "id": "childcare-toy-train-activity-table-group-soft-edge-pad",
+  "category": "childcare",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#b58b64"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#9b7555"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b7a58e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac6c5c"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#6d8498"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8f9ba1"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#c4a463"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#4a535a"
+    },
+    "pink": {
+      "kind": "matte",
+      "color": "#a97880"
+    },
+    "mats": {
+      "kind": "matte",
+      "color": "#978d86"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        2
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        25,
+        3
+      ],
+      "material": "mats"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        55,
+        7,
+        3
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        4
+      ],
+      "to": [
+        8,
+        9,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        4
+      ],
+      "to": [
+        8,
+        24,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        4
+      ],
+      "to": [
+        53,
+        9,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        22,
+        4
+      ],
+      "to": [
+        53,
+        24,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        11
+      ],
+      "to": [
+        55,
+        25,
+        13
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        14
+      ],
+      "to": [
+        52,
+        10,
+        14
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        20,
+        14
+      ],
+      "to": [
+        52,
+        21,
+        14
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        14
+      ],
+      "to": [
+        8,
+        21,
+        14
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        9,
+        14
+      ],
+      "to": [
+        52,
+        21,
+        14
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        9,
+        15
+      ],
+      "to": [
+        17,
+        12,
+        18
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        9,
+        15
+      ],
+      "to": [
+        23,
+        12,
+        17
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        14,
+        14
+      ],
+      "to": [
+        51,
+        18,
+        17
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        5
+      ],
+      "to": [
+        11,
+        28,
+        10
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        23,
+        5
+      ],
+      "to": [
+        55,
+        28,
+        11
+      ],
+      "material": "pink"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        23,
+        11
+      ],
+      "to": [
+        54,
+        27,
+        12
+      ],
+      "material": "linen"
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "id": "pet-fixture-hooded-litter-box-compact-low-deck",
+  "category": "pet-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ad8663"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#755844"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b9a891"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b99470"
+    },
+    "navy": {
+      "kind": "matte",
+      "color": "#607183"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#ded4c0"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#495359"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ca7a9"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a97561"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8fadb8"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bca475"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        27,
+        9,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        3
+      ],
+      "to": [
+        27,
+        14,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        3
+      ],
+      "to": [
+        27,
+        19,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        3
+      ],
+      "to": [
+        27,
+        24,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        5
+      ],
+      "to": [
+        27,
+        25,
+        11
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        12
+      ],
+      "to": [
+        26,
+        10,
+        27
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        12
+      ],
+      "to": [
+        8,
+        24,
+        27
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        12
+      ],
+      "to": [
+        26,
+        24,
+        27
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        27
+      ],
+      "to": [
+        26,
+        24,
+        30
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        12
+      ],
+      "to": [
+        23,
+        24,
+        13
+      ],
+      "material": "tan"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        23,
+        10
+      ],
+      "to": [
+        23,
+        27,
+        11
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        24,
+        11
+      ],
+      "to": [
+        21,
+        27,
+        11
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        8,
+        5
+      ],
+      "to": [
+        23,
+        19,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        8,
+        14
+      ],
+      "to": [
+        22,
+        19,
+        16
+      ],
+      "material": "linen"
+    }
+  ]
+}

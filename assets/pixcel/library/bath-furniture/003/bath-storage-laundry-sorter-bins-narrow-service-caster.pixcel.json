@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "id": "bath-storage-laundry-sorter-bins-narrow-service-caster",
+  "category": "bathroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a6815e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#775a48"
+    },
+    "paint": {
+      "kind": "matte",
+      "color": "#ada097"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c9baab"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5e7182"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad5c9"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#9da9ad"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#54616d"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b29c70"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a0b3b7"
+    },
+    "rose": {
+      "kind": "matte",
+      "color": "#a87976"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#9d6f58"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        24,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        9,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        22,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        26,
+        25,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        7
+      ],
+      "to": [
+        26,
+        23,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        8
+      ],
+      "to": [
+        26,
+        26,
+        11
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        11
+      ],
+      "to": [
+        25,
+        8,
+        38
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        23
+      ],
+      "to": [
+        25,
+        24,
+        24
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        35
+      ],
+      "to": [
+        25,
+        24,
+        36
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        12
+      ],
+      "to": [
+        12,
+        23,
+        21
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        25
+      ],
+      "to": [
+        12,
+        23,
+        33
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        23,
+        18
+      ],
+      "to": [
+        10,
+        24,
+        19
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        12
+      ],
+      "to": [
+        20,
+        23,
+        21
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        25
+      ],
+      "to": [
+        20,
+        23,
+        33
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        23,
+        18
+      ],
+      "to": [
+        18,
+        24,
+        19
+      ],
+      "material": "ivory"
+    }
+  ]
+}

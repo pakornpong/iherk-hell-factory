@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "id": "waiting-lounges-luggage-rest-folding-wide-fixed-island",
+  "category": "lounge",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#a77c56",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#755644",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ba6aa",
+      "kind": "metal"
+    },
+    "charcoal": {
+      "color": "#49535c",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#ddd5c3",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#aa9a88",
+      "kind": "matte"
+    },
+    "graphite": {
+      "color": "#363e43",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#bda16c",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a65c50",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#6b8090",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#89a8b4",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#a8a09a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        53,
+        24,
+        2
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        53,
+        24,
+        12
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        5
+      ],
+      "to": [
+        51,
+        25,
+        11
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        8
+      ],
+      "to": [
+        47,
+        26,
+        9
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        12
+      ],
+      "to": [
+        54,
+        25,
+        13
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        7,
+        14
+      ],
+      "to": [
+        7,
+        22,
+        30
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        22,
+        14
+      ],
+      "to": [
+        7,
+        7,
+        30
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        7,
+        14
+      ],
+      "to": [
+        52,
+        22,
+        30
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        22,
+        14
+      ],
+      "to": [
+        52,
+        7,
+        30
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        30
+      ],
+      "to": [
+        53,
+        9,
+        31
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        30
+      ],
+      "to": [
+        53,
+        13,
+        31
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        16,
+        30
+      ],
+      "to": [
+        53,
+        17,
+        31
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        20,
+        30
+      ],
+      "to": [
+        53,
+        21,
+        31
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        32
+      ],
+      "to": [
+        50,
+        21,
+        43
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        20,
+        37
+      ],
+      "to": [
+        48,
+        22,
+        39
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        43
+      ],
+      "to": [
+        46,
+        15,
+        44
+      ],
+      "material": "steel"
+    }
+  ]
+}

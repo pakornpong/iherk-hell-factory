@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "id": "safety-mobile-safety-screen-desk-edge",
+  "category": "workplace-safety",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#667783"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0a8a7"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd8c8"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#454b51"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#c3844e"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#c9ac61"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#aa5d4f"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5a778e"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#9a9891"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#94aeb6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        24,
+        2
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        0
+      ],
+      "to": [
+        6,
+        26,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        22,
+        0
+      ],
+      "to": [
+        27,
+        26,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        3
+      ],
+      "to": [
+        27,
+        9,
+        31
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        7
+      ],
+      "to": [
+        26,
+        10,
+        29
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        28
+      ],
+      "to": [
+        26,
+        11,
+        30
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        6
+      ],
+      "to": [
+        26,
+        11,
+        8
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        10,
+        9
+      ],
+      "to": [
+        22,
+        10,
+        26
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        10,
+        26
+      ],
+      "to": [
+        22,
+        10,
+        9
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        3
+      ],
+      "to": [
+        7,
+        19,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        8,
+        3
+      ],
+      "to": [
+        25,
+        19,
+        5
+      ],
+      "material": "steel"
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "id": "catering-service-insulated-food-carriers-compact-storage-trestle",
+  "category": "catering",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#a77c56",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#755644",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ba6aa",
+      "kind": "metal"
+    },
+    "charcoal": {
+      "color": "#49535c",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#ddd5c3",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#aa9a88",
+      "kind": "matte"
+    },
+    "graphite": {
+      "color": "#363e43",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#bda16c",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a65c50",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#6b8090",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#89a8b4",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#a8a09a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        5,
+        15,
+        15
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        24,
+        0
+      ],
+      "to": [
+        5,
+        15,
+        15
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        7,
+        0
+      ],
+      "to": [
+        24,
+        15,
+        15
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        24,
+        0
+      ],
+      "to": [
+        24,
+        15,
+        15
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        14
+      ],
+      "to": [
+        27,
+        25,
+        15
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        7
+      ],
+      "to": [
+        24,
+        24,
+        8
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        9
+      ],
+      "to": [
+        16,
+        20,
+        11
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        9
+      ],
+      "to": [
+        22,
+        21,
+        12
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        16
+      ],
+      "to": [
+        16,
+        23,
+        28
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        27
+      ],
+      "to": [
+        17,
+        24,
+        29
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        9,
+        16
+      ],
+      "to": [
+        27,
+        22,
+        31
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        8,
+        30
+      ],
+      "to": [
+        28,
+        23,
+        32
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        18,
+        29
+      ],
+      "to": [
+        13,
+        20,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        17,
+        32
+      ],
+      "to": [
+        25,
+        19,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        23,
+        22
+      ],
+      "to": [
+        14,
+        24,
+        24
+      ],
+      "material": "cream"
+    }
+  ]
+}

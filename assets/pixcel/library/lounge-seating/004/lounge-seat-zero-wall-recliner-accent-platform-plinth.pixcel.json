@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "id": "lounge-seat-zero-wall-recliner-accent-platform-plinth",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a27955"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795743"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b8a06d"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#636c72"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#43464b"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#8e6d52"
+    },
+    "piping": {
+      "kind": "matte",
+      "color": "#b98e67"
+    },
+    "pillow": {
+      "kind": "matte",
+      "color": "#d7c6aa"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        24,
+        24,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        25,
+        25,
+        3
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        4
+      ],
+      "to": [
+        24,
+        23,
+        10
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "slope",
+      "from": [
+        7,
+        5,
+        9
+      ],
+      "to": [
+        23,
+        13,
+        32
+      ],
+      "axis": "-Y",
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        10
+      ],
+      "to": [
+        22,
+        22,
+        14
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "slope",
+      "from": [
+        7,
+        23,
+        9
+      ],
+      "to": [
+        23,
+        30,
+        13
+      ],
+      "axis": "-Y",
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        12
+      ],
+      "to": [
+        8,
+        23,
+        19
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        10,
+        12
+      ],
+      "to": [
+        24,
+        23,
+        19
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        19,
+        15
+      ],
+      "to": [
+        24,
+        20,
+        16
+      ],
+      "material": "brass"
+    }
+  ]
+}

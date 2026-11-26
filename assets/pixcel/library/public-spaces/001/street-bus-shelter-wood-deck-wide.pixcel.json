@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "id": "street-bus-shelter-wood-deck-wide",
+  "category": "public-space",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a07f60"
+    },
+    "darkwood": {
+      "kind": "wood",
+      "color": "#755943"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#929fa5"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#505d66"
+    },
+    "paved": {
+      "kind": "matte",
+      "color": "#ada99e"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#444d52"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbd7c8"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#647d91"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#9f7060"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b29d7b"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#97b5bf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        0
+      ],
+      "to": [
+        57,
+        27,
+        1
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        2
+      ],
+      "to": [
+        57,
+        7,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        10,
+        2
+      ],
+      "to": [
+        57,
+        12,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        15,
+        2
+      ],
+      "to": [
+        57,
+        17,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        20,
+        2
+      ],
+      "to": [
+        57,
+        22,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        25,
+        2
+      ],
+      "to": [
+        57,
+        27,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        3
+      ],
+      "to": [
+        6,
+        7,
+        43
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        3
+      ],
+      "to": [
+        6,
+        24,
+        39
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        5,
+        3
+      ],
+      "to": [
+        56,
+        7,
+        43
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        22,
+        3
+      ],
+      "to": [
+        56,
+        24,
+        39
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "slope",
+      "from": [
+        3,
+        4,
+        38
+      ],
+      "to": [
+        57,
+        26,
+        45
+      ],
+      "axis": "-Y",
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        10
+      ],
+      "to": [
+        54,
+        7,
+        37
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        10
+      ],
+      "to": [
+        53,
+        13,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        3
+      ],
+      "to": [
+        52,
+        8,
+        11
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        7,
+        20
+      ],
+      "to": [
+        53,
+        8,
+        32
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        9
+      ],
+      "to": [
+        6,
+        22,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        8,
+        9
+      ],
+      "to": [
+        56,
+        22,
+        19
+      ],
+      "material": "oak"
+    }
+  ]
+}

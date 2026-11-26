@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "id": "precision-craft-knife-sharpening-jig-full-worktop-tabletop-repair",
+  "category": "precision-repair",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa815e",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#755847",
+      "kind": "wood"
+    },
+    "frame": {
+      "color": "#596673",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#a0a9aa",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#3d464b",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#dfd3ba",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#a6937d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fabb5",
+      "kind": "glass"
+    },
+    "blue": {
+      "color": "#627b91",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#b99b68",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a06254",
+      "kind": "matte"
+    },
+    "copper": {
+      "color": "#ab795d",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        7
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        8
+      ],
+      "to": [
+        52,
+        21,
+        10
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        11
+      ],
+      "to": [
+        18,
+        19,
+        13
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        10,
+        10
+      ],
+      "to": [
+        51,
+        15,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        13,
+        17
+      ],
+      "to": [
+        12,
+        17,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        16,
+        13
+      ],
+      "to": [
+        14,
+        18,
+        13
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        9,
+        7
+      ],
+      "to": [
+        52,
+        20,
+        13
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        10,
+        13
+      ],
+      "to": [
+        51,
+        19,
+        14
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        12,
+        14
+      ],
+      "to": [
+        50,
+        15,
+        15
+      ],
+      "material": "steel"
+    }
+  ]
+}

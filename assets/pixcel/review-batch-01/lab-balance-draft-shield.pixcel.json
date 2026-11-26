@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "id": "lab-balance-draft-shield",
+  "category": "lab",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "color": "#2d3443",
+      "kind": "metal"
+    },
+    "chrome": {
+      "color": "#d2dbe0",
+      "kind": "metal"
+    },
+    "white": {
+      "color": "#ece9db",
+      "kind": "matte"
+    },
+    "yellow": {
+      "color": "#e1ad52",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#75bfce",
+      "kind": "glass"
+    },
+    "screen": {
+      "color": "#79e1ea",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.24
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        0
+      ],
+      "to": [
+        27,
+        28,
+        5
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        4
+      ],
+      "to": [
+        24,
+        28,
+        6
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        28,
+        5
+      ],
+      "to": [
+        18,
+        28,
+        5
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        28,
+        5
+      ],
+      "to": [
+        23,
+        28,
+        5
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        13
+      ],
+      "zFrom": 6,
+      "zTo": 7,
+      "radius": 6,
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        13
+      ],
+      "zFrom": 8,
+      "zTo": 11,
+      "radius": 3,
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        6
+      ],
+      "to": [
+        24,
+        6,
+        24
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        6
+      ],
+      "to": [
+        7,
+        20,
+        24
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        6,
+        6
+      ],
+      "to": [
+        24,
+        20,
+        24
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        24
+      ],
+      "to": [
+        24,
+        20,
+        25
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        20,
+        23
+      ],
+      "to": [
+        23,
+        21,
+        24
+      ],
+      "material": "ink"
+    }
+  ]
+}

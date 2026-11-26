@@ -1,0 +1,489 @@
+{
+  "schemaVersion": 1,
+  "id": "recycle-reusable-bottle-wash-rack-facility-sorting-side-deck",
+  "category": "recycling",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "color": "#596975",
+      "kind": "metal"
+    },
+    "zinc": {
+      "color": "#9aa6a8",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#424e55",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#647f96",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#c29f65",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#9e8569",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#a7835e",
+      "kind": "wood"
+    },
+    "gray": {
+      "color": "#a4a09a",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#d7cbb1",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#aa6957",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8eabb6",
+      "kind": "glass"
+    },
+    "cream": {
+      "color": "#d7d1c3",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        4
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        7
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        5
+      ],
+      "to": [
+        55,
+        25,
+        8
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        5
+      ],
+      "to": [
+        54,
+        7,
+        8
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        54,
+        24,
+        12
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        12
+      ],
+      "to": [
+        53,
+        10,
+        30
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        23
+      ],
+      "to": [
+        53,
+        23,
+        25
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        17
+      ],
+      "zFrom": 12,
+      "zTo": 19,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 1,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        17
+      ],
+      "zFrom": 25,
+      "zTo": 32,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        17
+      ],
+      "zFrom": 12,
+      "zTo": 19,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 1,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        17
+      ],
+      "zFrom": 25,
+      "zTo": 32,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        17
+      ],
+      "zFrom": 12,
+      "zTo": 19,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 1,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        17
+      ],
+      "zFrom": 25,
+      "zTo": 32,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        17
+      ],
+      "zFrom": 12,
+      "zTo": 19,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 1,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        17
+      ],
+      "zFrom": 25,
+      "zTo": 32,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        28,
+        17
+      ],
+      "zFrom": 12,
+      "zTo": 19,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        28,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 1,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        28,
+        17
+      ],
+      "zFrom": 25,
+      "zTo": 32,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        33,
+        17
+      ],
+      "zFrom": 12,
+      "zTo": 19,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        33,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 1,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        33,
+        17
+      ],
+      "zFrom": 25,
+      "zTo": 32,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        38,
+        17
+      ],
+      "zFrom": 12,
+      "zTo": 19,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        38,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 1,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        38,
+        17
+      ],
+      "zFrom": 25,
+      "zTo": 32,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        43,
+        17
+      ],
+      "zFrom": 12,
+      "zTo": 19,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        43,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 1,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        43,
+        17
+      ],
+      "zFrom": 25,
+      "zTo": 32,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        17
+      ],
+      "zFrom": 12,
+      "zTo": 19,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 1,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        17
+      ],
+      "zFrom": 25,
+      "zTo": 32,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        12,
+        10
+      ],
+      "to": [
+        51,
+        20,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        12,
+        16
+      ],
+      "to": [
+        50,
+        20,
+        17
+      ],
+      "material": "amber"
+    }
+  ]
+}

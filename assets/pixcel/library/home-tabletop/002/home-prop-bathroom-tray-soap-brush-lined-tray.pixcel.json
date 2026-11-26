@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "id": "home-prop-bathroom-tray-soap-brush-lined-tray",
+  "category": "household",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "china": {
+      "kind": "matte",
+      "color": "#d4cbb7"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#59646c"
+    },
+    "nickel": {
+      "kind": "metal",
+      "color": "#a4aaa8"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a9815e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785a48"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b29978"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#667f93"
+    },
+    "terra": {
+      "kind": "matte",
+      "color": "#a66654"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8aa9b6"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bd9c62"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e2dac4"
+    },
+    "wax": {
+      "kind": "matte",
+      "color": "#d1bd8d"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#a5bec9",
+      "glowRadius": 1,
+      "glowIntensity": 0.12
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        1
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        1
+      ],
+      "to": [
+        5,
+        25,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        6,
+        1
+      ],
+      "to": [
+        27,
+        25,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        1
+      ],
+      "to": [
+        24,
+        23,
+        2
+      ],
+      "material": "china"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        12
+      ],
+      "zFrom": 3,
+      "zTo": 9,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        9
+      ],
+      "to": [
+        13,
+        12,
+        10
+      ],
+      "material": "nickel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        10
+      ],
+      "zFrom": 3,
+      "zTo": 7,
+      "radius": 2,
+      "material": "china"
+    },
+    {
+      "op": "line",
+      "from": [
+        19,
+        10,
+        6
+      ],
+      "to": [
+        19,
+        11,
+        16
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        12,
+        5
+      ],
+      "to": [
+        21,
+        13,
+        13
+      ],
+      "material": "terra"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        19,
+        3
+      ],
+      "to": [
+        18,
+        21,
+        5
+      ],
+      "material": "sand"
+    }
+  ]
+}

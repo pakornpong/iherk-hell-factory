@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "id": "airfield-baggage-trolley-wide-apron-tow-tongue",
+  "category": "aviation",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a1a9ac"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#606e7b"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e484e"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#ded6c3"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c3a05f"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a96153"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657e92"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a78460"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab5"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        0
+      ],
+      "to": [
+        11,
+        9,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        0
+      ],
+      "to": [
+        11,
+        25,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        6,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        25,
+        4
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        56,
+        25,
+        5
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        13,
+        3
+      ],
+      "to": [
+        60,
+        16,
+        4
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        55,
+        24,
+        9
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        9
+      ],
+      "to": [
+        7,
+        24,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        9
+      ],
+      "to": [
+        55,
+        24,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        27
+      ],
+      "to": [
+        54,
+        9,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        27
+      ],
+      "to": [
+        54,
+        24,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        10
+      ],
+      "to": [
+        17,
+        22,
+        18
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        19
+      ],
+      "to": [
+        16,
+        16,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        9,
+        10
+      ],
+      "to": [
+        52,
+        22,
+        22
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        11,
+        23
+      ],
+      "to": [
+        50,
+        13,
+        24
+      ],
+      "material": "steel"
+    }
+  ]
+}

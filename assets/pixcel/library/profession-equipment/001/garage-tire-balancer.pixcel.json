@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "id": "garage-tire-balancer",
+  "category": "garage",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "color": "#e5e3d6",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#a0b0bc",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#445361",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#272f3b",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#49798f",
+      "kind": "matte"
+    },
+    "aqua": {
+      "color": "#78c5c4",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#b85446",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#ac784e",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e0ad58",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#f2ecdc",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        3
+      ],
+      "to": [
+        24,
+        21,
+        19
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        20
+      ],
+      "to": [
+        23,
+        17,
+        22
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        7,
+        23
+      ],
+      "to": [
+        21,
+        9,
+        29
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        25
+      ],
+      "to": [
+        20,
+        9,
+        28
+      ],
+      "material": "aqua"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        21,
+        13
+      ],
+      "to": [
+        30,
+        22,
+        15
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        20,
+        6
+      ],
+      "to": [
+        27,
+        24,
+        22
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        17,
+        8
+      ],
+      "to": [
+        27,
+        27,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        20,
+        11
+      ],
+      "to": [
+        27,
+        24,
+        17
+      ],
+      "material": "metal"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "id": "home-utility-shoe-dryer-rack-compact-leveling-feet-freestanding",
+  "category": "home-appliance",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ivory": {
+      "kind": "matte",
+      "color": "#d9d4ca"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#aaa39a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#979fa2"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#67727b"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e454c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab4"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a37653"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#89705d"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e4ddc8"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ad6555"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bb9b62"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        24,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        7,
+        0
+      ],
+      "to": [
+        24,
+        9,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        22,
+        0
+      ],
+      "to": [
+        24,
+        24,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        2
+      ],
+      "to": [
+        24,
+        23,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        6
+      ],
+      "to": [
+        23,
+        9,
+        31
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        14
+      ],
+      "zFrom": 6,
+      "zTo": 25,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        25
+      ],
+      "to": [
+        12,
+        21,
+        28
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        29
+      ],
+      "to": [
+        12,
+        16,
+        33
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        14
+      ],
+      "zFrom": 6,
+      "zTo": 25,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        12,
+        25
+      ],
+      "to": [
+        21,
+        21,
+        28
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        12,
+        29
+      ],
+      "to": [
+        21,
+        16,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        23,
+        4
+      ],
+      "to": [
+        15,
+        24,
+        5
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        6,
+        24
+      ],
+      "to": [
+        25,
+        11,
+        26
+      ],
+      "material": "black"
+    }
+  ]
+}

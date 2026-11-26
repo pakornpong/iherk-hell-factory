@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "id": "chair-ladder-back-slatted-angled-legs",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#ad784c"
+    },
+    "metal": {
+      "kind": "metal",
+      "color": "#657985"
+    },
+    "foot": {
+      "kind": "matte",
+      "color": "#293240"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#52545a"
+    },
+    "edge": {
+      "kind": "matte",
+      "color": "#777982"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#d4a35d"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        7,
+        7,
+        13
+      ],
+      "to": [
+        4,
+        4,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        7,
+        13
+      ],
+      "to": [
+        5,
+        4,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        24,
+        13
+      ],
+      "to": [
+        4,
+        27,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        24,
+        13
+      ],
+      "to": [
+        5,
+        27,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        7,
+        13
+      ],
+      "to": [
+        27,
+        4,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        7,
+        13
+      ],
+      "to": [
+        28,
+        4,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        24,
+        13
+      ],
+      "to": [
+        27,
+        27,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        24,
+        13
+      ],
+      "to": [
+        28,
+        27,
+        0
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        12
+      ],
+      "to": [
+        24,
+        9,
+        14
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        12
+      ],
+      "to": [
+        24,
+        24,
+        14
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        8,
+        12
+      ],
+      "to": [
+        18,
+        23,
+        14
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        13
+      ],
+      "to": [
+        8,
+        24,
+        16
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        13
+      ],
+      "to": [
+        25,
+        24,
+        16
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        16
+      ],
+      "to": [
+        24,
+        8,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        16
+      ],
+      "to": [
+        24,
+        12,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        15,
+        16
+      ],
+      "to": [
+        24,
+        16,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        19,
+        16
+      ],
+      "to": [
+        24,
+        20,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        23,
+        16
+      ],
+      "to": [
+        24,
+        24,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        15
+      ],
+      "to": [
+        8,
+        7,
+        37
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        5,
+        15
+      ],
+      "to": [
+        25,
+        7,
+        37
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        23
+      ],
+      "to": [
+        23,
+        7,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        29
+      ],
+      "to": [
+        23,
+        7,
+        31
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        35
+      ],
+      "to": [
+        23,
+        7,
+        37
+      ],
+      "material": "wood"
+    }
+  ]
+}

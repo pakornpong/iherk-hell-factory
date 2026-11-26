@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "id": "patio-modular-patio-planter-seat-compact-stone-paving",
+  "category": "patio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a87e58",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#745743",
+      "kind": "wood"
+    },
+    "stone": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d8ceba",
+      "kind": "matte"
+    },
+    "fabric": {
+      "color": "#aa9985",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca9ab",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#586671",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#637e94",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a46454",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a9765f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fadb8",
+      "kind": "glass"
+    },
+    "plant": {
+      "color": "#6d805f",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8a735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        1
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        28,
+        24,
+        6
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        7
+      ],
+      "to": [
+        16,
+        23,
+        18
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        18
+      ],
+      "to": [
+        15,
+        22,
+        18
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 18,
+      "zTo": 27,
+      "radius": 3,
+      "material": "plant"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        9,
+        10
+      ],
+      "to": [
+        27,
+        22,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        8,
+        7
+      ],
+      "to": [
+        27,
+        23,
+        12
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        9,
+        13
+      ],
+      "to": [
+        26,
+        12,
+        19
+      ],
+      "material": "oak"
+    }
+  ]
+}

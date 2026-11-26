@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "id": "facilities-booster-water-filter-paired-vibration-pads",
+  "category": "building-services",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "galv": {
+      "color": "#a4a9a9",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#647080",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#41484e",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#cbc6b8",
+      "kind": "matte"
+    },
+    "white": {
+      "color": "#ded9cd",
+      "kind": "matte"
+    },
+    "ochre": {
+      "color": "#bd9b5b",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a35d50",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8aa7b3",
+      "kind": "glass"
+    },
+    "copper": {
+      "color": "#b58165",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#3b4145",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        10,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        57,
+        10,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        22,
+        0
+      ],
+      "to": [
+        57,
+        25,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        57,
+        25,
+        7
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        26
+      ],
+      "to": [
+        55,
+        12,
+        29
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 9,
+      "zTo": 24,
+      "radius": 4,
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 24,
+      "zTo": 26,
+      "radius": 5,
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        14,
+        27
+      ],
+      "to": [
+        10,
+        9,
+        28
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        15
+      ],
+      "zFrom": 9,
+      "zTo": 24,
+      "radius": 4,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        15
+      ],
+      "zFrom": 24,
+      "zTo": 26,
+      "radius": 5,
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        14,
+        27
+      ],
+      "to": [
+        20,
+        9,
+        28
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        51,
+        15
+      ],
+      "zFrom": 9,
+      "zTo": 24,
+      "radius": 4,
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        51,
+        15
+      ],
+      "zFrom": 24,
+      "zTo": 26,
+      "radius": 5,
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        51,
+        14,
+        27
+      ],
+      "to": [
+        51,
+        9,
+        28
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        7
+      ],
+      "to": [
+        9,
+        12,
+        29
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        10,
+        7
+      ],
+      "to": [
+        54,
+        12,
+        29
+      ],
+      "material": "slate"
+    }
+  ]
+}

@@ -1,0 +1,1414 @@
+{
+  "schemaVersion": 1,
+  "id": "headset-open-grille-round-suspension-sling-broadcast-boom",
+  "category": "electronics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#788e9f"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#303c4b"
+    },
+    "cushion": {
+      "kind": "matte",
+      "color": "#5e6b7d"
+    },
+    "mesh": {
+      "kind": "matte",
+      "color": "#929498"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c3a25d"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#384353"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        2
+      ],
+      "to": [
+        7,
+        15,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        3
+      ],
+      "to": [
+        7,
+        18,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        4
+      ],
+      "to": [
+        7,
+        12,
+        4
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        18,
+        4
+      ],
+      "to": [
+        7,
+        19,
+        4
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        5
+      ],
+      "to": [
+        7,
+        11,
+        5
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        19,
+        5
+      ],
+      "to": [
+        7,
+        20,
+        5
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        6
+      ],
+      "to": [
+        7,
+        10,
+        6
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        20,
+        6
+      ],
+      "to": [
+        7,
+        21,
+        6
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        7
+      ],
+      "to": [
+        7,
+        10,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        20,
+        7
+      ],
+      "to": [
+        7,
+        21,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        8
+      ],
+      "to": [
+        7,
+        10,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        20,
+        8
+      ],
+      "to": [
+        7,
+        21,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        9
+      ],
+      "to": [
+        7,
+        9,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        9
+      ],
+      "to": [
+        7,
+        22,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        10
+      ],
+      "to": [
+        7,
+        10,
+        10
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        20,
+        10
+      ],
+      "to": [
+        7,
+        21,
+        10
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        11
+      ],
+      "to": [
+        7,
+        10,
+        11
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        20,
+        11
+      ],
+      "to": [
+        7,
+        21,
+        11
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        12
+      ],
+      "to": [
+        7,
+        10,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        20,
+        12
+      ],
+      "to": [
+        7,
+        21,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        13
+      ],
+      "to": [
+        7,
+        11,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        19,
+        13
+      ],
+      "to": [
+        7,
+        20,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        14
+      ],
+      "to": [
+        7,
+        12,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        18,
+        14
+      ],
+      "to": [
+        7,
+        19,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        12,
+        15
+      ],
+      "to": [
+        7,
+        18,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        15,
+        16
+      ],
+      "to": [
+        7,
+        15,
+        16
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        5
+      ],
+      "to": [
+        7,
+        19,
+        5
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        7
+      ],
+      "to": [
+        7,
+        19,
+        7
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        9
+      ],
+      "to": [
+        7,
+        19,
+        9
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        11
+      ],
+      "to": [
+        7,
+        19,
+        11
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        13
+      ],
+      "to": [
+        7,
+        19,
+        13
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        15,
+        2
+      ],
+      "to": [
+        26,
+        15,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        3
+      ],
+      "to": [
+        26,
+        18,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        4
+      ],
+      "to": [
+        26,
+        12,
+        4
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        18,
+        4
+      ],
+      "to": [
+        26,
+        19,
+        4
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        5
+      ],
+      "to": [
+        26,
+        11,
+        5
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        19,
+        5
+      ],
+      "to": [
+        26,
+        20,
+        5
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        9,
+        6
+      ],
+      "to": [
+        26,
+        10,
+        6
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        20,
+        6
+      ],
+      "to": [
+        26,
+        21,
+        6
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        9,
+        7
+      ],
+      "to": [
+        26,
+        10,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        20,
+        7
+      ],
+      "to": [
+        26,
+        21,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        9,
+        8
+      ],
+      "to": [
+        26,
+        10,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        20,
+        8
+      ],
+      "to": [
+        26,
+        21,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        9
+      ],
+      "to": [
+        26,
+        9,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        21,
+        9
+      ],
+      "to": [
+        26,
+        22,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        9,
+        10
+      ],
+      "to": [
+        26,
+        10,
+        10
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        20,
+        10
+      ],
+      "to": [
+        26,
+        21,
+        10
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        9,
+        11
+      ],
+      "to": [
+        26,
+        10,
+        11
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        20,
+        11
+      ],
+      "to": [
+        26,
+        21,
+        11
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        9,
+        12
+      ],
+      "to": [
+        26,
+        10,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        20,
+        12
+      ],
+      "to": [
+        26,
+        21,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        13
+      ],
+      "to": [
+        26,
+        11,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        19,
+        13
+      ],
+      "to": [
+        26,
+        20,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        14
+      ],
+      "to": [
+        26,
+        12,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        18,
+        14
+      ],
+      "to": [
+        26,
+        19,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        15
+      ],
+      "to": [
+        26,
+        18,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        15,
+        16
+      ],
+      "to": [
+        26,
+        15,
+        16
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        5
+      ],
+      "to": [
+        26,
+        19,
+        5
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        7
+      ],
+      "to": [
+        26,
+        19,
+        7
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        9
+      ],
+      "to": [
+        26,
+        19,
+        9
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        11
+      ],
+      "to": [
+        26,
+        19,
+        11
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        13
+      ],
+      "to": [
+        26,
+        19,
+        13
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        5
+      ],
+      "to": [
+        8,
+        20,
+        14
+      ],
+      "material": "cushion"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        10,
+        5
+      ],
+      "to": [
+        23,
+        20,
+        14
+      ],
+      "material": "cushion"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        18,
+        8
+      ],
+      "to": [
+        9,
+        25,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        25,
+        7
+      ],
+      "to": [
+        16,
+        27,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        26,
+        7
+      ],
+      "to": [
+        18,
+        28,
+        9
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        12
+      ],
+      "to": [
+        5,
+        16,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        15,
+        12
+      ],
+      "to": [
+        6,
+        16,
+        21
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        15,
+        19
+      ],
+      "to": [
+        7,
+        16,
+        24
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        15,
+        22
+      ],
+      "to": [
+        8,
+        16,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        15,
+        23
+      ],
+      "to": [
+        9,
+        16,
+        27
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        25
+      ],
+      "to": [
+        10,
+        16,
+        28
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        15,
+        26
+      ],
+      "to": [
+        11,
+        16,
+        29
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        15,
+        27
+      ],
+      "to": [
+        12,
+        16,
+        29
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        15,
+        27
+      ],
+      "to": [
+        13,
+        16,
+        30
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        15,
+        28
+      ],
+      "to": [
+        14,
+        16,
+        30
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        28
+      ],
+      "to": [
+        15,
+        16,
+        30
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        15,
+        28
+      ],
+      "to": [
+        16,
+        16,
+        30
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        15,
+        28
+      ],
+      "to": [
+        17,
+        16,
+        30
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        15,
+        27
+      ],
+      "to": [
+        18,
+        16,
+        29
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        15,
+        27
+      ],
+      "to": [
+        17,
+        16,
+        30
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        15,
+        27
+      ],
+      "to": [
+        19,
+        16,
+        29
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        15,
+        26
+      ],
+      "to": [
+        20,
+        16,
+        28
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        15,
+        26
+      ],
+      "to": [
+        19,
+        16,
+        29
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        15,
+        25
+      ],
+      "to": [
+        21,
+        16,
+        27
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        15,
+        25
+      ],
+      "to": [
+        20,
+        16,
+        28
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        15,
+        23
+      ],
+      "to": [
+        22,
+        16,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        15,
+        23
+      ],
+      "to": [
+        21,
+        16,
+        27
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        15,
+        22
+      ],
+      "to": [
+        23,
+        16,
+        24
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        15,
+        22
+      ],
+      "to": [
+        22,
+        16,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        15,
+        19
+      ],
+      "to": [
+        24,
+        16,
+        21
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        15,
+        19
+      ],
+      "to": [
+        23,
+        16,
+        24
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        15,
+        12
+      ],
+      "to": [
+        25,
+        16,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        15,
+        12
+      ],
+      "to": [
+        24,
+        16,
+        21
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        23
+      ],
+      "to": [
+        21,
+        19,
+        24
+      ],
+      "material": "mesh"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        15,
+        21
+      ],
+      "to": [
+        10,
+        15,
+        24
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        15,
+        21
+      ],
+      "to": [
+        20,
+        15,
+        24
+      ],
+      "material": "frame"
+    }
+  ]
+}

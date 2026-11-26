@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "id": "sport-badminton-post-and-net-compact-sideline-plinth",
+  "category": "sports",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "metal",
+      "color": "#8d9ba3"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#596772"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#404a51"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#ddd2bf"
+    },
+    "court": {
+      "kind": "matte",
+      "color": "#a67259"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d92"
+    },
+    "turf": {
+      "kind": "matte",
+      "color": "#718063"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b79c7b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a57d58"
+    },
+    "rope": {
+      "kind": "matte",
+      "color": "#b5a28a"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c9a468"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        4
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        4
+      ],
+      "to": [
+        28,
+        24,
+        4
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        11,
+        5
+      ],
+      "to": [
+        8,
+        19,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        13,
+        7
+      ],
+      "to": [
+        7,
+        14,
+        39
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        11,
+        5
+      ],
+      "to": [
+        28,
+        19,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        13,
+        7
+      ],
+      "to": [
+        27,
+        14,
+        39
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        13,
+        37
+      ],
+      "to": [
+        27,
+        14,
+        39
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        13,
+        22
+      ],
+      "to": [
+        27,
+        13,
+        22
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        23
+      ],
+      "to": [
+        7,
+        13,
+        36
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        13,
+        23
+      ],
+      "to": [
+        11,
+        13,
+        36
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        13,
+        23
+      ],
+      "to": [
+        15,
+        13,
+        36
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        13,
+        23
+      ],
+      "to": [
+        19,
+        13,
+        36
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        13,
+        23
+      ],
+      "to": [
+        23,
+        13,
+        36
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        13,
+        23
+      ],
+      "to": [
+        27,
+        13,
+        36
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        26
+      ],
+      "to": [
+        26,
+        13,
+        26
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        30
+      ],
+      "to": [
+        26,
+        13,
+        30
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        34
+      ],
+      "to": [
+        26,
+        13,
+        34
+      ],
+      "material": "rope"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        20,
+        6
+      ],
+      "to": [
+        23,
+        25,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        22
+      ],
+      "zFrom": 10,
+      "zTo": 12,
+      "radius": 2,
+      "material": "court"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        22
+      ],
+      "zFrom": 10,
+      "zTo": 12,
+      "radius": 2,
+      "material": "chalk"
+    }
+  ]
+}

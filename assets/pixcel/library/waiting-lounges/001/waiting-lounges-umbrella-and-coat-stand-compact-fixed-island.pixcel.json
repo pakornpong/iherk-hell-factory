@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "id": "waiting-lounges-umbrella-and-coat-stand-compact-fixed-island",
+  "category": "lounge",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#a77c56",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#755644",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ba6aa",
+      "kind": "metal"
+    },
+    "charcoal": {
+      "color": "#49535c",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#ddd5c3",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#aa9a88",
+      "kind": "matte"
+    },
+    "graphite": {
+      "color": "#363e43",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#bda16c",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a65c50",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#6b8090",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#89a8b4",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#a8a09a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        2
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        12
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        5
+      ],
+      "to": [
+        24,
+        25,
+        11
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        8
+      ],
+      "to": [
+        20,
+        26,
+        9
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        12
+      ],
+      "to": [
+        27,
+        25,
+        13
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 16,
+      "radius": 8,
+      "material": "charcoal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 53,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        15,
+        48
+      ],
+      "to": [
+        6,
+        12,
+        52
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        15,
+        48
+      ],
+      "to": [
+        26,
+        12,
+        52
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        15,
+        48
+      ],
+      "to": [
+        16,
+        24,
+        52
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        21
+      ],
+      "zFrom": 15,
+      "zTo": 25,
+      "radius": 4,
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        21,
+        15
+      ],
+      "to": [
+        11,
+        22,
+        41
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        22,
+        40
+      ],
+      "to": [
+        13,
+        24,
+        42
+      ],
+      "material": "red"
+    }
+  ]
+}

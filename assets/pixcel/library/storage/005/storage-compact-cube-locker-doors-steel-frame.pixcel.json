@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "id": "storage-compact-cube-locker-doors-steel-frame",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#b07c52"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#744e3f"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#b6b8b4"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#494a48"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8097a3"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#d4a953"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8bbac5"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b76656"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#ddd3ba"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        4,
+        6,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        24,
+        0
+      ],
+      "to": [
+        4,
+        25,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        5,
+        0
+      ],
+      "to": [
+        25,
+        6,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        24,
+        0
+      ],
+      "to": [
+        25,
+        25,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        5
+      ],
+      "to": [
+        25,
+        23,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        7
+      ],
+      "to": [
+        4,
+        24,
+        28
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        5,
+        7
+      ],
+      "to": [
+        25,
+        24,
+        28
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        7
+      ],
+      "to": [
+        23,
+        6,
+        28
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        4,
+        29
+      ],
+      "to": [
+        26,
+        26,
+        31
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        7
+      ],
+      "to": [
+        13,
+        25,
+        27
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        24,
+        7
+      ],
+      "to": [
+        23,
+        25,
+        27
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        26,
+        23
+      ],
+      "to": [
+        11,
+        26,
+        23
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        26,
+        20
+      ],
+      "to": [
+        11,
+        26,
+        20
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        26,
+        17
+      ],
+      "to": [
+        11,
+        26,
+        17
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        26,
+        23
+      ],
+      "to": [
+        21,
+        26,
+        23
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        26,
+        20
+      ],
+      "to": [
+        21,
+        26,
+        20
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        26,
+        17
+      ],
+      "to": [
+        21,
+        26,
+        17
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        26,
+        18
+      ],
+      "to": [
+        11,
+        27,
+        19
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        26,
+        18
+      ],
+      "to": [
+        18,
+        27,
+        19
+      ],
+      "material": "brass"
+    }
+  ]
+}

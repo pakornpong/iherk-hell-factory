@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-forecast-display-desk-station-wide-roof-service-deck",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        4
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        4
+      ],
+      "to": [
+        54,
+        8,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        4
+      ],
+      "to": [
+        54,
+        25,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        9
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        10
+      ],
+      "to": [
+        53,
+        11,
+        33
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        13
+      ],
+      "to": [
+        52,
+        12,
+        31
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        16
+      ],
+      "to": [
+        14,
+        12,
+        22
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        20
+      ],
+      "to": [
+        50,
+        12,
+        23
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        12,
+        26
+      ],
+      "to": [
+        50,
+        12,
+        27
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        15,
+        10
+      ],
+      "to": [
+        51,
+        22,
+        11
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        16,
+        11
+      ],
+      "to": [
+        18,
+        21,
+        11
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        8,
+        9
+      ],
+      "to": [
+        50,
+        12,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        12,
+        21
+      ],
+      "to": [
+        49,
+        18,
+        24
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        18,
+        22
+      ],
+      "to": [
+        48,
+        18,
+        23
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        45,
+        15,
+        20
+      ],
+      "to": [
+        48,
+        20,
+        13
+      ],
+      "material": "dark"
+    }
+  ]
+}

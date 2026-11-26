@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-weather-balloon-crate-station-wide-roof-service-deck",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        4
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        4
+      ],
+      "to": [
+        54,
+        8,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        4
+      ],
+      "to": [
+        54,
+        25,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        12
+      ],
+      "to": [
+        53,
+        23,
+        15
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 16,
+      "zTo": 19,
+      "radius": 2,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 20,
+      "zTo": 22,
+      "radius": 4,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 23,
+      "zTo": 29,
+      "radius": 6,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 30,
+      "zTo": 33,
+      "radius": 4,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 34,
+      "zTo": 35,
+      "radius": 2,
+      "material": "pale"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        16
+      ],
+      "to": [
+        50,
+        20,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        18,
+        11
+      ],
+      "to": [
+        52,
+        22,
+        13
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        11
+      ],
+      "to": [
+        17,
+        21,
+        16
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        17
+      ],
+      "zFrom": 17,
+      "zTo": 22,
+      "radius": 2,
+      "material": "silver"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        17,
+        22
+      ],
+      "to": [
+        16,
+        20,
+        27
+      ],
+      "material": "frame"
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "textile-dressform-pin-fitting-wide-factory-caster",
+  "category": "textile",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#745741"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaaa"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#53606b"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d8d0bd"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#aa9a86"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#687e91"
+    },
+    "terracotta": {
+      "kind": "matte",
+      "color": "#a96557"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404850"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bc9d65"
+    },
+    "pale": {
+      "kind": "glass",
+      "color": "#9ab1b8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        7
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        7
+      ],
+      "to": [
+        55,
+        7,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        14
+      ],
+      "zFrom": 8,
+      "zTo": 10,
+      "radius": 6,
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        14
+      ],
+      "zFrom": 10,
+      "zTo": 24,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        14
+      ],
+      "zFrom": 23,
+      "zTo": 27,
+      "radius": 5,
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        14
+      ],
+      "zFrom": 28,
+      "zTo": 31,
+      "radius": 4,
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        14
+      ],
+      "zFrom": 32,
+      "zTo": 37,
+      "radius": 5,
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        14
+      ],
+      "zFrom": 38,
+      "zTo": 41,
+      "radius": 2,
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        9,
+        8
+      ],
+      "to": [
+        53,
+        22,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        12,
+        14
+      ],
+      "to": [
+        51,
+        21,
+        17
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        33
+      ],
+      "to": [
+        19,
+        17,
+        28
+      ],
+      "material": "brass"
+    }
+  ]
+}

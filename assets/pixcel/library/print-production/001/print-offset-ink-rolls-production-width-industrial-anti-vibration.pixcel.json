@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "id": "print-offset-ink-rolls-production-width-industrial-anti-vibration",
+  "category": "printmaking",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "metal": {
+      "color": "#95a1a3",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#555f69",
+      "kind": "metal"
+    },
+    "paper": {
+      "color": "#dfd3bc",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#64798d",
+      "kind": "matte"
+    },
+    "oxide": {
+      "color": "#9d6054",
+      "kind": "matte"
+    },
+    "iron": {
+      "color": "#3f464c",
+      "kind": "matte"
+    },
+    "oak": {
+      "color": "#a58162",
+      "kind": "wood"
+    },
+    "linen": {
+      "color": "#b6a38c",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8babb6",
+      "kind": "glass"
+    },
+    "graphite": {
+      "color": "#676d70",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#c0a170",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        55,
+        25,
+        5
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        7,
+        24,
+        5
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        5
+      ],
+      "to": [
+        55,
+        24,
+        5
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        6
+      ],
+      "to": [
+        54,
+        25,
+        12
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        12
+      ],
+      "to": [
+        53,
+        10,
+        30
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        12
+      ],
+      "to": [
+        9,
+        23,
+        30
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        12
+      ],
+      "to": [
+        53,
+        23,
+        30
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        14
+      ],
+      "to": [
+        51,
+        13,
+        17
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        14,
+        20
+      ],
+      "to": [
+        51,
+        16,
+        23
+      ],
+      "material": "oxide"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        17,
+        26
+      ],
+      "to": [
+        51,
+        19,
+        29
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        22,
+        12
+      ],
+      "to": [
+        50,
+        27,
+        13
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        51,
+        16
+      ],
+      "zFrom": 30,
+      "zTo": 31,
+      "radius": 1,
+      "material": "brass"
+    }
+  ]
+}

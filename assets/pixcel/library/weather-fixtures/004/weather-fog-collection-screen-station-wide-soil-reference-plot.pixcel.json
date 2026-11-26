@@ -1,0 +1,436 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-fog-collection-screen-station-wide-soil-reference-plot",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        6
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        6
+      ],
+      "to": [
+        7,
+        10,
+        38
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        8,
+        6
+      ],
+      "to": [
+        53,
+        10,
+        38
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        36
+      ],
+      "to": [
+        53,
+        10,
+        38
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        17
+      ],
+      "to": [
+        52,
+        9,
+        17
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        21
+      ],
+      "to": [
+        52,
+        9,
+        21
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        25
+      ],
+      "to": [
+        52,
+        9,
+        25
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        29
+      ],
+      "to": [
+        52,
+        9,
+        29
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        33
+      ],
+      "to": [
+        52,
+        9,
+        33
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        15
+      ],
+      "to": [
+        9,
+        9,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        9,
+        15
+      ],
+      "to": [
+        13,
+        9,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        9,
+        15
+      ],
+      "to": [
+        17,
+        9,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        9,
+        15
+      ],
+      "to": [
+        21,
+        9,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        9,
+        15
+      ],
+      "to": [
+        25,
+        9,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        9,
+        15
+      ],
+      "to": [
+        29,
+        9,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        9,
+        15
+      ],
+      "to": [
+        33,
+        9,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        9,
+        15
+      ],
+      "to": [
+        37,
+        9,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        9,
+        15
+      ],
+      "to": [
+        41,
+        9,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        9,
+        15
+      ],
+      "to": [
+        45,
+        9,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        9,
+        15
+      ],
+      "to": [
+        49,
+        9,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        11
+      ],
+      "to": [
+        52,
+        14,
+        13
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "line",
+      "from": [
+        51,
+        12,
+        13
+      ],
+      "to": [
+        50,
+        20,
+        6
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        12,
+        6
+      ],
+      "to": [
+        50,
+        21,
+        18
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        21,
+        12
+      ],
+      "to": [
+        49,
+        21,
+        15
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        14,
+        18
+      ],
+      "to": [
+        48,
+        14,
+        32
+      ],
+      "material": "silver"
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "id": "home-prop-cake-dome-stand-stone-platter",
+  "category": "household",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "china": {
+      "kind": "matte",
+      "color": "#d4cbb7"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#59646c"
+    },
+    "nickel": {
+      "kind": "metal",
+      "color": "#a4aaa8"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a9815e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785a48"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b29978"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#667f93"
+    },
+    "terra": {
+      "kind": "matte",
+      "color": "#a66654"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8aa9b6"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bd9c62"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e2dac4"
+    },
+    "wax": {
+      "kind": "matte",
+      "color": "#d1bd8d"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#a5bec9",
+      "glowRadius": 1,
+      "glowIntensity": 0.12
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 0,
+      "zTo": 1,
+      "radius": 12,
+      "material": "china"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 1,
+      "zTo": 1,
+      "radius": 10,
+      "material": "sand"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 1,
+      "zTo": 2,
+      "radius": 6,
+      "material": "nickel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 2,
+      "zTo": 6,
+      "radius": 2,
+      "material": "nickel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 6,
+      "zTo": 7,
+      "radius": 9,
+      "material": "china"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 8,
+      "zTo": 13,
+      "radius": 7,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 16,
+      "radius": 6,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 18,
+      "radius": 4,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 19,
+      "zTo": 20,
+      "radius": 1,
+      "material": "brass"
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "id": "facilities-expansion-tank-hydronic-paired-vibration-pads",
+  "category": "building-services",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "galv": {
+      "color": "#a4a9a9",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#647080",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#41484e",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#cbc6b8",
+      "kind": "matte"
+    },
+    "white": {
+      "color": "#ded9cd",
+      "kind": "matte"
+    },
+    "ochre": {
+      "color": "#bd9b5b",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a35d50",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8aa7b3",
+      "kind": "glass"
+    },
+    "copper": {
+      "color": "#b58165",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#3b4145",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        10,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        57,
+        10,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        22,
+        0
+      ],
+      "to": [
+        57,
+        25,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 3,
+      "zTo": 24,
+      "radius": 7,
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 24,
+      "zTo": 27,
+      "radius": 6,
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 28,
+      "zTo": 30,
+      "radius": 2,
+      "material": "galv"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        15
+      ],
+      "zFrom": 3,
+      "zTo": 29,
+      "radius": 7,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        15
+      ],
+      "zFrom": 30,
+      "zTo": 32,
+      "radius": 4,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        15
+      ],
+      "zFrom": 32,
+      "zTo": 35,
+      "radius": 2,
+      "material": "galv"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        15,
+        30
+      ],
+      "to": [
+        12,
+        9,
+        34
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        9,
+        34
+      ],
+      "to": [
+        49,
+        9,
+        34
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        9,
+        34
+      ],
+      "to": [
+        49,
+        15,
+        35
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        8
+      ],
+      "zFrom": 34,
+      "zTo": 37,
+      "radius": 1,
+      "material": "ochre"
+    }
+  ]
+}

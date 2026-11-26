@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-weather-balloon-crate-station-wide-soil-reference-plot",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        9
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        10
+      ],
+      "to": [
+        53,
+        23,
+        13
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 17,
+      "radius": 2,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 18,
+      "zTo": 20,
+      "radius": 4,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 21,
+      "zTo": 27,
+      "radius": 6,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 28,
+      "zTo": 31,
+      "radius": 4,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 32,
+      "zTo": 33,
+      "radius": 2,
+      "material": "pale"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        14
+      ],
+      "to": [
+        50,
+        20,
+        10
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        18,
+        9
+      ],
+      "to": [
+        52,
+        22,
+        11
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        9
+      ],
+      "to": [
+        17,
+        21,
+        14
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        17
+      ],
+      "zFrom": 15,
+      "zTo": 20,
+      "radius": 2,
+      "material": "silver"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        17,
+        20
+      ],
+      "to": [
+        16,
+        20,
+        25
+      ],
+      "material": "frame"
+    }
+  ]
+}

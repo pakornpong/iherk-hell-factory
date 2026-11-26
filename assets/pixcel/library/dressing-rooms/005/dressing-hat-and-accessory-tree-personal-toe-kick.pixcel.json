@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "id": "dressing-hat-and-accessory-tree-personal-toe-kick",
+  "category": "dressing-room",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745844"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#99a6a7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda174"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#56626c"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#ad9b87"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c92"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#465056"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a16357"
+    },
+    "mirror": {
+      "kind": "glass",
+      "color": "#9db1b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        15
+      ],
+      "zFrom": 4,
+      "zTo": 7,
+      "radius": 7,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        15
+      ],
+      "zFrom": 8,
+      "zTo": 41,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        15,
+        26
+      ],
+      "to": [
+        8,
+        11,
+        29
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        11
+      ],
+      "zFrom": 29,
+      "zTo": 29,
+      "radius": 4,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        11
+      ],
+      "zFrom": 30,
+      "zTo": 32,
+      "radius": 3,
+      "material": "cloth"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        15,
+        22
+      ],
+      "to": [
+        22,
+        14,
+        25
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        14
+      ],
+      "zFrom": 25,
+      "zTo": 25,
+      "radius": 4,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        14
+      ],
+      "zFrom": 26,
+      "zTo": 28,
+      "radius": 3,
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        15,
+        32
+      ],
+      "to": [
+        16,
+        21,
+        35
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        21
+      ],
+      "zFrom": 35,
+      "zTo": 35,
+      "radius": 4,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        21
+      ],
+      "zFrom": 36,
+      "zTo": 38,
+      "radius": 3,
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        6
+      ],
+      "to": [
+        15,
+        24,
+        11
+      ],
+      "material": "red"
+    }
+  ]
+}

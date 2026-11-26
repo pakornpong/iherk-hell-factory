@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "id": "bakery-bag-sealing-packing-board-production-washdown-stand",
+  "category": "bakery",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9da7a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596670"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e464b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a6815f"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#aaa29b"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded2bd"
+    },
+    "pastry": {
+      "kind": "matte",
+      "color": "#bd975e"
+    },
+    "toast": {
+      "kind": "matte",
+      "color": "#a5764f"
+    },
+    "dough": {
+      "kind": "matte",
+      "color": "#cfb696"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a56856"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#647a8d"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eaeb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        9,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        22,
+        0
+      ],
+      "to": [
+        55,
+        24,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        10
+      ],
+      "to": [
+        56,
+        25,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        4
+      ],
+      "to": [
+        55,
+        23,
+        5
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        56,
+        25,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        17
+      ],
+      "to": [
+        54,
+        11,
+        19
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        20
+      ],
+      "to": [
+        53,
+        10,
+        23
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        12,
+        17
+      ],
+      "to": [
+        16,
+        20,
+        19
+      ],
+      "material": "dough"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        14,
+        17
+      ],
+      "to": [
+        52,
+        22,
+        21
+      ],
+      "material": "pastry"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        14,
+        21
+      ],
+      "to": [
+        53,
+        22,
+        22
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        10,
+        19
+      ],
+      "to": [
+        53,
+        12,
+        21
+      ],
+      "material": "rust"
+    }
+  ]
+}

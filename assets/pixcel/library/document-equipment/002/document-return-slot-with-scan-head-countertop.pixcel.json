@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "id": "document-return-slot-with-scan-head-countertop",
+  "category": "office-equipment",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "metal",
+      "color": "#9da6aa"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#343d46"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ab815d"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#d6d2c6"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e5deca"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b0926e"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657f91"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a66456"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8babb9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        2
+      ],
+      "to": [
+        26,
+        24,
+        28
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        19
+      ],
+      "to": [
+        25,
+        25,
+        24
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        19
+      ],
+      "to": [
+        23,
+        28,
+        19
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        5
+      ],
+      "to": [
+        24,
+        24,
+        12
+      ],
+      "material": "offwhite"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        9,
+        28
+      ],
+      "to": [
+        24,
+        11,
+        39
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        38
+      ],
+      "to": [
+        24,
+        14,
+        41
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        12,
+        37
+      ],
+      "to": [
+        22,
+        14,
+        38
+      ],
+      "material": "glass"
+    }
+  ]
+}

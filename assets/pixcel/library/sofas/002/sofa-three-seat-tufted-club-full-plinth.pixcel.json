@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "id": "sofa-three-seat-tufted-club-full-plinth",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "timber": {
+      "kind": "wood",
+      "color": "#9d6a49"
+    },
+    "charcoal": {
+      "kind": "metal",
+      "color": "#434f58"
+    },
+    "jade": {
+      "kind": "matte",
+      "color": "#b09984"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#b09984"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#c9b29b"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#cfa567"
+    },
+    "shade": {
+      "kind": "matte",
+      "color": "#7c6959"
+    },
+    "pink": {
+      "kind": "matte",
+      "color": "#b7a086"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        0
+      ],
+      "to": [
+        56,
+        29,
+        6
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        6
+      ],
+      "to": [
+        58,
+        28,
+        11
+      ],
+      "material": "shade"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        12
+      ],
+      "to": [
+        21,
+        26,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        5,
+        14
+      ],
+      "to": [
+        21,
+        12,
+        33
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        22
+      ],
+      "to": [
+        9,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        22
+      ],
+      "to": [
+        14,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        12
+      ],
+      "to": [
+        38,
+        26,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        5,
+        14
+      ],
+      "to": [
+        38,
+        12,
+        33
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        13,
+        22
+      ],
+      "to": [
+        25,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        13,
+        22
+      ],
+      "to": [
+        30,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        13,
+        22
+      ],
+      "to": [
+        35,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        11,
+        12
+      ],
+      "to": [
+        55,
+        26,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        5,
+        14
+      ],
+      "to": [
+        55,
+        12,
+        33
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        13,
+        22
+      ],
+      "to": [
+        42,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        13,
+        22
+      ],
+      "to": [
+        47,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        13,
+        22
+      ],
+      "to": [
+        52,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        6,
+        27,
+        20
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        56,
+        6,
+        12
+      ],
+      "to": [
+        58,
+        27,
+        20
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        15
+      ],
+      "to": [
+        13,
+        16,
+        22
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        13,
+        15
+      ],
+      "to": [
+        54,
+        16,
+        22
+      ],
+      "material": "pink"
+    }
+  ]
+}

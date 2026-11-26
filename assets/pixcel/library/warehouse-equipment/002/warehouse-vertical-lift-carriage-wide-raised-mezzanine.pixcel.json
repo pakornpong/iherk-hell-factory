@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "warehouse-vertical-lift-carriage-wide-raised-mezzanine",
+  "category": "warehouse",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9fa8aa"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#586673"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b444d"
+    },
+    "safety": {
+      "kind": "matte",
+      "color": "#bd9255"
+    },
+    "timber": {
+      "kind": "wood",
+      "color": "#a78564"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b29979"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#d6d0bc"
+    },
+    "darkred": {
+      "kind": "matte",
+      "color": "#9b584a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e7489"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba8b6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        56,
+        9,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        23,
+        0
+      ],
+      "to": [
+        56,
+        25,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        11
+      ],
+      "to": [
+        57,
+        26,
+        12
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "line",
+      "from": [
+        55,
+        8,
+        1
+      ],
+      "to": [
+        55,
+        24,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        13
+      ],
+      "to": [
+        57,
+        26,
+        16
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        16
+      ],
+      "to": [
+        8,
+        25,
+        49
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        16
+      ],
+      "to": [
+        56,
+        25,
+        49
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        49
+      ],
+      "to": [
+        56,
+        25,
+        51
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        24
+      ],
+      "to": [
+        53,
+        23,
+        27
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        17
+      ],
+      "to": [
+        56,
+        24,
+        18
+      ],
+      "material": "safety"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        27
+      ],
+      "to": [
+        24,
+        21,
+        33
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        10,
+        33
+      ],
+      "to": [
+        18,
+        21,
+        33
+      ],
+      "material": "white"
+    }
+  ]
+}

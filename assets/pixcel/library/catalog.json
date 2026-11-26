@@ -1,0 +1,514 @@
+{
+  "target": 10000,
+  "validated": 7410,
+  "approvedBatch": {
+    "count": 20,
+    "preview": "../review-batch-01/review-sheet.png"
+  },
+  "families": [
+    {
+      "family": "accessibility",
+      "count": 64,
+      "index": "accessibility/index.json",
+      "preview": "accessibility/001/preview.png"
+    },
+    {
+      "family": "airfield-service",
+      "count": 62,
+      "index": "airfield-service/index.json",
+      "preview": "airfield-service/001/preview.png"
+    },
+    {
+      "family": "audio-systems",
+      "count": 36,
+      "index": "audio-systems/index.json",
+      "preview": "audio-systems/001/preview.png"
+    },
+    {
+      "family": "bakery-production",
+      "count": 118,
+      "index": "bakery-production/index.json",
+      "preview": "bakery-production/001/preview.png"
+    },
+    {
+      "family": "bath-furniture",
+      "count": 98,
+      "index": "bath-furniture/index.json",
+      "preview": "bath-furniture/001/preview.png"
+    },
+    {
+      "family": "bathrooms",
+      "count": 48,
+      "index": "bathrooms/index.json",
+      "preview": "bathrooms/001/preview.png"
+    },
+    {
+      "family": "beds",
+      "count": 75,
+      "index": "beds/index.json",
+      "preview": "beds/001/preview.png"
+    },
+    {
+      "family": "bedside-furniture",
+      "count": 98,
+      "index": "bedside-furniture/index.json",
+      "preview": "bedside-furniture/001/preview.png"
+    },
+    {
+      "family": "bicycle-equipment",
+      "count": 80,
+      "index": "bicycle-equipment/index.json",
+      "preview": "bicycle-equipment/001/preview.png"
+    },
+    {
+      "family": "building-care",
+      "count": 80,
+      "index": "building-care/index.json",
+      "preview": "building-care/001/preview.png"
+    },
+    {
+      "family": "building-services",
+      "count": 78,
+      "index": "building-services/index.json",
+      "preview": "building-services/001/preview.png"
+    },
+    {
+      "family": "cameras",
+      "count": 48,
+      "index": "cameras/index.json",
+      "preview": "cameras/001/preview.png"
+    },
+    {
+      "family": "camp-supplies",
+      "count": 120,
+      "index": "camp-supplies/index.json",
+      "preview": "camp-supplies/001/preview.png"
+    },
+    {
+      "family": "catering-service",
+      "count": 80,
+      "index": "catering-service/index.json",
+      "preview": "catering-service/001/preview.png"
+    },
+    {
+      "family": "childcare",
+      "count": 80,
+      "index": "childcare/index.json",
+      "preview": "childcare/001/preview.png"
+    },
+    {
+      "family": "cinema-interiors",
+      "count": 96,
+      "index": "cinema-interiors/index.json",
+      "preview": "cinema-interiors/001/preview.png"
+    },
+    {
+      "family": "classroom",
+      "count": 30,
+      "index": "classroom/index.json",
+      "preview": "classroom/001/preview.png"
+    },
+    {
+      "family": "clean-energy",
+      "count": 100,
+      "index": "clean-energy/index.json",
+      "preview": "clean-energy/001/preview.png"
+    },
+    {
+      "family": "clinical-equipment",
+      "count": 40,
+      "index": "clinical-equipment/index.json",
+      "preview": "clinical-equipment/001/preview.png"
+    },
+    {
+      "family": "coffee-bars",
+      "count": 98,
+      "index": "coffee-bars/index.json",
+      "preview": "coffee-bars/001/preview.png"
+    },
+    {
+      "family": "conservation",
+      "count": 108,
+      "index": "conservation/index.json",
+      "preview": "conservation/001/preview.png"
+    },
+    {
+      "family": "construction",
+      "count": 76,
+      "index": "construction/index.json",
+      "preview": "construction/001/preview.png"
+    },
+    {
+      "family": "cookware",
+      "count": 53,
+      "index": "cookware/index.json",
+      "preview": "cookware/001/preview.png"
+    },
+    {
+      "family": "craft-workshops",
+      "count": 100,
+      "index": "craft-workshops/index.json",
+      "preview": "craft-workshops/001/preview.png"
+    },
+    {
+      "family": "dining-sets",
+      "count": 226,
+      "index": "dining-sets/index.json",
+      "preview": "dining-sets/001/preview.png"
+    },
+    {
+      "family": "document-equipment",
+      "count": 36,
+      "index": "document-equipment/index.json",
+      "preview": "document-equipment/001/preview.png"
+    },
+    {
+      "family": "dressing-rooms",
+      "count": 94,
+      "index": "dressing-rooms/index.json",
+      "preview": "dressing-rooms/001/preview.png"
+    },
+    {
+      "family": "event-service",
+      "count": 100,
+      "index": "event-service/index.json",
+      "preview": "event-service/001/preview.png"
+    },
+    {
+      "family": "exhibition-fixtures",
+      "count": 80,
+      "index": "exhibition-fixtures/index.json",
+      "preview": "exhibition-fixtures/001/preview.png"
+    },
+    {
+      "family": "field-trade",
+      "count": 40,
+      "index": "field-trade/index.json",
+      "preview": "field-trade/001/preview.png"
+    },
+    {
+      "family": "fitness",
+      "count": 32,
+      "index": "fitness/index.json",
+      "preview": "fitness/001/preview.png"
+    },
+    {
+      "family": "floristry",
+      "count": 108,
+      "index": "floristry/index.json",
+      "preview": "floristry/001/preview.png"
+    },
+    {
+      "family": "garage-machines",
+      "count": 30,
+      "index": "garage-machines/index.json",
+      "preview": "garage-machines/001/preview.png"
+    },
+    {
+      "family": "gardening",
+      "count": 60,
+      "index": "gardening/index.json",
+      "preview": "gardening/001/preview.png"
+    },
+    {
+      "family": "geoscience-stations",
+      "count": 96,
+      "index": "geoscience-stations/index.json",
+      "preview": "geoscience-stations/001/preview.png"
+    },
+    {
+      "family": "growhouse",
+      "count": 72,
+      "index": "growhouse/index.json",
+      "preview": "growhouse/001/preview.png"
+    },
+    {
+      "family": "headphones",
+      "count": 60,
+      "index": "headphones/index.json",
+      "preview": "headphones/001/preview.png"
+    },
+    {
+      "family": "home-tabletop",
+      "count": 80,
+      "index": "home-tabletop/index.json",
+      "preview": "home-tabletop/001/preview.png"
+    },
+    {
+      "family": "home-utility",
+      "count": 128,
+      "index": "home-utility/index.json",
+      "preview": "home-utility/001/preview.png"
+    },
+    {
+      "family": "hospitality",
+      "count": 56,
+      "index": "hospitality/index.json",
+      "preview": "hospitality/001/preview.png"
+    },
+    {
+      "family": "instrument-stands",
+      "count": 106,
+      "index": "instrument-stands/index.json",
+      "preview": "instrument-stands/001/preview.png"
+    },
+    {
+      "family": "it-infrastructure",
+      "count": 254,
+      "index": "it-infrastructure/index.json",
+      "preview": "it-infrastructure/001/preview.png"
+    },
+    {
+      "family": "kitchen-machines",
+      "count": 24,
+      "index": "kitchen-machines/index.json",
+      "preview": "kitchen-machines/001/preview.png"
+    },
+    {
+      "family": "lab-instruments",
+      "count": 30,
+      "index": "lab-instruments/index.json",
+      "preview": "lab-instruments/001/preview.png"
+    },
+    {
+      "family": "library-fixtures",
+      "count": 64,
+      "index": "library-fixtures/index.json",
+      "preview": "library-fixtures/001/preview.png"
+    },
+    {
+      "family": "lighting",
+      "count": 30,
+      "index": "lighting/index.json",
+      "preview": "lighting/001/preview.png"
+    },
+    {
+      "family": "logistics",
+      "count": 70,
+      "index": "logistics/index.json",
+      "preview": "logistics/001/preview.png"
+    },
+    {
+      "family": "lounge-seating",
+      "count": 115,
+      "index": "lounge-seating/index.json",
+      "preview": "lounge-seating/001/preview.png"
+    },
+    {
+      "family": "marina-equipment",
+      "count": 106,
+      "index": "marina-equipment/index.json",
+      "preview": "marina-equipment/001/preview.png"
+    },
+    {
+      "family": "metal-shops",
+      "count": 100,
+      "index": "metal-shops/index.json",
+      "preview": "metal-shops/001/preview.png"
+    },
+    {
+      "family": "music-stations",
+      "count": 54,
+      "index": "music-stations/index.json",
+      "preview": "music-stations/001/preview.png"
+    },
+    {
+      "family": "patio-furniture",
+      "count": 98,
+      "index": "patio-furniture/index.json",
+      "preview": "patio-furniture/001/preview.png"
+    },
+    {
+      "family": "pet-interiors",
+      "count": 104,
+      "index": "pet-interiors/index.json",
+      "preview": "pet-interiors/001/preview.png"
+    },
+    {
+      "family": "pharmacy-fixtures",
+      "count": 118,
+      "index": "pharmacy-fixtures/index.json",
+      "preview": "pharmacy-fixtures/001/preview.png"
+    },
+    {
+      "family": "precision-repair",
+      "count": 100,
+      "index": "precision-repair/index.json",
+      "preview": "precision-repair/001/preview.png"
+    },
+    {
+      "family": "print-production",
+      "count": 118,
+      "index": "print-production/index.json",
+      "preview": "print-production/001/preview.png"
+    },
+    {
+      "family": "profession-equipment",
+      "count": 20,
+      "index": "profession-equipment/index.json",
+      "preview": "profession-equipment/001/preview.png"
+    },
+    {
+      "family": "public-spaces",
+      "count": 56,
+      "index": "public-spaces/index.json",
+      "preview": "public-spaces/001/preview.png"
+    },
+    {
+      "family": "rail-yard",
+      "count": 116,
+      "index": "rail-yard/index.json",
+      "preview": "rail-yard/001/preview.png"
+    },
+    {
+      "family": "recreation",
+      "count": 30,
+      "index": "recreation/index.json",
+      "preview": "recreation/001/preview.png"
+    },
+    {
+      "family": "recycling-facility",
+      "count": 120,
+      "index": "recycling-facility/index.json",
+      "preview": "recycling-facility/001/preview.png"
+    },
+    {
+      "family": "retail-fixtures",
+      "count": 64,
+      "index": "retail-fixtures/index.json",
+      "preview": "retail-fixtures/001/preview.png"
+    },
+    {
+      "family": "room-dividers",
+      "count": 128,
+      "index": "room-dividers/index.json",
+      "preview": "room-dividers/001/preview.png"
+    },
+    {
+      "family": "salon-equipment",
+      "count": 35,
+      "index": "salon-equipment/index.json",
+      "preview": "salon-equipment/001/preview.png"
+    },
+    {
+      "family": "seating",
+      "count": 125,
+      "index": "seating/index.json",
+      "preview": "seating/001/preview.png"
+    },
+    {
+      "family": "service-shops",
+      "count": 118,
+      "index": "service-shops/index.json",
+      "preview": "service-shops/001/preview.png"
+    },
+    {
+      "family": "service-vehicles",
+      "count": 67,
+      "index": "service-vehicles/index.json",
+      "preview": "service-vehicles/001/preview.png"
+    },
+    {
+      "family": "shoe-care",
+      "count": 96,
+      "index": "shoe-care/index.json",
+      "preview": "shoe-care/001/preview.png"
+    },
+    {
+      "family": "small-electronics",
+      "count": 140,
+      "index": "small-electronics/index.json",
+      "preview": "small-electronics/001/preview.png"
+    },
+    {
+      "family": "sofas",
+      "count": 100,
+      "index": "sofas/index.json",
+      "preview": "sofas/001/preview.png"
+    },
+    {
+      "family": "sports-grounds",
+      "count": 120,
+      "index": "sports-grounds/index.json",
+      "preview": "sports-grounds/001/preview.png"
+    },
+    {
+      "family": "storage",
+      "count": 100,
+      "index": "storage/index.json",
+      "preview": "storage/001/preview.png"
+    },
+    {
+      "family": "studio-workcells",
+      "count": 120,
+      "index": "studio-workcells/index.json",
+      "preview": "studio-workcells/001/preview.png"
+    },
+    {
+      "family": "terminals",
+      "count": 80,
+      "index": "terminals/index.json",
+      "preview": "terminals/001/preview.png"
+    },
+    {
+      "family": "textile-workstations",
+      "count": 86,
+      "index": "textile-workstations/index.json",
+      "preview": "textile-workstations/001/preview.png"
+    },
+    {
+      "family": "travel-kits",
+      "count": 406,
+      "index": "travel-kits/index.json",
+      "preview": "travel-kits/001/preview.png"
+    },
+    {
+      "family": "veterinary-clinic",
+      "count": 96,
+      "index": "veterinary-clinic/index.json",
+      "preview": "veterinary-clinic/001/preview.png"
+    },
+    {
+      "family": "waiting-lounges",
+      "count": 58,
+      "index": "waiting-lounges/index.json",
+      "preview": "waiting-lounges/001/preview.png"
+    },
+    {
+      "family": "warehouse-equipment",
+      "count": 64,
+      "index": "warehouse-equipment/index.json",
+      "preview": "warehouse-equipment/001/preview.png"
+    },
+    {
+      "family": "water-fixtures",
+      "count": 56,
+      "index": "water-fixtures/index.json",
+      "preview": "water-fixtures/001/preview.png"
+    },
+    {
+      "family": "weather-fixtures",
+      "count": 98,
+      "index": "weather-fixtures/index.json",
+      "preview": "weather-fixtures/001/preview.png"
+    },
+    {
+      "family": "winter-service",
+      "count": 108,
+      "index": "winter-service/index.json",
+      "preview": "winter-service/001/preview.png"
+    },
+    {
+      "family": "workplace-safety",
+      "count": 32,
+      "index": "workplace-safety/index.json",
+      "preview": "workplace-safety/001/preview.png"
+    },
+    {
+      "family": "worktables",
+      "count": 96,
+      "index": "worktables/index.json",
+      "preview": "worktables/001/preview.png"
+    }
+  ]
+}

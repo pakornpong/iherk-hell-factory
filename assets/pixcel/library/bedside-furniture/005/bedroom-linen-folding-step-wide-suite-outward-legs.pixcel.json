@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "id": "bedroom-linen-folding-step-wide-suite-outward-legs",
+  "category": "bedroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#ac825d",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#795b47",
+      "kind": "wood"
+    },
+    "linen": {
+      "color": "#b5a18d",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#e0d4bf",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d1c6b2",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#637b90",
+      "kind": "matte"
+    },
+    "iron": {
+      "color": "#535f67",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9da8a9",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda271",
+      "kind": "metal"
+    },
+    "glass": {
+      "color": "#91acb5",
+      "kind": "glass"
+    },
+    "brick": {
+      "color": "#aa695c",
+      "kind": "matte"
+    },
+    "marble": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        7,
+        8,
+        7
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        24,
+        0
+      ],
+      "to": [
+        7,
+        22,
+        7
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        6,
+        0
+      ],
+      "to": [
+        50,
+        8,
+        7
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        24,
+        0
+      ],
+      "to": [
+        50,
+        22,
+        7
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        7
+      ],
+      "to": [
+        55,
+        25,
+        7
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        54,
+        24,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        12
+      ],
+      "to": [
+        54,
+        19,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        16
+      ],
+      "to": [
+        54,
+        14,
+        21
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        15,
+        16
+      ],
+      "to": [
+        15,
+        21,
+        18
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        16,
+        18
+      ],
+      "to": [
+        14,
+        20,
+        20
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        8,
+        21
+      ],
+      "to": [
+        52,
+        13,
+        24
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        9,
+        11
+      ],
+      "to": [
+        52,
+        21,
+        14
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        10,
+        15
+      ],
+      "to": [
+        51,
+        20,
+        16
+      ],
+      "material": "linen"
+    }
+  ]
+}

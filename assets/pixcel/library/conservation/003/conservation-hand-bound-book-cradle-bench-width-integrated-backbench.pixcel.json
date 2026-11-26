@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "id": "conservation-hand-bound-book-cradle-bench-width-integrated-backbench",
+  "category": "conservation",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9ca5a7"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#566470"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a7805d"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3d454c"
+    },
+    "paste": {
+      "kind": "matte",
+      "color": "#d4ccba"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#dfd7be"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627991"
+    },
+    "taupe": {
+      "kind": "matte",
+      "color": "#b09b84"
+    },
+    "oxblood": {
+      "kind": "matte",
+      "color": "#9c5d52"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#98aeb4"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bea272"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        29,
+        7,
+        30
+      ],
+      "material": "paste"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        10
+      ],
+      "to": [
+        29,
+        25,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        24
+      ],
+      "to": [
+        28,
+        13,
+        25
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        4
+      ],
+      "to": [
+        6,
+        22,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        7,
+        4
+      ],
+      "to": [
+        27,
+        22,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        12
+      ],
+      "to": [
+        28,
+        24,
+        15
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        25
+      ],
+      "to": [
+        17,
+        8,
+        15
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        8,
+        15
+      ],
+      "to": [
+        27,
+        8,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        21,
+        25
+      ],
+      "to": [
+        17,
+        21,
+        15
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        21,
+        15
+      ],
+      "to": [
+        27,
+        21,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        11,
+        23
+      ],
+      "to": [
+        17,
+        19,
+        25
+      ],
+      "material": "taupe"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        11,
+        23
+      ],
+      "to": [
+        27,
+        19,
+        25
+      ],
+      "material": "taupe"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        25
+      ],
+      "to": [
+        16,
+        18,
+        27
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        12,
+        25
+      ],
+      "to": [
+        25,
+        18,
+        27
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        14,
+        27
+      ],
+      "to": [
+        14,
+        17,
+        27
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        14,
+        27
+      ],
+      "to": [
+        21,
+        17,
+        27
+      ],
+      "material": "blue"
+    }
+  ]
+}

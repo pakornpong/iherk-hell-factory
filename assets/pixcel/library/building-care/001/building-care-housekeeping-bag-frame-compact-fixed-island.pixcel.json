@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "id": "building-care-housekeeping-bag-frame-compact-fixed-island",
+  "category": "cleaning",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#a77c56",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#755644",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ba6aa",
+      "kind": "metal"
+    },
+    "charcoal": {
+      "color": "#49535c",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#ddd5c3",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#aa9a88",
+      "kind": "matte"
+    },
+    "graphite": {
+      "color": "#363e43",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#bda16c",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a65c50",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#6b8090",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#89a8b4",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#a8a09a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        2
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        12
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        5
+      ],
+      "to": [
+        24,
+        25,
+        11
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        8
+      ],
+      "to": [
+        20,
+        26,
+        9
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        12
+      ],
+      "to": [
+        27,
+        25,
+        13
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        27,
+        24,
+        17
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        18
+      ],
+      "to": [
+        16,
+        23,
+        37
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        36
+      ],
+      "to": [
+        17,
+        24,
+        38
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        9,
+        18
+      ],
+      "to": [
+        26,
+        22,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        11,
+        22
+      ],
+      "to": [
+        24,
+        18,
+        27
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        8,
+        18
+      ],
+      "to": [
+        26,
+        8,
+        41
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        8,
+        40
+      ],
+      "to": [
+        26,
+        11,
+        41
+      ],
+      "material": "steel"
+    }
+  ]
+}

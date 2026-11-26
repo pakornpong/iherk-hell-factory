@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "rail-station-platform-benches-yard-wide-concrete-platform",
+  "category": "railway",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9ba8ab",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#596772",
+      "kind": "metal"
+    },
+    "wood": {
+      "color": "#a18362",
+      "kind": "wood"
+    },
+    "rock": {
+      "color": "#9e968b",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#424b51",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#667f93",
+      "kind": "matte"
+    },
+    "orange": {
+      "color": "#aa6853",
+      "kind": "matte"
+    },
+    "ivory": {
+      "color": "#dbd3bb",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#c1a16a",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8baab5",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        5
+      ],
+      "material": "rock"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        6
+      ],
+      "to": [
+        55,
+        25,
+        6
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        6
+      ],
+      "to": [
+        55,
+        25,
+        6
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        7
+      ],
+      "to": [
+        7,
+        22,
+        16
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        15
+      ],
+      "to": [
+        6,
+        7,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        8,
+        7
+      ],
+      "to": [
+        53,
+        22,
+        16
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        8,
+        15
+      ],
+      "to": [
+        52,
+        7,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        16
+      ],
+      "to": [
+        54,
+        22,
+        18
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        23
+      ],
+      "to": [
+        54,
+        9,
+        24
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        27
+      ],
+      "to": [
+        54,
+        9,
+        28
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        20,
+        18
+      ],
+      "to": [
+        8,
+        23,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        16,
+        9
+      ],
+      "to": [
+        52,
+        24,
+        15
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        24,
+        12
+      ],
+      "to": [
+        50,
+        24,
+        13
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        44,
+        16,
+        14
+      ],
+      "to": [
+        41,
+        13,
+        18
+      ],
+      "material": "steel"
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "id": "cafe-tea-urn-and-caddies-single-compact-inset",
+  "category": "coffee-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa815d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#725543"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3f4649"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0a8a9"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b47d5e"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7caba"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#a5a09a"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aab4"
+    },
+    "coffee": {
+      "kind": "matte",
+      "color": "#675143"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a76a57"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89f7a"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7387"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        1
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        1
+      ],
+      "to": [
+        26,
+        24,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        26,
+        25,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        14
+      ],
+      "zFrom": 7,
+      "zTo": 25,
+      "radius": 5,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        14
+      ],
+      "zFrom": 26,
+      "zTo": 27,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        14
+      ],
+      "zFrom": 28,
+      "zTo": 29,
+      "radius": 1,
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        18,
+        14
+      ],
+      "to": [
+        13,
+        22,
+        15
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        22
+      ],
+      "zFrom": 7,
+      "zTo": 10,
+      "radius": 2,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        10
+      ],
+      "zFrom": 7,
+      "zTo": 15,
+      "radius": 3,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        19
+      ],
+      "zFrom": 7,
+      "zTo": 15,
+      "radius": 3,
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        9,
+        11
+      ],
+      "to": [
+        24,
+        10,
+        12
+      ],
+      "material": "kraft"
+    }
+  ]
+}

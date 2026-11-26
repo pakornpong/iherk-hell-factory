@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "id": "cinema-media-library-snack-display-compact-mobile-cinema-podium",
+  "category": "cinema",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#3b444d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9aa6a7"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9d6057"
+    },
+    "velvet": {
+      "kind": "matte",
+      "color": "#765157"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b5a38e"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#dcd0ba"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a7805e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77594a"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bda16c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#90a9b3"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d93"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        10,
+        3
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        3
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        10,
+        3
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        0
+      ],
+      "to": [
+        28,
+        25,
+        3
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        5
+      ],
+      "to": [
+        28,
+        26,
+        6
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        7
+      ],
+      "to": [
+        28,
+        24,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        11
+      ],
+      "to": [
+        28,
+        9,
+        36
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        13
+      ],
+      "to": [
+        27,
+        23,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        15
+      ],
+      "to": [
+        10,
+        21,
+        19
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        14,
+        15
+      ],
+      "to": [
+        16,
+        21,
+        19
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        14,
+        15
+      ],
+      "to": [
+        22,
+        21,
+        19
+      ],
+      "material": "offwhite"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        22
+      ],
+      "to": [
+        27,
+        23,
+        23
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        24
+      ],
+      "to": [
+        10,
+        21,
+        28
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        14,
+        24
+      ],
+      "to": [
+        16,
+        21,
+        28
+      ],
+      "material": "offwhite"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        14,
+        24
+      ],
+      "to": [
+        22,
+        21,
+        28
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        31
+      ],
+      "to": [
+        27,
+        23,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        33
+      ],
+      "to": [
+        10,
+        21,
+        37
+      ],
+      "material": "offwhite"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        14,
+        33
+      ],
+      "to": [
+        16,
+        21,
+        37
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        14,
+        33
+      ],
+      "to": [
+        22,
+        21,
+        37
+      ],
+      "material": "blue"
+    }
+  ]
+}

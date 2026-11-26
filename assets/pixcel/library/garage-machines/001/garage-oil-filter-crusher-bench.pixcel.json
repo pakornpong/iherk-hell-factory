@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "id": "garage-oil-filter-crusher-bench",
+  "category": "garage",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#91a6b0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#4c6071"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#283541"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#dea957"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#70746b"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac594a"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbddcf"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#86bdd0",
+      "glowRadius": 1,
+      "glowIntensity": 0.14
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        23,
+        0
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        1
+      ],
+      "to": [
+        25,
+        25,
+        4
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        5
+      ],
+      "to": [
+        8,
+        24,
+        25
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        6,
+        5
+      ],
+      "to": [
+        25,
+        24,
+        25
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        25
+      ],
+      "to": [
+        25,
+        24,
+        29
+      ],
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 16,
+      "zTo": 25,
+      "radius": 3,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        11,
+        14
+      ],
+      "to": [
+        20,
+        20,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 5,
+      "zTo": 13,
+      "radius": 4,
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        28
+      ],
+      "to": [
+        16,
+        15,
+        34
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        9,
+        32
+      ],
+      "to": [
+        21,
+        17,
+        35
+      ],
+      "material": "yellow"
+    }
+  ]
+}

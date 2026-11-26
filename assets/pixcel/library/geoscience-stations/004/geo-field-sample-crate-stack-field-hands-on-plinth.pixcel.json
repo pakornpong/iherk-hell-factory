@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "id": "geo-field-sample-crate-stack-field-hands-on-plinth",
+  "category": "geoscience",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#566674"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9fa9aa"
+    },
+    "soil": {
+      "kind": "matte",
+      "color": "#8a6e58"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#a09a91"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a5815d"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ddd2bb"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a06b"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404a51"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#647f94"
+    },
+    "oxide": {
+      "kind": "matte",
+      "color": "#a66956"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8baab5"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        28,
+        24,
+        3
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        28,
+        24,
+        7
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        8
+      ],
+      "to": [
+        17,
+        21,
+        18
+      ],
+      "material": "soil"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        18
+      ],
+      "to": [
+        18,
+        22,
+        20
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        8
+      ],
+      "to": [
+        27,
+        23,
+        24
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        9,
+        24
+      ],
+      "to": [
+        28,
+        24,
+        26
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        21,
+        14
+      ],
+      "to": [
+        15,
+        22,
+        17
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        23,
+        18
+      ],
+      "to": [
+        25,
+        24,
+        21
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        15,
+        26
+      ],
+      "to": [
+        24,
+        20,
+        28
+      ],
+      "material": "blue"
+    }
+  ]
+}

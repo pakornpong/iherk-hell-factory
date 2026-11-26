@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "warehouse-roller-conveyor-compact-raised-mezzanine",
+  "category": "warehouse",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9fa8aa"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#586673"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b444d"
+    },
+    "safety": {
+      "kind": "matte",
+      "color": "#bd9255"
+    },
+    "timber": {
+      "kind": "wood",
+      "color": "#a78564"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b29979"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#d6d0bc"
+    },
+    "darkred": {
+      "kind": "matte",
+      "color": "#9b584a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e7489"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba8b6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        23,
+        0
+      ],
+      "to": [
+        28,
+        25,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        11
+      ],
+      "to": [
+        29,
+        26,
+        12
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        8,
+        1
+      ],
+      "to": [
+        27,
+        24,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        13
+      ],
+      "to": [
+        29,
+        25,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        16
+      ],
+      "to": [
+        29,
+        8,
+        19
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        16
+      ],
+      "to": [
+        29,
+        25,
+        19
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        16
+      ],
+      "to": [
+        7,
+        22,
+        18
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        16
+      ],
+      "to": [
+        11,
+        22,
+        18
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        9,
+        16
+      ],
+      "to": [
+        15,
+        22,
+        18
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        9,
+        16
+      ],
+      "to": [
+        19,
+        22,
+        18
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        9,
+        16
+      ],
+      "to": [
+        23,
+        22,
+        18
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        9,
+        16
+      ],
+      "to": [
+        27,
+        22,
+        18
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        19
+      ],
+      "to": [
+        20,
+        20,
+        24
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        11,
+        24
+      ],
+      "to": [
+        15,
+        20,
+        24
+      ],
+      "material": "white"
+    }
+  ]
+}

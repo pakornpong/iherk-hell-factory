@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "id": "rail-signal-cabinet-visual-wayside-bare-ballast",
+  "category": "railway",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9ba8ab",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#596772",
+      "kind": "metal"
+    },
+    "wood": {
+      "color": "#a18362",
+      "kind": "wood"
+    },
+    "rock": {
+      "color": "#9e968b",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#424b51",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#667f93",
+      "kind": "matte"
+    },
+    "orange": {
+      "color": "#aa6853",
+      "kind": "matte"
+    },
+    "ivory": {
+      "color": "#dbd3bb",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#c1a16a",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8baab5",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        1
+      ],
+      "material": "rock"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "rock"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        28,
+        24,
+        7
+      ],
+      "material": "rock"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        8
+      ],
+      "to": [
+        21,
+        22,
+        33
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        10
+      ],
+      "to": [
+        20,
+        23,
+        31
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        23,
+        16
+      ],
+      "to": [
+        12,
+        23,
+        23
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        23,
+        15
+      ],
+      "to": [
+        20,
+        24,
+        20
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        11
+      ],
+      "zFrom": 7,
+      "zTo": 42,
+      "radius": 1,
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        11,
+        32
+      ],
+      "to": [
+        25,
+        14,
+        41
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        14,
+        36
+      ],
+      "to": [
+        24,
+        14,
+        38
+      ],
+      "material": "orange"
+    }
+  ]
+}

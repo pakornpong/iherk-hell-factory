@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "id": "catering-service-room-service-tray-stack-wide-countertop-insert",
+  "category": "catering",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#a77c56",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#755644",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ba6aa",
+      "kind": "metal"
+    },
+    "charcoal": {
+      "color": "#49535c",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#ddd5c3",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#aa9a88",
+      "kind": "matte"
+    },
+    "graphite": {
+      "color": "#363e43",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#bda16c",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a65c50",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#6b8090",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#89a8b4",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#a8a09a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        54,
+        25,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        1
+      ],
+      "to": [
+        53,
+        24,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        54,
+        24,
+        9
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        11
+      ],
+      "to": [
+        54,
+        24,
+        13
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 18,
+      "radius": 6,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 18,
+      "zTo": 21,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 22,
+      "zTo": 23,
+      "radius": 1,
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        18
+      ],
+      "zFrom": 14,
+      "zTo": 17,
+      "radius": 2,
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        17,
+        17
+      ],
+      "to": [
+        49,
+        19,
+        18
+      ],
+      "material": "cream"
+    }
+  ]
+}

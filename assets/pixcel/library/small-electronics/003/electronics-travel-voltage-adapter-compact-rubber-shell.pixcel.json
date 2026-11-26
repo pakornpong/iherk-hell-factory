@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "id": "electronics-travel-voltage-adapter-compact-rubber-shell",
+  "category": "electronics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "charcoal": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#606e77"
+    },
+    "alloy": {
+      "kind": "metal",
+      "color": "#9facad"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd2bc"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627e94"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a46151"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#a59078"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a68058"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda16c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab7"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#a8c1cf",
+      "glowRadius": 1,
+      "glowIntensity": 0.09
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        1
+      ],
+      "to": [
+        25,
+        23,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        2
+      ],
+      "to": [
+        19,
+        20,
+        10
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        20,
+        4
+      ],
+      "to": [
+        18,
+        21,
+        8
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        21,
+        5
+      ],
+      "to": [
+        10,
+        24,
+        6
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        21,
+        5
+      ],
+      "to": [
+        15,
+        24,
+        6
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        11,
+        2
+      ],
+      "to": [
+        26,
+        20,
+        7
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        16
+      ],
+      "zFrom": 7,
+      "zTo": 8,
+      "radius": 1,
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        19,
+        14,
+        5
+      ],
+      "to": [
+        21,
+        14,
+        5
+      ],
+      "material": "charcoal"
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "id": "dressing-hat-and-accessory-tree-wardrobe-span-fitting-room-riser",
+  "category": "dressing-room",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745844"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#99a6a7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda174"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#56626c"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#ad9b87"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c92"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#465056"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a16357"
+    },
+    "mirror": {
+      "kind": "glass",
+      "color": "#9db1b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        3
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        5
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        4
+      ],
+      "to": [
+        14,
+        27,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 6,
+      "zTo": 9,
+      "radius": 7,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 10,
+      "zTo": 43,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        28
+      ],
+      "to": [
+        8,
+        11,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        11
+      ],
+      "zFrom": 31,
+      "zTo": 31,
+      "radius": 4,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        11
+      ],
+      "zFrom": 32,
+      "zTo": 34,
+      "radius": 3,
+      "material": "cloth"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        24
+      ],
+      "to": [
+        50,
+        14,
+        27
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        14
+      ],
+      "zFrom": 27,
+      "zTo": 27,
+      "radius": 4,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        14
+      ],
+      "zFrom": 28,
+      "zTo": 30,
+      "radius": 3,
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        34
+      ],
+      "to": [
+        30,
+        21,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        21
+      ],
+      "zFrom": 37,
+      "zTo": 37,
+      "radius": 4,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        21
+      ],
+      "zFrom": 38,
+      "zTo": 40,
+      "radius": 3,
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        8
+      ],
+      "to": [
+        15,
+        24,
+        13
+      ],
+      "material": "red"
+    }
+  ]
+}

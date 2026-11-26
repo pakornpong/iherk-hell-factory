@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "id": "dressing-double-tier-hanger-rail-personal-fitting-room-riser",
+  "category": "dressing-room",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745844"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#99a6a7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda174"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#56626c"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#ad9b87"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c92"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#465056"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a16357"
+    },
+    "mirror": {
+      "kind": "glass",
+      "color": "#9db1b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        28,
+        26,
+        3
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        27,
+        25,
+        5
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        4
+      ],
+      "to": [
+        14,
+        27,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        26,
+        24,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        10
+      ],
+      "to": [
+        7,
+        11,
+        43
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        9,
+        10
+      ],
+      "to": [
+        25,
+        11,
+        43
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        42
+      ],
+      "to": [
+        25,
+        11,
+        43
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        26
+      ],
+      "to": [
+        25,
+        11,
+        27
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        10,
+        42
+      ],
+      "to": [
+        8,
+        13,
+        38
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        30
+      ],
+      "to": [
+        9,
+        15,
+        38
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        18
+      ],
+      "to": [
+        9,
+        15,
+        24
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        10,
+        42
+      ],
+      "to": [
+        12,
+        13,
+        38
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        30
+      ],
+      "to": [
+        13,
+        15,
+        38
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        18
+      ],
+      "to": [
+        13,
+        15,
+        24
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        10,
+        42
+      ],
+      "to": [
+        16,
+        13,
+        38
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        11,
+        30
+      ],
+      "to": [
+        17,
+        15,
+        38
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        11,
+        18
+      ],
+      "to": [
+        17,
+        15,
+        24
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        10,
+        42
+      ],
+      "to": [
+        20,
+        13,
+        38
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        11,
+        30
+      ],
+      "to": [
+        21,
+        15,
+        38
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        11,
+        18
+      ],
+      "to": [
+        21,
+        15,
+        24
+      ],
+      "material": "red"
+    }
+  ]
+}

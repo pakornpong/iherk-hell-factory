@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "id": "childcare-puzzle-cubby-bench-small-cork-floor",
+  "category": "childcare",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#b58b64"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#9b7555"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b7a58e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac6c5c"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#6d8498"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8f9ba1"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#c4a463"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#4a535a"
+    },
+    "pink": {
+      "kind": "matte",
+      "color": "#a97880"
+    },
+    "mats": {
+      "kind": "matte",
+      "color": "#978d86"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        28,
+        26,
+        1
+      ],
+      "material": "mats"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        1
+      ],
+      "to": [
+        27,
+        25,
+        1
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        2
+      ],
+      "to": [
+        26,
+        24,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        5
+      ],
+      "to": [
+        7,
+        24,
+        16
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        6,
+        5
+      ],
+      "to": [
+        26,
+        24,
+        16
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        15
+      ],
+      "to": [
+        25,
+        24,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        7,
+        5
+      ],
+      "to": [
+        17,
+        23,
+        15
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        6
+      ],
+      "to": [
+        14,
+        22,
+        10
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        9,
+        6
+      ],
+      "to": [
+        23,
+        21,
+        11
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        17
+      ],
+      "to": [
+        18,
+        18,
+        18
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        18
+      ],
+      "to": [
+        14,
+        13,
+        19
+      ],
+      "material": "red"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "id": "garage-power-spool-wall-rail",
+  "category": "garage",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#91a6b0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#4c6071"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#283541"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#dea957"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#53667a"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac594a"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbddcf"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#86bdd0",
+      "glowRadius": 1,
+      "glowIntensity": 0.14
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        7,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        7
+      ],
+      "to": [
+        27,
+        26,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        1
+      ],
+      "to": [
+        9,
+        19,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        7,
+        1
+      ],
+      "to": [
+        24,
+        19,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        9
+      ],
+      "to": [
+        26,
+        25,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        12,
+        13
+      ],
+      "to": [
+        9,
+        16,
+        30
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        12,
+        13
+      ],
+      "to": [
+        24,
+        16,
+        30
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        14,
+        23
+      ],
+      "to": [
+        22,
+        15,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        17
+      ],
+      "to": [
+        10,
+        21,
+        29
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        8,
+        17
+      ],
+      "to": [
+        22,
+        21,
+        29
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        19
+      ],
+      "to": [
+        21,
+        19,
+        27
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        19,
+        19
+      ],
+      "to": [
+        23,
+        27,
+        13
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        27,
+        12
+      ],
+      "to": [
+        26,
+        29,
+        14
+      ],
+      "material": "yellow"
+    }
+  ]
+}

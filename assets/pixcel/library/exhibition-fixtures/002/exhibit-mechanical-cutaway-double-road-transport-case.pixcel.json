@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "id": "exhibit-mechanical-cutaway-double-road-transport-case",
+  "category": "museum",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a67e58"
+    },
+    "plaster": {
+      "kind": "matte",
+      "color": "#d8cfc1"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3d454d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaad"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#9cb5ba"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78268"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a90"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b8aa96"
+    },
+    "ceramic": {
+      "kind": "matte",
+      "color": "#ab6854"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e0d8c7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        54,
+        25,
+        8
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        7
+      ],
+      "to": [
+        54,
+        25,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        9
+      ],
+      "to": [
+        53,
+        8,
+        31
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        30
+      ],
+      "to": [
+        53,
+        9,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        9
+      ],
+      "to": [
+        51,
+        23,
+        13
+      ],
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 23,
+      "radius": 4,
+      "material": "copper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        46,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 28,
+      "radius": 5,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        46,
+        15
+      ],
+      "zFrom": 29,
+      "zTo": 32,
+      "radius": 2,
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        14,
+        17
+      ],
+      "to": [
+        45,
+        16,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        24
+      ],
+      "to": [
+        14,
+        19,
+        26
+      ],
+      "material": "black"
+    }
+  ]
+}

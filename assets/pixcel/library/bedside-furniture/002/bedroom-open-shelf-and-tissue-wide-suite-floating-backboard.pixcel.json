@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "id": "bedroom-open-shelf-and-tissue-wide-suite-floating-backboard",
+  "category": "bedroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#ac825d",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#795b47",
+      "kind": "wood"
+    },
+    "linen": {
+      "color": "#b5a18d",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#e0d4bf",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d1c6b2",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#637b90",
+      "kind": "matte"
+    },
+    "iron": {
+      "color": "#535f67",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9da8a9",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda271",
+      "kind": "metal"
+    },
+    "glass": {
+      "color": "#91acb5",
+      "kind": "glass"
+    },
+    "brick": {
+      "color": "#aa695c",
+      "kind": "matte"
+    },
+    "marble": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        55,
+        7,
+        31
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        8
+      ],
+      "to": [
+        54,
+        24,
+        9
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        3
+      ],
+      "to": [
+        6,
+        22,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        10
+      ],
+      "to": [
+        7,
+        24,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        10
+      ],
+      "to": [
+        54,
+        24,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        11
+      ],
+      "to": [
+        53,
+        23,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        20
+      ],
+      "to": [
+        53,
+        23,
+        21
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        31
+      ],
+      "to": [
+        53,
+        23,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        13
+      ],
+      "to": [
+        15,
+        20,
+        16
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        16
+      ],
+      "to": [
+        12,
+        14,
+        19
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        22
+      ],
+      "to": [
+        17,
+        19,
+        25
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        9,
+        13
+      ],
+      "to": [
+        52,
+        21,
+        16
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        10,
+        17
+      ],
+      "to": [
+        51,
+        20,
+        18
+      ],
+      "material": "linen"
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "id": "precision-headphone-driver-test-rig-full-worktop-wall-tool-rail",
+  "category": "precision-repair",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa815e",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#755847",
+      "kind": "wood"
+    },
+    "frame": {
+      "color": "#596673",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#a0a9aa",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#3d464b",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#dfd3ba",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#a6937d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fabb5",
+      "kind": "glass"
+    },
+    "blue": {
+      "color": "#627b91",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#b99b68",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a06254",
+      "kind": "matte"
+    },
+    "copper": {
+      "color": "#ab795d",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        55,
+        7,
+        32
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        9
+      ],
+      "to": [
+        55,
+        25,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        24
+      ],
+      "to": [
+        54,
+        8,
+        25
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        3
+      ],
+      "to": [
+        6,
+        22,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        11
+      ],
+      "to": [
+        54,
+        24,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        16
+      ],
+      "to": [
+        53,
+        11,
+        33
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        24
+      ],
+      "to": [
+        51,
+        11,
+        30
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        26
+      ],
+      "to": [
+        50,
+        11,
+        27
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        17
+      ],
+      "zFrom": 16,
+      "zTo": 20,
+      "radius": 3,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        17
+      ],
+      "zFrom": 16,
+      "zTo": 20,
+      "radius": 3,
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        19,
+        16
+      ],
+      "to": [
+        49,
+        20,
+        16
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        9,
+        15
+      ],
+      "to": [
+        52,
+        20,
+        21
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        10,
+        21
+      ],
+      "to": [
+        51,
+        19,
+        22
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        12,
+        22
+      ],
+      "to": [
+        50,
+        15,
+        23
+      ],
+      "material": "steel"
+    }
+  ]
+}
