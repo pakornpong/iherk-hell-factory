@@ -5,6 +5,14 @@
 **Supersedes:** auto-generated boxed project-room grid, fixed lounge resting, and §6.1 / §6.3 routing in `2026-11-24-iherk-hell-factory-design.md` and `2026-11-24-flush-rooms-edge-walls.md` §2.7  
 **Builds on:** `2026-11-24-flush-rooms-edge-walls.md`, `2026-11-24-layer-permissions-and-decorate.md`
 
+> **2026-11-26 note:** still the main description of the open floor, with two routing changes:
+> - §4.1 `resting` → pod is **replaced**: permanent agents doze at their desk chair (`sit_type_0` + `💤`); resting subagents release their desk and stand idle.
+> - Pods are **no longer spawned** (one-per-employee generation and auto-spawn for new agents removed). Saved pods stay as decor; Pods-zone relocation still works.
+> - The Boss corner is for briefing/reporting only: no working, meeting or dozing there, and its chairs cannot be owned.
+> - §4.1 `working` seating: chairs are handed out by `assignDeskChairs`; an agent's own chair (`ownerEmployeeId`) wins, owned chairs are skipped by everyone else and by meetings, and subagents are seated after permanent agents.
+>
+> Verification numbers in §10 are from 2026-11-25. Current status: [`2026-11-26-architecture-as-built.md`](./2026-11-26-architecture-as-built.md).
+
 ---
 
 ## 1. Motivation

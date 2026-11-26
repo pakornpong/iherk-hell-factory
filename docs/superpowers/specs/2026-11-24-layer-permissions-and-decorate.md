@@ -4,6 +4,8 @@
 **Status:** Implemented (Phase 1: Layers, Permissions, Complete Partitions & Move/Decorate Fixes; Phase 2: Tabletop Props & Surface Placement)
 **Builds on:** `2026-11-24-iherk-hell-factory-design.md`, `2026-11-24-flush-rooms-edge-walls.md`
 
+> **2026-11-26 note:** the permission/layer system is current. References to `amenity:*` rooms and boss/common room layouts with default tabletop props are historical — the open floor only places `cowork:0` from `room-layouts.ts`, and the Boss corner uses the minimal set in `createDefaultBossOffice()`. Later additions: `divider-solid-slate` edge divider, half-tile furniture coordinates, chair-under-desk collision allowance, and a client-side 90° view rotation. See [`2026-11-26-architecture-as-built.md`](./2026-11-26-architecture-as-built.md).
+
 ---
 
 ## 1. Motivation

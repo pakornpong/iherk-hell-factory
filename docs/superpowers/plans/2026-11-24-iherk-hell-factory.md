@@ -1,5 +1,7 @@
 # แผนการพัฒนา `iherk-hell-factory` (Implementation Plan)
 
+> **สถานะ (2026-11-26):** แผนนี้ทำเสร็จแล้วและเก็บไว้เป็นประวัติ ผังห้อง 6×6 แบบ bay/common wing ในแผนนี้ถูกแทนด้วยพื้นเปิด `floor:0` แล้ว โครงสร้างและ API ปัจจุบันดูที่ [2026-11-26-architecture-as-built.md](../specs/2026-11-26-architecture-as-built.md)
+
 > **สำหรับผู้ลงมือพัฒนา (Agentic Workers):** ใช้สกิล `superpowers:subagent-driven-development` (แนะนำ) หรือ `superpowers:executing-plans` เพื่อทำตามแผนนี้ทีละ Task โดยติ๊กช่องเช็กบ็อกซ์ (`- [ ]`) เมื่อทำแต่ละขั้นตอนเสร็จ
 
 **เป้าหมาย (Goal):** สร้าง **iherk-hell-factory** แอปเว็บจำลอง **AI Agent Office มุมมอง 2:1 Isometric Pixel Art** แบบ **Live Office Monitor** ที่เริ่มจากพนักงาน 1 คนและขยายล็อกการทำงานสะสมถาวรตามโฟลเดอร์โปรเจคแบบไม่จำกัด รองรับทั้ง **Claude** และ **Gemini** พร้อม 5 อนิเมชั่นที่มีชีวิตชีวา, โหมดแต่งเฟอร์นิเจอร์ในหน้าเกม และ MCP Server แต่งห้อง/ปั้นเฟอร์ใหม่ผ่าน `iherk-pixcel` เฉพาะฝั่ง **Gemini เท่านั้น**

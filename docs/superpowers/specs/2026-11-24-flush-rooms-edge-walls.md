@@ -1,8 +1,10 @@
 # Flush Rooms & Boundary-Line Walls
 
 **Date:** 2026-11-24
-**Status:** Implemented
+**Status:** Implemented, then partly superseded
 **Supersedes:** the campus geometry decided in `2026-11-24-iherk-hell-factory-design.md` §6.1
+
+> **2026-11-26 note:** the packed 6×6 room grid, amenity-room fill and per-room doorways described here were replaced by the open floor in [`2026-11-25-open-floor-hypersleep-zones.md`](./2026-11-25-open-floor-hypersleep-zones.md). What still applies: walls/dividers as zero-thickness boundary-line segments (`wallSegments`), edge-blocking pathfinding (`blockedW` / `blockedN`), zero-thickness depth-sort planes, and the 56-voxel partition height. Today every segment comes from user-placed edge dividers (`ef:<furnitureId>:<n>`); no room walls are generated. See [`2026-11-26-architecture-as-built.md`](./2026-11-26-architecture-as-built.md).
 
 ---
 

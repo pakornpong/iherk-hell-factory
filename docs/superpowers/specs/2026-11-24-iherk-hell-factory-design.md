@@ -8,7 +8,15 @@
 > **Design Evolution (Current Architecture):**
 > - [`2026-11-24-flush-rooms-edge-walls.md`](./2026-11-24-flush-rooms-edge-walls.md) — Boundary-line zero-thickness walls, slim corner posts, edge-blocking pathfinding.
 > - [`2026-11-24-layer-permissions-and-decorate.md`](./2026-11-24-layer-permissions-and-decorate.md) — GBA-style tile permissions (`0–3`), elevation layers (`L1–L7`), tabletop props, and full-campus Decorate Mode.
-> - [`2026-11-25-open-floor-hypersleep-zones.md`](./2026-11-25-open-floor-hypersleep-zones.md) — **Latest:** Open resizable sandbox floor (`floor:0`), Space Haven hypersleep pods + editable Pods Zone, flush edge-mounted glass dividers, floor painting, Custom Zones (`work` / `meeting` / `hypersleep` / `lounge`), and Boss-briefing / desk-thinking / meeting-table agent routing.
+> - [`2026-11-25-open-floor-hypersleep-zones.md`](./2026-11-25-open-floor-hypersleep-zones.md) — Open resizable sandbox floor (`floor:0`), Space Haven hypersleep pods + editable Pods Zone, flush edge-mounted glass dividers, floor painting, Custom Zones (`work` / `meeting` / `hypersleep` / `lounge`), and Boss-briefing / desk-thinking / meeting-table agent routing.
+> - [`2026-11-26-architecture-as-built.md`](./2026-11-26-architecture-as-built.md) — **Current reference:** module/API map, Codex provider, half-tile placement, layout export/import, view rotation, 7,390-asset Pixcel library, seat owner, doze-at-desk resting, no pod spawning, Boss-corner rule, verification snapshot and known issues.
+>
+> **Sections of this document that no longer describe the code:**
+> - §6.1 bay/common-wing room grid, rows of 4, compaction — bays are still tracked per project folder but are **not rendered as rooms**; the office is one open floor.
+> - §6.2 providers — `codex` (source `codex`) was added; hooks list is in the as-built doc §8.
+> - §6.3 animation mapping — replaced by the routing table in the 2026-11-25 spec §4 and as-built §4 (`reporting` state added; resting agents now doze at their desk, not in pods).
+> - §6.5 MCP tool list — also has `set_tile_permission` and `expand_floor`.
+> - §7 test numbers — see as-built §9.
 
 ---
 
