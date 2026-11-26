@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "divider-solid-slate",
+  "category": "architecture",
+  "layer": "object",
+  "outlineMode": "top-only",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [1, 1],
+  "palette": "office-night",
+  "materials": {
+    "metal_dark": {"color": "#1d2432", "kind": "metal"},
+    "panel_base": {"color": "#283347", "kind": "matte"}
+  },
+  "ops": [
+    {"op": "box", "from": [0, 13, 0], "to": [31, 18, 2], "material": "metal_dark", "part": "base"},
+    {"op": "box", "from": [1, 14, 3], "to": [30, 17, 19], "material": "panel_base", "part": "lower"},
+    {"op": "box", "from": [0, 13, 20], "to": [31, 18, 21], "material": "metal_dark", "part": "mid_rail"}
+  ]
+}

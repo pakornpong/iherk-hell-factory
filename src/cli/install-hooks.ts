@@ -57,6 +57,30 @@ function hasCommandHook(entries: any[], command: string): boolean {
   });
 }
 
+export async function installCodexHooks(opts: InstallOptions): Promise<InstallReport> {
+  const filePath = path.join(opts.homeDir, ".codex", "hooks.json");
+  const command = `/bin/bash '${path.join(opts.projectRoot, "hooks", "codex-hook.sh").replaceAll("'", "'\\''")}'`;
+  const prev = await readJsonOrEmpty(filePath);
+  const next = structuredClone(prev.data);
+  next.hooks ??= {};
+  // Append an independent group so existing matchers and trust indices remain stable.
+  for (const event of [
+    "SessionStart", "UserPromptSubmit", "PreToolUse", "PostToolUse", "PermissionRequest",
+    "SubagentStart", "SubagentStop", "Stop", "Interrupt", "SessionEnd",
+  ]) {
+    const groups = next.hooks[event] ?? [];
+    if (!Array.isArray(groups)) throw new Error(`Invalid Codex hook groups for ${event} in ${filePath}`);
+    if (!groups.some((group: any) =>
+      !group?.matcher && group?.hooks?.some((entry: any) => entry?.command === command)
+    )) {
+      groups.push({ hooks: [{ type: "command", command, timeout: 3 }] });
+    }
+    next.hooks[event] = groups;
+  }
+  const result = await writeJsonSafely(filePath, next, prev, opts.dryRun ?? false);
+  return { changes: [{ filePath, ...result }] };
+}
+
 export async function installHooks(opts: InstallOptions): Promise<InstallReport> {
   const dryRun = opts.dryRun ?? false;
   const changes: InstallReport["changes"] = [];

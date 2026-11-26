@@ -31,6 +31,7 @@
         <button id="btn-shrink-floor" title="Shrink open floor (−6×6 tiles)">📐 −Floor</button>
         <button id="btn-expand-floor" title="Expand open floor (+6×6 tiles)">📐 +Floor</button>
         <button id="btn-zones" title="Resize floor & define custom zones (Z)">🏷️ Zones</button>
+        <button id="btn-zone-visibility" type="button" class="active" aria-pressed="true" title="Show or hide zone names and outlines">👁 Show Zones</button>
         <button id="btn-layers" title="Toggle Layer & Permission Grid (L)">🗺️ Layers</button>
         <button id="btn-theme" data-theme="office">🏢 Office</button>
         <button id="btn-demo">▶ Demo Mode</button>
@@ -89,8 +90,16 @@
         <button class="floor-brush-btn" data-size="3">3×3</button>
         <button id="btn-floor-reset" class="floor-brush-btn" title="Restore default floor tile">↺ Default</button>
       </div>
-      <input id="catalog-search" type="search" placeholder="Search props..." />
+      <input id="catalog-search" type="search" aria-label="ค้นหา asset" placeholder="ค้นหาชื่อ หมวด หรือแท็ก…" />
       <div id="catalog-filters" class="catalog-filters"></div>
+      <div class="catalog-refinements">
+        <select id="catalog-subcategory" aria-label="กรองตามหมวด">
+          <option value="">ทุกหมวด</option>
+        </select>
+        <select id="catalog-tag" aria-label="กรองตามแท็ก">
+          <option value="">ทุกแท็ก</option>
+        </select>
+      </div>
       <div id="catalog-list" class="catalog-list"></div>
     </aside>
 
@@ -98,6 +107,14 @@
       <div class="sidebar-header">
         <span>ZONES &amp; FLOOR</span>
         <span class="hint">Z: toggle · Esc: cancel</span>
+      </div>
+      <div class="layer-section">
+        <div class="layer-section-title">LAYOUT</div>
+        <div class="floor-size-grid">
+          <button id="btn-export-layout" type="button" class="floor-size-btn">Export ผัง</button>
+          <button id="btn-import-layout" type="button" class="floor-size-btn">Import ผัง</button>
+          <input id="import-layout-file" type="file" accept=".json,application/json" hidden />
+        </div>
       </div>
       <div class="layer-section">
         <div class="layer-section-title">FLOOR SIZE · <span id="floor-size-readout">24 × 24</span></div>

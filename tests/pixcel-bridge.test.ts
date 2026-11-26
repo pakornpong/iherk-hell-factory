@@ -79,6 +79,37 @@ describe("PixcelBridge & Hell Factory voxel assets", () => {
     expect(dayAtlas.meta.emissiveImage).toBe("atlas-day_emissive.png");
   });
 
+  it("lists the bundled library without rendering it, then caches requested asset atlases", async () => {
+    const outDir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-library-"));
+    const bridge = new PixcelBridge({
+      pixcelRoot: process.env.IHERK_PIXCEL_ROOT ?? new URL("../../iherk-pixcel", import.meta.url).pathname,
+      projectRoot: process.cwd(),
+      runtimeOutDir: outDir,
+    });
+
+    try {
+      const catalog = await bridge.listCatalog();
+      const assetId = "access-threshold-ramp-pair-compact-guide-path";
+      expect(catalog.find((asset) => asset.id === assetId)).toMatchObject({
+        id: assetId, source: "library", category: "accessibility",
+      });
+      expect(await fs.readdir(outDir)).toEqual([]);
+      expect(await bridge.getLibraryAtlas("../outside", "office")).toBeNull();
+
+      const [first, second] = await Promise.all([
+        bridge.getLibraryAtlas(assetId, "office"),
+        bridge.getLibraryAtlas(assetId, "office"),
+      ]);
+      const atlas = first as { frames: Record<string, unknown>; meta: { image: string } };
+      expect(first).toBe(second);
+      expect(Object.keys(atlas.frames)).toHaveLength(4);
+      expect(await fs.stat(path.join(outDir, "library", atlas.meta.image))).toHaveProperty("size", expect.any(Number));
+      expect(await bridge.getLibraryAtlas(assetId, "office")).toEqual(first);
+    } finally {
+      await fs.rm(outDir, { recursive: true, force: true });
+    }
+  });
+
   it("crafts custom asset with 4-dir contact sheet and preserves existing custom atlas on invalid input", async () => {
     const tmpRoot = await fs.mkdtemp(path.join(os.tmpdir(), "hf-custom-"));
     await fs.mkdir(path.join(tmpRoot, "assets/pixcel/custom"), { recursive: true });

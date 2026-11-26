@@ -170,6 +170,7 @@ const EDGE_DIVIDER_PROP_IDS = new Set([
   "divider-low-glass-tee",
   "divider-low-glass-cross",
   "divider-cubicle-amber",
+  "divider-solid-slate",
 ]);
 
 export interface EdgeDividerSegment {
@@ -258,12 +259,9 @@ export function expandEdgeDividerSegments(
   if (!EDGE_DIVIDER_PROP_IDS.has(assetId)) return [];
 
   const isDoor = assetId === "divider-low-glass-door";
-  const panelAsset =
-    assetId === "divider-cubicle-amber"
-      ? "divider-cubicle-amber"
-      : isDoor
-        ? "divider-low-glass-door"
-        : "divider-low-glass";
+  const isStraight = assetId === "divider-low-glass" || isDoor ||
+    assetId === "divider-cubicle-amber" || assetId === "divider-solid-slate";
+  const panelAsset = isStraight ? assetId : "divider-low-glass";
 
   const makeNorth = (x: number, y: number): EdgeDividerSegment => ({
     edgeKey: `x:${x},${y - 0.5}`,
@@ -284,7 +282,7 @@ export function expandEdgeDividerSegments(
     blocks: isDoor ? null : { x, y, side: "w" },
   });
 
-  if (assetId === "divider-low-glass" || assetId === "divider-low-glass-door" || assetId === "divider-cubicle-amber") {
+  if (isStraight) {
     if (direction === "se") return [makeNorth(tx, ty)];
     if (direction === "sw") return [makeWest(tx, ty)];
     if (direction === "nw") return [makeNorth(tx, ty + 1)];

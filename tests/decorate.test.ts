@@ -100,14 +100,20 @@ describe("DecorateController", () => {
     ctrl.setActive(true);
     ctrl.setTool("move");
 
+    ctrl.selectAsset("desk-dev-dual");
+    expect(ctrl.getPointerPlacementTarget(3.75, 2.75)).toEqual([3.5, 2.5]);
+    ctrl.selectAsset("divider-low-glass");
+    expect(ctrl.getPointerPlacementTarget(3.75, 2.75)).toEqual([3, 2]);
+    ctrl.setTool("move");
+
     // Pick up by clicking secondary tile (3, 2) -> origin must be recorded as actual (2, 2)
     await ctrl.handleTileClick(3, 2, desk);
     expect(ctrl.movingItem?.originTx).toBe(2);
     expect(ctrl.movingItem?.originTy).toBe(2);
     // A diamond is split into two independently selectable half-steps per axis.
-    expect(ctrl.getPointerMoveTarget(3.25, 2.25)).toEqual([3, 2]);
-    expect(ctrl.getPointerMoveTarget(3.75, 2.25)).toEqual([3.5, 2]);
-    expect(ctrl.getPointerMoveTarget(3.25, 2.75)).toEqual([3, 2.5]);
+    expect(ctrl.getPointerPlacementTarget(3.25, 2.25)).toEqual([3, 2]);
+    expect(ctrl.getPointerPlacementTarget(3.75, 2.25)).toEqual([3.5, 2]);
+    expect(ctrl.getPointerPlacementTarget(3.25, 2.75)).toEqual([3, 2.5]);
 
 
     // Cancel move puts it down cleanly without exiting Decorate Mode
@@ -140,6 +146,7 @@ describe("DecorateController", () => {
       ["printer-copier", { id: "printer-copier", category: "tech", layer: "object", footprintTiles: [1, 1], source: "prop" }],
       ["water-cooler", { id: "water-cooler", category: "decor", layer: "object", footprintTiles: [1, 1], source: "prop" }],
       ["divider-low-glass", { id: "divider-low-glass", category: "architecture", layer: "object", footprintTiles: [1, 1], source: "prop" }],
+      ["divider-solid-slate", { id: "divider-solid-slate", category: "architecture", layer: "object", footprintTiles: [1, 1], source: "prop" }],
       ["divider-low-glass-corner", { id: "divider-low-glass-corner", category: "architecture", layer: "object", footprintTiles: [1, 1], source: "prop" }],
       ["divider-low-glass-door", { id: "divider-low-glass-door", category: "architecture", layer: "object", footprintTiles: [1, 1], source: "prop" }],
       ["floor-office-carpet", { id: "floor-office-carpet", category: "floor", layer: "floor", footprintTiles: [1, 1], source: "prop" }],
@@ -160,6 +167,18 @@ describe("DecorateController", () => {
     await expect(
       engine.placeFurniture({ tx: 8, ty: 11, assetId: "divider-low-glass", direction: "se", placedBy: "user" }),
     ).rejects.toThrow(/already occupies edge/i);
+
+    const divider = await engine.placeFurniture({ tx: 11, ty: 12, assetId: "divider-solid-slate", direction: "se", placedBy: "user" });
+    expect(engine.getSnapshot().campus.wallSegments.find((s) => s.assetId === "divider-solid-slate")).toMatchObject({
+      axis: "x", rx: 11, ry: 11.5, blocks: { x: 11, y: 12, side: "n" },
+    });
+    await expect(
+      engine.placeFurniture({ tx: 11, ty: 11, assetId: "divider-low-glass", direction: "nw", placedBy: "user" }),
+    ).rejects.toThrow(/already occupies edge/i);
+    await engine.moveFurniture(divider.id, { tx: 11, ty: 12, direction: "sw" });
+    expect(engine.getSnapshot().campus.wallSegments.find((s) => s.assetId === "divider-solid-slate")).toMatchObject({
+      axis: "y", rx: 10.5, ry: 12, blocks: { x: 11, y: 12, side: "w" },
+    });
 
     // 2. Place 2x1 desk straddling former 6x6 Boss/Central seam (x=5..6) — zero invisible 6x6 walls!
     const seamDesk = await engine.placeFurniture({ tx: 5, ty: 4, assetId: "desk-dev-dual", direction: "se", placedBy: "user" });

@@ -4,7 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { promisify } from "node:util";
 import { describe, expect, it } from "vitest";
-import { installHooks, installMcp } from "../src/cli/install-hooks.js";
+import { installCodexHooks, installHooks, installMcp } from "../src/cli/install-hooks.js";
 import { createHellFactoryServer } from "../src/server/index.js";
 import { OfficeEngine } from "../src/server/office-engine.js";
 import { PixcelBridge } from "../src/server/pixcel-bridge.js";
@@ -35,12 +35,14 @@ function runHookScript(
 describe("Hook scripts & safe CLI installer", () => {
   it("exits 0 silently in <1s when server is down, and delivers telemetry when server is live", async () => {
     const root = process.cwd();
+    const codexScript = path.join(root, "hooks", "codex-hook.sh");
     const claudeScript = path.join(root, "hooks", "claude-hook.sh");
     const geminiScript = path.join(root, "hooks", "gemini-cli-hook.sh");
     const agyScript = path.join(root, "hooks", "antigravity-hook.sh");
 
     // 1. Offline fail-silent check
     for (const [script, payload] of [
+      [codexScript, { hook_event_name: "PreToolUse", session_id: "cx1", cwd: "/work/codex", tool_name: "shell" }],
       [claudeScript, { hook_event_name: "PreToolUse", session_id: "c1", cwd: "/work/c", tool_name: "Edit" }],
       [geminiScript, { hook_event_name: "BeforeTool", session_id: "g1", cwd: "/work/g", tool_name: "edit_file" }],
       [agyScript, { hookEventName: "PreToolUse", conversationId: "a1", workspacePaths: ["/work/a"], toolName: "edit_file" }],
@@ -85,12 +87,51 @@ describe("Hook scripts & safe CLI installer", () => {
       );
       expect(agyRes.stdout.trim()).toBe("{}");
 
+      const codexRes = await runHookScript(codexScript, {
+        hook_event_name: "PreToolUse", session_id: "cx1", cwd: "/work/codex-proj",
+        tool_name: "shell", tool_input: { command: "secret-placeholder" },
+      }, { HELL_FACTORY_URL: srv.url });
+      expect(codexRes.stdout).toBe("");
+      expect(codexRes.stderr).toBe("");
+      expect(codexRes.code).toBe(0);
       const snap = engine.getSnapshot();
-      expect(snap.state.bays.map((b) => b.projectPath)).toEqual(["/work/claude-proj", "/work/agy-proj"]);
+      expect(snap.state.bays.map((b) => b.projectPath)).toEqual(["/work/claude-proj", "/work/agy-proj", "/work/codex-proj"]);
       expect(snap.state.employees.some((e) => e.provider === "claude")).toBe(true);
       expect(snap.state.employees.some((e) => e.provider === "gemini")).toBe(true);
+      expect(snap.state.employees.find((e) => e.provider === "codex")).toMatchObject({
+        displayName: "Codex Lead", spriteId: "agent-starter", visualState: "working",
+      });
+      await runHookScript(codexScript, {
+        hook_event_name: "Stop", session_id: "cx1", cwd: "/work/codex-proj",
+      }, { HELL_FACTORY_URL: srv.url });
+      expect(engine.getSnapshot().state.employees.find((e) => e.provider === "codex")?.visualState).toBe("reporting");
     } finally {
       await srv.close();
+    }
+  });
+
+  it("installs only Codex hooks and preserves existing definitions on repeat", async () => {
+    const dir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-codex-install-"));
+    try {
+      const file = path.join(dir, ".codex", "hooks.json");
+      await fs.mkdir(path.dirname(file));
+      const existing = { matcher: "Bash", hooks: [{ type: "command", command: "existing" }] };
+      const original = JSON.stringify({ hooks: { PreToolUse: [existing] } });
+      await fs.writeFile(file, original);
+      const opts = { homeDir: dir, projectRoot: "/work/Bob's repo" };
+      expect((await installCodexHooks({ ...opts, dryRun: true })).changes[0].action).toBe("updated");
+      expect(await fs.readFile(file, "utf8")).toBe(original);
+      const installed = await installCodexHooks(opts);
+      expect(installed.changes[0].action).toBe("updated");
+      const result = JSON.parse(await fs.readFile(file, "utf8"));
+      expect(result.hooks.PreToolUse).toHaveLength(2);
+      expect(result.hooks.PreToolUse[0]).toEqual(existing);
+      expect(result.hooks.PreToolUse[1].hooks[0].command).toContain("Bob'\\''s repo");
+      expect(result.hooks.SessionEnd).toHaveLength(1);
+      expect((await installCodexHooks(opts)).changes[0].action).toBe("unchanged");
+      expect(await fs.readdir(dir)).toEqual([".codex"]);
+    } finally {
+      await fs.rm(dir, { recursive: true, force: true });
     }
   });
 

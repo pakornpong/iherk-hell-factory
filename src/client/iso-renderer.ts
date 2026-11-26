@@ -93,6 +93,7 @@ export interface RenderSceneInput {
   bayPopAnimations?: Map<string, number>; // bayId -> 0..1 progress
   ghost?: DecorateGhostInput | null;
   zoneEditor?: ZoneEditorOverlayInput | null;
+  showZones?: boolean;
   layerOverlayMode?: LayerOverlayMode;
   hoverTile?: [number, number] | null;
   timeMs: number;
@@ -1323,6 +1324,7 @@ export class IsoRenderer {
     };
 
     const customZones = state.customZones ?? [];
+    const showZoneOverlays = input.showZones !== false || Boolean(input.zoneEditor?.active);
     if (input.zoneEditor?.active) {
       for (const cz of customZones) {
         const isEditing = input.zoneEditor.editingZoneId === cz.id;
@@ -1354,7 +1356,7 @@ export class IsoRenderer {
         ctx.fillText(previewText, Math.round(csx), Math.round(csy + 4));
         ctx.restore();
       }
-    } else if (customZones.length > 0) {
+    } else if (showZoneOverlays) {
       for (const cz of customZones) {
         drawIsoRectOutline(cz.x, cz.y, cz.width, cz.height, cz.color, 0.05, true);
       }
@@ -1384,7 +1386,7 @@ export class IsoRenderer {
     ctx.font = `bold ${Math.max(10, 6 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
     ctx.textAlign = "center";
 
-    for (const z of campus.zones) {
+    for (const z of showZoneOverlays ? campus.zones : []) {
       // Skip blank floor and Boss zone (Boss already has the live 👑 BOSS badge above his chair)
       if (z.kind === "floor" || z.kind === "boss") continue;
       // Skip default built-in Hypersleep nameplate when user defined their own editable Pods Zone
@@ -1447,7 +1449,7 @@ export class IsoRenderer {
     }
 
     // User-defined Custom Zone centered nameplates
-    for (const cz of customZones) {
+    for (const cz of showZoneOverlays ? customZones : []) {
       const [wx, wy] = getZoneCenterWorld({ originX: cz.x, originY: cz.y, width: cz.width, height: cz.height });
       if (!isInWorldBounds(wx, wy, bounds)) continue;
       const [sx, sy] = camera.worldToScreen(wx, wy);

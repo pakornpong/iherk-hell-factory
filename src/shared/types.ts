@@ -3,11 +3,12 @@ import { z } from "zod";
 export const DirectionSchema = z.enum(["se", "sw", "nw", "ne"]);
 export type Direction = z.infer<typeof DirectionSchema>;
 
-export const ProviderSchema = z.enum(["claude", "gemini"]);
+export const ProviderSchema = z.enum(["claude", "gemini", "codex"]);
 export type Provider = z.infer<typeof ProviderSchema>;
 
 export const TelemetrySourceSchema = z.enum([
   "claude-code",
+  "codex",
   "gemini-cli",
   "antigravity",
   "simulator",
@@ -319,12 +320,32 @@ export const OfficeStateSchema = z.object({
 });
 export type OfficeState = z.infer<typeof OfficeStateSchema>;
 
+const LayoutTileKeySchema = z.string().regex(/^(0|[1-9]\d{0,2}),(0|[1-9]\d{0,2})$/);
+const LayoutFurnitureListSchema = z.array(FurnitureInstanceSchema);
+const LayoutFloorSideSchema = OfficeStateSchema.shape.floorWidthTiles.unwrap();
+
+export const OfficeLayoutFileSchema = z.object({
+  format: z.literal("iherk-office-layout"),
+  version: z.literal(1),
+  theme: ThemeModeSchema,
+  widthTiles: LayoutFloorSideSchema,
+  depthTiles: LayoutFloorSideSchema,
+  bossFurniture: LayoutFurnitureListSchema,
+  zoneOverrides: z.record(z.string().regex(/^(floor:0|cowork:0|hypersleep:0|amenity:\d+)$/), LayoutFurnitureListSchema),
+  bayFurniture: z.record(z.string().regex(/^bay:[a-z0-9_-]+$/i), LayoutFurnitureListSchema),
+  commonFurniture: z.record(z.string().regex(/^common:\d+$/), LayoutFurnitureListSchema),
+  customZones: z.array(CustomZoneRecordSchema),
+  floorTileOverrides: z.record(LayoutTileKeySchema, z.string().min(1).max(128)),
+  tilePermissionOverrides: z.record(LayoutTileKeySchema, TilePermissionSchema),
+}).strict();
+export type OfficeLayoutFile = z.infer<typeof OfficeLayoutFileSchema>;
+
 export const CatalogEntrySchema = z.object({
   id: z.string().min(1),
   category: z.string().min(1),
   layer: AssetLayerSchema,
   footprintTiles: z.tuple([z.number().int().min(1), z.number().int().min(1)]),
-  source: z.enum(["starter", "prop", "character", "custom"]),
+  source: z.enum(["starter", "prop", "character", "custom", "library"]),
   frames: z.array(z.string()).optional(),
   renderLayer: RenderLayerSchema.optional(),
   tilePermission: TilePermissionSchema.optional(),

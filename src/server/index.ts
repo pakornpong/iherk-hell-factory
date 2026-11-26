@@ -324,6 +324,14 @@ export async function createHellFactoryServer(opts: {
         sendJson(res, 200, { catalog: opts.engine.getCatalog() });
         return;
       }
+      const libraryAssetMatch = /^\/api\/library-assets\/([a-z0-9-]{1,128})\/(office|day|night)$/.exec(pathname);
+      if (method === "GET" && libraryAssetMatch) {
+        const assetId = libraryAssetMatch[1];
+        const theme = ThemeModeSchema.parse(libraryAssetMatch[2]);
+        const atlas = await opts.pixcelBridge.getLibraryAtlas(assetId, theme);
+        sendJson(res, atlas ? 200 : 404, atlas ?? { error: "Library asset not found" });
+        return;
+      }
       if (method === "GET" && pathname === "/api/health") {
         sendJson(res, 200, { ok: true, demoMode: opts.engine.isDemoMode() });
         return;
@@ -347,6 +355,18 @@ export async function createHellFactoryServer(opts: {
         if (!auth.ok) {
           sendJson(res, auth.status, { error: auth.error });
           return;
+        }
+
+        if (pathname === "/api/architect/layout") {
+          if (method === "GET") {
+            sendJson(res, 200, opts.engine.exportLayout());
+            return;
+          }
+          if (method === "POST") {
+            const snapshot = await opts.engine.importLayout(await readJsonBody(req, 4 * 1024 * 1024));
+            sendJson(res, 200, { ok: true, snapshot });
+            return;
+          }
         }
 
         if (method === "POST" && pathname === "/api/architect/furniture") {

@@ -14,6 +14,7 @@ import {
   type Direction,
   type EmployeeRecord,
   type FurnitureInstance,
+  type OfficeLayoutFile,
   type OfficeSnapshotPayload,
   type OfficeState,
   type ProjectBayRecord,
@@ -41,6 +42,7 @@ import {
   resolveWorldToZone,
   validateFurniturePlacement,
 } from "./layout-engine.js";
+import { exportOfficeLayout, prepareOfficeLayoutImport } from "./layout-transfer.js";
 import type { OfficeStore } from "./store.js";
 
 const BAY_ACCENT_PALETTE = [
@@ -108,6 +110,8 @@ function isAssignTool(toolName?: string): boolean {
   const t = toolName.toLowerCase();
   return t === "agent" || t === "invoke_subagent" || t === "task";
 }
+
+const PROVIDER_LABEL: Record<Provider, string> = { claude: "Claude", gemini: "Gemini", codex: "Codex" };
 
 export class OfficeEngine extends EventEmitter {
   private state: OfficeState;
@@ -295,6 +299,26 @@ export class OfficeEngine extends EventEmitter {
     };
   }
 
+  exportLayout(): OfficeLayoutFile {
+    this.assertNotDemoMode();
+    return exportOfficeLayout(this.state, this.campus);
+  }
+
+  async importLayout(value: unknown): Promise<OfficeSnapshotPayload> {
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const catalog = this.catalogById;
+      const { state, campus } = prepareOfficeLayoutImport(
+        value, this.state, this.campus, catalog, (next) => this.computeLayoutForState(next),
+      );
+      await this.store.save(state);
+      this.state = state;
+      this.campus = catalog === this.catalogById ? campus : this.computeLayoutForState(state);
+      this.emitSnapshot();
+      return this.getSnapshot();
+    });
+  }
+
   private recomputeCampus(): void {
     this.campus = this.computeLayoutForState(this.state);
   }
@@ -318,12 +342,12 @@ export class OfficeEngine extends EventEmitter {
   }
 
   private providerBaseSprite(provider: Provider): string {
-    return provider === "claude" ? "agent-claude" : "agent-gemini";
+    return provider === "codex" ? "agent-starter" : `agent-${provider}`;
   }
 
   private providerVariantSprite(provider: Provider, variantIdx: number): string {
     const base = this.providerBaseSprite(provider);
-    if (variantIdx <= 0) return base;
+    if (variantIdx <= 0 || provider === "codex") return base;
     return `${base}-v${((variantIdx - 1) % 3) + 1}`;
   }
 
@@ -430,8 +454,8 @@ export class OfficeEngine extends EventEmitter {
         spriteId: this.providerVariantSprite(ev.provider, Math.max(1, variantIdx)),
         // Name says which project it works for, since every project's subagents share the co-working room
         displayName: `${ev.agentRole
-          ? `${ev.provider === "claude" ? "Claude" : "Gemini"} · ${ev.agentRole}`
-          : `${ev.provider === "claude" ? "Claude" : "Gemini"} Sub`} @ ${bay.displayName}`.slice(0, 128),
+          ? `${PROVIDER_LABEL[ev.provider]} · ${ev.agentRole}`
+          : `${PROVIDER_LABEL[ev.provider]} Sub`} @ ${bay.displayName}`.slice(0, 128),
         role: ev.agentRole ?? "Subagent",
         sessionId: ev.sessionId,
         agentId: ev.agentId,
@@ -454,7 +478,7 @@ export class OfficeEngine extends EventEmitter {
     if (unboundStarter) {
       unboundStarter.provider = ev.provider;
       unboundStarter.spriteId = this.providerBaseSprite(ev.provider);
-      unboundStarter.displayName = ev.provider === "claude" ? "Claude Lead" : "Gemini Lead";
+      unboundStarter.displayName = `${PROVIDER_LABEL[ev.provider]} Lead`;
       if (ev.agentRole) unboundStarter.role = ev.agentRole;
       unboundStarter.sessionId = ev.sessionId;
       unboundStarter.lastUpdatedAt = ts;
@@ -476,7 +500,7 @@ export class OfficeEngine extends EventEmitter {
       bayId: bay.id,
       provider: ev.provider,
       spriteId: this.providerBaseSprite(ev.provider),
-      displayName: ev.provider === "claude" ? "Claude Lead" : "Gemini Lead",
+      displayName: `${PROVIDER_LABEL[ev.provider]} Lead`,
       role: ev.agentRole ?? "Lead",
       sessionId: ev.sessionId,
       isEphemeral: false,

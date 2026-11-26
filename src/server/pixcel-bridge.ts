@@ -1,8 +1,9 @@
+import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { resolveAssetLayerConfig } from "../shared/layers.js";
-import type { AssetLayer, CatalogEntry, Direction, ThemeMode } from "../shared/types.js";
+import { CatalogEntrySchema, type AssetLayer, type CatalogEntry, type Direction, type ThemeMode } from "../shared/types.js";
 
 export const CHARACTER_CLIPS = [
   "idle_0",
@@ -623,12 +624,23 @@ function renderHypersleepWithTranslucentGlass(
   return full;
 }
 
+const LIBRARY_ID = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const LIBRARY_ATLAS_VERSION = "v1";
+
+interface LibraryAsset {
+  filePath: string;
+  catalog: CatalogEntry;
+}
+
 export class PixcelBridge {
   private corePromise: Promise<PixcelCoreModules> | null = null;
   private readonly starterDir: string;
   private readonly propsDir: string;
   private readonly charsDir: string;
   private readonly customDir: string;
+  private readonly libraryDir: string;
+  private libraryPromise?: Promise<Map<string, LibraryAsset>>;
+  private readonly pendingLibraryAtlases = new Map<string, Promise<Record<string, unknown>>>();
 
   constructor(
     private readonly opts: {
@@ -641,6 +653,7 @@ export class PixcelBridge {
     this.propsDir = path.join(opts.projectRoot, "assets", "pixcel", "props");
     this.charsDir = path.join(opts.projectRoot, "assets", "pixcel", "characters");
     this.customDir = path.join(opts.projectRoot, "assets", "pixcel", "custom");
+    this.libraryDir = path.join(opts.projectRoot, "assets", "pixcel", "library");
   }
 
   private async loadCore(): Promise<PixcelCoreModules> {
@@ -771,19 +784,135 @@ export class PixcelBridge {
     });
   }
 
+  private getLibraryRegistry(): Promise<Map<string, LibraryAsset>> {
+    this.libraryPromise ??= this.readLibraryRegistry().catch((error) => {
+      this.libraryPromise = undefined;
+      throw error;
+    });
+    return this.libraryPromise;
+  }
+
+  private async readLibraryRegistry(): Promise<Map<string, LibraryAsset>> {
+    const registry = new Map<string, LibraryAsset>();
+    const entries = await fs.readdir(this.libraryDir, { withFileTypes: true }).catch((error) => {
+      if (error.code === "ENOENT") return [];
+      throw error;
+    });
+    if (entries.length === 0) return registry;
+    const libraryRoot = await fs.realpath(this.libraryDir);
+    const categories = entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();
+    for (const category of categories) {
+      const categoryDir = path.join(this.libraryDir, category);
+      const indexPath = await fs.realpath(path.join(categoryDir, "index.json")).catch((error) => {
+        if (error.code === "ENOENT") return undefined;
+        throw error;
+      });
+      if (!indexPath) continue;
+      if (!indexPath.startsWith(libraryRoot + path.sep)) {
+        throw new Error(`Pixcel library index resolves outside the library: ${category}`);
+      }
+      const index = JSON.parse(await fs.readFile(indexPath, "utf8")) as unknown;
+      if (!Array.isArray(index)) throw new Error(`Invalid Pixcel library index: ${category}`);
+      for (const row of index) {
+        const id = row?.id;
+        const file = row?.file;
+        if (typeof id !== "string" || id.length > 128 || !LIBRARY_ID.test(id) ||
+            typeof file !== "string" || !/^\d{3}\/[^/]+\.pixcel\.json$/.test(file) ||
+            path.basename(file) !== `${id}.pixcel.json`) {
+          throw new Error(`Invalid Pixcel library entry: ${category}`);
+        }
+        if (registry.has(id)) throw new Error(`Duplicate Pixcel library ID: ${id}`);
+
+        const filePath = await fs.realpath(path.join(categoryDir, file));
+        if (!filePath.startsWith(libraryRoot + path.sep)) {
+          throw new Error(`Pixcel library entry resolves outside the library: ${id}`);
+        }
+        const raw = JSON.parse(await fs.readFile(filePath, "utf8"));
+        if (raw.id !== id || raw.category !== row.category) {
+          throw new Error(`Mismatched Pixcel library entry: ${id}`);
+        }
+        const layer = raw.category === "tabletop" ? "tabletop" : raw.layer;
+        const cfg = resolveAssetLayerConfig(id, layer);
+        const catalog = CatalogEntrySchema.parse({
+          id,
+          category: raw.category,
+          layer,
+          footprintTiles: raw.footprintTiles,
+          source: "library",
+          frames: frameNames(raw),
+          renderLayer: cfg.renderLayer,
+          tilePermission: cfg.tilePermission,
+          surfaceHeightVoxels: cfg.surfaceHeightVoxels,
+          foregroundAssetId: cfg.foregroundAssetId,
+        });
+        registry.set(id, { filePath, catalog });
+      }
+    }
+    return registry;
+  }
+
+  async getLibraryAtlas(id: string, theme: ThemeMode): Promise<Record<string, unknown> | null> {
+    if (!LIBRARY_ID.test(id)) return null;
+    const entry = (await this.getLibraryRegistry()).get(id);
+    if (!entry) return null;
+    const key = `${theme}:${id}`;
+    const current = this.pendingLibraryAtlases.get(key);
+    if (current) return current;
+
+    const loading = this.buildLibraryAtlas(entry, theme).finally(() => this.pendingLibraryAtlases.delete(key));
+    this.pendingLibraryAtlases.set(key, loading);
+    return loading;
+  }
+
+  private async buildLibraryAtlas(entry: LibraryAsset, theme: ThemeMode): Promise<Record<string, unknown>> {
+    const source = await fs.readFile(entry.filePath, "utf8");
+    const digest = createHash("sha256").update(LIBRARY_ATLAS_VERSION).update(source).digest("hex").slice(0, 16);
+    const baseName = `${entry.catalog.id}-${theme}-${digest}`;
+    const outDir = path.join(this.opts.runtimeOutDir, "library");
+    const atlasPath = path.join(outDir, `${baseName}.json`);
+    const cached = await fs.readFile(atlasPath, "utf8").catch((error) => {
+      if (error.code === "ENOENT") return undefined;
+      throw error;
+    });
+    if (cached) return JSON.parse(cached) as Record<string, unknown>;
+
+    const core = await this.loadCore();
+    const asset = core.PixcelAssetSchema.parse(JSON.parse(source));
+    if (asset.id !== entry.catalog.id) throw new Error("Library asset ID changed");
+    const packed = core.packSpriteAtlas(this.renderAssetsToSprites(core, [asset], theme), {
+      imageName: `${baseName}.png`,
+      emissiveImageName: `${baseName}_emissive.png`,
+      tilePreset: "64x32",
+      padding: 1,
+    });
+    await fs.mkdir(outDir, { recursive: true });
+    await fs.writeFile(path.join(outDir, `${baseName}.png`), core.encodePNG(packed.sheet));
+    if (packed.emissiveSheet) {
+      await fs.writeFile(path.join(outDir, `${baseName}_emissive.png`), core.encodePNG(packed.emissiveSheet));
+    }
+    const temporaryAtlasPath = `${atlasPath}.${process.pid}.tmp`;
+    await fs.writeFile(temporaryAtlasPath, JSON.stringify(packed.atlas), "utf8");
+    await fs.rename(temporaryAtlasPath, atlasPath);
+    return packed.atlas;
+  }
+
   async listCatalog(): Promise<CatalogEntry[]> {
-    const [starter, props, chars, custom] = await Promise.all([
+    const [starter, props, chars, custom, library] = await Promise.all([
       this.readAssetsFromDir(this.starterDir, "starter"),
       this.readAssetsFromDir(this.propsDir, "prop"),
       this.loadCharacterAssets(),
       this.readAssetsFromDir(this.customDir, "custom"),
+      this.getLibraryRegistry(),
     ]);
     // Local project props override starter assets of the same id (e.g. ergonomic chair-office-swivel)
     const byId = new Map<string, { asset: PixcelAssetLike; source: CatalogEntry["source"] }>();
     for (const item of [...starter, ...props, ...chars, ...custom]) {
       byId.set(item.asset.id, item);
     }
-    return this.toCatalogEntries([...byId.values()]);
+    return [
+      ...this.toCatalogEntries([...byId.values()]),
+      ...[...library.values()].filter(({ catalog }) => !byId.has(catalog.id)).map(({ catalog }) => catalog),
+    ];
   }
 
   async buildCoreAtlases(): Promise<{

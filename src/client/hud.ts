@@ -13,6 +13,7 @@ import {
   type ThemeMode,
 } from "../shared/types.js";
 import type { AtlasManager } from "./atlas-loader.js";
+import { getCatalogCategoryLabel, getCatalogTags, matchesCatalogSearch } from "./catalog-search.js";
 import type { DecorateController } from "./decorate.js";
 import type { LayerOverlayMode } from "./iso-renderer.js";
 import type { SimEmployeeVisual } from "./sim.js";
@@ -131,6 +132,16 @@ export class OfficeHud {
   private baySearch = "";
   private catalogSearch = "";
   private catalogCategory = "all";
+  private catalogPage = 0;
+  private catalogSubcategory = "";
+  private catalogTag = "";
+  private indexedCatalog?: readonly CatalogEntry[];
+  private catalogTagsById = new Map<string, string[]>();
+  private readonly previewQueue = new Map<HTMLImageElement, () => Promise<void>>();
+  private readonly previewJobs = new WeakMap<HTMLImageElement, () => Promise<void>>();
+  private readonly previewFailures = new Set<string>();
+  private previewLoads = 0;
+  private previewObserver?: IntersectionObserver;
   private showArchived = false;
   private activeAgentsTab: "working" | "all" = "working";
   private activeAgentsCollapsed = false;
@@ -158,6 +169,21 @@ export class OfficeHud {
     const catSearchInput = document.getElementById("catalog-search") as HTMLInputElement | null;
     catSearchInput?.addEventListener("input", () => {
       this.catalogSearch = catSearchInput.value.trim().toLowerCase();
+      this.catalogPage = 0;
+      this.cb.onDecorateChanged();
+    });
+
+    const subcategory = document.getElementById("catalog-subcategory") as HTMLSelectElement;
+    subcategory.addEventListener("change", () => {
+      this.catalogSubcategory = subcategory.value;
+      this.catalogTag = "";
+      this.catalogPage = 0;
+      this.cb.onDecorateChanged();
+    });
+    const tag = document.getElementById("catalog-tag") as HTMLSelectElement;
+    tag.addEventListener("change", () => {
+      this.catalogTag = tag.value;
+      this.catalogPage = 0;
       this.cb.onDecorateChanged();
     });
 
@@ -621,6 +647,7 @@ export class OfficeHud {
       const team = state.employees.filter((e) => e.bayId === bay.id);
       const hasClaude = team.some((e) => e.provider === "claude");
       const hasGemini = team.some((e) => e.provider === "gemini");
+      const hasCodex = team.some((e) => e.provider === "codex");
       const row = document.createElement("div");
       row.className = "bay-item";
       row.innerHTML = `
@@ -631,6 +658,7 @@ export class OfficeHud {
         <div class="bay-item-meta">
           ${hasClaude ? '<span class="badge claude">C</span>' : ""}
           ${hasGemini ? '<span class="badge gemini">G</span>' : ""}
+          ${hasCodex ? '<span class="badge" title="Codex">CX</span>' : ""}
           <span class="bay-count">${team.length}</span>
           <button class="bay-arch-btn" title="${bay.archived ? "Restore" : "Archive"}">${bay.archived ? "↩" : "×"}</button>
         </div>
@@ -647,6 +675,10 @@ export class OfficeHud {
 
     // Furniture & Floor Catalog (when Decorate Mode is open)
     if (this.decorate.active) {
+      if (this.indexedCatalog !== catalog) {
+        this.indexedCatalog = catalog;
+        this.catalogTagsById = new Map(catalog.map((item) => [item.id, getCatalogTags(item)]));
+      }
       const placeables = catalog
         .filter(
           (c) =>
@@ -661,6 +693,7 @@ export class OfficeHud {
 
       const categoryLabels: Record<string, string> = {
         all: "All",
+        library: "Pixcel Library",
         floor: "🎨 Floor",
         tabletop: "💡 Tabletop",
         lab: "🧪 Lab",
@@ -681,6 +714,7 @@ export class OfficeHud {
       };
       const categoryOrder = [
         "all",
+        "library",
         "floor",
         "tabletop",
         "lab",
@@ -700,6 +734,7 @@ export class OfficeHud {
         "architecture",
       ];
       const availableCats = new Set(placeables.map((p) => p.category));
+      if (placeables.some((item) => item.source === "library")) availableCats.add("library");
       const filterEl = document.getElementById("catalog-filters");
       if (filterEl) {
         filterEl.innerHTML = "";
@@ -710,42 +745,108 @@ export class OfficeHud {
           btn.textContent = categoryLabels[cat] ?? cat;
           btn.addEventListener("click", () => {
             this.catalogCategory = cat;
+            this.catalogSubcategory = "";
+            this.catalogTag = "";
+            this.catalogPage = 0;
             this.cb.onDecorateChanged();
           });
           filterEl.appendChild(btn);
         }
       }
 
-      const filteredPlaceables = placeables.filter((item) => {
-        if (this.catalogCategory !== "all" && item.category !== this.catalogCategory) return false;
-        if (this.catalogSearch) {
-          return (
-            item.id.toLowerCase().includes(this.catalogSearch) ||
-            item.category.toLowerCase().includes(this.catalogSearch)
-          );
-        }
-        return true;
+      const scope = placeables.filter((item) => this.catalogCategory === "all" ||
+        (this.catalogCategory === "library" ? item.source === "library" : item.category === this.catalogCategory));
+      const subcategories = Array.from(new Set(scope.map((item) => item.category)));
+      this.catalogSubcategory = this.updateCatalogFilter(
+        "catalog-subcategory", "ทุกหมวด", subcategories, this.catalogSubcategory, getCatalogCategoryLabel,
+      );
+      const categoryMatches = this.catalogSubcategory
+        ? scope.filter((item) => item.category === this.catalogSubcategory) : scope;
+      const tags = new Set<string>();
+      for (const item of categoryMatches) {
+        for (const tag of this.catalogTagsById.get(item.id) ?? []) tags.add(tag);
+      }
+      this.catalogTag = this.updateCatalogFilter("catalog-tag", "ทุกแท็ก", tags, this.catalogTag);
+      const filteredPlaceables = categoryMatches.filter((item) => {
+        const tags = this.catalogTagsById.get(item.id) ?? [];
+        return (!this.catalogTag || tags.includes(this.catalogTag)) &&
+          matchesCatalogSearch(item, tags, this.catalogSearch);
       });
 
       const catEl = document.getElementById("catalog-list")!;
+      this.previewObserver?.disconnect();
+      this.previewQueue.clear();
       catEl.innerHTML = "";
-      for (const item of filteredPlaceables) {
+      if (!filteredPlaceables.length) {
+        const empty = document.createElement("div");
+        empty.className = "catalog-empty";
+        empty.textContent = "ไม่พบ asset ที่ตรงกับตัวกรอง";
+        catEl.appendChild(empty);
+      }
+      const pageSize = 80;
+      this.catalogPage = Math.min(this.catalogPage, Math.max(0, Math.ceil(filteredPlaceables.length / pageSize) - 1));
+      const pageStart = this.catalogPage * pageSize;
+      for (const item of filteredPlaceables.slice(pageStart, pageStart + pageSize)) {
         const btn = document.createElement("button");
         btn.className = `cat-item ${this.decorate.selectedAssetId === item.id && this.decorate.tool === "place" ? "selected" : ""}`;
         const thumbUrl = atlas?.getThumbnailDataUrl(state.theme, item.id, 30);
-        const thumbHtml = thumbUrl ? `<img class="cat-thumb" src="${thumbUrl}" alt="" />` : "";
+        const previewPending = item.source === "library" && atlas && !thumbUrl;
+        const thumbHtml = thumbUrl
+          ? `<img class="cat-thumb" src="${thumbUrl}" alt="" />`
+          : previewPending ? '<img class="cat-thumb" alt="" />' : "";
+        const tags = this.catalogTagsById.get(item.id) ?? [];
+        const categoryLabel = getCatalogCategoryLabel(item.category);
+        btn.title = [item.id, categoryLabel, ...tags].join(" · ");
         btn.innerHTML = `
           <span class="cat-item-left">
             ${thumbHtml}
-            <span class="cat-item-name">${escapeHtml(item.id)}</span>
+            <span class="cat-item-details">
+              <span class="cat-item-name">${escapeHtml(item.id)}</span>
+              <span class="cat-item-keywords">${escapeHtml([categoryLabel, ...tags.slice(0, 3)].join(" · "))}</span>
+            </span>
           </span>
           <span class="cat-tag">${item.source === "custom" ? "✨ Gemini" : item.layer === "floor" ? "🎨 Floor" : item.layer === "tabletop" ? "💡 Top" : `${item.footprintTiles[0]}×${item.footprintTiles[1]}`}</span>
         `;
         btn.addEventListener("click", () => {
           this.decorate.selectAsset(item.id);
           this.cb.onDecorateChanged();
+          if (item.source === "library" && atlas) {
+            void atlas.loadLibraryAsset(state.theme, item.id)
+              .then(() => {
+                if (this.decorate.selectedAssetId === item.id) this.cb.onDecorateChanged();
+              })
+              .catch(() => this.showToast(`โหลดภาพ ${item.id} ไม่สำเร็จ`, true));
+          }
         });
         catEl.appendChild(btn);
+        if (previewPending) {
+          const image = btn.querySelector<HTMLImageElement>(".cat-thumb");
+          if (image) this.observeLibraryPreview(catEl, image, atlas, state.theme, item.id);
+        }
+      }
+      if (filteredPlaceables.length > pageSize) {
+        const pagination = document.createElement("div");
+        pagination.className = "catalog-pagination";
+        pagination.setAttribute("role", "group");
+        pagination.setAttribute("aria-label", "หน้าแค็ตตาล็อก");
+        const addPageButton = (label: string, delta: number, disabled: boolean) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.textContent = label;
+          button.disabled = disabled;
+          button.addEventListener("click", () => {
+            this.catalogPage += delta;
+            catEl.scrollTop = 0;
+            this.cb.onDecorateChanged();
+          });
+          pagination.appendChild(button);
+        };
+        addPageButton("← ก่อนหน้า", -1, this.catalogPage === 0);
+        const pageLabel = document.createElement("span");
+        pageLabel.textContent = `${this.catalogPage + 1} / ${Math.ceil(filteredPlaceables.length / pageSize)}`;
+        pagination.appendChild(pageLabel);
+        addPageButton("ถัดไป →", 1, pageStart + pageSize >= filteredPlaceables.length);
+        catEl.prepend(pagination);
       }
     }
 
@@ -760,6 +861,77 @@ export class OfficeHud {
     } else {
       inspEl.classList.remove("hidden");
       this.renderInspector(emp, snapshot);
+    }
+  }
+
+  private updateCatalogFilter(
+    id: string,
+    placeholder: string,
+    values: Iterable<string>,
+    current: string,
+    getLabel: (value: string) => string = (value) => value,
+  ): string {
+    const select = document.getElementById(id) as HTMLSelectElement;
+    const choices = Array.from(values, (value) => ({ value, label: getLabel(value) }))
+      .sort((a, b) => a.label.localeCompare(b.label, "th"));
+    const normalized = choices.some(({ value }) => value === current) ? current : "";
+    const optionsChanged = select.options.length !== choices.length + 1 ||
+      choices.some(({ value, label }, index) =>
+        select.options[index + 1].value !== value || select.options[index + 1].text !== label,
+      );
+    if (optionsChanged) {
+      select.replaceChildren(new Option(placeholder, ""), ...choices.map(({ value, label }) => new Option(label, value)));
+    }
+    select.value = normalized;
+    select.disabled = choices.length === 0;
+    return normalized;
+  }
+
+  private observeLibraryPreview(
+    catalogList: HTMLElement,
+    image: HTMLImageElement,
+    atlas: AtlasManager,
+    theme: ThemeMode,
+    assetId: string,
+  ): void {
+    const key = `${theme}:${assetId}`;
+    if (this.previewFailures.has(key)) return;
+    this.previewObserver ??= new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        const image = entry.target as HTMLImageElement;
+        if (!entry.isIntersecting) {
+          this.previewQueue.delete(image);
+          continue;
+        }
+        const job = this.previewJobs.get(image);
+        if (job) this.previewQueue.set(image, job);
+      }
+      this.loadVisiblePreviews();
+    }, { root: catalogList });
+
+    this.previewJobs.set(image, async () => {
+      try {
+        await atlas.loadLibraryAsset(theme, assetId);
+        const url = atlas.getThumbnailDataUrl(theme, assetId, 30);
+        if (url && image.isConnected) image.src = url;
+      } catch {
+        this.previewFailures.add(key);
+      }
+    });
+    this.previewObserver.observe(image);
+  }
+
+  private loadVisiblePreviews(): void {
+    for (const [image, load] of this.previewQueue) {
+      if (this.previewLoads >= 2) return;
+      this.previewQueue.delete(image);
+      this.previewObserver?.unobserve(image);
+      if (!image.isConnected) continue;
+      this.previewLoads++;
+      void load().finally(() => {
+        this.previewLoads--;
+        this.loadVisiblePreviews();
+      });
     }
   }
 
@@ -842,7 +1014,7 @@ export class OfficeHud {
           </div>
           <div class="active-agent-badges">
             ${roleMeta ? `<span class="role-badge" style="color:${roleMeta.color}">${roleMeta.shortLabel}</span>` : ""}
-            <span class="badge ${emp.provider ?? "starter"}">${emp.provider === "claude" ? "C" : emp.provider === "gemini" ? "G" : "S"}</span>
+            <span class="badge ${emp.provider ?? "starter"}">${emp.provider === "claude" ? "C" : emp.provider === "gemini" ? "G" : emp.provider === "codex" ? "CX" : "S"}</span>
           </div>
         </div>
         <div class="active-agent-meta">

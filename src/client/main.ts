@@ -66,6 +66,19 @@ async function bootstrap(): Promise<void> {
   let hoverTile: [number, number] | null = null;
   let cameraInitialized = false;
   let lastDrawTs = 0;
+  let showZones = localStorage.getItem("hf-show-zones") !== "false";
+  const zoneVisibilityButton = document.getElementById("btn-zone-visibility");
+  const updateZoneVisibilityButton = () => {
+    zoneVisibilityButton?.classList.toggle("active", showZones);
+    zoneVisibilityButton?.setAttribute("aria-pressed", String(showZones));
+  };
+  updateZoneVisibilityButton();
+  zoneVisibilityButton?.addEventListener("click", () => {
+    showZones = !showZones;
+    updateZoneVisibilityButton();
+    lastDrawTs = Number.NEGATIVE_INFINITY;
+    localStorage.setItem("hf-show-zones", String(showZones));
+  });
   const layerState: LayerEditorState = { mode: "off", brush: "inspect", selectedFurnitureId: null };
   const zoneEditorState: ZoneEditorState = {
     active: false,
@@ -428,6 +441,7 @@ async function bootstrap(): Promise<void> {
       const data = (await res.json()) as { catalog: CatalogEntry[] };
       catalog = data.catalog;
       catalogById = new Map(catalog.map((c) => [c.id, c]));
+      atlas.setLibraryAssets(catalog.filter((item) => item.source === "library").map((item) => item.id));
     }
   };
 
@@ -443,6 +457,74 @@ async function bootstrap(): Promise<void> {
     }
     refreshHud();
   };
+
+  const exportLayout = document.getElementById("btn-export-layout") as HTMLButtonElement;
+  const importLayout = document.getElementById("btn-import-layout") as HTMLButtonElement;
+  const importFile = document.getElementById("import-layout-file") as HTMLInputElement;
+  const setLayoutBusy = (busy: boolean) => {
+    exportLayout.disabled = busy;
+    importLayout.disabled = busy;
+  };
+  exportLayout.addEventListener("click", async () => {
+    setLayoutBusy(true);
+    try {
+      const layout = await architectFetch<unknown>("/api/architect/layout", { method: "GET" });
+      const blob = new Blob([`${JSON.stringify(layout, null, 2)}\n`], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      const date = new Date();
+      const localDay = date.toLocaleDateString("sv-SE");
+      link.download = `hell-factory-layout-${localDay}.json`;
+      document.body.append(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1_000);
+      hud.showToast("Export ผังแล้ว");
+    } catch (error) {
+      hud.showToast(error instanceof Error ? error.message : String(error), true);
+    } finally {
+      setLayoutBusy(false);
+    }
+  });
+  importLayout.addEventListener("click", () => importFile.click());
+  importFile.addEventListener("change", async () => {
+    const file = importFile.files?.[0];
+    importFile.value = "";
+    if (!file) return;
+    setLayoutBusy(true);
+    try {
+      if (file.size > 4 * 1024 * 1024) throw new Error("ไฟล์ผังมีขนาดเกิน 4 MB");
+      const raw = await file.text();
+      let layout: unknown;
+      try {
+        layout = JSON.parse(raw);
+      } catch {
+        throw new Error("อ่านไฟล์ไม่ได้ กรุณาเลือกไฟล์ JSON ที่ Export จาก Hell Factory");
+      }
+      if (typeof layout !== "object" || layout === null || !("format" in layout) ||
+          layout.format !== "iherk-office-layout" || !("version" in layout) || layout.version !== 1) {
+        throw new Error("ไฟล์นี้ไม่ใช่ไฟล์ผัง Hell Factory เวอร์ชันที่รองรับ");
+      }
+      if (!window.confirm(`นำเข้าผังจาก “${file.name}” แทนที่ผังปัจจุบันหรือไม่?\nหากต้องการเก็บผังเดิม ให้ยกเลิกแล้วกด Export ผังก่อน`)) return;
+      const imported = await architectFetch<{ snapshot?: OfficeSnapshotPayload }>("/api/architect/layout", {
+        method: "POST",
+        body: JSON.stringify(layout),
+      });
+      decorate.resetLayoutHistory();
+      zoneEditorState.startTile = null;
+      zoneEditorState.editingZoneId = null;
+      layerState.selectedFurnitureId = null;
+      renderer.lastHitBoxes = [];
+      if (imported.snapshot) applySnapshot(imported.snapshot);
+      else refreshHud();
+      hud.showToast("Import ผังสำเร็จ");
+    } catch (error) {
+      hud.showToast(error instanceof Error ? error.message : String(error), true);
+    } finally {
+      setLayoutBusy(false);
+    }
+  });
 
   // Initial fetch
   const initRes = await fetch("/api/state");
@@ -675,7 +757,7 @@ async function bootstrap(): Promise<void> {
         return;
       }
       const wasHolding = Boolean(decorate.movingItem);
-      const [targetX, targetY] = wasHolding ? decorate.getPointerMoveTarget(tileX, tileY) : [tx, ty];
+      const [targetX, targetY] = decorate.getPointerPlacementTarget(tileX, tileY);
       void decorate
         .handleTileClick(targetX, targetY, existing)
         .then(() => {
@@ -900,12 +982,10 @@ async function bootstrap(): Promise<void> {
           : decorate.tool === "move"
             ? decorate.movingItem?.item.assetId ?? null
             : null;
-      const pointerTarget = decorate.movingItem && furniturePointer
-        ? decorate.getPointerMoveTarget(...camera.screenToTile(...furniturePointer))
+      const pointerTarget = furniturePointer
+        ? decorate.getPointerPlacementTarget(...camera.screenToTile(...furniturePointer))
         : null;
-      const placementTile = decorate.movingItem
-        ? decorate.movingItem.keyboardTarget ?? pointerTarget
-        : hoverTile;
+      const placementTile = decorate.movingItem?.keyboardTarget ?? pointerTarget;
       if (decorate.active && ghostAssetId && placementTile) {
         const [tx, ty] = placementTile;
         const zone =
@@ -1078,7 +1158,7 @@ async function bootstrap(): Promise<void> {
           tx,
           ty,
           assetId: ghostAssetId,
-          manualPosition: Boolean(decorate.movingItem),
+          manualPosition: ghostAssetId === "chair-office-swivel",
           direction: decorate.direction,
           valid,
           ...(surfaceOffsetY > 0 ? { surfaceOffsetY } : {}),
@@ -1110,6 +1190,7 @@ async function bootstrap(): Promise<void> {
       selectedLayerFurnitureId: layerState.mode === "layers" ? layerState.selectedFurnitureId : null,
       bayPopAnimations: sim.getBayPopAnimations(),
       ghost,
+      showZones,
       zoneEditor: zoneEditorState.active
         ? {
             active: true,

@@ -10,7 +10,7 @@ import { createHellFactoryServer } from "../server/index.js";
 import { OfficeEngine } from "../server/office-engine.js";
 import { PixcelBridge } from "../server/pixcel-bridge.js";
 import { OfficeStore } from "../server/store.js";
-import { installHooks, installMcp } from "./install-hooks.js";
+import { installCodexHooks, installHooks, installMcp } from "./install-hooks.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = process.env.HELL_FACTORY_ROOT ?? path.resolve(__dirname, "..", "..");
@@ -29,6 +29,7 @@ Usage:
   hell-factory mcp [--port 7140]
   hell-factory build-assets
   hell-factory install-hooks [--dry-run] [--with-mcp]
+  hell-factory install-codex-hooks [--dry-run]
   hell-factory install-mcp [--dry-run]
 `);
 }
@@ -157,6 +158,20 @@ async function main(): Promise<void> {
         projectRoot: PROJECT_ROOT,
         runtimeOutDir: RUNTIME_ASSETS_DIR,
       });
+      break;
+    }
+
+    case "install-codex-hooks": {
+      const { values } = parseArgs({
+        args: rest,
+        options: { "dry-run": { type: "boolean", default: false } },
+      });
+      const report = await installCodexHooks({
+        homeDir: os.homedir(),
+        projectRoot: PROJECT_ROOT,
+        dryRun: Boolean(values["dry-run"]),
+      });
+      console.log(JSON.stringify(report, null, 2));
       break;
     }
 

@@ -120,10 +120,16 @@ export class DecorateController {
     return this.redoStack.length > 0;
   }
 
-  getPointerMoveTarget(x: number, y: number): [number, number] {
-    const assetId = this.movingItem?.item.assetId;
+  getPointerPlacementTarget(x: number, y: number): [number, number] {
+    const assetId = this.tool === "place" ? this.selectedAssetId : this.movingItem?.item.assetId;
     const scale = assetId && supportsHalfTilePlacement(assetId) ? 2 : 1;
     return [Math.floor(x * scale) / scale, Math.floor(y * scale) / scale];
+  }
+
+  resetLayoutHistory(): void {
+    this.movingItem = null;
+    this.undoStack.length = 0;
+    this.redoStack.length = 0;
   }
 
   nudgeMove(dx: number, dy: number, visualOrigin?: [number, number]): void {
@@ -199,6 +205,7 @@ export class DecorateController {
       ty,
       assetId: this.selectedAssetId,
       direction: this.direction,
+      ...(this.selectedAssetId === "chair-office-swivel" ? { manualPosition: true } : {}),
     });
     this.undoStack.push({ kind: "place", item: created, tx, ty });
     this.redoStack.length = 0;
