@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "id": "electronics-travel-voltage-adapter-station-retail-cradle",
+  "category": "electronics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "charcoal": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#606e77"
+    },
+    "alloy": {
+      "kind": "metal",
+      "color": "#9facad"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd2bc"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627e94"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a46151"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#a59078"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a68058"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda16c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab7"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#a8c1cf",
+      "glowRadius": 1,
+      "glowIntensity": 0.09
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        39,
+        25,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        38,
+        24,
+        6
+      ],
+      "material": "tan"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        3
+      ],
+      "to": [
+        13,
+        25,
+        4
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        7,
+        6
+      ],
+      "to": [
+        38,
+        10,
+        13
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        7
+      ],
+      "to": [
+        19,
+        20,
+        15
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        20,
+        9
+      ],
+      "to": [
+        18,
+        21,
+        13
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        21,
+        10
+      ],
+      "to": [
+        10,
+        24,
+        11
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        21,
+        10
+      ],
+      "to": [
+        15,
+        24,
+        11
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        11,
+        7
+      ],
+      "to": [
+        38,
+        20,
+        12
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        35,
+        16
+      ],
+      "zFrom": 12,
+      "zTo": 13,
+      "radius": 1,
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        19,
+        14,
+        10
+      ],
+      "to": [
+        33,
+        14,
+        10
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        9,
+        12
+      ],
+      "to": [
+        38,
+        17,
+        19
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        17,
+        14
+      ],
+      "to": [
+        37,
+        17,
+        17
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        11,
+        19
+      ],
+      "to": [
+        35,
+        14,
+        20
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        7
+      ],
+      "to": [
+        7,
+        9,
+        17
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        15
+      ],
+      "to": [
+        13,
+        9,
+        18
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        16
+      ],
+      "to": [
+        12,
+        9,
+        17
+      ],
+      "material": "blue"
+    }
+  ]
+}

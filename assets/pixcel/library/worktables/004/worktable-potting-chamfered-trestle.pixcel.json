@@ -1,0 +1,596 @@
+{
+  "schemaVersion": 1,
+  "id": "worktable-potting-chamfered-trestle",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#bb8250"
+    },
+    "shaded": {
+      "kind": "wood",
+      "color": "#87563e"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#465462"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6bac4"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#63825b"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b95142"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#293343"
+    },
+    "ceramic": {
+      "kind": "matte",
+      "color": "#e3e3d7"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#e5ac54"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        10,
+        26,
+        2
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        2
+      ],
+      "to": [
+        9,
+        19,
+        15
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        13
+      ],
+      "to": [
+        10,
+        25,
+        15
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        2
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        13,
+        2
+      ],
+      "to": [
+        55,
+        19,
+        15
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        8,
+        13
+      ],
+      "to": [
+        56,
+        25,
+        15
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        15,
+        5
+      ],
+      "to": [
+        53,
+        17,
+        7
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        4,
+        16
+      ],
+      "to": [
+        54,
+        4,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        16
+      ],
+      "to": [
+        55,
+        5,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        16
+      ],
+      "to": [
+        56,
+        6,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        16
+      ],
+      "to": [
+        57,
+        7,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        16
+      ],
+      "to": [
+        58,
+        8,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        16
+      ],
+      "to": [
+        59,
+        9,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        10,
+        16
+      ],
+      "to": [
+        60,
+        10,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        11,
+        16
+      ],
+      "to": [
+        60,
+        11,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        12,
+        16
+      ],
+      "to": [
+        60,
+        12,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        13,
+        16
+      ],
+      "to": [
+        60,
+        13,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        14,
+        16
+      ],
+      "to": [
+        60,
+        14,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        15,
+        16
+      ],
+      "to": [
+        60,
+        15,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        16,
+        16
+      ],
+      "to": [
+        60,
+        16,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        17,
+        16
+      ],
+      "to": [
+        60,
+        17,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        18,
+        16
+      ],
+      "to": [
+        60,
+        18,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        19,
+        16
+      ],
+      "to": [
+        60,
+        19,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        20,
+        16
+      ],
+      "to": [
+        60,
+        20,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        21,
+        16
+      ],
+      "to": [
+        60,
+        21,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        22,
+        16
+      ],
+      "to": [
+        60,
+        22,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        16
+      ],
+      "to": [
+        59,
+        23,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        16
+      ],
+      "to": [
+        58,
+        24,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        25,
+        16
+      ],
+      "to": [
+        57,
+        25,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        26,
+        16
+      ],
+      "to": [
+        56,
+        26,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        27,
+        16
+      ],
+      "to": [
+        55,
+        27,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        28,
+        16
+      ],
+      "to": [
+        54,
+        28,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        7,
+        19
+      ],
+      "to": [
+        49,
+        9,
+        27
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        9,
+        26
+      ],
+      "to": [
+        46,
+        14,
+        27
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        16
+      ],
+      "zFrom": 19,
+      "zTo": 24,
+      "radius": 3,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        16
+      ],
+      "zFrom": 25,
+      "zTo": 27,
+      "radius": 2,
+      "material": "teal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        32,
+        20
+      ],
+      "zFrom": 19,
+      "zTo": 24,
+      "radius": 3,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        32,
+        20
+      ],
+      "zFrom": 25,
+      "zTo": 28,
+      "radius": 2,
+      "material": "teal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        40,
+        16
+      ],
+      "zFrom": 19,
+      "zTo": 24,
+      "radius": 3,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        40,
+        16
+      ],
+      "zFrom": 25,
+      "zTo": 29,
+      "radius": 2,
+      "material": "teal"
+    }
+  ]
+}

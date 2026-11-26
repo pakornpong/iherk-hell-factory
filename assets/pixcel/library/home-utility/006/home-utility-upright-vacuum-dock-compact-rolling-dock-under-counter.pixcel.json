@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "id": "home-utility-upright-vacuum-dock-compact-rolling-dock-under-counter",
+  "category": "home-appliance",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ivory": {
+      "kind": "matte",
+      "color": "#d9d4ca"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#aaa39a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#979fa2"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#67727b"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e454c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab4"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a37653"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#89705d"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e4ddc8"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ad6555"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bb9b62"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        10,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        7,
+        0
+      ],
+      "to": [
+        24,
+        10,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        22,
+        0
+      ],
+      "to": [
+        24,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        3
+      ],
+      "to": [
+        25,
+        25,
+        4
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        5
+      ],
+      "to": [
+        6,
+        6,
+        15
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        5,
+        5
+      ],
+      "to": [
+        25,
+        6,
+        15
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        5
+      ],
+      "to": [
+        22,
+        24,
+        8
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        13,
+        9
+      ],
+      "to": [
+        18,
+        18,
+        26
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        16
+      ],
+      "zFrom": 13,
+      "zTo": 24,
+      "radius": 3,
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        12,
+        27
+      ],
+      "to": [
+        15,
+        13,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        11,
+        40
+      ],
+      "to": [
+        20,
+        16,
+        42
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        7,
+        5
+      ],
+      "to": [
+        24,
+        12,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        10,
+        21
+      ],
+      "to": [
+        24,
+        18,
+        23
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        6
+      ],
+      "to": [
+        6,
+        24,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        6,
+        6
+      ],
+      "to": [
+        25,
+        24,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        4,
+        44
+      ],
+      "to": [
+        27,
+        28,
+        46
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        6,
+        29
+      ],
+      "to": [
+        4,
+        26,
+        44
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        6,
+        29
+      ],
+      "to": [
+        26,
+        26,
+        44
+      ],
+      "material": "oak"
+    }
+  ]
+}

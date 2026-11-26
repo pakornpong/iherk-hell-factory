@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "id": "bakery-flour-sifter-mill-compact-stone-counter",
+  "category": "bakery",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9da7a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596670"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e464b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a6815f"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#aaa29b"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded2bd"
+    },
+    "pastry": {
+      "kind": "matte",
+      "color": "#bd975e"
+    },
+    "toast": {
+      "kind": "matte",
+      "color": "#a5764f"
+    },
+    "dough": {
+      "kind": "matte",
+      "color": "#cfb696"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a56856"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#647a8d"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eaeb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        28,
+        24,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        12
+      ],
+      "to": [
+        29,
+        26,
+        13
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        7
+      ],
+      "to": [
+        26,
+        25,
+        10
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        28,
+        24,
+        18
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        14
+      ],
+      "zFrom": 19,
+      "zTo": 24,
+      "radius": 5,
+      "material": "zinc"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        14
+      ],
+      "zFrom": 24,
+      "zTo": 31,
+      "radius": 7,
+      "material": "zinc"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        14
+      ],
+      "zFrom": 32,
+      "zTo": 32,
+      "radius": 6,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        14
+      ],
+      "zFrom": 33,
+      "zTo": 37,
+      "radius": 2,
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        14,
+        36
+      ],
+      "to": [
+        23,
+        14,
+        37
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        14
+      ],
+      "zFrom": 37,
+      "zTo": 39,
+      "radius": 1,
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        18,
+        19
+      ],
+      "to": [
+        27,
+        23,
+        25
+      ],
+      "material": "dough"
+    }
+  ]
+}

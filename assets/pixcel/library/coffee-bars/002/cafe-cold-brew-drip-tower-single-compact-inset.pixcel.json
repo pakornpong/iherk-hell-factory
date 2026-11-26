@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "id": "cafe-cold-brew-drip-tower-single-compact-inset",
+  "category": "coffee-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa815d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#725543"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3f4649"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0a8a9"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b47d5e"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7caba"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#a5a09a"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aab4"
+    },
+    "coffee": {
+      "kind": "matte",
+      "color": "#675143"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a76a57"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89f7a"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7387"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        1
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        1
+      ],
+      "to": [
+        26,
+        24,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        6
+      ],
+      "to": [
+        7,
+        21,
+        40
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        6
+      ],
+      "to": [
+        26,
+        21,
+        40
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        18
+      ],
+      "to": [
+        26,
+        18,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        28
+      ],
+      "to": [
+        26,
+        18,
+        30
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        38
+      ],
+      "to": [
+        26,
+        18,
+        40
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        13
+      ],
+      "zFrom": 31,
+      "zTo": 37,
+      "radius": 5,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        13
+      ],
+      "zFrom": 26,
+      "zTo": 28,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        13
+      ],
+      "zFrom": 20,
+      "zTo": 26,
+      "radius": 3,
+      "material": "coffee"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        13
+      ],
+      "zFrom": 7,
+      "zTo": 16,
+      "radius": 5,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        13
+      ],
+      "zFrom": 8,
+      "zTo": 11,
+      "radius": 4,
+      "material": "coffee"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        13,
+        17
+      ],
+      "to": [
+        16,
+        13,
+        20
+      ],
+      "material": "glass"
+    }
+  ]
+}

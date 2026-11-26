@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "id": "bakery-bread-tray-cooling-rack-compact-proofing-base",
+  "category": "bakery",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9da7a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596670"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e464b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a6815f"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#aaa29b"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded2bd"
+    },
+    "pastry": {
+      "kind": "matte",
+      "color": "#bd975e"
+    },
+    "toast": {
+      "kind": "matte",
+      "color": "#a5764f"
+    },
+    "dough": {
+      "kind": "matte",
+      "color": "#cfb696"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a56856"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#647a8d"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eaeb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        2
+      ],
+      "to": [
+        28,
+        25,
+        7
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        8
+      ],
+      "to": [
+        28,
+        24,
+        9
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        6
+      ],
+      "to": [
+        24,
+        26,
+        6
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        10
+      ],
+      "to": [
+        6,
+        8,
+        44
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        10
+      ],
+      "to": [
+        6,
+        23,
+        44
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        7,
+        10
+      ],
+      "to": [
+        28,
+        8,
+        44
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        22,
+        10
+      ],
+      "to": [
+        28,
+        23,
+        44
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        15
+      ],
+      "to": [
+        28,
+        24,
+        16
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 19,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 19,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 19,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 19,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        23
+      ],
+      "to": [
+        28,
+        24,
+        24
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        15
+      ],
+      "zFrom": 25,
+      "zTo": 27,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        15
+      ],
+      "zFrom": 25,
+      "zTo": 27,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        15
+      ],
+      "zFrom": 25,
+      "zTo": 27,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        15
+      ],
+      "zFrom": 25,
+      "zTo": 27,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        31
+      ],
+      "to": [
+        28,
+        24,
+        32
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        15
+      ],
+      "zFrom": 33,
+      "zTo": 35,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        15
+      ],
+      "zFrom": 33,
+      "zTo": 35,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        15
+      ],
+      "zFrom": 33,
+      "zTo": 35,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        15
+      ],
+      "zFrom": 33,
+      "zTo": 35,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        39
+      ],
+      "to": [
+        28,
+        24,
+        40
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        15
+      ],
+      "zFrom": 41,
+      "zTo": 43,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        15
+      ],
+      "zFrom": 41,
+      "zTo": 43,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        15
+      ],
+      "zFrom": 41,
+      "zTo": 43,
+      "radius": 2,
+      "material": "toast"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        15
+      ],
+      "zFrom": 41,
+      "zTo": 43,
+      "radius": 2,
+      "material": "toast"
+    }
+  ]
+}

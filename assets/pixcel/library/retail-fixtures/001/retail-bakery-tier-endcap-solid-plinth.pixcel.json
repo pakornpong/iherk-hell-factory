@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "id": "retail-bakery-tier-endcap-solid-plinth",
+  "category": "retail",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9da5a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#535a60"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad825d"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89775"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#34383d"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#d9d3c4"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a55b50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a167"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#63798c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eacb6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        26,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        25,
+        24,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        6
+      ],
+      "to": [
+        22,
+        25,
+        9
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        13
+      ],
+      "to": [
+        25,
+        24,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        17
+      ],
+      "to": [
+        25,
+        17,
+        24
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        25
+      ],
+      "to": [
+        25,
+        10,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        21
+      ],
+      "zFrom": 17,
+      "zTo": 18,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        25
+      ],
+      "to": [
+        10,
+        16,
+        26
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        8
+      ],
+      "zFrom": 33,
+      "zTo": 35,
+      "radius": 2,
+      "material": "kraft"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        21
+      ],
+      "zFrom": 17,
+      "zTo": 18,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        25
+      ],
+      "to": [
+        19,
+        16,
+        26
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        8
+      ],
+      "zFrom": 33,
+      "zTo": 35,
+      "radius": 2,
+      "material": "kraft"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        21
+      ],
+      "zFrom": 17,
+      "zTo": 18,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        12,
+        25
+      ],
+      "to": [
+        23,
+        16,
+        26
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        8
+      ],
+      "zFrom": 33,
+      "zTo": 35,
+      "radius": 2,
+      "material": "kraft"
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "id": "textile-buttonholer-jig-wide-machine-frame",
+  "category": "textile",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#745741"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaaa"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#53606b"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d8d0bd"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#aa9a86"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#687e91"
+    },
+    "terracotta": {
+      "kind": "matte",
+      "color": "#a96557"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404850"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bc9d65"
+    },
+    "pale": {
+      "kind": "glass",
+      "color": "#9ab1b8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        1
+      ],
+      "to": [
+        7,
+        11,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        20,
+        1
+      ],
+      "to": [
+        54,
+        22,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        13
+      ],
+      "to": [
+        55,
+        25,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        21,
+        0
+      ],
+      "to": [
+        18,
+        25,
+        1
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        15
+      ],
+      "to": [
+        54,
+        24,
+        20
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        21
+      ],
+      "to": [
+        52,
+        12,
+        32
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        27
+      ],
+      "to": [
+        51,
+        16,
+        32
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        17,
+        20
+      ],
+      "to": [
+        50,
+        21,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        14,
+        25
+      ],
+      "to": [
+        12,
+        18,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        17,
+        22
+      ],
+      "to": [
+        20,
+        21,
+        22
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        10,
+        32
+      ],
+      "to": [
+        51,
+        15,
+        35
+      ],
+      "material": "blue"
+    }
+  ]
+}

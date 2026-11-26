@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "id": "sport-pool-lifeguard-chair-extended-gym-timber",
+  "category": "sports",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "metal",
+      "color": "#8d9ba3"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#596772"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#404a51"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#ddd2bf"
+    },
+    "court": {
+      "kind": "matte",
+      "color": "#a67259"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d92"
+    },
+    "turf": {
+      "kind": "matte",
+      "color": "#718063"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b79c7b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a57d58"
+    },
+    "rope": {
+      "kind": "matte",
+      "color": "#b5a28a"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c9a468"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        9,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        2
+      ],
+      "to": [
+        55,
+        14,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        2
+      ],
+      "to": [
+        55,
+        19,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        2
+      ],
+      "to": [
+        55,
+        24,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        8,
+        3
+      ],
+      "to": [
+        7,
+        13,
+        30
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        23,
+        3
+      ],
+      "to": [
+        7,
+        19,
+        30
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        50,
+        8,
+        3
+      ],
+      "to": [
+        50,
+        13,
+        30
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        50,
+        23,
+        3
+      ],
+      "to": [
+        50,
+        19,
+        30
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        28
+      ],
+      "to": [
+        53,
+        20,
+        30
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        12,
+        30
+      ],
+      "to": [
+        52,
+        14,
+        42
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        21,
+        8
+      ],
+      "to": [
+        52,
+        22,
+        9
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        20,
+        14
+      ],
+      "to": [
+        52,
+        21,
+        15
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        19,
+        20
+      ],
+      "to": [
+        52,
+        20,
+        21
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        38
+      ],
+      "to": [
+        51,
+        11,
+        40
+      ],
+      "material": "court"
+    }
+  ]
+}

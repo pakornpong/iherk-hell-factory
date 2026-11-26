@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "id": "washbasin-square-vanity-vessel-bowl-wall-spout",
+  "category": "bathroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "porcelain": {
+      "kind": "matte",
+      "color": "#e4e5de"
+    },
+    "shadow": {
+      "kind": "matte",
+      "color": "#b6b9b6"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#98aeb9"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#515354"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a97a53"
+    },
+    "tile": {
+      "kind": "matte",
+      "color": "#b6bdbe"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c2a060"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#78aebc"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        26,
+        27,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        26,
+        25,
+        20
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        25,
+        5
+      ],
+      "to": [
+        24,
+        26,
+        10
+      ],
+      "material": "tile"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        25,
+        12
+      ],
+      "to": [
+        24,
+        26,
+        18
+      ],
+      "material": "tile"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        27,
+        7
+      ],
+      "to": [
+        21,
+        27,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        27,
+        15
+      ],
+      "to": [
+        21,
+        27,
+        15
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        20
+      ],
+      "to": [
+        27,
+        27,
+        21
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        18
+      ],
+      "zFrom": 22,
+      "zTo": 24,
+      "radius": 7,
+      "material": "porcelain"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        18
+      ],
+      "zFrom": 25,
+      "zTo": 27,
+      "radius": 8,
+      "material": "porcelain"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        18
+      ],
+      "zFrom": 25,
+      "zTo": 27,
+      "radius": 6,
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        22
+      ],
+      "to": [
+        26,
+        6,
+        33
+      ],
+      "material": "tile"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        6,
+        28
+      ],
+      "to": [
+        16,
+        14,
+        29
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        14
+      ],
+      "zFrom": 27,
+      "zTo": 28,
+      "radius": 1,
+      "material": "chrome"
+    }
+  ]
+}

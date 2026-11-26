@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "id": "light-softbox-square-counter-scissor",
+  "category": "lighting",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "black": {
+      "kind": "matte",
+      "color": "#323a47"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8599a8"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99258"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a95548"
+    },
+    "case": {
+      "kind": "matte",
+      "color": "#4c6872"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#b0c3cb"
+    },
+    "lamp": {
+      "kind": "emissive",
+      "color": "#fff1ca",
+      "glowRadius": 1,
+      "glowIntensity": 0.2
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        26,
+        23,
+        1
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        2
+      ],
+      "to": [
+        25,
+        22,
+        4
+      ],
+      "material": "case"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        13
+      ],
+      "zFrom": 5,
+      "zTo": 8,
+      "radius": 4,
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        13,
+        8
+      ],
+      "to": [
+        14,
+        21,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        21,
+        18
+      ],
+      "to": [
+        14,
+        10,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        10,
+        28
+      ],
+      "to": [
+        14,
+        14,
+        36
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        13,
+        8
+      ],
+      "to": [
+        16,
+        21,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        21,
+        18
+      ],
+      "to": [
+        16,
+        10,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        10,
+        28
+      ],
+      "to": [
+        16,
+        14,
+        36
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        34
+      ],
+      "to": [
+        17,
+        14,
+        42
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        32
+      ],
+      "to": [
+        20,
+        16,
+        45
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        16,
+        30
+      ],
+      "to": [
+        23,
+        20,
+        47
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        31
+      ],
+      "to": [
+        22,
+        20,
+        46
+      ],
+      "material": "lamp"
+    }
+  ]
+}

@@ -1,0 +1,688 @@
+[
+  {
+    "id": "cafe-dual-group-espresso-single-compact-inset",
+    "category": "coffee-service",
+    "file": "001/cafe-dual-group-espresso-single-compact-inset.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "cafe-dual-group-espresso-single-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "001/cafe-dual-group-espresso-single-fluted-front-bar.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "cafe-dual-group-espresso-single-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "001/cafe-dual-group-espresso-single-wheeled-pop-up.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "cafe-dual-group-espresso-single-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "001/cafe-dual-group-espresso-single-arched-cafe-counter.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "cafe-dual-group-espresso-single-backbar-shelf",
+    "category": "coffee-service",
+    "file": "001/cafe-dual-group-espresso-single-backbar-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "cafe-dual-group-espresso-double-compact-inset",
+    "category": "coffee-service",
+    "file": "001/cafe-dual-group-espresso-double-compact-inset.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "cafe-dual-group-espresso-double-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "001/cafe-dual-group-espresso-double-fluted-front-bar.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "cafe-dual-group-espresso-double-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "001/cafe-dual-group-espresso-double-wheeled-pop-up.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "cafe-dual-group-espresso-double-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "001/cafe-dual-group-espresso-double-arched-cafe-counter.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "cafe-dual-group-espresso-double-backbar-shelf",
+    "category": "coffee-service",
+    "file": "001/cafe-dual-group-espresso-double-backbar-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "cafe-manual-pour-over-rack-single-compact-inset",
+    "category": "coffee-service",
+    "file": "001/cafe-manual-pour-over-rack-single-compact-inset.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "cafe-manual-pour-over-rack-single-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "001/cafe-manual-pour-over-rack-single-fluted-front-bar.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "cafe-manual-pour-over-rack-single-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "001/cafe-manual-pour-over-rack-single-wheeled-pop-up.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "cafe-manual-pour-over-rack-single-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "001/cafe-manual-pour-over-rack-single-arched-cafe-counter.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "cafe-manual-pour-over-rack-single-backbar-shelf",
+    "category": "coffee-service",
+    "file": "001/cafe-manual-pour-over-rack-single-backbar-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "cafe-manual-pour-over-rack-double-compact-inset",
+    "category": "coffee-service",
+    "file": "001/cafe-manual-pour-over-rack-double-compact-inset.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "cafe-manual-pour-over-rack-double-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "001/cafe-manual-pour-over-rack-double-fluted-front-bar.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "cafe-manual-pour-over-rack-double-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "001/cafe-manual-pour-over-rack-double-wheeled-pop-up.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "cafe-manual-pour-over-rack-double-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "001/cafe-manual-pour-over-rack-double-arched-cafe-counter.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "cafe-manual-pour-over-rack-double-backbar-shelf",
+    "category": "coffee-service",
+    "file": "001/cafe-manual-pour-over-rack-double-backbar-shelf.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "cafe-cold-brew-drip-tower-single-compact-inset",
+    "category": "coffee-service",
+    "file": "002/cafe-cold-brew-drip-tower-single-compact-inset.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "cafe-cold-brew-drip-tower-single-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "002/cafe-cold-brew-drip-tower-single-fluted-front-bar.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "cafe-cold-brew-drip-tower-single-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "002/cafe-cold-brew-drip-tower-single-wheeled-pop-up.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "cafe-cold-brew-drip-tower-single-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "002/cafe-cold-brew-drip-tower-single-arched-cafe-counter.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "cafe-cold-brew-drip-tower-double-compact-inset",
+    "category": "coffee-service",
+    "file": "002/cafe-cold-brew-drip-tower-double-compact-inset.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "cafe-cold-brew-drip-tower-double-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "002/cafe-cold-brew-drip-tower-double-fluted-front-bar.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "cafe-cold-brew-drip-tower-double-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "002/cafe-cold-brew-drip-tower-double-wheeled-pop-up.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "cafe-cold-brew-drip-tower-double-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "002/cafe-cold-brew-drip-tower-double-arched-cafe-counter.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "cafe-bulk-bean-grinders-single-compact-inset",
+    "category": "coffee-service",
+    "file": "002/cafe-bulk-bean-grinders-single-compact-inset.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "cafe-bulk-bean-grinders-single-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "002/cafe-bulk-bean-grinders-single-fluted-front-bar.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "cafe-bulk-bean-grinders-single-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "002/cafe-bulk-bean-grinders-single-wheeled-pop-up.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "cafe-bulk-bean-grinders-single-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "002/cafe-bulk-bean-grinders-single-arched-cafe-counter.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "cafe-bulk-bean-grinders-single-backbar-shelf",
+    "category": "coffee-service",
+    "file": "002/cafe-bulk-bean-grinders-single-backbar-shelf.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "cafe-bulk-bean-grinders-double-compact-inset",
+    "category": "coffee-service",
+    "file": "002/cafe-bulk-bean-grinders-double-compact-inset.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "cafe-bulk-bean-grinders-double-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "002/cafe-bulk-bean-grinders-double-fluted-front-bar.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "cafe-bulk-bean-grinders-double-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "002/cafe-bulk-bean-grinders-double-wheeled-pop-up.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "cafe-bulk-bean-grinders-double-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "002/cafe-bulk-bean-grinders-double-arched-cafe-counter.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "cafe-bulk-bean-grinders-double-backbar-shelf",
+    "category": "coffee-service",
+    "file": "002/cafe-bulk-bean-grinders-double-backbar-shelf.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "cafe-small-batch-bean-roaster-single-compact-inset",
+    "category": "coffee-service",
+    "file": "002/cafe-small-batch-bean-roaster-single-compact-inset.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "cafe-small-batch-bean-roaster-single-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "002/cafe-small-batch-bean-roaster-single-fluted-front-bar.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "cafe-small-batch-bean-roaster-single-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "003/cafe-small-batch-bean-roaster-single-wheeled-pop-up.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "cafe-small-batch-bean-roaster-single-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "003/cafe-small-batch-bean-roaster-single-arched-cafe-counter.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "cafe-small-batch-bean-roaster-single-backbar-shelf",
+    "category": "coffee-service",
+    "file": "003/cafe-small-batch-bean-roaster-single-backbar-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "cafe-small-batch-bean-roaster-double-compact-inset",
+    "category": "coffee-service",
+    "file": "003/cafe-small-batch-bean-roaster-double-compact-inset.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "cafe-small-batch-bean-roaster-double-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "003/cafe-small-batch-bean-roaster-double-fluted-front-bar.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "cafe-small-batch-bean-roaster-double-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "003/cafe-small-batch-bean-roaster-double-wheeled-pop-up.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "cafe-small-batch-bean-roaster-double-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "003/cafe-small-batch-bean-roaster-double-arched-cafe-counter.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "cafe-small-batch-bean-roaster-double-backbar-shelf",
+    "category": "coffee-service",
+    "file": "003/cafe-small-batch-bean-roaster-double-backbar-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "cafe-tea-urn-and-caddies-single-compact-inset",
+    "category": "coffee-service",
+    "file": "003/cafe-tea-urn-and-caddies-single-compact-inset.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "cafe-tea-urn-and-caddies-single-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "003/cafe-tea-urn-and-caddies-single-fluted-front-bar.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "cafe-tea-urn-and-caddies-single-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "003/cafe-tea-urn-and-caddies-single-wheeled-pop-up.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "cafe-tea-urn-and-caddies-single-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "003/cafe-tea-urn-and-caddies-single-arched-cafe-counter.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "cafe-tea-urn-and-caddies-single-backbar-shelf",
+    "category": "coffee-service",
+    "file": "003/cafe-tea-urn-and-caddies-single-backbar-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "cafe-tea-urn-and-caddies-double-compact-inset",
+    "category": "coffee-service",
+    "file": "003/cafe-tea-urn-and-caddies-double-compact-inset.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "cafe-tea-urn-and-caddies-double-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "003/cafe-tea-urn-and-caddies-double-fluted-front-bar.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "cafe-tea-urn-and-caddies-double-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "003/cafe-tea-urn-and-caddies-double-wheeled-pop-up.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "cafe-tea-urn-and-caddies-double-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "003/cafe-tea-urn-and-caddies-double-arched-cafe-counter.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "cafe-tea-urn-and-caddies-double-backbar-shelf",
+    "category": "coffee-service",
+    "file": "003/cafe-tea-urn-and-caddies-double-backbar-shelf.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "cafe-pastry-dome-display-single-compact-inset",
+    "category": "coffee-service",
+    "file": "003/cafe-pastry-dome-display-single-compact-inset.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "cafe-pastry-dome-display-single-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "003/cafe-pastry-dome-display-single-fluted-front-bar.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "cafe-pastry-dome-display-single-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "004/cafe-pastry-dome-display-single-wheeled-pop-up.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "cafe-pastry-dome-display-single-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "004/cafe-pastry-dome-display-single-arched-cafe-counter.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "cafe-pastry-dome-display-single-backbar-shelf",
+    "category": "coffee-service",
+    "file": "004/cafe-pastry-dome-display-single-backbar-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "cafe-pastry-dome-display-double-compact-inset",
+    "category": "coffee-service",
+    "file": "004/cafe-pastry-dome-display-double-compact-inset.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "cafe-pastry-dome-display-double-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "004/cafe-pastry-dome-display-double-fluted-front-bar.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "cafe-pastry-dome-display-double-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "004/cafe-pastry-dome-display-double-wheeled-pop-up.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "cafe-pastry-dome-display-double-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "004/cafe-pastry-dome-display-double-arched-cafe-counter.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "cafe-pastry-dome-display-double-backbar-shelf",
+    "category": "coffee-service",
+    "file": "004/cafe-pastry-dome-display-double-backbar-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "cafe-cash-and-ticket-counter-single-compact-inset",
+    "category": "coffee-service",
+    "file": "004/cafe-cash-and-ticket-counter-single-compact-inset.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "cafe-cash-and-ticket-counter-single-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "004/cafe-cash-and-ticket-counter-single-fluted-front-bar.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "cafe-cash-and-ticket-counter-single-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "004/cafe-cash-and-ticket-counter-single-wheeled-pop-up.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "cafe-cash-and-ticket-counter-single-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "004/cafe-cash-and-ticket-counter-single-arched-cafe-counter.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "cafe-cash-and-ticket-counter-single-backbar-shelf",
+    "category": "coffee-service",
+    "file": "004/cafe-cash-and-ticket-counter-single-backbar-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "cafe-cash-and-ticket-counter-double-compact-inset",
+    "category": "coffee-service",
+    "file": "004/cafe-cash-and-ticket-counter-double-compact-inset.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "cafe-cash-and-ticket-counter-double-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "004/cafe-cash-and-ticket-counter-double-fluted-front-bar.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "cafe-cash-and-ticket-counter-double-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "004/cafe-cash-and-ticket-counter-double-wheeled-pop-up.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "cafe-cash-and-ticket-counter-double-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "004/cafe-cash-and-ticket-counter-double-arched-cafe-counter.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "cafe-cash-and-ticket-counter-double-backbar-shelf",
+    "category": "coffee-service",
+    "file": "004/cafe-cash-and-ticket-counter-double-backbar-shelf.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "cafe-cup-lid-condiment-rail-single-compact-inset",
+    "category": "coffee-service",
+    "file": "004/cafe-cup-lid-condiment-rail-single-compact-inset.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "cafe-cup-lid-condiment-rail-single-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "004/cafe-cup-lid-condiment-rail-single-fluted-front-bar.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "cafe-cup-lid-condiment-rail-single-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "005/cafe-cup-lid-condiment-rail-single-wheeled-pop-up.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "cafe-cup-lid-condiment-rail-single-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "005/cafe-cup-lid-condiment-rail-single-arched-cafe-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "cafe-cup-lid-condiment-rail-single-backbar-shelf",
+    "category": "coffee-service",
+    "file": "005/cafe-cup-lid-condiment-rail-single-backbar-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "cafe-cup-lid-condiment-rail-double-compact-inset",
+    "category": "coffee-service",
+    "file": "005/cafe-cup-lid-condiment-rail-double-compact-inset.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "cafe-cup-lid-condiment-rail-double-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "005/cafe-cup-lid-condiment-rail-double-fluted-front-bar.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "cafe-cup-lid-condiment-rail-double-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "005/cafe-cup-lid-condiment-rail-double-wheeled-pop-up.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "cafe-cup-lid-condiment-rail-double-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "005/cafe-cup-lid-condiment-rail-double-arched-cafe-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "cafe-cup-lid-condiment-rail-double-backbar-shelf",
+    "category": "coffee-service",
+    "file": "005/cafe-cup-lid-condiment-rail-double-backbar-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "cafe-syrup-pump-flight-single-compact-inset",
+    "category": "coffee-service",
+    "file": "005/cafe-syrup-pump-flight-single-compact-inset.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "cafe-syrup-pump-flight-single-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "005/cafe-syrup-pump-flight-single-fluted-front-bar.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "cafe-syrup-pump-flight-single-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "005/cafe-syrup-pump-flight-single-wheeled-pop-up.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "cafe-syrup-pump-flight-single-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "005/cafe-syrup-pump-flight-single-arched-cafe-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "cafe-syrup-pump-flight-single-backbar-shelf",
+    "category": "coffee-service",
+    "file": "005/cafe-syrup-pump-flight-single-backbar-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "cafe-syrup-pump-flight-double-compact-inset",
+    "category": "coffee-service",
+    "file": "005/cafe-syrup-pump-flight-double-compact-inset.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "cafe-syrup-pump-flight-double-fluted-front-bar",
+    "category": "coffee-service",
+    "file": "005/cafe-syrup-pump-flight-double-fluted-front-bar.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "cafe-syrup-pump-flight-double-wheeled-pop-up",
+    "category": "coffee-service",
+    "file": "005/cafe-syrup-pump-flight-double-wheeled-pop-up.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "cafe-syrup-pump-flight-double-arched-cafe-counter",
+    "category": "coffee-service",
+    "file": "005/cafe-syrup-pump-flight-double-arched-cafe-counter.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "cafe-syrup-pump-flight-double-backbar-shelf",
+    "category": "coffee-service",
+    "file": "005/cafe-syrup-pump-flight-double-backbar-shelf.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  }
+]

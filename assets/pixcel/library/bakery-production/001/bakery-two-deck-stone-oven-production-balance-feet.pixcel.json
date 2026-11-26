@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "id": "bakery-two-deck-stone-oven-production-balance-feet",
+  "category": "bakery",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9da7a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596670"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e464b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a6815f"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#aaa29b"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded2bd"
+    },
+    "pastry": {
+      "kind": "matte",
+      "color": "#bd975e"
+    },
+    "toast": {
+      "kind": "matte",
+      "color": "#a5764f"
+    },
+    "dough": {
+      "kind": "matte",
+      "color": "#cfb696"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a56856"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#647a8d"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eaeb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        9,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        22,
+        0
+      ],
+      "to": [
+        55,
+        24,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        56,
+        25,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        55,
+        24,
+        34
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        8
+      ],
+      "to": [
+        54,
+        25,
+        18
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        9
+      ],
+      "to": [
+        52,
+        25,
+        16
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        17
+      ],
+      "to": [
+        52,
+        26,
+        18
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        20
+      ],
+      "to": [
+        54,
+        25,
+        30
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        21
+      ],
+      "to": [
+        52,
+        25,
+        28
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        29
+      ],
+      "to": [
+        52,
+        26,
+        30
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        20,
+        33
+      ],
+      "to": [
+        53,
+        23,
+        35
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        23,
+        34
+      ],
+      "to": [
+        51,
+        23,
+        35
+      ],
+      "material": "ivory"
+    }
+  ]
+}

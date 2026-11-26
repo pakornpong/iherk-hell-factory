@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "id": "marina-life-jacket-cabinet-yard-wide-stamped-service-tray",
+  "category": "maritime",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a4866b"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#698294"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9caaa9"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596672"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#40494e"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#ad6d56"
+    },
+    "ochre": {
+      "kind": "matte",
+      "color": "#c19e62"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b69c7e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba7b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        54,
+        24,
+        4
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        4
+      ],
+      "to": [
+        54,
+        25,
+        5
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        5
+      ],
+      "to": [
+        54,
+        10,
+        34
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        7,
+        24,
+        34
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        34
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        33
+      ],
+      "to": [
+        54,
+        24,
+        35
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        7
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        17
+      ],
+      "to": [
+        10,
+        16,
+        28
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        16,
+        20
+      ],
+      "to": [
+        10,
+        17,
+        21
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        16,
+        25
+      ],
+      "to": [
+        10,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        12,
+        17
+      ],
+      "to": [
+        15,
+        16,
+        28
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        16,
+        20
+      ],
+      "to": [
+        15,
+        17,
+        21
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        16,
+        25
+      ],
+      "to": [
+        15,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        12,
+        17
+      ],
+      "to": [
+        20,
+        16,
+        28
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        16,
+        20
+      ],
+      "to": [
+        20,
+        17,
+        21
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        16,
+        25
+      ],
+      "to": [
+        20,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        12,
+        17
+      ],
+      "to": [
+        25,
+        16,
+        28
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        16,
+        20
+      ],
+      "to": [
+        25,
+        17,
+        21
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        16,
+        25
+      ],
+      "to": [
+        25,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        12,
+        17
+      ],
+      "to": [
+        30,
+        16,
+        28
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        16,
+        20
+      ],
+      "to": [
+        30,
+        17,
+        21
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        16,
+        25
+      ],
+      "to": [
+        30,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        12,
+        17
+      ],
+      "to": [
+        35,
+        16,
+        28
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        16,
+        20
+      ],
+      "to": [
+        35,
+        17,
+        21
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        16,
+        25
+      ],
+      "to": [
+        35,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        12,
+        17
+      ],
+      "to": [
+        40,
+        16,
+        28
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        16,
+        20
+      ],
+      "to": [
+        40,
+        17,
+        21
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        16,
+        25
+      ],
+      "to": [
+        40,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        12,
+        17
+      ],
+      "to": [
+        45,
+        16,
+        28
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        16,
+        20
+      ],
+      "to": [
+        45,
+        17,
+        21
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        16,
+        25
+      ],
+      "to": [
+        45,
+        17,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        12,
+        17
+      ],
+      "to": [
+        50,
+        16,
+        28
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        16,
+        20
+      ],
+      "to": [
+        50,
+        17,
+        21
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        16,
+        25
+      ],
+      "to": [
+        50,
+        17,
+        26
+      ],
+      "material": "black"
+    }
+  ]
+}

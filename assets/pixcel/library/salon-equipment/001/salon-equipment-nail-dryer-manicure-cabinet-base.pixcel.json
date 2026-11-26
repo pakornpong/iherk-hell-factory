@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "id": "salon-equipment-nail-dryer-manicure-cabinet-base",
+  "category": "personal-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        12
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        12
+      ],
+      "to": [
+        27,
+        26,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        5
+      ],
+      "to": [
+        23,
+        25,
+        10
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        8
+      ],
+      "to": [
+        20,
+        26,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        14
+      ],
+      "to": [
+        27,
+        25,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        19
+      ],
+      "to": [
+        16,
+        18,
+        24
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        24
+      ],
+      "to": [
+        15,
+        17,
+        26
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        17,
+        20
+      ],
+      "to": [
+        14,
+        18,
+        22
+      ],
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        10
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        13
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        25,
+        16
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        19
+      ],
+      "to": [
+        23,
+        23,
+        22
+      ],
+      "material": "textile"
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "id": "growhouse-orchard-crate-scale-single-earth-floor",
+  "category": "horticulture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a17f5c"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#606b73"
+    },
+    "soil": {
+      "kind": "matte",
+      "color": "#655142"
+    },
+    "fern": {
+      "kind": "matte",
+      "color": "#627c58"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#809664"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7388"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76b56"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a267"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8ccb6"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aeb9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#424a4e"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        0
+      ],
+      "to": [
+        31,
+        27,
+        1
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        2
+      ],
+      "to": [
+        30,
+        26,
+        3
+      ],
+      "material": "soil"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        3
+      ],
+      "to": [
+        30,
+        7,
+        3
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        30,
+        25,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        9
+      ],
+      "to": [
+        23,
+        23,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        12
+      ],
+      "to": [
+        21,
+        21,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 19,
+      "radius": 2,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 19,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 19,
+      "radius": 2,
+      "material": "clay"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        8
+      ],
+      "to": [
+        26,
+        9,
+        24
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        7,
+        23
+      ],
+      "to": [
+        28,
+        12,
+        28
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        12,
+        24
+      ],
+      "to": [
+        27,
+        12,
+        27
+      ],
+      "material": "glass"
+    }
+  ]
+}

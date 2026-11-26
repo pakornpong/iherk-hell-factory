@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "id": "classroom-felt-storyboard-cart-shelf",
+  "category": "education",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#ae7c50"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#e2dbca"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#748892"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#354653"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#646c78"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b66653"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#dfa958"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#6c9cb4"
+    },
+    "pink": {
+      "kind": "matte",
+      "color": "#c28387"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        22,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        4
+      ],
+      "to": [
+        6,
+        13,
+        36
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        12,
+        4
+      ],
+      "to": [
+        25,
+        13,
+        36
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        27,
+        25,
+        5
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        10
+      ],
+      "to": [
+        26,
+        24,
+        11
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        16,
+        12
+      ],
+      "to": [
+        13,
+        20,
+        14
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        16
+      ],
+      "to": [
+        27,
+        15,
+        30
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        30
+      ],
+      "to": [
+        23,
+        15,
+        34
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        17
+      ],
+      "to": [
+        26,
+        15,
+        29
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        15,
+        30
+      ],
+      "to": [
+        22,
+        15,
+        33
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        16,
+        20
+      ],
+      "to": [
+        12,
+        16,
+        25
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        16,
+        25
+      ],
+      "to": [
+        19,
+        16,
+        29
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        16,
+        21
+      ],
+      "to": [
+        24,
+        16,
+        25
+      ],
+      "material": "teal"
+    }
+  ]
+}

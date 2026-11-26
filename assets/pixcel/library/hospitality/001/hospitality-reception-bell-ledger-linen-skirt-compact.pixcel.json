@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "id": "hospitality-reception-bell-ledger-linen-skirt-compact",
+  "category": "hospitality",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a77854"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#715443"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3d454d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#929ca2"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#b4aaa0"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded5c4"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#a3a098"
+    },
+    "bronze": {
+      "kind": "metal",
+      "color": "#ba9a61"
+    },
+    "oxblood": {
+      "kind": "matte",
+      "color": "#9c6155"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#90adb8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        3
+      ],
+      "to": [
+        26,
+        25,
+        22
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        0
+      ],
+      "to": [
+        5,
+        8,
+        8
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        23,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        8
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        25,
+        3
+      ],
+      "to": [
+        6,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        3
+      ],
+      "to": [
+        11,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        25,
+        3
+      ],
+      "to": [
+        16,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        25,
+        3
+      ],
+      "to": [
+        21,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        6,
+        21
+      ],
+      "to": [
+        27,
+        26,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        23
+      ],
+      "to": [
+        26,
+        10,
+        34
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        34
+      ],
+      "to": [
+        27,
+        11,
+        35
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        20
+      ],
+      "zFrom": 23,
+      "zTo": 23,
+      "radius": 3,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        20
+      ],
+      "zFrom": 24,
+      "zTo": 26,
+      "radius": 2,
+      "material": "bronze"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        20
+      ],
+      "zFrom": 27,
+      "zTo": 27,
+      "radius": 0,
+      "material": "bronze"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        14,
+        23
+      ],
+      "to": [
+        23,
+        22,
+        24
+      ],
+      "material": "oxblood"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        14,
+        24
+      ],
+      "to": [
+        22,
+        21,
+        24
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        16,
+        25
+      ],
+      "to": [
+        23,
+        21,
+        25
+      ],
+      "material": "black"
+    }
+  ]
+}

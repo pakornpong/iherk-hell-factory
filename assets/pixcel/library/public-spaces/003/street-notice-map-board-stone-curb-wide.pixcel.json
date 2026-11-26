@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "id": "street-notice-map-board-stone-curb-wide",
+  "category": "public-space",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a07f60"
+    },
+    "darkwood": {
+      "kind": "wood",
+      "color": "#755943"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#929fa5"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#505d66"
+    },
+    "paved": {
+      "kind": "matte",
+      "color": "#ada99e"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#444d52"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbd7c8"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#647d91"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#9f7060"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b29d7b"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#97b5bf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        2,
+        3,
+        0
+      ],
+      "to": [
+        58,
+        28,
+        3
+      ],
+      "material": "paved"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        3,
+        3
+      ],
+      "to": [
+        58,
+        5,
+        3
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        27,
+        3
+      ],
+      "to": [
+        58,
+        28,
+        3
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        56,
+        26,
+        3
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        4
+      ],
+      "to": [
+        7,
+        11,
+        38
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        9,
+        4
+      ],
+      "to": [
+        55,
+        11,
+        38
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        17
+      ],
+      "to": [
+        56,
+        12,
+        35
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        19
+      ],
+      "to": [
+        54,
+        12,
+        33
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        7,
+        36
+      ],
+      "to": [
+        57,
+        14,
+        38
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        12,
+        21
+      ],
+      "to": [
+        51,
+        12,
+        30
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        12,
+        29
+      ],
+      "to": [
+        50,
+        12,
+        24
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        4
+      ],
+      "to": [
+        55,
+        11,
+        24
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        9
+      ],
+      "to": [
+        54,
+        12,
+        17
+      ],
+      "material": "white"
+    }
+  ]
+}

@@ -1,0 +1,688 @@
+[
+  {
+    "id": "weather-tipping-bucket-rain-gauge-compact-concrete-footing",
+    "category": "meteorology",
+    "file": "001/weather-tipping-bucket-rain-gauge-compact-concrete-footing.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "weather-tipping-bucket-rain-gauge-compact-tripod-trailer",
+    "category": "meteorology",
+    "file": "001/weather-tipping-bucket-rain-gauge-compact-tripod-trailer.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "weather-tipping-bucket-rain-gauge-compact-soil-reference-plot",
+    "category": "meteorology",
+    "file": "001/weather-tipping-bucket-rain-gauge-compact-soil-reference-plot.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "weather-tipping-bucket-rain-gauge-compact-calibration-bench",
+    "category": "meteorology",
+    "file": "001/weather-tipping-bucket-rain-gauge-compact-calibration-bench.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "weather-tipping-bucket-rain-gauge-compact-roof-service-deck",
+    "category": "meteorology",
+    "file": "001/weather-tipping-bucket-rain-gauge-compact-roof-service-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "weather-tipping-bucket-rain-gauge-station-wide-concrete-footing",
+    "category": "meteorology",
+    "file": "001/weather-tipping-bucket-rain-gauge-station-wide-concrete-footing.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "weather-tipping-bucket-rain-gauge-station-wide-tripod-trailer",
+    "category": "meteorology",
+    "file": "001/weather-tipping-bucket-rain-gauge-station-wide-tripod-trailer.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "weather-tipping-bucket-rain-gauge-station-wide-soil-reference-plot",
+    "category": "meteorology",
+    "file": "001/weather-tipping-bucket-rain-gauge-station-wide-soil-reference-plot.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "weather-tipping-bucket-rain-gauge-station-wide-calibration-bench",
+    "category": "meteorology",
+    "file": "001/weather-tipping-bucket-rain-gauge-station-wide-calibration-bench.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "weather-tipping-bucket-rain-gauge-station-wide-roof-service-deck",
+    "category": "meteorology",
+    "file": "001/weather-tipping-bucket-rain-gauge-station-wide-roof-service-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "weather-stevenson-screen-compact-concrete-footing",
+    "category": "meteorology",
+    "file": "001/weather-stevenson-screen-compact-concrete-footing.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "weather-stevenson-screen-compact-tripod-trailer",
+    "category": "meteorology",
+    "file": "001/weather-stevenson-screen-compact-tripod-trailer.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "weather-stevenson-screen-compact-soil-reference-plot",
+    "category": "meteorology",
+    "file": "001/weather-stevenson-screen-compact-soil-reference-plot.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "weather-stevenson-screen-compact-calibration-bench",
+    "category": "meteorology",
+    "file": "001/weather-stevenson-screen-compact-calibration-bench.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "weather-stevenson-screen-compact-roof-service-deck",
+    "category": "meteorology",
+    "file": "001/weather-stevenson-screen-compact-roof-service-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "weather-stevenson-screen-station-wide-concrete-footing",
+    "category": "meteorology",
+    "file": "001/weather-stevenson-screen-station-wide-concrete-footing.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "weather-stevenson-screen-station-wide-tripod-trailer",
+    "category": "meteorology",
+    "file": "001/weather-stevenson-screen-station-wide-tripod-trailer.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "weather-stevenson-screen-station-wide-soil-reference-plot",
+    "category": "meteorology",
+    "file": "001/weather-stevenson-screen-station-wide-soil-reference-plot.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "weather-stevenson-screen-station-wide-calibration-bench",
+    "category": "meteorology",
+    "file": "001/weather-stevenson-screen-station-wide-calibration-bench.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "weather-stevenson-screen-station-wide-roof-service-deck",
+    "category": "meteorology",
+    "file": "001/weather-stevenson-screen-station-wide-roof-service-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "weather-wind-vane-and-cup-mast-compact-concrete-footing",
+    "category": "meteorology",
+    "file": "002/weather-wind-vane-and-cup-mast-compact-concrete-footing.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "weather-wind-vane-and-cup-mast-compact-tripod-trailer",
+    "category": "meteorology",
+    "file": "002/weather-wind-vane-and-cup-mast-compact-tripod-trailer.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "weather-wind-vane-and-cup-mast-compact-soil-reference-plot",
+    "category": "meteorology",
+    "file": "002/weather-wind-vane-and-cup-mast-compact-soil-reference-plot.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "weather-wind-vane-and-cup-mast-compact-roof-service-deck",
+    "category": "meteorology",
+    "file": "002/weather-wind-vane-and-cup-mast-compact-roof-service-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "weather-wind-vane-and-cup-mast-station-wide-concrete-footing",
+    "category": "meteorology",
+    "file": "002/weather-wind-vane-and-cup-mast-station-wide-concrete-footing.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "weather-wind-vane-and-cup-mast-station-wide-tripod-trailer",
+    "category": "meteorology",
+    "file": "002/weather-wind-vane-and-cup-mast-station-wide-tripod-trailer.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "weather-wind-vane-and-cup-mast-station-wide-soil-reference-plot",
+    "category": "meteorology",
+    "file": "002/weather-wind-vane-and-cup-mast-station-wide-soil-reference-plot.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "weather-wind-vane-and-cup-mast-station-wide-roof-service-deck",
+    "category": "meteorology",
+    "file": "002/weather-wind-vane-and-cup-mast-station-wide-roof-service-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "weather-snow-depth-marker-compact-concrete-footing",
+    "category": "meteorology",
+    "file": "002/weather-snow-depth-marker-compact-concrete-footing.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "weather-snow-depth-marker-compact-tripod-trailer",
+    "category": "meteorology",
+    "file": "002/weather-snow-depth-marker-compact-tripod-trailer.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "weather-snow-depth-marker-compact-soil-reference-plot",
+    "category": "meteorology",
+    "file": "002/weather-snow-depth-marker-compact-soil-reference-plot.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "weather-snow-depth-marker-compact-calibration-bench",
+    "category": "meteorology",
+    "file": "002/weather-snow-depth-marker-compact-calibration-bench.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "weather-snow-depth-marker-compact-roof-service-deck",
+    "category": "meteorology",
+    "file": "002/weather-snow-depth-marker-compact-roof-service-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "weather-snow-depth-marker-station-wide-concrete-footing",
+    "category": "meteorology",
+    "file": "002/weather-snow-depth-marker-station-wide-concrete-footing.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "weather-snow-depth-marker-station-wide-tripod-trailer",
+    "category": "meteorology",
+    "file": "002/weather-snow-depth-marker-station-wide-tripod-trailer.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "weather-snow-depth-marker-station-wide-soil-reference-plot",
+    "category": "meteorology",
+    "file": "002/weather-snow-depth-marker-station-wide-soil-reference-plot.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "weather-snow-depth-marker-station-wide-calibration-bench",
+    "category": "meteorology",
+    "file": "002/weather-snow-depth-marker-station-wide-calibration-bench.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "weather-snow-depth-marker-station-wide-roof-service-deck",
+    "category": "meteorology",
+    "file": "002/weather-snow-depth-marker-station-wide-roof-service-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "weather-solar-radiation-platform-compact-concrete-footing",
+    "category": "meteorology",
+    "file": "002/weather-solar-radiation-platform-compact-concrete-footing.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "weather-solar-radiation-platform-compact-tripod-trailer",
+    "category": "meteorology",
+    "file": "002/weather-solar-radiation-platform-compact-tripod-trailer.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "weather-solar-radiation-platform-compact-soil-reference-plot",
+    "category": "meteorology",
+    "file": "003/weather-solar-radiation-platform-compact-soil-reference-plot.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "weather-solar-radiation-platform-compact-calibration-bench",
+    "category": "meteorology",
+    "file": "003/weather-solar-radiation-platform-compact-calibration-bench.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "weather-solar-radiation-platform-compact-roof-service-deck",
+    "category": "meteorology",
+    "file": "003/weather-solar-radiation-platform-compact-roof-service-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "weather-solar-radiation-platform-station-wide-concrete-footing",
+    "category": "meteorology",
+    "file": "003/weather-solar-radiation-platform-station-wide-concrete-footing.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "weather-solar-radiation-platform-station-wide-tripod-trailer",
+    "category": "meteorology",
+    "file": "003/weather-solar-radiation-platform-station-wide-tripod-trailer.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "weather-solar-radiation-platform-station-wide-soil-reference-plot",
+    "category": "meteorology",
+    "file": "003/weather-solar-radiation-platform-station-wide-soil-reference-plot.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "weather-solar-radiation-platform-station-wide-calibration-bench",
+    "category": "meteorology",
+    "file": "003/weather-solar-radiation-platform-station-wide-calibration-bench.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "weather-solar-radiation-platform-station-wide-roof-service-deck",
+    "category": "meteorology",
+    "file": "003/weather-solar-radiation-platform-station-wide-roof-service-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "weather-weather-balloon-crate-compact-concrete-footing",
+    "category": "meteorology",
+    "file": "003/weather-weather-balloon-crate-compact-concrete-footing.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "weather-weather-balloon-crate-compact-tripod-trailer",
+    "category": "meteorology",
+    "file": "003/weather-weather-balloon-crate-compact-tripod-trailer.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "weather-weather-balloon-crate-compact-soil-reference-plot",
+    "category": "meteorology",
+    "file": "003/weather-weather-balloon-crate-compact-soil-reference-plot.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "weather-weather-balloon-crate-compact-calibration-bench",
+    "category": "meteorology",
+    "file": "003/weather-weather-balloon-crate-compact-calibration-bench.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "weather-weather-balloon-crate-compact-roof-service-deck",
+    "category": "meteorology",
+    "file": "003/weather-weather-balloon-crate-compact-roof-service-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "weather-weather-balloon-crate-station-wide-concrete-footing",
+    "category": "meteorology",
+    "file": "003/weather-weather-balloon-crate-station-wide-concrete-footing.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "weather-weather-balloon-crate-station-wide-tripod-trailer",
+    "category": "meteorology",
+    "file": "003/weather-weather-balloon-crate-station-wide-tripod-trailer.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "weather-weather-balloon-crate-station-wide-soil-reference-plot",
+    "category": "meteorology",
+    "file": "003/weather-weather-balloon-crate-station-wide-soil-reference-plot.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "weather-weather-balloon-crate-station-wide-calibration-bench",
+    "category": "meteorology",
+    "file": "003/weather-weather-balloon-crate-station-wide-calibration-bench.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "weather-weather-balloon-crate-station-wide-roof-service-deck",
+    "category": "meteorology",
+    "file": "003/weather-weather-balloon-crate-station-wide-roof-service-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "weather-field-data-enclosure-compact-concrete-footing",
+    "category": "meteorology",
+    "file": "003/weather-field-data-enclosure-compact-concrete-footing.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "weather-field-data-enclosure-compact-tripod-trailer",
+    "category": "meteorology",
+    "file": "003/weather-field-data-enclosure-compact-tripod-trailer.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "weather-field-data-enclosure-compact-soil-reference-plot",
+    "category": "meteorology",
+    "file": "004/weather-field-data-enclosure-compact-soil-reference-plot.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "weather-field-data-enclosure-compact-calibration-bench",
+    "category": "meteorology",
+    "file": "004/weather-field-data-enclosure-compact-calibration-bench.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "weather-field-data-enclosure-compact-roof-service-deck",
+    "category": "meteorology",
+    "file": "004/weather-field-data-enclosure-compact-roof-service-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "weather-field-data-enclosure-station-wide-concrete-footing",
+    "category": "meteorology",
+    "file": "004/weather-field-data-enclosure-station-wide-concrete-footing.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "weather-field-data-enclosure-station-wide-tripod-trailer",
+    "category": "meteorology",
+    "file": "004/weather-field-data-enclosure-station-wide-tripod-trailer.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "weather-field-data-enclosure-station-wide-soil-reference-plot",
+    "category": "meteorology",
+    "file": "004/weather-field-data-enclosure-station-wide-soil-reference-plot.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "weather-field-data-enclosure-station-wide-calibration-bench",
+    "category": "meteorology",
+    "file": "004/weather-field-data-enclosure-station-wide-calibration-bench.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "weather-field-data-enclosure-station-wide-roof-service-deck",
+    "category": "meteorology",
+    "file": "004/weather-field-data-enclosure-station-wide-roof-service-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "weather-fog-collection-screen-compact-concrete-footing",
+    "category": "meteorology",
+    "file": "004/weather-fog-collection-screen-compact-concrete-footing.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "weather-fog-collection-screen-compact-tripod-trailer",
+    "category": "meteorology",
+    "file": "004/weather-fog-collection-screen-compact-tripod-trailer.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "weather-fog-collection-screen-compact-soil-reference-plot",
+    "category": "meteorology",
+    "file": "004/weather-fog-collection-screen-compact-soil-reference-plot.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "weather-fog-collection-screen-compact-calibration-bench",
+    "category": "meteorology",
+    "file": "004/weather-fog-collection-screen-compact-calibration-bench.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "weather-fog-collection-screen-compact-roof-service-deck",
+    "category": "meteorology",
+    "file": "004/weather-fog-collection-screen-compact-roof-service-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "weather-fog-collection-screen-station-wide-concrete-footing",
+    "category": "meteorology",
+    "file": "004/weather-fog-collection-screen-station-wide-concrete-footing.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "weather-fog-collection-screen-station-wide-tripod-trailer",
+    "category": "meteorology",
+    "file": "004/weather-fog-collection-screen-station-wide-tripod-trailer.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "weather-fog-collection-screen-station-wide-soil-reference-plot",
+    "category": "meteorology",
+    "file": "004/weather-fog-collection-screen-station-wide-soil-reference-plot.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "weather-fog-collection-screen-station-wide-calibration-bench",
+    "category": "meteorology",
+    "file": "004/weather-fog-collection-screen-station-wide-calibration-bench.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "weather-fog-collection-screen-station-wide-roof-service-deck",
+    "category": "meteorology",
+    "file": "004/weather-fog-collection-screen-station-wide-roof-service-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "weather-forecast-display-desk-compact-concrete-footing",
+    "category": "meteorology",
+    "file": "004/weather-forecast-display-desk-compact-concrete-footing.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "weather-forecast-display-desk-compact-tripod-trailer",
+    "category": "meteorology",
+    "file": "004/weather-forecast-display-desk-compact-tripod-trailer.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "weather-forecast-display-desk-compact-soil-reference-plot",
+    "category": "meteorology",
+    "file": "005/weather-forecast-display-desk-compact-soil-reference-plot.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "weather-forecast-display-desk-compact-calibration-bench",
+    "category": "meteorology",
+    "file": "005/weather-forecast-display-desk-compact-calibration-bench.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "weather-forecast-display-desk-compact-roof-service-deck",
+    "category": "meteorology",
+    "file": "005/weather-forecast-display-desk-compact-roof-service-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "weather-forecast-display-desk-station-wide-concrete-footing",
+    "category": "meteorology",
+    "file": "005/weather-forecast-display-desk-station-wide-concrete-footing.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "weather-forecast-display-desk-station-wide-tripod-trailer",
+    "category": "meteorology",
+    "file": "005/weather-forecast-display-desk-station-wide-tripod-trailer.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "weather-forecast-display-desk-station-wide-soil-reference-plot",
+    "category": "meteorology",
+    "file": "005/weather-forecast-display-desk-station-wide-soil-reference-plot.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "weather-forecast-display-desk-station-wide-calibration-bench",
+    "category": "meteorology",
+    "file": "005/weather-forecast-display-desk-station-wide-calibration-bench.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "weather-forecast-display-desk-station-wide-roof-service-deck",
+    "category": "meteorology",
+    "file": "005/weather-forecast-display-desk-station-wide-roof-service-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "weather-water-stage-gauge-compact-concrete-footing",
+    "category": "meteorology",
+    "file": "005/weather-water-stage-gauge-compact-concrete-footing.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "weather-water-stage-gauge-compact-tripod-trailer",
+    "category": "meteorology",
+    "file": "005/weather-water-stage-gauge-compact-tripod-trailer.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "weather-water-stage-gauge-compact-soil-reference-plot",
+    "category": "meteorology",
+    "file": "005/weather-water-stage-gauge-compact-soil-reference-plot.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "weather-water-stage-gauge-compact-calibration-bench",
+    "category": "meteorology",
+    "file": "005/weather-water-stage-gauge-compact-calibration-bench.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "weather-water-stage-gauge-compact-roof-service-deck",
+    "category": "meteorology",
+    "file": "005/weather-water-stage-gauge-compact-roof-service-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "weather-water-stage-gauge-station-wide-concrete-footing",
+    "category": "meteorology",
+    "file": "005/weather-water-stage-gauge-station-wide-concrete-footing.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "weather-water-stage-gauge-station-wide-tripod-trailer",
+    "category": "meteorology",
+    "file": "005/weather-water-stage-gauge-station-wide-tripod-trailer.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "weather-water-stage-gauge-station-wide-soil-reference-plot",
+    "category": "meteorology",
+    "file": "005/weather-water-stage-gauge-station-wide-soil-reference-plot.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "weather-water-stage-gauge-station-wide-calibration-bench",
+    "category": "meteorology",
+    "file": "005/weather-water-stage-gauge-station-wide-calibration-bench.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "weather-water-stage-gauge-station-wide-roof-service-deck",
+    "category": "meteorology",
+    "file": "005/weather-water-stage-gauge-station-wide-roof-service-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  }
+]

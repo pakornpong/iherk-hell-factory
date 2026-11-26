@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "id": "chair-ladder-back-waterfall-disc-pedestal",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#ad784c"
+    },
+    "metal": {
+      "kind": "metal",
+      "color": "#657985"
+    },
+    "foot": {
+      "kind": "matte",
+      "color": "#293240"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#685b50"
+    },
+    "edge": {
+      "kind": "matte",
+      "color": "#897767"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#d4a35d"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 0,
+      "zTo": 1,
+      "radius": 10,
+      "material": "metal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 2,
+      "zTo": 13,
+      "radius": 2,
+      "material": "metal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 10,
+      "zTo": 12,
+      "radius": 4,
+      "material": "foot"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        13
+      ],
+      "to": [
+        25,
+        23,
+        17
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        12
+      ],
+      "to": [
+        24,
+        25,
+        16
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        26,
+        11
+      ],
+      "to": [
+        23,
+        26,
+        14
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        15
+      ],
+      "to": [
+        8,
+        7,
+        37
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        5,
+        15
+      ],
+      "to": [
+        25,
+        7,
+        37
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        23
+      ],
+      "to": [
+        23,
+        7,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        29
+      ],
+      "to": [
+        23,
+        7,
+        31
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        35
+      ],
+      "to": [
+        23,
+        7,
+        37
+      ],
+      "material": "wood"
+    }
+  ]
+}

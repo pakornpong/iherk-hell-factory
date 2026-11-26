@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "id": "lounge-seat-channel-tufted-chaise-accent-metal-sled",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a27955"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795743"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b8a06d"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#636c72"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#43464b"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#8e6d52"
+    },
+    "piping": {
+      "kind": "matte",
+      "color": "#b98e67"
+    },
+    "pillow": {
+      "kind": "matte",
+      "color": "#d7c6aa"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        0
+      ],
+      "to": [
+        9,
+        24,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        1
+      ],
+      "to": [
+        8,
+        8,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        23,
+        1
+      ],
+      "to": [
+        8,
+        24,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        7,
+        0
+      ],
+      "to": [
+        23,
+        24,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        7,
+        1
+      ],
+      "to": [
+        22,
+        8,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        23,
+        1
+      ],
+      "to": [
+        22,
+        24,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        7
+      ],
+      "to": [
+        25,
+        27,
+        13
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "slope",
+      "from": [
+        6,
+        6,
+        13
+      ],
+      "to": [
+        24,
+        13,
+        30
+      ],
+      "axis": "-Y",
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        13
+      ],
+      "to": [
+        23,
+        15,
+        15
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        17,
+        13
+      ],
+      "to": [
+        23,
+        19,
+        15
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        21,
+        13
+      ],
+      "to": [
+        23,
+        23,
+        15
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        13
+      ],
+      "to": [
+        23,
+        27,
+        15
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        15
+      ],
+      "to": [
+        9,
+        22,
+        21
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        17
+      ],
+      "to": [
+        23,
+        12,
+        22
+      ],
+      "material": "pillow"
+    }
+  ]
+}

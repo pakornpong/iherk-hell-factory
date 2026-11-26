@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "id": "planter-paddle-cactus-fluted-ceramic",
+  "category": "gardening",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "soil": {
+      "kind": "matte",
+      "color": "#5d4635"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#597451"
+    },
+    "leafLight": {
+      "kind": "matte",
+      "color": "#7e915d"
+    },
+    "leafDark": {
+      "kind": "matte",
+      "color": "#424f3f"
+    },
+    "bark": {
+      "kind": "wood",
+      "color": "#82664b"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76851"
+    },
+    "limewash": {
+      "kind": "matte",
+      "color": "#ccc3af"
+    },
+    "cement": {
+      "kind": "matte",
+      "color": "#929183"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a18160"
+    },
+    "plum": {
+      "kind": "matte",
+      "color": "#9e657b"
+    },
+    "flower": {
+      "kind": "matte",
+      "color": "#d6ae54"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#5f6468"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 0,
+      "zTo": 10,
+      "radius": 8,
+      "material": "limewash"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 10,
+      "zTo": 10,
+      "radius": 6,
+      "material": "soil"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        15,
+        3
+      ],
+      "to": [
+        8,
+        16,
+        8
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        15,
+        3
+      ],
+      "to": [
+        24,
+        16,
+        8
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        7,
+        3
+      ],
+      "to": [
+        16,
+        8,
+        8
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        23,
+        3
+      ],
+      "to": [
+        16,
+        24,
+        8
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        3
+      ],
+      "to": [
+        10,
+        11,
+        8
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        10,
+        3
+      ],
+      "to": [
+        22,
+        11,
+        8
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        20,
+        3
+      ],
+      "to": [
+        10,
+        21,
+        8
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        20,
+        3
+      ],
+      "to": [
+        22,
+        21,
+        8
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        13,
+        11
+      ],
+      "to": [
+        17,
+        17,
+        28
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        15,
+        19
+      ],
+      "to": [
+        22,
+        17,
+        24
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        15,
+        24
+      ],
+      "to": [
+        22,
+        17,
+        29
+      ],
+      "material": "leafLight"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        16
+      ],
+      "to": [
+        12,
+        15,
+        20
+      ],
+      "material": "leafDark"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        19
+      ],
+      "to": [
+        10,
+        15,
+        25
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        17,
+        24
+      ],
+      "to": [
+        16,
+        17,
+        26
+      ],
+      "material": "leafLight"
+    }
+  ]
+}

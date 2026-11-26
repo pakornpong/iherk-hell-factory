@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "id": "building-care-wet-floor-caddy-compact-mobile-trolley",
+  "category": "cleaning",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#a77c56",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#755644",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ba6aa",
+      "kind": "metal"
+    },
+    "charcoal": {
+      "color": "#49535c",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#ddd5c3",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#aa9a88",
+      "kind": "matte"
+    },
+    "graphite": {
+      "color": "#363e43",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#bda16c",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a65c50",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#6b8090",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#89a8b4",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#a8a09a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        3
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        3
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        0
+      ],
+      "to": [
+        27,
+        9,
+        3
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        23,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        3
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        7,
+        9,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        4
+      ],
+      "to": [
+        7,
+        25,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        4
+      ],
+      "to": [
+        26,
+        9,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        23,
+        4
+      ],
+      "to": [
+        26,
+        25,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        4
+      ],
+      "to": [
+        27,
+        26,
+        5
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        8
+      ],
+      "to": [
+        27,
+        26,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        6,
+        9
+      ],
+      "to": [
+        27,
+        23,
+        10
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        10
+      ],
+      "to": [
+        27,
+        25,
+        14
+      ],
+      "material": "graphite"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        14
+      ],
+      "to": [
+        17,
+        23,
+        20
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        10,
+        20
+      ],
+      "to": [
+        14,
+        10,
+        39
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        10,
+        20
+      ],
+      "to": [
+        19,
+        10,
+        39
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        9,
+        38
+      ],
+      "to": [
+        19,
+        11,
+        40
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        14
+      ],
+      "to": [
+        27,
+        22,
+        25
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        12,
+        25
+      ],
+      "to": [
+        25,
+        20,
+        26
+      ],
+      "material": "cream"
+    }
+  ]
+}

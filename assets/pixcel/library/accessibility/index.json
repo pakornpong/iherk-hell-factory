@@ -1,0 +1,450 @@
+[
+  {
+    "id": "access-threshold-ramp-pair-compact-rubber-hallway",
+    "category": "accessibility",
+    "file": "001/access-threshold-ramp-pair-compact-rubber-hallway.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "access-threshold-ramp-pair-compact-stone-entry",
+    "category": "accessibility",
+    "file": "001/access-threshold-ramp-pair-compact-stone-entry.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "access-threshold-ramp-pair-compact-threshold-board",
+    "category": "accessibility",
+    "file": "001/access-threshold-ramp-pair-compact-threshold-board.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "access-threshold-ramp-pair-compact-guide-path",
+    "category": "accessibility",
+    "file": "001/access-threshold-ramp-pair-compact-guide-path.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "access-threshold-ramp-pair-wide-rubber-hallway",
+    "category": "accessibility",
+    "file": "001/access-threshold-ramp-pair-wide-rubber-hallway.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "access-threshold-ramp-pair-wide-stone-entry",
+    "category": "accessibility",
+    "file": "001/access-threshold-ramp-pair-wide-stone-entry.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "access-threshold-ramp-pair-wide-threshold-board",
+    "category": "accessibility",
+    "file": "001/access-threshold-ramp-pair-wide-threshold-board.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "access-threshold-ramp-pair-wide-guide-path",
+    "category": "accessibility",
+    "file": "001/access-threshold-ramp-pair-wide-guide-path.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "access-handrail-platform-compact-rubber-hallway",
+    "category": "accessibility",
+    "file": "001/access-handrail-platform-compact-rubber-hallway.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "access-handrail-platform-compact-stone-entry",
+    "category": "accessibility",
+    "file": "001/access-handrail-platform-compact-stone-entry.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "access-handrail-platform-compact-threshold-board",
+    "category": "accessibility",
+    "file": "001/access-handrail-platform-compact-threshold-board.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "access-handrail-platform-compact-guide-path",
+    "category": "accessibility",
+    "file": "001/access-handrail-platform-compact-guide-path.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "access-handrail-platform-wide-rubber-hallway",
+    "category": "accessibility",
+    "file": "001/access-handrail-platform-wide-rubber-hallway.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "access-handrail-platform-wide-stone-entry",
+    "category": "accessibility",
+    "file": "001/access-handrail-platform-wide-stone-entry.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "access-handrail-platform-wide-threshold-board",
+    "category": "accessibility",
+    "file": "001/access-handrail-platform-wide-threshold-board.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "access-handrail-platform-wide-guide-path",
+    "category": "accessibility",
+    "file": "001/access-handrail-platform-wide-guide-path.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "access-tactile-map-lectern-compact-rubber-hallway",
+    "category": "accessibility",
+    "file": "001/access-tactile-map-lectern-compact-rubber-hallway.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "access-tactile-map-lectern-compact-stone-entry",
+    "category": "accessibility",
+    "file": "001/access-tactile-map-lectern-compact-stone-entry.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "access-tactile-map-lectern-compact-threshold-board",
+    "category": "accessibility",
+    "file": "001/access-tactile-map-lectern-compact-threshold-board.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "access-tactile-map-lectern-compact-guide-path",
+    "category": "accessibility",
+    "file": "001/access-tactile-map-lectern-compact-guide-path.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "access-tactile-map-lectern-wide-rubber-hallway",
+    "category": "accessibility",
+    "file": "002/access-tactile-map-lectern-wide-rubber-hallway.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "access-tactile-map-lectern-wide-stone-entry",
+    "category": "accessibility",
+    "file": "002/access-tactile-map-lectern-wide-stone-entry.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "access-tactile-map-lectern-wide-threshold-board",
+    "category": "accessibility",
+    "file": "002/access-tactile-map-lectern-wide-threshold-board.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "access-tactile-map-lectern-wide-guide-path",
+    "category": "accessibility",
+    "file": "002/access-tactile-map-lectern-wide-guide-path.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "access-accessible-call-station-compact-rubber-hallway",
+    "category": "accessibility",
+    "file": "002/access-accessible-call-station-compact-rubber-hallway.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "access-accessible-call-station-compact-stone-entry",
+    "category": "accessibility",
+    "file": "002/access-accessible-call-station-compact-stone-entry.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "access-accessible-call-station-compact-threshold-board",
+    "category": "accessibility",
+    "file": "002/access-accessible-call-station-compact-threshold-board.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "access-accessible-call-station-compact-guide-path",
+    "category": "accessibility",
+    "file": "002/access-accessible-call-station-compact-guide-path.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "access-accessible-call-station-wide-rubber-hallway",
+    "category": "accessibility",
+    "file": "002/access-accessible-call-station-wide-rubber-hallway.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "access-accessible-call-station-wide-stone-entry",
+    "category": "accessibility",
+    "file": "002/access-accessible-call-station-wide-stone-entry.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "access-accessible-call-station-wide-threshold-board",
+    "category": "accessibility",
+    "file": "002/access-accessible-call-station-wide-threshold-board.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "access-accessible-call-station-wide-guide-path",
+    "category": "accessibility",
+    "file": "002/access-accessible-call-station-wide-guide-path.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "access-lowered-check-in-counter-compact-rubber-hallway",
+    "category": "accessibility",
+    "file": "002/access-lowered-check-in-counter-compact-rubber-hallway.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "access-lowered-check-in-counter-compact-stone-entry",
+    "category": "accessibility",
+    "file": "002/access-lowered-check-in-counter-compact-stone-entry.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "access-lowered-check-in-counter-compact-threshold-board",
+    "category": "accessibility",
+    "file": "002/access-lowered-check-in-counter-compact-threshold-board.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "access-lowered-check-in-counter-compact-guide-path",
+    "category": "accessibility",
+    "file": "002/access-lowered-check-in-counter-compact-guide-path.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "access-lowered-check-in-counter-wide-rubber-hallway",
+    "category": "accessibility",
+    "file": "002/access-lowered-check-in-counter-wide-rubber-hallway.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "access-lowered-check-in-counter-wide-stone-entry",
+    "category": "accessibility",
+    "file": "002/access-lowered-check-in-counter-wide-stone-entry.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "access-lowered-check-in-counter-wide-threshold-board",
+    "category": "accessibility",
+    "file": "002/access-lowered-check-in-counter-wide-threshold-board.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "access-lowered-check-in-counter-wide-guide-path",
+    "category": "accessibility",
+    "file": "002/access-lowered-check-in-counter-wide-guide-path.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "access-wheelchair-seat-space-compact-rubber-hallway",
+    "category": "accessibility",
+    "file": "003/access-wheelchair-seat-space-compact-rubber-hallway.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "access-wheelchair-seat-space-compact-stone-entry",
+    "category": "accessibility",
+    "file": "003/access-wheelchair-seat-space-compact-stone-entry.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "access-wheelchair-seat-space-compact-threshold-board",
+    "category": "accessibility",
+    "file": "003/access-wheelchair-seat-space-compact-threshold-board.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "access-wheelchair-seat-space-compact-guide-path",
+    "category": "accessibility",
+    "file": "003/access-wheelchair-seat-space-compact-guide-path.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "access-wheelchair-seat-space-wide-rubber-hallway",
+    "category": "accessibility",
+    "file": "003/access-wheelchair-seat-space-wide-rubber-hallway.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "access-wheelchair-seat-space-wide-stone-entry",
+    "category": "accessibility",
+    "file": "003/access-wheelchair-seat-space-wide-stone-entry.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "access-wheelchair-seat-space-wide-threshold-board",
+    "category": "accessibility",
+    "file": "003/access-wheelchair-seat-space-wide-threshold-board.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "access-wheelchair-seat-space-wide-guide-path",
+    "category": "accessibility",
+    "file": "003/access-wheelchair-seat-space-wide-guide-path.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "access-fold-down-shower-seat-compact-rubber-hallway",
+    "category": "accessibility",
+    "file": "003/access-fold-down-shower-seat-compact-rubber-hallway.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "access-fold-down-shower-seat-compact-stone-entry",
+    "category": "accessibility",
+    "file": "003/access-fold-down-shower-seat-compact-stone-entry.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "access-fold-down-shower-seat-compact-threshold-board",
+    "category": "accessibility",
+    "file": "003/access-fold-down-shower-seat-compact-threshold-board.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "access-fold-down-shower-seat-compact-guide-path",
+    "category": "accessibility",
+    "file": "003/access-fold-down-shower-seat-compact-guide-path.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "access-fold-down-shower-seat-wide-rubber-hallway",
+    "category": "accessibility",
+    "file": "003/access-fold-down-shower-seat-wide-rubber-hallway.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "access-fold-down-shower-seat-wide-stone-entry",
+    "category": "accessibility",
+    "file": "003/access-fold-down-shower-seat-wide-stone-entry.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "access-fold-down-shower-seat-wide-threshold-board",
+    "category": "accessibility",
+    "file": "003/access-fold-down-shower-seat-wide-threshold-board.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "access-fold-down-shower-seat-wide-guide-path",
+    "category": "accessibility",
+    "file": "003/access-fold-down-shower-seat-wide-guide-path.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "access-portable-listening-station-compact-rubber-hallway",
+    "category": "accessibility",
+    "file": "003/access-portable-listening-station-compact-rubber-hallway.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "access-portable-listening-station-compact-stone-entry",
+    "category": "accessibility",
+    "file": "003/access-portable-listening-station-compact-stone-entry.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "access-portable-listening-station-compact-threshold-board",
+    "category": "accessibility",
+    "file": "003/access-portable-listening-station-compact-threshold-board.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "access-portable-listening-station-compact-guide-path",
+    "category": "accessibility",
+    "file": "003/access-portable-listening-station-compact-guide-path.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "access-portable-listening-station-wide-rubber-hallway",
+    "category": "accessibility",
+    "file": "004/access-portable-listening-station-wide-rubber-hallway.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "access-portable-listening-station-wide-stone-entry",
+    "category": "accessibility",
+    "file": "004/access-portable-listening-station-wide-stone-entry.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "access-portable-listening-station-wide-threshold-board",
+    "category": "accessibility",
+    "file": "004/access-portable-listening-station-wide-threshold-board.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "access-portable-listening-station-wide-guide-path",
+    "category": "accessibility",
+    "file": "004/access-portable-listening-station-wide-guide-path.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  }
+]

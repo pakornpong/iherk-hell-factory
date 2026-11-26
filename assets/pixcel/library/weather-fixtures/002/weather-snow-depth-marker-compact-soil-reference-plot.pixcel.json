@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-snow-depth-marker-compact-soil-reference-plot",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        1
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        28,
+        24,
+        6
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        7
+      ],
+      "to": [
+        27,
+        23,
+        7
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        7
+      ],
+      "to": [
+        10,
+        12,
+        40
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        11
+      ],
+      "to": [
+        11,
+        12,
+        11
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        17
+      ],
+      "to": [
+        11,
+        12,
+        17
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        23
+      ],
+      "to": [
+        11,
+        12,
+        23
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        29
+      ],
+      "to": [
+        11,
+        12,
+        29
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        35
+      ],
+      "to": [
+        11,
+        12,
+        35
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        14
+      ],
+      "zFrom": 7,
+      "zTo": 15,
+      "radius": 4,
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        14,
+        15
+      ],
+      "to": [
+        23,
+        15,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        15,
+        25
+      ],
+      "to": [
+        22,
+        21,
+        25
+      ],
+      "material": "silver"
+    }
+  ]
+}

@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 1,
+  "id": "travel-survey-transit-protection-extended-zippered-soft-case-carry-handle",
+  "category": "travel",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cloth": {
+      "kind": "matte",
+      "color": "#7c8187"
+    },
+    "edge": {
+      "kind": "matte",
+      "color": "#434b53"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#8f9c9f"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8ceba"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d1c1a4"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bea071"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a26657"
+    },
+    "lining": {
+      "kind": "matte",
+      "color": "#9b7d66"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#aa845e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eabb9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        1
+      ],
+      "to": [
+        25,
+        22,
+        2
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        29
+      ],
+      "to": [
+        11,
+        13,
+        33
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        11,
+        29
+      ],
+      "to": [
+        21,
+        13,
+        33
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        32
+      ],
+      "to": [
+        21,
+        13,
+        33
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        2
+      ],
+      "to": [
+        24,
+        22,
+        26
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        4
+      ],
+      "to": [
+        25,
+        20,
+        25
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        26
+      ],
+      "to": [
+        23,
+        21,
+        29
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        5
+      ],
+      "to": [
+        23,
+        24,
+        23
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        21,
+        6
+      ],
+      "to": [
+        22,
+        25,
+        22
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        23,
+        6
+      ],
+      "to": [
+        23,
+        23,
+        23
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        23,
+        22
+      ],
+      "to": [
+        21,
+        24,
+        23
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        24,
+        22
+      ],
+      "to": [
+        14,
+        24,
+        23
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        27
+      ],
+      "to": [
+        25,
+        23,
+        31
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        31
+      ],
+      "to": [
+        24,
+        22,
+        33
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        33
+      ],
+      "to": [
+        21,
+        18,
+        34
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        34
+      ],
+      "to": [
+        18,
+        16,
+        38
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        24,
+        23
+      ],
+      "to": [
+        16,
+        25,
+        24
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        32
+      ],
+      "to": [
+        26,
+        22,
+        35
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        35
+      ],
+      "to": [
+        25,
+        10,
+        38
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        20,
+        35
+      ],
+      "to": [
+        25,
+        22,
+        38
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        35
+      ],
+      "to": [
+        22,
+        19,
+        36
+      ],
+      "material": "red"
+    }
+  ]
+}

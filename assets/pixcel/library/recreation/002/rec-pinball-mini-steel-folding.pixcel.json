@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "id": "rec-pinball-mini-steel-folding",
+  "category": "recreation",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#b0855d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745444"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#38424c"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#839099"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded9c8"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a75b50"
+    },
+    "felt": {
+      "kind": "matte",
+      "color": "#526b83"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bb995d"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        7,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        24,
+        0
+      ],
+      "to": [
+        7,
+        7,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        55,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        24,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        55,
+        24,
+        0
+      ],
+      "to": [
+        55,
+        7,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        17
+      ],
+      "to": [
+        55,
+        7,
+        17
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        17
+      ],
+      "to": [
+        55,
+        24,
+        17
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        18
+      ],
+      "to": [
+        60,
+        26,
+        22
+      ],
+      "material": "red"
+    },
+    {
+      "op": "slope",
+      "from": [
+        5,
+        6,
+        22
+      ],
+      "to": [
+        58,
+        25,
+        28
+      ],
+      "axis": "-X",
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        28
+      ],
+      "to": [
+        9,
+        26,
+        46
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        7,
+        31
+      ],
+      "to": [
+        9,
+        24,
+        44
+      ],
+      "material": "felt"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        35
+      ],
+      "to": [
+        9,
+        20,
+        40
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        23
+      ],
+      "to": [
+        60,
+        6,
+        27
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        25,
+        23
+      ],
+      "to": [
+        60,
+        26,
+        27
+      ],
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 27,
+      "zTo": 28,
+      "radius": 2,
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        11
+      ],
+      "zFrom": 26,
+      "zTo": 28,
+      "radius": 2,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        26,
+        19
+      ],
+      "zFrom": 26,
+      "zTo": 28,
+      "radius": 2,
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        60,
+        20,
+        22
+      ],
+      "to": [
+        62,
+        21,
+        23
+      ],
+      "material": "steel"
+    }
+  ]
+}

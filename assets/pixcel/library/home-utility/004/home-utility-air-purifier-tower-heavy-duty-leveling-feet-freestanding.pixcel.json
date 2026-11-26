@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "id": "home-utility-air-purifier-tower-heavy-duty-leveling-feet-freestanding",
+  "category": "home-appliance",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ivory": {
+      "kind": "matte",
+      "color": "#d9d4ca"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#aaa39a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#979fa2"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#67727b"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e454c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab4"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a37653"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#89705d"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e4ddc8"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ad6555"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bb9b62"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        24,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        7,
+        0
+      ],
+      "to": [
+        35,
+        9,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        22,
+        0
+      ],
+      "to": [
+        35,
+        24,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        15
+      ],
+      "zFrom": 2,
+      "zTo": 33,
+      "radius": 9,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        15
+      ],
+      "zFrom": 33,
+      "zTo": 37,
+      "radius": 8,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        15
+      ],
+      "zFrom": 37,
+      "zTo": 37,
+      "radius": 6,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        23,
+        6
+      ],
+      "to": [
+        23,
+        23,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        23,
+        9
+      ],
+      "to": [
+        23,
+        23,
+        9
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        23,
+        12
+      ],
+      "to": [
+        23,
+        23,
+        12
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        23,
+        15
+      ],
+      "to": [
+        23,
+        23,
+        15
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        23,
+        18
+      ],
+      "to": [
+        23,
+        23,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        13,
+        38
+      ],
+      "to": [
+        21,
+        16,
+        38
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        6,
+        30
+      ],
+      "to": [
+        36,
+        11,
+        32
+      ],
+      "material": "black"
+    }
+  ]
+}

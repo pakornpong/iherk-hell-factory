@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "event-merch-hat-and-shirt-display-function-room-courtyard-deck",
+  "category": "events",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#99a4a7"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#59656e"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3f494f"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a8835e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#755945"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#bcae9a"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#ddd4bf"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657c93"
+    },
+    "terra": {
+      "kind": "matte",
+      "color": "#a66453"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bea16b"
+    },
+    "display": {
+      "kind": "glass",
+      "color": "#92acba"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        54,
+        25,
+        1
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        54,
+        8,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        2
+      ],
+      "to": [
+        54,
+        12,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        14,
+        2
+      ],
+      "to": [
+        54,
+        16,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        18,
+        2
+      ],
+      "to": [
+        54,
+        20,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        2
+      ],
+      "to": [
+        54,
+        24,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        53,
+        24,
+        9
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        9
+      ],
+      "to": [
+        52,
+        10,
+        31
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        26
+      ],
+      "to": [
+        52,
+        21,
+        27
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 28,
+      "zTo": 28,
+      "radius": 3,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 29,
+      "zTo": 31,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        15,
+        11
+      ],
+      "to": [
+        12,
+        22,
+        13
+      ],
+      "material": "offwhite"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        15
+      ],
+      "zFrom": 28,
+      "zTo": 28,
+      "radius": 3,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        15
+      ],
+      "zFrom": 29,
+      "zTo": 31,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        15,
+        11
+      ],
+      "to": [
+        19,
+        22,
+        13
+      ],
+      "material": "terra"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        15
+      ],
+      "zFrom": 28,
+      "zTo": 28,
+      "radius": 3,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        15
+      ],
+      "zFrom": 29,
+      "zTo": 31,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        15,
+        11
+      ],
+      "to": [
+        51,
+        22,
+        13
+      ],
+      "material": "offwhite"
+    }
+  ]
+}

@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "id": "it-battery-backup-drawers-wide-enclosure-tinted-access-door-raised-floor-sleeve",
+  "category": "it-infrastructure",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#929fa7"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#58616c"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#333c46"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#767e83"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#d2ccbc"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a37a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627791"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ab6658"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#88adb7"
+    },
+    "led": {
+      "kind": "emissive",
+      "color": "#a4c6d6",
+      "glowRadius": 1,
+      "glowIntensity": 0.1
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        4
+      ],
+      "to": [
+        13,
+        25,
+        5
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        24,
+        4
+      ],
+      "to": [
+        53,
+        25,
+        5
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        6
+      ],
+      "to": [
+        53,
+        10,
+        34
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        6
+      ],
+      "to": [
+        7,
+        22,
+        34
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        10,
+        6
+      ],
+      "to": [
+        53,
+        22,
+        34
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        34
+      ],
+      "to": [
+        53,
+        23,
+        35
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        6
+      ],
+      "to": [
+        53,
+        23,
+        8
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        10,
+        9
+      ],
+      "to": [
+        52,
+        24,
+        32
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        24,
+        11
+      ],
+      "to": [
+        53,
+        25,
+        30
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        9
+      ],
+      "to": [
+        50,
+        23,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        23,
+        10
+      ],
+      "to": [
+        14,
+        24,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        23,
+        11
+      ],
+      "to": [
+        49,
+        24,
+        12
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        15
+      ],
+      "to": [
+        50,
+        23,
+        19
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        23,
+        16
+      ],
+      "to": [
+        14,
+        24,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        23,
+        17
+      ],
+      "to": [
+        49,
+        24,
+        18
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        21
+      ],
+      "to": [
+        50,
+        23,
+        25
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        23,
+        22
+      ],
+      "to": [
+        14,
+        24,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        23,
+        23
+      ],
+      "to": [
+        49,
+        24,
+        24
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        27
+      ],
+      "to": [
+        50,
+        23,
+        31
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        23,
+        28
+      ],
+      "to": [
+        14,
+        24,
+        30
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        23,
+        29
+      ],
+      "to": [
+        49,
+        24,
+        30
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        35
+      ],
+      "to": [
+        49,
+        13,
+        38
+      ],
+      "material": "offwhite"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        12,
+        38
+      ],
+      "to": [
+        48,
+        13,
+        38
+      ],
+      "material": "amber"
+    }
+  ]
+}

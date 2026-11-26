@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "id": "dressing-folded-knit-display-personal-wall-cleat",
+  "category": "dressing-room",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745844"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#99a6a7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda174"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#56626c"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#ad9b87"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c92"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#465056"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a16357"
+    },
+    "mirror": {
+      "kind": "glass",
+      "color": "#9db1b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        8,
+        27
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        9
+      ],
+      "to": [
+        27,
+        25,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        3
+      ],
+      "to": [
+        6,
+        20,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        8,
+        3
+      ],
+      "to": [
+        25,
+        20,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        11
+      ],
+      "to": [
+        26,
+        9,
+        38
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        11
+      ],
+      "to": [
+        7,
+        24,
+        38
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        8,
+        11
+      ],
+      "to": [
+        26,
+        24,
+        38
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        14
+      ],
+      "to": [
+        25,
+        23,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        16
+      ],
+      "to": [
+        16,
+        21,
+        19
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        11,
+        16
+      ],
+      "to": [
+        23,
+        20,
+        20
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        22
+      ],
+      "to": [
+        25,
+        23,
+        23
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        24
+      ],
+      "to": [
+        16,
+        21,
+        27
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        11,
+        24
+      ],
+      "to": [
+        23,
+        20,
+        28
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        31
+      ],
+      "to": [
+        25,
+        23,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        33
+      ],
+      "to": [
+        16,
+        21,
+        36
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        11,
+        33
+      ],
+      "to": [
+        23,
+        20,
+        37
+      ],
+      "material": "ivory"
+    }
+  ]
+}

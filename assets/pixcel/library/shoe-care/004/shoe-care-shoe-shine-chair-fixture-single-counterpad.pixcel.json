@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "id": "shoe-care-shoe-shine-chair-fixture-single-counterpad",
+  "category": "shoe-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#765746"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad835e"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ca6a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#57656d"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#825f49"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#3d464f"
+    },
+    "fabric": {
+      "kind": "matte",
+      "color": "#a79885"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#ba9f7b"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8cdb7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c0a16d"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a76454"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#607b91"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        1
+      ],
+      "to": [
+        26,
+        24,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        27,
+        25,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        26,
+        19,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        16
+      ],
+      "to": [
+        25,
+        18,
+        20
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        19
+      ],
+      "to": [
+        25,
+        10,
+        33
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        19
+      ],
+      "to": [
+        8,
+        20,
+        25
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        19
+      ],
+      "to": [
+        25,
+        20,
+        25
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        20,
+        7
+      ],
+      "to": [
+        22,
+        25,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        20,
+        10
+      ],
+      "to": [
+        12,
+        25,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        20,
+        10
+      ],
+      "to": [
+        20,
+        25,
+        6
+      ],
+      "material": "iron"
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "id": "bakery-bread-proofing-cabinet-production-mobile-baker-rack",
+  "category": "bakery",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9da7a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596670"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e464b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a6815f"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#aaa29b"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded2bd"
+    },
+    "pastry": {
+      "kind": "matte",
+      "color": "#bd975e"
+    },
+    "toast": {
+      "kind": "matte",
+      "color": "#a5764f"
+    },
+    "dough": {
+      "kind": "matte",
+      "color": "#cfb696"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a56856"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#647a8d"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eaeb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        22,
+        0
+      ],
+      "to": [
+        55,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        56,
+        25,
+        7
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        6,
+        7
+      ],
+      "to": [
+        56,
+        23,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        55,
+        24,
+        43
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        12
+      ],
+      "to": [
+        53,
+        25,
+        39
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        14
+      ],
+      "to": [
+        51,
+        25,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        15
+      ],
+      "to": [
+        49,
+        25,
+        16
+      ],
+      "material": "dough"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        21
+      ],
+      "to": [
+        51,
+        25,
+        21
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        22
+      ],
+      "to": [
+        49,
+        25,
+        23
+      ],
+      "material": "dough"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        28
+      ],
+      "to": [
+        51,
+        25,
+        28
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        29
+      ],
+      "to": [
+        49,
+        25,
+        30
+      ],
+      "material": "dough"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        35
+      ],
+      "to": [
+        51,
+        25,
+        35
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        36
+      ],
+      "to": [
+        49,
+        25,
+        37
+      ],
+      "material": "dough"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        25,
+        22
+      ],
+      "to": [
+        53,
+        26,
+        29
+      ],
+      "material": "black"
+    }
+  ]
+}

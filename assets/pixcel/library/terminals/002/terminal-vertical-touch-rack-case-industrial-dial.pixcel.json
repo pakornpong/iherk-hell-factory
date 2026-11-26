@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "id": "terminal-vertical-touch-rack-case-industrial-dial",
+  "category": "computers",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "matte",
+      "color": "#a4acb1"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#ded7bd"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#63717d"
+    },
+    "dark": {
+      "kind": "metal",
+      "color": "#384252"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#232b39"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#c68744"
+    },
+    "display": {
+      "kind": "emissive",
+      "color": "#a3b9cc",
+      "glowRadius": 1,
+      "glowIntensity": 0.2
+    },
+    "ink": {
+      "kind": "matte",
+      "color": "#465763"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        26,
+        2
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        14
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        5
+      ],
+      "to": [
+        24,
+        25,
+        5
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        8
+      ],
+      "to": [
+        24,
+        25,
+        8
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        11
+      ],
+      "to": [
+        24,
+        25,
+        11
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        15
+      ],
+      "to": [
+        25,
+        25,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        19
+      ],
+      "to": [
+        19,
+        15,
+        24
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        21
+      ],
+      "to": [
+        22,
+        15,
+        43
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        24
+      ],
+      "to": [
+        21,
+        15,
+        41
+      ],
+      "material": "display"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        15,
+        27
+      ],
+      "to": [
+        19,
+        15,
+        28
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        15,
+        32
+      ],
+      "to": [
+        19,
+        15,
+        33
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        15,
+        37
+      ],
+      "to": [
+        19,
+        15,
+        38
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        19,
+        20
+      ],
+      "to": [
+        25,
+        27,
+        23
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        23
+      ],
+      "zFrom": 24,
+      "zTo": 25,
+      "radius": 3,
+      "material": "rubber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        24
+      ],
+      "zFrom": 24,
+      "zTo": 24,
+      "radius": 2,
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        21,
+        24
+      ],
+      "to": [
+        16,
+        22,
+        24
+      ],
+      "material": "cream"
+    }
+  ]
+}

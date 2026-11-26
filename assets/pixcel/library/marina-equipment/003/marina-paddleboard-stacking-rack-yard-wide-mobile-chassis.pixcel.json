@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "id": "marina-paddleboard-stacking-rack-yard-wide-mobile-chassis",
+  "category": "maritime",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a4866b"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#698294"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9caaa9"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596672"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#40494e"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#ad6d56"
+    },
+    "ochre": {
+      "kind": "matte",
+      "color": "#c19e62"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b69c7e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba7b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        6
+      ],
+      "to": [
+        55,
+        24,
+        9
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        54,
+        24,
+        10
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        11
+      ],
+      "to": [
+        8,
+        9,
+        35
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        11
+      ],
+      "to": [
+        53,
+        9,
+        35
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        12
+      ],
+      "to": [
+        52,
+        23,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        14
+      ],
+      "to": [
+        51,
+        22,
+        16
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        16
+      ],
+      "to": [
+        48,
+        20,
+        16
+      ],
+      "material": "tan"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        20
+      ],
+      "to": [
+        52,
+        23,
+        21
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        22
+      ],
+      "to": [
+        51,
+        22,
+        24
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        24
+      ],
+      "to": [
+        48,
+        20,
+        24
+      ],
+      "material": "tan"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        28
+      ],
+      "to": [
+        52,
+        23,
+        29
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        30
+      ],
+      "to": [
+        51,
+        22,
+        32
+      ],
+      "material": "clay"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        32
+      ],
+      "to": [
+        48,
+        20,
+        32
+      ],
+      "material": "tan"
+    }
+  ]
+}

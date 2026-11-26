@@ -1,0 +1,443 @@
+{
+  "schemaVersion": 1,
+  "id": "it-hvac-loop-sensor-bank-wide-enclosure-external-cable-tray-service-casters",
+  "category": "it-infrastructure",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#929fa7"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#58616c"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#333c46"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#767e83"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#d2ccbc"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a37a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627791"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ab6658"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#88adb7"
+    },
+    "led": {
+      "kind": "emissive",
+      "color": "#a4c6d6",
+      "glowRadius": 1,
+      "glowIntensity": 0.1
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        54,
+        24,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        6
+      ],
+      "to": [
+        54,
+        9,
+        34
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        34
+      ],
+      "to": [
+        53,
+        24,
+        35
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        6
+      ],
+      "to": [
+        53,
+        24,
+        8
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        6
+      ],
+      "to": [
+        7,
+        24,
+        34
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        9,
+        6
+      ],
+      "to": [
+        53,
+        24,
+        34
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        13,
+        7
+      ],
+      "to": [
+        56,
+        23,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        13,
+        9
+      ],
+      "to": [
+        56,
+        15,
+        38
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        21,
+        9
+      ],
+      "to": [
+        56,
+        23,
+        38
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        14,
+        37
+      ],
+      "to": [
+        56,
+        23,
+        39
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        9
+      ],
+      "to": [
+        50,
+        23,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        15
+      ],
+      "to": [
+        49,
+        13,
+        31
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        17
+      ],
+      "zFrom": 14,
+      "zTo": 30,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        16,
+        31
+      ],
+      "to": [
+        12,
+        18,
+        32
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        19,
+        15
+      ],
+      "to": [
+        11,
+        25,
+        12
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        29,
+        17
+      ],
+      "zFrom": 14,
+      "zTo": 30,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        16,
+        31
+      ],
+      "to": [
+        30,
+        18,
+        32
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "line",
+      "from": [
+        29,
+        19,
+        15
+      ],
+      "to": [
+        30,
+        25,
+        12
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        17
+      ],
+      "zFrom": 14,
+      "zTo": 30,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        16,
+        31
+      ],
+      "to": [
+        48,
+        18,
+        32
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        47,
+        19,
+        15
+      ],
+      "to": [
+        49,
+        25,
+        12
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        12,
+        35
+      ],
+      "to": [
+        53,
+        15,
+        43
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        15,
+        39
+      ],
+      "to": [
+        53,
+        16,
+        42
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        51,
+        16,
+        36
+      ],
+      "to": [
+        52,
+        20,
+        30
+      ],
+      "material": "gray"
+    }
+  ]
+}

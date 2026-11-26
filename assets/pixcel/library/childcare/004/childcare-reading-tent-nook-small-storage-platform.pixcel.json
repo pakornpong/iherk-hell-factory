@@ -1,0 +1,440 @@
+{
+  "schemaVersion": 1,
+  "id": "childcare-reading-tent-nook-small-storage-platform",
+  "category": "childcare",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#b58b64"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#9b7555"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b7a58e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac6c5c"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#6d8498"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8f9ba1"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#c4a463"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#4a535a"
+    },
+    "pink": {
+      "kind": "matte",
+      "color": "#a97880"
+    },
+    "mats": {
+      "kind": "matte",
+      "color": "#978d86"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        6
+      ],
+      "to": [
+        26,
+        24,
+        7
+      ],
+      "material": "mats"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        2
+      ],
+      "to": [
+        24,
+        26,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        26,
+        4
+      ],
+      "to": [
+        17,
+        26,
+        4
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        8
+      ],
+      "to": [
+        26,
+        24,
+        11
+      ],
+      "material": "mats"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        11
+      ],
+      "to": [
+        24,
+        23,
+        13
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        12
+      ],
+      "to": [
+        16,
+        7,
+        37
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        7,
+        12
+      ],
+      "to": [
+        16,
+        7,
+        37
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        23,
+        12
+      ],
+      "to": [
+        16,
+        23,
+        37
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        23,
+        12
+      ],
+      "to": [
+        16,
+        23,
+        37
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        13
+      ],
+      "to": [
+        6,
+        15,
+        14
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        17
+      ],
+      "to": [
+        8,
+        15,
+        18
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        21
+      ],
+      "to": [
+        9,
+        15,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        25
+      ],
+      "to": [
+        11,
+        15,
+        26
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        8,
+        29
+      ],
+      "to": [
+        12,
+        15,
+        30
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        8,
+        33
+      ],
+      "to": [
+        14,
+        15,
+        34
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        8,
+        37
+      ],
+      "to": [
+        16,
+        15,
+        38
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        8,
+        33
+      ],
+      "to": [
+        17,
+        15,
+        34
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        29
+      ],
+      "to": [
+        19,
+        15,
+        30
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        8,
+        25
+      ],
+      "to": [
+        20,
+        15,
+        26
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        8,
+        21
+      ],
+      "to": [
+        22,
+        15,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        17
+      ],
+      "to": [
+        23,
+        15,
+        18
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        8,
+        13
+      ],
+      "to": [
+        25,
+        15,
+        14
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        17,
+        13
+      ],
+      "to": [
+        15,
+        22,
+        15
+      ],
+      "material": "pink"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        8
+      ],
+      "to": [
+        27,
+        22,
+        20
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        20
+      ],
+      "to": [
+        26,
+        21,
+        22
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        14,
+        23
+      ],
+      "to": [
+        25,
+        19,
+        26
+      ],
+      "material": "red"
+    }
+  ]
+}

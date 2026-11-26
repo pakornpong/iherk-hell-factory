@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "id": "music-fixture-music-copyists-stand-solo-rolling-roadboard",
+  "category": "musical-instruments",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a8825e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785b47"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b424a"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#88949a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6adad"
+    },
+    "yellow": {
+      "kind": "metal",
+      "color": "#c1a164"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#a87b60"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd3be"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#8c6f5d"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a8e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a36153"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        0
+      ],
+      "to": [
+        28,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        5
+      ],
+      "to": [
+        12,
+        25,
+        6
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        15,
+        19
+      ],
+      "to": [
+        6,
+        23,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        15,
+        19
+      ],
+      "to": [
+        28,
+        23,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        15,
+        19
+      ],
+      "to": [
+        17,
+        7,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        15
+      ],
+      "zFrom": 18,
+      "zTo": 38,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        11,
+        26
+      ],
+      "to": [
+        29,
+        14,
+        38
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        14,
+        27
+      ],
+      "to": [
+        27,
+        14,
+        37
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        14,
+        29
+      ],
+      "to": [
+        25,
+        14,
+        29
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        14,
+        32
+      ],
+      "to": [
+        25,
+        14,
+        32
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        14,
+        34
+      ],
+      "to": [
+        25,
+        14,
+        34
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        25
+      ],
+      "to": [
+        28,
+        16,
+        26
+      ],
+      "material": "black"
+    }
+  ]
+}

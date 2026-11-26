@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "id": "field-trade-winch-cable-spool-tripod-trestle",
+  "category": "trades",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        6,
+        16,
+        13
+      ],
+      "to": [
+        6,
+        7,
+        0
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        16,
+        13
+      ],
+      "to": [
+        6,
+        24,
+        0
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        13,
+        12
+      ],
+      "to": [
+        8,
+        19,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        16,
+        13
+      ],
+      "to": [
+        23,
+        7,
+        0
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        16,
+        13
+      ],
+      "to": [
+        23,
+        24,
+        0
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        13,
+        12
+      ],
+      "to": [
+        25,
+        19,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        13
+      ],
+      "to": [
+        27,
+        24,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        15
+      ],
+      "to": [
+        26,
+        24,
+        20
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        21
+      ],
+      "to": [
+        9,
+        23,
+        35
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        7,
+        21
+      ],
+      "to": [
+        24,
+        23,
+        35
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        23
+      ],
+      "to": [
+        22,
+        20,
+        33
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        11,
+        24
+      ],
+      "to": [
+        20,
+        19,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        15
+      ],
+      "zFrom": 33,
+      "zTo": 34,
+      "radius": 5,
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        18,
+        27
+      ],
+      "to": [
+        27,
+        26,
+        18
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        25,
+        18
+      ],
+      "to": [
+        29,
+        27,
+        19
+      ],
+      "material": "amber"
+    }
+  ]
+}

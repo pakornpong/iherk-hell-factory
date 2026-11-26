@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "id": "cycle-cycle-pump-and-repair-long-wheelbase-street-ring",
+  "category": "bicycle",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "tire": {
+      "kind": "matte",
+      "color": "#42494e"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#a2a9a9"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#627786"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#737e86"
+    },
+    "saddle": {
+      "kind": "matte",
+      "color": "#66574e"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a46755"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d0be"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a9805e"
+    },
+    "concrete": {
+      "kind": "matte",
+      "color": "#a6a19b"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b49b79"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bca16b"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        2,
+        5,
+        0
+      ],
+      "to": [
+        59,
+        26,
+        0
+      ],
+      "material": "concrete"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        6,
+        25,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        22,
+        0
+      ],
+      "to": [
+        56,
+        25,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        17
+      ],
+      "to": [
+        55,
+        24,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        1
+      ],
+      "to": [
+        24,
+        24,
+        4
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        12
+      ],
+      "zFrom": 5,
+      "zTo": 33,
+      "radius": 2,
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        33
+      ],
+      "to": [
+        17,
+        13,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        13,
+        9
+      ],
+      "to": [
+        19,
+        19,
+        6
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "line",
+      "from": [
+        19,
+        19,
+        6
+      ],
+      "to": [
+        22,
+        25,
+        7
+      ],
+      "material": "tire"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        9,
+        5
+      ],
+      "to": [
+        51,
+        11,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        9,
+        30
+      ],
+      "to": [
+        54,
+        12,
+        32
+      ],
+      "material": "frame"
+    }
+  ]
+}

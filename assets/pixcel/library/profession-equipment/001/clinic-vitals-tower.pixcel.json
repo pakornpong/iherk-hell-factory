@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "id": "clinic-vitals-tower",
+  "category": "medical",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "color": "#e5e3d6",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#a0b0bc",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#445361",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#272f3b",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#49798f",
+      "kind": "matte"
+    },
+    "aqua": {
+      "color": "#78c5c4",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#b85446",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#ac784e",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e0ad58",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#f2ecdc",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        10,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        26,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        0
+      ],
+      "to": [
+        25,
+        10,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        23,
+        0
+      ],
+      "to": [
+        25,
+        26,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        27,
+        26,
+        6
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 7,
+      "zTo": 32,
+      "radius": 2,
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        29
+      ],
+      "to": [
+        24,
+        13,
+        43
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        31
+      ],
+      "to": [
+        22,
+        13,
+        41
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        13,
+        35
+      ],
+      "to": [
+        13,
+        13,
+        35
+      ],
+      "material": "aqua"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        13,
+        35
+      ],
+      "to": [
+        16,
+        13,
+        39
+      ],
+      "material": "aqua"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        13,
+        39
+      ],
+      "to": [
+        18,
+        13,
+        34
+      ],
+      "material": "aqua"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        13,
+        34
+      ],
+      "to": [
+        21,
+        13,
+        35
+      ],
+      "material": "aqua"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        15,
+        17
+      ],
+      "to": [
+        24,
+        22,
+        20
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        13,
+        34
+      ],
+      "to": [
+        25,
+        18,
+        21
+      ],
+      "material": "black"
+    }
+  ]
+}

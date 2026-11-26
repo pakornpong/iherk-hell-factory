@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "id": "sport-racket-stringing-cradle-extended-sideline-plinth",
+  "category": "sports",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "metal",
+      "color": "#8d9ba3"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#596772"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#404a51"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#ddd2bf"
+    },
+    "court": {
+      "kind": "matte",
+      "color": "#a67259"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d92"
+    },
+    "turf": {
+      "kind": "matte",
+      "color": "#718063"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b79c7b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a57d58"
+    },
+    "rope": {
+      "kind": "matte",
+      "color": "#b5a28a"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c9a468"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        4
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        4
+      ],
+      "to": [
+        54,
+        24,
+        4
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        9
+      ],
+      "to": [
+        52,
+        23,
+        13
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 17,
+      "radius": 5,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 17,
+      "radius": 4,
+      "material": "charcoal"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        17,
+        16
+      ],
+      "to": [
+        52,
+        22,
+        16
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        10,
+        13
+      ],
+      "to": [
+        52,
+        15,
+        20
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        15,
+        16
+      ],
+      "to": [
+        51,
+        17,
+        18
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        6
+      ],
+      "to": [
+        17,
+        25,
+        11
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        11
+      ],
+      "to": [
+        16,
+        24,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        23
+      ],
+      "zFrom": 13,
+      "zTo": 16,
+      "radius": 2,
+      "material": "court"
+    }
+  ]
+}

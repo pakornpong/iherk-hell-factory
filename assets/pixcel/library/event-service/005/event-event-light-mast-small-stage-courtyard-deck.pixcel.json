@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "id": "event-event-light-mast-small-stage-courtyard-deck",
+  "category": "events",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#99a4a7"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#59656e"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3f494f"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a8835e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#755945"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#bcae9a"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#ddd4bf"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657c93"
+    },
+    "terra": {
+      "kind": "matte",
+      "color": "#a66453"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bea16b"
+    },
+    "display": {
+      "kind": "glass",
+      "color": "#92acba"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        26,
+        25,
+        1
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        26,
+        8,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        2
+      ],
+      "to": [
+        26,
+        12,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        14,
+        2
+      ],
+      "to": [
+        26,
+        16,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        18,
+        2
+      ],
+      "to": [
+        26,
+        20,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        2
+      ],
+      "to": [
+        26,
+        24,
+        4
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        12
+      ],
+      "zFrom": 5,
+      "zTo": 7,
+      "radius": 5,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        12
+      ],
+      "zFrom": 8,
+      "zTo": 34,
+      "radius": 1,
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        12
+      ],
+      "zFrom": 5,
+      "zTo": 7,
+      "radius": 5,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        12
+      ],
+      "zFrom": 8,
+      "zTo": 34,
+      "radius": 1,
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        33
+      ],
+      "to": [
+        21,
+        14,
+        35
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        27
+      ],
+      "to": [
+        12,
+        19,
+        33
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        19,
+        28
+      ],
+      "to": [
+        11,
+        19,
+        32
+      ],
+      "material": "offwhite"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        13,
+        28
+      ],
+      "to": [
+        19,
+        19,
+        34
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        19,
+        29
+      ],
+      "to": [
+        18,
+        19,
+        33
+      ],
+      "material": "terra"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        13,
+        29
+      ],
+      "to": [
+        22,
+        19,
+        35
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        19,
+        30
+      ],
+      "to": [
+        21,
+        19,
+        34
+      ],
+      "material": "offwhite"
+    }
+  ]
+}

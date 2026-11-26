@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "id": "airfield-aircraft-water-cart-narrow-apron-service-riser",
+  "category": "aviation",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a1a9ac"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#606e7b"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e484e"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#ded6c3"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c3a05f"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a96153"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657e92"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a78460"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab5"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        9,
+        9,
+        8
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        0
+      ],
+      "to": [
+        9,
+        24,
+        8
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        8
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        22,
+        0
+      ],
+      "to": [
+        28,
+        24,
+        8
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        8
+      ],
+      "to": [
+        29,
+        25,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        23,
+        2
+      ],
+      "to": [
+        25,
+        23,
+        8
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        10
+      ],
+      "to": [
+        28,
+        24,
+        13
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        14
+      ],
+      "to": [
+        25,
+        22,
+        26
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        27
+      ],
+      "to": [
+        24,
+        20,
+        29
+      ],
+      "material": "white"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        16
+      ],
+      "zFrom": 29,
+      "zTo": 31,
+      "radius": 2,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        22,
+        16
+      ],
+      "to": [
+        23,
+        23,
+        23
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        22,
+        18
+      ],
+      "to": [
+        26,
+        26,
+        14
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        22,
+        22
+      ],
+      "to": [
+        25,
+        22,
+        23
+      ],
+      "material": "blue"
+    }
+  ]
+}

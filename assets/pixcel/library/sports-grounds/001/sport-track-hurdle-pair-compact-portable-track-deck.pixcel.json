@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "id": "sport-track-hurdle-pair-compact-portable-track-deck",
+  "category": "sports",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "metal",
+      "color": "#8d9ba3"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#596772"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#404a51"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#ddd2bf"
+    },
+    "court": {
+      "kind": "matte",
+      "color": "#a67259"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d92"
+    },
+    "turf": {
+      "kind": "matte",
+      "color": "#718063"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b79c7b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a57d58"
+    },
+    "rope": {
+      "kind": "matte",
+      "color": "#b5a28a"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c9a468"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        29,
+        25,
+        4
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        4
+      ],
+      "to": [
+        28,
+        25,
+        4
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        5
+      ],
+      "to": [
+        11,
+        23,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        6
+      ],
+      "to": [
+        11,
+        10,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        22,
+        6
+      ],
+      "to": [
+        11,
+        23,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        18
+      ],
+      "to": [
+        11,
+        23,
+        19
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        14,
+        18
+      ],
+      "to": [
+        11,
+        16,
+        19
+      ],
+      "material": "court"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        5
+      ],
+      "to": [
+        25,
+        23,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        9,
+        6
+      ],
+      "to": [
+        25,
+        10,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        22,
+        6
+      ],
+      "to": [
+        25,
+        23,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        9,
+        18
+      ],
+      "to": [
+        25,
+        23,
+        19
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        14,
+        18
+      ],
+      "to": [
+        25,
+        16,
+        19
+      ],
+      "material": "court"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        7,
+        18
+      ],
+      "to": [
+        11,
+        24,
+        21
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        18
+      ],
+      "to": [
+        25,
+        24,
+        22
+      ],
+      "material": "court"
+    }
+  ]
+}

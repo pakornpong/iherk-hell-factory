@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "id": "kitchen-induction-wok-counter",
+  "category": "kitchen",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#adb1b1"
+    },
+    "brushed": {
+      "kind": "metal",
+      "color": "#7a8081"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#344252"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dfd8c1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#b6bdbe"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b2604d"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#7daeba"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#cfac62"
+    },
+    "light": {
+      "kind": "emissive",
+      "color": "#e6c280",
+      "glowRadius": 1,
+      "glowIntensity": 0.2
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        1
+      ],
+      "to": [
+        27,
+        26,
+        8
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        8
+      ],
+      "to": [
+        25,
+        23,
+        9
+      ],
+      "material": "brushed"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 9,
+      "zTo": 10,
+      "radius": 5,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 11,
+      "zTo": 12,
+      "radius": 8,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 13,
+      "zTo": 14,
+      "radius": 9,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 12,
+      "zTo": 14,
+      "radius": 7,
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        14,
+        12
+      ],
+      "to": [
+        29,
+        16,
+        13
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        25,
+        5
+      ],
+      "to": [
+        24,
+        26,
+        6
+      ],
+      "material": "light"
+    }
+  ]
+}

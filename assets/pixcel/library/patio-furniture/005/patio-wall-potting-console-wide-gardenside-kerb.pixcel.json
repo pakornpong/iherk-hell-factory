@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "id": "patio-wall-potting-console-wide-gardenside-kerb",
+  "category": "patio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a87e58",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#745743",
+      "kind": "wood"
+    },
+    "stone": {
+      "color": "#aaa39a",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d8ceba",
+      "kind": "matte"
+    },
+    "fabric": {
+      "color": "#aa9985",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca9ab",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#586671",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#637e94",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a46454",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a9765f",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fadb8",
+      "kind": "glass"
+    },
+    "plant": {
+      "color": "#6d805f",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8a735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        54,
+        26,
+        1
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        53,
+        25,
+        3
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        53,
+        8,
+        3
+      ],
+      "material": "plant"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        3
+      ],
+      "to": [
+        53,
+        25,
+        3
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        52,
+        10,
+        35
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        16
+      ],
+      "to": [
+        52,
+        24,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        26
+      ],
+      "to": [
+        52,
+        16,
+        28
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        8
+      ],
+      "to": [
+        51,
+        22,
+        10
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 18,
+      "zTo": 23,
+      "radius": 3,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        15
+      ],
+      "zFrom": 23,
+      "zTo": 26,
+      "radius": 2,
+      "material": "plant"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        12
+      ],
+      "zFrom": 28,
+      "zTo": 32,
+      "radius": 2,
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        15
+      ],
+      "zFrom": 18,
+      "zTo": 23,
+      "radius": 3,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        15
+      ],
+      "zFrom": 23,
+      "zTo": 26,
+      "radius": 2,
+      "material": "plant"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        12
+      ],
+      "zFrom": 28,
+      "zTo": 32,
+      "radius": 2,
+      "material": "clay"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        19,
+        4
+      ],
+      "to": [
+        51,
+        24,
+        9
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        19,
+        9
+      ],
+      "to": [
+        50,
+        24,
+        10
+      ],
+      "material": "cream"
+    }
+  ]
+}

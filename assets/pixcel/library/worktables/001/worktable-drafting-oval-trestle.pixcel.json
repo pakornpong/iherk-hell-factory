@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "id": "worktable-drafting-oval-trestle",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#bb8250"
+    },
+    "shaded": {
+      "kind": "wood",
+      "color": "#87563e"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#465462"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6bac4"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#767f6e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b95142"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#293343"
+    },
+    "ceramic": {
+      "kind": "matte",
+      "color": "#e3e3d7"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#e5ac54"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        10,
+        26,
+        2
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        2
+      ],
+      "to": [
+        9,
+        19,
+        19
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        17
+      ],
+      "to": [
+        10,
+        25,
+        19
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        2
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        13,
+        2
+      ],
+      "to": [
+        55,
+        19,
+        19
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        8,
+        17
+      ],
+      "to": [
+        56,
+        25,
+        19
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        15,
+        5
+      ],
+      "to": [
+        53,
+        17,
+        7
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        4,
+        20
+      ],
+      "to": [
+        48,
+        28,
+        22
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        16
+      ],
+      "zFrom": 20,
+      "zTo": 22,
+      "radius": 12,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        16
+      ],
+      "zFrom": 20,
+      "zTo": 22,
+      "radius": 12,
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        23
+      ],
+      "to": [
+        47,
+        20,
+        24
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "slope",
+      "from": [
+        11,
+        8,
+        24
+      ],
+      "to": [
+        47,
+        20,
+        33
+      ],
+      "axis": "-Y",
+      "material": "ceramic"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        20,
+        24
+      ],
+      "to": [
+        47,
+        20,
+        25
+      ],
+      "material": "steel"
+    }
+  ]
+}

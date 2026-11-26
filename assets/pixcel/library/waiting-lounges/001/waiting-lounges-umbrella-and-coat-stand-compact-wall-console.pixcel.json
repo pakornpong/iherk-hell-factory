@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "id": "waiting-lounges-umbrella-and-coat-stand-compact-wall-console",
+  "category": "lounge",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#a77c56",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#755644",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ba6aa",
+      "kind": "metal"
+    },
+    "charcoal": {
+      "color": "#49535c",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#ddd5c3",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#aa9a88",
+      "kind": "matte"
+    },
+    "graphite": {
+      "color": "#363e43",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#bda16c",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a65c50",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#6b8090",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#89a8b4",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#a8a09a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        7,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        11
+      ],
+      "to": [
+        27,
+        26,
+        12
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        2
+      ],
+      "to": [
+        6,
+        22,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        8,
+        2
+      ],
+      "to": [
+        25,
+        22,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        15
+      ],
+      "zFrom": 13,
+      "zTo": 15,
+      "radius": 8,
+      "material": "charcoal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        15
+      ],
+      "zFrom": 16,
+      "zTo": 52,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        15,
+        47
+      ],
+      "to": [
+        6,
+        12,
+        51
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        15,
+        47
+      ],
+      "to": [
+        26,
+        12,
+        51
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        15,
+        47
+      ],
+      "to": [
+        16,
+        24,
+        51
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        21
+      ],
+      "zFrom": 14,
+      "zTo": 24,
+      "radius": 4,
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        21,
+        14
+      ],
+      "to": [
+        11,
+        22,
+        40
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        22,
+        39
+      ],
+      "to": [
+        13,
+        24,
+        41
+      ],
+      "material": "red"
+    }
+  ]
+}

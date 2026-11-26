@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "id": "retail-footwear-stepped-wide-aisle",
+  "category": "retail",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9da5a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#535a60"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad825d"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89775"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#34383d"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#d9d3c4"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a55b50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a167"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#63798c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eacb6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        58,
+        26,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        3
+      ],
+      "to": [
+        57,
+        24,
+        5
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        6
+      ],
+      "to": [
+        57,
+        25,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        57,
+        11,
+        21
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        17,
+        12
+      ],
+      "to": [
+        11,
+        24,
+        13
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        21,
+        14
+      ],
+      "to": [
+        11,
+        24,
+        16
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        22
+      ],
+      "to": [
+        11,
+        11,
+        25
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        17,
+        12
+      ],
+      "to": [
+        20,
+        24,
+        13
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        21,
+        14
+      ],
+      "to": [
+        20,
+        24,
+        16
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        7,
+        22
+      ],
+      "to": [
+        20,
+        11,
+        25
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        17,
+        12
+      ],
+      "to": [
+        54,
+        24,
+        13
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        21,
+        14
+      ],
+      "to": [
+        54,
+        24,
+        16
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        7,
+        22
+      ],
+      "to": [
+        54,
+        11,
+        25
+      ],
+      "material": "kraft"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "id": "kitchen-food-dehydrator-counter",
+  "category": "kitchen",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#adb1b1"
+    },
+    "brushed": {
+      "kind": "metal",
+      "color": "#7a8081"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#344252"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dfd8c1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#c2b7a4"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b2604d"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#7daeba"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#cfac62"
+    },
+    "light": {
+      "kind": "emissive",
+      "color": "#e6c280",
+      "glowRadius": 1,
+      "glowIntensity": 0.2
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        1
+      ],
+      "to": [
+        25,
+        25,
+        25
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        4
+      ],
+      "to": [
+        24,
+        25,
+        22
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        6
+      ],
+      "to": [
+        23,
+        25,
+        20
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        8
+      ],
+      "to": [
+        22,
+        26,
+        8
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        12
+      ],
+      "to": [
+        22,
+        26,
+        12
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        16
+      ],
+      "to": [
+        22,
+        26,
+        16
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        20
+      ],
+      "to": [
+        22,
+        26,
+        20
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        23
+      ],
+      "to": [
+        15,
+        25,
+        24
+      ],
+      "material": "light"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        25,
+        22
+      ],
+      "to": [
+        22,
+        26,
+        24
+      ],
+      "material": "black"
+    }
+  ]
+}

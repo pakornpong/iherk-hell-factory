@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "id": "street-drinking-pair-paving-wide",
+  "category": "public-space",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a07f60"
+    },
+    "darkwood": {
+      "kind": "wood",
+      "color": "#755943"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#929fa5"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#505d66"
+    },
+    "paved": {
+      "kind": "matte",
+      "color": "#ada99e"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#444d52"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbd7c8"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#647d91"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#9f7060"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b29d7b"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#97b5bf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        2,
+        3,
+        0
+      ],
+      "to": [
+        58,
+        28,
+        1
+      ],
+      "material": "paved"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        8,
+        1
+      ],
+      "to": [
+        57,
+        8,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        15,
+        1
+      ],
+      "to": [
+        57,
+        15,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        22,
+        1
+      ],
+      "to": [
+        57,
+        22,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        2
+      ],
+      "to": [
+        52,
+        22,
+        6
+      ],
+      "material": "paved"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 6,
+      "zTo": 22,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        16
+      ],
+      "zFrom": 6,
+      "zTo": 18,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        15
+      ],
+      "zFrom": 22,
+      "zTo": 25,
+      "radius": 6,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        16
+      ],
+      "zFrom": 18,
+      "zTo": 21,
+      "radius": 6,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        25
+      ],
+      "to": [
+        13,
+        14,
+        28
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        11,
+        21
+      ],
+      "to": [
+        50,
+        13,
+        24
+      ],
+      "material": "iron"
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "id": "storage-tall-wardrobe-open-bins-raised",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#b07c52"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#744e3f"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#b3aa98"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#494a48"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8097a3"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#d4a953"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8bbac5"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b76656"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#ddd3ba"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        6,
+        8,
+        8
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        0
+      ],
+      "to": [
+        6,
+        24,
+        8
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        6,
+        0
+      ],
+      "to": [
+        47,
+        8,
+        8
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        22,
+        0
+      ],
+      "to": [
+        47,
+        24,
+        8
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        8
+      ],
+      "to": [
+        47,
+        23,
+        9
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        10
+      ],
+      "to": [
+        4,
+        24,
+        46
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        5,
+        10
+      ],
+      "to": [
+        47,
+        24,
+        46
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        10
+      ],
+      "to": [
+        45,
+        6,
+        46
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        1,
+        2,
+        47
+      ],
+      "to": [
+        49,
+        27,
+        49
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        3,
+        50
+      ],
+      "to": [
+        48,
+        26,
+        51
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        28
+      ],
+      "to": [
+        45,
+        25,
+        29
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        6,
+        10
+      ],
+      "to": [
+        26,
+        25,
+        46
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        10
+      ],
+      "to": [
+        24,
+        25,
+        14
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        24,
+        10
+      ],
+      "to": [
+        44,
+        25,
+        14
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        29
+      ],
+      "to": [
+        24,
+        25,
+        33
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        13,
+        30
+      ],
+      "to": [
+        44,
+        21,
+        36
+      ],
+      "material": "steel"
+    }
+  ]
+}

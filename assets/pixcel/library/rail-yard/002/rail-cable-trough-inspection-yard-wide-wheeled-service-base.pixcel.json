@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "rail-cable-trough-inspection-yard-wide-wheeled-service-base",
+  "category": "railway",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9ba8ab",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#596772",
+      "kind": "metal"
+    },
+    "wood": {
+      "color": "#a18362",
+      "kind": "wood"
+    },
+    "rock": {
+      "color": "#9e968b",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#424b51",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#667f93",
+      "kind": "matte"
+    },
+    "orange": {
+      "color": "#aa6853",
+      "kind": "matte"
+    },
+    "ivory": {
+      "color": "#dbd3bb",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#c1a16a",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8baab5",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        7
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        5
+      ],
+      "to": [
+        56,
+        9,
+        8
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        54,
+        24,
+        11
+      ],
+      "material": "rock"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        11
+      ],
+      "to": [
+        53,
+        11,
+        20
+      ],
+      "material": "rock"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        19,
+        11
+      ],
+      "to": [
+        53,
+        23,
+        20
+      ],
+      "material": "rock"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        11
+      ],
+      "to": [
+        52,
+        19,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        12,
+        14
+      ],
+      "to": [
+        52,
+        12,
+        15
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        15,
+        14
+      ],
+      "to": [
+        52,
+        15,
+        16
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        17,
+        14
+      ],
+      "to": [
+        52,
+        17,
+        17
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        11,
+        17
+      ],
+      "to": [
+        52,
+        19,
+        21
+      ],
+      "material": "rock"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        16,
+        10
+      ],
+      "to": [
+        52,
+        24,
+        16
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        24,
+        13
+      ],
+      "to": [
+        50,
+        24,
+        14
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        44,
+        16,
+        15
+      ],
+      "to": [
+        41,
+        13,
+        19
+      ],
+      "material": "steel"
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "metalshop-horizontal-bandsaw-shop-span-field-service-caster",
+  "category": "metalworking",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea7a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#565f67"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3c454b"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#61778c"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78262"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a45e50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a066"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d9d0bb"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#9d7a5c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8daab4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        25,
+        5
+      ],
+      "to": [
+        14,
+        26,
+        6
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        54,
+        24,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        13
+      ],
+      "to": [
+        53,
+        23,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        15
+      ],
+      "to": [
+        13,
+        19,
+        28
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        9,
+        16
+      ],
+      "to": [
+        52,
+        19,
+        25
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        11,
+        26
+      ],
+      "to": [
+        45,
+        11,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        26
+      ],
+      "to": [
+        52,
+        19,
+        30
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        19,
+        24
+      ],
+      "to": [
+        47,
+        20,
+        26
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        18,
+        16
+      ],
+      "to": [
+        16,
+        21,
+        18
+      ],
+      "material": "copper"
+    }
+  ]
+}

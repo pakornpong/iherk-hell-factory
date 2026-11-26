@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "id": "lab-bench-centrifuge",
+  "category": "lab",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "color": "#2d3443",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#879aaa",
+      "kind": "metal"
+    },
+    "white": {
+      "color": "#ece9db",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#397694",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#be5543",
+      "kind": "matte"
+    },
+    "yellow": {
+      "color": "#e1ad52",
+      "kind": "matte"
+    },
+    "screen": {
+      "color": "#79e1ea",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.24
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        26,
+        3
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        4
+      ],
+      "to": [
+        26,
+        25,
+        13
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        14
+      ],
+      "to": [
+        24,
+        23,
+        16
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        13
+      ],
+      "zFrom": 17,
+      "zTo": 19,
+      "radius": 8,
+      "material": "ink"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        13
+      ],
+      "zFrom": 20,
+      "zTo": 21,
+      "radius": 7,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        13
+      ],
+      "zFrom": 22,
+      "zTo": 23,
+      "radius": 2,
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        9
+      ],
+      "to": [
+        17,
+        26,
+        11
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        26,
+        10
+      ],
+      "to": [
+        15,
+        26,
+        10
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        24
+      ],
+      "zFrom": 13,
+      "zTo": 14,
+      "radius": 2,
+      "material": "red"
+    }
+  ]
+}

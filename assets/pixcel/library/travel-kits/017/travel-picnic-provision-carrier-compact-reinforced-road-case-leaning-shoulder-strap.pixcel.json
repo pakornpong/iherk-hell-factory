@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "id": "travel-picnic-provision-carrier-compact-reinforced-road-case-leaning-shoulder-strap",
+  "category": "travel",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cloth": {
+      "kind": "matte",
+      "color": "#99775c"
+    },
+    "edge": {
+      "kind": "matte",
+      "color": "#434b53"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#8f9c9f"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8ceba"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d1c1a4"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bea071"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a26657"
+    },
+    "lining": {
+      "kind": "matte",
+      "color": "#9b7d66"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#aa845e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eabb9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        1
+      ],
+      "to": [
+        25,
+        22,
+        2
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        17,
+        15
+      ],
+      "to": [
+        10,
+        16,
+        26
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        16,
+        26
+      ],
+      "to": [
+        20,
+        16,
+        26
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        16,
+        26
+      ],
+      "to": [
+        25,
+        17,
+        16
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        16,
+        26
+      ],
+      "to": [
+        17,
+        17,
+        27
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        2
+      ],
+      "to": [
+        26,
+        24,
+        19
+      ],
+      "material": "edge"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        2
+      ],
+      "to": [
+        6,
+        24,
+        19
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        2
+      ],
+      "to": [
+        26,
+        24,
+        19
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        18
+      ],
+      "to": [
+        26,
+        24,
+        19
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        2
+      ],
+      "to": [
+        26,
+        23,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        15
+      ],
+      "to": [
+        7,
+        9,
+        20
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        15
+      ],
+      "to": [
+        7,
+        24,
+        20
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        15
+      ],
+      "to": [
+        26,
+        9,
+        20
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        22,
+        15
+      ],
+      "to": [
+        26,
+        24,
+        20
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        24,
+        14
+      ],
+      "to": [
+        13,
+        25,
+        16
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        24,
+        14
+      ],
+      "to": [
+        22,
+        25,
+        16
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        4
+      ],
+      "to": [
+        25,
+        24,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        14
+      ],
+      "to": [
+        24,
+        25,
+        16
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        13
+      ],
+      "zFrom": 19,
+      "zTo": 25,
+      "radius": 2,
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        13
+      ],
+      "zFrom": 19,
+      "zTo": 24,
+      "radius": 2,
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        16,
+        19
+      ],
+      "to": [
+        20,
+        20,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        4
+      ],
+      "to": [
+        25,
+        25,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        5
+      ],
+      "to": [
+        24,
+        25,
+        5
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        8
+      ],
+      "to": [
+        24,
+        25,
+        8
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        11
+      ],
+      "to": [
+        24,
+        25,
+        11
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        14
+      ],
+      "to": [
+        24,
+        25,
+        14
+      ],
+      "material": "lining"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        19
+      ],
+      "to": [
+        7,
+        20,
+        21
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        9,
+        19
+      ],
+      "to": [
+        26,
+        20,
+        21
+      ],
+      "material": "oak"
+    }
+  ]
+}

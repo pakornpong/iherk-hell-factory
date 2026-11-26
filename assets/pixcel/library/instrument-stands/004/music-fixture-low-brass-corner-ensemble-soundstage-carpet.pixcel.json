@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "id": "music-fixture-low-brass-corner-ensemble-soundstage-carpet",
+  "category": "musical-instruments",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a8825e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785b47"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b424a"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#88949a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6adad"
+    },
+    "yellow": {
+      "kind": "metal",
+      "color": "#c1a164"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#a87b60"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd3be"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#8c6f5d"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a8e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a36153"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        57,
+        26,
+        1
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        1
+      ],
+      "to": [
+        56,
+        25,
+        1
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        2
+      ],
+      "to": [
+        25,
+        24,
+        5
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        16,
+        5
+      ],
+      "to": [
+        10,
+        16,
+        30
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        16,
+        30
+      ],
+      "to": [
+        21,
+        17,
+        30
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        17,
+        30
+      ],
+      "to": [
+        21,
+        17,
+        16
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        17,
+        16
+      ],
+      "to": [
+        30,
+        17,
+        13
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        17,
+        13
+      ],
+      "to": [
+        30,
+        18,
+        25
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        16
+      ],
+      "zFrom": 30,
+      "zTo": 34,
+      "radius": 4,
+      "material": "yellow"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        16
+      ],
+      "zFrom": 34,
+      "zTo": 34,
+      "radius": 3,
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        17,
+        21
+      ],
+      "to": [
+        33,
+        19,
+        24
+      ],
+      "material": "gray"
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "id": "lounge-seat-open-cane-settee-snug-platform-plinth",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a27955"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795743"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b8a06d"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#636c72"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#43464b"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#8e6d52"
+    },
+    "piping": {
+      "kind": "matte",
+      "color": "#b98e67"
+    },
+    "pillow": {
+      "kind": "matte",
+      "color": "#d7c6aa"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        39,
+        24,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        40,
+        25,
+        3
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        4
+      ],
+      "to": [
+        40,
+        23,
+        8
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        8
+      ],
+      "to": [
+        38,
+        22,
+        11
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        7,
+        10,
+        27
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        7,
+        4
+      ],
+      "to": [
+        40,
+        10,
+        27
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        25
+      ],
+      "to": [
+        40,
+        10,
+        27
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        13
+      ],
+      "to": [
+        39,
+        9,
+        15
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        8,
+        14
+      ],
+      "to": [
+        8,
+        8,
+        25
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        8,
+        14
+      ],
+      "to": [
+        12,
+        8,
+        25
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        8,
+        14
+      ],
+      "to": [
+        16,
+        8,
+        25
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        19,
+        8,
+        14
+      ],
+      "to": [
+        20,
+        8,
+        25
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        8,
+        14
+      ],
+      "to": [
+        24,
+        8,
+        25
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        8,
+        14
+      ],
+      "to": [
+        28,
+        8,
+        25
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        31,
+        8,
+        14
+      ],
+      "to": [
+        32,
+        8,
+        25
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        35,
+        8,
+        14
+      ],
+      "to": [
+        36,
+        8,
+        25
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        39,
+        8,
+        14
+      ],
+      "to": [
+        40,
+        8,
+        25
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        14
+      ],
+      "to": [
+        7,
+        22,
+        15
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        9,
+        14
+      ],
+      "to": [
+        40,
+        22,
+        15
+      ],
+      "material": "wood"
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "id": "lounge-seat-zero-wall-recliner-accent-turned-walnut",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a27955"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795743"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b8a06d"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#636c72"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#43464b"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#8e6d52"
+    },
+    "piping": {
+      "kind": "matte",
+      "color": "#b98e67"
+    },
+    "pillow": {
+      "kind": "matte",
+      "color": "#d7c6aa"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 2,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        8
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 1,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        8
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        22
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 2,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        22
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 1,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        22
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 2,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        8
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 1,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        8
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        22
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 2,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        22
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 1,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        22
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        7
+      ],
+      "to": [
+        24,
+        23,
+        13
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "slope",
+      "from": [
+        7,
+        5,
+        12
+      ],
+      "to": [
+        23,
+        13,
+        35
+      ],
+      "axis": "-Y",
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        13
+      ],
+      "to": [
+        22,
+        22,
+        17
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "slope",
+      "from": [
+        7,
+        23,
+        12
+      ],
+      "to": [
+        23,
+        30,
+        16
+      ],
+      "axis": "-Y",
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        15
+      ],
+      "to": [
+        8,
+        23,
+        22
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        10,
+        15
+      ],
+      "to": [
+        24,
+        23,
+        22
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        19,
+        18
+      ],
+      "to": [
+        24,
+        20,
+        19
+      ],
+      "material": "brass"
+    }
+  ]
+}

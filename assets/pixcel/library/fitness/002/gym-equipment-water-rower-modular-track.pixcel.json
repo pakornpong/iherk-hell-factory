@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "id": "gym-equipment-water-rower-modular-track",
+  "category": "fitness",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#94a0a9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#323b45"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#47535b"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#65758a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#4e697f"
+    },
+    "vinyl": {
+      "kind": "matte",
+      "color": "#354f65"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a3534b"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#ba9d65"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        58,
+        26,
+        1
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        58,
+        8,
+        3
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        2
+      ],
+      "to": [
+        58,
+        25,
+        3
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        8,
+        2
+      ],
+      "to": [
+        12,
+        23,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        8,
+        2
+      ],
+      "to": [
+        51,
+        23,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        4
+      ],
+      "to": [
+        58,
+        12,
+        8
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        20,
+        4
+      ],
+      "to": [
+        58,
+        22,
+        8
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        16
+      ],
+      "zFrom": 8,
+      "zTo": 16,
+      "radius": 8,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        16
+      ],
+      "zFrom": 17,
+      "zTo": 17,
+      "radius": 7,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        12,
+        9
+      ],
+      "to": [
+        36,
+        20,
+        12
+      ],
+      "material": "vinyl"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        9
+      ],
+      "to": [
+        25,
+        13,
+        14
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        19,
+        9
+      ],
+      "to": [
+        25,
+        22,
+        14
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        16,
+        17
+      ],
+      "to": [
+        26,
+        16,
+        18
+      ],
+      "material": "black"
+    }
+  ]
+}

@@ -1,0 +1,514 @@
+{
+  "schemaVersion": 1,
+  "id": "craft-weavers-shuttle-loom-industrial-trestle-standalone",
+  "category": "craft-workshop",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ab8159"
+    },
+    "nut": {
+      "kind": "wood",
+      "color": "#745644"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9af"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596471"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#dbd2be"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a86550"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9d5553"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e798a"
+    },
+    "soot": {
+      "kind": "matte",
+      "color": "#3a4046"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#a89779"
+    },
+    "buff": {
+      "kind": "matte",
+      "color": "#c7a969"
+    },
+    "pane": {
+      "kind": "glass",
+      "color": "#87a6b0"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        0
+      ],
+      "to": [
+        9,
+        25,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        8,
+        1
+      ],
+      "to": [
+        7,
+        15,
+        16
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        24,
+        1
+      ],
+      "to": [
+        7,
+        15,
+        16
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        6,
+        0
+      ],
+      "to": [
+        44,
+        25,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        8,
+        1
+      ],
+      "to": [
+        42,
+        15,
+        16
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        24,
+        1
+      ],
+      "to": [
+        42,
+        15,
+        16
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        15
+      ],
+      "to": [
+        44,
+        24,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        17
+      ],
+      "to": [
+        44,
+        25,
+        20
+      ],
+      "material": "nut"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        20
+      ],
+      "to": [
+        9,
+        9,
+        43
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        21,
+        20
+      ],
+      "to": [
+        9,
+        23,
+        39
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        7,
+        42
+      ],
+      "to": [
+        7,
+        22,
+        38
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        7,
+        20
+      ],
+      "to": [
+        41,
+        9,
+        43
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        21,
+        20
+      ],
+      "to": [
+        41,
+        23,
+        39
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        39,
+        7,
+        42
+      ],
+      "to": [
+        39,
+        22,
+        38
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        42
+      ],
+      "to": [
+        39,
+        10,
+        43
+      ],
+      "material": "nut"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        36
+      ],
+      "to": [
+        39,
+        21,
+        37
+      ],
+      "material": "nut"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        9,
+        42
+      ],
+      "to": [
+        10,
+        20,
+        37
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        9,
+        42
+      ],
+      "to": [
+        12,
+        20,
+        37
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        9,
+        42
+      ],
+      "to": [
+        14,
+        20,
+        37
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        9,
+        42
+      ],
+      "to": [
+        16,
+        20,
+        37
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        9,
+        42
+      ],
+      "to": [
+        18,
+        20,
+        37
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        9,
+        42
+      ],
+      "to": [
+        20,
+        20,
+        37
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        9,
+        42
+      ],
+      "to": [
+        22,
+        20,
+        37
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        9,
+        42
+      ],
+      "to": [
+        24,
+        20,
+        37
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        9,
+        42
+      ],
+      "to": [
+        26,
+        20,
+        37
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        9,
+        42
+      ],
+      "to": [
+        28,
+        20,
+        37
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        9,
+        42
+      ],
+      "to": [
+        30,
+        20,
+        37
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "line",
+      "from": [
+        32,
+        9,
+        42
+      ],
+      "to": [
+        32,
+        20,
+        37
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "line",
+      "from": [
+        34,
+        9,
+        42
+      ],
+      "to": [
+        34,
+        20,
+        37
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "line",
+      "from": [
+        36,
+        9,
+        42
+      ],
+      "to": [
+        36,
+        20,
+        37
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        14,
+        39
+      ],
+      "to": [
+        31,
+        16,
+        40
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        19,
+        38
+      ],
+      "to": [
+        23,
+        20,
+        39
+      ],
+      "material": "nut"
+    }
+  ]
+}

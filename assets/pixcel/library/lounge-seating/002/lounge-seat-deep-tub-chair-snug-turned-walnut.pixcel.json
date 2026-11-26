@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "id": "lounge-seat-deep-tub-chair-snug-turned-walnut",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a27955"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795743"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b8a06d"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#636c72"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#43464b"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#706e6a"
+    },
+    "piping": {
+      "kind": "matte",
+      "color": "#a09a92"
+    },
+    "pillow": {
+      "kind": "matte",
+      "color": "#c6b5a2"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 2,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        8
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 1,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        8
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        22
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 2,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        22
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 1,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        22
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 2,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        8
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 1,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        8
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        22
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 2,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        22
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 1,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        22
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        40,
+        23,
+        12
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        13
+      ],
+      "to": [
+        39,
+        10,
+        25
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        12
+      ],
+      "to": [
+        8,
+        22,
+        22
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        8,
+        12
+      ],
+      "to": [
+        40,
+        22,
+        22
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        13
+      ],
+      "to": [
+        38,
+        13,
+        26
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        13
+      ],
+      "to": [
+        36,
+        21,
+        16
+      ],
+      "material": "piping"
+    }
+  ]
+}

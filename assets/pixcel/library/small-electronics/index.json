@@ -1,0 +1,982 @@
+[
+  {
+    "id": "electronics-desktop-label-maker-compact-rubber-shell",
+    "category": "electronics",
+    "file": "001/electronics-desktop-label-maker-compact-rubber-shell.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "electronics-desktop-label-maker-compact-desk-dock",
+    "category": "electronics",
+    "file": "001/electronics-desktop-label-maker-compact-desk-dock.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "electronics-desktop-label-maker-compact-case-insert",
+    "category": "electronics",
+    "file": "001/electronics-desktop-label-maker-compact-case-insert.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "electronics-desktop-label-maker-compact-portable-stand",
+    "category": "electronics",
+    "file": "001/electronics-desktop-label-maker-compact-portable-stand.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "electronics-desktop-label-maker-compact-retail-cradle",
+    "category": "electronics",
+    "file": "001/electronics-desktop-label-maker-compact-retail-cradle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "electronics-desktop-label-maker-station-rubber-shell",
+    "category": "electronics",
+    "file": "001/electronics-desktop-label-maker-station-rubber-shell.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "electronics-desktop-label-maker-station-desk-dock",
+    "category": "electronics",
+    "file": "001/electronics-desktop-label-maker-station-desk-dock.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "electronics-desktop-label-maker-station-case-insert",
+    "category": "electronics",
+    "file": "001/electronics-desktop-label-maker-station-case-insert.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "electronics-desktop-label-maker-station-portable-stand",
+    "category": "electronics",
+    "file": "001/electronics-desktop-label-maker-station-portable-stand.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "electronics-desktop-label-maker-station-retail-cradle",
+    "category": "electronics",
+    "file": "001/electronics-desktop-label-maker-station-retail-cradle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "electronics-handheld-audio-recorder-compact-rubber-shell",
+    "category": "electronics",
+    "file": "001/electronics-handheld-audio-recorder-compact-rubber-shell.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "electronics-handheld-audio-recorder-compact-desk-dock",
+    "category": "electronics",
+    "file": "001/electronics-handheld-audio-recorder-compact-desk-dock.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "electronics-handheld-audio-recorder-compact-case-insert",
+    "category": "electronics",
+    "file": "001/electronics-handheld-audio-recorder-compact-case-insert.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "electronics-handheld-audio-recorder-compact-portable-stand",
+    "category": "electronics",
+    "file": "001/electronics-handheld-audio-recorder-compact-portable-stand.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "electronics-handheld-audio-recorder-compact-retail-cradle",
+    "category": "electronics",
+    "file": "001/electronics-handheld-audio-recorder-compact-retail-cradle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "electronics-handheld-audio-recorder-station-rubber-shell",
+    "category": "electronics",
+    "file": "001/electronics-handheld-audio-recorder-station-rubber-shell.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "electronics-handheld-audio-recorder-station-desk-dock",
+    "category": "electronics",
+    "file": "001/electronics-handheld-audio-recorder-station-desk-dock.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "electronics-handheld-audio-recorder-station-case-insert",
+    "category": "electronics",
+    "file": "001/electronics-handheld-audio-recorder-station-case-insert.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "electronics-handheld-audio-recorder-station-portable-stand",
+    "category": "electronics",
+    "file": "001/electronics-handheld-audio-recorder-station-portable-stand.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "electronics-handheld-audio-recorder-station-retail-cradle",
+    "category": "electronics",
+    "file": "001/electronics-handheld-audio-recorder-station-retail-cradle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "electronics-portable-shortwave-radio-compact-rubber-shell",
+    "category": "electronics",
+    "file": "002/electronics-portable-shortwave-radio-compact-rubber-shell.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "electronics-portable-shortwave-radio-compact-desk-dock",
+    "category": "electronics",
+    "file": "002/electronics-portable-shortwave-radio-compact-desk-dock.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "electronics-portable-shortwave-radio-compact-case-insert",
+    "category": "electronics",
+    "file": "002/electronics-portable-shortwave-radio-compact-case-insert.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "electronics-portable-shortwave-radio-compact-portable-stand",
+    "category": "electronics",
+    "file": "002/electronics-portable-shortwave-radio-compact-portable-stand.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "electronics-portable-shortwave-radio-compact-retail-cradle",
+    "category": "electronics",
+    "file": "002/electronics-portable-shortwave-radio-compact-retail-cradle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "electronics-portable-shortwave-radio-station-rubber-shell",
+    "category": "electronics",
+    "file": "002/electronics-portable-shortwave-radio-station-rubber-shell.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "electronics-portable-shortwave-radio-station-desk-dock",
+    "category": "electronics",
+    "file": "002/electronics-portable-shortwave-radio-station-desk-dock.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "electronics-portable-shortwave-radio-station-case-insert",
+    "category": "electronics",
+    "file": "002/electronics-portable-shortwave-radio-station-case-insert.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "electronics-portable-shortwave-radio-station-portable-stand",
+    "category": "electronics",
+    "file": "002/electronics-portable-shortwave-radio-station-portable-stand.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "electronics-portable-shortwave-radio-station-retail-cradle",
+    "category": "electronics",
+    "file": "002/electronics-portable-shortwave-radio-station-retail-cradle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "electronics-compact-slide-projector-compact-rubber-shell",
+    "category": "electronics",
+    "file": "002/electronics-compact-slide-projector-compact-rubber-shell.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "electronics-compact-slide-projector-compact-desk-dock",
+    "category": "electronics",
+    "file": "002/electronics-compact-slide-projector-compact-desk-dock.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "electronics-compact-slide-projector-compact-case-insert",
+    "category": "electronics",
+    "file": "002/electronics-compact-slide-projector-compact-case-insert.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "electronics-compact-slide-projector-compact-portable-stand",
+    "category": "electronics",
+    "file": "002/electronics-compact-slide-projector-compact-portable-stand.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "electronics-compact-slide-projector-compact-retail-cradle",
+    "category": "electronics",
+    "file": "002/electronics-compact-slide-projector-compact-retail-cradle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "electronics-compact-slide-projector-station-rubber-shell",
+    "category": "electronics",
+    "file": "002/electronics-compact-slide-projector-station-rubber-shell.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "electronics-compact-slide-projector-station-desk-dock",
+    "category": "electronics",
+    "file": "002/electronics-compact-slide-projector-station-desk-dock.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "electronics-compact-slide-projector-station-case-insert",
+    "category": "electronics",
+    "file": "002/electronics-compact-slide-projector-station-case-insert.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "electronics-compact-slide-projector-station-portable-stand",
+    "category": "electronics",
+    "file": "002/electronics-compact-slide-projector-station-portable-stand.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "electronics-compact-slide-projector-station-retail-cradle",
+    "category": "electronics",
+    "file": "002/electronics-compact-slide-projector-station-retail-cradle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "electronics-travel-voltage-adapter-compact-rubber-shell",
+    "category": "electronics",
+    "file": "003/electronics-travel-voltage-adapter-compact-rubber-shell.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "electronics-travel-voltage-adapter-compact-desk-dock",
+    "category": "electronics",
+    "file": "003/electronics-travel-voltage-adapter-compact-desk-dock.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "electronics-travel-voltage-adapter-compact-case-insert",
+    "category": "electronics",
+    "file": "003/electronics-travel-voltage-adapter-compact-case-insert.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "electronics-travel-voltage-adapter-compact-portable-stand",
+    "category": "electronics",
+    "file": "003/electronics-travel-voltage-adapter-compact-portable-stand.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "electronics-travel-voltage-adapter-compact-retail-cradle",
+    "category": "electronics",
+    "file": "003/electronics-travel-voltage-adapter-compact-retail-cradle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "electronics-travel-voltage-adapter-station-rubber-shell",
+    "category": "electronics",
+    "file": "003/electronics-travel-voltage-adapter-station-rubber-shell.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "electronics-travel-voltage-adapter-station-desk-dock",
+    "category": "electronics",
+    "file": "003/electronics-travel-voltage-adapter-station-desk-dock.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "electronics-travel-voltage-adapter-station-case-insert",
+    "category": "electronics",
+    "file": "003/electronics-travel-voltage-adapter-station-case-insert.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "electronics-travel-voltage-adapter-station-portable-stand",
+    "category": "electronics",
+    "file": "003/electronics-travel-voltage-adapter-station-portable-stand.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "electronics-travel-voltage-adapter-station-retail-cradle",
+    "category": "electronics",
+    "file": "003/electronics-travel-voltage-adapter-station-retail-cradle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "electronics-desktop-card-encoder-compact-rubber-shell",
+    "category": "electronics",
+    "file": "003/electronics-desktop-card-encoder-compact-rubber-shell.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "electronics-desktop-card-encoder-compact-desk-dock",
+    "category": "electronics",
+    "file": "003/electronics-desktop-card-encoder-compact-desk-dock.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "electronics-desktop-card-encoder-compact-case-insert",
+    "category": "electronics",
+    "file": "003/electronics-desktop-card-encoder-compact-case-insert.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "electronics-desktop-card-encoder-compact-portable-stand",
+    "category": "electronics",
+    "file": "003/electronics-desktop-card-encoder-compact-portable-stand.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "electronics-desktop-card-encoder-compact-retail-cradle",
+    "category": "electronics",
+    "file": "003/electronics-desktop-card-encoder-compact-retail-cradle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "electronics-desktop-card-encoder-station-rubber-shell",
+    "category": "electronics",
+    "file": "003/electronics-desktop-card-encoder-station-rubber-shell.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "electronics-desktop-card-encoder-station-desk-dock",
+    "category": "electronics",
+    "file": "003/electronics-desktop-card-encoder-station-desk-dock.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "electronics-desktop-card-encoder-station-case-insert",
+    "category": "electronics",
+    "file": "003/electronics-desktop-card-encoder-station-case-insert.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "electronics-desktop-card-encoder-station-portable-stand",
+    "category": "electronics",
+    "file": "003/electronics-desktop-card-encoder-station-portable-stand.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "electronics-desktop-card-encoder-station-retail-cradle",
+    "category": "electronics",
+    "file": "003/electronics-desktop-card-encoder-station-retail-cradle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "electronics-smart-home-control-bay-compact-rubber-shell",
+    "category": "electronics",
+    "file": "004/electronics-smart-home-control-bay-compact-rubber-shell.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "electronics-smart-home-control-bay-compact-desk-dock",
+    "category": "electronics",
+    "file": "004/electronics-smart-home-control-bay-compact-desk-dock.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "electronics-smart-home-control-bay-compact-case-insert",
+    "category": "electronics",
+    "file": "004/electronics-smart-home-control-bay-compact-case-insert.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "electronics-smart-home-control-bay-compact-portable-stand",
+    "category": "electronics",
+    "file": "004/electronics-smart-home-control-bay-compact-portable-stand.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "electronics-smart-home-control-bay-compact-retail-cradle",
+    "category": "electronics",
+    "file": "004/electronics-smart-home-control-bay-compact-retail-cradle.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "electronics-smart-home-control-bay-station-rubber-shell",
+    "category": "electronics",
+    "file": "004/electronics-smart-home-control-bay-station-rubber-shell.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "electronics-smart-home-control-bay-station-desk-dock",
+    "category": "electronics",
+    "file": "004/electronics-smart-home-control-bay-station-desk-dock.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "electronics-smart-home-control-bay-station-case-insert",
+    "category": "electronics",
+    "file": "004/electronics-smart-home-control-bay-station-case-insert.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "electronics-smart-home-control-bay-station-portable-stand",
+    "category": "electronics",
+    "file": "004/electronics-smart-home-control-bay-station-portable-stand.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "electronics-smart-home-control-bay-station-retail-cradle",
+    "category": "electronics",
+    "file": "004/electronics-smart-home-control-bay-station-retail-cradle.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "electronics-handheld-thermal-camera-compact-rubber-shell",
+    "category": "electronics",
+    "file": "004/electronics-handheld-thermal-camera-compact-rubber-shell.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "electronics-handheld-thermal-camera-compact-desk-dock",
+    "category": "electronics",
+    "file": "004/electronics-handheld-thermal-camera-compact-desk-dock.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "electronics-handheld-thermal-camera-compact-case-insert",
+    "category": "electronics",
+    "file": "004/electronics-handheld-thermal-camera-compact-case-insert.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "electronics-handheld-thermal-camera-compact-portable-stand",
+    "category": "electronics",
+    "file": "004/electronics-handheld-thermal-camera-compact-portable-stand.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "electronics-handheld-thermal-camera-compact-retail-cradle",
+    "category": "electronics",
+    "file": "004/electronics-handheld-thermal-camera-compact-retail-cradle.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "electronics-handheld-thermal-camera-station-rubber-shell",
+    "category": "electronics",
+    "file": "004/electronics-handheld-thermal-camera-station-rubber-shell.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "electronics-handheld-thermal-camera-station-desk-dock",
+    "category": "electronics",
+    "file": "004/electronics-handheld-thermal-camera-station-desk-dock.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "electronics-handheld-thermal-camera-station-case-insert",
+    "category": "electronics",
+    "file": "004/electronics-handheld-thermal-camera-station-case-insert.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "electronics-handheld-thermal-camera-station-portable-stand",
+    "category": "electronics",
+    "file": "004/electronics-handheld-thermal-camera-station-portable-stand.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "electronics-handheld-thermal-camera-station-retail-cradle",
+    "category": "electronics",
+    "file": "004/electronics-handheld-thermal-camera-station-retail-cradle.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "electronics-portable-photo-printer-compact-rubber-shell",
+    "category": "electronics",
+    "file": "005/electronics-portable-photo-printer-compact-rubber-shell.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "electronics-portable-photo-printer-compact-desk-dock",
+    "category": "electronics",
+    "file": "005/electronics-portable-photo-printer-compact-desk-dock.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "electronics-portable-photo-printer-compact-case-insert",
+    "category": "electronics",
+    "file": "005/electronics-portable-photo-printer-compact-case-insert.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "electronics-portable-photo-printer-compact-portable-stand",
+    "category": "electronics",
+    "file": "005/electronics-portable-photo-printer-compact-portable-stand.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "electronics-portable-photo-printer-compact-retail-cradle",
+    "category": "electronics",
+    "file": "005/electronics-portable-photo-printer-compact-retail-cradle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "electronics-portable-photo-printer-station-rubber-shell",
+    "category": "electronics",
+    "file": "005/electronics-portable-photo-printer-station-rubber-shell.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "electronics-portable-photo-printer-station-desk-dock",
+    "category": "electronics",
+    "file": "005/electronics-portable-photo-printer-station-desk-dock.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "electronics-portable-photo-printer-station-case-insert",
+    "category": "electronics",
+    "file": "005/electronics-portable-photo-printer-station-case-insert.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "electronics-portable-photo-printer-station-portable-stand",
+    "category": "electronics",
+    "file": "005/electronics-portable-photo-printer-station-portable-stand.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "electronics-portable-photo-printer-station-retail-cradle",
+    "category": "electronics",
+    "file": "005/electronics-portable-photo-printer-station-retail-cradle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "electronics-portable-music-cassette-compact-rubber-shell",
+    "category": "electronics",
+    "file": "005/electronics-portable-music-cassette-compact-rubber-shell.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "electronics-portable-music-cassette-compact-desk-dock",
+    "category": "electronics",
+    "file": "005/electronics-portable-music-cassette-compact-desk-dock.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "electronics-portable-music-cassette-compact-case-insert",
+    "category": "electronics",
+    "file": "005/electronics-portable-music-cassette-compact-case-insert.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "electronics-portable-music-cassette-compact-portable-stand",
+    "category": "electronics",
+    "file": "005/electronics-portable-music-cassette-compact-portable-stand.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "electronics-portable-music-cassette-compact-retail-cradle",
+    "category": "electronics",
+    "file": "005/electronics-portable-music-cassette-compact-retail-cradle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "electronics-portable-music-cassette-station-rubber-shell",
+    "category": "electronics",
+    "file": "005/electronics-portable-music-cassette-station-rubber-shell.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "electronics-portable-music-cassette-station-desk-dock",
+    "category": "electronics",
+    "file": "005/electronics-portable-music-cassette-station-desk-dock.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "electronics-portable-music-cassette-station-case-insert",
+    "category": "electronics",
+    "file": "005/electronics-portable-music-cassette-station-case-insert.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "electronics-portable-music-cassette-station-portable-stand",
+    "category": "electronics",
+    "file": "005/electronics-portable-music-cassette-station-portable-stand.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "electronics-portable-music-cassette-station-retail-cradle",
+    "category": "electronics",
+    "file": "005/electronics-portable-music-cassette-station-retail-cradle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "electronics-receipt-and-barcode-reader-compact-rubber-shell",
+    "category": "electronics",
+    "file": "006/electronics-receipt-and-barcode-reader-compact-rubber-shell.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "electronics-receipt-and-barcode-reader-compact-desk-dock",
+    "category": "electronics",
+    "file": "006/electronics-receipt-and-barcode-reader-compact-desk-dock.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "electronics-receipt-and-barcode-reader-compact-case-insert",
+    "category": "electronics",
+    "file": "006/electronics-receipt-and-barcode-reader-compact-case-insert.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "electronics-receipt-and-barcode-reader-compact-portable-stand",
+    "category": "electronics",
+    "file": "006/electronics-receipt-and-barcode-reader-compact-portable-stand.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "electronics-receipt-and-barcode-reader-compact-retail-cradle",
+    "category": "electronics",
+    "file": "006/electronics-receipt-and-barcode-reader-compact-retail-cradle.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "electronics-receipt-and-barcode-reader-station-rubber-shell",
+    "category": "electronics",
+    "file": "006/electronics-receipt-and-barcode-reader-station-rubber-shell.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "electronics-receipt-and-barcode-reader-station-desk-dock",
+    "category": "electronics",
+    "file": "006/electronics-receipt-and-barcode-reader-station-desk-dock.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "electronics-receipt-and-barcode-reader-station-case-insert",
+    "category": "electronics",
+    "file": "006/electronics-receipt-and-barcode-reader-station-case-insert.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "electronics-receipt-and-barcode-reader-station-portable-stand",
+    "category": "electronics",
+    "file": "006/electronics-receipt-and-barcode-reader-station-portable-stand.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "electronics-receipt-and-barcode-reader-station-retail-cradle",
+    "category": "electronics",
+    "file": "006/electronics-receipt-and-barcode-reader-station-retail-cradle.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "electronics-portable-digital-scale-compact-rubber-shell",
+    "category": "electronics",
+    "file": "006/electronics-portable-digital-scale-compact-rubber-shell.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "electronics-portable-digital-scale-compact-desk-dock",
+    "category": "electronics",
+    "file": "006/electronics-portable-digital-scale-compact-desk-dock.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "electronics-portable-digital-scale-compact-case-insert",
+    "category": "electronics",
+    "file": "006/electronics-portable-digital-scale-compact-case-insert.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "electronics-portable-digital-scale-compact-portable-stand",
+    "category": "electronics",
+    "file": "006/electronics-portable-digital-scale-compact-portable-stand.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "electronics-portable-digital-scale-compact-retail-cradle",
+    "category": "electronics",
+    "file": "006/electronics-portable-digital-scale-compact-retail-cradle.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "electronics-portable-digital-scale-station-rubber-shell",
+    "category": "electronics",
+    "file": "006/electronics-portable-digital-scale-station-rubber-shell.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "electronics-portable-digital-scale-station-desk-dock",
+    "category": "electronics",
+    "file": "006/electronics-portable-digital-scale-station-desk-dock.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "electronics-portable-digital-scale-station-case-insert",
+    "category": "electronics",
+    "file": "006/electronics-portable-digital-scale-station-case-insert.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "electronics-portable-digital-scale-station-portable-stand",
+    "category": "electronics",
+    "file": "006/electronics-portable-digital-scale-station-portable-stand.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "electronics-portable-digital-scale-station-retail-cradle",
+    "category": "electronics",
+    "file": "006/electronics-portable-digital-scale-station-retail-cradle.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "electronics-conference-speakerphone-compact-rubber-shell",
+    "category": "electronics",
+    "file": "007/electronics-conference-speakerphone-compact-rubber-shell.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "electronics-conference-speakerphone-compact-desk-dock",
+    "category": "electronics",
+    "file": "007/electronics-conference-speakerphone-compact-desk-dock.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "electronics-conference-speakerphone-compact-case-insert",
+    "category": "electronics",
+    "file": "007/electronics-conference-speakerphone-compact-case-insert.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "electronics-conference-speakerphone-compact-portable-stand",
+    "category": "electronics",
+    "file": "007/electronics-conference-speakerphone-compact-portable-stand.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "electronics-conference-speakerphone-compact-retail-cradle",
+    "category": "electronics",
+    "file": "007/electronics-conference-speakerphone-compact-retail-cradle.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "electronics-conference-speakerphone-station-rubber-shell",
+    "category": "electronics",
+    "file": "007/electronics-conference-speakerphone-station-rubber-shell.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "electronics-conference-speakerphone-station-desk-dock",
+    "category": "electronics",
+    "file": "007/electronics-conference-speakerphone-station-desk-dock.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "electronics-conference-speakerphone-station-case-insert",
+    "category": "electronics",
+    "file": "007/electronics-conference-speakerphone-station-case-insert.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "electronics-conference-speakerphone-station-portable-stand",
+    "category": "electronics",
+    "file": "007/electronics-conference-speakerphone-station-portable-stand.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "electronics-conference-speakerphone-station-retail-cradle",
+    "category": "electronics",
+    "file": "007/electronics-conference-speakerphone-station-retail-cradle.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "electronics-field-gps-antenna-compact-rubber-shell",
+    "category": "electronics",
+    "file": "007/electronics-field-gps-antenna-compact-rubber-shell.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "electronics-field-gps-antenna-compact-desk-dock",
+    "category": "electronics",
+    "file": "007/electronics-field-gps-antenna-compact-desk-dock.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "electronics-field-gps-antenna-compact-case-insert",
+    "category": "electronics",
+    "file": "007/electronics-field-gps-antenna-compact-case-insert.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "electronics-field-gps-antenna-compact-portable-stand",
+    "category": "electronics",
+    "file": "007/electronics-field-gps-antenna-compact-portable-stand.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "electronics-field-gps-antenna-compact-retail-cradle",
+    "category": "electronics",
+    "file": "007/electronics-field-gps-antenna-compact-retail-cradle.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "electronics-field-gps-antenna-station-rubber-shell",
+    "category": "electronics",
+    "file": "007/electronics-field-gps-antenna-station-rubber-shell.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "electronics-field-gps-antenna-station-desk-dock",
+    "category": "electronics",
+    "file": "007/electronics-field-gps-antenna-station-desk-dock.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "electronics-field-gps-antenna-station-case-insert",
+    "category": "electronics",
+    "file": "007/electronics-field-gps-antenna-station-case-insert.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "electronics-field-gps-antenna-station-portable-stand",
+    "category": "electronics",
+    "file": "007/electronics-field-gps-antenna-station-portable-stand.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "electronics-field-gps-antenna-station-retail-cradle",
+    "category": "electronics",
+    "file": "007/electronics-field-gps-antenna-station-retail-cradle.pixcel.json",
+    "preview": "007/preview.png",
+    "cell": 20
+  }
+]

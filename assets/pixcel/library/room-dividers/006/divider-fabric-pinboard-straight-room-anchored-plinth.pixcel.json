@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "id": "divider-fabric-pinboard-straight-room-anchored-plinth",
+  "category": "room-divider",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa8159"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#755541"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#909c9f"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e4851"
+    },
+    "felt": {
+      "kind": "matte",
+      "color": "#897e72"
+    },
+    "denim": {
+      "kind": "matte",
+      "color": "#656f80"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c9bfac"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ded6c3"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b19b6c"
+    },
+    "frost": {
+      "kind": "glass",
+      "color": "#a4adb1"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        0
+      ],
+      "to": [
+        59,
+        17,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        11,
+        3
+      ],
+      "to": [
+        58,
+        16,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        6
+      ],
+      "to": [
+        58,
+        13,
+        37
+      ],
+      "material": "denim"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        28
+      ],
+      "to": [
+        11,
+        14,
+        33
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        14,
+        27
+      ],
+      "to": [
+        54,
+        14,
+        32
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        14,
+        10
+      ],
+      "to": [
+        54,
+        14,
+        24
+      ],
+      "material": "felt"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        4
+      ],
+      "to": [
+        6,
+        14,
+        37
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        57,
+        12,
+        4
+      ],
+      "to": [
+        58,
+        14,
+        37
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        37
+      ],
+      "to": [
+        58,
+        14,
+        38
+      ],
+      "material": "black"
+    }
+  ]
+}

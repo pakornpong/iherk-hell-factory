@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "id": "cargo-strapped-shipping-crate-tug-trailer-double-deck",
+  "category": "logistics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a5afb0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#556471"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#303841"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a07750"
+    },
+    "cardboard": {
+      "kind": "matte",
+      "color": "#ae8e65"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d9d0bc"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#637589"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#c49f56"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a95c4c"
+    },
+    "film": {
+      "kind": "glass",
+      "color": "#a2b6b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        0
+      ],
+      "to": [
+        10,
+        8,
+        5
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        0
+      ],
+      "to": [
+        10,
+        26,
+        5
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        8,
+        5
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        23,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        5
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        5
+      ],
+      "to": [
+        57,
+        27,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        57,
+        13,
+        3
+      ],
+      "to": [
+        61,
+        17,
+        5
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        60,
+        14,
+        5
+      ],
+      "to": [
+        61,
+        16,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        56,
+        24,
+        24
+      ],
+      "material": "cardboard"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        8
+      ],
+      "to": [
+        57,
+        25,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        23
+      ],
+      "to": [
+        57,
+        25,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        6,
+        10
+      ],
+      "to": [
+        9,
+        6,
+        24
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        6,
+        25
+      ],
+      "to": [
+        9,
+        25,
+        25
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        6,
+        10
+      ],
+      "to": [
+        52,
+        6,
+        24
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        6,
+        25
+      ],
+      "to": [
+        52,
+        25,
+        25
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        25,
+        15
+      ],
+      "to": [
+        17,
+        25,
+        19
+      ],
+      "material": "paper"
+    }
+  ]
+}

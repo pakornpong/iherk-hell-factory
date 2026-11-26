@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "marina-wetsuit-drying-rail-dock-compact-workshop-concrete",
+  "category": "maritime",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a4866b"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#698294"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9caaa9"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596672"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#40494e"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#ad6d56"
+    },
+    "ochre": {
+      "kind": "matte",
+      "color": "#c19e62"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b69c7e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba7b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        2
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        28,
+        24,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        7
+      ],
+      "to": [
+        8,
+        11,
+        42
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        9,
+        7
+      ],
+      "to": [
+        27,
+        11,
+        42
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        41
+      ],
+      "to": [
+        27,
+        11,
+        43
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        10,
+        41
+      ],
+      "to": [
+        9,
+        14,
+        36
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        23
+      ],
+      "to": [
+        11,
+        17,
+        36
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        16
+      ],
+      "to": [
+        9,
+        17,
+        24
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        13,
+        16
+      ],
+      "to": [
+        11,
+        17,
+        24
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        10,
+        41
+      ],
+      "to": [
+        15,
+        14,
+        36
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        12,
+        23
+      ],
+      "to": [
+        17,
+        17,
+        36
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        13,
+        16
+      ],
+      "to": [
+        15,
+        17,
+        24
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        13,
+        16
+      ],
+      "to": [
+        17,
+        17,
+        24
+      ],
+      "material": "black"
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+[
+  {
+    "id": "warehouse-roller-conveyor-compact-bolted-frame",
+    "category": "warehouse",
+    "file": "001/warehouse-roller-conveyor-compact-bolted-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "warehouse-roller-conveyor-compact-caster-frame",
+    "category": "warehouse",
+    "file": "001/warehouse-roller-conveyor-compact-caster-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "warehouse-roller-conveyor-compact-raised-mezzanine",
+    "category": "warehouse",
+    "file": "001/warehouse-roller-conveyor-compact-raised-mezzanine.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "warehouse-roller-conveyor-compact-low-skid",
+    "category": "warehouse",
+    "file": "001/warehouse-roller-conveyor-compact-low-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "warehouse-roller-conveyor-wide-bolted-frame",
+    "category": "warehouse",
+    "file": "001/warehouse-roller-conveyor-wide-bolted-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "warehouse-roller-conveyor-wide-caster-frame",
+    "category": "warehouse",
+    "file": "001/warehouse-roller-conveyor-wide-caster-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "warehouse-roller-conveyor-wide-raised-mezzanine",
+    "category": "warehouse",
+    "file": "001/warehouse-roller-conveyor-wide-raised-mezzanine.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "warehouse-roller-conveyor-wide-low-skid",
+    "category": "warehouse",
+    "file": "001/warehouse-roller-conveyor-wide-low-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "warehouse-belt-vision-sorter-compact-bolted-frame",
+    "category": "warehouse",
+    "file": "001/warehouse-belt-vision-sorter-compact-bolted-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "warehouse-belt-vision-sorter-compact-caster-frame",
+    "category": "warehouse",
+    "file": "001/warehouse-belt-vision-sorter-compact-caster-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "warehouse-belt-vision-sorter-compact-raised-mezzanine",
+    "category": "warehouse",
+    "file": "001/warehouse-belt-vision-sorter-compact-raised-mezzanine.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "warehouse-belt-vision-sorter-compact-low-skid",
+    "category": "warehouse",
+    "file": "001/warehouse-belt-vision-sorter-compact-low-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "warehouse-belt-vision-sorter-wide-bolted-frame",
+    "category": "warehouse",
+    "file": "001/warehouse-belt-vision-sorter-wide-bolted-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "warehouse-belt-vision-sorter-wide-caster-frame",
+    "category": "warehouse",
+    "file": "001/warehouse-belt-vision-sorter-wide-caster-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "warehouse-belt-vision-sorter-wide-raised-mezzanine",
+    "category": "warehouse",
+    "file": "001/warehouse-belt-vision-sorter-wide-raised-mezzanine.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "warehouse-belt-vision-sorter-wide-low-skid",
+    "category": "warehouse",
+    "file": "001/warehouse-belt-vision-sorter-wide-low-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "warehouse-gravity-flow-picker-compact-bolted-frame",
+    "category": "warehouse",
+    "file": "001/warehouse-gravity-flow-picker-compact-bolted-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "warehouse-gravity-flow-picker-compact-caster-frame",
+    "category": "warehouse",
+    "file": "001/warehouse-gravity-flow-picker-compact-caster-frame.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "warehouse-gravity-flow-picker-compact-raised-mezzanine",
+    "category": "warehouse",
+    "file": "001/warehouse-gravity-flow-picker-compact-raised-mezzanine.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "warehouse-gravity-flow-picker-compact-low-skid",
+    "category": "warehouse",
+    "file": "001/warehouse-gravity-flow-picker-compact-low-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "warehouse-gravity-flow-picker-wide-bolted-frame",
+    "category": "warehouse",
+    "file": "002/warehouse-gravity-flow-picker-wide-bolted-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "warehouse-gravity-flow-picker-wide-caster-frame",
+    "category": "warehouse",
+    "file": "002/warehouse-gravity-flow-picker-wide-caster-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "warehouse-gravity-flow-picker-wide-raised-mezzanine",
+    "category": "warehouse",
+    "file": "002/warehouse-gravity-flow-picker-wide-raised-mezzanine.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "warehouse-gravity-flow-picker-wide-low-skid",
+    "category": "warehouse",
+    "file": "002/warehouse-gravity-flow-picker-wide-low-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "warehouse-vertical-lift-carriage-compact-bolted-frame",
+    "category": "warehouse",
+    "file": "002/warehouse-vertical-lift-carriage-compact-bolted-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "warehouse-vertical-lift-carriage-compact-caster-frame",
+    "category": "warehouse",
+    "file": "002/warehouse-vertical-lift-carriage-compact-caster-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "warehouse-vertical-lift-carriage-compact-raised-mezzanine",
+    "category": "warehouse",
+    "file": "002/warehouse-vertical-lift-carriage-compact-raised-mezzanine.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "warehouse-vertical-lift-carriage-compact-low-skid",
+    "category": "warehouse",
+    "file": "002/warehouse-vertical-lift-carriage-compact-low-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "warehouse-vertical-lift-carriage-wide-bolted-frame",
+    "category": "warehouse",
+    "file": "002/warehouse-vertical-lift-carriage-wide-bolted-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "warehouse-vertical-lift-carriage-wide-caster-frame",
+    "category": "warehouse",
+    "file": "002/warehouse-vertical-lift-carriage-wide-caster-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "warehouse-vertical-lift-carriage-wide-raised-mezzanine",
+    "category": "warehouse",
+    "file": "002/warehouse-vertical-lift-carriage-wide-raised-mezzanine.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "warehouse-vertical-lift-carriage-wide-low-skid",
+    "category": "warehouse",
+    "file": "002/warehouse-vertical-lift-carriage-wide-low-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "warehouse-stacked-pallet-buffer-compact-bolted-frame",
+    "category": "warehouse",
+    "file": "002/warehouse-stacked-pallet-buffer-compact-bolted-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "warehouse-stacked-pallet-buffer-compact-caster-frame",
+    "category": "warehouse",
+    "file": "002/warehouse-stacked-pallet-buffer-compact-caster-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "warehouse-stacked-pallet-buffer-compact-raised-mezzanine",
+    "category": "warehouse",
+    "file": "002/warehouse-stacked-pallet-buffer-compact-raised-mezzanine.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "warehouse-stacked-pallet-buffer-compact-low-skid",
+    "category": "warehouse",
+    "file": "002/warehouse-stacked-pallet-buffer-compact-low-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "warehouse-stacked-pallet-buffer-wide-bolted-frame",
+    "category": "warehouse",
+    "file": "002/warehouse-stacked-pallet-buffer-wide-bolted-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "warehouse-stacked-pallet-buffer-wide-caster-frame",
+    "category": "warehouse",
+    "file": "002/warehouse-stacked-pallet-buffer-wide-caster-frame.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "warehouse-stacked-pallet-buffer-wide-raised-mezzanine",
+    "category": "warehouse",
+    "file": "002/warehouse-stacked-pallet-buffer-wide-raised-mezzanine.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "warehouse-stacked-pallet-buffer-wide-low-skid",
+    "category": "warehouse",
+    "file": "002/warehouse-stacked-pallet-buffer-wide-low-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "warehouse-stretch-wrap-turntable-compact-bolted-frame",
+    "category": "warehouse",
+    "file": "003/warehouse-stretch-wrap-turntable-compact-bolted-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "warehouse-stretch-wrap-turntable-compact-caster-frame",
+    "category": "warehouse",
+    "file": "003/warehouse-stretch-wrap-turntable-compact-caster-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "warehouse-stretch-wrap-turntable-compact-raised-mezzanine",
+    "category": "warehouse",
+    "file": "003/warehouse-stretch-wrap-turntable-compact-raised-mezzanine.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "warehouse-stretch-wrap-turntable-compact-low-skid",
+    "category": "warehouse",
+    "file": "003/warehouse-stretch-wrap-turntable-compact-low-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "warehouse-stretch-wrap-turntable-wide-bolted-frame",
+    "category": "warehouse",
+    "file": "003/warehouse-stretch-wrap-turntable-wide-bolted-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "warehouse-stretch-wrap-turntable-wide-caster-frame",
+    "category": "warehouse",
+    "file": "003/warehouse-stretch-wrap-turntable-wide-caster-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "warehouse-stretch-wrap-turntable-wide-raised-mezzanine",
+    "category": "warehouse",
+    "file": "003/warehouse-stretch-wrap-turntable-wide-raised-mezzanine.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "warehouse-stretch-wrap-turntable-wide-low-skid",
+    "category": "warehouse",
+    "file": "003/warehouse-stretch-wrap-turntable-wide-low-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "warehouse-dock-leveller-compact-bolted-frame",
+    "category": "warehouse",
+    "file": "003/warehouse-dock-leveller-compact-bolted-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "warehouse-dock-leveller-compact-caster-frame",
+    "category": "warehouse",
+    "file": "003/warehouse-dock-leveller-compact-caster-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "warehouse-dock-leveller-compact-raised-mezzanine",
+    "category": "warehouse",
+    "file": "003/warehouse-dock-leveller-compact-raised-mezzanine.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "warehouse-dock-leveller-compact-low-skid",
+    "category": "warehouse",
+    "file": "003/warehouse-dock-leveller-compact-low-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "warehouse-dock-leveller-wide-bolted-frame",
+    "category": "warehouse",
+    "file": "003/warehouse-dock-leveller-wide-bolted-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "warehouse-dock-leveller-wide-caster-frame",
+    "category": "warehouse",
+    "file": "003/warehouse-dock-leveller-wide-caster-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "warehouse-dock-leveller-wide-raised-mezzanine",
+    "category": "warehouse",
+    "file": "003/warehouse-dock-leveller-wide-raised-mezzanine.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "warehouse-dock-leveller-wide-low-skid",
+    "category": "warehouse",
+    "file": "003/warehouse-dock-leveller-wide-low-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "warehouse-bulk-hopper-feed-compact-bolted-frame",
+    "category": "warehouse",
+    "file": "003/warehouse-bulk-hopper-feed-compact-bolted-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "warehouse-bulk-hopper-feed-compact-caster-frame",
+    "category": "warehouse",
+    "file": "003/warehouse-bulk-hopper-feed-compact-caster-frame.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "warehouse-bulk-hopper-feed-compact-raised-mezzanine",
+    "category": "warehouse",
+    "file": "003/warehouse-bulk-hopper-feed-compact-raised-mezzanine.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "warehouse-bulk-hopper-feed-compact-low-skid",
+    "category": "warehouse",
+    "file": "003/warehouse-bulk-hopper-feed-compact-low-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "warehouse-bulk-hopper-feed-wide-bolted-frame",
+    "category": "warehouse",
+    "file": "004/warehouse-bulk-hopper-feed-wide-bolted-frame.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "warehouse-bulk-hopper-feed-wide-caster-frame",
+    "category": "warehouse",
+    "file": "004/warehouse-bulk-hopper-feed-wide-caster-frame.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "warehouse-bulk-hopper-feed-wide-raised-mezzanine",
+    "category": "warehouse",
+    "file": "004/warehouse-bulk-hopper-feed-wide-raised-mezzanine.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "warehouse-bulk-hopper-feed-wide-low-skid",
+    "category": "warehouse",
+    "file": "004/warehouse-bulk-hopper-feed-wide-low-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  }
+]

@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "id": "music-turntable-deck-wood-console-road-dolly",
+  "category": "music",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#545d65"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#98a4ae"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#33343c"
+    },
+    "cherry": {
+      "kind": "wood",
+      "color": "#945f49"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#b28159"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#e0d8c9"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#c4a05a"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#aa5d56"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#536e8a"
+    },
+    "lcd": {
+      "kind": "emissive",
+      "color": "#a2b6c9",
+      "glowRadius": 1,
+      "glowIntensity": 0.13
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        7,
+        0
+      ],
+      "to": [
+        49,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        23,
+        0
+      ],
+      "to": [
+        49,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        4
+      ],
+      "to": [
+        50,
+        27,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        8
+      ],
+      "to": [
+        7,
+        6,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        5,
+        8
+      ],
+      "to": [
+        48,
+        6,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        17
+      ],
+      "to": [
+        48,
+        6,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        9
+      ],
+      "to": [
+        50,
+        26,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        13
+      ],
+      "to": [
+        49,
+        9,
+        17
+      ],
+      "material": "cherry"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        6,
+        12
+      ],
+      "to": [
+        4,
+        26,
+        15
+      ],
+      "material": "cherry"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        6,
+        12
+      ],
+      "to": [
+        50,
+        26,
+        15
+      ],
+      "material": "cherry"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        16
+      ],
+      "zFrom": 13,
+      "zTo": 14,
+      "radius": 6,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        16
+      ],
+      "zFrom": 15,
+      "zTo": 15,
+      "radius": 2,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        9
+      ],
+      "zFrom": 13,
+      "zTo": 15,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        9,
+        15
+      ],
+      "to": [
+        13,
+        16,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        42,
+        16
+      ],
+      "zFrom": 13,
+      "zTo": 14,
+      "radius": 6,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        42,
+        16
+      ],
+      "zFrom": 15,
+      "zTo": 15,
+      "radius": 2,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        9
+      ],
+      "zFrom": 13,
+      "zTo": 15,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        9,
+        15
+      ],
+      "to": [
+        44,
+        16,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        14,
+        14
+      ],
+      "to": [
+        28,
+        14,
+        15
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        18,
+        14
+      ],
+      "to": [
+        28,
+        18,
+        15
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        14
+      ],
+      "to": [
+        28,
+        22,
+        15
+      ],
+      "material": "ivory"
+    }
+  ]
+}

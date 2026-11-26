@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "vet-treatment-tray-vials-single-partition-backline",
+  "category": "veterinary",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9fa9a9",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#5a6773",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#414a50",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#dad4c5",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#647e94",
+      "kind": "matte"
+    },
+    "tan": {
+      "color": "#ad9a83",
+      "kind": "matte"
+    },
+    "oak": {
+      "color": "#a88461",
+      "kind": "wood"
+    },
+    "glass": {
+      "color": "#8dabb7",
+      "kind": "glass"
+    },
+    "rust": {
+      "color": "#a96a58",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#ded4bf",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#bc9e67",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        29,
+        7,
+        25
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        8
+      ],
+      "to": [
+        29,
+        25,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        3
+      ],
+      "to": [
+        6,
+        22,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        7,
+        3
+      ],
+      "to": [
+        27,
+        22,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        10
+      ],
+      "to": [
+        28,
+        24,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        28,
+        9,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        14
+      ],
+      "to": [
+        28,
+        24,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        12
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        12
+      ],
+      "zFrom": 19,
+      "zTo": 20,
+      "radius": 1,
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        12
+      ],
+      "zFrom": 15,
+      "zTo": 20,
+      "radius": 2,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        12
+      ],
+      "zFrom": 20,
+      "zTo": 21,
+      "radius": 1,
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        12
+      ],
+      "zFrom": 15,
+      "zTo": 21,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        12
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 1,
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        17,
+        15
+      ],
+      "to": [
+        17,
+        21,
+        17
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        19,
+        15
+      ],
+      "to": [
+        25,
+        21,
+        16
+      ],
+      "material": "steel"
+    }
+  ]
+}

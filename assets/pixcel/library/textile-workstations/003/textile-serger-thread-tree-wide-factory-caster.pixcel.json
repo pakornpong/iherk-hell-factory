@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "id": "textile-serger-thread-tree-wide-factory-caster",
+  "category": "textile",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#745741"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaaa"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#53606b"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#d8d0bd"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#aa9a86"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#687e91"
+    },
+    "terracotta": {
+      "kind": "matte",
+      "color": "#a96557"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404850"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bc9d65"
+    },
+    "pale": {
+      "kind": "glass",
+      "color": "#9ab1b8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        7
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        7
+      ],
+      "to": [
+        55,
+        7,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        54,
+        25,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        12
+      ],
+      "to": [
+        21,
+        23,
+        16
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        9,
+        16
+      ],
+      "to": [
+        22,
+        16,
+        26
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        24
+      ],
+      "to": [
+        19,
+        15,
+        27
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        12,
+        19
+      ],
+      "to": [
+        11,
+        14,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        12
+      ],
+      "to": [
+        14,
+        19,
+        13
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        7,
+        12
+      ],
+      "to": [
+        22,
+        8,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        7,
+        36
+      ],
+      "to": [
+        23,
+        8,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        9
+      ],
+      "zFrom": 27,
+      "zTo": 31,
+      "radius": 1,
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        9
+      ],
+      "zFrom": 27,
+      "zTo": 31,
+      "radius": 1,
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        9
+      ],
+      "zFrom": 27,
+      "zTo": 31,
+      "radius": 1,
+      "material": "terracotta"
+    }
+  ]
+}

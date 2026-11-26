@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "id": "retail-clothing-rail-endcap-aisle",
+  "category": "retail",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9da5a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#535a60"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad825d"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89775"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#34383d"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#d9d3c4"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a55b50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a167"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#63798c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eacb6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        26,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        3
+      ],
+      "to": [
+        25,
+        24,
+        5
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        6
+      ],
+      "to": [
+        6,
+        12,
+        41
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        6
+      ],
+      "to": [
+        25,
+        12,
+        41
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        40
+      ],
+      "to": [
+        25,
+        12,
+        42
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        37
+      ],
+      "to": [
+        8,
+        12,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        24
+      ],
+      "to": [
+        8,
+        16,
+        36
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        11,
+        37
+      ],
+      "to": [
+        12,
+        12,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        24
+      ],
+      "to": [
+        12,
+        16,
+        36
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        11,
+        37
+      ],
+      "to": [
+        16,
+        12,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        8,
+        24
+      ],
+      "to": [
+        16,
+        16,
+        36
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        11,
+        37
+      ],
+      "to": [
+        20,
+        12,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        24
+      ],
+      "to": [
+        20,
+        16,
+        36
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        37
+      ],
+      "to": [
+        24,
+        12,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        24
+      ],
+      "to": [
+        24,
+        16,
+        36
+      ],
+      "material": "blue"
+    }
+  ]
+}

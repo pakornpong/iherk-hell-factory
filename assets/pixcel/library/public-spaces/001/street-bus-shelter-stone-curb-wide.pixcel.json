@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "id": "street-bus-shelter-stone-curb-wide",
+  "category": "public-space",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a07f60"
+    },
+    "darkwood": {
+      "kind": "wood",
+      "color": "#755943"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#929fa5"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#505d66"
+    },
+    "paved": {
+      "kind": "matte",
+      "color": "#ada99e"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#444d52"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbd7c8"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#647d91"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#9f7060"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b29d7b"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#97b5bf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        2,
+        3,
+        0
+      ],
+      "to": [
+        58,
+        28,
+        3
+      ],
+      "material": "paved"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        3,
+        3
+      ],
+      "to": [
+        58,
+        5,
+        3
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        27,
+        3
+      ],
+      "to": [
+        58,
+        28,
+        3
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        56,
+        26,
+        3
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        4
+      ],
+      "to": [
+        6,
+        7,
+        44
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        4
+      ],
+      "to": [
+        6,
+        24,
+        40
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        5,
+        4
+      ],
+      "to": [
+        56,
+        7,
+        44
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        22,
+        4
+      ],
+      "to": [
+        56,
+        24,
+        40
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "slope",
+      "from": [
+        3,
+        4,
+        39
+      ],
+      "to": [
+        57,
+        26,
+        46
+      ],
+      "axis": "-Y",
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        11
+      ],
+      "to": [
+        54,
+        7,
+        38
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        11
+      ],
+      "to": [
+        53,
+        13,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        4
+      ],
+      "to": [
+        52,
+        8,
+        12
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        7,
+        21
+      ],
+      "to": [
+        53,
+        8,
+        33
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        22,
+        40
+      ],
+      "to": [
+        57,
+        29,
+        42
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        27,
+        35
+      ],
+      "to": [
+        55,
+        28,
+        40
+      ],
+      "material": "blue"
+    }
+  ]
+}

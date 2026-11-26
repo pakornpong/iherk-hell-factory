@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "id": "pharmacy-sealed-supply-roller-shelf-single-wall-backbench",
+  "category": "pharmacy",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a78363"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c8"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9aa4a7"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#5e6975"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#424952"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#677f94"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#bc9466"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a76757"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d9c9ac"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91adb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        8,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        9
+      ],
+      "to": [
+        27,
+        25,
+        10
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        3
+      ],
+      "to": [
+        6,
+        22,
+        9
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        8,
+        3
+      ],
+      "to": [
+        25,
+        22,
+        9
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        11
+      ],
+      "to": [
+        26,
+        24,
+        14
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        14
+      ],
+      "to": [
+        7,
+        9,
+        40
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        14
+      ],
+      "to": [
+        7,
+        23,
+        40
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        8,
+        14
+      ],
+      "to": [
+        26,
+        9,
+        40
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        22,
+        14
+      ],
+      "to": [
+        26,
+        23,
+        40
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        15
+      ],
+      "to": [
+        26,
+        24,
+        16
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        23
+      ],
+      "to": [
+        26,
+        24,
+        24
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        31
+      ],
+      "to": [
+        26,
+        24,
+        32
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        39
+      ],
+      "to": [
+        26,
+        24,
+        40
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        17
+      ],
+      "to": [
+        16,
+        21,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        11,
+        17
+      ],
+      "to": [
+        23,
+        21,
+        21
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        25
+      ],
+      "to": [
+        16,
+        21,
+        29
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        11,
+        25
+      ],
+      "to": [
+        23,
+        21,
+        29
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        33
+      ],
+      "to": [
+        16,
+        21,
+        37
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        11,
+        33
+      ],
+      "to": [
+        23,
+        21,
+        37
+      ],
+      "material": "paper"
+    }
+  ]
+}

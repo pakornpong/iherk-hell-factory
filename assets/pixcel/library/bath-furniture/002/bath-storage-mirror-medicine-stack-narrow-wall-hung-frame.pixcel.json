@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "id": "bath-storage-mirror-medicine-stack-narrow-wall-hung-frame",
+  "category": "bathroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a6815e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#775a48"
+    },
+    "paint": {
+      "kind": "matte",
+      "color": "#9c988c"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c9baab"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5e7182"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad5c9"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#9da9ad"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#54616d"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b29c70"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a0b3b7"
+    },
+    "rose": {
+      "kind": "matte",
+      "color": "#a87976"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#9d6f58"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        7,
+        30
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        9
+      ],
+      "to": [
+        25,
+        23,
+        10
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        4
+      ],
+      "to": [
+        6,
+        21,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        7,
+        4
+      ],
+      "to": [
+        24,
+        21,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        11
+      ],
+      "to": [
+        25,
+        18,
+        43
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        18,
+        18
+      ],
+      "to": [
+        23,
+        19,
+        41
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        18,
+        29
+      ],
+      "to": [
+        23,
+        18,
+        30
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        18,
+        17
+      ],
+      "to": [
+        23,
+        20,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        19,
+        13
+      ],
+      "to": [
+        22,
+        21,
+        15
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        20,
+        14
+      ],
+      "to": [
+        16,
+        22,
+        15
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        19,
+        24
+      ],
+      "to": [
+        24,
+        20,
+        28
+      ],
+      "material": "brass"
+    }
+  ]
+}

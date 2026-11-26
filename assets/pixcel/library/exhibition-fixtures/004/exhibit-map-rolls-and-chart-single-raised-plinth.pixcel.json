@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "id": "exhibit-map-rolls-and-chart-single-raised-plinth",
+  "category": "museum",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a67e58"
+    },
+    "plaster": {
+      "kind": "matte",
+      "color": "#d8cfc1"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3d454d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaad"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#9cb5ba"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78268"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a90"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b8aa96"
+    },
+    "ceramic": {
+      "kind": "matte",
+      "color": "#ab6854"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e0d8c7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        26,
+        25,
+        10
+      ],
+      "material": "plaster"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        10
+      ],
+      "to": [
+        27,
+        26,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        12
+      ],
+      "to": [
+        24,
+        24,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        14
+      ],
+      "to": [
+        23,
+        9,
+        35
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        17
+      ],
+      "to": [
+        22,
+        9,
+        33
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        9,
+        22
+      ],
+      "to": [
+        20,
+        9,
+        29
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        9,
+        30
+      ],
+      "to": [
+        18,
+        9,
+        25
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        17,
+        15
+      ],
+      "to": [
+        22,
+        20,
+        17
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        20,
+        14
+      ],
+      "to": [
+        19,
+        22,
+        16
+      ],
+      "material": "paper"
+    }
+  ]
+}

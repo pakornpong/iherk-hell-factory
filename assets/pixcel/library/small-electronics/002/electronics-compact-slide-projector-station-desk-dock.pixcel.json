@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "electronics-compact-slide-projector-station-desk-dock",
+  "category": "electronics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "charcoal": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#606e77"
+    },
+    "alloy": {
+      "kind": "metal",
+      "color": "#9facad"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd2bc"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627e94"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a46151"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#a59078"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a68058"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda16c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab7"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#a8c1cf",
+      "glowRadius": 1,
+      "glowIntensity": 0.09
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        39,
+        25,
+        2
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        38,
+        24,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        2
+      ],
+      "to": [
+        13,
+        25,
+        3
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        38,
+        24,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        9
+      ],
+      "to": [
+        37,
+        22,
+        17
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        21,
+        10
+      ],
+      "to": [
+        16,
+        24,
+        15
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        24,
+        11
+      ],
+      "to": [
+        15,
+        25,
+        14
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        13
+      ],
+      "zFrom": 18,
+      "zTo": 20,
+      "radius": 4,
+      "material": "charcoal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        34,
+        13
+      ],
+      "zFrom": 20,
+      "zTo": 20,
+      "radius": 2,
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        9,
+        7
+      ],
+      "to": [
+        38,
+        18,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        18,
+        9
+      ],
+      "to": [
+        37,
+        18,
+        12
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        31,
+        15,
+        8
+      ],
+      "to": [
+        25,
+        22,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        3
+      ],
+      "to": [
+        10,
+        26,
+        5
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        26,
+        4
+      ],
+      "to": [
+        9,
+        26,
+        4
+      ],
+      "material": "screen"
+    }
+  ]
+}

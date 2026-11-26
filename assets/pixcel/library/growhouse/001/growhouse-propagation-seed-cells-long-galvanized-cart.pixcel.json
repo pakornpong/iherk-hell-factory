@@ -1,0 +1,1348 @@
+{
+  "schemaVersion": 1,
+  "id": "growhouse-propagation-seed-cells-long-galvanized-cart",
+  "category": "horticulture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a17f5c"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#606b73"
+    },
+    "soil": {
+      "kind": "matte",
+      "color": "#655142"
+    },
+    "fern": {
+      "kind": "matte",
+      "color": "#627c58"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#809664"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7388"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76b56"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a267"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8ccb6"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aeb9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#424a4e"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        56,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        23,
+        0
+      ],
+      "to": [
+        56,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        4
+      ],
+      "to": [
+        57,
+        26,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        8
+      ],
+      "to": [
+        7,
+        23,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        8
+      ],
+      "to": [
+        57,
+        24,
+        11
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        11
+      ],
+      "to": [
+        55,
+        23,
+        11
+      ],
+      "material": "soil"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        11
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        11,
+        12
+      ],
+      "to": [
+        8,
+        11,
+        15
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        11,
+        14
+      ],
+      "to": [
+        9,
+        10,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        11
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        11,
+        12
+      ],
+      "to": [
+        13,
+        11,
+        16
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        11,
+        14
+      ],
+      "to": [
+        14,
+        12,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        11
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        11,
+        12
+      ],
+      "to": [
+        18,
+        11,
+        17
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        11,
+        14
+      ],
+      "to": [
+        19,
+        10,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        11
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        11,
+        12
+      ],
+      "to": [
+        23,
+        11,
+        15
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        11,
+        14
+      ],
+      "to": [
+        24,
+        12,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        28,
+        11
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        11,
+        12
+      ],
+      "to": [
+        28,
+        11,
+        16
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        11,
+        14
+      ],
+      "to": [
+        29,
+        10,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        33,
+        11
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        33,
+        11,
+        12
+      ],
+      "to": [
+        33,
+        11,
+        17
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        33,
+        11,
+        14
+      ],
+      "to": [
+        34,
+        12,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        38,
+        11
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        38,
+        11,
+        12
+      ],
+      "to": [
+        38,
+        11,
+        15
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        38,
+        11,
+        14
+      ],
+      "to": [
+        39,
+        10,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        43,
+        11
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        11,
+        12
+      ],
+      "to": [
+        43,
+        11,
+        16
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        11,
+        14
+      ],
+      "to": [
+        44,
+        12,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        11
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        11,
+        12
+      ],
+      "to": [
+        48,
+        11,
+        17
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        11,
+        14
+      ],
+      "to": [
+        49,
+        10,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        53,
+        11
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        53,
+        11,
+        12
+      ],
+      "to": [
+        53,
+        11,
+        15
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        53,
+        11,
+        14
+      ],
+      "to": [
+        54,
+        12,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        16
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        16,
+        12
+      ],
+      "to": [
+        8,
+        16,
+        15
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        16,
+        14
+      ],
+      "to": [
+        9,
+        15,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        16
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        16,
+        12
+      ],
+      "to": [
+        13,
+        16,
+        16
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        16,
+        14
+      ],
+      "to": [
+        14,
+        17,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        16
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        16,
+        12
+      ],
+      "to": [
+        18,
+        16,
+        17
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        16,
+        14
+      ],
+      "to": [
+        19,
+        15,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        16
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        16,
+        12
+      ],
+      "to": [
+        23,
+        16,
+        15
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        16,
+        14
+      ],
+      "to": [
+        24,
+        17,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        28,
+        16
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        16,
+        12
+      ],
+      "to": [
+        28,
+        16,
+        16
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        16,
+        14
+      ],
+      "to": [
+        29,
+        15,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        33,
+        16
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        33,
+        16,
+        12
+      ],
+      "to": [
+        33,
+        16,
+        17
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        33,
+        16,
+        14
+      ],
+      "to": [
+        34,
+        17,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        38,
+        16
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        38,
+        16,
+        12
+      ],
+      "to": [
+        38,
+        16,
+        15
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        38,
+        16,
+        14
+      ],
+      "to": [
+        39,
+        15,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        43,
+        16
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        16,
+        12
+      ],
+      "to": [
+        43,
+        16,
+        16
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        16,
+        14
+      ],
+      "to": [
+        44,
+        17,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        16
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        16,
+        12
+      ],
+      "to": [
+        48,
+        16,
+        17
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        16,
+        14
+      ],
+      "to": [
+        49,
+        15,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        53,
+        16
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        53,
+        16,
+        12
+      ],
+      "to": [
+        53,
+        16,
+        15
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        53,
+        16,
+        14
+      ],
+      "to": [
+        54,
+        17,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        21,
+        12
+      ],
+      "to": [
+        8,
+        21,
+        15
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        21,
+        14
+      ],
+      "to": [
+        9,
+        20,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        21,
+        12
+      ],
+      "to": [
+        13,
+        21,
+        16
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        13,
+        21,
+        14
+      ],
+      "to": [
+        14,
+        22,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        18,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        21,
+        12
+      ],
+      "to": [
+        18,
+        21,
+        17
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        21,
+        14
+      ],
+      "to": [
+        19,
+        20,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        23,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        21,
+        12
+      ],
+      "to": [
+        23,
+        21,
+        15
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        21,
+        14
+      ],
+      "to": [
+        24,
+        22,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        28,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        21,
+        12
+      ],
+      "to": [
+        28,
+        21,
+        16
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        21,
+        14
+      ],
+      "to": [
+        29,
+        20,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        33,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        33,
+        21,
+        12
+      ],
+      "to": [
+        33,
+        21,
+        17
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        33,
+        21,
+        14
+      ],
+      "to": [
+        34,
+        22,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        38,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        38,
+        21,
+        12
+      ],
+      "to": [
+        38,
+        21,
+        15
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        38,
+        21,
+        14
+      ],
+      "to": [
+        39,
+        20,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        43,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        21,
+        12
+      ],
+      "to": [
+        43,
+        21,
+        16
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        21,
+        14
+      ],
+      "to": [
+        44,
+        22,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        21,
+        12
+      ],
+      "to": [
+        48,
+        21,
+        17
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        48,
+        21,
+        14
+      ],
+      "to": [
+        49,
+        20,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        53,
+        21
+      ],
+      "zFrom": 12,
+      "zTo": 12,
+      "radius": 1,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        53,
+        21,
+        12
+      ],
+      "to": [
+        53,
+        21,
+        15
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        53,
+        21,
+        14
+      ],
+      "to": [
+        54,
+        22,
+        15
+      ],
+      "material": "leaf"
+    }
+  ]
+}

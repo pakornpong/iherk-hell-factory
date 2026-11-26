@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "id": "pet-fixture-pump-pet-fountain-wide-washable-rubber",
+  "category": "pet-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ad8663"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#755844"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b9a891"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b99470"
+    },
+    "navy": {
+      "kind": "matte",
+      "color": "#607183"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#ded4c0"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#495359"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ca7a9"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a97561"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8fadb8"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bca475"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        55,
+        26,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        2
+      ],
+      "to": [
+        54,
+        6,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        2
+      ],
+      "to": [
+        54,
+        10,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        14,
+        2
+      ],
+      "to": [
+        54,
+        14,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        18,
+        2
+      ],
+      "to": [
+        54,
+        18,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        2
+      ],
+      "to": [
+        54,
+        22,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 8,
+      "material": "navy"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 7,
+      "zTo": 8,
+      "radius": 7,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 8,
+      "zTo": 8,
+      "radius": 6,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 8,
+      "zTo": 14,
+      "radius": 3,
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 16,
+      "radius": 4,
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        51,
+        16
+      ],
+      "zFrom": 3,
+      "zTo": 5,
+      "radius": 4,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        51,
+        16
+      ],
+      "zFrom": 5,
+      "zTo": 9,
+      "radius": 3,
+      "material": "clay"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        4
+      ],
+      "to": [
+        7,
+        26,
+        8
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        25,
+        4
+      ],
+      "to": [
+        15,
+        26,
+        7
+      ],
+      "material": "rubber"
+    }
+  ]
+}

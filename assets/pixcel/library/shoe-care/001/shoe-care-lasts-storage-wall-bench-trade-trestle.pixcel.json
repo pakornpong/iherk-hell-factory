@@ -1,0 +1,332 @@
+{
+  "schemaVersion": 1,
+  "id": "shoe-care-lasts-storage-wall-bench-trade-trestle",
+  "category": "shoe-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#765746"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad835e"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ca6a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#57656d"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#825f49"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#3d464f"
+    },
+    "fabric": {
+      "kind": "matte",
+      "color": "#a79885"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#ba9f7b"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8cdb7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c0a16d"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a76454"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#607b91"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        23,
+        0
+      ],
+      "to": [
+        6,
+        15,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        51,
+        7,
+        0
+      ],
+      "to": [
+        51,
+        15,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        51,
+        23,
+        0
+      ],
+      "to": [
+        51,
+        15,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        55,
+        25,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        5
+      ],
+      "to": [
+        53,
+        24,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        14
+      ],
+      "to": [
+        54,
+        9,
+        46
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        14
+      ],
+      "to": [
+        7,
+        24,
+        46
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        9,
+        14
+      ],
+      "to": [
+        54,
+        24,
+        46
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        17
+      ],
+      "to": [
+        53,
+        24,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        27
+      ],
+      "to": [
+        53,
+        24,
+        28
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        37
+      ],
+      "to": [
+        53,
+        24,
+        38
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        45
+      ],
+      "to": [
+        53,
+        24,
+        46
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        19
+      ],
+      "to": [
+        15,
+        21,
+        23
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        13,
+        19
+      ],
+      "to": [
+        51,
+        22,
+        24
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        29
+      ],
+      "to": [
+        15,
+        21,
+        33
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        13,
+        29
+      ],
+      "to": [
+        51,
+        22,
+        34
+      ],
+      "material": "leather"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        39
+      ],
+      "to": [
+        15,
+        21,
+        43
+      ],
+      "material": "sand"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        13,
+        39
+      ],
+      "to": [
+        51,
+        22,
+        44
+      ],
+      "material": "leather"
+    }
+  ]
+}

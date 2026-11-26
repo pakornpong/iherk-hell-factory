@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "id": "pet-fixture-agility-balance-ramp-wide-washable-rubber",
+  "category": "pet-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#ad8663"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#755844"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b9a891"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b99470"
+    },
+    "navy": {
+      "kind": "matte",
+      "color": "#607183"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#ded4c0"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#495359"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ca7a9"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a97561"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8fadb8"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bca475"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        55,
+        26,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        2
+      ],
+      "to": [
+        54,
+        6,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        2
+      ],
+      "to": [
+        54,
+        10,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        14,
+        2
+      ],
+      "to": [
+        54,
+        14,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        18,
+        2
+      ],
+      "to": [
+        54,
+        18,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        2
+      ],
+      "to": [
+        54,
+        22,
+        2
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "slope",
+      "from": [
+        4,
+        9,
+        3
+      ],
+      "to": [
+        30,
+        21,
+        16
+      ],
+      "axis": "+X",
+      "material": "oak"
+    },
+    {
+      "op": "slope",
+      "from": [
+        30,
+        9,
+        3
+      ],
+      "to": [
+        55,
+        21,
+        16
+      ],
+      "axis": "-X",
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        5
+      ],
+      "to": [
+        10,
+        22,
+        6
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        8,
+        5
+      ],
+      "to": [
+        15,
+        22,
+        6
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        5
+      ],
+      "to": [
+        20,
+        22,
+        6
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        8,
+        15
+      ],
+      "to": [
+        31,
+        22,
+        17
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        4
+      ],
+      "to": [
+        7,
+        25,
+        8
+      ],
+      "material": "navy"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        4
+      ],
+      "to": [
+        54,
+        25,
+        8
+      ],
+      "material": "navy"
+    }
+  ]
+}

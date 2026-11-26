@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-water-stage-gauge-station-wide-soil-reference-plot",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        54,
+        24,
+        6
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        7
+      ],
+      "to": [
+        8,
+        23,
+        33
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        18,
+        8
+      ],
+      "to": [
+        53,
+        24,
+        9
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        7
+      ],
+      "to": [
+        12,
+        12,
+        39
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        12,
+        11
+      ],
+      "to": [
+        13,
+        13,
+        11
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        12,
+        17
+      ],
+      "to": [
+        13,
+        13,
+        17
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        12,
+        23
+      ],
+      "to": [
+        13,
+        13,
+        23
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        12,
+        29
+      ],
+      "to": [
+        13,
+        13,
+        29
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        12,
+        35
+      ],
+      "to": [
+        13,
+        13,
+        35
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        14
+      ],
+      "zFrom": 8,
+      "zTo": 20,
+      "radius": 3,
+      "material": "silver"
+    },
+    {
+      "op": "line",
+      "from": [
+        47,
+        14,
+        21
+      ],
+      "to": [
+        51,
+        14,
+        26
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        8,
+        7
+      ],
+      "to": [
+        50,
+        12,
+        23
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        12,
+        19
+      ],
+      "to": [
+        49,
+        18,
+        22
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        18,
+        20
+      ],
+      "to": [
+        48,
+        18,
+        21
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        45,
+        15,
+        18
+      ],
+      "to": [
+        48,
+        20,
+        11
+      ],
+      "material": "dark"
+    }
+  ]
+}

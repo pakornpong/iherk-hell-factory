@@ -1,0 +1,726 @@
+{
+  "schemaVersion": 1,
+  "id": "audio-subwoofer-ported-rolling-case",
+  "category": "audio",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cabinet": {
+      "kind": "wood",
+      "color": "#8f6952"
+    },
+    "burl": {
+      "kind": "wood",
+      "color": "#ac815f"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#353941"
+    },
+    "grille": {
+      "kind": "matte",
+      "color": "#5f5b58"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#4d5159"
+    },
+    "aluminum": {
+      "kind": "metal",
+      "color": "#a1a8aa"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c2a166"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d2cbb6"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9e594f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        23,
+        0
+      ],
+      "to": [
+        26,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        27,
+        25,
+        7
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        5
+      ],
+      "to": [
+        7,
+        25,
+        7
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        6,
+        5
+      ],
+      "to": [
+        26,
+        25,
+        7
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        8
+      ],
+      "to": [
+        25,
+        24,
+        29
+      ],
+      "material": "cabinet"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        9
+      ],
+      "to": [
+        24,
+        24,
+        28
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        24,
+        13
+      ],
+      "to": [
+        15,
+        24,
+        13
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        24,
+        14
+      ],
+      "to": [
+        18,
+        24,
+        14
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        24,
+        15
+      ],
+      "to": [
+        19,
+        24,
+        15
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        24,
+        16
+      ],
+      "to": [
+        20,
+        24,
+        16
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        24,
+        17
+      ],
+      "to": [
+        21,
+        24,
+        17
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        24,
+        18
+      ],
+      "to": [
+        21,
+        24,
+        18
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        24,
+        19
+      ],
+      "to": [
+        21,
+        24,
+        19
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        20
+      ],
+      "to": [
+        22,
+        24,
+        20
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        24,
+        21
+      ],
+      "to": [
+        21,
+        24,
+        21
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        24,
+        22
+      ],
+      "to": [
+        21,
+        24,
+        22
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        24,
+        23
+      ],
+      "to": [
+        21,
+        24,
+        23
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        24,
+        24
+      ],
+      "to": [
+        20,
+        24,
+        24
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        24,
+        25
+      ],
+      "to": [
+        19,
+        24,
+        25
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        24,
+        26
+      ],
+      "to": [
+        18,
+        24,
+        26
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        24,
+        27
+      ],
+      "to": [
+        15,
+        24,
+        27
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        25,
+        14
+      ],
+      "to": [
+        15,
+        25,
+        14
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        25,
+        15
+      ],
+      "to": [
+        18,
+        25,
+        15
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        16
+      ],
+      "to": [
+        19,
+        25,
+        16
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        17
+      ],
+      "to": [
+        20,
+        25,
+        17
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        18
+      ],
+      "to": [
+        20,
+        25,
+        18
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        19
+      ],
+      "to": [
+        20,
+        25,
+        19
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        20
+      ],
+      "to": [
+        21,
+        25,
+        20
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        21
+      ],
+      "to": [
+        20,
+        25,
+        21
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        22
+      ],
+      "to": [
+        20,
+        25,
+        22
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        23
+      ],
+      "to": [
+        20,
+        25,
+        23
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        24
+      ],
+      "to": [
+        19,
+        25,
+        24
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        25,
+        25
+      ],
+      "to": [
+        18,
+        25,
+        25
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        25,
+        26
+      ],
+      "to": [
+        15,
+        25,
+        26
+      ],
+      "material": "grille"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        26,
+        16
+      ],
+      "to": [
+        15,
+        26,
+        16
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        26,
+        17
+      ],
+      "to": [
+        17,
+        26,
+        17
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        26,
+        18
+      ],
+      "to": [
+        18,
+        26,
+        18
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        26,
+        19
+      ],
+      "to": [
+        18,
+        26,
+        19
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        26,
+        20
+      ],
+      "to": [
+        19,
+        26,
+        20
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        26,
+        21
+      ],
+      "to": [
+        18,
+        26,
+        21
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        26,
+        22
+      ],
+      "to": [
+        18,
+        26,
+        22
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        26,
+        23
+      ],
+      "to": [
+        17,
+        26,
+        23
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        26,
+        24
+      ],
+      "to": [
+        15,
+        26,
+        24
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        10
+      ],
+      "to": [
+        23,
+        26,
+        12
+      ],
+      "material": "aluminum"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        26,
+        10
+      ],
+      "to": [
+        22,
+        26,
+        11
+      ],
+      "material": "black"
+    }
+  ]
+}

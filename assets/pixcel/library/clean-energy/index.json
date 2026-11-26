@@ -1,0 +1,702 @@
+[
+  {
+    "id": "energy-panel-rack-field-ballast-roof",
+    "category": "renewable-energy",
+    "file": "001/energy-panel-rack-field-ballast-roof.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "energy-panel-rack-field-ground-rail",
+    "category": "renewable-energy",
+    "file": "001/energy-panel-rack-field-ground-rail.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "energy-panel-rack-field-service-deck",
+    "category": "renewable-energy",
+    "file": "001/energy-panel-rack-field-service-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "energy-panel-rack-field-trailer-bed",
+    "category": "renewable-energy",
+    "file": "001/energy-panel-rack-field-trailer-bed.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "energy-panel-rack-field-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "001/energy-panel-rack-field-timber-test-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "energy-panel-rack-facility-ballast-roof",
+    "category": "renewable-energy",
+    "file": "001/energy-panel-rack-facility-ballast-roof.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "energy-panel-rack-facility-ground-rail",
+    "category": "renewable-energy",
+    "file": "001/energy-panel-rack-facility-ground-rail.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "energy-panel-rack-facility-service-deck",
+    "category": "renewable-energy",
+    "file": "001/energy-panel-rack-facility-service-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "energy-panel-rack-facility-trailer-bed",
+    "category": "renewable-energy",
+    "file": "001/energy-panel-rack-facility-trailer-bed.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "energy-panel-rack-facility-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "001/energy-panel-rack-facility-timber-test-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "energy-charging-gantry-field-ballast-roof",
+    "category": "renewable-energy",
+    "file": "001/energy-charging-gantry-field-ballast-roof.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "energy-charging-gantry-field-ground-rail",
+    "category": "renewable-energy",
+    "file": "001/energy-charging-gantry-field-ground-rail.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "energy-charging-gantry-field-service-deck",
+    "category": "renewable-energy",
+    "file": "001/energy-charging-gantry-field-service-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "energy-charging-gantry-field-trailer-bed",
+    "category": "renewable-energy",
+    "file": "001/energy-charging-gantry-field-trailer-bed.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "energy-charging-gantry-field-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "001/energy-charging-gantry-field-timber-test-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "energy-charging-gantry-facility-ballast-roof",
+    "category": "renewable-energy",
+    "file": "001/energy-charging-gantry-facility-ballast-roof.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "energy-charging-gantry-facility-ground-rail",
+    "category": "renewable-energy",
+    "file": "001/energy-charging-gantry-facility-ground-rail.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "energy-charging-gantry-facility-service-deck",
+    "category": "renewable-energy",
+    "file": "001/energy-charging-gantry-facility-service-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "energy-charging-gantry-facility-trailer-bed",
+    "category": "renewable-energy",
+    "file": "001/energy-charging-gantry-facility-trailer-bed.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "energy-charging-gantry-facility-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "001/energy-charging-gantry-facility-timber-test-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "energy-battery-storage-pod-field-ballast-roof",
+    "category": "renewable-energy",
+    "file": "002/energy-battery-storage-pod-field-ballast-roof.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "energy-battery-storage-pod-field-ground-rail",
+    "category": "renewable-energy",
+    "file": "002/energy-battery-storage-pod-field-ground-rail.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "energy-battery-storage-pod-field-service-deck",
+    "category": "renewable-energy",
+    "file": "002/energy-battery-storage-pod-field-service-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "energy-battery-storage-pod-field-trailer-bed",
+    "category": "renewable-energy",
+    "file": "002/energy-battery-storage-pod-field-trailer-bed.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "energy-battery-storage-pod-field-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "002/energy-battery-storage-pod-field-timber-test-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "energy-battery-storage-pod-facility-ballast-roof",
+    "category": "renewable-energy",
+    "file": "002/energy-battery-storage-pod-facility-ballast-roof.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "energy-battery-storage-pod-facility-ground-rail",
+    "category": "renewable-energy",
+    "file": "002/energy-battery-storage-pod-facility-ground-rail.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "energy-battery-storage-pod-facility-service-deck",
+    "category": "renewable-energy",
+    "file": "002/energy-battery-storage-pod-facility-service-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "energy-battery-storage-pod-facility-trailer-bed",
+    "category": "renewable-energy",
+    "file": "002/energy-battery-storage-pod-facility-trailer-bed.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "energy-battery-storage-pod-facility-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "002/energy-battery-storage-pod-facility-timber-test-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "energy-wind-turbine-model-field-ballast-roof",
+    "category": "renewable-energy",
+    "file": "002/energy-wind-turbine-model-field-ballast-roof.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "energy-wind-turbine-model-field-ground-rail",
+    "category": "renewable-energy",
+    "file": "002/energy-wind-turbine-model-field-ground-rail.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "energy-wind-turbine-model-field-service-deck",
+    "category": "renewable-energy",
+    "file": "002/energy-wind-turbine-model-field-service-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "energy-wind-turbine-model-field-trailer-bed",
+    "category": "renewable-energy",
+    "file": "002/energy-wind-turbine-model-field-trailer-bed.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "energy-wind-turbine-model-field-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "002/energy-wind-turbine-model-field-timber-test-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "energy-wind-turbine-model-facility-ballast-roof",
+    "category": "renewable-energy",
+    "file": "002/energy-wind-turbine-model-facility-ballast-roof.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "energy-wind-turbine-model-facility-ground-rail",
+    "category": "renewable-energy",
+    "file": "002/energy-wind-turbine-model-facility-ground-rail.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "energy-wind-turbine-model-facility-service-deck",
+    "category": "renewable-energy",
+    "file": "002/energy-wind-turbine-model-facility-service-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "energy-wind-turbine-model-facility-trailer-bed",
+    "category": "renewable-energy",
+    "file": "002/energy-wind-turbine-model-facility-trailer-bed.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "energy-wind-turbine-model-facility-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "002/energy-wind-turbine-model-facility-timber-test-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "energy-vertical-axis-turbine-field-ballast-roof",
+    "category": "renewable-energy",
+    "file": "003/energy-vertical-axis-turbine-field-ballast-roof.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "energy-vertical-axis-turbine-field-ground-rail",
+    "category": "renewable-energy",
+    "file": "003/energy-vertical-axis-turbine-field-ground-rail.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "energy-vertical-axis-turbine-field-service-deck",
+    "category": "renewable-energy",
+    "file": "003/energy-vertical-axis-turbine-field-service-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "energy-vertical-axis-turbine-field-trailer-bed",
+    "category": "renewable-energy",
+    "file": "003/energy-vertical-axis-turbine-field-trailer-bed.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "energy-vertical-axis-turbine-field-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "003/energy-vertical-axis-turbine-field-timber-test-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "energy-vertical-axis-turbine-facility-ballast-roof",
+    "category": "renewable-energy",
+    "file": "003/energy-vertical-axis-turbine-facility-ballast-roof.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "energy-vertical-axis-turbine-facility-ground-rail",
+    "category": "renewable-energy",
+    "file": "003/energy-vertical-axis-turbine-facility-ground-rail.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "energy-vertical-axis-turbine-facility-service-deck",
+    "category": "renewable-energy",
+    "file": "003/energy-vertical-axis-turbine-facility-service-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "energy-vertical-axis-turbine-facility-trailer-bed",
+    "category": "renewable-energy",
+    "file": "003/energy-vertical-axis-turbine-facility-trailer-bed.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "energy-vertical-axis-turbine-facility-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "003/energy-vertical-axis-turbine-facility-timber-test-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "energy-heat-pump-compressor-field-ballast-roof",
+    "category": "renewable-energy",
+    "file": "003/energy-heat-pump-compressor-field-ballast-roof.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "energy-heat-pump-compressor-field-ground-rail",
+    "category": "renewable-energy",
+    "file": "003/energy-heat-pump-compressor-field-ground-rail.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "energy-heat-pump-compressor-field-service-deck",
+    "category": "renewable-energy",
+    "file": "003/energy-heat-pump-compressor-field-service-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "energy-heat-pump-compressor-field-trailer-bed",
+    "category": "renewable-energy",
+    "file": "003/energy-heat-pump-compressor-field-trailer-bed.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "energy-heat-pump-compressor-field-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "003/energy-heat-pump-compressor-field-timber-test-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "energy-heat-pump-compressor-facility-ballast-roof",
+    "category": "renewable-energy",
+    "file": "003/energy-heat-pump-compressor-facility-ballast-roof.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "energy-heat-pump-compressor-facility-ground-rail",
+    "category": "renewable-energy",
+    "file": "003/energy-heat-pump-compressor-facility-ground-rail.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "energy-heat-pump-compressor-facility-service-deck",
+    "category": "renewable-energy",
+    "file": "003/energy-heat-pump-compressor-facility-service-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "energy-heat-pump-compressor-facility-trailer-bed",
+    "category": "renewable-energy",
+    "file": "003/energy-heat-pump-compressor-facility-trailer-bed.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "energy-heat-pump-compressor-facility-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "003/energy-heat-pump-compressor-facility-timber-test-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "energy-microhydro-waterwheel-field-ballast-roof",
+    "category": "renewable-energy",
+    "file": "004/energy-microhydro-waterwheel-field-ballast-roof.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "energy-microhydro-waterwheel-field-ground-rail",
+    "category": "renewable-energy",
+    "file": "004/energy-microhydro-waterwheel-field-ground-rail.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "energy-microhydro-waterwheel-field-service-deck",
+    "category": "renewable-energy",
+    "file": "004/energy-microhydro-waterwheel-field-service-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "energy-microhydro-waterwheel-field-trailer-bed",
+    "category": "renewable-energy",
+    "file": "004/energy-microhydro-waterwheel-field-trailer-bed.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "energy-microhydro-waterwheel-field-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "004/energy-microhydro-waterwheel-field-timber-test-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "energy-microhydro-waterwheel-facility-ballast-roof",
+    "category": "renewable-energy",
+    "file": "004/energy-microhydro-waterwheel-facility-ballast-roof.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "energy-microhydro-waterwheel-facility-ground-rail",
+    "category": "renewable-energy",
+    "file": "004/energy-microhydro-waterwheel-facility-ground-rail.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "energy-microhydro-waterwheel-facility-service-deck",
+    "category": "renewable-energy",
+    "file": "004/energy-microhydro-waterwheel-facility-service-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "energy-microhydro-waterwheel-facility-trailer-bed",
+    "category": "renewable-energy",
+    "file": "004/energy-microhydro-waterwheel-facility-trailer-bed.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "energy-microhydro-waterwheel-facility-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "004/energy-microhydro-waterwheel-facility-timber-test-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "energy-ev-battery-cradle-field-ballast-roof",
+    "category": "renewable-energy",
+    "file": "004/energy-ev-battery-cradle-field-ballast-roof.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "energy-ev-battery-cradle-field-ground-rail",
+    "category": "renewable-energy",
+    "file": "004/energy-ev-battery-cradle-field-ground-rail.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "energy-ev-battery-cradle-field-service-deck",
+    "category": "renewable-energy",
+    "file": "004/energy-ev-battery-cradle-field-service-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "energy-ev-battery-cradle-field-trailer-bed",
+    "category": "renewable-energy",
+    "file": "004/energy-ev-battery-cradle-field-trailer-bed.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "energy-ev-battery-cradle-field-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "004/energy-ev-battery-cradle-field-timber-test-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "energy-ev-battery-cradle-facility-ballast-roof",
+    "category": "renewable-energy",
+    "file": "004/energy-ev-battery-cradle-facility-ballast-roof.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "energy-ev-battery-cradle-facility-ground-rail",
+    "category": "renewable-energy",
+    "file": "004/energy-ev-battery-cradle-facility-ground-rail.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "energy-ev-battery-cradle-facility-service-deck",
+    "category": "renewable-energy",
+    "file": "004/energy-ev-battery-cradle-facility-service-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "energy-ev-battery-cradle-facility-trailer-bed",
+    "category": "renewable-energy",
+    "file": "004/energy-ev-battery-cradle-facility-trailer-bed.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "energy-ev-battery-cradle-facility-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "004/energy-ev-battery-cradle-facility-timber-test-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "energy-island-control-monitor-field-ballast-roof",
+    "category": "renewable-energy",
+    "file": "005/energy-island-control-monitor-field-ballast-roof.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "energy-island-control-monitor-field-ground-rail",
+    "category": "renewable-energy",
+    "file": "005/energy-island-control-monitor-field-ground-rail.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "energy-island-control-monitor-field-service-deck",
+    "category": "renewable-energy",
+    "file": "005/energy-island-control-monitor-field-service-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "energy-island-control-monitor-field-trailer-bed",
+    "category": "renewable-energy",
+    "file": "005/energy-island-control-monitor-field-trailer-bed.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "energy-island-control-monitor-field-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "005/energy-island-control-monitor-field-timber-test-plinth.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "energy-island-control-monitor-facility-ballast-roof",
+    "category": "renewable-energy",
+    "file": "005/energy-island-control-monitor-facility-ballast-roof.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "energy-island-control-monitor-facility-ground-rail",
+    "category": "renewable-energy",
+    "file": "005/energy-island-control-monitor-facility-ground-rail.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "energy-island-control-monitor-facility-service-deck",
+    "category": "renewable-energy",
+    "file": "005/energy-island-control-monitor-facility-service-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "energy-island-control-monitor-facility-trailer-bed",
+    "category": "renewable-energy",
+    "file": "005/energy-island-control-monitor-facility-trailer-bed.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "energy-island-control-monitor-facility-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "005/energy-island-control-monitor-facility-timber-test-plinth.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "energy-solar-thermal-cylinders-field-ballast-roof",
+    "category": "renewable-energy",
+    "file": "005/energy-solar-thermal-cylinders-field-ballast-roof.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "energy-solar-thermal-cylinders-field-ground-rail",
+    "category": "renewable-energy",
+    "file": "005/energy-solar-thermal-cylinders-field-ground-rail.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "energy-solar-thermal-cylinders-field-service-deck",
+    "category": "renewable-energy",
+    "file": "005/energy-solar-thermal-cylinders-field-service-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "energy-solar-thermal-cylinders-field-trailer-bed",
+    "category": "renewable-energy",
+    "file": "005/energy-solar-thermal-cylinders-field-trailer-bed.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "energy-solar-thermal-cylinders-field-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "005/energy-solar-thermal-cylinders-field-timber-test-plinth.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "energy-solar-thermal-cylinders-facility-ballast-roof",
+    "category": "renewable-energy",
+    "file": "005/energy-solar-thermal-cylinders-facility-ballast-roof.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "energy-solar-thermal-cylinders-facility-ground-rail",
+    "category": "renewable-energy",
+    "file": "005/energy-solar-thermal-cylinders-facility-ground-rail.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "energy-solar-thermal-cylinders-facility-service-deck",
+    "category": "renewable-energy",
+    "file": "005/energy-solar-thermal-cylinders-facility-service-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "energy-solar-thermal-cylinders-facility-trailer-bed",
+    "category": "renewable-energy",
+    "file": "005/energy-solar-thermal-cylinders-facility-trailer-bed.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "energy-solar-thermal-cylinders-facility-timber-test-plinth",
+    "category": "renewable-energy",
+    "file": "005/energy-solar-thermal-cylinders-facility-timber-test-plinth.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 20
+  }
+]

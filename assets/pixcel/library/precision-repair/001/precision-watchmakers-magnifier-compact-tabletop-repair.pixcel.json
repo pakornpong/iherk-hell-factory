@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "id": "precision-watchmakers-magnifier-compact-tabletop-repair",
+  "category": "precision-repair",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa815e",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#755847",
+      "kind": "wood"
+    },
+    "frame": {
+      "color": "#596673",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#a0a9aa",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#3d464b",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#dfd3ba",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#a6937d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fabb5",
+      "kind": "glass"
+    },
+    "blue": {
+      "color": "#627b91",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#b99b68",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a06254",
+      "kind": "matte"
+    },
+    "copper": {
+      "color": "#ab795d",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        28,
+        24,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 7,
+      "zTo": 8,
+      "radius": 6,
+      "material": "cloth"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 8,
+      "zTo": 10,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 10,
+      "zTo": 10,
+      "radius": 3,
+      "material": "paper"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        16,
+        10
+      ],
+      "to": [
+        15,
+        15,
+        10
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        17,
+        9
+      ],
+      "to": [
+        16,
+        20,
+        9
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        10
+      ],
+      "zFrom": 7,
+      "zTo": 9,
+      "radius": 3,
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        10,
+        9
+      ],
+      "to": [
+        24,
+        14,
+        27
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        13,
+        25
+      ],
+      "to": [
+        26,
+        18,
+        27
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        14,
+        26
+      ],
+      "to": [
+        25,
+        17,
+        26
+      ],
+      "material": "glass"
+    }
+  ]
+}

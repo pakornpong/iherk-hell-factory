@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "id": "cargo-upright-appliance-runner-skid-double-deck",
+  "category": "logistics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a5afb0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#556471"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#303841"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a07750"
+    },
+    "cardboard": {
+      "kind": "matte",
+      "color": "#ae8e65"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d9d0bc"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#637589"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#c49f56"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a95c4c"
+    },
+    "film": {
+      "kind": "glass",
+      "color": "#a2b6b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        7,
+        0
+      ],
+      "to": [
+        58,
+        8,
+        2
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        16,
+        0
+      ],
+      "to": [
+        58,
+        17,
+        2
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        24,
+        0
+      ],
+      "to": [
+        58,
+        25,
+        2
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        2
+      ],
+      "to": [
+        6,
+        27,
+        6
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        4,
+        2
+      ],
+      "to": [
+        57,
+        27,
+        6
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        6
+      ],
+      "to": [
+        58,
+        27,
+        7
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        8
+      ],
+      "to": [
+        55,
+        23,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        11
+      ],
+      "to": [
+        54,
+        22,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        22,
+        14
+      ],
+      "to": [
+        53,
+        23,
+        30
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        23,
+        14
+      ],
+      "to": [
+        50,
+        24,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        27
+      ],
+      "to": [
+        55,
+        23,
+        28
+      ],
+      "material": "film"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        17
+      ],
+      "to": [
+        55,
+        23,
+        18
+      ],
+      "material": "film"
+    }
+  ]
+}

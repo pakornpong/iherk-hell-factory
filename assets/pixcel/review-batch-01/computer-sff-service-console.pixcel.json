@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "id": "computer-sff-service-console",
+  "category": "computers",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "color": "#2d3443",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#879aaa",
+      "kind": "metal"
+    },
+    "chrome": {
+      "color": "#d2dbe0",
+      "kind": "metal"
+    },
+    "white": {
+      "color": "#ece9db",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#397694",
+      "kind": "matte"
+    },
+    "screen": {
+      "color": "#79e1ea",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.24
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        3,
+        0
+      ],
+      "to": [
+        23,
+        18,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        18,
+        1
+      ],
+      "to": [
+        23,
+        19,
+        5
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        19,
+        3
+      ],
+      "to": [
+        14,
+        19,
+        3
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        19,
+        3
+      ],
+      "to": [
+        20,
+        19,
+        3
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        7,
+        6
+      ],
+      "to": [
+        16,
+        12,
+        8
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        8,
+        8
+      ],
+      "to": [
+        14,
+        11,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        13
+      ],
+      "to": [
+        24,
+        10,
+        27
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        15
+      ],
+      "to": [
+        22,
+        10,
+        25
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        19
+      ],
+      "to": [
+        20,
+        10,
+        20
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        0
+      ],
+      "to": [
+        22,
+        28,
+        2
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        2
+      ],
+      "to": [
+        19,
+        26,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        24,
+        0
+      ],
+      "to": [
+        28,
+        27,
+        2
+      ],
+      "material": "ink"
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "id": "bath-storage-sliding-door-vanity-storage-room-width-steel-stretcher",
+  "category": "bathroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a6815e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#775a48"
+    },
+    "paint": {
+      "kind": "matte",
+      "color": "#87847d"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c9baab"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5e7182"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad5c9"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#9da9ad"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#54616d"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b29c70"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a0b3b7"
+    },
+    "rose": {
+      "kind": "matte",
+      "color": "#a87976"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#9d6f58"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        6,
+        8,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        6,
+        23,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        0
+      ],
+      "to": [
+        52,
+        8,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        22,
+        0
+      ],
+      "to": [
+        52,
+        23,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        52,
+        8,
+        4
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        3
+      ],
+      "to": [
+        52,
+        23,
+        4
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        8
+      ],
+      "to": [
+        54,
+        25,
+        8
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        9
+      ],
+      "to": [
+        54,
+        24,
+        29
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        12
+      ],
+      "to": [
+        53,
+        25,
+        26
+      ],
+      "material": "paint"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        26,
+        13
+      ],
+      "to": [
+        7,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        26,
+        13
+      ],
+      "to": [
+        10,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        26,
+        13
+      ],
+      "to": [
+        13,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        26,
+        13
+      ],
+      "to": [
+        16,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        26,
+        13
+      ],
+      "to": [
+        19,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        26,
+        13
+      ],
+      "to": [
+        22,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        26,
+        13
+      ],
+      "to": [
+        25,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        26,
+        13
+      ],
+      "to": [
+        28,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        26,
+        13
+      ],
+      "to": [
+        31,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        26,
+        13
+      ],
+      "to": [
+        34,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        26,
+        13
+      ],
+      "to": [
+        37,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        26,
+        13
+      ],
+      "to": [
+        40,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        26,
+        13
+      ],
+      "to": [
+        43,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        26,
+        13
+      ],
+      "to": [
+        46,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        26,
+        13
+      ],
+      "to": [
+        49,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        26,
+        13
+      ],
+      "to": [
+        52,
+        26,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        26,
+        15
+      ],
+      "to": [
+        30,
+        27,
+        21
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        29
+      ],
+      "to": [
+        55,
+        25,
+        31
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        31
+      ],
+      "to": [
+        17,
+        20,
+        32
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        10,
+        32
+      ],
+      "to": [
+        50,
+        14,
+        35
+      ],
+      "material": "glass"
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "id": "camera-mirrorless-prism-prime-matte-box-hi-hat-platform",
+  "category": "media",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "black": {
+      "kind": "matte",
+      "color": "#293542"
+    },
+    "metal": {
+      "kind": "metal",
+      "color": "#768a96"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#4f626e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#bd5e49"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#b89b5e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#75b4c3"
+    },
+    "lcd": {
+      "kind": "emissive",
+      "color": "#90bebe",
+      "glowRadius": 1,
+      "glowIntensity": 0.15
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        13,
+        5
+      ],
+      "to": [
+        6,
+        6,
+        1
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        13,
+        5
+      ],
+      "to": [
+        24,
+        6,
+        1
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        13,
+        5
+      ],
+      "to": [
+        15,
+        23,
+        1
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        13
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 4,
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        7
+      ],
+      "to": [
+        25,
+        16,
+        16
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        7,
+        7
+      ],
+      "to": [
+        25,
+        19,
+        15
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        17
+      ],
+      "to": [
+        20,
+        14,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        19
+      ],
+      "to": [
+        18,
+        13,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        9,
+        16
+      ],
+      "to": [
+        23,
+        11,
+        17
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        16,
+        9
+      ],
+      "to": [
+        20,
+        20,
+        16
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        21,
+        7
+      ],
+      "to": [
+        23,
+        24,
+        18
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        24,
+        9
+      ],
+      "to": [
+        21,
+        24,
+        16
+      ],
+      "material": "glass"
+    }
+  ]
+}

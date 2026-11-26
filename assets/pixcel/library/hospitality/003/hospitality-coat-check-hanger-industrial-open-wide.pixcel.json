@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "id": "hospitality-coat-check-hanger-industrial-open-wide",
+  "category": "hospitality",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a77854"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#715443"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3d454d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#929ca2"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#b4aaa0"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded5c4"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#a3a098"
+    },
+    "bronze": {
+      "kind": "metal",
+      "color": "#ba9a61"
+    },
+    "oxblood": {
+      "kind": "matte",
+      "color": "#9c6155"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#90adb8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        0
+      ],
+      "to": [
+        7,
+        10,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        8,
+        0
+      ],
+      "to": [
+        55,
+        10,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        23,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        4
+      ],
+      "to": [
+        56,
+        25,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        14
+      ],
+      "to": [
+        56,
+        23,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        6,
+        20
+      ],
+      "to": [
+        57,
+        26,
+        22
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        23
+      ],
+      "to": [
+        6,
+        10,
+        43
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        8,
+        23
+      ],
+      "to": [
+        55,
+        10,
+        43
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        43
+      ],
+      "to": [
+        55,
+        10,
+        45
+      ],
+      "material": "bronze"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        9,
+        43
+      ],
+      "to": [
+        7,
+        9,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        9,
+        40
+      ],
+      "to": [
+        7,
+        13,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        28
+      ],
+      "to": [
+        9,
+        14,
+        37
+      ],
+      "material": "oxblood"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        9,
+        43
+      ],
+      "to": [
+        14,
+        9,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        9,
+        40
+      ],
+      "to": [
+        14,
+        13,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        9,
+        28
+      ],
+      "to": [
+        16,
+        15,
+        37
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        9,
+        43
+      ],
+      "to": [
+        21,
+        9,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        9,
+        40
+      ],
+      "to": [
+        21,
+        13,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        8,
+        28
+      ],
+      "to": [
+        23,
+        14,
+        37
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        9,
+        43
+      ],
+      "to": [
+        28,
+        9,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        28,
+        9,
+        40
+      ],
+      "to": [
+        28,
+        13,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        9,
+        28
+      ],
+      "to": [
+        30,
+        15,
+        37
+      ],
+      "material": "oxblood"
+    },
+    {
+      "op": "line",
+      "from": [
+        35,
+        9,
+        43
+      ],
+      "to": [
+        35,
+        9,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        35,
+        9,
+        40
+      ],
+      "to": [
+        35,
+        13,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        8,
+        28
+      ],
+      "to": [
+        37,
+        14,
+        37
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        9,
+        43
+      ],
+      "to": [
+        42,
+        9,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        9,
+        40
+      ],
+      "to": [
+        42,
+        13,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        9,
+        28
+      ],
+      "to": [
+        44,
+        15,
+        37
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        9,
+        43
+      ],
+      "to": [
+        49,
+        9,
+        40
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        9,
+        40
+      ],
+      "to": [
+        49,
+        13,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        8,
+        28
+      ],
+      "to": [
+        51,
+        14,
+        37
+      ],
+      "material": "oxblood"
+    }
+  ]
+}

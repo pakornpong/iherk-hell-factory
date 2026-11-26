@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "id": "bakery-rolling-dough-sheeter-production-washdown-stand",
+  "category": "bakery",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9da7a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596670"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e464b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a6815f"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#aaa29b"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded2bd"
+    },
+    "pastry": {
+      "kind": "matte",
+      "color": "#bd975e"
+    },
+    "toast": {
+      "kind": "matte",
+      "color": "#a5764f"
+    },
+    "dough": {
+      "kind": "matte",
+      "color": "#cfb696"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a56856"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#647a8d"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eaeb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        9,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        22,
+        0
+      ],
+      "to": [
+        55,
+        24,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        10
+      ],
+      "to": [
+        56,
+        25,
+        11
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        4
+      ],
+      "to": [
+        55,
+        23,
+        5
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        12
+      ],
+      "to": [
+        55,
+        24,
+        16
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        16
+      ],
+      "to": [
+        54,
+        23,
+        18
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        18
+      ],
+      "to": [
+        51,
+        22,
+        19
+      ],
+      "material": "dough"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        7,
+        18
+      ],
+      "to": [
+        12,
+        9,
+        33
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        22,
+        18
+      ],
+      "to": [
+        12,
+        24,
+        33
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        31
+      ],
+      "to": [
+        13,
+        23,
+        33
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        25
+      ],
+      "to": [
+        13,
+        23,
+        28
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        9
+      ],
+      "zFrom": 33,
+      "zTo": 34,
+      "radius": 2,
+      "material": "rust"
+    }
+  ]
+}

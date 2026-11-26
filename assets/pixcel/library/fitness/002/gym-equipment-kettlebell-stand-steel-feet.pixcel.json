@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "id": "gym-equipment-kettlebell-stand-steel-feet",
+  "category": "fitness",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#94a0a9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#323b45"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#47535b"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#65758a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#4e697f"
+    },
+    "vinyl": {
+      "kind": "matte",
+      "color": "#354f65"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a3534b"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#ba9d65"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        9,
+        5,
+        0
+      ],
+      "to": [
+        11,
+        26,
+        1
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        1
+      ],
+      "to": [
+        13,
+        18,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        5,
+        0
+      ],
+      "to": [
+        55,
+        26,
+        1
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        14,
+        1
+      ],
+      "to": [
+        57,
+        18,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        2
+      ],
+      "to": [
+        56,
+        24,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        7
+      ],
+      "to": [
+        56,
+        11,
+        16
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        18
+      ],
+      "zFrom": 7,
+      "zTo": 10,
+      "radius": 3,
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        17,
+        10
+      ],
+      "to": [
+        12,
+        19,
+        14
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        17,
+        10
+      ],
+      "to": [
+        15,
+        19,
+        14
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        17,
+        14
+      ],
+      "to": [
+        15,
+        19,
+        15
+      ],
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        18
+      ],
+      "zFrom": 7,
+      "zTo": 11,
+      "radius": 4,
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        17,
+        10
+      ],
+      "to": [
+        23,
+        19,
+        14
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        17,
+        10
+      ],
+      "to": [
+        26,
+        19,
+        14
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        17,
+        14
+      ],
+      "to": [
+        26,
+        19,
+        15
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        18
+      ],
+      "zFrom": 7,
+      "zTo": 10,
+      "radius": 3,
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        17,
+        10
+      ],
+      "to": [
+        35,
+        19,
+        14
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        17,
+        10
+      ],
+      "to": [
+        38,
+        19,
+        14
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        17,
+        14
+      ],
+      "to": [
+        38,
+        19,
+        15
+      ],
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        18
+      ],
+      "zFrom": 7,
+      "zTo": 11,
+      "radius": 4,
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        17,
+        10
+      ],
+      "to": [
+        47,
+        19,
+        14
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        17,
+        10
+      ],
+      "to": [
+        50,
+        19,
+        14
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        17,
+        14
+      ],
+      "to": [
+        50,
+        19,
+        15
+      ],
+      "material": "brass"
+    }
+  ]
+}

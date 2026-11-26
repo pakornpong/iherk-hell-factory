@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "id": "kitchen-combi-oven-stand",
+  "category": "kitchen",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "color": "#2d3443",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#879aaa",
+      "kind": "metal"
+    },
+    "chrome": {
+      "color": "#d2dbe0",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#be5543",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#75bfce",
+      "kind": "glass"
+    },
+    "screen": {
+      "color": "#79e1ea",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.24
+    },
+    "black": {
+      "color": "#202530",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        7,
+        7,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        7,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        23,
+        0
+      ],
+      "to": [
+        26,
+        25,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        5
+      ],
+      "to": [
+        26,
+        25,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        10
+      ],
+      "to": [
+        27,
+        26,
+        33
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        26,
+        12
+      ],
+      "to": [
+        22,
+        27,
+        29
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        27,
+        14
+      ],
+      "to": [
+        20,
+        27,
+        26
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        27,
+        17
+      ],
+      "to": [
+        20,
+        27,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        28,
+        28
+      ],
+      "to": [
+        21,
+        29,
+        29
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        27,
+        25
+      ],
+      "to": [
+        26,
+        27,
+        29
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        27,
+        18
+      ],
+      "to": [
+        26,
+        28,
+        20
+      ],
+      "material": "red"
+    }
+  ]
+}

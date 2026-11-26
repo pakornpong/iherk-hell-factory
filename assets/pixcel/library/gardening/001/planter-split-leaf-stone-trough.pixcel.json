@@ -1,0 +1,332 @@
+{
+  "schemaVersion": 1,
+  "id": "planter-split-leaf-stone-trough",
+  "category": "gardening",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "soil": {
+      "kind": "matte",
+      "color": "#5d4635"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#597451"
+    },
+    "leafLight": {
+      "kind": "matte",
+      "color": "#7e915d"
+    },
+    "leafDark": {
+      "kind": "matte",
+      "color": "#424f3f"
+    },
+    "bark": {
+      "kind": "wood",
+      "color": "#82664b"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76851"
+    },
+    "limewash": {
+      "kind": "matte",
+      "color": "#ccc3af"
+    },
+    "cement": {
+      "kind": "matte",
+      "color": "#929183"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a18160"
+    },
+    "plum": {
+      "kind": "matte",
+      "color": "#9e657b"
+    },
+    "flower": {
+      "kind": "matte",
+      "color": "#d6ae54"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#5f6468"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        0
+      ],
+      "to": [
+        26,
+        21,
+        2
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        8,
+        3
+      ],
+      "to": [
+        27,
+        22,
+        6
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        8,
+        7
+      ],
+      "to": [
+        27,
+        9,
+        10
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        21,
+        7
+      ],
+      "to": [
+        27,
+        22,
+        10
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        10,
+        7
+      ],
+      "to": [
+        4,
+        20,
+        10
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        10,
+        7
+      ],
+      "to": [
+        27,
+        20,
+        10
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        10
+      ],
+      "to": [
+        25,
+        20,
+        10
+      ],
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        11
+      ],
+      "to": [
+        7,
+        16,
+        23
+      ],
+      "material": "leafDark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        14,
+        23
+      ],
+      "to": [
+        10,
+        18,
+        24
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        16,
+        24
+      ],
+      "to": [
+        11,
+        16,
+        24
+      ],
+      "material": "leafLight"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        11
+      ],
+      "to": [
+        22,
+        10,
+        27
+      ],
+      "material": "leafDark"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        27
+      ],
+      "to": [
+        25,
+        12,
+        28
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        10,
+        28
+      ],
+      "to": [
+        26,
+        10,
+        28
+      ],
+      "material": "leafLight"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        11
+      ],
+      "to": [
+        22,
+        22,
+        20
+      ],
+      "material": "leafDark"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        20,
+        20
+      ],
+      "to": [
+        25,
+        24,
+        21
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        22,
+        21
+      ],
+      "to": [
+        26,
+        22,
+        21
+      ],
+      "material": "leafLight"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        11
+      ],
+      "to": [
+        13,
+        8,
+        30
+      ],
+      "material": "leafDark"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        6,
+        30
+      ],
+      "to": [
+        16,
+        10,
+        31
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        31
+      ],
+      "to": [
+        17,
+        8,
+        31
+      ],
+      "material": "leafLight"
+    }
+  ]
+}

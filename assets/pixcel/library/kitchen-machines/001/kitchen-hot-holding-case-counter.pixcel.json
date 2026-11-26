@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "id": "kitchen-hot-holding-case-counter",
+  "category": "kitchen",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#adb1b1"
+    },
+    "brushed": {
+      "kind": "metal",
+      "color": "#7a8081"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#344252"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dfd8c1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#a59a8d"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b2604d"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#7daeba"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#cfac62"
+    },
+    "light": {
+      "kind": "emissive",
+      "color": "#e6c280",
+      "glowRadius": 1,
+      "glowIntensity": 0.2
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        1
+      ],
+      "to": [
+        27,
+        26,
+        7
+      ],
+      "material": "brushed"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        7
+      ],
+      "to": [
+        27,
+        8,
+        24
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        7
+      ],
+      "to": [
+        6,
+        25,
+        24
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        8,
+        7
+      ],
+      "to": [
+        27,
+        25,
+        24
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        24
+      ],
+      "to": [
+        27,
+        25,
+        27
+      ],
+      "material": "brushed"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        14
+      ],
+      "to": [
+        24,
+        23,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        9
+      ],
+      "to": [
+        16,
+        19,
+        10
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        11,
+        16
+      ],
+      "to": [
+        23,
+        18,
+        18
+      ],
+      "material": "red"
+    }
+  ]
+}

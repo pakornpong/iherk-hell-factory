@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "id": "cinema-screen-curtain-module-compact-aisle-carpet",
+  "category": "cinema",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#3b444d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9aa6a7"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#9d6057"
+    },
+    "velvet": {
+      "kind": "matte",
+      "color": "#765157"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b5a38e"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#dcd0ba"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a7805e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77594a"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bda16c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#90a9b3"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657d93"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        1
+      ],
+      "material": "velvet"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        1
+      ],
+      "to": [
+        28,
+        7,
+        1
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        2
+      ],
+      "to": [
+        28,
+        10,
+        40
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        6
+      ],
+      "to": [
+        27,
+        11,
+        35
+      ],
+      "material": "offwhite"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        11,
+        5
+      ],
+      "to": [
+        9,
+        14,
+        39
+      ],
+      "material": "velvet"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        11,
+        5
+      ],
+      "to": [
+        28,
+        14,
+        39
+      ],
+      "material": "velvet"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        14,
+        6
+      ],
+      "to": [
+        6,
+        14,
+        37
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        14,
+        6
+      ],
+      "to": [
+        9,
+        14,
+        37
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        14,
+        6
+      ],
+      "to": [
+        24,
+        14,
+        37
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        14,
+        6
+      ],
+      "to": [
+        27,
+        14,
+        37
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        37
+      ],
+      "to": [
+        28,
+        15,
+        40
+      ],
+      "material": "velvet"
+    }
+  ]
+}

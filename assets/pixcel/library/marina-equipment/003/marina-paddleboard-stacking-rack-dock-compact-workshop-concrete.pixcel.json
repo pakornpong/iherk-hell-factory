@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "marina-paddleboard-stacking-rack-dock-compact-workshop-concrete",
+  "category": "maritime",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a4866b"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#698294"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9caaa9"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#596672"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#40494e"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#ad6d56"
+    },
+    "ochre": {
+      "kind": "matte",
+      "color": "#c19e62"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#b69c7e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba7b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        2
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        28,
+        24,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        7
+      ],
+      "to": [
+        8,
+        9,
+        31
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        7
+      ],
+      "to": [
+        27,
+        9,
+        31
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        8
+      ],
+      "to": [
+        26,
+        23,
+        9
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        10
+      ],
+      "to": [
+        25,
+        22,
+        12
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        12
+      ],
+      "to": [
+        22,
+        20,
+        12
+      ],
+      "material": "tan"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        16
+      ],
+      "to": [
+        26,
+        23,
+        17
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        18
+      ],
+      "to": [
+        25,
+        22,
+        20
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        20
+      ],
+      "to": [
+        22,
+        20,
+        20
+      ],
+      "material": "tan"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        24
+      ],
+      "to": [
+        26,
+        23,
+        25
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        26
+      ],
+      "to": [
+        25,
+        22,
+        28
+      ],
+      "material": "clay"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        13,
+        28
+      ],
+      "to": [
+        22,
+        20,
+        28
+      ],
+      "material": "tan"
+    }
+  ]
+}

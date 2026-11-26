@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "id": "lounge-seat-daybed-bolster-snug-metal-sled",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a27955"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795743"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b8a06d"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#636c72"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#43464b"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#805e5a"
+    },
+    "piping": {
+      "kind": "matte",
+      "color": "#a07772"
+    },
+    "pillow": {
+      "kind": "matte",
+      "color": "#d0b69d"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        0
+      ],
+      "to": [
+        9,
+        24,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        1
+      ],
+      "to": [
+        8,
+        8,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        23,
+        1
+      ],
+      "to": [
+        8,
+        24,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        7,
+        0
+      ],
+      "to": [
+        38,
+        24,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        7,
+        1
+      ],
+      "to": [
+        37,
+        8,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        23,
+        1
+      ],
+      "to": [
+        37,
+        24,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        7
+      ],
+      "to": [
+        40,
+        25,
+        12
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        12
+      ],
+      "to": [
+        39,
+        24,
+        16
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        17
+      ],
+      "to": [
+        38,
+        10,
+        22
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        21
+      ],
+      "to": [
+        38,
+        12,
+        23
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        12,
+        17
+      ],
+      "to": [
+        11,
+        21,
+        20
+      ],
+      "material": "pillow"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        12,
+        17
+      ],
+      "to": [
+        38,
+        21,
+        20
+      ],
+      "material": "pillow"
+    }
+  ]
+}

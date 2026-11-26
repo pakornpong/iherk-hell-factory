@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "id": "dressing-curtained-changing-booth-personal-toe-kick",
+  "category": "dressing-room",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa805a"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745844"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#99a6a7"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda174"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#56626c"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad0bd"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#ad9b87"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c92"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#465056"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a16357"
+    },
+    "mirror": {
+      "kind": "glass",
+      "color": "#9db1b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        4
+      ],
+      "to": [
+        7,
+        9,
+        42
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        6,
+        4
+      ],
+      "to": [
+        26,
+        9,
+        42
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        21,
+        4
+      ],
+      "to": [
+        7,
+        24,
+        42
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        21,
+        4
+      ],
+      "to": [
+        26,
+        24,
+        42
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        41
+      ],
+      "to": [
+        26,
+        9,
+        42
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        41
+      ],
+      "to": [
+        26,
+        24,
+        42
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        8
+      ],
+      "to": [
+        8,
+        10,
+        41
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        8,
+        8
+      ],
+      "to": [
+        11,
+        10,
+        41
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        8,
+        8
+      ],
+      "to": [
+        14,
+        10,
+        41
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        8,
+        8
+      ],
+      "to": [
+        17,
+        10,
+        41
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        8
+      ],
+      "to": [
+        20,
+        10,
+        41
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        8,
+        8
+      ],
+      "to": [
+        23,
+        10,
+        41
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        9,
+        10
+      ],
+      "to": [
+        26,
+        22,
+        41
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        20,
+        4
+      ],
+      "to": [
+        16,
+        23,
+        8
+      ],
+      "material": "oak"
+    }
+  ]
+}

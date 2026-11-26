@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "id": "kitchen-espresso-lever-counter",
+  "category": "kitchen",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#adb1b1"
+    },
+    "brushed": {
+      "kind": "metal",
+      "color": "#7a8081"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#344252"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dfd8c1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#d0c4b2"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b2604d"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#7daeba"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#cfac62"
+    },
+    "light": {
+      "kind": "emissive",
+      "color": "#e6c280",
+      "glowRadius": 1,
+      "glowIntensity": 0.2
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        1
+      ],
+      "to": [
+        27,
+        25,
+        4
+      ],
+      "material": "brushed"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        5
+      ],
+      "to": [
+        26,
+        13,
+        24
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        19
+      ],
+      "to": [
+        26,
+        19,
+        23
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        16
+      ],
+      "zFrom": 16,
+      "zTo": 19,
+      "radius": 3,
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        17,
+        15
+      ],
+      "to": [
+        17,
+        22,
+        16
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        23
+      ],
+      "to": [
+        16,
+        11,
+        31
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        30
+      ],
+      "to": [
+        18,
+        12,
+        32
+      ],
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        17
+      ],
+      "zFrom": 5,
+      "zTo": 9,
+      "radius": 3,
+      "material": "ivory"
+    }
+  ]
+}

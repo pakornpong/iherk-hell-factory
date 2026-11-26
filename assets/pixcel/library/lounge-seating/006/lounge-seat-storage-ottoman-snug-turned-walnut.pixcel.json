@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "id": "lounge-seat-storage-ottoman-snug-turned-walnut",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a27955"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795743"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b8a06d"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#636c72"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#43464b"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#4f6072"
+    },
+    "piping": {
+      "kind": "matte",
+      "color": "#788393"
+    },
+    "pillow": {
+      "kind": "matte",
+      "color": "#bca88e"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 2,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        8
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 1,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        8
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        22
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 2,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        22
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 1,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        22
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 2,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        8
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 1,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        8
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        22
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 2,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        22
+      ],
+      "zFrom": 3,
+      "zTo": 6,
+      "radius": 1,
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        36,
+        22
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        7
+      ],
+      "to": [
+        39,
+        24,
+        16
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        16
+      ],
+      "to": [
+        40,
+        25,
+        19
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        19
+      ],
+      "to": [
+        37,
+        22,
+        20
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        24,
+        10
+      ],
+      "to": [
+        36,
+        24,
+        10
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        25,
+        12
+      ],
+      "to": [
+        25,
+        25,
+        13
+      ],
+      "material": "brass"
+    }
+  ]
+}

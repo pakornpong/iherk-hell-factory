@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "id": "pharmacy-amber-bottle-backstock-single-wall-backbench",
+  "category": "pharmacy",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a78363"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c8"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#9aa4a7"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#5e6975"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#424952"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#677f94"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#bc9466"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#a76757"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d9c9ac"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91adb7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        8,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        9
+      ],
+      "to": [
+        27,
+        25,
+        10
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        3
+      ],
+      "to": [
+        6,
+        22,
+        9
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        8,
+        3
+      ],
+      "to": [
+        25,
+        22,
+        9
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        11
+      ],
+      "to": [
+        26,
+        9,
+        42
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        11
+      ],
+      "to": [
+        7,
+        24,
+        42
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        9,
+        11
+      ],
+      "to": [
+        26,
+        24,
+        42
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        13
+      ],
+      "to": [
+        25,
+        24,
+        14
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        22
+      ],
+      "to": [
+        25,
+        24,
+        23
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        31
+      ],
+      "to": [
+        25,
+        24,
+        32
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        41
+      ],
+      "to": [
+        25,
+        24,
+        42
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 20,
+      "zTo": 21,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 20,
+      "zTo": 21,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 20,
+      "zTo": 21,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 24,
+      "zTo": 28,
+      "radius": 2,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 29,
+      "zTo": 30,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 24,
+      "zTo": 28,
+      "radius": 2,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 29,
+      "zTo": 30,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 24,
+      "zTo": 28,
+      "radius": 2,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 29,
+      "zTo": 30,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 33,
+      "zTo": 37,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 38,
+      "zTo": 39,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 33,
+      "zTo": 37,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        16
+      ],
+      "zFrom": 38,
+      "zTo": 39,
+      "radius": 1,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 33,
+      "zTo": 37,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 38,
+      "zTo": 39,
+      "radius": 1,
+      "material": "gray"
+    }
+  ]
+}

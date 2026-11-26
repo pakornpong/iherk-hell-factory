@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "id": "growhouse-hydroponic-channel-single-slatted-bench",
+  "category": "horticulture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a17f5c"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#606b73"
+    },
+    "soil": {
+      "kind": "matte",
+      "color": "#655142"
+    },
+    "fern": {
+      "kind": "matte",
+      "color": "#627c58"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#809664"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7388"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76b56"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a267"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8ccb6"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aeb9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#424a4e"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        7,
+        0
+      ],
+      "to": [
+        29,
+        9,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        23,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        10
+      ],
+      "to": [
+        30,
+        9,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        10
+      ],
+      "to": [
+        30,
+        14,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        10
+      ],
+      "to": [
+        30,
+        19,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        10
+      ],
+      "to": [
+        30,
+        24,
+        11
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        17
+      ],
+      "to": [
+        29,
+        11,
+        19
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        10
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        10
+      ],
+      "zFrom": 19,
+      "zTo": 23,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        10
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        26,
+        10
+      ],
+      "zFrom": 19,
+      "zTo": 23,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        16,
+        17
+      ],
+      "to": [
+        29,
+        18,
+        19
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 23,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        26,
+        17
+      ],
+      "zFrom": 19,
+      "zTo": 23,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        17
+      ],
+      "to": [
+        29,
+        24,
+        19
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        23
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        23
+      ],
+      "zFrom": 19,
+      "zTo": 23,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        23
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        26,
+        23
+      ],
+      "zFrom": 19,
+      "zTo": 23,
+      "radius": 1,
+      "material": "fern"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        12
+      ],
+      "to": [
+        7,
+        24,
+        17
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        7,
+        12
+      ],
+      "to": [
+        29,
+        24,
+        17
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        12
+      ],
+      "to": [
+        17,
+        15,
+        16
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        10,
+        16
+      ],
+      "to": [
+        5,
+        10,
+        18
+      ],
+      "material": "steel"
+    }
+  ]
+}

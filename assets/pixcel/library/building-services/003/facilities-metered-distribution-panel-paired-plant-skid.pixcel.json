@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "id": "facilities-metered-distribution-panel-paired-plant-skid",
+  "category": "building-services",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "galv": {
+      "color": "#a4a9a9",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#647080",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#41484e",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#cbc6b8",
+      "kind": "matte"
+    },
+    "white": {
+      "color": "#ded9cd",
+      "kind": "matte"
+    },
+    "ochre": {
+      "color": "#bd9b5b",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a35d50",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8aa7b3",
+      "kind": "glass"
+    },
+    "copper": {
+      "color": "#b58165",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#3b4145",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        57,
+        8,
+        2
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        0
+      ],
+      "to": [
+        57,
+        25,
+        2
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        56,
+        25,
+        7
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        4
+      ],
+      "to": [
+        13,
+        26,
+        6
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        25,
+        4
+      ],
+      "to": [
+        54,
+        26,
+        6
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        8
+      ],
+      "to": [
+        56,
+        23,
+        38
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        10
+      ],
+      "to": [
+        55,
+        24,
+        36
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        27
+      ],
+      "to": [
+        11,
+        25,
+        32
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        28
+      ],
+      "to": [
+        10,
+        25,
+        31
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        16
+      ],
+      "to": [
+        10,
+        25,
+        22
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        24,
+        27
+      ],
+      "to": [
+        21,
+        25,
+        32
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        25,
+        28
+      ],
+      "to": [
+        20,
+        25,
+        31
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        24,
+        16
+      ],
+      "to": [
+        20,
+        25,
+        22
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        24,
+        27
+      ],
+      "to": [
+        54,
+        25,
+        32
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        25,
+        28
+      ],
+      "to": [
+        53,
+        25,
+        31
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        24,
+        16
+      ],
+      "to": [
+        53,
+        25,
+        22
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        34
+      ],
+      "to": [
+        53,
+        25,
+        35
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        8,
+        38
+      ],
+      "to": [
+        12,
+        12,
+        45
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        8,
+        38
+      ],
+      "to": [
+        51,
+        12,
+        45
+      ],
+      "material": "galv"
+    }
+  ]
+}

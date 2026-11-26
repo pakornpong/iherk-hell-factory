@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "id": "field-trade-site-level-laser-bench-insert",
+  "category": "trades",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        1
+      ],
+      "to": [
+        25,
+        24,
+        2
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        14,
+        25
+      ],
+      "to": [
+        6,
+        23,
+        3
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        14,
+        25
+      ],
+      "to": [
+        25,
+        23,
+        3
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        14,
+        25
+      ],
+      "to": [
+        15,
+        5,
+        3
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        14
+      ],
+      "zFrom": 24,
+      "zTo": 29,
+      "radius": 4,
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        9,
+        29
+      ],
+      "to": [
+        21,
+        18,
+        39
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        18,
+        32
+      ],
+      "to": [
+        20,
+        18,
+        37
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        18,
+        33
+      ],
+      "to": [
+        18,
+        18,
+        36
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        39
+      ],
+      "to": [
+        19,
+        10,
+        40
+      ],
+      "material": "steel"
+    }
+  ]
+}

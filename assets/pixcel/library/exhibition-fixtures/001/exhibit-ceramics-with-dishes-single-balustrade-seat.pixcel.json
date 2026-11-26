@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "id": "exhibit-ceramics-with-dishes-single-balustrade-seat",
+  "category": "museum",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a67e58"
+    },
+    "plaster": {
+      "kind": "matte",
+      "color": "#d8cfc1"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3d454d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaad"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#9cb5ba"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78268"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a90"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b8aa96"
+    },
+    "ceramic": {
+      "kind": "matte",
+      "color": "#ab6854"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e0d8c7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        25,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        7
+      ],
+      "to": [
+        6,
+        24,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        6,
+        7
+      ],
+      "to": [
+        26,
+        24,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        18
+      ],
+      "to": [
+        26,
+        24,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        11
+      ],
+      "to": [
+        24,
+        23,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        14
+      ],
+      "zFrom": 7,
+      "zTo": 11,
+      "radius": 3,
+      "material": "ceramic"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        14
+      ],
+      "zFrom": 12,
+      "zTo": 14,
+      "radius": 2,
+      "material": "ceramic"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        14
+      ],
+      "zFrom": 15,
+      "zTo": 16,
+      "radius": 3,
+      "material": "ceramic"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        14
+      ],
+      "zFrom": 7,
+      "zTo": 12,
+      "radius": 3,
+      "material": "ceramic"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        14
+      ],
+      "zFrom": 13,
+      "zTo": 15,
+      "radius": 2,
+      "material": "ceramic"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        14
+      ],
+      "zFrom": 16,
+      "zTo": 17,
+      "radius": 3,
+      "material": "ceramic"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        14
+      ],
+      "zFrom": 7,
+      "zTo": 13,
+      "radius": 3,
+      "material": "ceramic"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        14
+      ],
+      "zFrom": 14,
+      "zTo": 16,
+      "radius": 2,
+      "material": "ceramic"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        14
+      ],
+      "zFrom": 17,
+      "zTo": 18,
+      "radius": 3,
+      "material": "ceramic"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        20
+      ],
+      "zFrom": 7,
+      "zTo": 8,
+      "radius": 4,
+      "material": "plaster"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        20
+      ],
+      "zFrom": 8,
+      "zTo": 8,
+      "radius": 3,
+      "material": "blue"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "id": "gym-equipment-incline-step-platform-rubber",
+  "category": "fitness",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#94a0a9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#323b45"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#47535b"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#65758a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#4e697f"
+    },
+    "vinyl": {
+      "kind": "matte",
+      "color": "#354f65"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a3534b"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#ba9d65"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        59,
+        26,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        58,
+        7,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        3
+      ],
+      "to": [
+        17,
+        23,
+        6
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        8,
+        3
+      ],
+      "to": [
+        27,
+        23,
+        9
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        8,
+        3
+      ],
+      "to": [
+        37,
+        23,
+        12
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        8,
+        3
+      ],
+      "to": [
+        47,
+        23,
+        15
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        8,
+        3
+      ],
+      "to": [
+        57,
+        23,
+        18
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        7,
+        15
+      ],
+      "to": [
+        57,
+        7,
+        33
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        24,
+        15
+      ],
+      "to": [
+        57,
+        24,
+        33
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        7,
+        5
+      ],
+      "to": [
+        12,
+        7,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        54,
+        24,
+        15
+      ],
+      "to": [
+        54,
+        24,
+        32
+      ],
+      "material": "steel"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "id": "planter-snake-leaf-stone-trough",
+  "category": "gardening",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "soil": {
+      "kind": "matte",
+      "color": "#5d4635"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#597451"
+    },
+    "leafLight": {
+      "kind": "matte",
+      "color": "#7e915d"
+    },
+    "leafDark": {
+      "kind": "matte",
+      "color": "#424f3f"
+    },
+    "bark": {
+      "kind": "wood",
+      "color": "#82664b"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76851"
+    },
+    "limewash": {
+      "kind": "matte",
+      "color": "#ccc3af"
+    },
+    "cement": {
+      "kind": "matte",
+      "color": "#929183"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a18160"
+    },
+    "plum": {
+      "kind": "matte",
+      "color": "#9e657b"
+    },
+    "flower": {
+      "kind": "matte",
+      "color": "#d6ae54"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#5f6468"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        0
+      ],
+      "to": [
+        26,
+        21,
+        2
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        8,
+        3
+      ],
+      "to": [
+        27,
+        22,
+        6
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        8,
+        7
+      ],
+      "to": [
+        27,
+        9,
+        10
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        21,
+        7
+      ],
+      "to": [
+        27,
+        22,
+        10
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        10,
+        7
+      ],
+      "to": [
+        4,
+        20,
+        10
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        10,
+        7
+      ],
+      "to": [
+        27,
+        20,
+        10
+      ],
+      "material": "cement"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        10
+      ],
+      "to": [
+        25,
+        20,
+        10
+      ],
+      "material": "soil"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        11
+      ],
+      "to": [
+        15,
+        15,
+        35
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        17,
+        13
+      ],
+      "to": [
+        9,
+        18,
+        29
+      ],
+      "material": "leafLight"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        14,
+        11
+      ],
+      "to": [
+        18,
+        15,
+        31
+      ],
+      "material": "leafDark"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        13,
+        18
+      ],
+      "to": [
+        21,
+        11,
+        28
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        16
+      ],
+      "to": [
+        15,
+        20,
+        30
+      ],
+      "material": "leafLight"
+    }
+  ]
+}

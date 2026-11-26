@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "id": "precision-hearing-aid-drying-dock-compact-wall-tool-rail",
+  "category": "precision-repair",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa815e",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#755847",
+      "kind": "wood"
+    },
+    "frame": {
+      "color": "#596673",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#a0a9aa",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#3d464b",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#dfd3ba",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#a6937d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fabb5",
+      "kind": "glass"
+    },
+    "blue": {
+      "color": "#627b91",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#b99b68",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a06254",
+      "kind": "matte"
+    },
+    "copper": {
+      "color": "#ab795d",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        29,
+        7,
+        32
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        9
+      ],
+      "to": [
+        29,
+        25,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        24
+      ],
+      "to": [
+        28,
+        8,
+        25
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        3
+      ],
+      "to": [
+        6,
+        22,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        11
+      ],
+      "to": [
+        28,
+        24,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        16
+      ],
+      "to": [
+        26,
+        20,
+        21
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        21
+      ],
+      "to": [
+        26,
+        10,
+        33
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        21
+      ],
+      "to": [
+        25,
+        13,
+        24
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        16
+      ],
+      "zFrom": 21,
+      "zTo": 23,
+      "radius": 2,
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        16,
+        23
+      ],
+      "to": [
+        14,
+        17,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        18
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 1,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        16
+      ],
+      "zFrom": 21,
+      "zTo": 23,
+      "radius": 2,
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        16,
+        23
+      ],
+      "to": [
+        25,
+        17,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        18
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 1,
+      "material": "blue"
+    }
+  ]
+}

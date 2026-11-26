@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "id": "precision-precision-solder-fume-bench-compact-trestle-tool-bench",
+  "category": "precision-repair",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#aa815e",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#755847",
+      "kind": "wood"
+    },
+    "frame": {
+      "color": "#596673",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#a0a9aa",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#3d464b",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#dfd3ba",
+      "kind": "matte"
+    },
+    "cloth": {
+      "color": "#a6937d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8fabb5",
+      "kind": "glass"
+    },
+    "blue": {
+      "color": "#627b91",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#b99b68",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a06254",
+      "kind": "matte"
+    },
+    "copper": {
+      "color": "#ab795d",
+      "kind": "metal"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        5,
+        15,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        5,
+        15,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        15,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        23,
+        0
+      ],
+      "to": [
+        26,
+        15,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        29,
+        25,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        5
+      ],
+      "to": [
+        27,
+        24,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        28,
+        24,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        19
+      ],
+      "to": [
+        27,
+        22,
+        20
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        20
+      ],
+      "to": [
+        17,
+        18,
+        21
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        21
+      ],
+      "to": [
+        13,
+        14,
+        22
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        17,
+        21
+      ],
+      "to": [
+        20,
+        10,
+        29
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        19
+      ],
+      "to": [
+        26,
+        13,
+        31
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        13,
+        24
+      ],
+      "to": [
+        25,
+        18,
+        31
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        18,
+        25
+      ],
+      "to": [
+        24,
+        18,
+        30
+      ],
+      "material": "steel"
+    }
+  ]
+}

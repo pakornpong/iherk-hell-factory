@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "id": "cafe-cup-lid-condiment-rail-single-wheeled-pop-up",
+  "category": "coffee-service",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa815d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#725543"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3f4649"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0a8a9"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b47d5e"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7caba"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#a5a09a"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aab4"
+    },
+    "coffee": {
+      "kind": "matte",
+      "color": "#675143"
+    },
+    "rust": {
+      "kind": "matte",
+      "color": "#a76a57"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89f7a"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7387"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        10,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        10,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        22,
+        0
+      ],
+      "to": [
+        26,
+        25,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        27,
+        25,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        5
+      ],
+      "to": [
+        26,
+        25,
+        8
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        8,
+        8
+      ],
+      "to": [
+        27,
+        23,
+        11
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        10
+      ],
+      "to": [
+        26,
+        24,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        15
+      ],
+      "to": [
+        26,
+        10,
+        26
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        14
+      ],
+      "zFrom": 15,
+      "zTo": 23,
+      "radius": 3,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        14
+      ],
+      "zFrom": 18,
+      "zTo": 18,
+      "radius": 4,
+      "material": "kraft"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        20
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 2,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        14
+      ],
+      "zFrom": 15,
+      "zTo": 23,
+      "radius": 3,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        14
+      ],
+      "zFrom": 18,
+      "zTo": 18,
+      "radius": 4,
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        20
+      ],
+      "zFrom": 15,
+      "zTo": 19,
+      "radius": 2,
+      "material": "glass"
+    }
+  ]
+}

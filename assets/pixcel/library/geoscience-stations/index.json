@@ -1,0 +1,674 @@
+[
+  {
+    "id": "geo-cores-logging-caddy-field-folding-field-table",
+    "category": "geoscience",
+    "file": "001/geo-cores-logging-caddy-field-folding-field-table.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "geo-cores-logging-caddy-field-survey-pelican-case",
+    "category": "geoscience",
+    "file": "001/geo-cores-logging-caddy-field-survey-pelican-case.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "geo-cores-logging-caddy-field-raised-pedestal",
+    "category": "geoscience",
+    "file": "001/geo-cores-logging-caddy-field-raised-pedestal.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "geo-cores-logging-caddy-field-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "001/geo-cores-logging-caddy-field-mobile-lab-cart.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "geo-cores-logging-caddy-field-hands-on-plinth",
+    "category": "geoscience",
+    "file": "001/geo-cores-logging-caddy-field-hands-on-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "geo-cores-logging-caddy-double-lab-folding-field-table",
+    "category": "geoscience",
+    "file": "001/geo-cores-logging-caddy-double-lab-folding-field-table.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "geo-cores-logging-caddy-double-lab-survey-pelican-case",
+    "category": "geoscience",
+    "file": "001/geo-cores-logging-caddy-double-lab-survey-pelican-case.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "geo-cores-logging-caddy-double-lab-raised-pedestal",
+    "category": "geoscience",
+    "file": "001/geo-cores-logging-caddy-double-lab-raised-pedestal.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "geo-cores-logging-caddy-double-lab-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "001/geo-cores-logging-caddy-double-lab-mobile-lab-cart.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "geo-cores-logging-caddy-double-lab-hands-on-plinth",
+    "category": "geoscience",
+    "file": "001/geo-cores-logging-caddy-double-lab-hands-on-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "geo-hand-specimen-sorting-grid-field-folding-field-table",
+    "category": "geoscience",
+    "file": "001/geo-hand-specimen-sorting-grid-field-folding-field-table.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "geo-hand-specimen-sorting-grid-field-survey-pelican-case",
+    "category": "geoscience",
+    "file": "001/geo-hand-specimen-sorting-grid-field-survey-pelican-case.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "geo-hand-specimen-sorting-grid-field-raised-pedestal",
+    "category": "geoscience",
+    "file": "001/geo-hand-specimen-sorting-grid-field-raised-pedestal.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "geo-hand-specimen-sorting-grid-field-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "001/geo-hand-specimen-sorting-grid-field-mobile-lab-cart.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "geo-hand-specimen-sorting-grid-field-hands-on-plinth",
+    "category": "geoscience",
+    "file": "001/geo-hand-specimen-sorting-grid-field-hands-on-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "geo-hand-specimen-sorting-grid-double-lab-folding-field-table",
+    "category": "geoscience",
+    "file": "001/geo-hand-specimen-sorting-grid-double-lab-folding-field-table.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "geo-hand-specimen-sorting-grid-double-lab-survey-pelican-case",
+    "category": "geoscience",
+    "file": "001/geo-hand-specimen-sorting-grid-double-lab-survey-pelican-case.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "geo-hand-specimen-sorting-grid-double-lab-raised-pedestal",
+    "category": "geoscience",
+    "file": "001/geo-hand-specimen-sorting-grid-double-lab-raised-pedestal.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "geo-hand-specimen-sorting-grid-double-lab-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "001/geo-hand-specimen-sorting-grid-double-lab-mobile-lab-cart.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "geo-hand-specimen-sorting-grid-double-lab-hands-on-plinth",
+    "category": "geoscience",
+    "file": "001/geo-hand-specimen-sorting-grid-double-lab-hands-on-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "geo-soil-sieve-column-field-folding-field-table",
+    "category": "geoscience",
+    "file": "002/geo-soil-sieve-column-field-folding-field-table.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "geo-soil-sieve-column-field-survey-pelican-case",
+    "category": "geoscience",
+    "file": "002/geo-soil-sieve-column-field-survey-pelican-case.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "geo-soil-sieve-column-field-raised-pedestal",
+    "category": "geoscience",
+    "file": "002/geo-soil-sieve-column-field-raised-pedestal.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "geo-soil-sieve-column-field-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "002/geo-soil-sieve-column-field-mobile-lab-cart.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "geo-soil-sieve-column-field-hands-on-plinth",
+    "category": "geoscience",
+    "file": "002/geo-soil-sieve-column-field-hands-on-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "geo-soil-sieve-column-double-lab-folding-field-table",
+    "category": "geoscience",
+    "file": "002/geo-soil-sieve-column-double-lab-folding-field-table.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "geo-soil-sieve-column-double-lab-survey-pelican-case",
+    "category": "geoscience",
+    "file": "002/geo-soil-sieve-column-double-lab-survey-pelican-case.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "geo-soil-sieve-column-double-lab-raised-pedestal",
+    "category": "geoscience",
+    "file": "002/geo-soil-sieve-column-double-lab-raised-pedestal.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "geo-soil-sieve-column-double-lab-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "002/geo-soil-sieve-column-double-lab-mobile-lab-cart.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "geo-soil-sieve-column-double-lab-hands-on-plinth",
+    "category": "geoscience",
+    "file": "002/geo-soil-sieve-column-double-lab-hands-on-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "geo-topographic-table-model-field-folding-field-table",
+    "category": "geoscience",
+    "file": "002/geo-topographic-table-model-field-folding-field-table.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "geo-topographic-table-model-field-survey-pelican-case",
+    "category": "geoscience",
+    "file": "002/geo-topographic-table-model-field-survey-pelican-case.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "geo-topographic-table-model-field-raised-pedestal",
+    "category": "geoscience",
+    "file": "002/geo-topographic-table-model-field-raised-pedestal.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "geo-topographic-table-model-field-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "002/geo-topographic-table-model-field-mobile-lab-cart.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "geo-topographic-table-model-field-hands-on-plinth",
+    "category": "geoscience",
+    "file": "002/geo-topographic-table-model-field-hands-on-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "geo-topographic-table-model-double-lab-folding-field-table",
+    "category": "geoscience",
+    "file": "002/geo-topographic-table-model-double-lab-folding-field-table.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "geo-topographic-table-model-double-lab-survey-pelican-case",
+    "category": "geoscience",
+    "file": "002/geo-topographic-table-model-double-lab-survey-pelican-case.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "geo-topographic-table-model-double-lab-raised-pedestal",
+    "category": "geoscience",
+    "file": "002/geo-topographic-table-model-double-lab-raised-pedestal.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "geo-topographic-table-model-double-lab-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "002/geo-topographic-table-model-double-lab-mobile-lab-cart.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "geo-topographic-table-model-double-lab-hands-on-plinth",
+    "category": "geoscience",
+    "file": "002/geo-topographic-table-model-double-lab-hands-on-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "geo-portable-weather-mast-field-folding-field-table",
+    "category": "geoscience",
+    "file": "003/geo-portable-weather-mast-field-folding-field-table.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "geo-portable-weather-mast-field-survey-pelican-case",
+    "category": "geoscience",
+    "file": "003/geo-portable-weather-mast-field-survey-pelican-case.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "geo-portable-weather-mast-field-hands-on-plinth",
+    "category": "geoscience",
+    "file": "003/geo-portable-weather-mast-field-hands-on-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "geo-portable-weather-mast-double-lab-folding-field-table",
+    "category": "geoscience",
+    "file": "003/geo-portable-weather-mast-double-lab-folding-field-table.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "geo-portable-weather-mast-double-lab-survey-pelican-case",
+    "category": "geoscience",
+    "file": "003/geo-portable-weather-mast-double-lab-survey-pelican-case.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "geo-portable-weather-mast-double-lab-hands-on-plinth",
+    "category": "geoscience",
+    "file": "003/geo-portable-weather-mast-double-lab-hands-on-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "geo-digital-sediment-logger-field-folding-field-table",
+    "category": "geoscience",
+    "file": "003/geo-digital-sediment-logger-field-folding-field-table.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "geo-digital-sediment-logger-field-survey-pelican-case",
+    "category": "geoscience",
+    "file": "003/geo-digital-sediment-logger-field-survey-pelican-case.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "geo-digital-sediment-logger-field-raised-pedestal",
+    "category": "geoscience",
+    "file": "003/geo-digital-sediment-logger-field-raised-pedestal.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "geo-digital-sediment-logger-field-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "003/geo-digital-sediment-logger-field-mobile-lab-cart.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "geo-digital-sediment-logger-field-hands-on-plinth",
+    "category": "geoscience",
+    "file": "003/geo-digital-sediment-logger-field-hands-on-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "geo-digital-sediment-logger-double-lab-folding-field-table",
+    "category": "geoscience",
+    "file": "003/geo-digital-sediment-logger-double-lab-folding-field-table.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "geo-digital-sediment-logger-double-lab-survey-pelican-case",
+    "category": "geoscience",
+    "file": "003/geo-digital-sediment-logger-double-lab-survey-pelican-case.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "geo-digital-sediment-logger-double-lab-raised-pedestal",
+    "category": "geoscience",
+    "file": "003/geo-digital-sediment-logger-double-lab-raised-pedestal.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "geo-digital-sediment-logger-double-lab-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "003/geo-digital-sediment-logger-double-lab-mobile-lab-cart.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "geo-digital-sediment-logger-double-lab-hands-on-plinth",
+    "category": "geoscience",
+    "file": "003/geo-digital-sediment-logger-double-lab-hands-on-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "geo-geology-thin-section-scope-field-folding-field-table",
+    "category": "geoscience",
+    "file": "003/geo-geology-thin-section-scope-field-folding-field-table.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "geo-geology-thin-section-scope-field-survey-pelican-case",
+    "category": "geoscience",
+    "file": "003/geo-geology-thin-section-scope-field-survey-pelican-case.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "geo-geology-thin-section-scope-field-raised-pedestal",
+    "category": "geoscience",
+    "file": "003/geo-geology-thin-section-scope-field-raised-pedestal.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "geo-geology-thin-section-scope-field-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "003/geo-geology-thin-section-scope-field-mobile-lab-cart.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "geo-geology-thin-section-scope-field-hands-on-plinth",
+    "category": "geoscience",
+    "file": "004/geo-geology-thin-section-scope-field-hands-on-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "geo-geology-thin-section-scope-double-lab-folding-field-table",
+    "category": "geoscience",
+    "file": "004/geo-geology-thin-section-scope-double-lab-folding-field-table.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "geo-geology-thin-section-scope-double-lab-survey-pelican-case",
+    "category": "geoscience",
+    "file": "004/geo-geology-thin-section-scope-double-lab-survey-pelican-case.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "geo-geology-thin-section-scope-double-lab-raised-pedestal",
+    "category": "geoscience",
+    "file": "004/geo-geology-thin-section-scope-double-lab-raised-pedestal.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "geo-geology-thin-section-scope-double-lab-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "004/geo-geology-thin-section-scope-double-lab-mobile-lab-cart.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "geo-geology-thin-section-scope-double-lab-hands-on-plinth",
+    "category": "geoscience",
+    "file": "004/geo-geology-thin-section-scope-double-lab-hands-on-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "geo-field-sample-crate-stack-field-folding-field-table",
+    "category": "geoscience",
+    "file": "004/geo-field-sample-crate-stack-field-folding-field-table.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "geo-field-sample-crate-stack-field-survey-pelican-case",
+    "category": "geoscience",
+    "file": "004/geo-field-sample-crate-stack-field-survey-pelican-case.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "geo-field-sample-crate-stack-field-raised-pedestal",
+    "category": "geoscience",
+    "file": "004/geo-field-sample-crate-stack-field-raised-pedestal.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "geo-field-sample-crate-stack-field-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "004/geo-field-sample-crate-stack-field-mobile-lab-cart.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "geo-field-sample-crate-stack-field-hands-on-plinth",
+    "category": "geoscience",
+    "file": "004/geo-field-sample-crate-stack-field-hands-on-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "geo-field-sample-crate-stack-double-lab-folding-field-table",
+    "category": "geoscience",
+    "file": "004/geo-field-sample-crate-stack-double-lab-folding-field-table.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "geo-field-sample-crate-stack-double-lab-survey-pelican-case",
+    "category": "geoscience",
+    "file": "004/geo-field-sample-crate-stack-double-lab-survey-pelican-case.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "geo-field-sample-crate-stack-double-lab-raised-pedestal",
+    "category": "geoscience",
+    "file": "004/geo-field-sample-crate-stack-double-lab-raised-pedestal.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "geo-field-sample-crate-stack-double-lab-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "004/geo-field-sample-crate-stack-double-lab-mobile-lab-cart.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "geo-field-sample-crate-stack-double-lab-hands-on-plinth",
+    "category": "geoscience",
+    "file": "004/geo-field-sample-crate-stack-double-lab-hands-on-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "geo-water-level-flume-field-folding-field-table",
+    "category": "geoscience",
+    "file": "004/geo-water-level-flume-field-folding-field-table.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "geo-water-level-flume-field-survey-pelican-case",
+    "category": "geoscience",
+    "file": "004/geo-water-level-flume-field-survey-pelican-case.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "geo-water-level-flume-field-raised-pedestal",
+    "category": "geoscience",
+    "file": "004/geo-water-level-flume-field-raised-pedestal.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "geo-water-level-flume-field-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "004/geo-water-level-flume-field-mobile-lab-cart.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "geo-water-level-flume-field-hands-on-plinth",
+    "category": "geoscience",
+    "file": "005/geo-water-level-flume-field-hands-on-plinth.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "geo-water-level-flume-double-lab-folding-field-table",
+    "category": "geoscience",
+    "file": "005/geo-water-level-flume-double-lab-folding-field-table.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "geo-water-level-flume-double-lab-survey-pelican-case",
+    "category": "geoscience",
+    "file": "005/geo-water-level-flume-double-lab-survey-pelican-case.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "geo-water-level-flume-double-lab-raised-pedestal",
+    "category": "geoscience",
+    "file": "005/geo-water-level-flume-double-lab-raised-pedestal.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "geo-water-level-flume-double-lab-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "005/geo-water-level-flume-double-lab-mobile-lab-cart.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "geo-water-level-flume-double-lab-hands-on-plinth",
+    "category": "geoscience",
+    "file": "005/geo-water-level-flume-double-lab-hands-on-plinth.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "geo-map-roll-field-desk-field-folding-field-table",
+    "category": "geoscience",
+    "file": "005/geo-map-roll-field-desk-field-folding-field-table.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "geo-map-roll-field-desk-field-survey-pelican-case",
+    "category": "geoscience",
+    "file": "005/geo-map-roll-field-desk-field-survey-pelican-case.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "geo-map-roll-field-desk-field-raised-pedestal",
+    "category": "geoscience",
+    "file": "005/geo-map-roll-field-desk-field-raised-pedestal.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "geo-map-roll-field-desk-field-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "005/geo-map-roll-field-desk-field-mobile-lab-cart.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "geo-map-roll-field-desk-field-hands-on-plinth",
+    "category": "geoscience",
+    "file": "005/geo-map-roll-field-desk-field-hands-on-plinth.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "geo-map-roll-field-desk-double-lab-folding-field-table",
+    "category": "geoscience",
+    "file": "005/geo-map-roll-field-desk-double-lab-folding-field-table.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "geo-map-roll-field-desk-double-lab-survey-pelican-case",
+    "category": "geoscience",
+    "file": "005/geo-map-roll-field-desk-double-lab-survey-pelican-case.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "geo-map-roll-field-desk-double-lab-raised-pedestal",
+    "category": "geoscience",
+    "file": "005/geo-map-roll-field-desk-double-lab-raised-pedestal.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "geo-map-roll-field-desk-double-lab-mobile-lab-cart",
+    "category": "geoscience",
+    "file": "005/geo-map-roll-field-desk-double-lab-mobile-lab-cart.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "geo-map-roll-field-desk-double-lab-hands-on-plinth",
+    "category": "geoscience",
+    "file": "005/geo-map-roll-field-desk-double-lab-hands-on-plinth.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  }
+]

@@ -1,0 +1,794 @@
+{
+  "schemaVersion": 1,
+  "id": "growhouse-microgreen-rack-long-galvanized-cart",
+  "category": "horticulture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a17f5c"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#606b73"
+    },
+    "soil": {
+      "kind": "matte",
+      "color": "#655142"
+    },
+    "fern": {
+      "kind": "matte",
+      "color": "#627c58"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#809664"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7388"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76b56"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a267"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8ccb6"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aeb9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#424a4e"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        56,
+        9,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        23,
+        0
+      ],
+      "to": [
+        56,
+        25,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        4
+      ],
+      "to": [
+        57,
+        26,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        8
+      ],
+      "to": [
+        7,
+        23,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        6,
+        8,
+        40
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        8
+      ],
+      "to": [
+        6,
+        23,
+        40
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        7,
+        8
+      ],
+      "to": [
+        56,
+        8,
+        40
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        22,
+        8
+      ],
+      "to": [
+        56,
+        23,
+        40
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        11
+      ],
+      "to": [
+        56,
+        23,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        13
+      ],
+      "to": [
+        54,
+        21,
+        14
+      ],
+      "material": "soil"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        15
+      ],
+      "to": [
+        9,
+        19,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        15
+      ],
+      "to": [
+        13,
+        19,
+        16
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        10,
+        15
+      ],
+      "to": [
+        17,
+        19,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        15
+      ],
+      "to": [
+        21,
+        19,
+        16
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        10,
+        15
+      ],
+      "to": [
+        25,
+        19,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        10,
+        15
+      ],
+      "to": [
+        29,
+        19,
+        16
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        10,
+        15
+      ],
+      "to": [
+        33,
+        19,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        10,
+        15
+      ],
+      "to": [
+        37,
+        19,
+        16
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        10,
+        15
+      ],
+      "to": [
+        41,
+        19,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        10,
+        15
+      ],
+      "to": [
+        45,
+        19,
+        16
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        10,
+        15
+      ],
+      "to": [
+        49,
+        19,
+        15
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        10,
+        15
+      ],
+      "to": [
+        53,
+        19,
+        16
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        22
+      ],
+      "to": [
+        56,
+        23,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        24
+      ],
+      "to": [
+        54,
+        21,
+        25
+      ],
+      "material": "soil"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        26
+      ],
+      "to": [
+        9,
+        19,
+        26
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        26
+      ],
+      "to": [
+        13,
+        19,
+        27
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        10,
+        26
+      ],
+      "to": [
+        17,
+        19,
+        26
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        26
+      ],
+      "to": [
+        21,
+        19,
+        27
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        10,
+        26
+      ],
+      "to": [
+        25,
+        19,
+        26
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        10,
+        26
+      ],
+      "to": [
+        29,
+        19,
+        27
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        10,
+        26
+      ],
+      "to": [
+        33,
+        19,
+        26
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        10,
+        26
+      ],
+      "to": [
+        37,
+        19,
+        27
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        10,
+        26
+      ],
+      "to": [
+        41,
+        19,
+        26
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        10,
+        26
+      ],
+      "to": [
+        45,
+        19,
+        27
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        10,
+        26
+      ],
+      "to": [
+        49,
+        19,
+        26
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        10,
+        26
+      ],
+      "to": [
+        53,
+        19,
+        27
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        33
+      ],
+      "to": [
+        56,
+        23,
+        34
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        35
+      ],
+      "to": [
+        54,
+        21,
+        36
+      ],
+      "material": "soil"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        37
+      ],
+      "to": [
+        9,
+        19,
+        37
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        37
+      ],
+      "to": [
+        13,
+        19,
+        38
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        10,
+        37
+      ],
+      "to": [
+        17,
+        19,
+        37
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        37
+      ],
+      "to": [
+        21,
+        19,
+        38
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        10,
+        37
+      ],
+      "to": [
+        25,
+        19,
+        37
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        10,
+        37
+      ],
+      "to": [
+        29,
+        19,
+        38
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        10,
+        37
+      ],
+      "to": [
+        33,
+        19,
+        37
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        10,
+        37
+      ],
+      "to": [
+        37,
+        19,
+        38
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        10,
+        37
+      ],
+      "to": [
+        41,
+        19,
+        37
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        10,
+        37
+      ],
+      "to": [
+        45,
+        19,
+        38
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        10,
+        37
+      ],
+      "to": [
+        49,
+        19,
+        37
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        10,
+        37
+      ],
+      "to": [
+        53,
+        19,
+        38
+      ],
+      "material": "leaf"
+    }
+  ]
+}

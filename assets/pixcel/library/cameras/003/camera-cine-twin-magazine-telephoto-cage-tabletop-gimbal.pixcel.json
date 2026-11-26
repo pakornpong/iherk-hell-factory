@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "id": "camera-cine-twin-magazine-telephoto-cage-tabletop-gimbal",
+  "category": "media",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "black": {
+      "kind": "matte",
+      "color": "#293542"
+    },
+    "metal": {
+      "kind": "metal",
+      "color": "#768a96"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#4f626e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#bd5e49"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#b89b5e"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#75b4c3"
+    },
+    "lcd": {
+      "kind": "emissive",
+      "color": "#90bebe",
+      "glowRadius": 1,
+      "glowIntensity": 0.15
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        13
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 9,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        13
+      ],
+      "zFrom": 3,
+      "zTo": 7,
+      "radius": 2,
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        7
+      ],
+      "to": [
+        24,
+        15,
+        10
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        10
+      ],
+      "to": [
+        8,
+        12,
+        21
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        10
+      ],
+      "to": [
+        25,
+        12,
+        21
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        11
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 2,
+      "material": "metal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        11
+      ],
+      "zFrom": 19,
+      "zTo": 22,
+      "radius": 2,
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        6,
+        11
+      ],
+      "to": [
+        24,
+        16,
+        22
+      ],
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        9
+      ],
+      "zFrom": 22,
+      "zTo": 26,
+      "radius": 4,
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        9
+      ],
+      "zFrom": 22,
+      "zTo": 26,
+      "radius": 4,
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        23
+      ],
+      "to": [
+        22,
+        13,
+        27
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        14
+      ],
+      "to": [
+        7,
+        13,
+        17
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        16,
+        14
+      ],
+      "to": [
+        19,
+        28,
+        19
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        20,
+        13
+      ],
+      "to": [
+        20,
+        22,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        26,
+        13
+      ],
+      "to": [
+        20,
+        28,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        28,
+        14
+      ],
+      "to": [
+        19,
+        28,
+        19
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        16,
+        11
+      ],
+      "to": [
+        10,
+        28,
+        11
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        16,
+        11
+      ],
+      "to": [
+        22,
+        28,
+        11
+      ],
+      "material": "metal"
+    }
+  ]
+}

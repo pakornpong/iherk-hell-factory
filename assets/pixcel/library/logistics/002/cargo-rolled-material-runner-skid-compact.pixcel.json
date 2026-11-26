@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "cargo-rolled-material-runner-skid-compact",
+  "category": "logistics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a5afb0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#556471"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#303841"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a07750"
+    },
+    "cardboard": {
+      "kind": "matte",
+      "color": "#ae8e65"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#d9d0bc"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#637589"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#c49f56"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a95c4c"
+    },
+    "film": {
+      "kind": "glass",
+      "color": "#a2b6b9"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        8,
+        2
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        16,
+        0
+      ],
+      "to": [
+        26,
+        17,
+        2
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        24,
+        0
+      ],
+      "to": [
+        26,
+        25,
+        2
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        2
+      ],
+      "to": [
+        6,
+        27,
+        6
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        4,
+        2
+      ],
+      "to": [
+        25,
+        27,
+        6
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        6
+      ],
+      "to": [
+        26,
+        27,
+        7
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        24,
+        24,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        10
+      ],
+      "to": [
+        23,
+        12,
+        14
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        9,
+        11
+      ],
+      "to": [
+        24,
+        11,
+        13
+      ],
+      "material": "cardboard"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        14,
+        10
+      ],
+      "to": [
+        23,
+        18,
+        15
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        15,
+        11
+      ],
+      "to": [
+        24,
+        17,
+        13
+      ],
+      "material": "cardboard"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        20,
+        10
+      ],
+      "to": [
+        23,
+        24,
+        14
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        21,
+        11
+      ],
+      "to": [
+        24,
+        23,
+        13
+      ],
+      "material": "cardboard"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        7,
+        14
+      ],
+      "to": [
+        10,
+        24,
+        15
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        7,
+        9
+      ],
+      "to": [
+        10,
+        8,
+        14
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        7,
+        14
+      ],
+      "to": [
+        21,
+        24,
+        15
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        7,
+        9
+      ],
+      "to": [
+        21,
+        8,
+        14
+      ],
+      "material": "red"
+    }
+  ]
+}

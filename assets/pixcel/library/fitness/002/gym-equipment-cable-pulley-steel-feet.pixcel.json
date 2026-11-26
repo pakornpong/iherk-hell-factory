@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "id": "gym-equipment-cable-pulley-steel-feet",
+  "category": "fitness",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#94a0a9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#323b45"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#47535b"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#65758a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#4e697f"
+    },
+    "vinyl": {
+      "kind": "matte",
+      "color": "#354f65"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a3534b"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#ba9d65"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        9,
+        5,
+        0
+      ],
+      "to": [
+        11,
+        26,
+        1
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        14,
+        1
+      ],
+      "to": [
+        13,
+        18,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        5,
+        0
+      ],
+      "to": [
+        55,
+        26,
+        1
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        14,
+        1
+      ],
+      "to": [
+        57,
+        18,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        2
+      ],
+      "to": [
+        12,
+        19,
+        41
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        4
+      ],
+      "to": [
+        14,
+        19,
+        15
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        6
+      ],
+      "to": [
+        14,
+        20,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        9
+      ],
+      "to": [
+        14,
+        20,
+        9
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        12
+      ],
+      "to": [
+        14,
+        20,
+        12
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        11,
+        2
+      ],
+      "to": [
+        54,
+        19,
+        41
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        12,
+        4
+      ],
+      "to": [
+        56,
+        19,
+        15
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        20,
+        6
+      ],
+      "to": [
+        56,
+        20,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        20,
+        9
+      ],
+      "to": [
+        56,
+        20,
+        9
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        20,
+        12
+      ],
+      "to": [
+        56,
+        20,
+        12
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        41
+      ],
+      "to": [
+        54,
+        19,
+        43
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        16,
+        39
+      ],
+      "to": [
+        22,
+        19,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        50,
+        16,
+        39
+      ],
+      "to": [
+        42,
+        19,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        18,
+        20
+      ],
+      "to": [
+        24,
+        20,
+        21
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        18,
+        20
+      ],
+      "to": [
+        44,
+        20,
+        21
+      ],
+      "material": "rubber"
+    }
+  ]
+}

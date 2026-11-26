@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "id": "garage-bench-belt-sander-wall-rail",
+  "category": "garage",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#91a6b0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#4c6071"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#283541"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#dea957"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#70746b"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac594a"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbddcf"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#86bdd0",
+      "glowRadius": 1,
+      "glowIntensity": 0.14
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        7,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        7
+      ],
+      "to": [
+        27,
+        26,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        1
+      ],
+      "to": [
+        9,
+        19,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        7,
+        1
+      ],
+      "to": [
+        24,
+        19,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        9
+      ],
+      "to": [
+        27,
+        25,
+        15
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        16
+      ],
+      "to": [
+        21,
+        23,
+        18
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "slope",
+      "from": [
+        11,
+        7,
+        18
+      ],
+      "to": [
+        21,
+        21,
+        37
+      ],
+      "axis": "-Y",
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        9,
+        18
+      ],
+      "to": [
+        11,
+        19,
+        31
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        9,
+        18
+      ],
+      "to": [
+        21,
+        19,
+        31
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        20,
+        23
+      ],
+      "to": [
+        25,
+        24,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        25,
+        13
+      ],
+      "to": [
+        13,
+        25,
+        14
+      ],
+      "material": "red"
+    }
+  ]
+}

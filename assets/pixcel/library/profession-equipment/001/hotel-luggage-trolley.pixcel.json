@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "id": "hotel-luggage-trolley",
+  "category": "hospitality",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "color": "#e5e3d6",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#a0b0bc",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#445361",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#272f3b",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#49798f",
+      "kind": "matte"
+    },
+    "aqua": {
+      "color": "#78c5c4",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#b85446",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#ac784e",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e0ad58",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#f2ecdc",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        7,
+        8,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        26,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        5,
+        0
+      ],
+      "to": [
+        25,
+        8,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        23,
+        0
+      ],
+      "to": [
+        25,
+        26,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        4
+      ],
+      "to": [
+        27,
+        27,
+        7
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        8
+      ],
+      "to": [
+        6,
+        7,
+        34
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        6,
+        8
+      ],
+      "to": [
+        26,
+        7,
+        34
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        34
+      ],
+      "to": [
+        26,
+        7,
+        36
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        8
+      ],
+      "to": [
+        19,
+        19,
+        24
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        25
+      ],
+      "to": [
+        16,
+        10,
+        26
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        19,
+        8
+      ],
+      "to": [
+        25,
+        24,
+        17
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        18,
+        12
+      ],
+      "to": [
+        23,
+        19,
+        14
+      ],
+      "material": "metal"
+    }
+  ]
+}

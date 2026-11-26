@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 1,
+  "id": "warehouse-stacked-pallet-buffer-wide-bolted-frame",
+  "category": "warehouse",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9fa8aa"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#586673"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b444d"
+    },
+    "safety": {
+      "kind": "matte",
+      "color": "#bd9255"
+    },
+    "timber": {
+      "kind": "wood",
+      "color": "#a78564"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b29979"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#d6d0bc"
+    },
+    "darkred": {
+      "kind": "matte",
+      "color": "#9b584a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e7489"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba8b6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        8,
+        25,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        57,
+        9,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        23,
+        0
+      ],
+      "to": [
+        57,
+        25,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        3
+      ],
+      "to": [
+        57,
+        26,
+        4
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        56,
+        9,
+        9
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        8
+      ],
+      "to": [
+        56,
+        17,
+        9
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        8
+      ],
+      "to": [
+        56,
+        25,
+        9
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        10
+      ],
+      "to": [
+        17,
+        23,
+        16
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        10
+      ],
+      "to": [
+        54,
+        22,
+        16
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        16
+      ],
+      "to": [
+        13,
+        23,
+        16
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        8,
+        16
+      ],
+      "to": [
+        48,
+        22,
+        16
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        18
+      ],
+      "to": [
+        56,
+        9,
+        19
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        18
+      ],
+      "to": [
+        56,
+        17,
+        19
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        18
+      ],
+      "to": [
+        56,
+        25,
+        19
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        20
+      ],
+      "to": [
+        17,
+        23,
+        26
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        20
+      ],
+      "to": [
+        54,
+        22,
+        26
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        26
+      ],
+      "to": [
+        13,
+        23,
+        26
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        8,
+        26
+      ],
+      "to": [
+        48,
+        22,
+        26
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        28
+      ],
+      "to": [
+        56,
+        9,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        28
+      ],
+      "to": [
+        56,
+        17,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        28
+      ],
+      "to": [
+        56,
+        25,
+        29
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        30
+      ],
+      "to": [
+        17,
+        23,
+        36
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        30
+      ],
+      "to": [
+        54,
+        22,
+        36
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        36
+      ],
+      "to": [
+        13,
+        23,
+        36
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        8,
+        36
+      ],
+      "to": [
+        48,
+        22,
+        36
+      ],
+      "material": "white"
+    }
+  ]
+}

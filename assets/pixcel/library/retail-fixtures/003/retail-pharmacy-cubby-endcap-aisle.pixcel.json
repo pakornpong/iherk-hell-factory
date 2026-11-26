@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "id": "retail-pharmacy-cubby-endcap-aisle",
+  "category": "retail",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9da5a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#535a60"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad825d"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89775"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#34383d"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#d9d3c4"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a55b50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a167"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#63798c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eacb6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        26,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        3
+      ],
+      "to": [
+        25,
+        24,
+        5
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        6
+      ],
+      "to": [
+        25,
+        7,
+        38
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        6
+      ],
+      "to": [
+        6,
+        22,
+        38
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        6
+      ],
+      "to": [
+        25,
+        22,
+        38
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        9
+      ],
+      "to": [
+        24,
+        21,
+        10
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        19
+      ],
+      "to": [
+        24,
+        21,
+        20
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        29
+      ],
+      "to": [
+        24,
+        21,
+        30
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        37
+      ],
+      "to": [
+        24,
+        21,
+        38
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        11
+      ],
+      "to": [
+        9,
+        17,
+        15
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        13,
+        11
+      ],
+      "to": [
+        14,
+        17,
+        15
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        13,
+        11
+      ],
+      "to": [
+        19,
+        17,
+        15
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        13,
+        11
+      ],
+      "to": [
+        24,
+        17,
+        15
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        14
+      ],
+      "zFrom": 21,
+      "zTo": 25,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        14
+      ],
+      "zFrom": 21,
+      "zTo": 25,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        14
+      ],
+      "zFrom": 21,
+      "zTo": 25,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        14
+      ],
+      "zFrom": 21,
+      "zTo": 25,
+      "radius": 1,
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        31
+      ],
+      "to": [
+        9,
+        17,
+        35
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        13,
+        31
+      ],
+      "to": [
+        14,
+        17,
+        35
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        13,
+        31
+      ],
+      "to": [
+        19,
+        17,
+        35
+      ],
+      "material": "chalk"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        13,
+        31
+      ],
+      "to": [
+        24,
+        17,
+        35
+      ],
+      "material": "blue"
+    }
+  ]
+}

@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 1,
+  "id": "sofa-conversation-pit-tufted-club-full-plinth",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    2
+  ],
+  "palette": "office-night",
+  "materials": {
+    "timber": {
+      "kind": "wood",
+      "color": "#9d6a49"
+    },
+    "charcoal": {
+      "kind": "metal",
+      "color": "#434f58"
+    },
+    "jade": {
+      "kind": "matte",
+      "color": "#52545a"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#52545a"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#777982"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#cfa567"
+    },
+    "shade": {
+      "kind": "matte",
+      "color": "#34363c"
+    },
+    "pink": {
+      "kind": "matte",
+      "color": "#ab745b"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        0
+      ],
+      "to": [
+        56,
+        29,
+        6
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        6
+      ],
+      "to": [
+        58,
+        28,
+        11
+      ],
+      "material": "shade"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        27,
+        6
+      ],
+      "to": [
+        18,
+        51,
+        11
+      ],
+      "material": "shade"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        27,
+        12
+      ],
+      "to": [
+        17,
+        50,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        46,
+        0
+      ],
+      "to": [
+        9,
+        48,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        27,
+        6
+      ],
+      "to": [
+        58,
+        51,
+        11
+      ],
+      "material": "shade"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        27,
+        12
+      ],
+      "to": [
+        57,
+        50,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        46,
+        0
+      ],
+      "to": [
+        49,
+        48,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        12
+      ],
+      "to": [
+        21,
+        26,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        5,
+        14
+      ],
+      "to": [
+        21,
+        12,
+        33
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        22
+      ],
+      "to": [
+        9,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        13,
+        22
+      ],
+      "to": [
+        14,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        12
+      ],
+      "to": [
+        38,
+        26,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        5,
+        14
+      ],
+      "to": [
+        38,
+        12,
+        33
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        13,
+        22
+      ],
+      "to": [
+        25,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        13,
+        22
+      ],
+      "to": [
+        30,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        13,
+        22
+      ],
+      "to": [
+        35,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        11,
+        12
+      ],
+      "to": [
+        55,
+        26,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        5,
+        14
+      ],
+      "to": [
+        55,
+        12,
+        33
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        13,
+        22
+      ],
+      "to": [
+        42,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        13,
+        22
+      ],
+      "to": [
+        47,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        13,
+        22
+      ],
+      "to": [
+        52,
+        13,
+        23
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        6,
+        50,
+        20
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        56,
+        6,
+        12
+      ],
+      "to": [
+        58,
+        50,
+        20
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        15
+      ],
+      "to": [
+        13,
+        16,
+        22
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        13,
+        15
+      ],
+      "to": [
+        54,
+        16,
+        22
+      ],
+      "material": "pink"
+    }
+  ]
+}

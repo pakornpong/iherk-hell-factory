@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "id": "home-utility-upright-vacuum-dock-compact-utility-drawer-under-counter",
+  "category": "home-appliance",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ivory": {
+      "kind": "matte",
+      "color": "#d9d4ca"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#aaa39a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#979fa2"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#67727b"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e454c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab4"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a37653"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#89705d"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e4ddc8"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ad6555"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bb9b62"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        24,
+        24,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        3
+      ],
+      "to": [
+        23,
+        24,
+        8
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        4
+      ],
+      "to": [
+        21,
+        25,
+        7
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        6
+      ],
+      "to": [
+        19,
+        26,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        9
+      ],
+      "to": [
+        22,
+        24,
+        12
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        13,
+        13
+      ],
+      "to": [
+        18,
+        18,
+        30
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        16
+      ],
+      "zFrom": 17,
+      "zTo": 28,
+      "radius": 3,
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        12,
+        31
+      ],
+      "to": [
+        15,
+        13,
+        44
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        11,
+        44
+      ],
+      "to": [
+        20,
+        16,
+        46
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        7,
+        9
+      ],
+      "to": [
+        24,
+        12,
+        26
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        10,
+        25
+      ],
+      "to": [
+        24,
+        18,
+        27
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        10
+      ],
+      "to": [
+        6,
+        24,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        6,
+        10
+      ],
+      "to": [
+        25,
+        24,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        4,
+        48
+      ],
+      "to": [
+        27,
+        28,
+        50
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        6,
+        33
+      ],
+      "to": [
+        4,
+        26,
+        48
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        6,
+        33
+      ],
+      "to": [
+        26,
+        26,
+        48
+      ],
+      "material": "oak"
+    }
+  ]
+}

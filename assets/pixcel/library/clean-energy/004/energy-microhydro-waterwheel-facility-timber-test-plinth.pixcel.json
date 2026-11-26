@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "id": "energy-microhydro-waterwheel-facility-timber-test-plinth",
+  "category": "renewable-energy",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9ea8aa",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#566674",
+      "kind": "metal"
+    },
+    "blue": {
+      "color": "#587287",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#424b51",
+      "kind": "matte"
+    },
+    "tan": {
+      "color": "#ac9679",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#d9d3c7",
+      "kind": "matte"
+    },
+    "anodized": {
+      "color": "#8798a2",
+      "kind": "metal"
+    },
+    "amber": {
+      "color": "#b89b65",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8b755d",
+      "kind": "matte"
+    },
+    "oak": {
+      "color": "#9d7e60",
+      "kind": "wood"
+    },
+    "copper": {
+      "color": "#b37e61",
+      "kind": "metal"
+    },
+    "glass": {
+      "color": "#91aeb7",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        55,
+        9,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        3
+      ],
+      "to": [
+        55,
+        14,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        3
+      ],
+      "to": [
+        55,
+        19,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        3
+      ],
+      "to": [
+        55,
+        24,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        6
+      ],
+      "to": [
+        54,
+        25,
+        9
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        9
+      ],
+      "to": [
+        52,
+        17,
+        11
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        10
+      ],
+      "to": [
+        52,
+        9,
+        25
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        14
+      ],
+      "zFrom": 11,
+      "zTo": 27,
+      "radius": 7,
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        14
+      ],
+      "zFrom": 26,
+      "zTo": 28,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        20,
+        14
+      ],
+      "to": [
+        35,
+        23,
+        15
+      ],
+      "material": "anodized"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        20,
+        18
+      ],
+      "to": [
+        35,
+        23,
+        19
+      ],
+      "material": "anodized"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        20,
+        22
+      ],
+      "to": [
+        35,
+        23,
+        23
+      ],
+      "material": "anodized"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        20,
+        26
+      ],
+      "to": [
+        35,
+        23,
+        27
+      ],
+      "material": "anodized"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        20,
+        11
+      ],
+      "to": [
+        53,
+        24,
+        17
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        35,
+        18,
+        19
+      ],
+      "to": [
+        49,
+        22,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        18,
+        8
+      ],
+      "to": [
+        52,
+        24,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        24,
+        11
+      ],
+      "to": [
+        51,
+        24,
+        12
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        45,
+        20,
+        13
+      ],
+      "to": [
+        41,
+        17,
+        18
+      ],
+      "material": "copper"
+    }
+  ]
+}

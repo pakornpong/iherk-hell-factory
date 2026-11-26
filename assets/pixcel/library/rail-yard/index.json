@@ -1,0 +1,814 @@
+[
+  {
+    "id": "rail-track-inspection-trolley-wayside-bare-ballast",
+    "category": "railway",
+    "file": "001/rail-track-inspection-trolley-wayside-bare-ballast.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "rail-track-inspection-trolley-wayside-sleeper-track",
+    "category": "railway",
+    "file": "001/rail-track-inspection-trolley-wayside-sleeper-track.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "rail-track-inspection-trolley-wayside-service-skid",
+    "category": "railway",
+    "file": "001/rail-track-inspection-trolley-wayside-service-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "rail-track-inspection-trolley-wayside-concrete-platform",
+    "category": "railway",
+    "file": "001/rail-track-inspection-trolley-wayside-concrete-platform.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "rail-track-inspection-trolley-wayside-wheeled-service-base",
+    "category": "railway",
+    "file": "001/rail-track-inspection-trolley-wayside-wheeled-service-base.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "rail-track-inspection-trolley-yard-wide-bare-ballast",
+    "category": "railway",
+    "file": "001/rail-track-inspection-trolley-yard-wide-bare-ballast.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "rail-track-inspection-trolley-yard-wide-sleeper-track",
+    "category": "railway",
+    "file": "001/rail-track-inspection-trolley-yard-wide-sleeper-track.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "rail-track-inspection-trolley-yard-wide-service-skid",
+    "category": "railway",
+    "file": "001/rail-track-inspection-trolley-yard-wide-service-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "rail-track-inspection-trolley-yard-wide-concrete-platform",
+    "category": "railway",
+    "file": "001/rail-track-inspection-trolley-yard-wide-concrete-platform.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "rail-track-inspection-trolley-yard-wide-wheeled-service-base",
+    "category": "railway",
+    "file": "001/rail-track-inspection-trolley-yard-wide-wheeled-service-base.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "rail-rail-wheel-lift-stand-wayside-bare-ballast",
+    "category": "railway",
+    "file": "001/rail-rail-wheel-lift-stand-wayside-bare-ballast.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "rail-rail-wheel-lift-stand-wayside-sleeper-track",
+    "category": "railway",
+    "file": "001/rail-rail-wheel-lift-stand-wayside-sleeper-track.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "rail-rail-wheel-lift-stand-wayside-service-skid",
+    "category": "railway",
+    "file": "001/rail-rail-wheel-lift-stand-wayside-service-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "rail-rail-wheel-lift-stand-wayside-concrete-platform",
+    "category": "railway",
+    "file": "001/rail-rail-wheel-lift-stand-wayside-concrete-platform.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "rail-rail-wheel-lift-stand-wayside-wheeled-service-base",
+    "category": "railway",
+    "file": "001/rail-rail-wheel-lift-stand-wayside-wheeled-service-base.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "rail-rail-wheel-lift-stand-yard-wide-bare-ballast",
+    "category": "railway",
+    "file": "001/rail-rail-wheel-lift-stand-yard-wide-bare-ballast.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "rail-rail-wheel-lift-stand-yard-wide-sleeper-track",
+    "category": "railway",
+    "file": "001/rail-rail-wheel-lift-stand-yard-wide-sleeper-track.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "rail-rail-wheel-lift-stand-yard-wide-service-skid",
+    "category": "railway",
+    "file": "001/rail-rail-wheel-lift-stand-yard-wide-service-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "rail-rail-wheel-lift-stand-yard-wide-concrete-platform",
+    "category": "railway",
+    "file": "001/rail-rail-wheel-lift-stand-yard-wide-concrete-platform.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "rail-rail-wheel-lift-stand-yard-wide-wheeled-service-base",
+    "category": "railway",
+    "file": "001/rail-rail-wheel-lift-stand-yard-wide-wheeled-service-base.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "rail-cable-trough-inspection-wayside-bare-ballast",
+    "category": "railway",
+    "file": "002/rail-cable-trough-inspection-wayside-bare-ballast.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "rail-cable-trough-inspection-wayside-sleeper-track",
+    "category": "railway",
+    "file": "002/rail-cable-trough-inspection-wayside-sleeper-track.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "rail-cable-trough-inspection-wayside-service-skid",
+    "category": "railway",
+    "file": "002/rail-cable-trough-inspection-wayside-service-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "rail-cable-trough-inspection-wayside-concrete-platform",
+    "category": "railway",
+    "file": "002/rail-cable-trough-inspection-wayside-concrete-platform.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "rail-cable-trough-inspection-wayside-wheeled-service-base",
+    "category": "railway",
+    "file": "002/rail-cable-trough-inspection-wayside-wheeled-service-base.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "rail-cable-trough-inspection-yard-wide-bare-ballast",
+    "category": "railway",
+    "file": "002/rail-cable-trough-inspection-yard-wide-bare-ballast.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "rail-cable-trough-inspection-yard-wide-sleeper-track",
+    "category": "railway",
+    "file": "002/rail-cable-trough-inspection-yard-wide-sleeper-track.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "rail-cable-trough-inspection-yard-wide-service-skid",
+    "category": "railway",
+    "file": "002/rail-cable-trough-inspection-yard-wide-service-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "rail-cable-trough-inspection-yard-wide-concrete-platform",
+    "category": "railway",
+    "file": "002/rail-cable-trough-inspection-yard-wide-concrete-platform.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "rail-cable-trough-inspection-yard-wide-wheeled-service-base",
+    "category": "railway",
+    "file": "002/rail-cable-trough-inspection-yard-wide-wheeled-service-base.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "rail-platform-departure-display-wayside-bare-ballast",
+    "category": "railway",
+    "file": "002/rail-platform-departure-display-wayside-bare-ballast.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "rail-platform-departure-display-wayside-sleeper-track",
+    "category": "railway",
+    "file": "002/rail-platform-departure-display-wayside-sleeper-track.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "rail-platform-departure-display-wayside-service-skid",
+    "category": "railway",
+    "file": "002/rail-platform-departure-display-wayside-service-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "rail-platform-departure-display-wayside-concrete-platform",
+    "category": "railway",
+    "file": "002/rail-platform-departure-display-wayside-concrete-platform.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "rail-platform-departure-display-wayside-wheeled-service-base",
+    "category": "railway",
+    "file": "002/rail-platform-departure-display-wayside-wheeled-service-base.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "rail-platform-departure-display-yard-wide-bare-ballast",
+    "category": "railway",
+    "file": "002/rail-platform-departure-display-yard-wide-bare-ballast.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "rail-platform-departure-display-yard-wide-sleeper-track",
+    "category": "railway",
+    "file": "002/rail-platform-departure-display-yard-wide-sleeper-track.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "rail-platform-departure-display-yard-wide-service-skid",
+    "category": "railway",
+    "file": "002/rail-platform-departure-display-yard-wide-service-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "rail-platform-departure-display-yard-wide-concrete-platform",
+    "category": "railway",
+    "file": "002/rail-platform-departure-display-yard-wide-concrete-platform.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "rail-platform-departure-display-yard-wide-wheeled-service-base",
+    "category": "railway",
+    "file": "002/rail-platform-departure-display-yard-wide-wheeled-service-base.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "rail-rail-lubrication-box-art-wayside-bare-ballast",
+    "category": "railway",
+    "file": "003/rail-rail-lubrication-box-art-wayside-bare-ballast.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "rail-rail-lubrication-box-art-wayside-sleeper-track",
+    "category": "railway",
+    "file": "003/rail-rail-lubrication-box-art-wayside-sleeper-track.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "rail-rail-lubrication-box-art-wayside-service-skid",
+    "category": "railway",
+    "file": "003/rail-rail-lubrication-box-art-wayside-service-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "rail-rail-lubrication-box-art-wayside-concrete-platform",
+    "category": "railway",
+    "file": "003/rail-rail-lubrication-box-art-wayside-concrete-platform.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "rail-rail-lubrication-box-art-wayside-wheeled-service-base",
+    "category": "railway",
+    "file": "003/rail-rail-lubrication-box-art-wayside-wheeled-service-base.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "rail-rail-lubrication-box-art-yard-wide-bare-ballast",
+    "category": "railway",
+    "file": "003/rail-rail-lubrication-box-art-yard-wide-bare-ballast.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "rail-rail-lubrication-box-art-yard-wide-sleeper-track",
+    "category": "railway",
+    "file": "003/rail-rail-lubrication-box-art-yard-wide-sleeper-track.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "rail-rail-lubrication-box-art-yard-wide-service-skid",
+    "category": "railway",
+    "file": "003/rail-rail-lubrication-box-art-yard-wide-service-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "rail-rail-lubrication-box-art-yard-wide-concrete-platform",
+    "category": "railway",
+    "file": "003/rail-rail-lubrication-box-art-yard-wide-concrete-platform.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "rail-rail-lubrication-box-art-yard-wide-wheeled-service-base",
+    "category": "railway",
+    "file": "003/rail-rail-lubrication-box-art-yard-wide-wheeled-service-base.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "rail-switch-motor-housing-prop-wayside-bare-ballast",
+    "category": "railway",
+    "file": "003/rail-switch-motor-housing-prop-wayside-bare-ballast.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "rail-switch-motor-housing-prop-wayside-sleeper-track",
+    "category": "railway",
+    "file": "003/rail-switch-motor-housing-prop-wayside-sleeper-track.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "rail-switch-motor-housing-prop-wayside-service-skid",
+    "category": "railway",
+    "file": "003/rail-switch-motor-housing-prop-wayside-service-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "rail-switch-motor-housing-prop-wayside-concrete-platform",
+    "category": "railway",
+    "file": "003/rail-switch-motor-housing-prop-wayside-concrete-platform.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "rail-switch-motor-housing-prop-wayside-wheeled-service-base",
+    "category": "railway",
+    "file": "003/rail-switch-motor-housing-prop-wayside-wheeled-service-base.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "rail-switch-motor-housing-prop-yard-wide-bare-ballast",
+    "category": "railway",
+    "file": "003/rail-switch-motor-housing-prop-yard-wide-bare-ballast.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "rail-switch-motor-housing-prop-yard-wide-sleeper-track",
+    "category": "railway",
+    "file": "003/rail-switch-motor-housing-prop-yard-wide-sleeper-track.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "rail-switch-motor-housing-prop-yard-wide-service-skid",
+    "category": "railway",
+    "file": "003/rail-switch-motor-housing-prop-yard-wide-service-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "rail-switch-motor-housing-prop-yard-wide-concrete-platform",
+    "category": "railway",
+    "file": "003/rail-switch-motor-housing-prop-yard-wide-concrete-platform.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "rail-switch-motor-housing-prop-yard-wide-wheeled-service-base",
+    "category": "railway",
+    "file": "003/rail-switch-motor-housing-prop-yard-wide-wheeled-service-base.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "rail-yard-work-light-tower-wayside-bare-ballast",
+    "category": "railway",
+    "file": "004/rail-yard-work-light-tower-wayside-bare-ballast.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "rail-yard-work-light-tower-wayside-sleeper-track",
+    "category": "railway",
+    "file": "004/rail-yard-work-light-tower-wayside-sleeper-track.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "rail-yard-work-light-tower-wayside-service-skid",
+    "category": "railway",
+    "file": "004/rail-yard-work-light-tower-wayside-service-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "rail-yard-work-light-tower-wayside-concrete-platform",
+    "category": "railway",
+    "file": "004/rail-yard-work-light-tower-wayside-concrete-platform.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "rail-yard-work-light-tower-wayside-wheeled-service-base",
+    "category": "railway",
+    "file": "004/rail-yard-work-light-tower-wayside-wheeled-service-base.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "rail-yard-work-light-tower-yard-wide-bare-ballast",
+    "category": "railway",
+    "file": "004/rail-yard-work-light-tower-yard-wide-bare-ballast.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "rail-yard-work-light-tower-yard-wide-sleeper-track",
+    "category": "railway",
+    "file": "004/rail-yard-work-light-tower-yard-wide-sleeper-track.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "rail-yard-work-light-tower-yard-wide-service-skid",
+    "category": "railway",
+    "file": "004/rail-yard-work-light-tower-yard-wide-service-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "rail-yard-work-light-tower-yard-wide-concrete-platform",
+    "category": "railway",
+    "file": "004/rail-yard-work-light-tower-yard-wide-concrete-platform.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "rail-yard-work-light-tower-yard-wide-wheeled-service-base",
+    "category": "railway",
+    "file": "004/rail-yard-work-light-tower-yard-wide-wheeled-service-base.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "rail-signal-cabinet-visual-wayside-bare-ballast",
+    "category": "railway",
+    "file": "004/rail-signal-cabinet-visual-wayside-bare-ballast.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "rail-signal-cabinet-visual-wayside-sleeper-track",
+    "category": "railway",
+    "file": "004/rail-signal-cabinet-visual-wayside-sleeper-track.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "rail-signal-cabinet-visual-wayside-service-skid",
+    "category": "railway",
+    "file": "004/rail-signal-cabinet-visual-wayside-service-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "rail-signal-cabinet-visual-wayside-concrete-platform",
+    "category": "railway",
+    "file": "004/rail-signal-cabinet-visual-wayside-concrete-platform.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "rail-signal-cabinet-visual-yard-wide-bare-ballast",
+    "category": "railway",
+    "file": "004/rail-signal-cabinet-visual-yard-wide-bare-ballast.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "rail-signal-cabinet-visual-yard-wide-sleeper-track",
+    "category": "railway",
+    "file": "004/rail-signal-cabinet-visual-yard-wide-sleeper-track.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "rail-signal-cabinet-visual-yard-wide-service-skid",
+    "category": "railway",
+    "file": "004/rail-signal-cabinet-visual-yard-wide-service-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "rail-signal-cabinet-visual-yard-wide-concrete-platform",
+    "category": "railway",
+    "file": "004/rail-signal-cabinet-visual-yard-wide-concrete-platform.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "rail-rail-shoe-spares-wayside-bare-ballast",
+    "category": "railway",
+    "file": "004/rail-rail-shoe-spares-wayside-bare-ballast.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "rail-rail-shoe-spares-wayside-sleeper-track",
+    "category": "railway",
+    "file": "004/rail-rail-shoe-spares-wayside-sleeper-track.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "rail-rail-shoe-spares-wayside-service-skid",
+    "category": "railway",
+    "file": "005/rail-rail-shoe-spares-wayside-service-skid.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "rail-rail-shoe-spares-wayside-concrete-platform",
+    "category": "railway",
+    "file": "005/rail-rail-shoe-spares-wayside-concrete-platform.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "rail-rail-shoe-spares-wayside-wheeled-service-base",
+    "category": "railway",
+    "file": "005/rail-rail-shoe-spares-wayside-wheeled-service-base.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "rail-rail-shoe-spares-yard-wide-bare-ballast",
+    "category": "railway",
+    "file": "005/rail-rail-shoe-spares-yard-wide-bare-ballast.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "rail-rail-shoe-spares-yard-wide-sleeper-track",
+    "category": "railway",
+    "file": "005/rail-rail-shoe-spares-yard-wide-sleeper-track.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "rail-rail-shoe-spares-yard-wide-service-skid",
+    "category": "railway",
+    "file": "005/rail-rail-shoe-spares-yard-wide-service-skid.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "rail-rail-shoe-spares-yard-wide-concrete-platform",
+    "category": "railway",
+    "file": "005/rail-rail-shoe-spares-yard-wide-concrete-platform.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "rail-rail-shoe-spares-yard-wide-wheeled-service-base",
+    "category": "railway",
+    "file": "005/rail-rail-shoe-spares-yard-wide-wheeled-service-base.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "rail-trackside-sand-hopper-wayside-bare-ballast",
+    "category": "railway",
+    "file": "005/rail-trackside-sand-hopper-wayside-bare-ballast.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "rail-trackside-sand-hopper-wayside-sleeper-track",
+    "category": "railway",
+    "file": "005/rail-trackside-sand-hopper-wayside-sleeper-track.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "rail-trackside-sand-hopper-wayside-service-skid",
+    "category": "railway",
+    "file": "005/rail-trackside-sand-hopper-wayside-service-skid.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "rail-trackside-sand-hopper-wayside-concrete-platform",
+    "category": "railway",
+    "file": "005/rail-trackside-sand-hopper-wayside-concrete-platform.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "rail-trackside-sand-hopper-wayside-wheeled-service-base",
+    "category": "railway",
+    "file": "005/rail-trackside-sand-hopper-wayside-wheeled-service-base.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "rail-trackside-sand-hopper-yard-wide-bare-ballast",
+    "category": "railway",
+    "file": "005/rail-trackside-sand-hopper-yard-wide-bare-ballast.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "rail-trackside-sand-hopper-yard-wide-sleeper-track",
+    "category": "railway",
+    "file": "005/rail-trackside-sand-hopper-yard-wide-sleeper-track.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "rail-trackside-sand-hopper-yard-wide-service-skid",
+    "category": "railway",
+    "file": "005/rail-trackside-sand-hopper-yard-wide-service-skid.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "rail-trackside-sand-hopper-yard-wide-concrete-platform",
+    "category": "railway",
+    "file": "005/rail-trackside-sand-hopper-yard-wide-concrete-platform.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "rail-trackside-sand-hopper-yard-wide-wheeled-service-base",
+    "category": "railway",
+    "file": "005/rail-trackside-sand-hopper-yard-wide-wheeled-service-base.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "rail-station-platform-benches-wayside-bare-ballast",
+    "category": "railway",
+    "file": "005/rail-station-platform-benches-wayside-bare-ballast.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "rail-station-platform-benches-wayside-sleeper-track",
+    "category": "railway",
+    "file": "005/rail-station-platform-benches-wayside-sleeper-track.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "rail-station-platform-benches-wayside-service-skid",
+    "category": "railway",
+    "file": "006/rail-station-platform-benches-wayside-service-skid.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "rail-station-platform-benches-wayside-concrete-platform",
+    "category": "railway",
+    "file": "006/rail-station-platform-benches-wayside-concrete-platform.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "rail-station-platform-benches-wayside-wheeled-service-base",
+    "category": "railway",
+    "file": "006/rail-station-platform-benches-wayside-wheeled-service-base.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "rail-station-platform-benches-yard-wide-bare-ballast",
+    "category": "railway",
+    "file": "006/rail-station-platform-benches-yard-wide-bare-ballast.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "rail-station-platform-benches-yard-wide-sleeper-track",
+    "category": "railway",
+    "file": "006/rail-station-platform-benches-yard-wide-sleeper-track.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "rail-station-platform-benches-yard-wide-service-skid",
+    "category": "railway",
+    "file": "006/rail-station-platform-benches-yard-wide-service-skid.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "rail-station-platform-benches-yard-wide-concrete-platform",
+    "category": "railway",
+    "file": "006/rail-station-platform-benches-yard-wide-concrete-platform.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "rail-station-platform-benches-yard-wide-wheeled-service-base",
+    "category": "railway",
+    "file": "006/rail-station-platform-benches-yard-wide-wheeled-service-base.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "rail-maintenance-gantry-frame-wayside-bare-ballast",
+    "category": "railway",
+    "file": "006/rail-maintenance-gantry-frame-wayside-bare-ballast.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "rail-maintenance-gantry-frame-wayside-sleeper-track",
+    "category": "railway",
+    "file": "006/rail-maintenance-gantry-frame-wayside-sleeper-track.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "rail-maintenance-gantry-frame-wayside-service-skid",
+    "category": "railway",
+    "file": "006/rail-maintenance-gantry-frame-wayside-service-skid.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "rail-maintenance-gantry-frame-wayside-concrete-platform",
+    "category": "railway",
+    "file": "006/rail-maintenance-gantry-frame-wayside-concrete-platform.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "rail-maintenance-gantry-frame-yard-wide-bare-ballast",
+    "category": "railway",
+    "file": "006/rail-maintenance-gantry-frame-yard-wide-bare-ballast.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "rail-maintenance-gantry-frame-yard-wide-sleeper-track",
+    "category": "railway",
+    "file": "006/rail-maintenance-gantry-frame-yard-wide-sleeper-track.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "rail-maintenance-gantry-frame-yard-wide-service-skid",
+    "category": "railway",
+    "file": "006/rail-maintenance-gantry-frame-yard-wide-service-skid.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "rail-maintenance-gantry-frame-yard-wide-concrete-platform",
+    "category": "railway",
+    "file": "006/rail-maintenance-gantry-frame-yard-wide-concrete-platform.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 16
+  }
+]

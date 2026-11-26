@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "id": "access-tactile-map-lectern-compact-stone-entry",
+  "category": "accessibility",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "concrete": {
+      "kind": "matte",
+      "color": "#aaa5a0"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a7805d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9da8aa"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#677481"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c7"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#414a50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a366"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c98"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac6a55"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        28,
+        26,
+        2
+      ],
+      "material": "concrete"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        3
+      ],
+      "to": [
+        28,
+        8,
+        3
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        3
+      ],
+      "to": [
+        27,
+        25,
+        3
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        7,
+        10,
+        30
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        7,
+        4
+      ],
+      "to": [
+        26,
+        10,
+        30
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "slope",
+      "from": [
+        4,
+        7,
+        23
+      ],
+      "to": [
+        27,
+        22,
+        31
+      ],
+      "axis": "-Y",
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        12,
+        29
+      ],
+      "to": [
+        23,
+        12,
+        29
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        15,
+        28
+      ],
+      "to": [
+        15,
+        18,
+        27
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        15,
+        28
+      ],
+      "to": [
+        22,
+        16,
+        28
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        18
+      ],
+      "zFrom": 26,
+      "zTo": 27,
+      "radius": 0,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        8,
+        20
+      ],
+      "zFrom": 26,
+      "zTo": 27,
+      "radius": 0,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        18
+      ],
+      "zFrom": 26,
+      "zTo": 27,
+      "radius": 0,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        20
+      ],
+      "zFrom": 26,
+      "zTo": 27,
+      "radius": 0,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        18
+      ],
+      "zFrom": 26,
+      "zTo": 27,
+      "radius": 0,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        20
+      ],
+      "zFrom": 26,
+      "zTo": 27,
+      "radius": 0,
+      "material": "steel"
+    }
+  ]
+}

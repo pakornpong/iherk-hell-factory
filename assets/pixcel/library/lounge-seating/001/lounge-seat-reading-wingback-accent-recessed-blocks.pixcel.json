@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "id": "lounge-seat-reading-wingback-accent-recessed-blocks",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a27955"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795743"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b8a06d"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#636c72"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#43464b"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#706e6a"
+    },
+    "piping": {
+      "kind": "matte",
+      "color": "#a09a92"
+    },
+    "pillow": {
+      "kind": "matte",
+      "color": "#c6b5a2"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        0
+      ],
+      "to": [
+        13,
+        13,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        21,
+        0
+      ],
+      "to": [
+        13,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        10,
+        0
+      ],
+      "to": [
+        20,
+        13,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        21,
+        0
+      ],
+      "to": [
+        20,
+        24,
+        3
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        25,
+        23,
+        9
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        9
+      ],
+      "to": [
+        25,
+        10,
+        34
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        20
+      ],
+      "to": [
+        8,
+        17,
+        36
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        10,
+        20
+      ],
+      "to": [
+        25,
+        17,
+        36
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        10
+      ],
+      "to": [
+        22,
+        22,
+        14
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        11,
+        10
+      ],
+      "to": [
+        8,
+        23,
+        19
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        11,
+        10
+      ],
+      "to": [
+        24,
+        23,
+        19
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        10,
+        15
+      ],
+      "to": [
+        17,
+        14,
+        27
+      ],
+      "material": "pillow"
+    }
+  ]
+}

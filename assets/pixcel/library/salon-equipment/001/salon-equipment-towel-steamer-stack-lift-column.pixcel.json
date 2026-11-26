@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "id": "salon-equipment-towel-steamer-stack-lift-column",
+  "category": "personal-care",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        25,
+        24,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        3
+      ],
+      "to": [
+        20,
+        19,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        11
+      ],
+      "to": [
+        27,
+        26,
+        12
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        20,
+        3
+      ],
+      "to": [
+        10,
+        23,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        13
+      ],
+      "to": [
+        25,
+        24,
+        33
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        16
+      ],
+      "to": [
+        24,
+        25,
+        30
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        25,
+        17
+      ],
+      "to": [
+        23,
+        25,
+        28
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        31
+      ],
+      "to": [
+        15,
+        25,
+        32
+      ],
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        22
+      ],
+      "zFrom": 33,
+      "zTo": 34,
+      "radius": 1,
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        33
+      ],
+      "to": [
+        23,
+        19,
+        35
+      ],
+      "material": "textile"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        36
+      ],
+      "to": [
+        22,
+        18,
+        38
+      ],
+      "material": "ivory"
+    }
+  ]
+}

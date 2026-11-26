@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "id": "clinical-equipment-therapy-heat-console-built-in-bench",
+  "category": "medical",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        7,
+        18
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        8
+      ],
+      "to": [
+        27,
+        26,
+        10
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        1
+      ],
+      "to": [
+        6,
+        21,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        8
+      ],
+      "to": [
+        8,
+        25,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        7,
+        1
+      ],
+      "to": [
+        23,
+        21,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        8
+      ],
+      "to": [
+        25,
+        25,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        11
+      ],
+      "to": [
+        24,
+        24,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        22
+      ],
+      "to": [
+        22,
+        13,
+        33
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        13,
+        25
+      ],
+      "to": [
+        20,
+        13,
+        31
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        18
+      ],
+      "zFrom": 22,
+      "zTo": 25,
+      "radius": 2,
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        18
+      ],
+      "zFrom": 22,
+      "zTo": 24,
+      "radius": 1,
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        15,
+        19
+      ],
+      "to": [
+        27,
+        20,
+        28
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        19,
+        27
+      ],
+      "to": [
+        29,
+        24,
+        29
+      ],
+      "material": "ivory"
+    }
+  ]
+}

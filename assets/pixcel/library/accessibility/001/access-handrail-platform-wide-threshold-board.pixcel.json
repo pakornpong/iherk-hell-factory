@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "id": "access-handrail-platform-wide-threshold-board",
+  "category": "accessibility",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "concrete": {
+      "kind": "matte",
+      "color": "#aaa5a0"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a7805d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9da8aa"
+    },
+    "slate": {
+      "kind": "metal",
+      "color": "#677481"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd6c7"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#414a50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a366"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627c98"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac6a55"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        56,
+        26,
+        1
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        55,
+        9,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        2
+      ],
+      "to": [
+        55,
+        14,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        2
+      ],
+      "to": [
+        55,
+        19,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        2
+      ],
+      "to": [
+        55,
+        24,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "slope",
+      "from": [
+        4,
+        7,
+        3
+      ],
+      "to": [
+        50,
+        25,
+        14
+      ],
+      "axis": "+X",
+      "material": "concrete"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        7,
+        3
+      ],
+      "to": [
+        55,
+        25,
+        14
+      ],
+      "material": "concrete"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        6,
+        8,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        13
+      ],
+      "to": [
+        54,
+        8,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        7,
+        23
+      ],
+      "to": [
+        54,
+        7,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        7,
+        20
+      ],
+      "to": [
+        54,
+        7,
+        29
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        3
+      ],
+      "to": [
+        6,
+        25,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        24,
+        13
+      ],
+      "to": [
+        54,
+        25,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        24,
+        23
+      ],
+      "to": [
+        54,
+        24,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        24,
+        20
+      ],
+      "to": [
+        54,
+        24,
+        29
+      ],
+      "material": "steel"
+    }
+  ]
+}

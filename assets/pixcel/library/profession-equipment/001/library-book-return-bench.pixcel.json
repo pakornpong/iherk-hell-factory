@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "id": "library-book-return-bench",
+  "category": "library",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "color": "#e5e3d6",
+      "kind": "matte"
+    },
+    "metal": {
+      "color": "#a0b0bc",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#445361",
+      "kind": "metal"
+    },
+    "black": {
+      "color": "#272f3b",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#49798f",
+      "kind": "matte"
+    },
+    "aqua": {
+      "color": "#78c5c4",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#b85446",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#ac784e",
+      "kind": "wood"
+    },
+    "yellow": {
+      "color": "#e0ad58",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#f2ecdc",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        0
+      ],
+      "to": [
+        6,
+        9,
+        13
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        0
+      ],
+      "to": [
+        6,
+        26,
+        13
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        9,
+        13
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        24,
+        0
+      ],
+      "to": [
+        55,
+        26,
+        13
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        6,
+        12
+      ],
+      "to": [
+        60,
+        27,
+        16
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        8,
+        17
+      ],
+      "to": [
+        58,
+        24,
+        31
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        24,
+        23
+      ],
+      "to": [
+        55,
+        24,
+        27
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        25,
+        22
+      ],
+      "to": [
+        55,
+        25,
+        23
+      ],
+      "material": "metal"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        25,
+        29
+      ],
+      "to": [
+        53,
+        25,
+        30
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        17
+      ],
+      "to": [
+        23,
+        23,
+        19
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        14,
+        20
+      ],
+      "to": [
+        26,
+        23,
+        22
+      ],
+      "material": "paper"
+    }
+  ]
+}

@@ -1,0 +1,744 @@
+[
+  {
+    "id": "music-fixture-guitar-display-solo-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-guitar-display-solo-soundstage-carpet.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "music-fixture-guitar-display-solo-studio-platform",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-guitar-display-solo-studio-platform.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "music-fixture-guitar-display-solo-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-guitar-display-solo-rolling-roadboard.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "music-fixture-guitar-display-solo-music-shop-display",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-guitar-display-solo-music-shop-display.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "music-fixture-guitar-display-solo-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-guitar-display-solo-carrying-cradle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "music-fixture-guitar-display-ensemble-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-guitar-display-ensemble-soundstage-carpet.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "music-fixture-guitar-display-ensemble-studio-platform",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-guitar-display-ensemble-studio-platform.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "music-fixture-guitar-display-ensemble-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-guitar-display-ensemble-rolling-roadboard.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "music-fixture-guitar-display-ensemble-music-shop-display",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-guitar-display-ensemble-music-shop-display.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "music-fixture-guitar-display-ensemble-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-guitar-display-ensemble-carrying-cradle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "music-fixture-upright-string-bass-solo-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-upright-string-bass-solo-soundstage-carpet.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "music-fixture-upright-string-bass-solo-studio-platform",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-upright-string-bass-solo-studio-platform.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "music-fixture-upright-string-bass-solo-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-upright-string-bass-solo-rolling-roadboard.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "music-fixture-upright-string-bass-solo-music-shop-display",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-upright-string-bass-solo-music-shop-display.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "music-fixture-upright-string-bass-solo-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-upright-string-bass-solo-carrying-cradle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "music-fixture-upright-string-bass-ensemble-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-upright-string-bass-ensemble-soundstage-carpet.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "music-fixture-upright-string-bass-ensemble-studio-platform",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-upright-string-bass-ensemble-studio-platform.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "music-fixture-upright-string-bass-ensemble-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-upright-string-bass-ensemble-rolling-roadboard.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "music-fixture-upright-string-bass-ensemble-music-shop-display",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-upright-string-bass-ensemble-music-shop-display.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "music-fixture-upright-string-bass-ensemble-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "001/music-fixture-upright-string-bass-ensemble-carrying-cradle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "music-fixture-violin-and-bow-case-solo-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-violin-and-bow-case-solo-soundstage-carpet.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "music-fixture-violin-and-bow-case-solo-studio-platform",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-violin-and-bow-case-solo-studio-platform.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "music-fixture-violin-and-bow-case-solo-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-violin-and-bow-case-solo-rolling-roadboard.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "music-fixture-violin-and-bow-case-solo-music-shop-display",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-violin-and-bow-case-solo-music-shop-display.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "music-fixture-violin-and-bow-case-solo-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-violin-and-bow-case-solo-carrying-cradle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "music-fixture-violin-and-bow-case-ensemble-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-violin-and-bow-case-ensemble-soundstage-carpet.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "music-fixture-violin-and-bow-case-ensemble-studio-platform",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-violin-and-bow-case-ensemble-studio-platform.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "music-fixture-violin-and-bow-case-ensemble-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-violin-and-bow-case-ensemble-rolling-roadboard.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "music-fixture-violin-and-bow-case-ensemble-music-shop-display",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-violin-and-bow-case-ensemble-music-shop-display.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "music-fixture-violin-and-bow-case-ensemble-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-violin-and-bow-case-ensemble-carrying-cradle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "music-fixture-compact-drum-kit-solo-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-compact-drum-kit-solo-soundstage-carpet.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "music-fixture-compact-drum-kit-solo-studio-platform",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-compact-drum-kit-solo-studio-platform.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "music-fixture-compact-drum-kit-solo-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-compact-drum-kit-solo-rolling-roadboard.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "music-fixture-compact-drum-kit-solo-music-shop-display",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-compact-drum-kit-solo-music-shop-display.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "music-fixture-compact-drum-kit-ensemble-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-compact-drum-kit-ensemble-soundstage-carpet.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "music-fixture-compact-drum-kit-ensemble-studio-platform",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-compact-drum-kit-ensemble-studio-platform.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "music-fixture-compact-drum-kit-ensemble-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-compact-drum-kit-ensemble-rolling-roadboard.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "music-fixture-compact-drum-kit-ensemble-music-shop-display",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-compact-drum-kit-ensemble-music-shop-display.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "music-fixture-frame-drum-and-shakers-solo-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-frame-drum-and-shakers-solo-soundstage-carpet.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "music-fixture-frame-drum-and-shakers-solo-studio-platform",
+    "category": "musical-instruments",
+    "file": "002/music-fixture-frame-drum-and-shakers-solo-studio-platform.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "music-fixture-frame-drum-and-shakers-solo-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-frame-drum-and-shakers-solo-rolling-roadboard.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "music-fixture-frame-drum-and-shakers-solo-music-shop-display",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-frame-drum-and-shakers-solo-music-shop-display.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "music-fixture-frame-drum-and-shakers-solo-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-frame-drum-and-shakers-solo-carrying-cradle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "music-fixture-frame-drum-and-shakers-ensemble-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-frame-drum-and-shakers-ensemble-soundstage-carpet.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "music-fixture-frame-drum-and-shakers-ensemble-studio-platform",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-frame-drum-and-shakers-ensemble-studio-platform.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "music-fixture-frame-drum-and-shakers-ensemble-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-frame-drum-and-shakers-ensemble-rolling-roadboard.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "music-fixture-frame-drum-and-shakers-ensemble-music-shop-display",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-frame-drum-and-shakers-ensemble-music-shop-display.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "music-fixture-frame-drum-and-shakers-ensemble-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-frame-drum-and-shakers-ensemble-carrying-cradle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "music-fixture-mallet-percussion-rack-solo-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-mallet-percussion-rack-solo-soundstage-carpet.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "music-fixture-mallet-percussion-rack-solo-studio-platform",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-mallet-percussion-rack-solo-studio-platform.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "music-fixture-mallet-percussion-rack-solo-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-mallet-percussion-rack-solo-rolling-roadboard.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "music-fixture-mallet-percussion-rack-solo-music-shop-display",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-mallet-percussion-rack-solo-music-shop-display.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "music-fixture-mallet-percussion-rack-solo-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-mallet-percussion-rack-solo-carrying-cradle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "music-fixture-mallet-percussion-rack-ensemble-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-mallet-percussion-rack-ensemble-soundstage-carpet.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "music-fixture-mallet-percussion-rack-ensemble-studio-platform",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-mallet-percussion-rack-ensemble-studio-platform.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "music-fixture-mallet-percussion-rack-ensemble-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-mallet-percussion-rack-ensemble-rolling-roadboard.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "music-fixture-mallet-percussion-rack-ensemble-music-shop-display",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-mallet-percussion-rack-ensemble-music-shop-display.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "music-fixture-mallet-percussion-rack-ensemble-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-mallet-percussion-rack-ensemble-carrying-cradle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "music-fixture-harp-practice-frame-solo-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-harp-practice-frame-solo-soundstage-carpet.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "music-fixture-harp-practice-frame-solo-studio-platform",
+    "category": "musical-instruments",
+    "file": "003/music-fixture-harp-practice-frame-solo-studio-platform.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "music-fixture-harp-practice-frame-solo-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-harp-practice-frame-solo-rolling-roadboard.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "music-fixture-harp-practice-frame-solo-music-shop-display",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-harp-practice-frame-solo-music-shop-display.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "music-fixture-harp-practice-frame-ensemble-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-harp-practice-frame-ensemble-soundstage-carpet.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "music-fixture-harp-practice-frame-ensemble-studio-platform",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-harp-practice-frame-ensemble-studio-platform.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "music-fixture-harp-practice-frame-ensemble-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-harp-practice-frame-ensemble-rolling-roadboard.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "music-fixture-harp-practice-frame-ensemble-music-shop-display",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-harp-practice-frame-ensemble-music-shop-display.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "music-fixture-low-brass-corner-solo-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-low-brass-corner-solo-soundstage-carpet.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "music-fixture-low-brass-corner-solo-studio-platform",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-low-brass-corner-solo-studio-platform.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "music-fixture-low-brass-corner-solo-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-low-brass-corner-solo-rolling-roadboard.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "music-fixture-low-brass-corner-solo-music-shop-display",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-low-brass-corner-solo-music-shop-display.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "music-fixture-low-brass-corner-solo-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-low-brass-corner-solo-carrying-cradle.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "music-fixture-low-brass-corner-ensemble-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-low-brass-corner-ensemble-soundstage-carpet.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "music-fixture-low-brass-corner-ensemble-studio-platform",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-low-brass-corner-ensemble-studio-platform.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "music-fixture-low-brass-corner-ensemble-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-low-brass-corner-ensemble-rolling-roadboard.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "music-fixture-low-brass-corner-ensemble-music-shop-display",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-low-brass-corner-ensemble-music-shop-display.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "music-fixture-low-brass-corner-ensemble-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-low-brass-corner-ensemble-carrying-cradle.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "music-fixture-woodwind-service-stand-solo-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-woodwind-service-stand-solo-soundstage-carpet.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "music-fixture-woodwind-service-stand-solo-studio-platform",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-woodwind-service-stand-solo-studio-platform.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "music-fixture-woodwind-service-stand-solo-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-woodwind-service-stand-solo-rolling-roadboard.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "music-fixture-woodwind-service-stand-solo-music-shop-display",
+    "category": "musical-instruments",
+    "file": "004/music-fixture-woodwind-service-stand-solo-music-shop-display.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "music-fixture-woodwind-service-stand-solo-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-woodwind-service-stand-solo-carrying-cradle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "music-fixture-woodwind-service-stand-ensemble-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-woodwind-service-stand-ensemble-soundstage-carpet.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "music-fixture-woodwind-service-stand-ensemble-studio-platform",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-woodwind-service-stand-ensemble-studio-platform.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "music-fixture-woodwind-service-stand-ensemble-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-woodwind-service-stand-ensemble-rolling-roadboard.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "music-fixture-woodwind-service-stand-ensemble-music-shop-display",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-woodwind-service-stand-ensemble-music-shop-display.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "music-fixture-woodwind-service-stand-ensemble-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-woodwind-service-stand-ensemble-carrying-cradle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "music-fixture-music-copyists-stand-solo-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-music-copyists-stand-solo-soundstage-carpet.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "music-fixture-music-copyists-stand-solo-studio-platform",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-music-copyists-stand-solo-studio-platform.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "music-fixture-music-copyists-stand-solo-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-music-copyists-stand-solo-rolling-roadboard.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "music-fixture-music-copyists-stand-solo-music-shop-display",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-music-copyists-stand-solo-music-shop-display.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "music-fixture-music-copyists-stand-solo-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-music-copyists-stand-solo-carrying-cradle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "music-fixture-music-copyists-stand-ensemble-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-music-copyists-stand-ensemble-soundstage-carpet.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "music-fixture-music-copyists-stand-ensemble-studio-platform",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-music-copyists-stand-ensemble-studio-platform.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "music-fixture-music-copyists-stand-ensemble-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-music-copyists-stand-ensemble-rolling-roadboard.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "music-fixture-music-copyists-stand-ensemble-music-shop-display",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-music-copyists-stand-ensemble-music-shop-display.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "music-fixture-music-copyists-stand-ensemble-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-music-copyists-stand-ensemble-carrying-cradle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "music-fixture-accordion-open-case-solo-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-accordion-open-case-solo-soundstage-carpet.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "music-fixture-accordion-open-case-solo-studio-platform",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-accordion-open-case-solo-studio-platform.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "music-fixture-accordion-open-case-solo-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-accordion-open-case-solo-rolling-roadboard.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "music-fixture-accordion-open-case-solo-music-shop-display",
+    "category": "musical-instruments",
+    "file": "005/music-fixture-accordion-open-case-solo-music-shop-display.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "music-fixture-accordion-open-case-solo-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "006/music-fixture-accordion-open-case-solo-carrying-cradle.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "music-fixture-accordion-open-case-ensemble-soundstage-carpet",
+    "category": "musical-instruments",
+    "file": "006/music-fixture-accordion-open-case-ensemble-soundstage-carpet.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "music-fixture-accordion-open-case-ensemble-studio-platform",
+    "category": "musical-instruments",
+    "file": "006/music-fixture-accordion-open-case-ensemble-studio-platform.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "music-fixture-accordion-open-case-ensemble-rolling-roadboard",
+    "category": "musical-instruments",
+    "file": "006/music-fixture-accordion-open-case-ensemble-rolling-roadboard.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "music-fixture-accordion-open-case-ensemble-music-shop-display",
+    "category": "musical-instruments",
+    "file": "006/music-fixture-accordion-open-case-ensemble-music-shop-display.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "music-fixture-accordion-open-case-ensemble-carrying-cradle",
+    "category": "musical-instruments",
+    "file": "006/music-fixture-accordion-open-case-ensemble-carrying-cradle.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 6
+  }
+]

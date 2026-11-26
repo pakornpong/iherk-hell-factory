@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "id": "facilities-commercial-exhaust-blower-paired-subfloor-frame",
+  "category": "building-services",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "galv": {
+      "color": "#a4a9a9",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#647080",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#41484e",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#cbc6b8",
+      "kind": "matte"
+    },
+    "white": {
+      "color": "#ded9cd",
+      "kind": "matte"
+    },
+    "ochre": {
+      "color": "#bd9b5b",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a35d50",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8aa7b3",
+      "kind": "glass"
+    },
+    "copper": {
+      "color": "#b58165",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#3b4145",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        11
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        11
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        9,
+        11
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        23,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        11
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        10
+      ],
+      "to": [
+        57,
+        26,
+        11
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        24,
+        1
+      ],
+      "to": [
+        54,
+        24,
+        10
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        4
+      ],
+      "to": [
+        51,
+        18,
+        6
+      ],
+      "material": "ochre"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        12
+      ],
+      "to": [
+        56,
+        24,
+        16
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 33,
+      "radius": 9,
+      "material": "galv"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 33,
+      "zTo": 35,
+      "radius": 6,
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        9,
+        20
+      ],
+      "to": [
+        54,
+        22,
+        30
+      ],
+      "material": "galv"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        10,
+        30
+      ],
+      "to": [
+        54,
+        21,
+        35
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        10,
+        23
+      ],
+      "to": [
+        55,
+        21,
+        27
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 35,
+      "zTo": 36,
+      "radius": 3,
+      "material": "ochre"
+    }
+  ]
+}

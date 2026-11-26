@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 1,
+  "id": "dining-glass-frame-nook-wall-banquette-market-breakfast",
+  "category": "dining",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    2
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a9805a",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#745746",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ca9ab",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#576570",
+      "kind": "metal"
+    },
+    "ivory": {
+      "color": "#dbd3bf",
+      "kind": "matte"
+    },
+    "marble": {
+      "color": "#b7afa5",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#b1a18b",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#a16458",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#657e92",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#b29970",
+      "kind": "matte"
+    },
+    "dark": {
+      "color": "#414b53",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#90acb8",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        16
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        29,
+        7,
+        29
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        28,
+        13,
+        8
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        9,
+        6
+      ],
+      "to": [
+        7,
+        20,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        9,
+        6
+      ],
+      "to": [
+        26,
+        20,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        16
+      ],
+      "to": [
+        29,
+        26,
+        18
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        18
+      ],
+      "to": [
+        29,
+        6,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        25,
+        18
+      ],
+      "to": [
+        29,
+        26,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        18
+      ],
+      "to": [
+        5,
+        24,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        7,
+        18
+      ],
+      "to": [
+        29,
+        24,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        9,
+        20
+      ],
+      "to": [
+        17,
+        21,
+        21
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        14
+      ],
+      "zFrom": 21,
+      "zTo": 23,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        14
+      ],
+      "zFrom": 21,
+      "zTo": 23,
+      "radius": 2,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        17
+      ],
+      "zFrom": 20,
+      "zTo": 24,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        9,
+        20
+      ],
+      "to": [
+        25,
+        14,
+        22
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        17,
+        21
+      ],
+      "zFrom": 20,
+      "zTo": 21,
+      "radius": 2,
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        34,
+        0
+      ],
+      "to": [
+        15,
+        44,
+        10
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        34,
+        10
+      ],
+      "to": [
+        15,
+        44,
+        12
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        34,
+        0
+      ],
+      "to": [
+        27,
+        44,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        35,
+        10
+      ],
+      "to": [
+        26,
+        43,
+        12
+      ],
+      "material": "blue"
+    }
+  ]
+}

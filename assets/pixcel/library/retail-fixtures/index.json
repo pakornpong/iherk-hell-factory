@@ -1,0 +1,450 @@
+[
+  {
+    "id": "retail-bakery-tier-endcap-aisle",
+    "category": "retail",
+    "file": "001/retail-bakery-tier-endcap-aisle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "retail-bakery-tier-endcap-caster-rail",
+    "category": "retail",
+    "file": "001/retail-bakery-tier-endcap-caster-rail.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "retail-bakery-tier-endcap-solid-plinth",
+    "category": "retail",
+    "file": "001/retail-bakery-tier-endcap-solid-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "retail-bakery-tier-endcap-open-trestle",
+    "category": "retail",
+    "file": "001/retail-bakery-tier-endcap-open-trestle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "retail-bakery-tier-wide-aisle",
+    "category": "retail",
+    "file": "001/retail-bakery-tier-wide-aisle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "retail-bakery-tier-wide-caster-rail",
+    "category": "retail",
+    "file": "001/retail-bakery-tier-wide-caster-rail.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "retail-bakery-tier-wide-solid-plinth",
+    "category": "retail",
+    "file": "001/retail-bakery-tier-wide-solid-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "retail-bakery-tier-wide-open-trestle",
+    "category": "retail",
+    "file": "001/retail-bakery-tier-wide-open-trestle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "retail-clothing-rail-endcap-aisle",
+    "category": "retail",
+    "file": "001/retail-clothing-rail-endcap-aisle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "retail-clothing-rail-endcap-caster-rail",
+    "category": "retail",
+    "file": "001/retail-clothing-rail-endcap-caster-rail.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "retail-clothing-rail-endcap-solid-plinth",
+    "category": "retail",
+    "file": "001/retail-clothing-rail-endcap-solid-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "retail-clothing-rail-endcap-open-trestle",
+    "category": "retail",
+    "file": "001/retail-clothing-rail-endcap-open-trestle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "retail-clothing-rail-wide-aisle",
+    "category": "retail",
+    "file": "001/retail-clothing-rail-wide-aisle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "retail-clothing-rail-wide-caster-rail",
+    "category": "retail",
+    "file": "001/retail-clothing-rail-wide-caster-rail.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "retail-clothing-rail-wide-solid-plinth",
+    "category": "retail",
+    "file": "001/retail-clothing-rail-wide-solid-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "retail-clothing-rail-wide-open-trestle",
+    "category": "retail",
+    "file": "001/retail-clothing-rail-wide-open-trestle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "retail-produce-crate-tier-endcap-aisle",
+    "category": "retail",
+    "file": "001/retail-produce-crate-tier-endcap-aisle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "retail-produce-crate-tier-endcap-caster-rail",
+    "category": "retail",
+    "file": "001/retail-produce-crate-tier-endcap-caster-rail.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "retail-produce-crate-tier-endcap-solid-plinth",
+    "category": "retail",
+    "file": "001/retail-produce-crate-tier-endcap-solid-plinth.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "retail-produce-crate-tier-endcap-open-trestle",
+    "category": "retail",
+    "file": "001/retail-produce-crate-tier-endcap-open-trestle.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "retail-produce-crate-tier-wide-aisle",
+    "category": "retail",
+    "file": "002/retail-produce-crate-tier-wide-aisle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "retail-produce-crate-tier-wide-caster-rail",
+    "category": "retail",
+    "file": "002/retail-produce-crate-tier-wide-caster-rail.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "retail-produce-crate-tier-wide-solid-plinth",
+    "category": "retail",
+    "file": "002/retail-produce-crate-tier-wide-solid-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "retail-produce-crate-tier-wide-open-trestle",
+    "category": "retail",
+    "file": "002/retail-produce-crate-tier-wide-open-trestle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "retail-jewelry-glass-case-endcap-aisle",
+    "category": "retail",
+    "file": "002/retail-jewelry-glass-case-endcap-aisle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "retail-jewelry-glass-case-endcap-caster-rail",
+    "category": "retail",
+    "file": "002/retail-jewelry-glass-case-endcap-caster-rail.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "retail-jewelry-glass-case-endcap-solid-plinth",
+    "category": "retail",
+    "file": "002/retail-jewelry-glass-case-endcap-solid-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "retail-jewelry-glass-case-endcap-open-trestle",
+    "category": "retail",
+    "file": "002/retail-jewelry-glass-case-endcap-open-trestle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "retail-jewelry-glass-case-wide-aisle",
+    "category": "retail",
+    "file": "002/retail-jewelry-glass-case-wide-aisle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "retail-jewelry-glass-case-wide-caster-rail",
+    "category": "retail",
+    "file": "002/retail-jewelry-glass-case-wide-caster-rail.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "retail-jewelry-glass-case-wide-solid-plinth",
+    "category": "retail",
+    "file": "002/retail-jewelry-glass-case-wide-solid-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "retail-jewelry-glass-case-wide-open-trestle",
+    "category": "retail",
+    "file": "002/retail-jewelry-glass-case-wide-open-trestle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "retail-news-rack-endcap-aisle",
+    "category": "retail",
+    "file": "002/retail-news-rack-endcap-aisle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "retail-news-rack-endcap-caster-rail",
+    "category": "retail",
+    "file": "002/retail-news-rack-endcap-caster-rail.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "retail-news-rack-endcap-solid-plinth",
+    "category": "retail",
+    "file": "002/retail-news-rack-endcap-solid-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "retail-news-rack-endcap-open-trestle",
+    "category": "retail",
+    "file": "002/retail-news-rack-endcap-open-trestle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "retail-news-rack-wide-aisle",
+    "category": "retail",
+    "file": "002/retail-news-rack-wide-aisle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "retail-news-rack-wide-caster-rail",
+    "category": "retail",
+    "file": "002/retail-news-rack-wide-caster-rail.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "retail-news-rack-wide-solid-plinth",
+    "category": "retail",
+    "file": "002/retail-news-rack-wide-solid-plinth.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "retail-news-rack-wide-open-trestle",
+    "category": "retail",
+    "file": "002/retail-news-rack-wide-open-trestle.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "retail-footwear-stepped-endcap-aisle",
+    "category": "retail",
+    "file": "003/retail-footwear-stepped-endcap-aisle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "retail-footwear-stepped-endcap-caster-rail",
+    "category": "retail",
+    "file": "003/retail-footwear-stepped-endcap-caster-rail.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "retail-footwear-stepped-endcap-solid-plinth",
+    "category": "retail",
+    "file": "003/retail-footwear-stepped-endcap-solid-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "retail-footwear-stepped-endcap-open-trestle",
+    "category": "retail",
+    "file": "003/retail-footwear-stepped-endcap-open-trestle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "retail-footwear-stepped-wide-aisle",
+    "category": "retail",
+    "file": "003/retail-footwear-stepped-wide-aisle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "retail-footwear-stepped-wide-caster-rail",
+    "category": "retail",
+    "file": "003/retail-footwear-stepped-wide-caster-rail.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "retail-footwear-stepped-wide-solid-plinth",
+    "category": "retail",
+    "file": "003/retail-footwear-stepped-wide-solid-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "retail-footwear-stepped-wide-open-trestle",
+    "category": "retail",
+    "file": "003/retail-footwear-stepped-wide-open-trestle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "retail-pharmacy-cubby-endcap-aisle",
+    "category": "retail",
+    "file": "003/retail-pharmacy-cubby-endcap-aisle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "retail-pharmacy-cubby-endcap-caster-rail",
+    "category": "retail",
+    "file": "003/retail-pharmacy-cubby-endcap-caster-rail.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "retail-pharmacy-cubby-endcap-solid-plinth",
+    "category": "retail",
+    "file": "003/retail-pharmacy-cubby-endcap-solid-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "retail-pharmacy-cubby-endcap-open-trestle",
+    "category": "retail",
+    "file": "003/retail-pharmacy-cubby-endcap-open-trestle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "retail-pharmacy-cubby-wide-aisle",
+    "category": "retail",
+    "file": "003/retail-pharmacy-cubby-wide-aisle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "retail-pharmacy-cubby-wide-caster-rail",
+    "category": "retail",
+    "file": "003/retail-pharmacy-cubby-wide-caster-rail.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "retail-pharmacy-cubby-wide-solid-plinth",
+    "category": "retail",
+    "file": "003/retail-pharmacy-cubby-wide-solid-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "retail-pharmacy-cubby-wide-open-trestle",
+    "category": "retail",
+    "file": "003/retail-pharmacy-cubby-wide-open-trestle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "retail-electronic-demo-riser-endcap-aisle",
+    "category": "retail",
+    "file": "003/retail-electronic-demo-riser-endcap-aisle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "retail-electronic-demo-riser-endcap-caster-rail",
+    "category": "retail",
+    "file": "003/retail-electronic-demo-riser-endcap-caster-rail.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "retail-electronic-demo-riser-endcap-solid-plinth",
+    "category": "retail",
+    "file": "003/retail-electronic-demo-riser-endcap-solid-plinth.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "retail-electronic-demo-riser-endcap-open-trestle",
+    "category": "retail",
+    "file": "003/retail-electronic-demo-riser-endcap-open-trestle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "retail-electronic-demo-riser-wide-aisle",
+    "category": "retail",
+    "file": "004/retail-electronic-demo-riser-wide-aisle.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "retail-electronic-demo-riser-wide-caster-rail",
+    "category": "retail",
+    "file": "004/retail-electronic-demo-riser-wide-caster-rail.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "retail-electronic-demo-riser-wide-solid-plinth",
+    "category": "retail",
+    "file": "004/retail-electronic-demo-riser-wide-solid-plinth.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "retail-electronic-demo-riser-wide-open-trestle",
+    "category": "retail",
+    "file": "004/retail-electronic-demo-riser-wide-open-trestle.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  }
+]

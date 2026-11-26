@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "id": "clinical-equipment-eyewash-twin-nozzle-reinforced-sled",
+  "category": "medical",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        9,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        2
+      ],
+      "to": [
+        25,
+        24,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        3
+      ],
+      "to": [
+        25,
+        25,
+        6
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 7,
+      "zTo": 25,
+      "radius": 3,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 25,
+      "zTo": 28,
+      "radius": 8,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 28,
+      "zTo": 28,
+      "radius": 6,
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        15,
+        28
+      ],
+      "to": [
+        11,
+        13,
+        33
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        15,
+        28
+      ],
+      "to": [
+        19,
+        13,
+        33
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        12,
+        32
+      ],
+      "to": [
+        12,
+        14,
+        33
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        12,
+        32
+      ],
+      "to": [
+        20,
+        14,
+        33
+      ],
+      "material": "amber"
+    }
+  ]
+}

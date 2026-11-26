@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "id": "bath-storage-spa-towel-cart-rings-room-width-service-caster",
+  "category": "bathroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a6815e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#775a48"
+    },
+    "paint": {
+      "kind": "matte",
+      "color": "#9c988c"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c9baab"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5e7182"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad5c9"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#9da9ad"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#54616d"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b29c70"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a0b3b7"
+    },
+    "rose": {
+      "kind": "matte",
+      "color": "#a87976"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#9d6f58"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        8,
+        9,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        8,
+        24,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        54,
+        25,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        7
+      ],
+      "to": [
+        54,
+        23,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        8
+      ],
+      "to": [
+        54,
+        25,
+        11
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        5,
+        7
+      ],
+      "zFrom": 11,
+      "zTo": 37,
+      "radius": 1,
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        5,
+        23
+      ],
+      "zFrom": 11,
+      "zTo": 37,
+      "radius": 1,
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        52,
+        7
+      ],
+      "zFrom": 11,
+      "zTo": 37,
+      "radius": 1,
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        52,
+        23
+      ],
+      "zFrom": 11,
+      "zTo": 37,
+      "radius": 1,
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        18
+      ],
+      "to": [
+        53,
+        24,
+        19
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        30
+      ],
+      "to": [
+        53,
+        24,
+        31
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        14
+      ],
+      "zFrom": 20,
+      "zTo": 25,
+      "radius": 3,
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        14
+      ],
+      "zFrom": 31,
+      "zTo": 36,
+      "radius": 3,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        14
+      ],
+      "zFrom": 20,
+      "zTo": 25,
+      "radius": 3,
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        14
+      ],
+      "zFrom": 31,
+      "zTo": 36,
+      "radius": 3,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        14
+      ],
+      "zFrom": 20,
+      "zTo": 25,
+      "radius": 3,
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        14
+      ],
+      "zFrom": 31,
+      "zTo": 36,
+      "radius": 3,
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        8,
+        36
+      ],
+      "to": [
+        52,
+        24,
+        36
+      ],
+      "material": "chrome"
+    }
+  ]
+}

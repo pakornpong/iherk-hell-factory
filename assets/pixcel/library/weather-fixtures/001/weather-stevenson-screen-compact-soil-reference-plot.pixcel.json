@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-stevenson-screen-compact-soil-reference-plot",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        1
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "earth"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        3
+      ],
+      "to": [
+        7,
+        9,
+        27
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        3
+      ],
+      "to": [
+        7,
+        23,
+        27
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        8,
+        3
+      ],
+      "to": [
+        27,
+        9,
+        27
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        22,
+        3
+      ],
+      "to": [
+        27,
+        23,
+        27
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        23
+      ],
+      "to": [
+        28,
+        24,
+        25
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        36
+      ],
+      "to": [
+        28,
+        24,
+        39
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        19,
+        26
+      ],
+      "to": [
+        28,
+        22,
+        27
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        19,
+        29
+      ],
+      "to": [
+        28,
+        22,
+        30
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        19,
+        32
+      ],
+      "to": [
+        28,
+        22,
+        33
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        19,
+        35
+      ],
+      "to": [
+        28,
+        22,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        25
+      ],
+      "to": [
+        7,
+        18,
+        36
+      ],
+      "material": "pale"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        25
+      ],
+      "to": [
+        28,
+        18,
+        36
+      ],
+      "material": "pale"
+    }
+  ]
+}

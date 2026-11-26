@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "id": "retail-produce-crate-tier-endcap-open-trestle",
+  "category": "retail",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#9da5a8"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#535a60"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#ad825d"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b89775"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#34383d"
+    },
+    "chalk": {
+      "kind": "matte",
+      "color": "#d9d3c4"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a55b50"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a167"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#63798c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8eacb6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        5,
+        12,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        24,
+        0
+      ],
+      "to": [
+        5,
+        18,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        6,
+        0
+      ],
+      "to": [
+        24,
+        25,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        7,
+        0
+      ],
+      "to": [
+        22,
+        12,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        24,
+        0
+      ],
+      "to": [
+        22,
+        18,
+        13
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        25,
+        26,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        7,
+        9,
+        39
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        14
+      ],
+      "to": [
+        7,
+        24,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        7,
+        14
+      ],
+      "to": [
+        24,
+        9,
+        39
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        22,
+        14
+      ],
+      "to": [
+        24,
+        24,
+        32
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        19
+      ],
+      "to": [
+        25,
+        24,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        20
+      ],
+      "to": [
+        25,
+        24,
+        23
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 21,
+      "zTo": 24,
+      "radius": 3,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        16
+      ],
+      "zFrom": 21,
+      "zTo": 24,
+      "radius": 3,
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        33
+      ],
+      "to": [
+        25,
+        24,
+        34
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        34
+      ],
+      "to": [
+        25,
+        24,
+        37
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        16
+      ],
+      "zFrom": 35,
+      "zTo": 38,
+      "radius": 3,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        16
+      ],
+      "zFrom": 35,
+      "zTo": 38,
+      "radius": 3,
+      "material": "amber"
+    }
+  ]
+}

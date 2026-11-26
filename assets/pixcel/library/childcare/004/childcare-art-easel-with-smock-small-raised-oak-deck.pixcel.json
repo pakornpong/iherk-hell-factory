@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "id": "childcare-art-easel-with-smock-small-raised-oak-deck",
+  "category": "childcare",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#b58b64"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#9b7555"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ddd3bf"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b7a58e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac6c5c"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#6d8498"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8f9ba1"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#c4a463"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#4a535a"
+    },
+    "pink": {
+      "kind": "matte",
+      "color": "#a97880"
+    },
+    "mats": {
+      "kind": "matte",
+      "color": "#978d86"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        27,
+        9,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        3
+      ],
+      "to": [
+        27,
+        14,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        3
+      ],
+      "to": [
+        27,
+        19,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        3
+      ],
+      "to": [
+        27,
+        24,
+        5
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        11,
+        6
+      ],
+      "to": [
+        13,
+        12,
+        35
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        11,
+        6
+      ],
+      "to": [
+        18,
+        12,
+        35
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        25,
+        6
+      ],
+      "to": [
+        16,
+        12,
+        35
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        20
+      ],
+      "to": [
+        22,
+        15,
+        35
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        21
+      ],
+      "to": [
+        21,
+        15,
+        34
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        15,
+        24
+      ],
+      "to": [
+        18,
+        15,
+        28
+      ],
+      "material": "red"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        15,
+        29
+      ],
+      "to": [
+        17,
+        15,
+        25
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        18
+      ],
+      "to": [
+        23,
+        18,
+        19
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        16
+      ],
+      "zFrom": 20,
+      "zTo": 23,
+      "radius": 1,
+      "material": "yellow"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        11
+      ],
+      "to": [
+        7,
+        8,
+        24
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        23
+      ],
+      "to": [
+        20,
+        13,
+        25
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        10
+      ],
+      "zFrom": 26,
+      "zTo": 29,
+      "radius": 2,
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        9,
+        26
+      ],
+      "to": [
+        17,
+        11,
+        29
+      ],
+      "material": "linen"
+    }
+  ]
+}

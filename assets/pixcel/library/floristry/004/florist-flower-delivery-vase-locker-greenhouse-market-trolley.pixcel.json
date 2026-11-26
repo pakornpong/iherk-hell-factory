@@ -1,0 +1,456 @@
+{
+  "schemaVersion": 1,
+  "id": "florist-flower-delivery-vase-locker-greenhouse-market-trolley",
+  "category": "florist",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a98461",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#755a48",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9da9ad",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#5a6774",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#414a51",
+      "kind": "matte"
+    },
+    "ivory": {
+      "color": "#ded4bf",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#b8a68c",
+      "kind": "matte"
+    },
+    "pink": {
+      "color": "#ad7480",
+      "kind": "matte"
+    },
+    "rose": {
+      "color": "#a05f5f",
+      "kind": "matte"
+    },
+    "leaf": {
+      "color": "#637c55",
+      "kind": "matte"
+    },
+    "paleLeaf": {
+      "color": "#819069",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#90acb6",
+      "kind": "glass"
+    },
+    "amber": {
+      "color": "#c1a06b",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a6735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        7,
+        0
+      ],
+      "to": [
+        54,
+        9,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        22,
+        0
+      ],
+      "to": [
+        54,
+        24,
+        3
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        7,
+        23,
+        10
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        54,
+        24,
+        27
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        11
+      ],
+      "to": [
+        53,
+        25,
+        23
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        15
+      ],
+      "to": [
+        13,
+        26,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        25,
+        15
+      ],
+      "to": [
+        52,
+        26,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        27
+      ],
+      "to": [
+        54,
+        24,
+        29
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        14
+      ],
+      "zFrom": 30,
+      "zTo": 36,
+      "radius": 3,
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        14,
+        35
+      ],
+      "to": [
+        10,
+        13,
+        43
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        14,
+        35
+      ],
+      "to": [
+        14,
+        15,
+        46
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        14,
+        35
+      ],
+      "to": [
+        13,
+        12,
+        48
+      ],
+      "material": "paleLeaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        13
+      ],
+      "zFrom": 43,
+      "zTo": 45,
+      "radius": 1,
+      "material": "pink"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        14,
+        15
+      ],
+      "zFrom": 46,
+      "zTo": 47,
+      "radius": 1,
+      "material": "pink"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        12
+      ],
+      "zFrom": 48,
+      "zTo": 49,
+      "radius": 1,
+      "material": "pink"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        15,
+        39
+      ],
+      "to": [
+        14,
+        16,
+        40
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        49,
+        14
+      ],
+      "zFrom": 30,
+      "zTo": 37,
+      "radius": 3,
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        14,
+        36
+      ],
+      "to": [
+        47,
+        13,
+        44
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        14,
+        36
+      ],
+      "to": [
+        51,
+        15,
+        47
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        14,
+        36
+      ],
+      "to": [
+        50,
+        12,
+        49
+      ],
+      "material": "paleLeaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        13
+      ],
+      "zFrom": 44,
+      "zTo": 46,
+      "radius": 1,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        51,
+        15
+      ],
+      "zFrom": 47,
+      "zTo": 48,
+      "radius": 1,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        50,
+        12
+      ],
+      "zFrom": 49,
+      "zTo": 50,
+      "radius": 1,
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        15,
+        40
+      ],
+      "to": [
+        51,
+        16,
+        41
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        19,
+        11
+      ],
+      "to": [
+        52,
+        23,
+        13
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        19,
+        13
+      ],
+      "to": [
+        51,
+        23,
+        14
+      ],
+      "material": "ivory"
+    }
+  ]
+}

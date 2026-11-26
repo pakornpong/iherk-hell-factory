@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "id": "warehouse-bulk-hopper-feed-compact-raised-mezzanine",
+  "category": "warehouse",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9fa8aa"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#586673"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b444d"
+    },
+    "safety": {
+      "kind": "matte",
+      "color": "#bd9255"
+    },
+    "timber": {
+      "kind": "wood",
+      "color": "#a78564"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b29979"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#d6d0bc"
+    },
+    "darkred": {
+      "kind": "matte",
+      "color": "#9b584a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e7489"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba8b6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        28,
+        9,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        23,
+        0
+      ],
+      "to": [
+        28,
+        25,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        11
+      ],
+      "to": [
+        29,
+        26,
+        12
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        8,
+        1
+      ],
+      "to": [
+        27,
+        24,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        13
+      ],
+      "to": [
+        8,
+        9,
+        41
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        22,
+        13
+      ],
+      "to": [
+        8,
+        24,
+        41
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        15
+      ],
+      "to": [
+        6,
+        23,
+        39
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        13
+      ],
+      "to": [
+        27,
+        9,
+        41
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        22,
+        13
+      ],
+      "to": [
+        27,
+        24,
+        41
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        8,
+        15
+      ],
+      "to": [
+        25,
+        23,
+        39
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        39
+      ],
+      "to": [
+        27,
+        25,
+        47
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        47
+      ],
+      "to": [
+        25,
+        23,
+        48
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        35
+      ],
+      "to": [
+        24,
+        22,
+        39
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        29
+      ],
+      "to": [
+        21,
+        20,
+        35
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        13,
+        26
+      ],
+      "to": [
+        18,
+        18,
+        30
+      ],
+      "material": "safety"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        19,
+        13
+      ],
+      "to": [
+        19,
+        23,
+        17
+      ],
+      "material": "blue"
+    }
+  ]
+}

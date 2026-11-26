@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "id": "headphones-monitor-fold",
+  "category": "electronics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "color": "#2d3443",
+      "kind": "metal"
+    },
+    "darkwood": {
+      "color": "#795035",
+      "kind": "wood"
+    },
+    "red": {
+      "color": "#be5543",
+      "kind": "matte"
+    },
+    "fabric": {
+      "color": "#49647e",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        0
+      ],
+      "to": [
+        25,
+        23,
+        1
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        2
+      ],
+      "to": [
+        12,
+        19,
+        12
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        11,
+        2
+      ],
+      "to": [
+        23,
+        19,
+        12
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        3
+      ],
+      "to": [
+        14,
+        19,
+        11
+      ],
+      "material": "fabric"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        11,
+        3
+      ],
+      "to": [
+        20,
+        19,
+        11
+      ],
+      "material": "fabric"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        14,
+        10
+      ],
+      "to": [
+        10,
+        16,
+        18
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        14,
+        10
+      ],
+      "to": [
+        23,
+        16,
+        18
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        14,
+        17
+      ],
+      "to": [
+        13,
+        16,
+        21
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        14,
+        17
+      ],
+      "to": [
+        22,
+        16,
+        21
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        13,
+        20
+      ],
+      "to": [
+        19,
+        17,
+        22
+      ],
+      "material": "fabric"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        19,
+        4
+      ],
+      "to": [
+        6,
+        25,
+        2
+      ],
+      "material": "red"
+    }
+  ]
+}

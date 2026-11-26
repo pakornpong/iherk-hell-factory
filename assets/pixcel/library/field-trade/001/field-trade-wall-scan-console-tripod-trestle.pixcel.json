@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "id": "field-trade-wall-scan-console-tripod-trestle",
+  "category": "trades",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        6,
+        16,
+        13
+      ],
+      "to": [
+        6,
+        7,
+        0
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        16,
+        13
+      ],
+      "to": [
+        6,
+        24,
+        0
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        13,
+        12
+      ],
+      "to": [
+        8,
+        19,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        16,
+        13
+      ],
+      "to": [
+        23,
+        7,
+        0
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        16,
+        13
+      ],
+      "to": [
+        23,
+        24,
+        0
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        13,
+        12
+      ],
+      "to": [
+        25,
+        19,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        13
+      ],
+      "to": [
+        27,
+        24,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        15
+      ],
+      "to": [
+        22,
+        23,
+        20
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        20
+      ],
+      "to": [
+        20,
+        13,
+        44
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        35
+      ],
+      "to": [
+        25,
+        16,
+        49
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        16,
+        38
+      ],
+      "to": [
+        23,
+        16,
+        46
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        11,
+        37
+      ],
+      "to": [
+        4,
+        7,
+        53
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        11,
+        37
+      ],
+      "to": [
+        27,
+        7,
+        53
+      ],
+      "material": "steel"
+    }
+  ]
+}

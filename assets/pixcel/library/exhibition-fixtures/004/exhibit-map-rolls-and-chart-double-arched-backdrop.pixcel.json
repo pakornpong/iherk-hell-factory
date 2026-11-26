@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "id": "exhibit-map-rolls-and-chart-double-arched-backdrop",
+  "category": "museum",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a67e58"
+    },
+    "plaster": {
+      "kind": "matte",
+      "color": "#d8cfc1"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3d454d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a0aaad"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#9cb5ba"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#b78268"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a90"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#b8aa96"
+    },
+    "ceramic": {
+      "kind": "matte",
+      "color": "#ab6854"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e0d8c7"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        54,
+        25,
+        4
+      ],
+      "material": "plaster"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        5
+      ],
+      "to": [
+        7,
+        8,
+        34
+      ],
+      "material": "plaster"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        5,
+        5
+      ],
+      "to": [
+        54,
+        8,
+        34
+      ],
+      "material": "plaster"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        5,
+        34
+      ],
+      "to": [
+        52,
+        8,
+        37
+      ],
+      "material": "plaster"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        8,
+        30
+      ],
+      "to": [
+        13,
+        8,
+        36
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        51,
+        8,
+        30
+      ],
+      "to": [
+        45,
+        8,
+        36
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        5
+      ],
+      "to": [
+        52,
+        24,
+        7
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        7
+      ],
+      "to": [
+        51,
+        9,
+        28
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        10
+      ],
+      "to": [
+        50,
+        9,
+        26
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        9,
+        15
+      ],
+      "to": [
+        48,
+        9,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        9,
+        23
+      ],
+      "to": [
+        46,
+        9,
+        18
+      ],
+      "material": "copper"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        17,
+        8
+      ],
+      "to": [
+        50,
+        20,
+        10
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        20,
+        7
+      ],
+      "to": [
+        47,
+        22,
+        9
+      ],
+      "material": "paper"
+    }
+  ]
+}

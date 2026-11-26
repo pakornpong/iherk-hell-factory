@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "id": "rail-yard-work-light-tower-yard-wide-service-skid",
+  "category": "railway",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9ba8ab",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#596772",
+      "kind": "metal"
+    },
+    "wood": {
+      "color": "#a18362",
+      "kind": "wood"
+    },
+    "rock": {
+      "color": "#9e968b",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#424b51",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#667f93",
+      "kind": "matte"
+    },
+    "orange": {
+      "color": "#aa6853",
+      "kind": "matte"
+    },
+    "ivory": {
+      "color": "#dbd3bb",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#c1a16a",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8baab5",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        0
+      ],
+      "to": [
+        55,
+        9,
+        3
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        0
+      ],
+      "to": [
+        55,
+        24,
+        3
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        5
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        27
+      ],
+      "to": [
+        6,
+        24,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        27
+      ],
+      "to": [
+        53,
+        24,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        15,
+        27
+      ],
+      "to": [
+        30,
+        7,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        30,
+        15
+      ],
+      "zFrom": 26,
+      "zTo": 45,
+      "radius": 1,
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        13,
+        40
+      ],
+      "to": [
+        38,
+        16,
+        42
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        13,
+        40
+      ],
+      "to": [
+        26,
+        17,
+        46
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        17,
+        41
+      ],
+      "to": [
+        25,
+        17,
+        45
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        13,
+        40
+      ],
+      "to": [
+        37,
+        17,
+        46
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        17,
+        41
+      ],
+      "to": [
+        36,
+        17,
+        45
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        16,
+        8
+      ],
+      "to": [
+        52,
+        24,
+        14
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        24,
+        11
+      ],
+      "to": [
+        50,
+        24,
+        12
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        44,
+        16,
+        13
+      ],
+      "to": [
+        41,
+        13,
+        17
+      ],
+      "material": "steel"
+    }
+  ]
+}

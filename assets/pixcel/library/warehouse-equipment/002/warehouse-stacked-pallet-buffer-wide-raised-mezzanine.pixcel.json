@@ -1,0 +1,436 @@
+{
+  "schemaVersion": 1,
+  "id": "warehouse-stacked-pallet-buffer-wide-raised-mezzanine",
+  "category": "warehouse",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9fa8aa"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#586673"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b444d"
+    },
+    "safety": {
+      "kind": "matte",
+      "color": "#bd9255"
+    },
+    "timber": {
+      "kind": "wood",
+      "color": "#a78564"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b29979"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#d6d0bc"
+    },
+    "darkred": {
+      "kind": "matte",
+      "color": "#9b584a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e7489"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba8b6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        7,
+        9,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        7,
+        0
+      ],
+      "to": [
+        56,
+        9,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        23,
+        0
+      ],
+      "to": [
+        56,
+        25,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        11
+      ],
+      "to": [
+        57,
+        26,
+        12
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "line",
+      "from": [
+        55,
+        8,
+        1
+      ],
+      "to": [
+        55,
+        24,
+        12
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        16
+      ],
+      "to": [
+        56,
+        9,
+        17
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        16
+      ],
+      "to": [
+        56,
+        17,
+        17
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        16
+      ],
+      "to": [
+        56,
+        25,
+        17
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        18
+      ],
+      "to": [
+        17,
+        23,
+        24
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        18
+      ],
+      "to": [
+        54,
+        22,
+        24
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        24
+      ],
+      "to": [
+        13,
+        23,
+        24
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        8,
+        24
+      ],
+      "to": [
+        48,
+        22,
+        24
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        26
+      ],
+      "to": [
+        56,
+        9,
+        27
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        26
+      ],
+      "to": [
+        56,
+        17,
+        27
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        26
+      ],
+      "to": [
+        56,
+        25,
+        27
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        28
+      ],
+      "to": [
+        17,
+        23,
+        34
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        28
+      ],
+      "to": [
+        54,
+        22,
+        34
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        34
+      ],
+      "to": [
+        13,
+        23,
+        34
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        8,
+        34
+      ],
+      "to": [
+        48,
+        22,
+        34
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        36
+      ],
+      "to": [
+        56,
+        9,
+        37
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        15,
+        36
+      ],
+      "to": [
+        56,
+        17,
+        37
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        36
+      ],
+      "to": [
+        56,
+        25,
+        37
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        38
+      ],
+      "to": [
+        17,
+        23,
+        44
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        38
+      ],
+      "to": [
+        54,
+        22,
+        44
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        44
+      ],
+      "to": [
+        13,
+        23,
+        44
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        8,
+        44
+      ],
+      "to": [
+        48,
+        22,
+        44
+      ],
+      "material": "white"
+    }
+  ]
+}

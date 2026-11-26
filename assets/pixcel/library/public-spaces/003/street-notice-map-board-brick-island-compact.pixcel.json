@@ -1,0 +1,552 @@
+{
+  "schemaVersion": 1,
+  "id": "street-notice-map-board-brick-island-compact",
+  "category": "public-space",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a07f60"
+    },
+    "darkwood": {
+      "kind": "wood",
+      "color": "#755943"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#929fa5"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#505d66"
+    },
+    "paved": {
+      "kind": "matte",
+      "color": "#ada99e"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#444d52"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbd7c8"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#647d91"
+    },
+    "brick": {
+      "kind": "matte",
+      "color": "#9f7060"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b29d7b"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#97b5bf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        2,
+        4,
+        0
+      ],
+      "to": [
+        28,
+        27,
+        2
+      ],
+      "material": "paved"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        3
+      ],
+      "to": [
+        6,
+        8,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        10,
+        3
+      ],
+      "to": [
+        5,
+        13,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        15,
+        3
+      ],
+      "to": [
+        6,
+        18,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        20,
+        3
+      ],
+      "to": [
+        5,
+        23,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        3
+      ],
+      "to": [
+        11,
+        8,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        3
+      ],
+      "to": [
+        10,
+        13,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        15,
+        3
+      ],
+      "to": [
+        11,
+        18,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        20,
+        3
+      ],
+      "to": [
+        10,
+        23,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        5,
+        3
+      ],
+      "to": [
+        16,
+        8,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        3
+      ],
+      "to": [
+        15,
+        13,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        15,
+        3
+      ],
+      "to": [
+        16,
+        18,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        20,
+        3
+      ],
+      "to": [
+        15,
+        23,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        5,
+        3
+      ],
+      "to": [
+        21,
+        8,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        10,
+        3
+      ],
+      "to": [
+        20,
+        13,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        15,
+        3
+      ],
+      "to": [
+        21,
+        18,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        20,
+        3
+      ],
+      "to": [
+        20,
+        23,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        5,
+        3
+      ],
+      "to": [
+        26,
+        8,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        10,
+        3
+      ],
+      "to": [
+        25,
+        13,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        15,
+        3
+      ],
+      "to": [
+        26,
+        18,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        20,
+        3
+      ],
+      "to": [
+        25,
+        23,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        5,
+        3
+      ],
+      "to": [
+        31,
+        8,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        10,
+        3
+      ],
+      "to": [
+        30,
+        13,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        15,
+        3
+      ],
+      "to": [
+        31,
+        18,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        20,
+        3
+      ],
+      "to": [
+        30,
+        23,
+        3
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        4
+      ],
+      "to": [
+        7,
+        11,
+        38
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        9,
+        4
+      ],
+      "to": [
+        25,
+        11,
+        38
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        17
+      ],
+      "to": [
+        26,
+        12,
+        35
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        12,
+        19
+      ],
+      "to": [
+        24,
+        12,
+        33
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        7,
+        36
+      ],
+      "to": [
+        27,
+        14,
+        38
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        12,
+        21
+      ],
+      "to": [
+        21,
+        12,
+        30
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        12,
+        29
+      ],
+      "to": [
+        20,
+        12,
+        24
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        8,
+        35
+      ],
+      "to": [
+        6,
+        14,
+        43
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        8,
+        35
+      ],
+      "to": [
+        27,
+        14,
+        43
+      ],
+      "material": "brick"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        42
+      ],
+      "to": [
+        26,
+        14,
+        44
+      ],
+      "material": "blue"
+    }
+  ]
+}

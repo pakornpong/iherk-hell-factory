@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "id": "recycle-return-can-vending-local-sorting-side-deck",
+  "category": "recycling",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "color": "#596975",
+      "kind": "metal"
+    },
+    "zinc": {
+      "color": "#9aa6a8",
+      "kind": "metal"
+    },
+    "slate": {
+      "color": "#424e55",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#647f96",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#c29f65",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#9e8569",
+      "kind": "matte"
+    },
+    "wood": {
+      "color": "#a7835e",
+      "kind": "wood"
+    },
+    "gray": {
+      "color": "#a4a09a",
+      "kind": "matte"
+    },
+    "paper": {
+      "color": "#d7cbb1",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#aa6957",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8eabb6",
+      "kind": "glass"
+    },
+    "cream": {
+      "color": "#d7d1c3",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        4
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        28,
+        24,
+        7
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        5
+      ],
+      "to": [
+        29,
+        25,
+        8
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        5
+      ],
+      "to": [
+        28,
+        7,
+        8
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        28,
+        24,
+        40
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        12
+      ],
+      "to": [
+        27,
+        25,
+        38
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        21
+      ],
+      "zFrom": 21,
+      "zTo": 25,
+      "radius": 4,
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        24,
+        19
+      ],
+      "to": [
+        16,
+        26,
+        27
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        26,
+        20
+      ],
+      "to": [
+        15,
+        26,
+        26
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        25,
+        29
+      ],
+      "to": [
+        25,
+        25,
+        34
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        25,
+        15
+      ],
+      "to": [
+        24,
+        26,
+        19
+      ],
+      "material": "cream"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "id": "warehouse-vertical-lift-carriage-compact-low-skid",
+  "category": "warehouse",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "zinc": {
+      "kind": "metal",
+      "color": "#9fa8aa"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#586673"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b444d"
+    },
+    "safety": {
+      "kind": "matte",
+      "color": "#bd9255"
+    },
+    "timber": {
+      "kind": "wood",
+      "color": "#a78564"
+    },
+    "kraft": {
+      "kind": "matte",
+      "color": "#b29979"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#d6d0bc"
+    },
+    "darkred": {
+      "kind": "matte",
+      "color": "#9b584a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#5e7489"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8ba8b6"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        29,
+        8,
+        2
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        29,
+        25,
+        3
+      ],
+      "material": "timber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        26,
+        7
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        7
+      ],
+      "to": [
+        8,
+        25,
+        40
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        7
+      ],
+      "to": [
+        28,
+        25,
+        40
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        40
+      ],
+      "to": [
+        28,
+        25,
+        42
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        15
+      ],
+      "to": [
+        25,
+        23,
+        18
+      ],
+      "material": "zinc"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        22,
+        8
+      ],
+      "to": [
+        28,
+        24,
+        9
+      ],
+      "material": "safety"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        18
+      ],
+      "to": [
+        24,
+        21,
+        24
+      ],
+      "material": "kraft"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        10,
+        24
+      ],
+      "to": [
+        18,
+        21,
+        24
+      ],
+      "material": "white"
+    }
+  ]
+}

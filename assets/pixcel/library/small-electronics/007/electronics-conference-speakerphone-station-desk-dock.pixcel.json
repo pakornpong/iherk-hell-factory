@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "id": "electronics-conference-speakerphone-station-desk-dock",
+  "category": "electronics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "charcoal": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#606e77"
+    },
+    "alloy": {
+      "kind": "metal",
+      "color": "#9facad"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd2bc"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#627e94"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a46151"
+    },
+    "tan": {
+      "kind": "matte",
+      "color": "#a59078"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a68058"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bda16c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab7"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#a8c1cf",
+      "glowRadius": 1,
+      "glowIntensity": 0.09
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        39,
+        25,
+        2
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        38,
+        24,
+        3
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        24,
+        2
+      ],
+      "to": [
+        13,
+        25,
+        3
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        15
+      ],
+      "zFrom": 4,
+      "zTo": 9,
+      "radius": 9,
+      "material": "charcoal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        15
+      ],
+      "zFrom": 9,
+      "zTo": 10,
+      "radius": 8,
+      "material": "alloy"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        15
+      ],
+      "zFrom": 10,
+      "zTo": 10,
+      "radius": 6,
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        20,
+        10
+      ],
+      "to": [
+        24,
+        22,
+        10
+      ],
+      "material": "screen"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        10
+      ],
+      "to": [
+        10,
+        15,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        13,
+        10
+      ],
+      "to": [
+        16,
+        15,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        13,
+        10
+      ],
+      "to": [
+        22,
+        15,
+        10
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        12,
+        5
+      ],
+      "to": [
+        38,
+        17,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        9,
+        8
+      ],
+      "to": [
+        38,
+        19,
+        16
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        19,
+        10
+      ],
+      "to": [
+        37,
+        19,
+        14
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        20,
+        10
+      ],
+      "to": [
+        37,
+        20,
+        10
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        20,
+        12
+      ],
+      "to": [
+        37,
+        20,
+        12
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        20,
+        14
+      ],
+      "to": [
+        37,
+        20,
+        14
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        23,
+        3
+      ],
+      "to": [
+        10,
+        26,
+        5
+      ],
+      "material": "alloy"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        26,
+        4
+      ],
+      "to": [
+        9,
+        26,
+        4
+      ],
+      "material": "screen"
+    }
+  ]
+}

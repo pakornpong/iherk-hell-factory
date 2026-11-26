@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "id": "home-utility-laundry-wringer-heavy-duty-drain-pan-utility-hookup",
+  "category": "home-appliance",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ivory": {
+      "kind": "matte",
+      "color": "#d9d4ca"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#aaa39a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#979fa2"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#67727b"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e454c"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8caab4"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a37653"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#89705d"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e4ddc8"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ad6555"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bb9b62"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        36,
+        26,
+        2
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        3
+      ],
+      "to": [
+        36,
+        6,
+        3
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        25,
+        3
+      ],
+      "to": [
+        36,
+        26,
+        3
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        25,
+        1
+      ],
+      "to": [
+        34,
+        28,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        35,
+        24,
+        34
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        35
+      ],
+      "to": [
+        34,
+        24,
+        37
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        37
+      ],
+      "to": [
+        8,
+        23,
+        48
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        8,
+        37
+      ],
+      "to": [
+        34,
+        23,
+        48
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        41
+      ],
+      "to": [
+        32,
+        18,
+        45
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        45
+      ],
+      "to": [
+        32,
+        18,
+        47
+      ],
+      "material": "paper"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        17,
+        43
+      ],
+      "to": [
+        36,
+        19,
+        45
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        4,
+        8
+      ],
+      "to": [
+        34,
+        5,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        4,
+        8
+      ],
+      "to": [
+        36,
+        5,
+        44
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        4,
+        42
+      ],
+      "to": [
+        36,
+        7,
+        44
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        6,
+        41
+      ],
+      "to": [
+        31,
+        8,
+        45
+      ],
+      "material": "gold"
+    }
+  ]
+}

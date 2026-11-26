@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "id": "plumbing-square-soak-tub-compact-assist-rail",
+  "category": "plumbing",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "white": {
+      "kind": "matte",
+      "color": "#dedbd1"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#ada69b"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a1aaae"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#87959e"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99c66"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#59636c"
+    },
+    "blue": {
+      "kind": "glass",
+      "color": "#9eafb4"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a17d5a"
+    },
+    "grout": {
+      "kind": "matte",
+      "color": "#7e7b75"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c3b5a2"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        26,
+        3
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        4
+      ],
+      "to": [
+        26,
+        26,
+        5
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        6
+      ],
+      "to": [
+        26,
+        6,
+        20
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        25,
+        6
+      ],
+      "to": [
+        26,
+        26,
+        20
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        6
+      ],
+      "to": [
+        5,
+        24,
+        20
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        6
+      ],
+      "to": [
+        26,
+        24,
+        20
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        19
+      ],
+      "to": [
+        26,
+        9,
+        20
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        19
+      ],
+      "to": [
+        26,
+        26,
+        20
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        10,
+        7
+      ],
+      "to": [
+        24,
+        22,
+        12
+      ],
+      "material": "white"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        17
+      ],
+      "zFrom": 6,
+      "zTo": 6,
+      "radius": 2,
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        3
+      ],
+      "to": [
+        5,
+        10,
+        28
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        3
+      ],
+      "to": [
+        5,
+        24,
+        28
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        27
+      ],
+      "to": [
+        5,
+        23,
+        29
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        7,
+        17
+      ],
+      "to": [
+        24,
+        12,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        8,
+        18
+      ],
+      "to": [
+        23,
+        9,
+        23
+      ],
+      "material": "steel"
+    }
+  ]
+}

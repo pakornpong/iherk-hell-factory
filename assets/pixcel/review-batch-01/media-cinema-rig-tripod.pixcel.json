@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "media-cinema-rig-tripod",
+  "category": "media",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "color": "#2d3443",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#879aaa",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#be5543",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#75bfce",
+      "kind": "glass"
+    },
+    "screen": {
+      "color": "#79e1ea",
+      "kind": "emissive",
+      "glowRadius": 1,
+      "glowIntensity": 0.24
+    },
+    "black": {
+      "color": "#202530",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        15,
+        16,
+        20
+      ],
+      "to": [
+        4,
+        24,
+        0
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        16,
+        20
+      ],
+      "to": [
+        5,
+        24,
+        0
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        0
+      ],
+      "to": [
+        5,
+        25,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        16,
+        20
+      ],
+      "to": [
+        26,
+        25,
+        0
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        16,
+        20
+      ],
+      "to": [
+        27,
+        25,
+        0
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        25,
+        0
+      ],
+      "to": [
+        27,
+        26,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        16,
+        20
+      ],
+      "to": [
+        15,
+        3,
+        0
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        16,
+        20
+      ],
+      "to": [
+        16,
+        3,
+        0
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        3,
+        0
+      ],
+      "to": [
+        16,
+        4,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        13,
+        19
+      ],
+      "to": [
+        18,
+        19,
+        23
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        24
+      ],
+      "to": [
+        23,
+        19,
+        32
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        18,
+        25
+      ],
+      "to": [
+        21,
+        25,
+        31
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        24,
+        26
+      ],
+      "to": [
+        20,
+        26,
+        31
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        13,
+        33
+      ],
+      "to": [
+        20,
+        14,
+        34
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        12,
+        35
+      ],
+      "to": [
+        12,
+        15,
+        35
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        12,
+        35
+      ],
+      "to": [
+        20,
+        15,
+        35
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        30
+      ],
+      "to": [
+        8,
+        17,
+        36
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        31
+      ],
+      "to": [
+        5,
+        16,
+        34
+      ],
+      "material": "screen"
+    }
+  ]
+}

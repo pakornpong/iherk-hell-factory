@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "clinical-equipment-eyewash-twin-nozzle-floor-pedestal",
+  "category": "medical",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "iron": {
+      "color": "#4c5962",
+      "kind": "metal"
+    },
+    "steel": {
+      "color": "#9aa8ac",
+      "kind": "metal"
+    },
+    "brass": {
+      "color": "#bda16d",
+      "kind": "metal"
+    },
+    "oak": {
+      "color": "#a97d56",
+      "kind": "wood"
+    },
+    "ivory": {
+      "color": "#dad6c9",
+      "kind": "matte"
+    },
+    "black": {
+      "color": "#303943",
+      "kind": "matte"
+    },
+    "slate": {
+      "color": "#677887",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#b49a79",
+      "kind": "matte"
+    },
+    "red": {
+      "color": "#ab5f50",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#d1ab5d",
+      "kind": "matte"
+    },
+    "textile": {
+      "color": "#8d8074",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#88aaba",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 0,
+      "zTo": 1,
+      "radius": 10,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        2
+      ],
+      "to": [
+        25,
+        25,
+        5
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 6,
+      "zTo": 24,
+      "radius": 3,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 24,
+      "zTo": 27,
+      "radius": 8,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 27,
+      "zTo": 27,
+      "radius": 6,
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        15,
+        27
+      ],
+      "to": [
+        11,
+        13,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        15,
+        27
+      ],
+      "to": [
+        19,
+        13,
+        32
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        12,
+        31
+      ],
+      "to": [
+        12,
+        14,
+        32
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        12,
+        31
+      ],
+      "to": [
+        20,
+        14,
+        32
+      ],
+      "material": "amber"
+    }
+  ]
+}

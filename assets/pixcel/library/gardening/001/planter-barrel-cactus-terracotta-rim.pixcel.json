@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "id": "planter-barrel-cactus-terracotta-rim",
+  "category": "gardening",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "soil": {
+      "kind": "matte",
+      "color": "#5d4635"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#597451"
+    },
+    "leafLight": {
+      "kind": "matte",
+      "color": "#7e915d"
+    },
+    "leafDark": {
+      "kind": "matte",
+      "color": "#424f3f"
+    },
+    "bark": {
+      "kind": "wood",
+      "color": "#82664b"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76851"
+    },
+    "limewash": {
+      "kind": "matte",
+      "color": "#ccc3af"
+    },
+    "cement": {
+      "kind": "matte",
+      "color": "#929183"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a18160"
+    },
+    "plum": {
+      "kind": "matte",
+      "color": "#9e657b"
+    },
+    "flower": {
+      "kind": "matte",
+      "color": "#d6ae54"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#5f6468"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 0,
+      "zTo": 1,
+      "radius": 6,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 2,
+      "zTo": 4,
+      "radius": 7,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 5,
+      "zTo": 8,
+      "radius": 8,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 9,
+      "zTo": 10,
+      "radius": 9,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 10,
+      "zTo": 10,
+      "radius": 7,
+      "material": "soil"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 11,
+      "zTo": 16,
+      "radius": 5,
+      "material": "leafDark"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 17,
+      "zTo": 23,
+      "radius": 6,
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 24,
+      "zTo": 26,
+      "radius": 4,
+      "material": "leafLight"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 27,
+      "zTo": 28,
+      "radius": 2,
+      "material": "flower"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        17,
+        15
+      ],
+      "to": [
+        19,
+        17,
+        23
+      ],
+      "material": "leafLight"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        17,
+        15
+      ],
+      "to": [
+        11,
+        17,
+        23
+      ],
+      "material": "leafLight"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        20,
+        15
+      ],
+      "to": [
+        16,
+        20,
+        23
+      ],
+      "material": "leafLight"
+    }
+  ]
+}

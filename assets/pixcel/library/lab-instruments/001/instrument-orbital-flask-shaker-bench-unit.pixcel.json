@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "id": "instrument-orbital-flask-shaker-bench-unit",
+  "category": "lab",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "cream": {
+      "kind": "matte",
+      "color": "#dbd8cf"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#303c4b"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8c9eae"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#788491"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#af6556"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#76b2bb"
+    },
+    "solution": {
+      "kind": "glass",
+      "color": "#7aa589"
+    },
+    "amber": {
+      "kind": "glass",
+      "color": "#d5a365"
+    },
+    "display": {
+      "kind": "emissive",
+      "color": "#a4bac9",
+      "glowRadius": 1,
+      "glowIntensity": 0.12
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        0
+      ],
+      "to": [
+        25,
+        24,
+        0
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        1
+      ],
+      "to": [
+        27,
+        26,
+        9
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        10
+      ],
+      "to": [
+        26,
+        25,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        11
+      ],
+      "zFrom": 13,
+      "zTo": 16,
+      "radius": 4,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        11
+      ],
+      "zFrom": 13,
+      "zTo": 14,
+      "radius": 3,
+      "material": "solution"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        11
+      ],
+      "zFrom": 17,
+      "zTo": 21,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        11
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        11
+      ],
+      "zFrom": 13,
+      "zTo": 16,
+      "radius": 4,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        11
+      ],
+      "zFrom": 13,
+      "zTo": 14,
+      "radius": 3,
+      "material": "solution"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        11
+      ],
+      "zFrom": 17,
+      "zTo": 21,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        21,
+        11
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        20
+      ],
+      "zFrom": 13,
+      "zTo": 16,
+      "radius": 4,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        20
+      ],
+      "zFrom": 13,
+      "zTo": 14,
+      "radius": 3,
+      "material": "amber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        20
+      ],
+      "zFrom": 17,
+      "zTo": 21,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        20
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        26,
+        5
+      ],
+      "to": [
+        21,
+        26,
+        8
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        26,
+        6
+      ],
+      "to": [
+        19,
+        26,
+        7
+      ],
+      "material": "display"
+    }
+  ]
+}

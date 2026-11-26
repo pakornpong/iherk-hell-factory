@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "id": "lounge-seat-channel-tufted-chaise-accent-platform-plinth",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a27955"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795743"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b8a06d"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#636c72"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#43464b"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#7a6759"
+    },
+    "piping": {
+      "kind": "matte",
+      "color": "#9d8570"
+    },
+    "pillow": {
+      "kind": "matte",
+      "color": "#d0b59a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        24,
+        24,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        25,
+        25,
+        3
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        4
+      ],
+      "to": [
+        25,
+        27,
+        10
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "slope",
+      "from": [
+        6,
+        6,
+        10
+      ],
+      "to": [
+        24,
+        13,
+        27
+      ],
+      "axis": "-Y",
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        13,
+        10
+      ],
+      "to": [
+        23,
+        15,
+        12
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        17,
+        10
+      ],
+      "to": [
+        23,
+        19,
+        12
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        21,
+        10
+      ],
+      "to": [
+        23,
+        23,
+        12
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        25,
+        10
+      ],
+      "to": [
+        23,
+        27,
+        12
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        12
+      ],
+      "to": [
+        9,
+        22,
+        18
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        14
+      ],
+      "to": [
+        23,
+        12,
+        19
+      ],
+      "material": "pillow"
+    }
+  ]
+}

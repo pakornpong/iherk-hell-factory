@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "id": "rec-pool-six-pocket-box-coinop",
+  "category": "recreation",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#b0855d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745444"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#38424c"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#839099"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded9c8"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a75b50"
+    },
+    "felt": {
+      "kind": "matte",
+      "color": "#526b83"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bb995d"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        1
+      ],
+      "to": [
+        54,
+        23,
+        17
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        6,
+        17
+      ],
+      "to": [
+        55,
+        24,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        23,
+        7
+      ],
+      "to": [
+        41,
+        24,
+        13
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        24,
+        9
+      ],
+      "to": [
+        38,
+        25,
+        11
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        12,
+        0
+      ],
+      "to": [
+        22,
+        20,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        12,
+        0
+      ],
+      "to": [
+        54,
+        20,
+        1
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        18
+      ],
+      "to": [
+        60,
+        26,
+        22
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        22
+      ],
+      "to": [
+        57,
+        23,
+        22
+      ],
+      "material": "felt"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        6,
+        8
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        31,
+        7
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        57,
+        8
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        6,
+        23
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        31,
+        24
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        57,
+        23
+      ],
+      "zFrom": 21,
+      "zTo": 22,
+      "radius": 2,
+      "material": "black"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        16
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        37,
+        14
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        39,
+        16
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        39,
+        12
+      ],
+      "zFrom": 23,
+      "zTo": 24,
+      "radius": 1,
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        13,
+        23
+      ],
+      "to": [
+        23,
+        15,
+        23
+      ],
+      "material": "oak"
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "id": "music-fixture-harp-practice-frame-solo-studio-platform",
+  "category": "musical-instruments",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a8825e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785b47"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3b424a"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#88949a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6adad"
+    },
+    "yellow": {
+      "kind": "metal",
+      "color": "#c1a164"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#a87b60"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dcd3be"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#8c6f5d"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657a8e"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a36153"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        29,
+        25,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        29,
+        9,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        3
+      ],
+      "to": [
+        29,
+        14,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        3
+      ],
+      "to": [
+        29,
+        19,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        3
+      ],
+      "to": [
+        29,
+        24,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        5
+      ],
+      "to": [
+        29,
+        24,
+        9
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        9
+      ],
+      "to": [
+        10,
+        13,
+        48
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        13,
+        47
+      ],
+      "to": [
+        26,
+        13,
+        34
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        13,
+        10
+      ],
+      "to": [
+        26,
+        13,
+        34
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        13,
+        14
+      ],
+      "to": [
+        11,
+        13,
+        45
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        13,
+        17
+      ],
+      "to": [
+        14,
+        13,
+        42
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        13,
+        21
+      ],
+      "to": [
+        17,
+        13,
+        40
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        13,
+        25
+      ],
+      "to": [
+        20,
+        13,
+        38
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        13,
+        29
+      ],
+      "to": [
+        23,
+        13,
+        36
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        13,
+        33
+      ],
+      "to": [
+        26,
+        13,
+        34
+      ],
+      "material": "yellow"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        10,
+        12
+      ],
+      "zFrom": 47,
+      "zTo": 49,
+      "radius": 2,
+      "material": "yellow"
+    }
+  ]
+}

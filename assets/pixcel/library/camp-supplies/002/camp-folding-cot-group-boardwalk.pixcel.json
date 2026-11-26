@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "id": "camp-folding-cot-group-boardwalk",
+  "category": "camping",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a3805e",
+      "kind": "wood"
+    },
+    "tan": {
+      "color": "#ae987d",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#d2c7af",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#627b90",
+      "kind": "matte"
+    },
+    "rust": {
+      "color": "#a86955",
+      "kind": "matte"
+    },
+    "olive": {
+      "color": "#737f64",
+      "kind": "matte"
+    },
+    "steel": {
+      "color": "#9ca8aa",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#596771",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#414a4f",
+      "kind": "matte"
+    },
+    "sand": {
+      "color": "#bdab8b",
+      "kind": "matte"
+    },
+    "earth": {
+      "color": "#8b755d",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#8daab8",
+      "kind": "glass"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        2
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        3
+      ],
+      "to": [
+        55,
+        9,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        3
+      ],
+      "to": [
+        55,
+        14,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        16,
+        3
+      ],
+      "to": [
+        55,
+        19,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        21,
+        3
+      ],
+      "to": [
+        55,
+        24,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        8,
+        5
+      ],
+      "to": [
+        7,
+        23,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        23,
+        5
+      ],
+      "to": [
+        7,
+        8,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        8,
+        5
+      ],
+      "to": [
+        52,
+        23,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        52,
+        23,
+        5
+      ],
+      "to": [
+        52,
+        8,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        16
+      ],
+      "to": [
+        54,
+        24,
+        18
+      ],
+      "material": "tan"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        18
+      ],
+      "to": [
+        14,
+        23,
+        20
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        8,
+        18
+      ],
+      "to": [
+        53,
+        23,
+        21
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        19
+      ],
+      "to": [
+        13,
+        22,
+        22
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        17,
+        8
+      ],
+      "to": [
+        52,
+        23,
+        14
+      ],
+      "material": "olive"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        18,
+        14
+      ],
+      "to": [
+        51,
+        22,
+        15
+      ],
+      "material": "tan"
+    }
+  ]
+}

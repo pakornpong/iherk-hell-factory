@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "id": "divider-acoustic-channels-straight-room-rolling-rail",
+  "category": "room-divider",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#aa8159"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#755541"
+    },
+    "gray": {
+      "kind": "metal",
+      "color": "#909c9f"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3e4851"
+    },
+    "felt": {
+      "kind": "matte",
+      "color": "#897e72"
+    },
+    "denim": {
+      "kind": "matte",
+      "color": "#656f80"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c9bfac"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ded6c3"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b19b6c"
+    },
+    "frost": {
+      "kind": "glass",
+      "color": "#a4adb1"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        0
+      ],
+      "to": [
+        7,
+        10,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        18,
+        0
+      ],
+      "to": [
+        7,
+        20,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        56,
+        8,
+        0
+      ],
+      "to": [
+        58,
+        10,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        56,
+        18,
+        0
+      ],
+      "to": [
+        58,
+        20,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        2
+      ],
+      "to": [
+        7,
+        20,
+        4
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        56,
+        8,
+        2
+      ],
+      "to": [
+        58,
+        20,
+        4
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        4
+      ],
+      "to": [
+        58,
+        14,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        5
+      ],
+      "to": [
+        58,
+        14,
+        37
+      ],
+      "material": "felt"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        15,
+        8
+      ],
+      "to": [
+        6,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        15,
+        8
+      ],
+      "to": [
+        10,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        15,
+        8
+      ],
+      "to": [
+        14,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        15,
+        8
+      ],
+      "to": [
+        18,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        15,
+        8
+      ],
+      "to": [
+        22,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        15,
+        8
+      ],
+      "to": [
+        26,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        15,
+        8
+      ],
+      "to": [
+        30,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        15,
+        8
+      ],
+      "to": [
+        34,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        15,
+        8
+      ],
+      "to": [
+        38,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        15,
+        8
+      ],
+      "to": [
+        42,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        15,
+        8
+      ],
+      "to": [
+        46,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        15,
+        8
+      ],
+      "to": [
+        50,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        15,
+        8
+      ],
+      "to": [
+        54,
+        15,
+        35
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        4
+      ],
+      "to": [
+        6,
+        14,
+        37
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        57,
+        12,
+        4
+      ],
+      "to": [
+        58,
+        14,
+        37
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        37
+      ],
+      "to": [
+        58,
+        14,
+        38
+      ],
+      "material": "black"
+    }
+  ]
+}

@@ -1,0 +1,758 @@
+[
+  {
+    "id": "winter-ski-rental-upright-rack-compact-snowpack",
+    "category": "winter-service",
+    "file": "001/winter-ski-rental-upright-rack-compact-snowpack.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "winter-ski-rental-upright-rack-compact-ice-deck",
+    "category": "winter-service",
+    "file": "001/winter-ski-rental-upright-rack-compact-ice-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "winter-ski-rental-upright-rack-compact-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "001/winter-ski-rental-upright-rack-compact-lodge-boardwalk.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "winter-ski-rental-upright-rack-compact-service-cart",
+    "category": "winter-service",
+    "file": "001/winter-ski-rental-upright-rack-compact-service-cart.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "winter-ski-rental-upright-rack-compact-gritted-step",
+    "category": "winter-service",
+    "file": "001/winter-ski-rental-upright-rack-compact-gritted-step.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "winter-ski-rental-upright-rack-lodge-wide-snowpack",
+    "category": "winter-service",
+    "file": "001/winter-ski-rental-upright-rack-lodge-wide-snowpack.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "winter-ski-rental-upright-rack-lodge-wide-ice-deck",
+    "category": "winter-service",
+    "file": "001/winter-ski-rental-upright-rack-lodge-wide-ice-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "winter-ski-rental-upright-rack-lodge-wide-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "001/winter-ski-rental-upright-rack-lodge-wide-lodge-boardwalk.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "winter-ski-rental-upright-rack-lodge-wide-service-cart",
+    "category": "winter-service",
+    "file": "001/winter-ski-rental-upright-rack-lodge-wide-service-cart.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "winter-ski-rental-upright-rack-lodge-wide-gritted-step",
+    "category": "winter-service",
+    "file": "001/winter-ski-rental-upright-rack-lodge-wide-gritted-step.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "winter-snowboard-benching-clamps-compact-snowpack",
+    "category": "winter-service",
+    "file": "001/winter-snowboard-benching-clamps-compact-snowpack.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "winter-snowboard-benching-clamps-compact-ice-deck",
+    "category": "winter-service",
+    "file": "001/winter-snowboard-benching-clamps-compact-ice-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "winter-snowboard-benching-clamps-compact-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "001/winter-snowboard-benching-clamps-compact-lodge-boardwalk.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "winter-snowboard-benching-clamps-compact-service-cart",
+    "category": "winter-service",
+    "file": "001/winter-snowboard-benching-clamps-compact-service-cart.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "winter-snowboard-benching-clamps-compact-gritted-step",
+    "category": "winter-service",
+    "file": "001/winter-snowboard-benching-clamps-compact-gritted-step.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "winter-snowboard-benching-clamps-lodge-wide-snowpack",
+    "category": "winter-service",
+    "file": "001/winter-snowboard-benching-clamps-lodge-wide-snowpack.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "winter-snowboard-benching-clamps-lodge-wide-ice-deck",
+    "category": "winter-service",
+    "file": "001/winter-snowboard-benching-clamps-lodge-wide-ice-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "winter-snowboard-benching-clamps-lodge-wide-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "001/winter-snowboard-benching-clamps-lodge-wide-lodge-boardwalk.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "winter-snowboard-benching-clamps-lodge-wide-service-cart",
+    "category": "winter-service",
+    "file": "001/winter-snowboard-benching-clamps-lodge-wide-service-cart.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "winter-snowboard-benching-clamps-lodge-wide-gritted-step",
+    "category": "winter-service",
+    "file": "001/winter-snowboard-benching-clamps-lodge-wide-gritted-step.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "winter-winter-boot-dryer-locker-compact-snowpack",
+    "category": "winter-service",
+    "file": "002/winter-winter-boot-dryer-locker-compact-snowpack.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "winter-winter-boot-dryer-locker-compact-ice-deck",
+    "category": "winter-service",
+    "file": "002/winter-winter-boot-dryer-locker-compact-ice-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "winter-winter-boot-dryer-locker-compact-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "002/winter-winter-boot-dryer-locker-compact-lodge-boardwalk.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "winter-winter-boot-dryer-locker-compact-service-cart",
+    "category": "winter-service",
+    "file": "002/winter-winter-boot-dryer-locker-compact-service-cart.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "winter-winter-boot-dryer-locker-compact-gritted-step",
+    "category": "winter-service",
+    "file": "002/winter-winter-boot-dryer-locker-compact-gritted-step.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "winter-winter-boot-dryer-locker-lodge-wide-snowpack",
+    "category": "winter-service",
+    "file": "002/winter-winter-boot-dryer-locker-lodge-wide-snowpack.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "winter-winter-boot-dryer-locker-lodge-wide-ice-deck",
+    "category": "winter-service",
+    "file": "002/winter-winter-boot-dryer-locker-lodge-wide-ice-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "winter-winter-boot-dryer-locker-lodge-wide-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "002/winter-winter-boot-dryer-locker-lodge-wide-lodge-boardwalk.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "winter-winter-boot-dryer-locker-lodge-wide-service-cart",
+    "category": "winter-service",
+    "file": "002/winter-winter-boot-dryer-locker-lodge-wide-service-cart.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "winter-winter-boot-dryer-locker-lodge-wide-gritted-step",
+    "category": "winter-service",
+    "file": "002/winter-winter-boot-dryer-locker-lodge-wide-gritted-step.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "winter-ice-rink-scraper-cart-compact-snowpack",
+    "category": "winter-service",
+    "file": "002/winter-ice-rink-scraper-cart-compact-snowpack.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "winter-ice-rink-scraper-cart-compact-ice-deck",
+    "category": "winter-service",
+    "file": "002/winter-ice-rink-scraper-cart-compact-ice-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "winter-ice-rink-scraper-cart-compact-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "002/winter-ice-rink-scraper-cart-compact-lodge-boardwalk.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "winter-ice-rink-scraper-cart-compact-service-cart",
+    "category": "winter-service",
+    "file": "002/winter-ice-rink-scraper-cart-compact-service-cart.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "winter-ice-rink-scraper-cart-compact-gritted-step",
+    "category": "winter-service",
+    "file": "002/winter-ice-rink-scraper-cart-compact-gritted-step.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "winter-ice-rink-scraper-cart-lodge-wide-snowpack",
+    "category": "winter-service",
+    "file": "002/winter-ice-rink-scraper-cart-lodge-wide-snowpack.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "winter-ice-rink-scraper-cart-lodge-wide-ice-deck",
+    "category": "winter-service",
+    "file": "002/winter-ice-rink-scraper-cart-lodge-wide-ice-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "winter-ice-rink-scraper-cart-lodge-wide-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "002/winter-ice-rink-scraper-cart-lodge-wide-lodge-boardwalk.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "winter-ice-rink-scraper-cart-lodge-wide-service-cart",
+    "category": "winter-service",
+    "file": "002/winter-ice-rink-scraper-cart-lodge-wide-service-cart.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "winter-ice-rink-scraper-cart-lodge-wide-gritted-step",
+    "category": "winter-service",
+    "file": "002/winter-ice-rink-scraper-cart-lodge-wide-gritted-step.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "winter-compact-snowblower-compact-snowpack",
+    "category": "winter-service",
+    "file": "003/winter-compact-snowblower-compact-snowpack.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "winter-compact-snowblower-compact-ice-deck",
+    "category": "winter-service",
+    "file": "003/winter-compact-snowblower-compact-ice-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "winter-compact-snowblower-compact-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "003/winter-compact-snowblower-compact-lodge-boardwalk.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "winter-compact-snowblower-compact-gritted-step",
+    "category": "winter-service",
+    "file": "003/winter-compact-snowblower-compact-gritted-step.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "winter-compact-snowblower-lodge-wide-snowpack",
+    "category": "winter-service",
+    "file": "003/winter-compact-snowblower-lodge-wide-snowpack.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "winter-compact-snowblower-lodge-wide-ice-deck",
+    "category": "winter-service",
+    "file": "003/winter-compact-snowblower-lodge-wide-ice-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "winter-compact-snowblower-lodge-wide-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "003/winter-compact-snowblower-lodge-wide-lodge-boardwalk.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "winter-compact-snowblower-lodge-wide-gritted-step",
+    "category": "winter-service",
+    "file": "003/winter-compact-snowblower-lodge-wide-gritted-step.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "winter-field-avalanche-safety-post-compact-snowpack",
+    "category": "winter-service",
+    "file": "003/winter-field-avalanche-safety-post-compact-snowpack.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "winter-field-avalanche-safety-post-compact-ice-deck",
+    "category": "winter-service",
+    "file": "003/winter-field-avalanche-safety-post-compact-ice-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "winter-field-avalanche-safety-post-compact-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "003/winter-field-avalanche-safety-post-compact-lodge-boardwalk.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "winter-field-avalanche-safety-post-compact-service-cart",
+    "category": "winter-service",
+    "file": "003/winter-field-avalanche-safety-post-compact-service-cart.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "winter-field-avalanche-safety-post-compact-gritted-step",
+    "category": "winter-service",
+    "file": "003/winter-field-avalanche-safety-post-compact-gritted-step.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "winter-field-avalanche-safety-post-lodge-wide-snowpack",
+    "category": "winter-service",
+    "file": "003/winter-field-avalanche-safety-post-lodge-wide-snowpack.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "winter-field-avalanche-safety-post-lodge-wide-ice-deck",
+    "category": "winter-service",
+    "file": "003/winter-field-avalanche-safety-post-lodge-wide-ice-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "winter-field-avalanche-safety-post-lodge-wide-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "003/winter-field-avalanche-safety-post-lodge-wide-lodge-boardwalk.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "winter-field-avalanche-safety-post-lodge-wide-service-cart",
+    "category": "winter-service",
+    "file": "003/winter-field-avalanche-safety-post-lodge-wide-service-cart.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "winter-field-avalanche-safety-post-lodge-wide-gritted-step",
+    "category": "winter-service",
+    "file": "003/winter-field-avalanche-safety-post-lodge-wide-gritted-step.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "winter-wood-sled-and-rope-compact-snowpack",
+    "category": "winter-service",
+    "file": "003/winter-wood-sled-and-rope-compact-snowpack.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "winter-wood-sled-and-rope-compact-ice-deck",
+    "category": "winter-service",
+    "file": "003/winter-wood-sled-and-rope-compact-ice-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "winter-wood-sled-and-rope-compact-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "004/winter-wood-sled-and-rope-compact-lodge-boardwalk.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "winter-wood-sled-and-rope-compact-service-cart",
+    "category": "winter-service",
+    "file": "004/winter-wood-sled-and-rope-compact-service-cart.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "winter-wood-sled-and-rope-compact-gritted-step",
+    "category": "winter-service",
+    "file": "004/winter-wood-sled-and-rope-compact-gritted-step.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "winter-wood-sled-and-rope-lodge-wide-snowpack",
+    "category": "winter-service",
+    "file": "004/winter-wood-sled-and-rope-lodge-wide-snowpack.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "winter-wood-sled-and-rope-lodge-wide-ice-deck",
+    "category": "winter-service",
+    "file": "004/winter-wood-sled-and-rope-lodge-wide-ice-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "winter-wood-sled-and-rope-lodge-wide-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "004/winter-wood-sled-and-rope-lodge-wide-lodge-boardwalk.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "winter-wood-sled-and-rope-lodge-wide-service-cart",
+    "category": "winter-service",
+    "file": "004/winter-wood-sled-and-rope-lodge-wide-service-cart.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "winter-wood-sled-and-rope-lodge-wide-gritted-step",
+    "category": "winter-service",
+    "file": "004/winter-wood-sled-and-rope-lodge-wide-gritted-step.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "winter-glove-warming-lockers-compact-snowpack",
+    "category": "winter-service",
+    "file": "004/winter-glove-warming-lockers-compact-snowpack.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "winter-glove-warming-lockers-compact-ice-deck",
+    "category": "winter-service",
+    "file": "004/winter-glove-warming-lockers-compact-ice-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "winter-glove-warming-lockers-compact-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "004/winter-glove-warming-lockers-compact-lodge-boardwalk.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "winter-glove-warming-lockers-compact-service-cart",
+    "category": "winter-service",
+    "file": "004/winter-glove-warming-lockers-compact-service-cart.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "winter-glove-warming-lockers-compact-gritted-step",
+    "category": "winter-service",
+    "file": "004/winter-glove-warming-lockers-compact-gritted-step.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "winter-glove-warming-lockers-lodge-wide-snowpack",
+    "category": "winter-service",
+    "file": "004/winter-glove-warming-lockers-lodge-wide-snowpack.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "winter-glove-warming-lockers-lodge-wide-ice-deck",
+    "category": "winter-service",
+    "file": "004/winter-glove-warming-lockers-lodge-wide-ice-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "winter-glove-warming-lockers-lodge-wide-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "004/winter-glove-warming-lockers-lodge-wide-lodge-boardwalk.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "winter-glove-warming-lockers-lodge-wide-service-cart",
+    "category": "winter-service",
+    "file": "004/winter-glove-warming-lockers-lodge-wide-service-cart.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "winter-glove-warming-lockers-lodge-wide-gritted-step",
+    "category": "winter-service",
+    "file": "004/winter-glove-warming-lockers-lodge-wide-gritted-step.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "winter-ice-rescue-ring-rack-compact-snowpack",
+    "category": "winter-service",
+    "file": "004/winter-ice-rescue-ring-rack-compact-snowpack.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "winter-ice-rescue-ring-rack-compact-ice-deck",
+    "category": "winter-service",
+    "file": "004/winter-ice-rescue-ring-rack-compact-ice-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "winter-ice-rescue-ring-rack-compact-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "005/winter-ice-rescue-ring-rack-compact-lodge-boardwalk.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "winter-ice-rescue-ring-rack-compact-service-cart",
+    "category": "winter-service",
+    "file": "005/winter-ice-rescue-ring-rack-compact-service-cart.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "winter-ice-rescue-ring-rack-compact-gritted-step",
+    "category": "winter-service",
+    "file": "005/winter-ice-rescue-ring-rack-compact-gritted-step.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "winter-ice-rescue-ring-rack-lodge-wide-snowpack",
+    "category": "winter-service",
+    "file": "005/winter-ice-rescue-ring-rack-lodge-wide-snowpack.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "winter-ice-rescue-ring-rack-lodge-wide-ice-deck",
+    "category": "winter-service",
+    "file": "005/winter-ice-rescue-ring-rack-lodge-wide-ice-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "winter-ice-rescue-ring-rack-lodge-wide-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "005/winter-ice-rescue-ring-rack-lodge-wide-lodge-boardwalk.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "winter-ice-rescue-ring-rack-lodge-wide-service-cart",
+    "category": "winter-service",
+    "file": "005/winter-ice-rescue-ring-rack-lodge-wide-service-cart.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "winter-ice-rescue-ring-rack-lodge-wide-gritted-step",
+    "category": "winter-service",
+    "file": "005/winter-ice-rescue-ring-rack-lodge-wide-gritted-step.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "winter-insulated-lodge-drink-station-compact-snowpack",
+    "category": "winter-service",
+    "file": "005/winter-insulated-lodge-drink-station-compact-snowpack.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "winter-insulated-lodge-drink-station-compact-ice-deck",
+    "category": "winter-service",
+    "file": "005/winter-insulated-lodge-drink-station-compact-ice-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "winter-insulated-lodge-drink-station-compact-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "005/winter-insulated-lodge-drink-station-compact-lodge-boardwalk.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "winter-insulated-lodge-drink-station-compact-service-cart",
+    "category": "winter-service",
+    "file": "005/winter-insulated-lodge-drink-station-compact-service-cart.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "winter-insulated-lodge-drink-station-compact-gritted-step",
+    "category": "winter-service",
+    "file": "005/winter-insulated-lodge-drink-station-compact-gritted-step.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "winter-insulated-lodge-drink-station-lodge-wide-snowpack",
+    "category": "winter-service",
+    "file": "005/winter-insulated-lodge-drink-station-lodge-wide-snowpack.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "winter-insulated-lodge-drink-station-lodge-wide-ice-deck",
+    "category": "winter-service",
+    "file": "005/winter-insulated-lodge-drink-station-lodge-wide-ice-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "winter-insulated-lodge-drink-station-lodge-wide-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "005/winter-insulated-lodge-drink-station-lodge-wide-lodge-boardwalk.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "winter-insulated-lodge-drink-station-lodge-wide-service-cart",
+    "category": "winter-service",
+    "file": "005/winter-insulated-lodge-drink-station-lodge-wide-service-cart.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "winter-insulated-lodge-drink-station-lodge-wide-gritted-step",
+    "category": "winter-service",
+    "file": "005/winter-insulated-lodge-drink-station-lodge-wide-gritted-step.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "winter-frosted-salt-bin-and-scoop-compact-snowpack",
+    "category": "winter-service",
+    "file": "005/winter-frosted-salt-bin-and-scoop-compact-snowpack.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "winter-frosted-salt-bin-and-scoop-compact-ice-deck",
+    "category": "winter-service",
+    "file": "005/winter-frosted-salt-bin-and-scoop-compact-ice-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "winter-frosted-salt-bin-and-scoop-compact-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "006/winter-frosted-salt-bin-and-scoop-compact-lodge-boardwalk.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "winter-frosted-salt-bin-and-scoop-compact-service-cart",
+    "category": "winter-service",
+    "file": "006/winter-frosted-salt-bin-and-scoop-compact-service-cart.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "winter-frosted-salt-bin-and-scoop-compact-gritted-step",
+    "category": "winter-service",
+    "file": "006/winter-frosted-salt-bin-and-scoop-compact-gritted-step.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "winter-frosted-salt-bin-and-scoop-lodge-wide-snowpack",
+    "category": "winter-service",
+    "file": "006/winter-frosted-salt-bin-and-scoop-lodge-wide-snowpack.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "winter-frosted-salt-bin-and-scoop-lodge-wide-ice-deck",
+    "category": "winter-service",
+    "file": "006/winter-frosted-salt-bin-and-scoop-lodge-wide-ice-deck.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "winter-frosted-salt-bin-and-scoop-lodge-wide-lodge-boardwalk",
+    "category": "winter-service",
+    "file": "006/winter-frosted-salt-bin-and-scoop-lodge-wide-lodge-boardwalk.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "winter-frosted-salt-bin-and-scoop-lodge-wide-service-cart",
+    "category": "winter-service",
+    "file": "006/winter-frosted-salt-bin-and-scoop-lodge-wide-service-cart.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "winter-frosted-salt-bin-and-scoop-lodge-wide-gritted-step",
+    "category": "winter-service",
+    "file": "006/winter-frosted-salt-bin-and-scoop-lodge-wide-gritted-step.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 8
+  }
+]

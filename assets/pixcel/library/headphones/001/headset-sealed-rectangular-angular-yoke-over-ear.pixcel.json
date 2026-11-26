@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "id": "headset-sealed-rectangular-angular-yoke-over-ear",
+  "category": "electronics",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#788e9f"
+    },
+    "leather": {
+      "kind": "matte",
+      "color": "#303c4b"
+    },
+    "cushion": {
+      "kind": "matte",
+      "color": "#5e6b7d"
+    },
+    "mesh": {
+      "kind": "matte",
+      "color": "#929498"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c3a25d"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#34363c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        3
+      ],
+      "to": [
+        7,
+        21,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        2
+      ],
+      "to": [
+        7,
+        19,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        4
+      ],
+      "to": [
+        7,
+        20,
+        13
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        9,
+        3
+      ],
+      "to": [
+        26,
+        21,
+        14
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        2
+      ],
+      "to": [
+        26,
+        19,
+        15
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        10,
+        4
+      ],
+      "to": [
+        26,
+        20,
+        13
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        4
+      ],
+      "to": [
+        9,
+        20,
+        14
+      ],
+      "material": "cushion"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        10,
+        4
+      ],
+      "to": [
+        23,
+        20,
+        14
+      ],
+      "material": "cushion"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        13,
+        12
+      ],
+      "to": [
+        6,
+        16,
+        21
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        13,
+        12
+      ],
+      "to": [
+        26,
+        16,
+        21
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        14,
+        21
+      ],
+      "to": [
+        11,
+        14,
+        29
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        14,
+        21
+      ],
+      "to": [
+        19,
+        14,
+        29
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        12,
+        28
+      ],
+      "to": [
+        20,
+        17,
+        30
+      ],
+      "material": "leather"
+    }
+  ]
+}

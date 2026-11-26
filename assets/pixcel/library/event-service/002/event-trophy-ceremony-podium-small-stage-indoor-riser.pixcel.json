@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "id": "event-trophy-ceremony-podium-small-stage-indoor-riser",
+  "category": "events",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#99a4a7"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#59656e"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#3f494f"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a8835e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#755945"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#bcae9a"
+    },
+    "offwhite": {
+      "kind": "matte",
+      "color": "#ddd4bf"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#657c93"
+    },
+    "terra": {
+      "kind": "matte",
+      "color": "#a66453"
+    },
+    "gold": {
+      "kind": "metal",
+      "color": "#bea16b"
+    },
+    "display": {
+      "kind": "glass",
+      "color": "#92acba"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        26,
+        26,
+        2
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        25,
+        25,
+        3
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        14,
+        24,
+        14
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        7,
+        4
+      ],
+      "to": [
+        25,
+        24,
+        20
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        14,
+        24,
+        15
+      ],
+      "material": "offwhite"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        7,
+        20
+      ],
+      "to": [
+        25,
+        24,
+        21
+      ],
+      "material": "offwhite"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        15
+      ],
+      "zFrom": 22,
+      "zTo": 24,
+      "radius": 2,
+      "material": "gold"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        15
+      ],
+      "zFrom": 24,
+      "zTo": 28,
+      "radius": 1,
+      "material": "gold"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        15
+      ],
+      "zFrom": 28,
+      "zTo": 32,
+      "radius": 3,
+      "material": "gold"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        15,
+        31
+      ],
+      "to": [
+        15,
+        15,
+        33
+      ],
+      "material": "gold"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        15,
+        31
+      ],
+      "to": [
+        25,
+        15,
+        33
+      ],
+      "material": "gold"
+    }
+  ]
+}

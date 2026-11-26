@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "id": "gym-equipment-cable-pulley-platform-rubber",
+  "category": "fitness",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#94a0a9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#323b45"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#47535b"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#65758a"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#4e697f"
+    },
+    "vinyl": {
+      "kind": "matte",
+      "color": "#354f65"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a3534b"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#ba9d65"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        0
+      ],
+      "to": [
+        59,
+        26,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        2
+      ],
+      "to": [
+        58,
+        7,
+        2
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        3
+      ],
+      "to": [
+        12,
+        19,
+        42
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        5
+      ],
+      "to": [
+        14,
+        19,
+        16
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        7
+      ],
+      "to": [
+        14,
+        20,
+        7
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        10
+      ],
+      "to": [
+        14,
+        20,
+        10
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        13
+      ],
+      "to": [
+        14,
+        20,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        11,
+        3
+      ],
+      "to": [
+        54,
+        19,
+        42
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        12,
+        5
+      ],
+      "to": [
+        56,
+        19,
+        16
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        20,
+        7
+      ],
+      "to": [
+        56,
+        20,
+        7
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        20,
+        10
+      ],
+      "to": [
+        56,
+        20,
+        10
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        20,
+        13
+      ],
+      "to": [
+        56,
+        20,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        42
+      ],
+      "to": [
+        54,
+        19,
+        44
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        16,
+        40
+      ],
+      "to": [
+        22,
+        19,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        50,
+        16,
+        40
+      ],
+      "to": [
+        42,
+        19,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        18,
+        21
+      ],
+      "to": [
+        24,
+        20,
+        22
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        18,
+        21
+      ],
+      "to": [
+        44,
+        20,
+        22
+      ],
+      "material": "rubber"
+    }
+  ]
+}

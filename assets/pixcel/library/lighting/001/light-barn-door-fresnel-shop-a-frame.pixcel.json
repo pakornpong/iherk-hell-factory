@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "id": "light-barn-door-fresnel-shop-a-frame",
+  "category": "lighting",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "black": {
+      "kind": "matte",
+      "color": "#323a47"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#8599a8"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99258"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a95548"
+    },
+    "case": {
+      "kind": "matte",
+      "color": "#4c6872"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#b0c3cb"
+    },
+    "lamp": {
+      "kind": "emissive",
+      "color": "#fff1ca",
+      "glowRadius": 1,
+      "glowIntensity": 0.2
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        7,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        0
+      ],
+      "to": [
+        27,
+        26,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        15,
+        14,
+        30
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        24,
+        0
+      ],
+      "to": [
+        15,
+        14,
+        30
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        7,
+        0
+      ],
+      "to": [
+        15,
+        14,
+        30
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        24,
+        0
+      ],
+      "to": [
+        15,
+        14,
+        30
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        12,
+        29
+      ],
+      "to": [
+        17,
+        16,
+        36
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        34
+      ],
+      "to": [
+        21,
+        19,
+        43
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        19,
+        35
+      ],
+      "to": [
+        19,
+        20,
+        42
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        20,
+        36
+      ],
+      "to": [
+        18,
+        20,
+        41
+      ],
+      "material": "lamp"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        18,
+        34
+      ],
+      "to": [
+        10,
+        24,
+        43
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        18,
+        34
+      ],
+      "to": [
+        22,
+        24,
+        43
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        18,
+        43
+      ],
+      "to": [
+        20,
+        24,
+        44
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        18,
+        33
+      ],
+      "to": [
+        20,
+        23,
+        34
+      ],
+      "material": "black"
+    }
+  ]
+}

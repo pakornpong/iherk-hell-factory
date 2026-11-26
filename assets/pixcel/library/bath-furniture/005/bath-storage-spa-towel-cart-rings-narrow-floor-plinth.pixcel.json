@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "id": "bath-storage-spa-towel-cart-rings-narrow-floor-plinth",
+  "category": "bathroom",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a6815e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#775a48"
+    },
+    "paint": {
+      "kind": "matte",
+      "color": "#68777f"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c9baab"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5e7182"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#dad5c9"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#9da9ad"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#54616d"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b29c70"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a0b3b7"
+    },
+    "rose": {
+      "kind": "matte",
+      "color": "#a87976"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#9d6f58"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        25,
+        24,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        3
+      ],
+      "to": [
+        26,
+        25,
+        3
+      ],
+      "material": "paint"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        26,
+        25,
+        7
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        5,
+        7
+      ],
+      "zFrom": 7,
+      "zTo": 33,
+      "radius": 1,
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        5,
+        23
+      ],
+      "zFrom": 7,
+      "zTo": 33,
+      "radius": 1,
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        7
+      ],
+      "zFrom": 7,
+      "zTo": 33,
+      "radius": 1,
+      "material": "chrome"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        23
+      ],
+      "zFrom": 7,
+      "zTo": 33,
+      "radius": 1,
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        14
+      ],
+      "to": [
+        25,
+        24,
+        15
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        26
+      ],
+      "to": [
+        25,
+        24,
+        27
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        14
+      ],
+      "zFrom": 16,
+      "zTo": 21,
+      "radius": 3,
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        14
+      ],
+      "zFrom": 27,
+      "zTo": 32,
+      "radius": 3,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        14
+      ],
+      "zFrom": 16,
+      "zTo": 21,
+      "radius": 3,
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        16,
+        14
+      ],
+      "zFrom": 27,
+      "zTo": 32,
+      "radius": 3,
+      "material": "ivory"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        14
+      ],
+      "zFrom": 16,
+      "zTo": 21,
+      "radius": 3,
+      "material": "linen"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        22,
+        14
+      ],
+      "zFrom": 27,
+      "zTo": 32,
+      "radius": 3,
+      "material": "ivory"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        8,
+        32
+      ],
+      "to": [
+        24,
+        24,
+        32
+      ],
+      "material": "chrome"
+    }
+  ]
+}

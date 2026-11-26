@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "id": "growhouse-tomato-vine-support-single-stone-station",
+  "category": "horticulture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a17f5c"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9ea9a8"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#606b73"
+    },
+    "soil": {
+      "kind": "matte",
+      "color": "#655142"
+    },
+    "fern": {
+      "kind": "matte",
+      "color": "#627c58"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#809664"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#5d7388"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76b56"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c4a267"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#d8ccb6"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#91aeb9"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#424a4e"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        30,
+        26,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        4
+      ],
+      "to": [
+        29,
+        25,
+        4
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        5
+      ],
+      "to": [
+        30,
+        24,
+        10
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        10
+      ],
+      "to": [
+        28,
+        22,
+        10
+      ],
+      "material": "soil"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        11
+      ],
+      "to": [
+        8,
+        12,
+        33
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        11,
+        11
+      ],
+      "to": [
+        28,
+        12,
+        33
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        33
+      ],
+      "to": [
+        28,
+        12,
+        34
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        16,
+        11
+      ],
+      "to": [
+        9,
+        12,
+        33
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        14,
+        16
+      ],
+      "to": [
+        12,
+        16,
+        21
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        9,
+        13,
+        23
+      ],
+      "to": [
+        6,
+        15,
+        27
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        16
+      ],
+      "zFrom": 19,
+      "zTo": 20,
+      "radius": 1,
+      "material": "clay"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        16,
+        11
+      ],
+      "to": [
+        17,
+        12,
+        33
+      ],
+      "material": "fern"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        14,
+        16
+      ],
+      "to": [
+        20,
+        16,
+        21
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        13,
+        23
+      ],
+      "to": [
+        14,
+        15,
+        27
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        19,
+        16
+      ],
+      "zFrom": 19,
+      "zTo": 20,
+      "radius": 1,
+      "material": "clay"
+    }
+  ]
+}

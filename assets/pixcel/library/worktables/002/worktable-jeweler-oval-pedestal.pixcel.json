@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "id": "worktable-jeweler-oval-pedestal",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#bb8250"
+    },
+    "shaded": {
+      "kind": "wood",
+      "color": "#87563e"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#465462"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6bac4"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#b3aa98"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b95142"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#293343"
+    },
+    "ceramic": {
+      "kind": "matte",
+      "color": "#e3e3d7"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#e5ac54"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        31,
+        15
+      ],
+      "zFrom": 0,
+      "zTo": 2,
+      "radius": 12,
+      "material": "iron"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        31,
+        15
+      ],
+      "zFrom": 3,
+      "zTo": 15,
+      "radius": 4,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        11,
+        16
+      ],
+      "to": [
+        48,
+        19,
+        18
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        4,
+        19
+      ],
+      "to": [
+        48,
+        28,
+        21
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        16
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 12,
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        48,
+        16
+      ],
+      "zFrom": 19,
+      "zTo": 21,
+      "radius": 12,
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        8,
+        22
+      ],
+      "to": [
+        48,
+        11,
+        31
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        21,
+        20
+      ],
+      "to": [
+        35,
+        28,
+        22
+      ],
+      "material": "shaded"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        26,
+        17
+      ],
+      "to": [
+        34,
+        29,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        12
+      ],
+      "zFrom": 22,
+      "zTo": 23,
+      "radius": 4,
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        11,
+        24
+      ],
+      "to": [
+        16,
+        13,
+        37
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        11,
+        36
+      ],
+      "to": [
+        24,
+        13,
+        38
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        24,
+        12
+      ],
+      "zFrom": 34,
+      "zTo": 37,
+      "radius": 4,
+      "material": "amber"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "id": "plumbing-fold-away-utility-basin-wide-assist-rail",
+  "category": "plumbing",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "white": {
+      "kind": "matte",
+      "color": "#dedbd1"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#ada69b"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a1aaae"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#87959e"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99c66"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#59636c"
+    },
+    "blue": {
+      "kind": "glass",
+      "color": "#9eafb4"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a17d5a"
+    },
+    "grout": {
+      "kind": "matte",
+      "color": "#7e7b75"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c3b5a2"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        49,
+        8,
+        41
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        18
+      ],
+      "to": [
+        48,
+        25,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        20
+      ],
+      "to": [
+        48,
+        10,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        24,
+        20
+      ],
+      "to": [
+        48,
+        25,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        11,
+        20
+      ],
+      "to": [
+        6,
+        23,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        11,
+        20
+      ],
+      "to": [
+        48,
+        23,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        10,
+        15
+      ],
+      "to": [
+        6,
+        23,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "line",
+      "from": [
+        47,
+        10,
+        15
+      ],
+      "to": [
+        47,
+        23,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        8,
+        28
+      ],
+      "to": [
+        46,
+        10,
+        33
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        11,
+        17
+      ],
+      "zFrom": 20,
+      "zTo": 20,
+      "radius": 2,
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        9,
+        3
+      ],
+      "to": [
+        5,
+        10,
+        28
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        23,
+        3
+      ],
+      "to": [
+        5,
+        24,
+        28
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        27
+      ],
+      "to": [
+        5,
+        23,
+        29
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        7,
+        17
+      ],
+      "to": [
+        47,
+        12,
+        18
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        8,
+        18
+      ],
+      "to": [
+        46,
+        9,
+        23
+      ],
+      "material": "steel"
+    }
+  ]
+}

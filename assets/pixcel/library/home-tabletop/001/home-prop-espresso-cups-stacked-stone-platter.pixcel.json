@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "id": "home-prop-espresso-cups-stacked-stone-platter",
+  "category": "household",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "china": {
+      "kind": "matte",
+      "color": "#d4cbb7"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#59646c"
+    },
+    "nickel": {
+      "kind": "metal",
+      "color": "#a4aaa8"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a9815e"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#785a48"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#b29978"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#667f93"
+    },
+    "terra": {
+      "kind": "matte",
+      "color": "#a66654"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8aa9b6"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bd9c62"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#e2dac4"
+    },
+    "wax": {
+      "kind": "matte",
+      "color": "#d1bd8d"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#a5bec9",
+      "glowRadius": 1,
+      "glowIntensity": 0.12
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 0,
+      "zTo": 1,
+      "radius": 12,
+      "material": "china"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 1,
+      "zTo": 1,
+      "radius": 10,
+      "material": "sand"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        12
+      ],
+      "zFrom": 1,
+      "zTo": 1,
+      "radius": 3,
+      "material": "china"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        9,
+        12
+      ],
+      "zFrom": 2,
+      "zTo": 5,
+      "radius": 2,
+      "material": "china"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        12,
+        3
+      ],
+      "to": [
+        12,
+        12,
+        4
+      ],
+      "material": "nickel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 1,
+      "zTo": 1,
+      "radius": 3,
+      "material": "china"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 2,
+      "zTo": 6,
+      "radius": 2,
+      "material": "china"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        15,
+        3
+      ],
+      "to": [
+        18,
+        15,
+        4
+      ],
+      "material": "nickel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        11
+      ],
+      "zFrom": 1,
+      "zTo": 1,
+      "radius": 3,
+      "material": "china"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        11
+      ],
+      "zFrom": 2,
+      "zTo": 7,
+      "radius": 2,
+      "material": "china"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        11,
+        3
+      ],
+      "to": [
+        23,
+        11,
+        4
+      ],
+      "material": "nickel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        20,
+        1
+      ],
+      "to": [
+        23,
+        22,
+        1
+      ],
+      "material": "oak"
+    }
+  ]
+}

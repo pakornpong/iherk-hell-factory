@@ -1,0 +1,540 @@
+{
+  "schemaVersion": 1,
+  "id": "rec-foosball-rod-table-lounge-low",
+  "category": "recreation",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#b0855d"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#745444"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#38424c"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#839099"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded9c8"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#a75b50"
+    },
+    "felt": {
+      "kind": "matte",
+      "color": "#526b83"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#bb995d"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        58,
+        24,
+        3
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        8,
+        4
+      ],
+      "to": [
+        17,
+        23,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        8,
+        4
+      ],
+      "to": [
+        53,
+        23,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        12
+      ],
+      "to": [
+        60,
+        26,
+        17
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        17
+      ],
+      "to": [
+        57,
+        23,
+        17
+      ],
+      "material": "felt"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        2,
+        20
+      ],
+      "to": [
+        10,
+        29,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        28,
+        19
+      ],
+      "to": [
+        11,
+        30,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        18
+      ],
+      "to": [
+        11,
+        12,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        16,
+        18
+      ],
+      "to": [
+        11,
+        17,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        21,
+        18
+      ],
+      "to": [
+        11,
+        22,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        2,
+        20
+      ],
+      "to": [
+        18,
+        29,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        28,
+        19
+      ],
+      "to": [
+        19,
+        30,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        11,
+        18
+      ],
+      "to": [
+        19,
+        12,
+        21
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        16,
+        18
+      ],
+      "to": [
+        19,
+        17,
+        21
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        21,
+        18
+      ],
+      "to": [
+        19,
+        22,
+        21
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        2,
+        20
+      ],
+      "to": [
+        26,
+        29,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        28,
+        19
+      ],
+      "to": [
+        27,
+        30,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        11,
+        18
+      ],
+      "to": [
+        27,
+        12,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        16,
+        18
+      ],
+      "to": [
+        27,
+        17,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        21,
+        18
+      ],
+      "to": [
+        27,
+        22,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        2,
+        20
+      ],
+      "to": [
+        36,
+        29,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        28,
+        19
+      ],
+      "to": [
+        37,
+        30,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        11,
+        18
+      ],
+      "to": [
+        37,
+        12,
+        21
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        16,
+        18
+      ],
+      "to": [
+        37,
+        17,
+        21
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        21,
+        18
+      ],
+      "to": [
+        37,
+        22,
+        21
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        2,
+        20
+      ],
+      "to": [
+        44,
+        29,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        28,
+        19
+      ],
+      "to": [
+        45,
+        30,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        11,
+        18
+      ],
+      "to": [
+        45,
+        12,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        16,
+        18
+      ],
+      "to": [
+        45,
+        17,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        21,
+        18
+      ],
+      "to": [
+        45,
+        22,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        2,
+        20
+      ],
+      "to": [
+        52,
+        29,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        28,
+        19
+      ],
+      "to": [
+        53,
+        30,
+        20
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        11,
+        18
+      ],
+      "to": [
+        53,
+        12,
+        21
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        16,
+        18
+      ],
+      "to": [
+        53,
+        17,
+        21
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        21,
+        18
+      ],
+      "to": [
+        53,
+        22,
+        21
+      ],
+      "material": "red"
+    }
+  ]
+}

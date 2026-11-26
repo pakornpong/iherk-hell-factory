@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "id": "sofa-loveseat-low-bolster-steel-raised",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "timber": {
+      "kind": "wood",
+      "color": "#9d6a49"
+    },
+    "charcoal": {
+      "kind": "metal",
+      "color": "#434f58"
+    },
+    "jade": {
+      "kind": "matte",
+      "color": "#685b50"
+    },
+    "marine": {
+      "kind": "matte",
+      "color": "#685b50"
+    },
+    "cream": {
+      "kind": "matte",
+      "color": "#897767"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#cfa567"
+    },
+    "shade": {
+      "kind": "matte",
+      "color": "#493e36"
+    },
+    "pink": {
+      "kind": "matte",
+      "color": "#b7a086"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        0
+      ],
+      "to": [
+        7,
+        29,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        1
+      ],
+      "to": [
+        7,
+        7,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        28,
+        1
+      ],
+      "to": [
+        7,
+        29,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        6,
+        0
+      ],
+      "to": [
+        45,
+        29,
+        1
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        6,
+        1
+      ],
+      "to": [
+        45,
+        7,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        28,
+        1
+      ],
+      "to": [
+        45,
+        29,
+        6
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        6
+      ],
+      "to": [
+        47,
+        28,
+        11
+      ],
+      "material": "shade"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        11,
+        12
+      ],
+      "to": [
+        24,
+        26,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        5,
+        15
+      ],
+      "to": [
+        24,
+        11,
+        22
+      ],
+      "material": "shade"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        20
+      ],
+      "to": [
+        24,
+        12,
+        25
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        25
+      ],
+      "to": [
+        23,
+        11,
+        26
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        11,
+        12
+      ],
+      "to": [
+        44,
+        26,
+        15
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        5,
+        15
+      ],
+      "to": [
+        44,
+        11,
+        22
+      ],
+      "material": "shade"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        7,
+        20
+      ],
+      "to": [
+        44,
+        12,
+        25
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        8,
+        25
+      ],
+      "to": [
+        43,
+        11,
+        26
+      ],
+      "material": "jade"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        12
+      ],
+      "to": [
+        6,
+        27,
+        20
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        6,
+        12
+      ],
+      "to": [
+        47,
+        27,
+        20
+      ],
+      "material": "marine"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        15
+      ],
+      "to": [
+        13,
+        16,
+        22
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        13,
+        15
+      ],
+      "to": [
+        43,
+        16,
+        22
+      ],
+      "material": "pink"
+    }
+  ]
+}

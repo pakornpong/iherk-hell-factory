@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "id": "hospitality-water-glass-service-linen-skirt-wide",
+  "category": "hospitality",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#a77854"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#715443"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3d454d"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#929ca2"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#b4aaa0"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded5c4"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#a3a098"
+    },
+    "bronze": {
+      "kind": "metal",
+      "color": "#ba9a61"
+    },
+    "oxblood": {
+      "kind": "matte",
+      "color": "#9c6155"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#90adb8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        3
+      ],
+      "to": [
+        56,
+        25,
+        22
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        0
+      ],
+      "to": [
+        5,
+        8,
+        8
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        23,
+        0
+      ],
+      "to": [
+        56,
+        24,
+        8
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        25,
+        3
+      ],
+      "to": [
+        6,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        25,
+        3
+      ],
+      "to": [
+        11,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        25,
+        3
+      ],
+      "to": [
+        16,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        25,
+        3
+      ],
+      "to": [
+        21,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        25,
+        3
+      ],
+      "to": [
+        26,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        25,
+        3
+      ],
+      "to": [
+        31,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        25,
+        3
+      ],
+      "to": [
+        36,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        25,
+        3
+      ],
+      "to": [
+        41,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        25,
+        3
+      ],
+      "to": [
+        46,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        25,
+        3
+      ],
+      "to": [
+        51,
+        26,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        6,
+        21
+      ],
+      "to": [
+        57,
+        26,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        23
+      ],
+      "to": [
+        21,
+        23,
+        24
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        14
+      ],
+      "zFrom": 25,
+      "zTo": 32,
+      "radius": 4,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        14
+      ],
+      "zFrom": 33,
+      "zTo": 36,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        14
+      ],
+      "zFrom": 37,
+      "zTo": 37,
+      "radius": 2,
+      "material": "bronze"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        13,
+        26
+      ],
+      "to": [
+        18,
+        14,
+        28
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        47,
+        18
+      ],
+      "zFrom": 23,
+      "zTo": 27,
+      "radius": 2,
+      "material": "glass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        52,
+        18
+      ],
+      "zFrom": 23,
+      "zTo": 27,
+      "radius": 2,
+      "material": "glass"
+    }
+  ]
+}

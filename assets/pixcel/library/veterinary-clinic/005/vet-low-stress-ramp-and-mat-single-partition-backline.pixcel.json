@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "id": "vet-low-stress-ramp-and-mat-single-partition-backline",
+  "category": "veterinary",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9fa9a9",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#5a6773",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#414a50",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#dad4c5",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#647e94",
+      "kind": "matte"
+    },
+    "tan": {
+      "color": "#ad9a83",
+      "kind": "matte"
+    },
+    "oak": {
+      "color": "#a88461",
+      "kind": "wood"
+    },
+    "glass": {
+      "color": "#8dabb7",
+      "kind": "glass"
+    },
+    "rust": {
+      "color": "#a96a58",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#ded4bf",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#bc9e67",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        29,
+        7,
+        25
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        8
+      ],
+      "to": [
+        29,
+        25,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        7,
+        3
+      ],
+      "to": [
+        6,
+        22,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        7,
+        3
+      ],
+      "to": [
+        27,
+        22,
+        8
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        10
+      ],
+      "to": [
+        28,
+        24,
+        13
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "slope",
+      "from": [
+        6,
+        8,
+        13
+      ],
+      "to": [
+        26,
+        23,
+        23
+      ],
+      "axis": "+X",
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        14
+      ],
+      "to": [
+        7,
+        9,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        22,
+        18
+      ],
+      "to": [
+        26,
+        23,
+        25
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        20
+      ],
+      "to": [
+        25,
+        9,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        22,
+        22
+      ],
+      "to": [
+        25,
+        23,
+        23
+      ],
+      "material": "steel"
+    }
+  ]
+}

@@ -1,0 +1,662 @@
+{
+  "schemaVersion": 1,
+  "id": "florist-wreath-making-rail-greenhouse-ceramic-display-plinth",
+  "category": "florist",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "color": "#a98461",
+      "kind": "wood"
+    },
+    "walnut": {
+      "color": "#755a48",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9da9ad",
+      "kind": "metal"
+    },
+    "frame": {
+      "color": "#5a6774",
+      "kind": "metal"
+    },
+    "dark": {
+      "color": "#414a51",
+      "kind": "matte"
+    },
+    "ivory": {
+      "color": "#ded4bf",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#b8a68c",
+      "kind": "matte"
+    },
+    "pink": {
+      "color": "#ad7480",
+      "kind": "matte"
+    },
+    "rose": {
+      "color": "#a05f5f",
+      "kind": "matte"
+    },
+    "leaf": {
+      "color": "#637c55",
+      "kind": "matte"
+    },
+    "paleLeaf": {
+      "color": "#819069",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#90acb6",
+      "kind": "glass"
+    },
+    "amber": {
+      "color": "#c1a06b",
+      "kind": "matte"
+    },
+    "clay": {
+      "color": "#a6735c",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        6
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        5,
+        6
+      ],
+      "to": [
+        56,
+        26,
+        7
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        54,
+        24,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        12
+      ],
+      "to": [
+        8,
+        11,
+        43
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        8,
+        12
+      ],
+      "to": [
+        53,
+        11,
+        43
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        41
+      ],
+      "to": [
+        53,
+        11,
+        43
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        11,
+        29
+      ],
+      "to": [
+        39,
+        12,
+        30
+      ],
+      "material": "rose"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        11,
+        31
+      ],
+      "to": [
+        39,
+        12,
+        32
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        11,
+        32
+      ],
+      "to": [
+        38,
+        12,
+        33
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        11,
+        33
+      ],
+      "to": [
+        38,
+        12,
+        34
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        11,
+        35
+      ],
+      "to": [
+        37,
+        12,
+        36
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        11,
+        36
+      ],
+      "to": [
+        35,
+        12,
+        37
+      ],
+      "material": "rose"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        11,
+        36
+      ],
+      "to": [
+        34,
+        12,
+        37
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        11,
+        37
+      ],
+      "to": [
+        33,
+        12,
+        38
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        11,
+        37
+      ],
+      "to": [
+        31,
+        12,
+        38
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        11,
+        37
+      ],
+      "to": [
+        29,
+        12,
+        38
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        11,
+        36
+      ],
+      "to": [
+        28,
+        12,
+        37
+      ],
+      "material": "rose"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        11,
+        36
+      ],
+      "to": [
+        27,
+        12,
+        37
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        11,
+        35
+      ],
+      "to": [
+        25,
+        12,
+        36
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        33
+      ],
+      "to": [
+        24,
+        12,
+        34
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        32
+      ],
+      "to": [
+        24,
+        12,
+        33
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        11,
+        31
+      ],
+      "to": [
+        23,
+        12,
+        32
+      ],
+      "material": "rose"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        11,
+        29
+      ],
+      "to": [
+        23,
+        12,
+        30
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        11,
+        27
+      ],
+      "to": [
+        23,
+        12,
+        28
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        26
+      ],
+      "to": [
+        24,
+        12,
+        27
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        11,
+        25
+      ],
+      "to": [
+        24,
+        12,
+        26
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        11,
+        23
+      ],
+      "to": [
+        25,
+        12,
+        24
+      ],
+      "material": "rose"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        11,
+        22
+      ],
+      "to": [
+        27,
+        12,
+        23
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        11,
+        22
+      ],
+      "to": [
+        28,
+        12,
+        23
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        11,
+        21
+      ],
+      "to": [
+        29,
+        12,
+        22
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        11,
+        21
+      ],
+      "to": [
+        31,
+        12,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        11,
+        21
+      ],
+      "to": [
+        33,
+        12,
+        22
+      ],
+      "material": "rose"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        11,
+        22
+      ],
+      "to": [
+        34,
+        12,
+        23
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        11,
+        22
+      ],
+      "to": [
+        35,
+        12,
+        23
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        11,
+        23
+      ],
+      "to": [
+        37,
+        12,
+        24
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        11,
+        25
+      ],
+      "to": [
+        38,
+        12,
+        26
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        11,
+        26
+      ],
+      "to": [
+        38,
+        12,
+        27
+      ],
+      "material": "rose"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        11,
+        27
+      ],
+      "to": [
+        39,
+        12,
+        28
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        30,
+        10,
+        38
+      ],
+      "to": [
+        30,
+        10,
+        42
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        17,
+        12
+      ],
+      "to": [
+        16,
+        22,
+        14
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        19,
+        11
+      ],
+      "to": [
+        52,
+        23,
+        13
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        19,
+        13
+      ],
+      "to": [
+        51,
+        23,
+        14
+      ],
+      "material": "ivory"
+    }
+  ]
+}

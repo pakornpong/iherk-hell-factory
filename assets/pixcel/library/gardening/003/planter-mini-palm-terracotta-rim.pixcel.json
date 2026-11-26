@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "id": "planter-mini-palm-terracotta-rim",
+  "category": "gardening",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "soil": {
+      "kind": "matte",
+      "color": "#5d4635"
+    },
+    "leaf": {
+      "kind": "matte",
+      "color": "#597451"
+    },
+    "leafLight": {
+      "kind": "matte",
+      "color": "#7e915d"
+    },
+    "leafDark": {
+      "kind": "matte",
+      "color": "#424f3f"
+    },
+    "bark": {
+      "kind": "wood",
+      "color": "#82664b"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#a76851"
+    },
+    "limewash": {
+      "kind": "matte",
+      "color": "#ccc3af"
+    },
+    "cement": {
+      "kind": "matte",
+      "color": "#929183"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a18160"
+    },
+    "plum": {
+      "kind": "matte",
+      "color": "#9e657b"
+    },
+    "flower": {
+      "kind": "matte",
+      "color": "#d6ae54"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#5f6468"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 0,
+      "zTo": 1,
+      "radius": 6,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 2,
+      "zTo": 4,
+      "radius": 7,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 5,
+      "zTo": 8,
+      "radius": 8,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 9,
+      "zTo": 10,
+      "radius": 9,
+      "material": "clay"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 10,
+      "zTo": 10,
+      "radius": 7,
+      "material": "soil"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        15,
+        11
+      ],
+      "to": [
+        17,
+        14,
+        40
+      ],
+      "material": "bark"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        14,
+        39
+      ],
+      "to": [
+        21,
+        14,
+        39
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        21,
+        14,
+        39
+      ],
+      "to": [
+        23,
+        15,
+        34
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        14,
+        34
+      ],
+      "to": [
+        24,
+        16,
+        35
+      ],
+      "material": "leafLight"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        14,
+        39
+      ],
+      "to": [
+        14,
+        15,
+        40
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        15,
+        40
+      ],
+      "to": [
+        8,
+        17,
+        34
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        16,
+        34
+      ],
+      "to": [
+        9,
+        18,
+        35
+      ],
+      "material": "leafLight"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        14,
+        39
+      ],
+      "to": [
+        17,
+        18,
+        39
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        18,
+        39
+      ],
+      "to": [
+        15,
+        22,
+        34
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        21,
+        34
+      ],
+      "to": [
+        16,
+        23,
+        35
+      ],
+      "material": "leafLight"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        14,
+        39
+      ],
+      "to": [
+        17,
+        11,
+        40
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "line",
+      "from": [
+        17,
+        11,
+        40
+      ],
+      "to": [
+        15,
+        8,
+        34
+      ],
+      "material": "leaf"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        7,
+        34
+      ],
+      "to": [
+        16,
+        9,
+        35
+      ],
+      "material": "leafLight"
+    }
+  ]
+}

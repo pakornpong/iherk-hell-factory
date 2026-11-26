@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "id": "garage-fluid-evacuator-service-dolly",
+  "category": "garage",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#91a6b0"
+    },
+    "frame": {
+      "kind": "metal",
+      "color": "#4c6071"
+    },
+    "rubber": {
+      "kind": "matte",
+      "color": "#283541"
+    },
+    "yellow": {
+      "kind": "matte",
+      "color": "#dea957"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#53667a"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#ac594a"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#dbddcf"
+    },
+    "screen": {
+      "kind": "emissive",
+      "color": "#86bdd0",
+      "glowRadius": 1,
+      "glowIntensity": 0.14
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        7,
+        8,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        22,
+        0
+      ],
+      "to": [
+        7,
+        25,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        8,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        22,
+        0
+      ],
+      "to": [
+        27,
+        25,
+        3
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        4,
+        4
+      ],
+      "to": [
+        28,
+        26,
+        7
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        8
+      ],
+      "to": [
+        6,
+        5,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        4,
+        8
+      ],
+      "to": [
+        25,
+        5,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        18
+      ],
+      "to": [
+        25,
+        6,
+        19
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 8,
+      "zTo": 11,
+      "radius": 9,
+      "material": "rubber"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 12,
+      "zTo": 27,
+      "radius": 8,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 28,
+      "zTo": 31,
+      "radius": 6,
+      "material": "red"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 32,
+      "zTo": 33,
+      "radius": 3,
+      "material": "steel"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 34,
+      "zTo": 40,
+      "radius": 1,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        14,
+        40
+      ],
+      "to": [
+        21,
+        16,
+        41
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        15,
+        28
+      ],
+      "to": [
+        26,
+        20,
+        20
+      ],
+      "material": "rubber"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        20,
+        20
+      ],
+      "to": [
+        26,
+        13,
+        12
+      ],
+      "material": "rubber"
+    }
+  ]
+}

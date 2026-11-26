@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "id": "plumbing-clawfoot-tub-wide-sprayer-hose",
+  "category": "plumbing",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "white": {
+      "kind": "matte",
+      "color": "#dedbd1"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#ada69b"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a1aaae"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#87959e"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b99c66"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#59636c"
+    },
+    "blue": {
+      "kind": "glass",
+      "color": "#9eafb4"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#a17d5a"
+    },
+    "grout": {
+      "kind": "matte",
+      "color": "#7e7b75"
+    },
+    "linen": {
+      "kind": "matte",
+      "color": "#c3b5a2"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 5,
+      "radius": 2,
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        7,
+        22
+      ],
+      "zFrom": 0,
+      "zTo": 5,
+      "radius": 2,
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        8
+      ],
+      "zFrom": 0,
+      "zTo": 5,
+      "radius": 2,
+      "material": "brass"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        44,
+        22
+      ],
+      "zFrom": 0,
+      "zTo": 5,
+      "radius": 2,
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        5
+      ],
+      "to": [
+        49,
+        26,
+        6
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        7
+      ],
+      "to": [
+        49,
+        6,
+        18
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        25,
+        7
+      ],
+      "to": [
+        49,
+        26,
+        18
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        7
+      ],
+      "to": [
+        5,
+        24,
+        18
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        7,
+        7
+      ],
+      "to": [
+        49,
+        24,
+        18
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        18
+      ],
+      "to": [
+        49,
+        7,
+        19
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        24,
+        18
+      ],
+      "to": [
+        49,
+        26,
+        19
+      ],
+      "material": "white"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        45,
+        15
+      ],
+      "zFrom": 7,
+      "zTo": 7,
+      "radius": 2,
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        6,
+        14
+      ],
+      "to": [
+        46,
+        8,
+        22
+      ],
+      "material": "slate"
+    },
+    {
+      "op": "line",
+      "from": [
+        45,
+        8,
+        16
+      ],
+      "to": [
+        49,
+        12,
+        9
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        12,
+        9
+      ],
+      "to": [
+        49,
+        16,
+        9
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "line",
+      "from": [
+        49,
+        16,
+        9
+      ],
+      "to": [
+        47,
+        16,
+        25
+      ],
+      "material": "chrome"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        15,
+        25
+      ],
+      "to": [
+        48,
+        20,
+        27
+      ],
+      "material": "steel"
+    }
+  ]
+}

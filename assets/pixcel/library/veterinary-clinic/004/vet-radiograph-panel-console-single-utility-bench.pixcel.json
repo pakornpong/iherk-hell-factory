@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "id": "vet-radiograph-panel-console-single-utility-bench",
+  "category": "veterinary",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "color": "#9fa9a9",
+      "kind": "metal"
+    },
+    "iron": {
+      "color": "#5a6773",
+      "kind": "metal"
+    },
+    "rubber": {
+      "color": "#414a50",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#dad4c5",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#647e94",
+      "kind": "matte"
+    },
+    "tan": {
+      "color": "#ad9a83",
+      "kind": "matte"
+    },
+    "oak": {
+      "color": "#a88461",
+      "kind": "wood"
+    },
+    "glass": {
+      "color": "#8dabb7",
+      "kind": "glass"
+    },
+    "rust": {
+      "color": "#a96a58",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#ded4bf",
+      "kind": "matte"
+    },
+    "amber": {
+      "color": "#bc9e67",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "line",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        5,
+        15,
+        12
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        23,
+        0
+      ],
+      "to": [
+        5,
+        15,
+        12
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        15,
+        12
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        23,
+        0
+      ],
+      "to": [
+        26,
+        15,
+        12
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        11
+      ],
+      "to": [
+        29,
+        25,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        5
+      ],
+      "to": [
+        27,
+        24,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        13
+      ],
+      "to": [
+        28,
+        24,
+        17
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        18
+      ],
+      "to": [
+        27,
+        12,
+        45
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        23
+      ],
+      "to": [
+        25,
+        13,
+        42
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        13,
+        26
+      ],
+      "to": [
+        13,
+        13,
+        38
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        13,
+        36
+      ],
+      "to": [
+        19,
+        13,
+        33
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "line",
+      "from": [
+        18,
+        13,
+        33
+      ],
+      "to": [
+        24,
+        13,
+        26
+      ],
+      "material": "linen"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        15,
+        18
+      ],
+      "to": [
+        25,
+        22,
+        20
+      ],
+      "material": "steel"
+    }
+  ]
+}

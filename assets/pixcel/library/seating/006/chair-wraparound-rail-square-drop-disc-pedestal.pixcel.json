@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "id": "chair-wraparound-rail-square-drop-disc-pedestal",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#ad784c"
+    },
+    "metal": {
+      "kind": "metal",
+      "color": "#657985"
+    },
+    "foot": {
+      "kind": "matte",
+      "color": "#293240"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#617157"
+    },
+    "edge": {
+      "kind": "matte",
+      "color": "#839075"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#d4a35d"
+    }
+  },
+  "ops": [
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 0,
+      "zTo": 1,
+      "radius": 10,
+      "material": "metal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 2,
+      "zTo": 13,
+      "radius": 2,
+      "material": "metal"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        15,
+        15
+      ],
+      "zFrom": 10,
+      "zTo": 12,
+      "radius": 4,
+      "material": "foot"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        13
+      ],
+      "to": [
+        25,
+        25,
+        15
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        16
+      ],
+      "to": [
+        24,
+        24,
+        19
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        5,
+        16
+      ],
+      "to": [
+        8,
+        7,
+        27
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        5,
+        16
+      ],
+      "to": [
+        24,
+        7,
+        27
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        26
+      ],
+      "to": [
+        26,
+        8,
+        28
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        24
+      ],
+      "to": [
+        6,
+        19,
+        26
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        8,
+        24
+      ],
+      "to": [
+        27,
+        19,
+        26
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        18,
+        16
+      ],
+      "to": [
+        6,
+        19,
+        24
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        18,
+        16
+      ],
+      "to": [
+        26,
+        19,
+        24
+      ],
+      "material": "brass"
+    }
+  ]
+}

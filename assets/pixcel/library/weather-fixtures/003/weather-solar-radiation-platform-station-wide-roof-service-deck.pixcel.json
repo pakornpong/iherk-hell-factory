@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "id": "weather-solar-radiation-platform-station-wide-roof-service-deck",
+  "category": "meteorology",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#5b6874"
+    },
+    "silver": {
+      "kind": "metal",
+      "color": "#9da9aa"
+    },
+    "pale": {
+      "kind": "matte",
+      "color": "#d7d2c5"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#414950"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#657d93"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#be9b62"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#aa6a53"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a58564"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8cabb4"
+    },
+    "earth": {
+      "kind": "matte",
+      "color": "#8f765f"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        55,
+        25,
+        3
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        4
+      ],
+      "to": [
+        55,
+        25,
+        4
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        4
+      ],
+      "to": [
+        54,
+        8,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        23,
+        4
+      ],
+      "to": [
+        54,
+        25,
+        5
+      ],
+      "material": "amber"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        5
+      ],
+      "to": [
+        54,
+        24,
+        8
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        13
+      ],
+      "zFrom": 9,
+      "zTo": 22,
+      "radius": 1,
+      "material": "silver"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        13
+      ],
+      "zFrom": 22,
+      "zTo": 25,
+      "radius": 5,
+      "material": "pale"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        13
+      ],
+      "zFrom": 25,
+      "zTo": 28,
+      "radius": 3,
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        14,
+        15,
+        22
+      ],
+      "to": [
+        49,
+        19,
+        15
+      ],
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        10,
+        9
+      ],
+      "to": [
+        52,
+        22,
+        15
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        22,
+        11
+      ],
+      "to": [
+        50,
+        22,
+        13
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        20,
+        9
+      ],
+      "to": [
+        16,
+        23,
+        12
+      ],
+      "material": "silver"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        8,
+        9
+      ],
+      "to": [
+        50,
+        12,
+        25
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        12,
+        21
+      ],
+      "to": [
+        49,
+        18,
+        24
+      ],
+      "material": "sky"
+    },
+    {
+      "op": "box",
+      "from": [
+        42,
+        18,
+        22
+      ],
+      "to": [
+        48,
+        18,
+        23
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "line",
+      "from": [
+        45,
+        15,
+        20
+      ],
+      "to": [
+        48,
+        20,
+        13
+      ],
+      "material": "dark"
+    }
+  ]
+}

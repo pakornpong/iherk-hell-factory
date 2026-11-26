@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "id": "geo-geology-thin-section-scope-double-lab-raised-pedestal",
+  "category": "geoscience",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "frame": {
+      "kind": "metal",
+      "color": "#566674"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#9fa9aa"
+    },
+    "soil": {
+      "kind": "matte",
+      "color": "#8a6e58"
+    },
+    "stone": {
+      "kind": "matte",
+      "color": "#a09a91"
+    },
+    "wood": {
+      "kind": "wood",
+      "color": "#a5815d"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ddd2bb"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#c2a06b"
+    },
+    "dark": {
+      "kind": "matte",
+      "color": "#404a51"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#647f94"
+    },
+    "oxide": {
+      "kind": "matte",
+      "color": "#a66956"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#8baab5"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        56,
+        25,
+        2
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        3
+      ],
+      "to": [
+        53,
+        23,
+        8
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        55,
+        24,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        10
+      ],
+      "to": [
+        55,
+        24,
+        13
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        13,
+        15
+      ],
+      "zFrom": 14,
+      "zTo": 18,
+      "radius": 7,
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        9,
+        18
+      ],
+      "to": [
+        15,
+        12,
+        40
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        37
+      ],
+      "to": [
+        22,
+        15,
+        41
+      ],
+      "material": "frame"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        20,
+        15
+      ],
+      "zFrom": 32,
+      "zTo": 38,
+      "radius": 2,
+      "material": "dark"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        14,
+        26
+      ],
+      "to": [
+        22,
+        21,
+        28
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        16,
+        28
+      ],
+      "to": [
+        20,
+        19,
+        29
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        10,
+        14
+      ],
+      "to": [
+        52,
+        20,
+        16
+      ],
+      "material": "paper"
+    }
+  ]
+}

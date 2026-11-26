@@ -1,0 +1,842 @@
+[
+  {
+    "id": "recycle-cardboard-baler-local-warehouse-footing",
+    "category": "recycling",
+    "file": "001/recycle-cardboard-baler-local-warehouse-footing.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "recycle-cardboard-baler-local-washdown-pad",
+    "category": "recycling",
+    "file": "001/recycle-cardboard-baler-local-washdown-pad.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "recycle-cardboard-baler-local-industrial-caster",
+    "category": "recycling",
+    "file": "001/recycle-cardboard-baler-local-industrial-caster.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "recycle-cardboard-baler-local-timber-skid",
+    "category": "recycling",
+    "file": "001/recycle-cardboard-baler-local-timber-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "recycle-cardboard-baler-local-sorting-side-deck",
+    "category": "recycling",
+    "file": "001/recycle-cardboard-baler-local-sorting-side-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "recycle-cardboard-baler-facility-warehouse-footing",
+    "category": "recycling",
+    "file": "001/recycle-cardboard-baler-facility-warehouse-footing.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "recycle-cardboard-baler-facility-washdown-pad",
+    "category": "recycling",
+    "file": "001/recycle-cardboard-baler-facility-washdown-pad.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "recycle-cardboard-baler-facility-industrial-caster",
+    "category": "recycling",
+    "file": "001/recycle-cardboard-baler-facility-industrial-caster.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "recycle-cardboard-baler-facility-timber-skid",
+    "category": "recycling",
+    "file": "001/recycle-cardboard-baler-facility-timber-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "recycle-cardboard-baler-facility-sorting-side-deck",
+    "category": "recycling",
+    "file": "001/recycle-cardboard-baler-facility-sorting-side-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "recycle-glass-color-bin-local-warehouse-footing",
+    "category": "recycling",
+    "file": "001/recycle-glass-color-bin-local-warehouse-footing.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "recycle-glass-color-bin-local-washdown-pad",
+    "category": "recycling",
+    "file": "001/recycle-glass-color-bin-local-washdown-pad.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "recycle-glass-color-bin-local-industrial-caster",
+    "category": "recycling",
+    "file": "001/recycle-glass-color-bin-local-industrial-caster.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "recycle-glass-color-bin-local-timber-skid",
+    "category": "recycling",
+    "file": "001/recycle-glass-color-bin-local-timber-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "recycle-glass-color-bin-local-sorting-side-deck",
+    "category": "recycling",
+    "file": "001/recycle-glass-color-bin-local-sorting-side-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "recycle-glass-color-bin-facility-warehouse-footing",
+    "category": "recycling",
+    "file": "001/recycle-glass-color-bin-facility-warehouse-footing.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "recycle-glass-color-bin-facility-washdown-pad",
+    "category": "recycling",
+    "file": "001/recycle-glass-color-bin-facility-washdown-pad.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "recycle-glass-color-bin-facility-industrial-caster",
+    "category": "recycling",
+    "file": "001/recycle-glass-color-bin-facility-industrial-caster.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "recycle-glass-color-bin-facility-timber-skid",
+    "category": "recycling",
+    "file": "001/recycle-glass-color-bin-facility-timber-skid.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "recycle-glass-color-bin-facility-sorting-side-deck",
+    "category": "recycling",
+    "file": "001/recycle-glass-color-bin-facility-sorting-side-deck.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "recycle-return-can-vending-local-warehouse-footing",
+    "category": "recycling",
+    "file": "002/recycle-return-can-vending-local-warehouse-footing.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "recycle-return-can-vending-local-washdown-pad",
+    "category": "recycling",
+    "file": "002/recycle-return-can-vending-local-washdown-pad.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "recycle-return-can-vending-local-industrial-caster",
+    "category": "recycling",
+    "file": "002/recycle-return-can-vending-local-industrial-caster.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "recycle-return-can-vending-local-timber-skid",
+    "category": "recycling",
+    "file": "002/recycle-return-can-vending-local-timber-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "recycle-return-can-vending-local-sorting-side-deck",
+    "category": "recycling",
+    "file": "002/recycle-return-can-vending-local-sorting-side-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "recycle-return-can-vending-facility-warehouse-footing",
+    "category": "recycling",
+    "file": "002/recycle-return-can-vending-facility-warehouse-footing.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "recycle-return-can-vending-facility-washdown-pad",
+    "category": "recycling",
+    "file": "002/recycle-return-can-vending-facility-washdown-pad.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "recycle-return-can-vending-facility-industrial-caster",
+    "category": "recycling",
+    "file": "002/recycle-return-can-vending-facility-industrial-caster.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "recycle-return-can-vending-facility-timber-skid",
+    "category": "recycling",
+    "file": "002/recycle-return-can-vending-facility-timber-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "recycle-return-can-vending-facility-sorting-side-deck",
+    "category": "recycling",
+    "file": "002/recycle-return-can-vending-facility-sorting-side-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "recycle-material-sort-conveyor-local-warehouse-footing",
+    "category": "recycling",
+    "file": "002/recycle-material-sort-conveyor-local-warehouse-footing.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "recycle-material-sort-conveyor-local-washdown-pad",
+    "category": "recycling",
+    "file": "002/recycle-material-sort-conveyor-local-washdown-pad.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "recycle-material-sort-conveyor-local-industrial-caster",
+    "category": "recycling",
+    "file": "002/recycle-material-sort-conveyor-local-industrial-caster.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "recycle-material-sort-conveyor-local-timber-skid",
+    "category": "recycling",
+    "file": "002/recycle-material-sort-conveyor-local-timber-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "recycle-material-sort-conveyor-local-sorting-side-deck",
+    "category": "recycling",
+    "file": "002/recycle-material-sort-conveyor-local-sorting-side-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "recycle-material-sort-conveyor-facility-warehouse-footing",
+    "category": "recycling",
+    "file": "002/recycle-material-sort-conveyor-facility-warehouse-footing.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "recycle-material-sort-conveyor-facility-washdown-pad",
+    "category": "recycling",
+    "file": "002/recycle-material-sort-conveyor-facility-washdown-pad.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "recycle-material-sort-conveyor-facility-industrial-caster",
+    "category": "recycling",
+    "file": "002/recycle-material-sort-conveyor-facility-industrial-caster.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "recycle-material-sort-conveyor-facility-timber-skid",
+    "category": "recycling",
+    "file": "002/recycle-material-sort-conveyor-facility-timber-skid.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "recycle-material-sort-conveyor-facility-sorting-side-deck",
+    "category": "recycling",
+    "file": "002/recycle-material-sort-conveyor-facility-sorting-side-deck.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "recycle-e-waste-sorting-hutch-local-warehouse-footing",
+    "category": "recycling",
+    "file": "003/recycle-e-waste-sorting-hutch-local-warehouse-footing.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "recycle-e-waste-sorting-hutch-local-washdown-pad",
+    "category": "recycling",
+    "file": "003/recycle-e-waste-sorting-hutch-local-washdown-pad.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "recycle-e-waste-sorting-hutch-local-industrial-caster",
+    "category": "recycling",
+    "file": "003/recycle-e-waste-sorting-hutch-local-industrial-caster.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "recycle-e-waste-sorting-hutch-local-timber-skid",
+    "category": "recycling",
+    "file": "003/recycle-e-waste-sorting-hutch-local-timber-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "recycle-e-waste-sorting-hutch-local-sorting-side-deck",
+    "category": "recycling",
+    "file": "003/recycle-e-waste-sorting-hutch-local-sorting-side-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "recycle-e-waste-sorting-hutch-facility-warehouse-footing",
+    "category": "recycling",
+    "file": "003/recycle-e-waste-sorting-hutch-facility-warehouse-footing.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "recycle-e-waste-sorting-hutch-facility-washdown-pad",
+    "category": "recycling",
+    "file": "003/recycle-e-waste-sorting-hutch-facility-washdown-pad.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "recycle-e-waste-sorting-hutch-facility-industrial-caster",
+    "category": "recycling",
+    "file": "003/recycle-e-waste-sorting-hutch-facility-industrial-caster.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "recycle-e-waste-sorting-hutch-facility-timber-skid",
+    "category": "recycling",
+    "file": "003/recycle-e-waste-sorting-hutch-facility-timber-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "recycle-e-waste-sorting-hutch-facility-sorting-side-deck",
+    "category": "recycling",
+    "file": "003/recycle-e-waste-sorting-hutch-facility-sorting-side-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "recycle-textile-collection-cage-local-warehouse-footing",
+    "category": "recycling",
+    "file": "003/recycle-textile-collection-cage-local-warehouse-footing.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "recycle-textile-collection-cage-local-washdown-pad",
+    "category": "recycling",
+    "file": "003/recycle-textile-collection-cage-local-washdown-pad.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "recycle-textile-collection-cage-local-industrial-caster",
+    "category": "recycling",
+    "file": "003/recycle-textile-collection-cage-local-industrial-caster.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "recycle-textile-collection-cage-local-timber-skid",
+    "category": "recycling",
+    "file": "003/recycle-textile-collection-cage-local-timber-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "recycle-textile-collection-cage-local-sorting-side-deck",
+    "category": "recycling",
+    "file": "003/recycle-textile-collection-cage-local-sorting-side-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "recycle-textile-collection-cage-facility-warehouse-footing",
+    "category": "recycling",
+    "file": "003/recycle-textile-collection-cage-facility-warehouse-footing.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "recycle-textile-collection-cage-facility-washdown-pad",
+    "category": "recycling",
+    "file": "003/recycle-textile-collection-cage-facility-washdown-pad.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "recycle-textile-collection-cage-facility-industrial-caster",
+    "category": "recycling",
+    "file": "003/recycle-textile-collection-cage-facility-industrial-caster.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "recycle-textile-collection-cage-facility-timber-skid",
+    "category": "recycling",
+    "file": "003/recycle-textile-collection-cage-facility-timber-skid.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "recycle-textile-collection-cage-facility-sorting-side-deck",
+    "category": "recycling",
+    "file": "003/recycle-textile-collection-cage-facility-sorting-side-deck.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "recycle-organic-bin-wheel-pair-local-warehouse-footing",
+    "category": "recycling",
+    "file": "004/recycle-organic-bin-wheel-pair-local-warehouse-footing.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "recycle-organic-bin-wheel-pair-local-washdown-pad",
+    "category": "recycling",
+    "file": "004/recycle-organic-bin-wheel-pair-local-washdown-pad.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "recycle-organic-bin-wheel-pair-local-industrial-caster",
+    "category": "recycling",
+    "file": "004/recycle-organic-bin-wheel-pair-local-industrial-caster.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "recycle-organic-bin-wheel-pair-local-timber-skid",
+    "category": "recycling",
+    "file": "004/recycle-organic-bin-wheel-pair-local-timber-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "recycle-organic-bin-wheel-pair-local-sorting-side-deck",
+    "category": "recycling",
+    "file": "004/recycle-organic-bin-wheel-pair-local-sorting-side-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "recycle-organic-bin-wheel-pair-facility-warehouse-footing",
+    "category": "recycling",
+    "file": "004/recycle-organic-bin-wheel-pair-facility-warehouse-footing.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "recycle-organic-bin-wheel-pair-facility-washdown-pad",
+    "category": "recycling",
+    "file": "004/recycle-organic-bin-wheel-pair-facility-washdown-pad.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "recycle-organic-bin-wheel-pair-facility-industrial-caster",
+    "category": "recycling",
+    "file": "004/recycle-organic-bin-wheel-pair-facility-industrial-caster.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "recycle-organic-bin-wheel-pair-facility-timber-skid",
+    "category": "recycling",
+    "file": "004/recycle-organic-bin-wheel-pair-facility-timber-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "recycle-organic-bin-wheel-pair-facility-sorting-side-deck",
+    "category": "recycling",
+    "file": "004/recycle-organic-bin-wheel-pair-facility-sorting-side-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "recycle-pallet-of-baled-paper-local-warehouse-footing",
+    "category": "recycling",
+    "file": "004/recycle-pallet-of-baled-paper-local-warehouse-footing.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "recycle-pallet-of-baled-paper-local-washdown-pad",
+    "category": "recycling",
+    "file": "004/recycle-pallet-of-baled-paper-local-washdown-pad.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "recycle-pallet-of-baled-paper-local-industrial-caster",
+    "category": "recycling",
+    "file": "004/recycle-pallet-of-baled-paper-local-industrial-caster.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "recycle-pallet-of-baled-paper-local-timber-skid",
+    "category": "recycling",
+    "file": "004/recycle-pallet-of-baled-paper-local-timber-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "recycle-pallet-of-baled-paper-local-sorting-side-deck",
+    "category": "recycling",
+    "file": "004/recycle-pallet-of-baled-paper-local-sorting-side-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "recycle-pallet-of-baled-paper-facility-warehouse-footing",
+    "category": "recycling",
+    "file": "004/recycle-pallet-of-baled-paper-facility-warehouse-footing.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "recycle-pallet-of-baled-paper-facility-washdown-pad",
+    "category": "recycling",
+    "file": "004/recycle-pallet-of-baled-paper-facility-washdown-pad.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "recycle-pallet-of-baled-paper-facility-industrial-caster",
+    "category": "recycling",
+    "file": "004/recycle-pallet-of-baled-paper-facility-industrial-caster.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "recycle-pallet-of-baled-paper-facility-timber-skid",
+    "category": "recycling",
+    "file": "004/recycle-pallet-of-baled-paper-facility-timber-skid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "recycle-pallet-of-baled-paper-facility-sorting-side-deck",
+    "category": "recycling",
+    "file": "004/recycle-pallet-of-baled-paper-facility-sorting-side-deck.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "recycle-paint-can-dropoff-local-warehouse-footing",
+    "category": "recycling",
+    "file": "005/recycle-paint-can-dropoff-local-warehouse-footing.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "recycle-paint-can-dropoff-local-washdown-pad",
+    "category": "recycling",
+    "file": "005/recycle-paint-can-dropoff-local-washdown-pad.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "recycle-paint-can-dropoff-local-industrial-caster",
+    "category": "recycling",
+    "file": "005/recycle-paint-can-dropoff-local-industrial-caster.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "recycle-paint-can-dropoff-local-timber-skid",
+    "category": "recycling",
+    "file": "005/recycle-paint-can-dropoff-local-timber-skid.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "recycle-paint-can-dropoff-local-sorting-side-deck",
+    "category": "recycling",
+    "file": "005/recycle-paint-can-dropoff-local-sorting-side-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "recycle-paint-can-dropoff-facility-warehouse-footing",
+    "category": "recycling",
+    "file": "005/recycle-paint-can-dropoff-facility-warehouse-footing.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "recycle-paint-can-dropoff-facility-washdown-pad",
+    "category": "recycling",
+    "file": "005/recycle-paint-can-dropoff-facility-washdown-pad.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "recycle-paint-can-dropoff-facility-industrial-caster",
+    "category": "recycling",
+    "file": "005/recycle-paint-can-dropoff-facility-industrial-caster.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "recycle-paint-can-dropoff-facility-timber-skid",
+    "category": "recycling",
+    "file": "005/recycle-paint-can-dropoff-facility-timber-skid.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "recycle-paint-can-dropoff-facility-sorting-side-deck",
+    "category": "recycling",
+    "file": "005/recycle-paint-can-dropoff-facility-sorting-side-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "recycle-reusable-crate-wash-local-warehouse-footing",
+    "category": "recycling",
+    "file": "005/recycle-reusable-crate-wash-local-warehouse-footing.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "recycle-reusable-crate-wash-local-washdown-pad",
+    "category": "recycling",
+    "file": "005/recycle-reusable-crate-wash-local-washdown-pad.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "recycle-reusable-crate-wash-local-industrial-caster",
+    "category": "recycling",
+    "file": "005/recycle-reusable-crate-wash-local-industrial-caster.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "recycle-reusable-crate-wash-local-timber-skid",
+    "category": "recycling",
+    "file": "005/recycle-reusable-crate-wash-local-timber-skid.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "recycle-reusable-crate-wash-local-sorting-side-deck",
+    "category": "recycling",
+    "file": "005/recycle-reusable-crate-wash-local-sorting-side-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "recycle-reusable-crate-wash-facility-warehouse-footing",
+    "category": "recycling",
+    "file": "005/recycle-reusable-crate-wash-facility-warehouse-footing.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "recycle-reusable-crate-wash-facility-washdown-pad",
+    "category": "recycling",
+    "file": "005/recycle-reusable-crate-wash-facility-washdown-pad.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "recycle-reusable-crate-wash-facility-industrial-caster",
+    "category": "recycling",
+    "file": "005/recycle-reusable-crate-wash-facility-industrial-caster.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "recycle-reusable-crate-wash-facility-timber-skid",
+    "category": "recycling",
+    "file": "005/recycle-reusable-crate-wash-facility-timber-skid.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "recycle-reusable-crate-wash-facility-sorting-side-deck",
+    "category": "recycling",
+    "file": "005/recycle-reusable-crate-wash-facility-sorting-side-deck.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "recycle-scale-ticket-station-local-warehouse-footing",
+    "category": "recycling",
+    "file": "006/recycle-scale-ticket-station-local-warehouse-footing.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "recycle-scale-ticket-station-local-washdown-pad",
+    "category": "recycling",
+    "file": "006/recycle-scale-ticket-station-local-washdown-pad.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "recycle-scale-ticket-station-local-industrial-caster",
+    "category": "recycling",
+    "file": "006/recycle-scale-ticket-station-local-industrial-caster.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "recycle-scale-ticket-station-local-timber-skid",
+    "category": "recycling",
+    "file": "006/recycle-scale-ticket-station-local-timber-skid.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "recycle-scale-ticket-station-local-sorting-side-deck",
+    "category": "recycling",
+    "file": "006/recycle-scale-ticket-station-local-sorting-side-deck.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "recycle-scale-ticket-station-facility-warehouse-footing",
+    "category": "recycling",
+    "file": "006/recycle-scale-ticket-station-facility-warehouse-footing.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "recycle-scale-ticket-station-facility-washdown-pad",
+    "category": "recycling",
+    "file": "006/recycle-scale-ticket-station-facility-washdown-pad.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "recycle-scale-ticket-station-facility-industrial-caster",
+    "category": "recycling",
+    "file": "006/recycle-scale-ticket-station-facility-industrial-caster.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "recycle-scale-ticket-station-facility-timber-skid",
+    "category": "recycling",
+    "file": "006/recycle-scale-ticket-station-facility-timber-skid.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "recycle-scale-ticket-station-facility-sorting-side-deck",
+    "category": "recycling",
+    "file": "006/recycle-scale-ticket-station-facility-sorting-side-deck.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "recycle-reusable-bottle-wash-rack-local-warehouse-footing",
+    "category": "recycling",
+    "file": "006/recycle-reusable-bottle-wash-rack-local-warehouse-footing.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "recycle-reusable-bottle-wash-rack-local-washdown-pad",
+    "category": "recycling",
+    "file": "006/recycle-reusable-bottle-wash-rack-local-washdown-pad.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "recycle-reusable-bottle-wash-rack-local-industrial-caster",
+    "category": "recycling",
+    "file": "006/recycle-reusable-bottle-wash-rack-local-industrial-caster.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "recycle-reusable-bottle-wash-rack-local-timber-skid",
+    "category": "recycling",
+    "file": "006/recycle-reusable-bottle-wash-rack-local-timber-skid.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "recycle-reusable-bottle-wash-rack-local-sorting-side-deck",
+    "category": "recycling",
+    "file": "006/recycle-reusable-bottle-wash-rack-local-sorting-side-deck.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "recycle-reusable-bottle-wash-rack-facility-warehouse-footing",
+    "category": "recycling",
+    "file": "006/recycle-reusable-bottle-wash-rack-facility-warehouse-footing.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "recycle-reusable-bottle-wash-rack-facility-washdown-pad",
+    "category": "recycling",
+    "file": "006/recycle-reusable-bottle-wash-rack-facility-washdown-pad.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "recycle-reusable-bottle-wash-rack-facility-industrial-caster",
+    "category": "recycling",
+    "file": "006/recycle-reusable-bottle-wash-rack-facility-industrial-caster.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "recycle-reusable-bottle-wash-rack-facility-timber-skid",
+    "category": "recycling",
+    "file": "006/recycle-reusable-bottle-wash-rack-facility-timber-skid.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "recycle-reusable-bottle-wash-rack-facility-sorting-side-deck",
+    "category": "recycling",
+    "file": "006/recycle-reusable-bottle-wash-rack-facility-sorting-side-deck.pixcel.json",
+    "preview": "006/preview.png",
+    "cell": 20
+  }
+]

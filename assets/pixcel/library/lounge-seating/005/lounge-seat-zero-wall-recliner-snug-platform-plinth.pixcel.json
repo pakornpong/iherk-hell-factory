@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "id": "lounge-seat-zero-wall-recliner-snug-platform-plinth",
+  "category": "furniture",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "kind": "wood",
+      "color": "#a27955"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#795743"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#b8a06d"
+    },
+    "iron": {
+      "kind": "metal",
+      "color": "#636c72"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#43464b"
+    },
+    "cloth": {
+      "kind": "matte",
+      "color": "#a79b86"
+    },
+    "piping": {
+      "kind": "matte",
+      "color": "#c6baa4"
+    },
+    "pillow": {
+      "kind": "matte",
+      "color": "#7c7068"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        0
+      ],
+      "to": [
+        39,
+        24,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        40,
+        25,
+        3
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        8,
+        4
+      ],
+      "to": [
+        39,
+        23,
+        10
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "slope",
+      "from": [
+        7,
+        5,
+        9
+      ],
+      "to": [
+        38,
+        13,
+        32
+      ],
+      "axis": "-Y",
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        12,
+        10
+      ],
+      "to": [
+        37,
+        22,
+        14
+      ],
+      "material": "piping"
+    },
+    {
+      "op": "slope",
+      "from": [
+        7,
+        23,
+        9
+      ],
+      "to": [
+        38,
+        30,
+        13
+      ],
+      "axis": "-Y",
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        12
+      ],
+      "to": [
+        8,
+        23,
+        19
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        10,
+        12
+      ],
+      "to": [
+        39,
+        23,
+        19
+      ],
+      "material": "cloth"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        19,
+        15
+      ],
+      "to": [
+        39,
+        20,
+        16
+      ],
+      "material": "brass"
+    }
+  ]
+}

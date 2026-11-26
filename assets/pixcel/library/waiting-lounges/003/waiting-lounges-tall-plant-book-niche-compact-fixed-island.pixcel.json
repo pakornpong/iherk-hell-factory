@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "id": "waiting-lounges-tall-plant-book-niche-compact-fixed-island",
+  "category": "lounge",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "wood": {
+      "color": "#a77c56",
+      "kind": "wood"
+    },
+    "darkwood": {
+      "color": "#755644",
+      "kind": "wood"
+    },
+    "steel": {
+      "color": "#9ba6aa",
+      "kind": "metal"
+    },
+    "charcoal": {
+      "color": "#49535c",
+      "kind": "matte"
+    },
+    "cream": {
+      "color": "#ddd5c3",
+      "kind": "matte"
+    },
+    "linen": {
+      "color": "#aa9a88",
+      "kind": "matte"
+    },
+    "graphite": {
+      "color": "#363e43",
+      "kind": "matte"
+    },
+    "brass": {
+      "color": "#bda16c",
+      "kind": "metal"
+    },
+    "red": {
+      "color": "#a65c50",
+      "kind": "matte"
+    },
+    "blue": {
+      "color": "#6b8090",
+      "kind": "matte"
+    },
+    "glass": {
+      "color": "#89a8b4",
+      "kind": "glass"
+    },
+    "stone": {
+      "color": "#a8a09a",
+      "kind": "matte"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        0
+      ],
+      "to": [
+        26,
+        24,
+        2
+      ],
+      "material": "charcoal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        3
+      ],
+      "to": [
+        26,
+        24,
+        12
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        24,
+        5
+      ],
+      "to": [
+        24,
+        25,
+        11
+      ],
+      "material": "darkwood"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        25,
+        8
+      ],
+      "to": [
+        20,
+        26,
+        9
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        12
+      ],
+      "to": [
+        27,
+        25,
+        13
+      ],
+      "material": "stone"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        14
+      ],
+      "to": [
+        27,
+        24,
+        18
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        18
+      ],
+      "to": [
+        7,
+        24,
+        41
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        6,
+        18
+      ],
+      "to": [
+        27,
+        24,
+        41
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        40
+      ],
+      "to": [
+        27,
+        24,
+        42
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        8,
+        21
+      ],
+      "to": [
+        25,
+        22,
+        22
+      ],
+      "material": "wood"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        10,
+        22
+      ],
+      "to": [
+        24,
+        18,
+        25
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        12,
+        25
+      ],
+      "to": [
+        24,
+        20,
+        27
+      ],
+      "material": "cream"
+    },
+    {
+      "op": "cylinder",
+      "center": [
+        12,
+        16
+      ],
+      "zFrom": 19,
+      "zTo": 27,
+      "radius": 4,
+      "material": "stone"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        16,
+        27
+      ],
+      "to": [
+        12,
+        16,
+        38
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        13,
+        35
+      ],
+      "to": [
+        16,
+        19,
+        38
+      ],
+      "material": "linen"
+    }
+  ]
+}
