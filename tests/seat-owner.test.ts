@@ -26,7 +26,7 @@ const employee = (id: string, visualState: EmployeeRecord["visualState"], isEphe
   isEphemeral, deskIndex: 0, visualState, toolCategory: "code", lastUpdatedAt: 1,
 });
 
-function setup(employees: EmployeeRecord[], ownedBy?: string) {
+function setup(employees: EmployeeRecord[], ownedBy?: string, customZones?: OfficeState["customZones"]) {
   const bay: ProjectBayRecord = {
     id: "b0", projectPath: "/p/a", displayName: "alpha", accentColor: "#38bdf8", archived: false,
     deskSlots: 2, furniture: createDefaultBayFurniture("b0"), createdAt: 1, lastActiveAt: 1,
@@ -39,16 +39,22 @@ function setup(employees: EmployeeRecord[], ownedBy?: string) {
   // Own the last shared chair so ownership, not ordering, decides the seat.
   const owned = chairs[chairs.length - 1];
   if (ownedBy) owned.ownerEmployeeId = ownedBy;
-  const state: OfficeState = { version: 1, theme: "office", bays: [bay], commonWings: [wing], activityLog: [], employees };
-  const sim = new OfficeSimulation();
-  sim.syncFromServer(state, campus);
-  let out = sim.step(50);
-  for (let i = 0; i < 600; i++) out = sim.step(50);
-  const at = (id: string) => {
-    const v = out.visuals.find((visual) => visual.id === id)!;
-    return { ...v, tile: [Math.round(v.x), Math.round(v.y)] };
+  const state: OfficeState = {
+    version: 1, theme: "office", bays: [bay], commonWings: [wing], activityLog: [], employees, customZones,
   };
-  return { chairs, owned, at };
+  const sim = new OfficeSimulation();
+  const syncEmployees = (nextEmployees: EmployeeRecord[], nextCampus = campus) =>
+    sim.syncFromServer({ ...state, employees: nextEmployees }, nextCampus);
+  const sync = (nextEmployees: EmployeeRecord[], nextCampus = campus) => {
+    syncEmployees(nextEmployees, nextCampus);
+    let out = sim.step(50);
+    for (let i = 0; i < 600; i++) out = sim.step(50);
+    return (id: string) => {
+      const v = out.visuals.find((visual) => visual.id === id)!;
+      return { ...v, tile: [Math.round(v.x), Math.round(v.y)] };
+    };
+  };
+  return { chairs, owned, campus, sim, sync, syncEmployees, at: sync(employees) };
 }
 
 describe("Seat owners and resting at the desk", () => {
@@ -79,6 +85,107 @@ describe("Seat owners and resting at the desk", () => {
     expect(chairs.some((chair) => chair.tx === idle.tile[0] && chair.ty === idle.tile[1])).toBe(false);
     expect(idle.dozing).toBe(false);
     expect(idle.bubbleIcon).toBeUndefined();
+  });
+
+  it("keeps coworkers at their desks when one agent leaves for a briefing and returns", () => {
+    const a = employee("a", "working");
+    const b = employee("b", "working");
+    const c = employee("c", "working");
+    const { at, sim, sync, syncEmployees } = setup([a, b, c]);
+    const assigning = { ...a, visualState: "assigning" as const };
+
+    syncEmployees([assigning, b, c]);
+    const firstFrame = sim.step(16).visuals;
+    expect(firstFrame.filter((visual) => visual.isMoving).map((visual) => visual.id)).toEqual(["a"]);
+    const briefing = sync([assigning, b, c]);
+    expect(briefing("a").tile).not.toEqual(at("a").tile);
+    expect(briefing("b").tile).toEqual(at("b").tile);
+    expect(briefing("c").tile).toEqual(at("c").tile);
+
+    const d = employee("d", "working");
+    expect(sync([assigning, b, c, d])("d").tile).toEqual(at("a").tile);
+    const returned = sync([a, b, c, d]);
+    for (const id of ["b", "c"]) expect(returned(id).tile).toEqual(at(id).tile);
+    expect(returned("d").tile).toEqual(at("a").tile);
+    expect(new Set([a, b, c, d].map(({ id }) => returned(id).tile.join(","))).size).toBe(4);
+  });
+
+  it("honors changed chair ownership and current layout when retaining desks", () => {
+    const a = employee("a", "working");
+    const b = employee("b", "working");
+    const c = employee("c", "working");
+    const { at, chairs, campus, sync } = setup([a, b, c]);
+    const [aChair, bChair, cChair, spare] = chairs;
+    const nextCampus = {
+      ...campus,
+      worldFurniture: campus.worldFurniture.map((chair) => {
+        if (chair.id === aChair.id) return { ...chair, ownerEmployeeId: c.id };
+        if (chair.id === bChair.id) return { ...chair, tx: spare.tx, ty: spare.ty, direction: "se" as const };
+        if (chair.id === spare.id) return { ...chair, tx: bChair.tx, ty: bChair.ty };
+        return chair;
+      }),
+    };
+
+    const changed = sync([a, b, c], nextCampus);
+    expect(changed("c").tile).toEqual(at("a").tile);
+    expect(changed("b").tile).toEqual([Math.round(spare.tx), Math.round(spare.ty)]);
+    expect(changed("b").direction).toBe("se");
+    expect(changed("a").tile).not.toEqual(changed("b").tile);
+    expect(changed("a").tile).not.toEqual(changed("c").tile);
+    expect(changed("c").tile).not.toEqual([Math.round(cChair.tx), Math.round(cChair.ty)]);
+  });
+
+  it("retains and reuses separate shared chairs that have the same legacy ID", () => {
+    const a = employee("a", "working");
+    const b = employee("b", "working");
+    const { chairs, campus, sync } = setup([]);
+    const [first, second] = chairs;
+    const legacyCampus = {
+      ...campus,
+      worldFurniture: campus.worldFurniture.map((chair) => chair.id === second.id ? { ...chair, id: first.id } : chair),
+    };
+
+    const initial = sync([a, b], legacyCampus);
+    expect(initial("a").tile).toEqual([first.tx, first.ty]);
+    expect(initial("b").tile).toEqual([second.tx, second.ty]);
+    const next = sync([b, employee("c", "working")], legacyCampus);
+    expect(next("b").tile).toEqual(initial("b").tile);
+    expect(next("c").tile).toEqual(initial("a").tile);
+  });
+
+  it("does not make an agent walk when only its working animation changes at a fractional chair", () => {
+    const a = employee("a", "teamwork");
+    const { campus, owned, sim, sync, syncEmployees } = setup([a], a.id);
+    const tilePermissions = [...campus.tilePermissions!];
+    tilePermissions[owned.ty * campus.widthTiles + owned.tx] = 0;
+    const nextCampus = {
+      ...campus,
+      tilePermissions,
+      worldFurniture: campus.worldFurniture.map((chair) =>
+        chair.id === owned.id ? { ...chair, tx: chair.tx - 0.5 } : chair,
+      ),
+    };
+    const seated = sync([a], nextCampus)("a");
+    expect(seated.x).toBe(owned.tx - 0.5);
+    syncEmployees([{ ...a, visualState: "working" }], nextCampus);
+    const [visual] = sim.step(16).visuals;
+    expect(visual.isMoving).toBe(false);
+    expect(visual.x).toBe(seated.x);
+    expect(visual.y).toBe(seated.y);
+    expect(visual.record.visualState).toBe("working");
+  });
+
+  it("retries a chair it could not reach when a later state change opens the route", () => {
+    const a = employee("a", "assigning");
+    const { campus, owned, sync } = setup([a], a.id);
+    const tilePermissions = [...campus.tilePermissions!];
+    tilePermissions[owned.ty * campus.widthTiles + owned.tx] = 0;
+    const target = [owned.tx, owned.ty];
+    const blocked = sync([{ ...a, visualState: "working" }], { ...campus, tilePermissions })("a");
+    expect(blocked.tile).not.toEqual(target);
+    expect(blocked.isMoving).toBe(false);
+
+    expect(sync([{ ...a, visualState: "teamwork" }])("a").tile).toEqual(target);
   });
 });
 
@@ -122,6 +229,58 @@ describe("Boss corner is for briefing and reporting only", () => {
     const r0 = at("r0");
     expect(r0.tile[0]).toBeLessThan(6);
     expect(r0.tile[1]).toBeLessThan(6);
+  });
+
+  it("keeps existing visitors in place when an earlier employee arrives at the Boss desk", () => {
+    const a = employee("a", "working");
+    const b = employee("b", "reporting");
+    const c = employee("c", "reporting");
+    const { at, sync } = setup([a, b, c]);
+    const briefing = sync([{ ...a, visualState: "assigning" }, b, c]);
+    expect(briefing("b").tile).toEqual(at("b").tile);
+    expect(briefing("c").tile).toEqual(at("c").tile);
+    expect(new Set([a, b, c].map(({ id }) => briefing(id).tile.join(","))).size).toBe(3);
+    const replacement = sync([{ ...a, visualState: "assigning" }, { ...b, visualState: "working" }, c, employee("d", "reporting")]);
+    expect(replacement("d").tile).toEqual(at("b").tile);
+    expect(replacement("a").tile).toEqual(briefing("a").tile);
+    expect(replacement("c").tile).toEqual(at("c").tile);
+  });
+
+  it("fills an open visitor position after the Boss area was overcrowded", () => {
+    const visitors = ["a", "b", "c", "d"].map((id) => employee(id, "reporting"));
+    const { at, sync } = setup(visitors);
+    expect(at("a").tile).toEqual(at("d").tile);
+
+    sync([visitors[3]]);
+    const next = sync([visitors[3], employee("e", "assigning")]);
+    expect(next("d").tile).toEqual(at("d").tile);
+    expect(next("e").tile).toEqual(at("b").tile);
+  });
+});
+
+describe("Meeting placement", () => {
+  it("keeps other attendees in place when one leaves for a briefing", () => {
+    const a = employee("a", "meeting");
+    const b = employee("b", "meeting");
+    const c = employee("c", "meeting");
+    const { at, sync } = setup([a, b, c]);
+    const briefing = sync([{ ...a, visualState: "assigning" }, b, c]);
+    expect(briefing("a").tile).not.toEqual(at("a").tile);
+    expect(briefing("b").tile).toEqual(at("b").tile);
+    expect(briefing("c").tile).toEqual(at("c").tile);
+  });
+
+  it("fills an open meeting chair after the meeting was overcrowded", () => {
+    const [a, b, c] = ["a", "b", "c"].map((id) => employee(id, "meeting"));
+    const { at, sync } = setup([a, b, c], undefined, [
+      { id: "meeting", name: "Meeting", icon: "🤝", color: "#38bdf8", role: "meeting", x: 7, y: 1, width: 2, height: 1 },
+    ]);
+    expect(at("a").tile).toEqual(at("c").tile);
+
+    sync([c]);
+    const next = sync([c, employee("d", "meeting")]);
+    expect(next("c").tile).toEqual(at("c").tile);
+    expect(next("d").tile).toEqual(at("b").tile);
   });
 });
 
