@@ -16,7 +16,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "dev": "tsx src/cli/index.ts start",
-    "start": "node dist/cli/index.js start"
+    "start": "node dist/cli/index.js start",
+    "assets:fit-footprints": "node scripts/asset-library/fit-footprints.mjs",
+    "assets:check-footprints": "node scripts/asset-library/fit-footprints.mjs --check"
   },
   "engines": {
     "node": ">=22.0.0"
