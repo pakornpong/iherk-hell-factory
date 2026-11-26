@@ -42,7 +42,7 @@ function makeBay(i: number): ProjectBayRecord {
 }
 
 describe("Square Clockwise Expansion & Boss Office (0,0)", () => {
-  it("places Boss Corner at (0,0), Central Work Hub at (1,0), auto-scaled Hypersleep Bay, and blank open floor", () => {
+  it("places Boss Corner at (0,0), Central Work Hub at (1,0), an empty Hypersleep Bay, and blank open floor", () => {
     const bays = Array.from({ length: 7 }, (_, i) => makeBay(i));
     const campus = computeCampusLayout(bays, [], catalog, createDefaultBossOffice(), "office", undefined, undefined, {
       employeeCount: 7,
@@ -59,7 +59,7 @@ describe("Square Clockwise Expansion & Boss Office (0,0)", () => {
     expect([cowork?.col, cowork?.row]).toEqual([1, 0]);
 
     const pods = campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
-    expect(pods).toHaveLength(7);
+    expect(pods).toHaveLength(0);
   });
 
   it("dynamically routes reporting agents directly in front of Boss after Boss chair is moved and rotated", async () => {

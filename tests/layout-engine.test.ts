@@ -38,7 +38,7 @@ function makeBay(i: number, archived = false): ProjectBayRecord {
 }
 
 describe("layout-engine", () => {
-  it("lays out open blank floor with Boss, Central Hub, 1 hypersleep capsule per agent, and continuous perimeter walls", () => {
+  it("lays out open blank floor with Boss, Central Hub, no spawned hypersleep pods, and continuous perimeter walls", () => {
     const bays = Array.from({ length: 25 }, (_, i) => makeBay(i));
     const campus = computeCampusLayout(bays, [], mockCatalog, undefined, "office", undefined, undefined, {
       employeeCount: 25,
@@ -48,7 +48,7 @@ describe("layout-engine", () => {
     expect(campus.zones.filter((z) => z.kind === "cowork")).toHaveLength(1);
     expect(campus.zones.filter((z) => z.kind === "hypersleep")).toHaveLength(1);
     expect(campus.zones.filter((z) => z.kind === "floor")).toHaveLength(1);
-    expect(campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(25);
+    expect(campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(0);
     expect(campus.walls.some((w) => w.edge === "corner" && w.tx === 0 && w.ty === 0)).toBe(true);
 
     for (let tx = 0; tx < campus.widthTiles; tx++) {
@@ -59,14 +59,14 @@ describe("layout-engine", () => {
     }
   });
 
-  it("grows hypersleep capsules 1-for-1 with employee count and supports expanding open floor size", () => {
+  it("does not spawn hypersleep pods for employees and supports expanding open floor size", () => {
     const bays = [makeBay(0), makeBay(1), makeBay(2)];
     const c1 = computeCampusLayout(bays, [], mockCatalog, undefined, "office", undefined, undefined, {
       employeeCount: 3,
       floorWidthTiles: 24,
       floorDepthTiles: 24,
     });
-    expect(c1.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(3);
+    expect(c1.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(0);
     expect([c1.widthTiles, c1.depthTiles]).toEqual([24, 24]);
 
     const c2 = computeCampusLayout(bays, [], mockCatalog, undefined, "office", undefined, undefined, {
@@ -74,7 +74,7 @@ describe("layout-engine", () => {
       floorWidthTiles: 30,
       floorDepthTiles: 30,
     });
-    expect(c2.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(4);
+    expect(c2.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(0);
     expect([c2.widthTiles, c2.depthTiles]).toEqual([30, 30]);
   });
 

@@ -43,6 +43,31 @@ export const MODULE_PITCH_X = ZONE_SIZE + IN_ZONE_GAP;
 export const MODULE_PITCH_Y = MODULE_PITCH_X;
 /** Fixed slot of the Central Work Hub right next to Boss. */
 export const COWORK_SLOT = { col: 1, row: 0 } as const;
+export const MIN_BOSS_WIDTH = 4;
+export const MAX_BOSS_WIDTH = 12;
+export const MIN_BOSS_DEPTH = 4;
+export const MAX_BOSS_DEPTH = 24;
+
+/** Boss corner size; defaults to one 6x6 module. */
+export function getBossZoneSize(bossOffice?: Pick<BossOfficeRecord, "width" | "height">): [number, number] {
+  return [bossOffice?.width ?? ZONE_SIZE, bossOffice?.height ?? ZONE_SIZE];
+}
+
+/** Boss corner rect [x, y, width, height]; defaults to 0,0 · 6x6. */
+export function getBossZoneRect(
+  bossOffice?: Pick<BossOfficeRecord, "x" | "y" | "width" | "height">,
+): [number, number, number, number] {
+  const [w, d] = getBossZoneSize(bossOffice);
+  return [bossOffice?.x ?? 0, bossOffice?.y ?? 0, w, d];
+}
+
+/** Central Work Hub origin: pinned hubX/hubY, otherwise right of the Boss corner. */
+export function getHubOrigin(
+  bossOffice?: Pick<BossOfficeRecord, "x" | "y" | "width" | "height" | "hubX" | "hubY">,
+): [number, number] {
+  const [bx, by, bw] = getBossZoneRect(bossOffice);
+  return [bossOffice?.hubX ?? bx + bw, bossOffice?.hubY ?? by];
+}
 /** Open sandbox floor defaults and expansion step. */
 export const DEFAULT_FLOOR_WIDTH = 24;
 export const DEFAULT_FLOOR_DEPTH = 24;
@@ -88,26 +113,6 @@ export function createDefaultBossOffice(): BossOfficeRecord {
       { id: "boss:0-visitor-1", zoneId: "boss:0", lx: 3, ly: 3, assetId: "chair-office-swivel", direction: "nw", layer: "object", placedBy: "system" },
     ],
   };
-}
-
-/** Auto-generated 1x2 horizontal hypersleep pods: 1 capsule per agent, arranged in rows with 1-tile walking aisles. */
-export function createHypersleepFurniture(capsuleCount: number, cols: number): FurnitureInstance[] {
-  const count = Math.max(1, capsuleCount);
-  const safeCols = Math.max(1, cols);
-  const items: FurnitureInstance[] = [];
-  for (let i = 0; i < count; i++) {
-    items.push({
-      id: `hypersleep:0-pod-${i}`,
-      zoneId: "hypersleep:0",
-      lx: i % safeCols,
-      ly: Math.floor(i / safeCols) * 3,
-      assetId: "hypersleep-capsule",
-      direction: "se",
-      layer: "object",
-      placedBy: "system",
-    });
-  }
-  return items;
 }
 
 export function getAmenityTheme(index: number): AmenityThemeId {
@@ -175,7 +180,7 @@ export function getClockwiseRingCoords(ring: number): Array<[number, number]> {
 }
 
 export interface CampusLayoutOptions {
-  /** Number of active employees -> determines how many hypersleep capsules are spawned (1 per agent). */
+  /** @deprecated Pods are no longer spawned per employee; kept so older callers still type-check. */
   employeeCount?: number;
   /** User-configurable open floor width in tiles (defaults to 24, expandable/shrinkable). */
   floorWidthTiles?: number;
@@ -245,24 +250,24 @@ export function computeCampusLayout(
   // Open Customizable Sandbox Floor + 3 Core Functional Anchors:
   //   1. Boss Corner       (boss:0, 0..5 x 0..5)       — Boss desk & chair
   //   2. Central Work Hub  (cowork:0, 6..11 x 0..5)    — Shared desks where working agents sit
-  //   3. Hypersleep Bay    (hypersleep:0, 13.. x 1..)  — Auto-scaled 1 capsule per agent
+  //   3. Hypersleep Bay    (hypersleep:0, 13.. x 1..)  — Only pods the user placed/kept; none are spawned
   //   4. Open Blank Floor  (floor:0, 0..W x 0..D)      — Empty space for user decoration, expandable!
   // =========================================================================
 
   const requestedW = Math.max(MIN_FLOOR_SIDE, Math.min(MAX_FLOOR_SIDE, opts?.floorWidthTiles ?? DEFAULT_FLOOR_WIDTH));
   const requestedD = Math.max(MIN_FLOOR_SIDE, Math.min(MAX_FLOOR_SIDE, opts?.floorDepthTiles ?? DEFAULT_FLOOR_DEPTH));
 
-  const capsuleCount = Math.max(1, opts?.employeeCount ?? Math.max(1, activeBays.length));
+  // Pods are no longer spawned per employee: hypersleep:0 only holds pods already saved in zoneOverrides.
   const hasCustomHypersleep = zoneOverrides?.["hypersleep:0"] !== undefined;
   const capsuleCols = Math.max(4, requestedW - HYPERSLEEP_ORIGIN.x - 1);
-  const capsuleRows = Math.ceil(capsuleCount / capsuleCols);
-  const capsuleHeight = Math.max(3, capsuleRows * 3);
+  const capsuleHeight = 3;
 
-  let minAutoW = HYPERSLEEP_ORIGIN.x + capsuleCols + 1;
-  let minAutoD = HYPERSLEEP_ORIGIN.y + capsuleHeight + 2;
-  if (hasCustomHypersleep) {
-    minAutoW = MIN_FLOOR_SIDE;
-    minAutoD = MIN_FLOOR_SIDE;
+  const [bossX, bossY, bossW, bossD] = getBossZoneRect(bossOffice);
+  const [hubX, hubY] = getHubOrigin(bossOffice);
+  // The floor must fit both the Boss corner and the co-working hub
+  let minAutoW = Math.max(MIN_FLOOR_SIDE, bossX + bossW, hubX + ZONE_SIZE);
+  let minAutoD = Math.max(MIN_FLOOR_SIDE, bossY + bossD, hubY + ZONE_SIZE);
+  {
     for (const item of zoneOverrides?.["hypersleep:0"] ?? []) {
       const [fw, fd] = getRotatedFootprint(
         catalogById.get(item.assetId)?.footprintTiles ??
@@ -294,10 +299,10 @@ export function computeCampusLayout(
     zoneGroup: "hq",
     row: 0,
     col: 0,
-    originX: 0,
-    originY: 0,
-    width: ZONE_SIZE,
-    height: ZONE_SIZE,
+    originX: bossX,
+    originY: bossY,
+    width: bossW,
+    height: bossD,
   };
   zones.push(bossZone);
   placeFurniture(bossZone, bossRec.furniture);
@@ -310,15 +315,15 @@ export function computeCampusLayout(
     lotId: "cowork",
     row: COWORK_SLOT.row,
     col: COWORK_SLOT.col,
-    originX: COWORK_SLOT.col * ZONE_SIZE,
-    originY: COWORK_SLOT.row * ZONE_SIZE,
+    originX: hubX,
+    originY: hubY,
     width: ZONE_SIZE,
     height: ZONE_SIZE,
   };
   zones.push(coworkZone);
   placeFurniture(coworkZone, zoneOverrides?.["cowork:0"] ?? createCoworkFurniture());
 
-  // 3. Hypersleep Bay (auto-scaled 1 pod per employee; respects user moves/edits via zoneOverrides)
+  // 3. Hypersleep Bay (legacy anchor for saved pods; empty unless zoneOverrides["hypersleep:0"] has items)
   const hypersleepZone: ZoneBounds = {
     zoneId: "hypersleep:0",
     kind: "hypersleep",
@@ -333,7 +338,7 @@ export function computeCampusLayout(
   zones.push(hypersleepZone);
   placeFurniture(
     hypersleepZone,
-    zoneOverrides?.["hypersleep:0"] ?? createHypersleepFurniture(capsuleCount, capsuleCols),
+    zoneOverrides?.["hypersleep:0"] ?? [],
   );
 
   // 4. Open Blank Floor (spans the entire campus as the catch-all editable decoration canvas)
@@ -380,17 +385,13 @@ export function computeCampusLayout(
   const customHypersleepZones = (opts?.customZones ?? []).filter((z) => z.role === "hypersleep");
   for (let ty = 0; ty < depthTiles; ty++) {
     for (let tx = 0; tx < widthTiles; tx++) {
-      const inBossRug = tx >= 1 && tx <= 4 && ty >= 1 && ty <= 4;
+      const inBossRug = tx >= bossX + 1 && tx <= bossX + bossW - 2 && ty >= bossY + 1 && ty <= bossY + bossD - 2;
       const inHypersleepDeck =
         customHypersleepZones.length > 0
           ? customHypersleepZones.some(
               (cz) => tx >= cz.x && tx < cz.x + cz.width && ty >= cz.y && ty < cz.y + cz.height,
             )
-          : !hasCustomHypersleep &&
-            tx >= hypersleepZone.originX &&
-            tx < hypersleepZone.originX + hypersleepZone.width &&
-            ty >= hypersleepZone.originY &&
-            ty < hypersleepZone.originY + hypersleepZone.height;
+          : false;
       const defaultAssetId = inBossRug
         ? bossRugAsset
         : inHypersleepDeck

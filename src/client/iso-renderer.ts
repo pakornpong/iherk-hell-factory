@@ -44,6 +44,7 @@ export interface RenderedEmployeeInput {
   clipName: string;
   bubbleIcon?: string;
   bubbleText?: string;
+  dozing?: boolean;
 }
 
 export interface SyncPacketVisual {
@@ -1069,7 +1070,9 @@ export class IsoRenderer {
       const seatTy = Math.round(emp.y);
       const isSleepingClip = emp.clipName.startsWith("rest_sleep_");
       const isSeatedClip = emp.clipName.startsWith("sit_") || isSleepingClip;
-      const fgAttach = isSeatedClip ? foregroundAttachByTile.get(toTileKey(seatTx, seatTy)) : undefined;
+      const fgAttach = isSeatedClip
+        ? foregroundAttachByTile.get(toTileKey(emp.x, emp.y)) ?? foregroundAttachByTile.get(toTileKey(seatTx, seatTy))
+        : undefined;
       const hasFgOverlay = Boolean(fgAttach && fgAttach.direction === emp.direction);
       const isMultiTilePod = Boolean(
         hasFgOverlay && fgAttach && isSleepingClip && (fgAttach.footprintX > 1 || fgAttach.footprintY > 1),
@@ -1143,7 +1146,9 @@ export class IsoRenderer {
           emissiveDraws.push({ sprite: item.sprite, wx: item.wx, wy: item.wy, pop: 1 });
         }
       } else {
-        const box = drawSprite(item.sprite, item.wx, item.wy);
+        const box = drawSprite(item.sprite, item.wx, item.wy, item.emp.dozing
+          ? { popScaleY: 0.88 }
+          : undefined);
         hitBoxes.push({ kind: "employee", id: item.emp.record.id, x: box.sx, y: box.sy, w: box.sw, h: box.sh });
         if (item.sprite.emissiveImage && !item.occludedBackGlow) {
           emissiveDraws.push({ sprite: item.sprite, wx: item.wx, wy: item.wy, pop: 1 });
@@ -1381,7 +1386,7 @@ export class IsoRenderer {
     const allPods = campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
     const totalPods = allPods.length;
     const hasCustomHypersleepZone = customZones.some((cz) => cz.role === "hypersleep");
-    const sleepingCount = employees.filter((e) => e.record.visualState === "resting").length;
+    const sleepingCount = employees.filter((e) => e.clipName.startsWith("rest_sleep_")).length;
     ctx.save();
     ctx.font = `bold ${Math.max(10, 6 * zoom)}px ui-monospace, SFMono-Regular, Menlo, monospace`;
     ctx.textAlign = "center";
@@ -1512,7 +1517,7 @@ export class IsoRenderer {
       const [wx, wy] = toAnchorWorld(bx, by, 1, 1);
       if (!isInWorldBounds(wx, wy, bounds)) continue;
       const bob = Math.sin(timeMs / 400 + emp.x) * 1.5;
-      const [sx, sy] = camera.worldToScreen(wx, wy - (isInMultiPod ? 32 : 52) + bob);
+      const [sx, sy] = camera.worldToScreen(wx, wy - (isInMultiPod ? 32 : emp.dozing ? 46 : 52) + bob);
 
       if (emp.bubbleIcon || emp.bubbleText) {
         const text = emp.bubbleIcon ? `${emp.bubbleIcon}${emp.bubbleText ? ` ${emp.bubbleText}` : ""}` : (emp.bubbleText ?? "");

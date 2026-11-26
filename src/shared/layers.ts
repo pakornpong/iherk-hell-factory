@@ -188,6 +188,26 @@ export function isEdgeDividerAsset(assetId: string): boolean {
   return EDGE_DIVIDER_PROP_IDS.has(assetId);
 }
 
+/**
+ * The Boss corner is only for receiving briefs and reporting: agents never sit there to work,
+ * meet or doze, and its chairs cannot be owned. Covers Boss-zone items and anything placed inside its bounds.
+ */
+export function isInBossArea(
+  campus: Pick<ComputedCampus, "zones">,
+  item: { id: string; zoneId: string; tx: number; ty: number },
+): boolean {
+  if (item.zoneId === "boss:0" || item.id.startsWith("boss:0-")) return true;
+  const zone = campus.zones.find((z) => z.kind === "boss");
+  return Boolean(zone) &&
+    item.tx >= zone!.originX && item.tx < zone!.originX + zone!.width &&
+    item.ty >= zone!.originY && item.ty < zone!.originY + zone!.height;
+}
+
+export function isOwnableChair(item: { id: string; assetId: string }): boolean {
+  return item.assetId === "chair-office-swivel" &&
+    item.id !== "boss:0-boss-chair" && !item.id.startsWith("boss:0-visitor-");
+}
+
 /** Capsules and modular walls use tile-aligned pathfinding geometry. */
 export function supportsHalfTilePlacement(assetId: string): boolean {
   return assetId !== "hypersleep-capsule" && !isEdgeDividerAsset(assetId);

@@ -60,7 +60,9 @@ describe("IsoCamera & unified topological depth-sorter", () => {
   });
 
   it("projects the floor, multi-tile furniture, overrides and corner cutaway into the rotated view", () => {
-    const campus = computeCampusLayout([], [], new Map(), undefined, "office", { "4,3": 0 }, undefined, {
+    // Pods are no longer spawned; place one explicitly so 1x2 rotation is still covered
+    const pod = { id: "hypersleep:0-pod-0", zoneId: "hypersleep:0", lx: 0, ly: 0, assetId: "hypersleep-capsule", direction: "se" as const, layer: "object" as const, placedBy: "user" as const };
+    const campus = computeCampusLayout([], [], new Map(), undefined, "office", { "4,3": 0 }, { "hypersleep:0": [pod] }, {
       floorWidthTiles: 24,
       floorDepthTiles: 18,
       floorTileOverrides: { "4,3": "floor-wood-plank" },

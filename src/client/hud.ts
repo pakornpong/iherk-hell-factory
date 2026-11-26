@@ -26,6 +26,9 @@ export interface LayerEditorState {
   selectedFurnitureId: string | null;
 }
 
+/** Sentinel editingZoneId while the user draws the Boss corner on the map. */
+export const BOSS_ZONE_EDIT_ID = "boss:0";
+
 export interface ZoneEditorState {
   active: boolean;
   startTile: [number, number] | null;
@@ -47,6 +50,8 @@ export interface HudCallbacks {
   onRelocatePodsToZone?(zoneId: string): void;
   onDeleteCustomZone?(zoneId: string): void;
   onResizeFloor?(delta: { deltaWidth?: number; deltaDepth?: number }): void;
+  onResizeBossZone?(delta: { deltaWidth?: number; deltaDepth?: number }): void;
+  onStartDrawBossZone?(): void;
   onToggleZonePanel?(open?: boolean): void;
   onZoneDraftChanged?(): void;
   onFocusEmployee?(employeeId: string): void;
@@ -70,7 +75,7 @@ const STATE_LABELS: Record<string, string> = {
   teamwork: "🤝 Teamwork",
   meeting: "💬 Meeting",
   reporting: "👑 Reporting to Boss",
-  resting: "☕ Resting",
+  resting: "💤 Resting",
 };
 
 const THEME_CYCLE: readonly ThemeMode[] = ["office", "night", "day"] as const;
@@ -215,6 +220,15 @@ export class OfficeHud {
       this.cb.onToggleZonePanel?.();
     });
 
+    for (const [id, delta] of [
+      ["btn-boss-w-minus", { deltaWidth: -1 }],
+      ["btn-boss-w-plus", { deltaWidth: 1 }],
+      ["btn-boss-d-minus", { deltaDepth: -1 }],
+      ["btn-boss-d-plus", { deltaDepth: 1 }],
+    ] as const) {
+      document.getElementById(id)?.addEventListener("click", () => this.cb.onResizeBossZone?.(delta));
+    }
+
     document.getElementById("btn-floor-w-minus")?.addEventListener("click", () => {
       this.cb.onResizeFloor?.({ deltaWidth: -2, deltaDepth: 0 });
     });
@@ -326,6 +340,7 @@ export class OfficeHud {
       this.cb.onDecorateChanged();
     });
 
+    document.getElementById("btn-draw-boss-zone")?.addEventListener("click", () => this.cb.onStartDrawBossZone?.());
     document.getElementById("btn-edit-pods-zone")?.addEventListener("click", () => {
       this.cb.onStartEditPodsZone?.();
     });
@@ -519,6 +534,9 @@ export class OfficeHud {
       zonePanel.classList.toggle("hidden", !zoneOpen);
       const sizeEl = document.getElementById("floor-size-readout");
       if (sizeEl) sizeEl.textContent = `${snapshot.campus.widthTiles} × ${snapshot.campus.depthTiles}`;
+      const bossZone = snapshot.campus.zones.find((zone) => zone.kind === "boss");
+      const bossSizeEl = document.getElementById("boss-size-readout");
+      if (bossSizeEl && bossZone) bossSizeEl.textContent = `${bossZone.width} × ${bossZone.height}`;
 
       const czs = state.customZones ?? [];
       const editingZone = zoneEditor?.editingZoneId ? czs.find((z) => z.id === zoneEditor.editingZoneId) ?? null : null;
@@ -544,8 +562,14 @@ export class OfficeHud {
       document.getElementById("zone-edit-actions")?.classList.toggle("hidden", !editingZone);
 
       const statusEl = document.getElementById("zone-draw-status");
+      const drawingBoss = zoneEditor?.editingZoneId === BOSS_ZONE_EDIT_ID;
+      if (formTitle && drawingBoss) formTitle.textContent = "DRAW BOSS ZONE";
       if (statusEl && zoneEditor) {
-        if (editingZone) {
+        if (drawingBoss) {
+          statusEl.textContent = zoneEditor.startTile
+            ? `2. คลิกมุมตรงข้ามของโซน Boss (เริ่ม ${zoneEditor.startTile[0]},${zoneEditor.startTile[1]} · Esc ยกเลิก)`
+            : "1. คลิกมุมแรกของโซน Boss บนพื้น (กว้าง 4–12 · ลึก 4–24 ช่อง)";
+        } else if (editingZone) {
           statusEl.textContent = zoneEditor.startTile
             ? `2. เลือกมุมตรงข้ามเพื่อย้าย/ปรับขนาด "${editingZone.name}" (เริ่ม ${zoneEditor.startTile[0]},${zoneEditor.startTile[1]})`
             : `แก้ชื่อ/บทบาทแล้วกด 💾 บันทึก หรือคลิก 2 มุมบนพื้นเพื่อย้าย/ปรับขนาดโซนนี้`;
@@ -1013,6 +1037,7 @@ export class OfficeHud {
             <span class="active-agent-name">${escapeHtml(emp.displayName)}</span>
           </div>
           <div class="active-agent-badges">
+            <span class="badge">${emp.isEphemeral ? "ชั่วคราว" : "ประจำ"}</span>
             ${roleMeta ? `<span class="role-badge" style="color:${roleMeta.color}">${roleMeta.shortLabel}</span>` : ""}
             <span class="badge ${emp.provider ?? "starter"}">${emp.provider === "claude" ? "C" : emp.provider === "gemini" ? "G" : emp.provider === "codex" ? "CX" : "S"}</span>
           </div>
@@ -1057,6 +1082,7 @@ export class OfficeHud {
         }</span>
       </div>
       <div class="insp-row"><span>Zone:</span><span style="color:${zoneMeta.color}">${zoneMeta.icon} ${emp.isEphemeral ? "CO-WORKING (HQ)" : zoneMeta.label}</span></div>
+      <div class="insp-row"><span>ประเภท:</span><span>${emp.isEphemeral ? "Subagent ชั่วคราว" : "Agent ประจำ"}</span></div>
       <div class="insp-row"><span>State:</span><span>${STATE_LABELS[emp.visualState] ?? emp.visualState}</span></div>
       <div class="insp-row"><span>Project:</span><span>${escapeHtml(bay?.displayName ?? "-")}</span></div>
       <div class="insp-path">${escapeHtml(bay?.projectPath ?? "Unclaimed Starter Studio")}</div>

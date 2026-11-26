@@ -142,7 +142,9 @@ describe("Pokémon GBA-style Layer & Movement Permission System", () => {
       lastActiveAt: 1,
     };
     const wing = createDefaultCommonWing(0);
-    const campus = computeCampusLayout([bay], [wing], MOCK_CATALOG, createDefaultBossOffice(), "office");
+    // Pods are no longer spawned; place one so its SEAT permission is still covered
+    const pod = { id: "hypersleep:0-pod-0", zoneId: "hypersleep:0", lx: 0, ly: 0, assetId: "hypersleep-capsule", direction: "se" as const, layer: "object" as const, placedBy: "user" as const };
+    const campus = computeCampusLayout([bay], [wing], MOCK_CATALOG, createDefaultBossOffice(), "office", undefined, { "hypersleep:0": [pod] });
 
     expect(campus.tilePermissions?.length).toBe(campus.widthTiles * campus.depthTiles);
     const permMap = buildTilePermissionMap(campus, undefined, MOCK_CATALOG);

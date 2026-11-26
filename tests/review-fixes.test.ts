@@ -131,14 +131,14 @@ describe("Final Review Fix Verification (Critical #1-#4 & Important #5-#10)", ()
     expect(Math.round(out.visuals[0].y)).toBe(centralChairs[0].ty);
     expect(out.visuals[0].direction).toBe(centralChairs[0].direction);
 
-    // Resting -> walks into Hypersleep Capsule and sleeps inside!
+    // Resting -> a permanent agent stays at the same desk chair and dozes there
     state.employees[0].visualState = "resting";
     sim.syncFromServer(state, campus);
     for (let i = 0; i < 400; i++) out = sim.step(50);
-    const pod0 = campus.worldFurniture.find((f) => f.assetId === "hypersleep-capsule")!;
-    expect(Math.round(out.visuals[0].x)).toBe(pod0.tx);
-    expect(Math.round(out.visuals[0].y)).toBe(pod0.ty);
-    expect(out.visuals[0].clipName).toMatch(/^rest_sleep_/);
+    expect(Math.round(out.visuals[0].x)).toBe(centralChairs[0].tx);
+    expect(Math.round(out.visuals[0].y)).toBe(centralChairs[0].ty);
+    expect(out.visuals[0].clipName).toBe("sit_type_0");
+    expect(out.visuals[0].dozing).toBe(true);
     expect(out.visuals[0].bubbleIcon).toBe("💤");
   });
 

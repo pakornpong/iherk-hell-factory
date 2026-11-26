@@ -4,6 +4,7 @@ import {
   furnitureFootprintsCollide,
   getSurfaceHostHeightVoxels,
   isEdgeDividerAsset,
+  isInBossArea,
   isTabletopAsset,
   isWalkablePermission,
   resolveAssetLayerConfig,
@@ -17,13 +18,14 @@ import type {
   CustomZoneRole,
   OfficeSnapshotPayload,
   ThemeMode,
+  WorldFurnitureInstance,
   WsServerMessage,
 } from "../shared/types.js";
 import { AtlasManager } from "./atlas-loader.js";
 import { findBossChair, getCenteredChairTile } from "./chair-alignment.js";
 import { IsoCamera } from "./camera.js";
 import { DecorateController, isEditableFurniture } from "./decorate.js";
-import { OfficeHud, type LayerBrush, type LayerEditorState, type ZoneEditorState } from "./hud.js";
+import { BOSS_ZONE_EDIT_ID, OfficeHud, type LayerBrush, type LayerEditorState, type ZoneEditorState } from "./hud.js";
 import { IsoRenderer, type LayerOverlayMode } from "./iso-renderer.js";
 import { OfficeSimulation, type SimEmployeeVisual } from "./sim.js";
 
@@ -158,9 +160,68 @@ async function bootstrap(): Promise<void> {
     },
   });
 
+  let selectedSeatId: string | null = null;
+  let seatOwnerPending = false;
+  const ownerButton = document.getElementById("btn-seat-owner") as HTMLButtonElement;
+  const ownerPanel = document.getElementById("seat-owner-panel")!;
+  const ownerTarget = document.getElementById("seat-owner-target")!;
+  const ownerSelect = document.getElementById("seat-owner-select") as HTMLSelectElement;
+  const isAssignableChair = (item: WorldFurnitureInstance) =>
+    item.assetId === "chair-office-swivel" && Boolean(snapshot) && !isInBossArea(snapshot!.campus, item);
+
+  const refreshSeatOwner = (current: OfficeSnapshotPayload) => {
+    const editing = decorate.active && decorate.tool === "owner";
+    ownerButton.classList.toggle("active", editing);
+    ownerButton.setAttribute("aria-pressed", String(editing));
+    ownerPanel.classList.toggle("hidden", !editing);
+    if (!editing) {
+      selectedSeatId = null;
+      return;
+    }
+    const seat = current.campus.worldFurniture.find((item) => item.id === selectedSeatId && isAssignableChair(item));
+    ownerTarget.textContent = seat
+      ? `เจ้าของเก้าอี้ (${seat.tx}, ${seat.ty})`
+      : "คลิกเก้าอี้สำนักงานบนแผนที่ (เก้าอี้โซน Boss ใช้รับบรีฟ/รายงานเท่านั้น)";
+    const owners = current.state.employees.filter((agent) => !agent.isEphemeral);
+    const choices = [new Option("เก้าอี้ส่วนกลาง", ""), ...owners.map((agent) => {
+      const project = current.state.bays.find((bay) => bay.id === agent.bayId)?.displayName;
+      return new Option(project ? `${agent.displayName} · ${project}` : agent.displayName, agent.id);
+    })];
+    if (choices.length !== ownerSelect.options.length || choices.some((option, i) =>
+      option.value !== ownerSelect.options[i].value || option.text !== ownerSelect.options[i].text,
+    )) ownerSelect.replaceChildren(...choices);
+    ownerSelect.value = seat?.ownerEmployeeId ?? "";
+    ownerSelect.disabled = !seat || seatOwnerPending || current.demoMode;
+  };
+
+  ownerButton.addEventListener("click", () => {
+    decorate.setTool(decorate.tool === "owner" ? "place" : "owner");
+    refreshHud();
+  });
+  ownerSelect.addEventListener("change", async () => {
+    const seatId = selectedSeatId;
+    if (!seatId || seatOwnerPending) return;
+    const ownerEmployeeId = ownerSelect.value || null;
+    seatOwnerPending = true;
+    ownerSelect.disabled = true;
+    try {
+      await architectFetch(`/api/architect/furniture/${encodeURIComponent(seatId)}`, {
+        method: "PATCH",
+        body: JSON.stringify({ ownerEmployeeId }),
+      });
+      hud.showToast(ownerEmployeeId ? "กำหนดเจ้าของเก้าอี้แล้ว" : "ตั้งเป็นเก้าอี้ส่วนกลางแล้ว");
+    } catch (error) {
+      hud.showToast(error instanceof Error ? error.message : String(error), true);
+    } finally {
+      seatOwnerPending = false;
+      if (snapshot) refreshSeatOwner(snapshot);
+    }
+  });
+
   const refreshHud = () => {
     if (!snapshot) return;
     hud.renderHud(snapshot, catalog, selectedEmployeeId, camera.zoom, layerState, atlas, zoneEditorState);
+    refreshSeatOwner(snapshot);
   };
 
   const rotateView = (turn: -1 | 1) => {
@@ -281,6 +342,17 @@ async function bootstrap(): Promise<void> {
         })
         .catch((e) => hud.showToast(e instanceof Error ? e.message : String(e), true));
     },
+    onStartDrawBossZone() {
+      const boss = snapshot?.campus.zones.find((z) => z.kind === "boss");
+      zoneEditorState.active = true;
+      zoneEditorState.editingZoneId = BOSS_ZONE_EDIT_ID;
+      zoneEditorState.startTile = null;
+      decorate.setActive(false);
+      layerState.mode = "off";
+      if (boss) camera.glideToTile(boss.originX + boss.width / 2, boss.originY + boss.height / 2, canvas.width, canvas.height);
+      hud.showToast("👑 คลิก 2 มุมบนพื้นเพื่อวาดโซน Boss (ของ Boss ย้ายตาม · Central Work Hub อยู่ที่เดิม)");
+      refreshHud();
+    },
     onStartEditPodsZone() {
       const existingPodsZone = snapshot?.state.customZones?.find((z) => z.role === "hypersleep");
       if (existingPodsZone) {
@@ -345,6 +417,14 @@ async function bootstrap(): Promise<void> {
         body: JSON.stringify(delta),
       })
         .then((res) => hud.showToast(`📐 ขนาดพื้นตอนนี้: ${res.widthTiles}×${res.depthTiles} tiles`))
+        .catch((e) => hud.showToast(e instanceof Error ? e.message : String(e), true));
+    },
+    onResizeBossZone(delta) {
+      void architectFetch<{ width: number; height: number }>("/api/architect/boss-zone", {
+        method: "PATCH",
+        body: JSON.stringify(delta),
+      })
+        .then((res) => hud.showToast(`👔 Boss zone ตอนนี้: ${res.width}×${res.height} tiles`))
         .catch((e) => hud.showToast(e instanceof Error ? e.message : String(e), true));
     },
     onToggleZonePanel(open?: boolean) {
@@ -560,7 +640,7 @@ async function bootstrap(): Promise<void> {
   let dragging = false;
   let furniturePointer: [number, number] | null = null;
 
-  const furnitureAt = (sx: number, sy: number, boxes: typeof renderer.lastHitBoxes, useSprite: boolean) => {
+  const furnitureAt = (sx: number, sy: number, boxes: typeof renderer.lastHitBoxes, useSprite: boolean, matchesItem: (item: WorldFurnitureInstance) => boolean = () => true) => {
     if (!snapshot) return;
     const furniture = snapshot.campus.worldFurniture;
     if (useSprite) {
@@ -568,12 +648,12 @@ async function bootstrap(): Promise<void> {
         const box = boxes[i];
         if (box.kind !== "furniture" || sx < box.x || sx > box.x + box.w || sy < box.y || sy > box.y + box.h) continue;
         const hit = furniture.find((item) => item.id === box.id);
-        if (hit && isEditableFurniture(hit)) return hit;
+        if (hit && isEditableFurniture(hit) && matchesItem(hit)) return hit;
       }
     }
     const [x, y] = camera.screenToTile(sx, sy);
     const matches = furniture.filter((item) =>
-      isEditableFurniture(item) && !isEdgeDividerAsset(item.assetId) &&
+      isEditableFurniture(item) && matchesItem(item) && !isEdgeDividerAsset(item.assetId) &&
       x >= item.tx && x < item.tx + item.footprintTiles[0] &&
       y >= item.ty && y < item.ty + item.footprintTiles[1],
     );
@@ -653,6 +733,23 @@ async function bootstrap(): Promise<void> {
           : `Zone ${(snapshot.state.customZones?.length ?? 0) + 1}`);
       zoneEditorState.startTile = null;
 
+      if (editingId === BOSS_ZONE_EDIT_ID) {
+        void architectFetch<{ x: number; y: number; width: number; height: number }>("/api/architect/boss-zone", {
+          method: "PATCH",
+          body: JSON.stringify({ x, y, width, height }),
+        })
+          .then((res) => {
+            zoneEditorState.editingZoneId = null;
+            hud.showToast(`👑 โซน Boss ตอนนี้อยู่ที่ ${res.x},${res.y} ขนาด ${res.width}×${res.height}`);
+            refreshHud();
+          })
+          .catch((err) => {
+            hud.showToast(err instanceof Error ? err.message : String(err), true);
+            refreshHud();
+          });
+        return;
+      }
+
       if (editingId) {
         void architectFetch<{ zone: CustomZoneRecord }>(`/api/architect/zones/${encodeURIComponent(editingId)}`, {
           method: "PATCH",
@@ -722,6 +819,12 @@ async function bootstrap(): Promise<void> {
           refreshHud();
         })
         .catch((err) => hud.showToast(err instanceof Error ? err.message : String(err), true));
+      return;
+    }
+
+    if (decorate.active && decorate.tool === "owner") {
+      selectedSeatId = furnitureAt(sx, sy, renderer.lastHitBoxes, true, isAssignableChair)?.id ?? null;
+      refreshHud();
       return;
     }
 
@@ -1169,6 +1272,7 @@ async function bootstrap(): Promise<void> {
     latestVisuals = simStep.visuals;
 
     const pointer = furniturePointer;
+    const selectingSeat = decorate.active && decorate.tool === "owner";
     const highlightTool = decorate.active && !zoneEditorState.active && !dragging && !decorate.isFloorPainting()
       ? decorate.tool === "erase" ? "erase" : decorate.tool === "move" && !decorate.movingItem ? "move" : null
       : null;
@@ -1182,7 +1286,12 @@ async function bootstrap(): Promise<void> {
       employees: simStep.visuals,
       syncPackets: simStep.syncPackets,
       selectedEmployeeId,
-      furnitureHover: highlightTool && pointer ? {
+      furnitureHover: selectingSeat ? {
+        tool: "move",
+        pick: (boxes) => pointer && !dragging
+          ? furnitureAt(...pointer, boxes, true, isAssignableChair)?.id ?? selectedSeatId ?? undefined
+          : selectedSeatId ?? undefined,
+      } : highlightTool && pointer ? {
         tool: highlightTool,
         pick: (boxes) => furnitureAt(...pointer, boxes, true)?.id,
       } : undefined,

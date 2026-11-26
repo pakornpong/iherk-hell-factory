@@ -252,13 +252,14 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
       "office",
     );
 
-    // Open customizable campus: Boss Corner + Central Work Hub + Auto-scaled Hypersleep Bay + Blank Floor
+    // Open customizable campus: Boss Corner + Central Work Hub + empty Hypersleep Bay anchor + Blank Floor
     expect(officeCampus.zones.map((z) => z.kind)).toEqual(["boss", "cowork", "hypersleep", "floor"]);
     expect(officeCampus.wallSegments).toHaveLength(0);
     expect(officeCampus.floors.some((f) => f.assetId === "floor-office-carpet")).toBe(true);
-    expect(officeCampus.floors.some((f) => f.assetId === "floor-corridor-tile")).toBe(true);
+    // No pods are spawned, so there is no default cryo deck
+    expect(officeCampus.floors.some((f) => f.assetId === "floor-corridor-tile")).toBe(false);
     expect(officeCampus.floors.some((f) => f.assetId === "floor-boss-rug")).toBe(true);
-    expect(officeCampus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(6);
+    expect(officeCampus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(0);
 
     const walkGrid = buildWalkableGrid(officeCampus);
     for (const pod of officeCampus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")) {
@@ -274,8 +275,8 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
       "night",
     );
     expect(nightCampus.floors.some((f) => f.assetId === "floor-wood-plank")).toBe(true);
-    expect(nightCampus.floors.some((f) => f.assetId === "floor-corridor-tile")).toBe(true);
-    expect(nightCampus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(6);
+    expect(nightCampus.floors.some((f) => f.assetId === "floor-corridor-tile")).toBe(false);
+    expect(nightCampus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(0);
   });
 
   it("uses Phase 2 1:1 facing directions in OfficeSimulation, supports AI Org roles, manageBay(department), and 4-dept DemoSimulator", async () => {
@@ -339,10 +340,13 @@ describe("Pixel Salvaje Office Theme, Phase 2 Characters & AI Org Flow", () => {
     );
     let stepOut = restSim.step(50);
     for (let i = 0; i < 400; i++) stepOut = restSim.step(50);
-    const pod0 = restCampus.worldFurniture.find((f) => f.assetId === "hypersleep-capsule")!;
-    expect(Math.round(stepOut.visuals[0].x)).toBe(pod0.tx);
-    expect(Math.round(stepOut.visuals[0].y)).toBe(pod0.ty);
-    expect(stepOut.visuals[0].clipName).toMatch(/^rest_sleep_/);
+    // Permanent agents doze at a desk chair instead of entering a pod
+    const restChair = restCampus.worldFurniture
+      .filter((f) => f.zoneId === "cowork:0" && f.assetId === "chair-office-swivel")
+      .sort((a, b) => a.ty - b.ty || a.tx - b.tx)[0];
+    expect(Math.round(stepOut.visuals[0].x)).toBe(restChair.tx);
+    expect(Math.round(stepOut.visuals[0].y)).toBe(restChair.ty);
+    expect(stepOut.visuals[0].clipName).toBe("sit_type_0");
     expect(stepOut.visuals[0].bubbleIcon).toBe("💤");
 
     const dir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-org-flow-"));

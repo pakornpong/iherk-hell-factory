@@ -82,6 +82,11 @@
         <button id="btn-erase">🧹 Erase</button>
         <button id="btn-undo" disabled>↶ Undo</button>
         <button id="btn-redo" disabled>↷ Redo</button>
+        <button id="btn-seat-owner" type="button" aria-pressed="false">👤 เจ้าของเก้าอี้</button>
+      </div>
+      <div id="seat-owner-panel" class="layer-section hidden">
+        <label for="seat-owner-select" id="seat-owner-target" class="layer-note">คลิกเก้าอี้สำนักงานบนแผนที่</label>
+        <select id="seat-owner-select" class="zone-select" disabled></select>
       </div>
       <div id="floor-brush-bar" class="floor-brush-bar hidden">
         <span class="floor-brush-label">Brush:</span>
@@ -114,6 +119,18 @@
           <button id="btn-export-layout" type="button" class="floor-size-btn">Export ผัง</button>
           <button id="btn-import-layout" type="button" class="floor-size-btn">Import ผัง</button>
           <input id="import-layout-file" type="file" accept=".json,application/json" hidden />
+        </div>
+      </div>
+      <div class="layer-section">
+        <div class="layer-section-title">BOSS ZONE · <span id="boss-size-readout">6 × 6</span></div>
+        <div class="floor-size-grid" title="มุม Boss ใช้รับบรีฟ/รายงานเท่านั้น · Central Work Hub เลื่อนตามขอบขวา">
+          <button id="btn-boss-w-minus" class="floor-size-btn">W −1</button>
+          <button id="btn-boss-w-plus" class="floor-size-btn">W +1</button>
+          <button id="btn-boss-d-minus" class="floor-size-btn">D −1</button>
+          <button id="btn-boss-d-plus" class="floor-size-btn">D +1</button>
+        </div>
+        <div class="floor-size-grid">
+          <button id="btn-draw-boss-zone" class="floor-size-btn" style="grid-column: 1 / -1" title="คลิก 2 มุมบนพื้น · ของในโซน Boss ย้ายตาม · Central Work Hub อยู่ที่เดิม">👑 วาด / ย้ายโซน Boss (2 คลิก)</button>
         </div>
       </div>
       <div class="layer-section">

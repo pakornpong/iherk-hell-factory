@@ -201,6 +201,8 @@ export type AgentTelemetryEvent = z.infer<typeof AgentTelemetryEventSchema>;
 
 export const FurnitureCoordinateSchema = z.number().multipleOf(0.5);
 
+export const SeatOwnerIdSchema = z.string().min(1).max(256);
+
 export const FurnitureInstanceSchema = z.object({
   id: z.string().min(1).max(128),
   zoneId: ZoneIdSchema,
@@ -214,6 +216,7 @@ export const FurnitureInstanceSchema = z.object({
   /** For tabletop props: optional host furniture id this prop sits on. */
   surfaceHostId: z.string().min(1).max(128).optional(),
   manualPosition: z.boolean().optional(),
+  ownerEmployeeId: SeatOwnerIdSchema.optional(),
   placedBy: z.enum(["system", "user", "gemini"]).default("system"),
 });
 export type FurnitureInstance = z.infer<typeof FurnitureInstanceSchema>;
@@ -266,6 +269,17 @@ export type CommonWingRecord = z.infer<typeof CommonWingRecordSchema>;
 export const BossOfficeRecordSchema = z.object({
   zoneId: z.literal("boss:0").default("boss:0"),
   displayName: z.string().min(1).max(128).default("BOSS OFFICE"),
+  /** Boss corner rect in tiles (default 0,0 · 6x6). Drawn on the map or resized with W/D buttons. */
+  x: z.number().int().min(0).max(95).optional(),
+  y: z.number().int().min(0).max(95).optional(),
+  width: z.number().int().min(4).max(12).optional(),
+  height: z.number().int().min(4).max(24).optional(),
+  /**
+   * Central Work Hub origin. Unset = right of the Boss corner (moves with its width).
+   * Pinned to its current spot the first time the Boss corner is drawn somewhere else.
+   */
+  hubX: z.number().int().min(0).max(95).optional(),
+  hubY: z.number().int().min(0).max(95).optional(),
   furniture: z.array(FurnitureInstanceSchema).default([]),
 });
 export type BossOfficeRecord = z.infer<typeof BossOfficeRecordSchema>;
@@ -331,6 +345,13 @@ export const OfficeLayoutFileSchema = z.object({
   widthTiles: LayoutFloorSideSchema,
   depthTiles: LayoutFloorSideSchema,
   bossFurniture: LayoutFurnitureListSchema,
+  /** Boss corner rect and hub origin; omitted in older files (default 0,0 · 6x6, hub right of Boss). */
+  bossX: z.number().int().min(0).max(95).optional(),
+  bossY: z.number().int().min(0).max(95).optional(),
+  bossWidth: z.number().int().min(4).max(12).optional(),
+  bossHeight: z.number().int().min(4).max(24).optional(),
+  hubX: z.number().int().min(0).max(95).optional(),
+  hubY: z.number().int().min(0).max(95).optional(),
   zoneOverrides: z.record(z.string().regex(/^(floor:0|cowork:0|hypersleep:0|amenity:\d+)$/), LayoutFurnitureListSchema),
   bayFurniture: z.record(z.string().regex(/^bay:[a-z0-9_-]+$/i), LayoutFurnitureListSchema),
   commonFurniture: z.record(z.string().regex(/^common:\d+$/), LayoutFurnitureListSchema),

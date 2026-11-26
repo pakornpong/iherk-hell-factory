@@ -1,4 +1,4 @@
-import { expandEdgeDividerSegments, isEdgeDividerAsset, supportsHalfTilePlacement } from "../shared/layers.js";
+import { expandEdgeDividerSegments, isEdgeDividerAsset, isInBossArea, isOwnableChair, supportsHalfTilePlacement } from "../shared/layers.js";
 import {
   OfficeLayoutFileSchema,
   type CatalogEntry,
@@ -17,6 +17,12 @@ export function exportOfficeLayout(state: OfficeState, campus: ComputedCampus): 
     widthTiles: campus.widthTiles,
     depthTiles: campus.depthTiles,
     bossFurniture: (state.bossOffice ?? createDefaultBossOffice()).furniture,
+    ...(state.bossOffice?.x !== undefined ? { bossX: state.bossOffice.x } : {}),
+    ...(state.bossOffice?.y !== undefined ? { bossY: state.bossOffice.y } : {}),
+    ...(state.bossOffice?.width !== undefined ? { bossWidth: state.bossOffice.width } : {}),
+    ...(state.bossOffice?.height !== undefined ? { bossHeight: state.bossOffice.height } : {}),
+    ...(state.bossOffice?.hubX !== undefined ? { hubX: state.bossOffice.hubX } : {}),
+    ...(state.bossOffice?.hubY !== undefined ? { hubY: state.bossOffice.hubY } : {}),
     zoneOverrides: state.zoneOverrides ?? {},
     bayFurniture: Object.fromEntries(state.bays.map((bay) => [`bay:${bay.id}`, bay.furniture])),
     commonFurniture: Object.fromEntries(state.commonWings.map((wing) => [wing.zoneId, wing.furniture])),
@@ -26,7 +32,7 @@ export function exportOfficeLayout(state: OfficeState, campus: ComputedCampus): 
   });
 }
 
-function getStoredFurniture(state: OfficeState): FurnitureInstance[] {
+export function getStoredFurniture(state: OfficeState): FurnitureInstance[] {
   return [
     ...(state.bossOffice ?? createDefaultBossOffice()).furniture,
     ...Object.values(state.zoneOverrides ?? {}).flat(),
@@ -78,6 +84,7 @@ export function prepareOfficeLayoutImport(
   }
 
   const previouslyStored = getStoredFurniture(current);
+  const permanentEmployees = new Set(current.employees.filter((employee) => !employee.isEphemeral).map((employee) => employee.id));
   const checkGroup = (zoneId: string, furniture: FurnitureInstance[]) => {
     for (const item of furniture) {
       if (item.zoneId !== zoneId) throw new Error(`Furniture ${item.id} belongs to the wrong zone`);
@@ -90,6 +97,7 @@ export function prepareOfficeLayoutImport(
         );
         if (!legacy) throw new Error(`Furniture ${item.id} does not match the layer of asset ${item.assetId}`);
       }
+      if (item.ownerEmployeeId && !permanentEmployees.has(item.ownerEmployeeId)) delete item.ownerEmployeeId;
       if (!supportsHalfTilePlacement(item.assetId) && (!Number.isInteger(item.lx) || !Number.isInteger(item.ly))) {
         throw new Error(`Furniture ${item.id} requires whole-tile coordinates`);
       }
@@ -105,7 +113,20 @@ export function prepareOfficeLayoutImport(
     theme: layout.theme,
     floorWidthTiles: width,
     floorDepthTiles: depth,
-    bossOffice: { ...(current.bossOffice ?? createDefaultBossOffice()), furniture: layout.bossFurniture },
+    bossOffice: (() => {
+      // The file defines the Boss corner size; older files without it get the default 6x6
+      const { x: _x, y: _y, width: _w, height: _h, hubX: _hx, hubY: _hy, ...base } = current.bossOffice ?? createDefaultBossOffice();
+      return {
+        ...base,
+        furniture: layout.bossFurniture,
+        ...(layout.bossX !== undefined ? { x: layout.bossX } : {}),
+        ...(layout.bossY !== undefined ? { y: layout.bossY } : {}),
+        ...(layout.bossWidth !== undefined ? { width: layout.bossWidth } : {}),
+        ...(layout.bossHeight !== undefined ? { height: layout.bossHeight } : {}),
+        ...(layout.hubX !== undefined ? { hubX: layout.hubX } : {}),
+        ...(layout.hubY !== undefined ? { hubY: layout.hubY } : {}),
+      };
+    })(),
     zoneOverrides: layout.zoneOverrides,
     bays: current.bays.map((bay) => ({
       ...bay, furniture: layout.bayFurniture[`bay:${bay.id}`] ?? bay.furniture,
@@ -117,7 +138,28 @@ export function prepareOfficeLayoutImport(
     floorTileOverrides: layout.floorTileOverrides,
     tilePermissionOverrides: layout.tilePermissionOverrides,
   };
+  // Validate assignments across imported and retained furniture.
+  const assigned = new Set<string>();
+  for (const item of getStoredFurniture(next)) {
+    const owner = item.ownerEmployeeId;
+    if (!owner || !permanentEmployees.has(owner)) continue;
+    if (!isOwnableChair(item)) throw new Error(`Furniture ${item.id} cannot have a seat owner`);
+    if (assigned.has(owner)) throw new Error(`Employee ${owner} already owns another chair`);
+    assigned.add(owner);
+  }
+
   const campus = computeCampus(next);
+  const bossZone = campus.zones.find((zone) => zone.kind === "boss");
+  for (const item of campus.worldFurniture) {
+    if (bossZone && item.zoneId === "boss:0" &&
+      (item.tx + item.footprintTiles[0] > bossZone.originX + bossZone.width ||
+        item.ty + item.footprintTiles[1] > bossZone.originY + bossZone.height)) {
+      throw new Error(`Furniture ${item.id} is outside the imported Boss zone`);
+    }
+    if (item.ownerEmployeeId && isInBossArea(campus, item)) {
+      throw new Error(`Furniture ${item.id} is in the Boss area and cannot have a seat owner`);
+    }
+  }
   // Existing layouts can contain historical duplicate IDs. Preserve those
   // arrangements, but do not introduce new ambiguous furniture references.
   const currentCounts = countFurnitureIds(current, currentCampus);

@@ -59,6 +59,15 @@ describe("Corridors between rooms & shared co-working room", () => {
     [createDefaultCommonWing(0)],
     catalog,
     createDefaultBossOffice(),
+    "office",
+    undefined,
+    // Pods are no longer spawned per agent; place 5 explicitly for the reachability check
+    {
+      "hypersleep:0": Array.from({ length: 5 }, (_, i) => ({
+        id: `hypersleep:0-pod-${i}`, zoneId: "hypersleep:0", lx: i, ly: 0,
+        assetId: "hypersleep-capsule", direction: "se" as const, layer: "object" as const, placedBy: "user" as const,
+      })),
+    },
   );
   const grid = buildWalkableGrid(campus);
   const walkable = (x: number, y: number) => grid.blocked[y * grid.width + x] === 0;
@@ -77,20 +86,23 @@ describe("Corridors between rooms & shared co-working room", () => {
     expect(walkable(18, 18)).toBe(true);
   });
 
-  it("spawns 1 hypersleep capsule per agent, supports moving/rotating pods, and auto-spawns for new agents", async () => {
+  it("never spawns hypersleep pods for agents, but a placed pod can be moved/rotated and survives new agents", async () => {
     const dir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-hypersleep-"));
     const engine = new OfficeEngine({ store: new OfficeStore(dir), catalogById: catalog, now: () => 50_000 });
     await engine.init();
+    const podCount = () => engine.getSnapshot().campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule").length;
 
-    expect(engine.getSnapshot().campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(1);
-
+    expect(podCount()).toBe(0);
     await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "s1", projectPath: "/work/a", eventType: "tool_start", toolName: "Edit" });
     await engine.ingestEvent({ provider: "gemini", source: "antigravity", sessionId: "s2", projectPath: "/work/b", eventType: "tool_start", toolName: "Read" });
     await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "s1", agentId: "sub-1", projectPath: "/work/a", eventType: "subagent_start" });
-    const snap = engine.getSnapshot();
-    const pods = snap.campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
-    expect(pods).toHaveLength(snap.state.employees.length);
-    expect(pods.length).toBe(3);
+    expect(engine.getSnapshot().state.employees.length).toBe(3);
+    expect(podCount()).toBe(0);
+
+    // Pods remain available as decor the user places by hand
+    await engine.placeFurniture({ zoneId: "floor:0", lx: 13, ly: 1, assetId: "hypersleep-capsule", direction: "se", placedBy: "user" });
+    const pods = engine.getSnapshot().campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
+    expect(pods).toHaveLength(1);
 
     // Expand floor adds +6x+6 open space
     const expanded = await engine.expandFloor({ addWidth: 6, addDepth: 6 });
@@ -106,11 +118,11 @@ describe("Corridors between rooms & shared co-working room", () => {
     expect([movedPod.tx, movedPod.ty, movedPod.direction]).toEqual([4, 12, "sw"]);
     expect(movedPod.footprintTiles).toEqual([2, 1]);
 
-    // Adding a new agent after customizing pods still spawns 1 new capsule without resetting the moved pod
+    // A new agent does not add a pod and does not reset the moved one
     await engine.ingestEvent({ provider: "gemini", source: "antigravity", sessionId: "s3", projectPath: "/work/c", eventType: "tool_start", toolName: "Edit" });
     const afterNewAgent = engine.getSnapshot();
     const podsAfter = afterNewAgent.campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
-    expect(podsAfter).toHaveLength(afterNewAgent.state.employees.length);
+    expect(podsAfter).toHaveLength(1);
     const stillMoved = podsAfter.find((f) => f.id === pod0.id)!;
     expect([stillMoved.tx, stillMoved.ty, stillMoved.direction]).toEqual([4, 12, "sw"]);
   });
@@ -258,14 +270,17 @@ describe("Corridors between rooms & shared co-working room", () => {
     expect(out.visuals[0].bubbleIcon).toBe("💬");
   });
 
-  it("supports editing Pods Zone, relocating all pods into it, updating cryo deck floor, and auto-spawning new pods inside it", async () => {
+  it("supports editing Pods Zone, relocating placed pods into it, updating cryo deck floor, and not spawning pods for new agents", async () => {
     const dir = await fs.mkdtemp(path.join(os.tmpdir(), "hf-pods-zone-"));
     const engine = new OfficeEngine({ store: new OfficeStore(dir), catalogById: catalog, now: () => 20_000 });
     await engine.init();
 
-    // Spawn 2 agents -> 2 pods total
+    // 2 agents join (no pods spawned), then the user places 2 pods by hand
     await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "p1", projectPath: "/work/p1", eventType: "tool_start", toolName: "Edit" });
     await engine.ingestEvent({ provider: "gemini", source: "gemini-cli", sessionId: "p2", projectPath: "/work/p2", eventType: "tool_start", toolName: "Read" });
+    for (const lx of [13, 15]) {
+      await engine.placeFurniture({ zoneId: "floor:0", lx, ly: 1, assetId: "hypersleep-capsule", direction: "se", placedBy: "user" });
+    }
 
     // Create a custom Pods Zone at bottom-left (2, 14, 6x6)
     const podsZone = await engine.createCustomZone({
@@ -297,11 +312,11 @@ describe("Corridors between rooms & shared co-working room", () => {
       expect(p.ty + p.footprintTiles[1]).toBeLessThanOrEqual(20);
     }
 
-    // Adding a 3rd agent auto-spawns its new pod inside the custom Pods Zone too
+    // A 3rd agent does not spawn another pod; the relocated pods stay put
     await engine.ingestEvent({ provider: "claude", source: "claude-code", sessionId: "p3", projectPath: "/work/p3", eventType: "tool_start", toolName: "Bash" });
     snap = engine.getSnapshot();
     const podsAfter = snap.campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule");
-    expect(podsAfter).toHaveLength(3);
+    expect(podsAfter).toHaveLength(2);
     for (const p of podsAfter) {
       expect(p.tx).toBeGreaterThanOrEqual(2);
       expect(p.tx + p.footprintTiles[0]).toBeLessThanOrEqual(8);

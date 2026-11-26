@@ -1,3 +1,4 @@
+import { isInBossArea } from "../shared/layers.js";
 import { findBossChair } from "./chair-alignment.js";
 import {
   getOrgRoleMeta,
@@ -6,6 +7,7 @@ import {
   type EmployeeRecord,
   type OfficeState,
   type VisualState,
+  type WorldFurnitureInstance,
   type ZoneBounds,
 } from "../shared/types.js";
 import type { RenderedEmployeeInput, SyncPacketVisual } from "./iso-renderer.js";
@@ -17,8 +19,6 @@ export interface SimEmployeeVisual extends RenderedEmployeeInput {
   isMoving: boolean;
 }
 
-type RestActivity = "coffee" | "sofa" | "stroll" | "nap";
-
 interface AgentSimState {
   record: EmployeeRecord;
   x: number;
@@ -29,8 +29,6 @@ interface AgentSimState {
   goalTile: [number, number];
   seatedOnChair: boolean;
   animClockMs: number;
-  restActivity: RestActivity;
-  nextRestSwitchMs: number;
   lastVisualState: VisualState;
 }
 
@@ -74,49 +72,33 @@ export class OfficeSimulation {
     const activeBayIds = new Set(state.bays.filter((b) => !b.archived).map((b) => b.id));
     const liveIds = new Set<string>();
     const visibleEmployees = state.employees.filter((e) => activeBayIds.has(e.bayId));
-    const workingEmployees = visibleEmployees.filter(
-      (e) => e.visualState === "working" || e.visualState === "teamwork",
-    );
+    const seating = this.assignDeskChairs(visibleEmployees);
     const meetingEmployees = visibleEmployees.filter((e) => e.visualState === "meeting");
 
-    for (let capsuleIdx = 0; capsuleIdx < visibleEmployees.length; capsuleIdx++) {
-      const emp = visibleEmployees[capsuleIdx];
+    for (const [index, emp] of visibleEmployees.entries()) {
       liveIds.add(emp.id);
-      const workSeatIdx = Math.max(0, workingEmployees.findIndex((e) => e.id === emp.id));
       const meetingSeatIdx = Math.max(0, meetingEmployees.findIndex((e) => e.id === emp.id));
+      const desired = this.pickGoalForEmployee(emp, seating.get(emp.id), index, meetingSeatIdx);
 
       let sim = this.agents.get(emp.id);
       if (!sim) {
-        const spawn = this.pickGoalForEmployee(emp, "coffee", capsuleIdx, workSeatIdx, meetingSeatIdx);
         sim = {
           record: emp,
-          x: spawn.tile[0],
-          y: spawn.tile[1],
-          direction: spawn.facing,
-          targetDirection: spawn.facing,
+          x: desired.tile[0],
+          y: desired.tile[1],
+          direction: desired.facing,
+          targetDirection: desired.facing,
           path: [],
-          goalTile: spawn.tile,
-          seatedOnChair: Boolean(spawn.seatedOnChair),
+          goalTile: desired.tile,
+          seatedOnChair: Boolean(desired.seatedOnChair),
           animClockMs: Math.random() * 600,
-          restActivity: "coffee",
-          nextRestSwitchMs: this.simTimeMs + 14_000 + (emp.deskIndex * 3100) % 8000,
           lastVisualState: emp.visualState,
         };
         this.agents.set(emp.id, sim);
-        // Walk from their hypersleep capsule to their target spot when newly spawned into an active state
-        if (emp.visualState !== "resting") {
-          const podGoal = this.pickHypersleepGoal(capsuleIdx);
-          if (podGoal) {
-            sim.x = podGoal.tile[0];
-            sim.y = podGoal.tile[1];
-            this.routeAgentTo(sim, spawn.tile, spawn.facing);
-          }
-        }
       } else {
         const prevState = sim.lastVisualState;
         sim.record = emp;
         sim.lastVisualState = emp.visualState;
-        const desired = this.pickGoalForEmployee(emp, sim.restActivity, capsuleIdx, workSeatIdx, meetingSeatIdx);
         sim.seatedOnChair = Boolean(desired.seatedOnChair);
         const goalChanged =
           prevState !== emp.visualState ||
@@ -152,60 +134,38 @@ export class OfficeSimulation {
     );
   }
 
-  private isBossChair(id: string): boolean {
-    return id.startsWith("boss:0-visitor-") || Boolean(this.campus && findBossChair(this.campus)?.id === id);
+  /** Boss corner chairs are for briefing/reporting only, never for working, meetings or dozing. */
+  private isBossAreaChair(item: WorldFurnitureInstance): boolean {
+    if (!this.campus) return false;
+    return item.id.startsWith("boss:0-visitor-") || findBossChair(this.campus)?.id === item.id || isInBossArea(this.campus, item);
   }
 
-  private pickHypersleepGoal(capsuleIndex: number): { tile: [number, number]; facing: Direction; seatedOnChair?: boolean } | null {
-    if (!this.campus) return null;
-    const pods = this.campus.worldFurniture
-      .filter((f) => f.assetId === "hypersleep-capsule")
-      .sort((a, b) => {
-        const aInZone = this.isInCustomZoneRole(a.tx, a.ty, "hypersleep") ? 0 : 1;
-        const bInZone = this.isInCustomZoneRole(b.tx, b.ty, "hypersleep") ? 0 : 1;
-        return aInZone - bInZone || a.ty - b.ty || a.tx - b.tx;
-      });
-    if (pods.length === 0) return null;
-    const pod = pods[capsuleIndex % pods.length];
-    return { tile: [pod.tx, pod.ty], facing: pod.direction };
-  }
-
-  /**
-   * Work/Thinking seating: prioritizes swivel chairs in user-defined Work Zones, then Central Work Hub,
-   * then any other swivel chair placed on the open floor (excluding Boss chairs & Meeting Zone chairs).
-   */
-  private pickWorkGoal(seatIndex: number): { tile: [number, number]; facing: Direction; seatedOnChair?: boolean } | null {
-    const cowork = this.findCoworkZone();
-    if (!this.campus) return null;
-
-    const allWorkChairs = this.campus.worldFurniture
-      .filter(
-        (f) =>
-          f.assetId === "chair-office-swivel" &&
-          !this.isBossChair(f.id) &&
-          !this.isInCustomZoneRole(f.tx, f.ty, "meeting"),
-      )
-      .sort((a, b) => {
-        const tierOf = (f: ComputedCampus["worldFurniture"][number]) => {
-          if (this.isInCustomZoneRole(f.tx, f.ty, "work")) return 0;
-          if ((cowork && f.zoneId === cowork.zoneId) || f.id.startsWith("cowork:0-")) return 1;
-          return 2;
-        };
-        return tierOf(a) - tierOf(b) || a.ty - b.ty || a.tx - b.tx;
-      });
-
-    if (allWorkChairs.length > 0) {
-      const chair = allWorkChairs[seatIndex % allWorkChairs.length];
-      return { tile: [chair.tx, chair.ty], facing: chair.direction, seatedOnChair: true };
-    }
-
-    if (!cowork) return null;
-    const spot = seatIndex % 6;
-    return {
-      tile: [cowork.originX + (spot % 6), cowork.originY + 5],
-      facing: "nw",
-      seatedOnChair: false,
+  private assignDeskChairs(employees: EmployeeRecord[]): Map<string, WorldFurnitureInstance> {
+    const assignments = new Map<string, WorldFurnitureInstance>();
+    if (!this.campus) return assignments;
+    const chairs = this.campus.worldFurniture.filter((item) =>
+      item.assetId === "chair-office-swivel" && !this.isBossAreaChair(item),
+    );
+    const shared = chairs.filter((chair) =>
+      !chair.ownerEmployeeId && !this.isInCustomZoneRole(chair.tx, chair.ty, "meeting"),
+    );
+    const tier = (chair: WorldFurnitureInstance): number => {
+      if (this.isInCustomZoneRole(chair.tx, chair.ty, "work")) return 0;
+      if (chair.zoneId === "cowork:0" || chair.id.startsWith("cowork:0-")) return 1;
+      return 2;
     };
+    shared.sort((a, b) => tier(a) - tier(b) || a.ty - b.ty || a.tx - b.tx);
+    // Permanent agents keep a desk while resting (they doze there); idle subagents give theirs up.
+    const deskUsers = employees.filter((emp) =>
+      emp.visualState === "working" || emp.visualState === "teamwork" ||
+      (emp.visualState === "resting" && !emp.isEphemeral),
+    );
+    for (const emp of [...deskUsers.filter((e) => !e.isEphemeral), ...deskUsers.filter((e) => e.isEphemeral)]) {
+      const assigned = emp.isEphemeral ? undefined : chairs.find((chair) => chair.ownerEmployeeId === emp.id);
+      const chair = assigned ?? shared.shift();
+      if (chair) assignments.set(emp.id, chair);
+    }
+    return assignments;
   }
 
   /**
@@ -215,7 +175,10 @@ export class OfficeSimulation {
   private pickMeetingGoal(meetingIndex: number): { tile: [number, number]; facing: Direction; seatedOnChair?: boolean } | null {
     if (!this.campus) return null;
     const meetingZones = (this.state?.customZones ?? []).filter((z) => z.role === "meeting");
-    const tables = this.campus.worldFurniture.filter((f) => f.assetId === "table-conference");
+    // Meetings never happen in the Boss corner, which is reserved for briefing and reporting
+    const campus = this.campus;
+    const inBossArea = (tx: number, ty: number) => isInBossArea(campus, { id: "", zoneId: "floor:0", tx, ty });
+    const tables = this.campus.worldFurniture.filter((f) => f.assetId === "table-conference" && !isInBossArea(campus, f));
 
     const isNearTable = (tx: number, ty: number) =>
       tables.some(
@@ -231,7 +194,8 @@ export class OfficeSimulation {
       .filter(
         (f) =>
           f.assetId === "chair-office-swivel" &&
-          !this.isBossChair(f.id) &&
+          !f.ownerEmployeeId &&
+          !this.isBossAreaChair(f) &&
           this.isInCustomZoneRole(f.tx, f.ty, "meeting"),
       )
       .sort((a, b) => a.ty - b.ty || a.tx - b.tx);
@@ -245,7 +209,8 @@ export class OfficeSimulation {
       .filter(
         (f) =>
           f.assetId === "chair-office-swivel" &&
-          !this.isBossChair(f.id) &&
+          !f.ownerEmployeeId &&
+          !this.isBossAreaChair(f) &&
           isNearTable(f.tx, f.ty),
       )
       .sort((a, b) => a.ty - b.ty || a.tx - b.tx);
@@ -255,6 +220,7 @@ export class OfficeSimulation {
     }
 
     const isWalkableTile = (x: number, y: number): boolean => {
+      if (inBossArea(x, y)) return false;
       if (!this.grid) return x >= 0 && y >= 0;
       return x >= 0 && y >= 0 && x < this.grid.width && y < this.grid.height && this.grid.blocked[y * this.grid.width + x] === 0;
     };
@@ -444,9 +410,8 @@ export class OfficeSimulation {
 
   private pickGoalForEmployee(
     emp: EmployeeRecord,
-    _restActivity: RestActivity,
-    capsuleIdx = 0,
-    workSeatIdx = 0,
+    deskChair: WorldFurnitureInstance | undefined,
+    employeeIndex: number,
     meetingSeatIdx = 0,
   ): { tile: [number, number]; facing: Direction; seatedOnChair?: boolean } {
     if (!this.campus) {
@@ -458,21 +423,21 @@ export class OfficeSimulation {
       return this.pickBossReportGoal(emp);
     }
 
-    // 2. Resting (idle) -> sleep inside their dedicated Hypersleep Capsule!
-    if (emp.visualState === "resting") {
-      const podGoal = this.pickHypersleepGoal(capsuleIdx);
-      if (podGoal) return podGoal;
-    }
-
-    // 3. Meeting (ประชุม) -> sit at chairs in Meeting Zone / around conference table
     if (emp.visualState === "meeting") {
       const meetingGoal = this.pickMeetingGoal(meetingSeatIdx);
       if (meetingGoal) return meetingGoal;
     }
 
-    // 4. Thinking / Working / Teamwork -> sit directly at a desk chair (Work Zones -> Central Hub -> any open-floor chair)
-    const workGoal = this.pickWorkGoal(workSeatIdx);
-    if (workGoal) return workGoal;
+    if (deskChair) {
+      return { tile: [deskChair.tx, deskChair.ty], facing: deskChair.direction, seatedOnChair: true };
+    }
+
+    const cowork = this.findCoworkZone();
+    if (cowork && emp.visualState !== "meeting") {
+      const spots = this.openSpots(cowork, Array.from({ length: cowork.width }, (_, x) => [x, cowork.height - 1]));
+      const tile = spots[employeeIndex % spots.length];
+      if (tile) return { tile, facing: "nw" };
+    }
 
     const bayZone = this.findBayZone(emp.bayId);
     if (!bayZone) {
@@ -480,10 +445,6 @@ export class OfficeSimulation {
     }
     const common = this.findCommonWingForRow(bayZone.row) ?? bayZone;
 
-    // Resolve actual swivel chairs in this bay first so moved furniture updates seating
-    const bayChairs = this.campus.worldFurniture.filter(
-      (f) => f.zoneId === bayZone.zoneId && f.assetId === "chair-office-swivel",
-    );
     const defaultChairOffsets: Array<[number, number]> = [
       [1, 1],
       [4, 1],
@@ -497,13 +458,8 @@ export class OfficeSimulation {
     switch (emp.visualState) {
       case "working":
       case "teamwork":
-      case "resting": {
-        const chair = bayChairs[emp.deskIndex % Math.max(1, bayChairs.length)];
-        if (chair) {
-          return { tile: [chair.tx, chair.ty], facing: chair.direction };
-        }
+      case "resting":
         return { tile: [bayZone.originX + cx, bayZone.originY + cy], facing: "nw" };
-      }
 
       case "meeting": {
         // Stand-up spots around the lounge's meeting table (open floor, so talk_* legs never clip chairs)
@@ -617,6 +573,7 @@ export class OfficeSimulation {
         clipName,
         bubbleIcon,
         bubbleText,
+        dozing: !isMoving && sim.record.visualState === "resting" && !sim.record.isEphemeral && sim.seatedOnChair,
         isMoving,
       });
     }
@@ -732,7 +689,10 @@ export class OfficeSimulation {
           bubbleText: `${rolePrefix}${sim.record.detail ?? "In meeting"}`,
         };
       case "resting":
-        return { clipName: `rest_sleep_${tSlow}`, bubbleIcon: "💤" };
+        return {
+          clipName: sim.seatedOnChair ? "sit_type_0" : `idle_${tSlow}`,
+          bubbleIcon: sim.seatedOnChair && !sim.record.isEphemeral ? "💤" : undefined,
+        };
     }
   }
 }

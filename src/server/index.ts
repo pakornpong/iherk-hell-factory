@@ -12,6 +12,7 @@ import {
   DirectionSchema,
   FurnitureCoordinateSchema,
   RenderLayerSchema,
+  SeatOwnerIdSchema,
   ThemeModeSchema,
   TilePermissionSchema,
   type WsServerMessage,
@@ -55,6 +56,7 @@ const PlaceFurnitureBodySchema = z.object({
   assetId: z.string().min(1),
   direction: DirectionSchema.default("se"),
   placedBy: z.enum(["user", "gemini"]).optional(),
+  ownerEmployeeId: SeatOwnerIdSchema.optional(),
 });
 
 const MoveFurnitureBodySchema = z.object({
@@ -66,6 +68,7 @@ const MoveFurnitureBodySchema = z.object({
   ty: FurnitureCoordinateSchema.optional(),
   direction: DirectionSchema.optional(),
   renderLayer: RenderLayerSchema.optional(),
+  ownerEmployeeId: SeatOwnerIdSchema.nullable().optional(),
 });
 
 const TilePermissionBodySchema = z.union([
@@ -93,6 +96,15 @@ const ThemeBodySchema = z.object({
 const ExpandFloorBodySchema = z.object({
   addWidth: z.number().int().min(0).max(24).optional(),
   addDepth: z.number().int().min(0).max(24).optional(),
+});
+
+const ResizeBossZoneBodySchema = z.object({
+  x: z.number().int().min(0).max(95).optional(),
+  y: z.number().int().min(0).max(95).optional(),
+  width: z.number().int().min(4).max(12).optional(),
+  height: z.number().int().min(4).max(24).optional(),
+  deltaWidth: z.number().int().min(-12).max(12).optional(),
+  deltaDepth: z.number().int().min(-24).max(24).optional(),
 });
 
 const ResizeFloorBodySchema = z.object({
@@ -414,6 +426,23 @@ export async function createHellFactoryServer(opts: {
         if (method === "POST" && pathname === "/api/architect/floor/resize") {
           const body = ResizeFloorBodySchema.parse(await readJsonBody(req));
           const size = await opts.engine.resizeFloor(body);
+          sendJson(res, 200, { ok: true, ...size });
+          return;
+        }
+
+        if (method === "PATCH" && pathname === "/api/architect/boss-zone") {
+          const body = ResizeBossZoneBodySchema.parse(await readJsonBody(req));
+          // x/y = rect drawn on the map (move + size); otherwise W/D resize that pushes the layout
+          if (body.x !== undefined || body.y !== undefined) {
+            if (body.x === undefined || body.y === undefined || body.width === undefined || body.height === undefined) {
+              sendJson(res, 400, { error: "Drawing the Boss zone needs x, y, width and height" });
+              return;
+            }
+            const rect = await opts.engine.setBossZoneRect({ x: body.x, y: body.y, width: body.width, height: body.height });
+            sendJson(res, 200, { ok: true, ...rect });
+            return;
+          }
+          const size = await opts.engine.resizeBossZone(body);
           sendJson(res, 200, { ok: true, ...size });
           return;
         }

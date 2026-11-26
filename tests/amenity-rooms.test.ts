@@ -90,14 +90,14 @@ describe("themed amenity rooms", () => {
     },
   );
 
-  it("uses open customizable floor with Boss, Central Hub, and 1 hypersleep capsule per agent", () => {
+  it("uses open customizable floor with Boss and Central Hub, without spawning hypersleep pods", () => {
     for (const count of [1, 2, 7, 13]) {
       const bays = Array.from({ length: count }, (_, i) => makeBay(i));
       const campus = computeCampusLayout(bays, [], catalog, undefined, "office", undefined, undefined, {
         employeeCount: count,
       });
       expect(campus.zones.map((z) => z.kind)).toEqual(["boss", "cowork", "hypersleep", "floor"]);
-      expect(campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(count);
+      expect(campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule")).toHaveLength(0);
       expect(campus.wallSegments).toHaveLength(0);
     }
   });

@@ -50,7 +50,7 @@ export function isFloorAssetId(assetId?: string | null): boolean {
 
 export class DecorateController {
   active = false;
-  tool: "place" | "move" | "erase" = "place";
+  tool: "place" | "move" | "erase" | "owner" = "place";
   selectedAssetId: string | null = "plant-potted";
   direction: Direction = "se";
   floorBrushSize: 1 | 2 | 3 = 1;
@@ -88,7 +88,7 @@ export class DecorateController {
     if (!this.active) this.movingItem = null;
   }
 
-  setTool(tool: "place" | "move" | "erase"): void {
+  setTool(tool: "place" | "move" | "erase" | "owner"): void {
     this.tool = tool;
     this.movingItem = null;
     if (tool !== "place") this.floorResetMode = false;
@@ -149,7 +149,7 @@ export class DecorateController {
     ty: number,
     existingInstance?: FurnitureInstance | WorldFurnitureInstance,
   ): Promise<void> {
-    if (!this.active) return;
+    if (!this.active || this.tool === "owner") return;
 
     const itemOriginTx = (existingInstance as Partial<WorldFurnitureInstance> | undefined)?.tx ?? tx;
     const itemOriginTy = (existingInstance as Partial<WorldFurnitureInstance> | undefined)?.ty ?? ty;

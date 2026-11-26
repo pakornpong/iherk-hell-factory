@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 import { EventEmitter } from "node:events";
 import path from "node:path";
-import { isSurfaceHostAsset, isTabletopAsset, toTileKey, type RenderLayer, type TilePermission } from "../shared/layers.js";
+import { furnitureFootprintsCollide, isEdgeDividerAsset, isInBossArea, isOwnableChair, isSurfaceHostAsset, isTabletopAsset, toTileKey, type RenderLayer, type TilePermission } from "../shared/layers.js";
 import {
   AgentTelemetryEventSchema,
   type ActivityLogEntry,
@@ -22,6 +22,7 @@ import {
   type ThemeMode,
   type ToolCategory,
   type ZoneId,
+  type BossOfficeRecord,
 } from "../shared/types.js";
 import {
   computeCampusLayout,
@@ -31,18 +32,24 @@ import {
   createDefaultBossOffice,
   createDefaultCommonWing,
   createExtraBayWorkstations,
-  createHypersleepFurniture,
   DEFAULT_FLOOR_DEPTH,
   DEFAULT_FLOOR_WIDTH,
   FLOOR_EXPAND_STEP,
   getAmenityTheme,
+  getBossZoneRect,
+  getBossZoneSize,
+  getHubOrigin,
+  MAX_BOSS_DEPTH,
+  MAX_BOSS_WIDTH,
+  MIN_BOSS_DEPTH,
+  MIN_BOSS_WIDTH,
   getRotatedFootprint,
   MAX_FLOOR_SIDE,
   MIN_FLOOR_SIDE,
   resolveWorldToZone,
   validateFurniturePlacement,
 } from "./layout-engine.js";
-import { exportOfficeLayout, prepareOfficeLayoutImport } from "./layout-transfer.js";
+import { exportOfficeLayout, getStoredFurniture, prepareOfficeLayoutImport } from "./layout-transfer.js";
 import type { OfficeStore } from "./store.js";
 
 const BAY_ACCENT_PALETTE = [
@@ -112,6 +119,13 @@ function isAssignTool(toolName?: string): boolean {
 }
 
 const PROVIDER_LABEL: Record<Provider, string> = { claude: "Claude", gemini: "Gemini", codex: "Codex" };
+
+const BOSS_GEOMETRY_KEYS = ["x", "y", "width", "height", "hubX", "hubY"] as const;
+function pickBossGeometry(boss?: BossOfficeRecord): Partial<BossOfficeRecord> {
+  const out: Partial<BossOfficeRecord> = {};
+  for (const key of BOSS_GEOMETRY_KEYS) if (boss?.[key] !== undefined) out[key] = boss[key];
+  return out;
+}
 
 export class OfficeEngine extends EventEmitter {
   private state: OfficeState;
@@ -224,7 +238,12 @@ export class OfficeEngine extends EventEmitter {
       loaded.employees = loaded.employees.filter((e) => !e.isEphemeral);
       // Missing or untouched Boss Office gets the current designed layout
       if (!loaded.bossOffice || loaded.bossOffice.furniture.every((f) => f.placedBy === "system")) {
-        loaded.bossOffice = { ...createDefaultBossOffice(), displayName: loaded.bossOffice?.displayName ?? "BOSS OFFICE" };
+        loaded.bossOffice = {
+          ...createDefaultBossOffice(),
+          displayName: loaded.bossOffice?.displayName ?? "BOSS OFFICE",
+          // Keep a moved/resized Boss corner and pinned hub across restarts
+          ...pickBossGeometry(loaded.bossOffice),
+        };
       }
       for (const b of loaded.bays) {
         // Refresh untouched rooms so new default props reach existing saves.
@@ -469,7 +488,6 @@ export class OfficeEngine extends EventEmitter {
       // Subagents work from the shared co-working room, so the project's own room does not grow desks
       this.state.employees.push(emp);
       this.recomputeCampus();
-      this.ensureHypersleepPodForNewEmployee();
       return emp;
     }
 
@@ -511,122 +529,10 @@ export class OfficeEngine extends EventEmitter {
     };
     this.state.employees.push(emp);
     this.recomputeCampus();
-    this.ensureHypersleepPodForNewEmployee();
     this.ensureBayDesksForTeam(bay);
     return emp;
   }
 
-  /**
-   * When the user has customized hypersleep:0 (moved/rotated pods) or defined a custom hypersleep zone,
-   * keep auto-spawning 1 new capsule whenever a new agent joins and total capsules on campus are fewer
-   * than the active employee count.
-   */
-  private ensureHypersleepPodForNewEmployee(): void {
-    const customPods = this.state.zoneOverrides?.["hypersleep:0"];
-    const customHsZones = (this.state.customZones ?? []).filter((z) => z.role === "hypersleep");
-    if (!customPods && customHsZones.length === 0) return;
-    const activeBayIds = new Set(this.state.bays.filter((b) => !b.archived).map((b) => b.id));
-    const empCount = this.state.employees.filter((e) => activeBayIds.has(e.bayId)).length;
-    const totalPods = this.campus.worldFurniture.filter((f) => f.assetId === "hypersleep-capsule").length;
-    if (totalPods >= empCount) return;
-
-    const hsZone = this.campus.zones.find((z) => z.zoneId === "hypersleep:0");
-    const floorZone = this.campus.zones.find((z) => z.zoneId === "floor:0");
-    if (!hsZone && !floorZone) return;
-
-    const occupied = new Set<string>();
-    for (const wf of this.campus.worldFurniture) {
-      const cat = this.catalogById.get(wf.assetId);
-      if (isTabletopAsset(wf.assetId, wf.layer, cat)) continue;
-      if (wf.assetId.startsWith("divider-")) continue;
-      for (let dy = 0; dy < wf.footprintTiles[1]; dy++) {
-        for (let dx = 0; dx < wf.footprintTiles[0]; dx++) {
-          occupied.add(`${wf.tx + dx},${wf.ty + dy}`);
-        }
-      }
-    }
-
-    const podId = `hypersleep:0-pod-${Date.now()}-${crypto.randomBytes(2).toString("hex")}`;
-
-    // 1. Prefer user-defined custom hypersleep zone(s) first
-    if (customHsZones.length > 0 && floorZone) {
-      const floorList = this.getZoneFurnitureArray("floor:0");
-      if (floorList) {
-        for (const cz of customHsZones) {
-          for (const stepY of [3, 2]) {
-            for (let ly = 0; ly + 2 <= cz.height; ly += stepY) {
-              for (let lx = 0; lx < cz.width; lx++) {
-                const wx = cz.x + lx;
-                const wy = cz.y + ly;
-                if (!occupied.has(`${wx},${wy}`) && !occupied.has(`${wx},${wy + 1}`)) {
-                  floorList.push({
-                    id: podId,
-                    zoneId: "floor:0",
-                    lx: wx,
-                    ly: wy,
-                    assetId: "hypersleep-capsule",
-                    direction: "se",
-                    layer: "object",
-                    placedBy: "system",
-                  });
-                  this.recomputeCampus();
-                  return;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    // 2. Fallback to built-in hypersleep:0 bounds
-    if (hsZone && customPods) {
-      for (let ly = 0; ly + 2 <= hsZone.height; ly += 3) {
-        for (let lx = 0; lx < hsZone.width; lx++) {
-          const wx = hsZone.originX + lx;
-          const wy = hsZone.originY + ly;
-          if (!occupied.has(`${wx},${wy}`) && !occupied.has(`${wx},${wy + 1}`)) {
-            customPods.push({
-              id: podId,
-              zoneId: "hypersleep:0",
-              lx,
-              ly,
-              assetId: "hypersleep-capsule",
-              direction: "se",
-              layer: "object",
-              placedBy: "system",
-            });
-            this.recomputeCampus();
-            return;
-          }
-        }
-      }
-    }
-
-    // 3. Fallback to open floor
-    if (floorZone) {
-      const floorList = this.getZoneFurnitureArray("floor:0");
-      if (!floorList) return;
-      for (let y = 1; y + 2 <= floorZone.height; y += 3) {
-        for (let x = 1; x < floorZone.width - 1; x++) {
-          if (!occupied.has(`${x},${y}`) && !occupied.has(`${x},${y + 1}`)) {
-            floorList.push({
-              id: podId,
-              zoneId: "floor:0",
-              lx: x,
-              ly: y,
-              assetId: "hypersleep-capsule",
-              direction: "se",
-              layer: "object",
-              placedBy: "system",
-            });
-            this.recomputeCampus();
-            return;
-          }
-        }
-      }
-    }
-  }
 
   private ensureBayDesksForTeam(bay: ProjectBayRecord): void {
     const teamSize = this.state.employees.filter((e) => e.bayId === bay.id && !e.isEphemeral).length;
@@ -964,7 +870,6 @@ export class OfficeEngine extends EventEmitter {
     if (zoneId === "hypersleep:0") {
       if (!this.state.zoneOverrides) this.state.zoneOverrides = {};
       if (!this.state.zoneOverrides[zoneId]) {
-        const hsZone = this.campus.zones.find((z) => z.zoneId === "hypersleep:0");
         const existing = this.campus.worldFurniture
           .filter((f) => f.zoneId === "hypersleep:0")
           .map((f): FurnitureInstance => ({
@@ -979,10 +884,7 @@ export class OfficeEngine extends EventEmitter {
             ...(f.surfaceHostId ? { surfaceHostId: f.surfaceHostId } : {}),
             placedBy: f.placedBy,
           }));
-        this.state.zoneOverrides[zoneId] =
-          existing.length > 0
-            ? existing
-            : createHypersleepFurniture(Math.max(1, this.state.employees.length), hsZone?.width ?? 10);
+        this.state.zoneOverrides[zoneId] = existing;
       }
       return this.state.zoneOverrides[zoneId];
     }
@@ -1030,6 +932,7 @@ export class OfficeEngine extends EventEmitter {
     assetId: string;
     direction: Direction;
     placedBy: "user" | "gemini";
+    ownerEmployeeId?: string;
   }): Promise<FurnitureInstance> {
     return this.runSerialized(async () => {
       this.assertNotDemoMode();
@@ -1070,6 +973,10 @@ export class OfficeEngine extends EventEmitter {
         placedBy: input.placedBy,
         ...(input.manualPosition !== undefined ? { manualPosition: input.manualPosition } : {}),
       };
+      if (input.ownerEmployeeId !== undefined) {
+        this.validateSeatOwner(instance, input.ownerEmployeeId);
+        this.setSeatOwner(instance, input.ownerEmployeeId);
+      }
       list.push(instance);
       this.recomputeCampus();
       await this.persist();
@@ -1083,18 +990,36 @@ export class OfficeEngine extends EventEmitter {
     input: {
       zoneId?: string;
       tx?: number;
-    manualPosition?: boolean;
+      manualPosition?: boolean;
       ty?: number;
       lx?: number;
       ly?: number;
       direction?: Direction;
       renderLayer?: RenderLayer;
+      ownerEmployeeId?: string | null;
     },
   ): Promise<FurnitureInstance> {
     return this.runSerialized(async () => {
       this.assertNotDemoMode();
       const found = this.findFurnitureById(instanceId);
       if (!found) throw new Error(`Furniture instance "${instanceId}" not found`);
+
+      if (input.ownerEmployeeId !== undefined) {
+        this.validateSeatOwner(found.item, input.ownerEmployeeId);
+        if (Object.keys(input).length === 1) {
+          const previous = found.item.ownerEmployeeId;
+          this.setSeatOwner(found.item, input.ownerEmployeeId);
+          try {
+            await this.persist();
+          } catch (error) {
+            this.setSeatOwner(found.item, previous ?? null);
+            throw error;
+          }
+          this.recomputeCampus();
+          this.emitSnapshot();
+          return structuredClone(found.item);
+        }
+      }
 
       const targetCoord =
         input.zoneId !== undefined || input.tx !== undefined
@@ -1152,6 +1077,7 @@ export class OfficeEngine extends EventEmitter {
       found.item.ly = targetCoord.ly;
       found.item.direction = nextDir;
       if (input.manualPosition !== undefined) found.item.manualPosition = input.manualPosition;
+      if (input.ownerEmployeeId !== undefined) this.setSeatOwner(found.item, input.ownerEmployeeId);
       if (input.renderLayer !== undefined) {
         found.item.renderLayer = input.renderLayer;
       }
@@ -1213,6 +1139,25 @@ export class OfficeEngine extends EventEmitter {
       this.emitSnapshot();
       return structuredClone(found.item);
     });
+  }
+
+  private validateSeatOwner(chair: FurnitureInstance, ownerEmployeeId: string | null): void {
+    if (!isOwnableChair(chair)) throw new Error("This furniture cannot have a seat owner");
+    if (ownerEmployeeId === null) return;
+    const placed = this.campus.worldFurniture.find((item) => item.id === chair.id);
+    if (isInBossArea(this.campus, placed ?? { id: chair.id, zoneId: chair.zoneId, tx: chair.lx, ty: chair.ly })) {
+      throw new Error("Boss area chairs are for briefing and reporting only");
+    }
+    const owner = this.state.employees.find((employee) => employee.id === ownerEmployeeId && !employee.isEphemeral);
+    if (!owner) throw new Error("Seat owner must be a permanent employee");
+    if (getStoredFurniture(this.state).some((item) => item !== chair && item.ownerEmployeeId === owner.id)) {
+      throw new Error("This employee already owns another chair");
+    }
+  }
+
+  private setSeatOwner(chair: FurnitureInstance, ownerEmployeeId: string | null): void {
+    if (ownerEmployeeId === null) delete chair.ownerEmployeeId;
+    else chair.ownerEmployeeId = ownerEmployeeId;
   }
 
   async setTilePermissionOverride(
@@ -1523,6 +1468,185 @@ export class OfficeEngine extends EventEmitter {
       await this.persist();
       this.emitSnapshot();
       return { widthTiles: this.campus.widthTiles, depthTiles: this.campus.depthTiles };
+    });
+  }
+
+  /**
+   * Resize the Boss corner (anchored at 0,0). The co-working hub moves with its right edge, so a
+   * resize is rejected when Boss furniture would fall outside or the moved hub would collide.
+   */
+  async resizeBossZone(input: {
+    width?: number;
+    height?: number;
+    deltaWidth?: number;
+    deltaDepth?: number;
+  }): Promise<{ width: number; height: number }> {
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const boss = this.state.bossOffice ?? createDefaultBossOffice();
+      const [bossX, bossY, curW, curD] = getBossZoneRect(boss);
+      const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(max, Math.round(value)));
+      const nextW = clamp(input.width ?? curW + (input.deltaWidth ?? 0), MIN_BOSS_WIDTH, MAX_BOSS_WIDTH);
+      const nextD = clamp(input.height ?? curD + (input.deltaDepth ?? 0), MIN_BOSS_DEPTH, MAX_BOSS_DEPTH);
+      if (nextW === curW && nextD === curD) return { width: curW, height: curD };
+
+      for (const item of this.campus.worldFurniture) {
+        if (item.zoneId !== "boss:0") continue;
+        if (item.tx - bossX + item.footprintTiles[0] > nextW || item.ty - bossY + item.footprintTiles[1] > nextD) {
+          throw new Error(`ย่อ Boss zone ไม่ได้ (ติด ${item.assetId} ที่ ${item.tx},${item.ty}) — ย้ายของออกก่อน`);
+        }
+      }
+
+      // Everything east of the Boss corner shifts with its right edge, and everything below it
+      // (within its columns) shifts with its bottom edge, so the rest of the layout keeps its shape.
+      const dW = nextW - curW;
+      const dD = nextD - curD;
+      const eastOf = (x: number) => dW !== 0 && x >= bossX + curW;
+      const southOf = (x: number, y: number) => dD !== 0 && x >= bossX && x < bossX + Math.min(curW, nextW) && y >= bossY + curD;
+      const shift = (x: number, y: number): [number, number] => [x + (eastOf(x) ? dW : 0), y + (southOf(x, y) ? dD : 0)];
+
+      const solid = (item: (typeof this.campus.worldFurniture)[number]) =>
+        item.layer !== "tabletop" && item.layer !== "floor" && !isEdgeDividerAsset(item.assetId);
+      const collisionPairs = () => {
+        const items = this.campus.worldFurniture.filter(solid);
+        const pairs = new Map<string, string>();
+        for (let i = 0; i < items.length; i++) {
+          for (let j = i + 1; j < items.length; j++) {
+            if (furnitureFootprintsCollide(items[i], items[j])) {
+              pairs.set([items[i].id, items[j].id].sort().join("|"), `${items[i].assetId} กับ ${items[j].assetId} ที่ ${items[j].tx},${items[j].ty}`);
+            }
+          }
+        }
+        return pairs;
+      };
+      const before = collisionPairs();
+      const saved = structuredClone({
+        bossOffice: this.state.bossOffice,
+        zoneOverrides: this.state.zoneOverrides,
+        customZones: this.state.customZones,
+        floorTileOverrides: this.state.floorTileOverrides,
+        tilePermissionOverrides: this.state.tilePermissionOverrides,
+        floorWidthTiles: this.state.floorWidthTiles,
+        floorDepthTiles: this.state.floorDepthTiles,
+      });
+      const rollback = () => {
+        Object.assign(this.state, saved);
+        this.recomputeCampus();
+      };
+
+      for (const item of this.state.zoneOverrides?.["floor:0"] ?? []) [item.lx, item.ly] = shift(item.lx, item.ly);
+      for (const zone of this.state.customZones ?? []) [zone.x, zone.y] = shift(zone.x, zone.y);
+      const shiftTiles = <T>(tiles: Record<string, T> | undefined): Record<string, T> | undefined => {
+        if (!tiles) return tiles;
+        const next: Record<string, T> = {};
+        for (const [key, value] of Object.entries(tiles)) {
+          const [x, y] = key.split(",").map(Number);
+          const [nx, ny] = shift(x, y);
+          next[`${nx},${ny}`] = value;
+        }
+        return next;
+      };
+      this.state.floorTileOverrides = shiftTiles(this.state.floorTileOverrides);
+      this.state.tilePermissionOverrides = shiftTiles(this.state.tilePermissionOverrides);
+      // Grow the floor with the corner so the far edge keeps its spacing (shrinking leaves the floor as is)
+      const nextFloorW = this.campus.widthTiles + Math.max(0, dW);
+      const nextFloorD = this.campus.depthTiles + Math.max(0, dD);
+      if (nextFloorW > MAX_FLOOR_SIDE || nextFloorD > MAX_FLOOR_SIDE) {
+        rollback();
+        throw new Error(`ขยาย Boss zone ไม่ได้: พื้นจะเกิน ${MAX_FLOOR_SIDE} ช่อง`);
+      }
+      this.state.floorWidthTiles = nextFloorW;
+      this.state.floorDepthTiles = nextFloorD;
+      const nextBoss: BossOfficeRecord = { ...boss, width: nextW, height: nextD };
+      if (boss.hubX !== undefined && boss.hubY !== undefined) [nextBoss.hubX, nextBoss.hubY] = shift(boss.hubX, boss.hubY);
+      this.state.bossOffice = nextBoss;
+      this.recomputeCampus();
+
+      const added = [...collisionPairs()].find(([key]) => !before.has(key));
+      if (added) {
+        rollback();
+        throw new Error(`ปรับ Boss zone ไม่ได้: ${added[1]} จะทับกัน — ย้ายของชิ้นนั้นก่อน`);
+      }
+
+      await this.persist();
+      this.emitSnapshot();
+      return { width: nextW, height: nextD };
+    });
+  }
+
+  /**
+   * Move/resize the Boss corner to a rect drawn on the map. Boss furniture (zone-local) and floor furniture
+   * fully inside the old corner move with it;
+   * the Central Work Hub is pinned where it is. Rejects rects outside the floor, overlapping the hub,
+   * too small for Boss furniture, or causing new furniture overlaps.
+   */
+  async setBossZoneRect(rect: { x: number; y: number; width: number; height: number }): Promise<{ x: number; y: number; width: number; height: number }> {
+    return this.runSerialized(async () => {
+      this.assertNotDemoMode();
+      const { x, y, width, height } = rect;
+      if (width < MIN_BOSS_WIDTH || width > MAX_BOSS_WIDTH || height < MIN_BOSS_DEPTH || height > MAX_BOSS_DEPTH) {
+        throw new Error(`Boss zone ต้องกว้าง ${MIN_BOSS_WIDTH}–${MAX_BOSS_WIDTH} และลึก ${MIN_BOSS_DEPTH}–${MAX_BOSS_DEPTH} ช่อง (ได้ ${width}×${height})`);
+      }
+      if (x < 0 || y < 0 || x + width > this.campus.widthTiles || y + height > this.campus.depthTiles) {
+        throw new Error("Boss zone ต้องอยู่ในพื้นออฟฟิศ");
+      }
+      const hub = this.campus.zones.find((zone) => zone.kind === "cowork");
+      if (hub && x < hub.originX + hub.width && hub.originX < x + width && y < hub.originY + hub.height && hub.originY < y + height) {
+        throw new Error("Boss zone ทับ Central Work Hub — วาดให้พ้นโซนนั้น");
+      }
+      for (const item of this.campus.worldFurniture) {
+        if (item.zoneId !== "boss:0") continue;
+        const bossZone = this.campus.zones.find((zone) => zone.kind === "boss")!;
+        if (item.tx - bossZone.originX + item.footprintTiles[0] > width || item.ty - bossZone.originY + item.footprintTiles[1] > height) {
+          throw new Error(`Boss zone เล็กเกินไป (ติด ${item.assetId}) — ย้ายของออกก่อน`);
+        }
+      }
+
+      const solid = (item: (typeof this.campus.worldFurniture)[number]) =>
+        item.layer !== "tabletop" && item.layer !== "floor" && !isEdgeDividerAsset(item.assetId);
+      const collisionPairs = () => {
+        const items = this.campus.worldFurniture.filter(solid);
+        const pairs = new Map<string, string>();
+        for (let i = 0; i < items.length; i++) {
+          for (let j = i + 1; j < items.length; j++) {
+            if (furnitureFootprintsCollide(items[i], items[j])) {
+              pairs.set([items[i].id, items[j].id].sort().join("|"), `${items[i].assetId} กับ ${items[j].assetId} ที่ ${items[j].tx},${items[j].ty}`);
+            }
+          }
+        }
+        return pairs;
+      };
+      const before = collisionPairs();
+      const previous = this.state.bossOffice;
+      const previousFloorItems = structuredClone(this.state.zoneOverrides?.["floor:0"]);
+      const boss = previous ?? createDefaultBossOffice();
+      const [oldX, oldY, oldW, oldD] = getBossZoneRect(boss);
+      const [hubX, hubY] = getHubOrigin(boss);
+      // Furniture the user placed inside the old corner travels with it, like the Boss's own furniture
+      const insideOld = new Set(
+        this.campus.worldFurniture
+          .filter((item) => item.zoneId === "floor:0" &&
+            item.tx >= oldX && item.ty >= oldY &&
+            item.tx + item.footprintTiles[0] <= oldX + oldW && item.ty + item.footprintTiles[1] <= oldY + oldD)
+          .map((item) => item.id),
+      );
+      for (const item of this.state.zoneOverrides?.["floor:0"] ?? []) {
+        if (!insideOld.has(item.id)) continue;
+        item.lx += x - oldX;
+        item.ly += y - oldY;
+      }
+      this.state.bossOffice = { ...boss, x, y, width, height, hubX, hubY };
+      this.recomputeCampus();
+      const added = [...collisionPairs()].find(([key]) => !before.has(key));
+      if (added) {
+        this.state.bossOffice = previous;
+        if (previousFloorItems && this.state.zoneOverrides) this.state.zoneOverrides["floor:0"] = previousFloorItems;
+        this.recomputeCampus();
+        throw new Error(`ย้าย Boss zone ไม่ได้: ${added[1]} จะทับกัน — ย้ายของชิ้นนั้นก่อน`);
+      }
+      await this.persist();
+      this.emitSnapshot();
+      return { x, y, width, height };
     });
   }
 
