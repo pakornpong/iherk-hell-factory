@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-art-rain-window",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ash": {
+      "kind": "wood",
+      "color": "#d6b98a"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#606f80"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    },
+    "wave": {
+      "kind": "matte",
+      "color": "#4f8fa0"
+    },
+    "ink": {
+      "kind": "matte",
+      "color": "#292e3c"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#f3bf65"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "ash",
+      "from": [
+        9,
+        0,
+        0
+      ],
+      "to": [
+        23,
+        2,
+        27
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        10,
+        3,
+        1
+      ],
+      "to": [
+        22,
+        3,
+        26
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        11,
+        4,
+        21
+      ],
+      "to": [
+        12,
+        4,
+        25
+      ]
+    },
+    {
+      "op": "line",
+      "material": "wave",
+      "from": [
+        11,
+        4,
+        13
+      ],
+      "to": [
+        12,
+        4,
+        17
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        14,
+        4,
+        18
+      ],
+      "to": [
+        15,
+        4,
+        22
+      ]
+    },
+    {
+      "op": "line",
+      "material": "wave",
+      "from": [
+        14,
+        4,
+        14
+      ],
+      "to": [
+        15,
+        4,
+        18
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        17,
+        4,
+        21
+      ],
+      "to": [
+        18,
+        4,
+        25
+      ]
+    },
+    {
+      "op": "line",
+      "material": "wave",
+      "from": [
+        17,
+        4,
+        13
+      ],
+      "to": [
+        18,
+        4,
+        17
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        20,
+        4,
+        18
+      ],
+      "to": [
+        21,
+        4,
+        22
+      ]
+    },
+    {
+      "op": "line",
+      "material": "wave",
+      "from": [
+        20,
+        4,
+        14
+      ],
+      "to": [
+        21,
+        4,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        11,
+        4,
+        4
+      ],
+      "to": [
+        14,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        18,
+        4,
+        3
+      ],
+      "to": [
+        21,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        12,
+        5,
+        6
+      ],
+      "to": [
+        13,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        19,
+        5,
+        8
+      ],
+      "to": [
+        20,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ash",
+      "from": [
+        16,
+        4,
+        1
+      ],
+      "to": [
+        16,
+        4,
+        26
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ash",
+      "from": [
+        10,
+        4,
+        12
+      ],
+      "to": [
+        22,
+        4,
+        12
+      ]
+    }
+  ]
+}

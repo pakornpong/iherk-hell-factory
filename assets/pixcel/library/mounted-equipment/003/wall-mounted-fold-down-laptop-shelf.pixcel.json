@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-fold-down-laptop-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c6a16b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "pine": {
+      "kind": "wood",
+      "color": "#cda978"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        7
+      ],
+      "to": [
+        27,
+        1,
+        24
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        7
+      ],
+      "to": [
+        26,
+        3,
+        24
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        1,
+        4
+      ],
+      "to": [
+        27,
+        11,
+        5
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        1,
+        4
+      ],
+      "to": [
+        27,
+        3,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        10,
+        4
+      ],
+      "to": [
+        5,
+        2,
+        0
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        26,
+        10,
+        4
+      ],
+      "to": [
+        26,
+        2,
+        0
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        4,
+        20
+      ],
+      "to": [
+        19,
+        4,
+        21
+      ],
+      "material": "brass"
+    }
+  ]
+}

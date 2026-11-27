@@ -1,0 +1,428 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-art-harvest-still-life",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#765044"
+    },
+    "plum": {
+      "kind": "matte",
+      "color": "#794760"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#af6650"
+    },
+    "coral": {
+      "kind": "matte",
+      "color": "#c16458"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#f3bf65"
+    },
+    "mint": {
+      "kind": "matte",
+      "color": "#92c8b2"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    },
+    "lagoon": {
+      "kind": "matte",
+      "color": "#2b6a70"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        4,
+        0,
+        0
+      ],
+      "to": [
+        26,
+        2,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "plum",
+      "from": [
+        5,
+        3,
+        1
+      ],
+      "to": [
+        25,
+        3,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        5,
+        4,
+        2
+      ],
+      "to": [
+        25,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "coral",
+      "from": [
+        11,
+        5,
+        5
+      ],
+      "to": [
+        11,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "coral",
+      "from": [
+        8,
+        5,
+        6
+      ],
+      "to": [
+        14,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "coral",
+      "from": [
+        7,
+        5,
+        7
+      ],
+      "to": [
+        15,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "coral",
+      "from": [
+        8,
+        5,
+        8
+      ],
+      "to": [
+        14,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "coral",
+      "from": [
+        11,
+        5,
+        9
+      ],
+      "to": [
+        11,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        19,
+        5,
+        5
+      ],
+      "to": [
+        19,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        17,
+        5,
+        6
+      ],
+      "to": [
+        21,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        16,
+        5,
+        7
+      ],
+      "to": [
+        22,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        17,
+        5,
+        8
+      ],
+      "to": [
+        21,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        19,
+        5,
+        9
+      ],
+      "to": [
+        19,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        14,
+        4,
+        6
+      ],
+      "to": [
+        22,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        14,
+        4,
+        7
+      ],
+      "to": [
+        22,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        14,
+        4,
+        8
+      ],
+      "to": [
+        22,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        14,
+        4,
+        9
+      ],
+      "to": [
+        22,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        14,
+        4,
+        10
+      ],
+      "to": [
+        22,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        14,
+        4,
+        11
+      ],
+      "to": [
+        22,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        14,
+        4,
+        12
+      ],
+      "to": [
+        22,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        15,
+        4,
+        13
+      ],
+      "to": [
+        21,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        16,
+        4,
+        14
+      ],
+      "to": [
+        20,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        16,
+        4,
+        15
+      ],
+      "to": [
+        20,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        16,
+        4,
+        16
+      ],
+      "to": [
+        20,
+        4,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        16,
+        4,
+        17
+      ],
+      "to": [
+        20,
+        4,
+        17
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        15,
+        5,
+        7
+      ],
+      "to": [
+        15,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        16,
+        5,
+        16
+      ],
+      "to": [
+        20,
+        5,
+        16
+      ]
+    }
+  ]
+}

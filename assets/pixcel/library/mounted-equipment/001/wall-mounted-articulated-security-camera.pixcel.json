@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-articulated-security-camera",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded8c9"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#ece9dc"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a6c5cd"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        11,
+        0,
+        5
+      ],
+      "to": [
+        20,
+        1,
+        16
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        1,
+        8
+      ],
+      "to": [
+        17,
+        5,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        4,
+        9
+      ],
+      "to": [
+        11,
+        9,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        5,
+        12
+      ],
+      "to": [
+        21,
+        9,
+        19
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        20
+      ],
+      "to": [
+        22,
+        10,
+        21
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        12
+      ],
+      "to": [
+        15,
+        10,
+        12
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        13
+      ],
+      "to": [
+        17,
+        10,
+        13
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        14
+      ],
+      "to": [
+        17,
+        10,
+        14
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        15
+      ],
+      "to": [
+        18,
+        10,
+        15
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        16
+      ],
+      "to": [
+        17,
+        10,
+        16
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        17
+      ],
+      "to": [
+        17,
+        10,
+        17
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        18
+      ],
+      "to": [
+        15,
+        10,
+        18
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        11,
+        14
+      ],
+      "to": [
+        15,
+        11,
+        14
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        11,
+        15
+      ],
+      "to": [
+        16,
+        11,
+        15
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        11,
+        16
+      ],
+      "to": [
+        15,
+        11,
+        16
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        1,
+        0
+      ],
+      "to": [
+        17,
+        2,
+        5
+      ],
+      "material": "gray"
+    }
+  ]
+}

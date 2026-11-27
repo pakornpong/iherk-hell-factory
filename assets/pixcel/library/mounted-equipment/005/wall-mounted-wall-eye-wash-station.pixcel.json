@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-wall-eye-wash-station",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#d9914b"
+    },
+    "green": {
+      "kind": "matte",
+      "color": "#648765"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        9
+      ],
+      "to": [
+        23,
+        1,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        1,
+        8
+      ],
+      "to": [
+        21,
+        6,
+        18
+      ],
+      "material": "green"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        4,
+        2
+      ],
+      "to": [
+        24,
+        11,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        5,
+        0
+      ],
+      "to": [
+        22,
+        10,
+        2
+      ],
+      "material": "green"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        5,
+        4
+      ],
+      "to": [
+        12,
+        7,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        5,
+        9
+      ],
+      "to": [
+        13,
+        7,
+        11
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        5,
+        4
+      ],
+      "to": [
+        21,
+        7,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        5,
+        9
+      ],
+      "to": [
+        22,
+        7,
+        11
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        4,
+        4
+      ],
+      "to": [
+        17,
+        10,
+        5
+      ],
+      "material": "gray"
+    }
+  ]
+}

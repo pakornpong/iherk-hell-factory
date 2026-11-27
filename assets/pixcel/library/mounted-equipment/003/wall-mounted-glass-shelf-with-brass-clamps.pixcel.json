@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-glass-shelf-with-brass-clamps",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "brass": {
+      "kind": "metal",
+      "color": "#c6a16b"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a6c5cd"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        0,
+        0
+      ],
+      "to": [
+        8,
+        1,
+        6
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        2
+      ],
+      "to": [
+        9,
+        8,
+        4
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        3
+      ],
+      "to": [
+        9,
+        9,
+        6
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        0,
+        0
+      ],
+      "to": [
+        25,
+        1,
+        6
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        1,
+        2
+      ],
+      "to": [
+        26,
+        8,
+        4
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        7,
+        3
+      ],
+      "to": [
+        26,
+        9,
+        6
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        5
+      ],
+      "to": [
+        28,
+        11,
+        6
+      ],
+      "material": "glass"
+    }
+  ]
+}

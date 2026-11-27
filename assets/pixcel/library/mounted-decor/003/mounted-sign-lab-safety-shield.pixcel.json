@@ -1,0 +1,786 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-sign-lab-safety-shield",
+  "category": "signage",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "amber": {
+      "kind": "matte",
+      "color": "#f3bf65"
+    },
+    "charcoal": {
+      "kind": "matte",
+      "color": "#49525f"
+    },
+    "lime": {
+      "kind": "matte",
+      "color": "#cae58e"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        16,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        3,
+        0
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        13,
+        0,
+        1
+      ],
+      "to": [
+        18,
+        3,
+        1
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        11,
+        0,
+        2
+      ],
+      "to": [
+        20,
+        3,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        9,
+        0,
+        3
+      ],
+      "to": [
+        22,
+        3,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        7,
+        0,
+        4
+      ],
+      "to": [
+        24,
+        3,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        5
+      ],
+      "to": [
+        26,
+        3,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        6
+      ],
+      "to": [
+        26,
+        3,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        7
+      ],
+      "to": [
+        26,
+        3,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        8
+      ],
+      "to": [
+        26,
+        3,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        9
+      ],
+      "to": [
+        26,
+        3,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        10
+      ],
+      "to": [
+        26,
+        3,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        11
+      ],
+      "to": [
+        26,
+        3,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        12
+      ],
+      "to": [
+        26,
+        3,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        13
+      ],
+      "to": [
+        26,
+        3,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        14
+      ],
+      "to": [
+        26,
+        3,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        15
+      ],
+      "to": [
+        26,
+        3,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        16
+      ],
+      "to": [
+        26,
+        3,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        17
+      ],
+      "to": [
+        26,
+        3,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        18
+      ],
+      "to": [
+        26,
+        3,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        0,
+        19
+      ],
+      "to": [
+        26,
+        3,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        7,
+        0,
+        20
+      ],
+      "to": [
+        24,
+        3,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        9,
+        0,
+        21
+      ],
+      "to": [
+        22,
+        3,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        11,
+        0,
+        22
+      ],
+      "to": [
+        20,
+        3,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        13,
+        0,
+        23
+      ],
+      "to": [
+        18,
+        3,
+        23
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        16,
+        0,
+        24
+      ],
+      "to": [
+        16,
+        3,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        16,
+        4,
+        3
+      ],
+      "to": [
+        16,
+        4,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        13,
+        4,
+        4
+      ],
+      "to": [
+        18,
+        4,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        11,
+        4,
+        5
+      ],
+      "to": [
+        20,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        9,
+        4,
+        6
+      ],
+      "to": [
+        22,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        4,
+        7
+      ],
+      "to": [
+        24,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        4,
+        8
+      ],
+      "to": [
+        24,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        4,
+        9
+      ],
+      "to": [
+        24,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        4,
+        10
+      ],
+      "to": [
+        24,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        4,
+        11
+      ],
+      "to": [
+        24,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        4,
+        12
+      ],
+      "to": [
+        24,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        4,
+        13
+      ],
+      "to": [
+        24,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        4,
+        14
+      ],
+      "to": [
+        24,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        4,
+        15
+      ],
+      "to": [
+        24,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        4,
+        16
+      ],
+      "to": [
+        24,
+        4,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        4,
+        17
+      ],
+      "to": [
+        24,
+        4,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        4,
+        18
+      ],
+      "to": [
+        24,
+        4,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        9,
+        4,
+        19
+      ],
+      "to": [
+        22,
+        4,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        11,
+        4,
+        20
+      ],
+      "to": [
+        20,
+        4,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        13,
+        4,
+        21
+      ],
+      "to": [
+        18,
+        4,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        16,
+        4,
+        22
+      ],
+      "to": [
+        16,
+        4,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lime",
+      "from": [
+        15,
+        5,
+        17
+      ],
+      "to": [
+        17,
+        5,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lime",
+      "from": [
+        16,
+        5,
+        16
+      ],
+      "to": [
+        16,
+        5,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lime",
+      "from": [
+        16,
+        5,
+        15
+      ],
+      "to": [
+        16,
+        5,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lime",
+      "from": [
+        15,
+        5,
+        14
+      ],
+      "to": [
+        17,
+        5,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lime",
+      "from": [
+        15,
+        5,
+        13
+      ],
+      "to": [
+        15,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lime",
+      "from": [
+        17,
+        5,
+        13
+      ],
+      "to": [
+        17,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lime",
+      "from": [
+        14,
+        5,
+        12
+      ],
+      "to": [
+        14,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lime",
+      "from": [
+        18,
+        5,
+        12
+      ],
+      "to": [
+        18,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lime",
+      "from": [
+        13,
+        5,
+        11
+      ],
+      "to": [
+        19,
+        5,
+        11
+      ]
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-guitar-neck-hook-rack",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "pine": {
+      "kind": "wood",
+      "color": "#cda978"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        16
+      ],
+      "to": [
+        23,
+        1,
+        24
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        1,
+        16
+      ],
+      "to": [
+        19,
+        4,
+        23
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        3,
+        18
+      ],
+      "to": [
+        12,
+        11,
+        20
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        3,
+        18
+      ],
+      "to": [
+        20,
+        11,
+        20
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        4,
+        18
+      ],
+      "to": [
+        20,
+        6,
+        20
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        6,
+        0
+      ],
+      "to": [
+        15,
+        7,
+        0
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        6,
+        1
+      ],
+      "to": [
+        18,
+        7,
+        1
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        6,
+        2
+      ],
+      "to": [
+        19,
+        7,
+        2
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        6,
+        3
+      ],
+      "to": [
+        19,
+        7,
+        3
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        6,
+        4
+      ],
+      "to": [
+        19,
+        7,
+        4
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        6,
+        5
+      ],
+      "to": [
+        20,
+        7,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        6,
+        6
+      ],
+      "to": [
+        19,
+        7,
+        6
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        6,
+        7
+      ],
+      "to": [
+        19,
+        7,
+        7
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        6,
+        8
+      ],
+      "to": [
+        19,
+        7,
+        8
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        6,
+        9
+      ],
+      "to": [
+        18,
+        7,
+        9
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        6,
+        10
+      ],
+      "to": [
+        15,
+        7,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        6,
+        6
+      ],
+      "to": [
+        16,
+        7,
+        22
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        6,
+        22
+      ],
+      "to": [
+        18,
+        8,
+        26
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        8,
+        4
+      ],
+      "to": [
+        16,
+        8,
+        13
+      ],
+      "material": "steel"
+    }
+  ]
+}

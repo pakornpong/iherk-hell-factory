@@ -1,0 +1,516 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-relief-folded-copper-ginkgo",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "copper": {
+      "kind": "metal",
+      "color": "#be7957"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#caa05c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        15,
+        0,
+        5
+      ],
+      "to": [
+        15,
+        2,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        13,
+        0,
+        6
+      ],
+      "to": [
+        17,
+        2,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        12,
+        0,
+        7
+      ],
+      "to": [
+        18,
+        2,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        11,
+        0,
+        8
+      ],
+      "to": [
+        20,
+        2,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        9,
+        0,
+        9
+      ],
+      "to": [
+        21,
+        2,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        8,
+        0,
+        10
+      ],
+      "to": [
+        23,
+        2,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        7,
+        0,
+        11
+      ],
+      "to": [
+        24,
+        2,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        6,
+        0,
+        12
+      ],
+      "to": [
+        25,
+        2,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        6,
+        0,
+        13
+      ],
+      "to": [
+        26,
+        2,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        5,
+        0,
+        14
+      ],
+      "to": [
+        27,
+        2,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        5,
+        0,
+        15
+      ],
+      "to": [
+        27,
+        2,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        4,
+        0,
+        16
+      ],
+      "to": [
+        28,
+        2,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        4,
+        0,
+        17
+      ],
+      "to": [
+        28,
+        2,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        3,
+        0,
+        18
+      ],
+      "to": [
+        28,
+        2,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        3,
+        0,
+        19
+      ],
+      "to": [
+        28,
+        2,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        3,
+        0,
+        20
+      ],
+      "to": [
+        27,
+        2,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        4,
+        0,
+        21
+      ],
+      "to": [
+        27,
+        2,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        5,
+        0,
+        22
+      ],
+      "to": [
+        27,
+        2,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        6,
+        0,
+        23
+      ],
+      "to": [
+        26,
+        2,
+        23
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        10,
+        0,
+        24
+      ],
+      "to": [
+        23,
+        2,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        14,
+        0,
+        25
+      ],
+      "to": [
+        20,
+        2,
+        25
+      ]
+    },
+    {
+      "op": "line",
+      "material": "brass",
+      "from": [
+        16,
+        3,
+        6
+      ],
+      "to": [
+        5,
+        3,
+        20
+      ]
+    },
+    {
+      "op": "line",
+      "material": "brass",
+      "from": [
+        16,
+        3,
+        6
+      ],
+      "to": [
+        10,
+        3,
+        23
+      ]
+    },
+    {
+      "op": "line",
+      "material": "brass",
+      "from": [
+        16,
+        3,
+        6
+      ],
+      "to": [
+        16,
+        3,
+        20
+      ]
+    },
+    {
+      "op": "line",
+      "material": "brass",
+      "from": [
+        16,
+        3,
+        6
+      ],
+      "to": [
+        22,
+        3,
+        23
+      ]
+    },
+    {
+      "op": "line",
+      "material": "brass",
+      "from": [
+        16,
+        3,
+        6
+      ],
+      "to": [
+        26,
+        3,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        2,
+        0
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        0,
+        1
+      ],
+      "to": [
+        17,
+        2,
+        1
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        0,
+        2
+      ],
+      "to": [
+        17,
+        2,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        0,
+        3
+      ],
+      "to": [
+        17,
+        2,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        0,
+        4
+      ],
+      "to": [
+        17,
+        2,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        0,
+        5
+      ],
+      "to": [
+        18,
+        2,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        0,
+        6
+      ],
+      "to": [
+        18,
+        2,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        0,
+        7
+      ],
+      "to": [
+        18,
+        2,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        18,
+        0,
+        8
+      ],
+      "to": [
+        18,
+        2,
+        8
+      ]
+    }
+  ]
+}

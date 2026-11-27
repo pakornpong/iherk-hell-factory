@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "id": "divider-moss-felt-privacy-panel",
+  "category": "room-divider",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "bronze": {
+      "kind": "metal",
+      "color": "#957d62"
+    },
+    "black": {
+      "kind": "matte",
+      "color": "#3f423b"
+    },
+    "moss": {
+      "kind": "matte",
+      "color": "#65774b"
+    },
+    "sage": {
+      "kind": "matte",
+      "color": "#8c9b62"
+    },
+    "olive": {
+      "kind": "matte",
+      "color": "#505c3c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        7,
+        0
+      ],
+      "to": [
+        6,
+        24,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        13,
+        2
+      ],
+      "to": [
+        6,
+        18,
+        33
+      ],
+      "material": "bronze"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        7,
+        0
+      ],
+      "to": [
+        27,
+        24,
+        2
+      ],
+      "material": "black"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        13,
+        2
+      ],
+      "to": [
+        27,
+        18,
+        33
+      ],
+      "material": "bronze"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        13,
+        6
+      ],
+      "to": [
+        26,
+        18,
+        31
+      ],
+      "material": "olive"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        12,
+        8
+      ],
+      "to": [
+        24,
+        19,
+        32
+      ],
+      "material": "moss"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        12,
+        32
+      ],
+      "to": [
+        22,
+        19,
+        35
+      ],
+      "material": "moss"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        9
+      ],
+      "to": [
+        8,
+        12,
+        30
+      ],
+      "material": "sage"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        19,
+        9
+      ],
+      "to": [
+        8,
+        20,
+        30
+      ],
+      "material": "sage"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        9
+      ],
+      "to": [
+        12,
+        12,
+        33
+      ],
+      "material": "sage"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        19,
+        9
+      ],
+      "to": [
+        12,
+        20,
+        33
+      ],
+      "material": "sage"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        11,
+        9
+      ],
+      "to": [
+        16,
+        12,
+        33
+      ],
+      "material": "sage"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        19,
+        9
+      ],
+      "to": [
+        16,
+        20,
+        33
+      ],
+      "material": "sage"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        11,
+        9
+      ],
+      "to": [
+        20,
+        12,
+        33
+      ],
+      "material": "sage"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        19,
+        9
+      ],
+      "to": [
+        20,
+        20,
+        33
+      ],
+      "material": "sage"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        11,
+        9
+      ],
+      "to": [
+        24,
+        12,
+        30
+      ],
+      "material": "sage"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        19,
+        9
+      ],
+      "to": [
+        24,
+        20,
+        30
+      ],
+      "material": "sage"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        12,
+        6
+      ],
+      "to": [
+        26,
+        19,
+        7
+      ],
+      "material": "bronze"
+    }
+  ],
+  "decals": []
+}

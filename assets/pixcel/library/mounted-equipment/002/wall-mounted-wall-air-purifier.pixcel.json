@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-wall-air-purifier",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded8c9"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#ece9dc"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#487d80"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        0,
+        0
+      ],
+      "to": [
+        24,
+        1,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        1,
+        1
+      ],
+      "to": [
+        23,
+        6,
+        25
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        5,
+        3
+      ],
+      "to": [
+        21,
+        9,
+        22
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        19
+      ],
+      "to": [
+        19,
+        10,
+        20
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        5
+      ],
+      "to": [
+        19,
+        10,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        8
+      ],
+      "to": [
+        19,
+        10,
+        8
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        11
+      ],
+      "to": [
+        19,
+        10,
+        11
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        14
+      ],
+      "to": [
+        19,
+        10,
+        14
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        4,
+        25
+      ],
+      "to": [
+        18,
+        7,
+        27
+      ],
+      "material": "gray"
+    }
+  ]
+}

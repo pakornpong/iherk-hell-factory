@@ -1,0 +1,490 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-office-presentation-paper-flip-pad",
+  "category": "office",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "denim": {
+      "kind": "matte",
+      "color": "#4b637d"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ded6b4"
+    },
+    "pearl": {
+      "kind": "matte",
+      "color": "#f6ebd3"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#bbd4d8"
+    },
+    "wave": {
+      "kind": "matte",
+      "color": "#4f8fa0"
+    },
+    "ink": {
+      "kind": "matte",
+      "color": "#292e3c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        5,
+        0,
+        22
+      ],
+      "to": [
+        26,
+        3,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "paper",
+      "from": [
+        7,
+        1,
+        0
+      ],
+      "to": [
+        23,
+        2,
+        23
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        16,
+        3,
+        1
+      ],
+      "to": [
+        16,
+        4,
+        1
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        12,
+        3,
+        2
+      ],
+      "to": [
+        20,
+        4,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        3
+      ],
+      "to": [
+        24,
+        4,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        4
+      ],
+      "to": [
+        24,
+        4,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        5
+      ],
+      "to": [
+        24,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        6
+      ],
+      "to": [
+        24,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        7
+      ],
+      "to": [
+        24,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        8
+      ],
+      "to": [
+        24,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        9
+      ],
+      "to": [
+        24,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        10
+      ],
+      "to": [
+        24,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        11
+      ],
+      "to": [
+        24,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        12
+      ],
+      "to": [
+        24,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        13
+      ],
+      "to": [
+        23,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        14
+      ],
+      "to": [
+        23,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        15
+      ],
+      "to": [
+        23,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        16
+      ],
+      "to": [
+        23,
+        4,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        17
+      ],
+      "to": [
+        23,
+        4,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        18
+      ],
+      "to": [
+        23,
+        4,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        19
+      ],
+      "to": [
+        23,
+        4,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        20
+      ],
+      "to": [
+        23,
+        4,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        21
+      ],
+      "to": [
+        23,
+        4,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        8,
+        3,
+        22
+      ],
+      "to": [
+        22,
+        4,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        9,
+        3,
+        21
+      ],
+      "to": [
+        10,
+        5,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        14,
+        3,
+        21
+      ],
+      "to": [
+        15,
+        5,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        20,
+        3,
+        21
+      ],
+      "to": [
+        21,
+        5,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        10,
+        5,
+        4
+      ],
+      "to": [
+        11,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        13,
+        5,
+        4
+      ],
+      "to": [
+        14,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        16,
+        5,
+        4
+      ],
+      "to": [
+        17,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        19,
+        5,
+        4
+      ],
+      "to": [
+        20,
+        5,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        10,
+        5,
+        18
+      ],
+      "to": [
+        20,
+        5,
+        18
+      ]
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-slatted-air-vent",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        2,
+        0,
+        0
+      ],
+      "to": [
+        29,
+        1,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        1,
+        1
+      ],
+      "to": [
+        27,
+        3,
+        10
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        1,
+        2
+      ],
+      "to": [
+        27,
+        8,
+        3
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        1,
+        6
+      ],
+      "to": [
+        27,
+        8,
+        7
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        1,
+        10
+      ],
+      "to": [
+        27,
+        8,
+        11
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        2,
+        0
+      ],
+      "to": [
+        3,
+        8,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        2,
+        0
+      ],
+      "to": [
+        29,
+        8,
+        11
+      ],
+      "material": "steel"
+    }
+  ]
+}

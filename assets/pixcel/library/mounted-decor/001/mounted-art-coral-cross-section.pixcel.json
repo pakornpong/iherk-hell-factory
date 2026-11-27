@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-art-coral-cross-section",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#765044"
+    },
+    "lagoon": {
+      "kind": "matte",
+      "color": "#2b6a70"
+    },
+    "coral": {
+      "kind": "matte",
+      "color": "#c16458"
+    },
+    "blush": {
+      "kind": "matte",
+      "color": "#db9a99"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        5,
+        0,
+        0
+      ],
+      "to": [
+        27,
+        2,
+        23
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        6,
+        3,
+        1
+      ],
+      "to": [
+        26,
+        3,
+        22
+      ]
+    },
+    {
+      "op": "line",
+      "material": "coral",
+      "from": [
+        16,
+        4,
+        2
+      ],
+      "to": [
+        8,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "line",
+      "material": "blush",
+      "from": [
+        8,
+        5,
+        9
+      ],
+      "to": [
+        11,
+        5,
+        16
+      ]
+    },
+    {
+      "op": "line",
+      "material": "coral",
+      "from": [
+        8,
+        5,
+        9
+      ],
+      "to": [
+        9,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        11,
+        6,
+        14
+      ],
+      "to": [
+        11,
+        6,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        11,
+        6,
+        15
+      ],
+      "to": [
+        11,
+        6,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        10,
+        6,
+        16
+      ],
+      "to": [
+        12,
+        6,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        11,
+        6,
+        17
+      ],
+      "to": [
+        11,
+        6,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        11,
+        6,
+        18
+      ],
+      "to": [
+        11,
+        6,
+        18
+      ]
+    },
+    {
+      "op": "line",
+      "material": "coral",
+      "from": [
+        16,
+        5,
+        2
+      ],
+      "to": [
+        13,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "line",
+      "material": "blush",
+      "from": [
+        13,
+        5,
+        5
+      ],
+      "to": [
+        14,
+        5,
+        19
+      ]
+    },
+    {
+      "op": "line",
+      "material": "coral",
+      "from": [
+        13,
+        5,
+        5
+      ],
+      "to": [
+        12,
+        5,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        14,
+        6,
+        17
+      ],
+      "to": [
+        14,
+        6,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        14,
+        6,
+        18
+      ],
+      "to": [
+        14,
+        6,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        13,
+        6,
+        19
+      ],
+      "to": [
+        15,
+        6,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        14,
+        6,
+        20
+      ],
+      "to": [
+        14,
+        6,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        14,
+        6,
+        21
+      ],
+      "to": [
+        14,
+        6,
+        21
+      ]
+    },
+    {
+      "op": "line",
+      "material": "coral",
+      "from": [
+        16,
+        4,
+        2
+      ],
+      "to": [
+        18,
+        4,
+        4
+      ]
+    },
+    {
+      "op": "line",
+      "material": "blush",
+      "from": [
+        18,
+        5,
+        4
+      ],
+      "to": [
+        21,
+        5,
+        20
+      ]
+    },
+    {
+      "op": "line",
+      "material": "coral",
+      "from": [
+        18,
+        5,
+        4
+      ],
+      "to": [
+        19,
+        5,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        21,
+        6,
+        18
+      ],
+      "to": [
+        21,
+        6,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        21,
+        6,
+        19
+      ],
+      "to": [
+        21,
+        6,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        20,
+        6,
+        20
+      ],
+      "to": [
+        22,
+        6,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        21,
+        6,
+        21
+      ],
+      "to": [
+        21,
+        6,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        21,
+        6,
+        22
+      ],
+      "to": [
+        21,
+        6,
+        22
+      ]
+    },
+    {
+      "op": "line",
+      "material": "coral",
+      "from": [
+        16,
+        5,
+        2
+      ],
+      "to": [
+        22,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "line",
+      "material": "blush",
+      "from": [
+        22,
+        5,
+        7
+      ],
+      "to": [
+        25,
+        5,
+        14
+      ]
+    },
+    {
+      "op": "line",
+      "material": "coral",
+      "from": [
+        22,
+        5,
+        7
+      ],
+      "to": [
+        23,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        25,
+        6,
+        12
+      ],
+      "to": [
+        25,
+        6,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        25,
+        6,
+        13
+      ],
+      "to": [
+        25,
+        6,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        24,
+        6,
+        14
+      ],
+      "to": [
+        26,
+        6,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        25,
+        6,
+        15
+      ],
+      "to": [
+        25,
+        6,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        25,
+        6,
+        16
+      ],
+      "to": [
+        25,
+        6,
+        16
+      ]
+    }
+  ]
+}

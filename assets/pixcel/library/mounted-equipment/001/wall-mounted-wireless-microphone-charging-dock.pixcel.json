@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-wireless-microphone-charging-dock",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#506b8c"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        9,
+        0,
+        0
+      ],
+      "to": [
+        22,
+        1,
+        11
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        1,
+        0
+      ],
+      "to": [
+        24,
+        9,
+        7
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        5
+      ],
+      "to": [
+        23,
+        11,
+        7
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        4,
+        6
+      ],
+      "to": [
+        13,
+        6,
+        16
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        3,
+        16
+      ],
+      "to": [
+        14,
+        7,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        10,
+        2
+      ],
+      "to": [
+        13,
+        10,
+        3
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        4,
+        6
+      ],
+      "to": [
+        21,
+        6,
+        19
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        3,
+        19
+      ],
+      "to": [
+        22,
+        7,
+        25
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        10,
+        2
+      ],
+      "to": [
+        21,
+        10,
+        3
+      ],
+      "material": "cyan"
+    }
+  ]
+}

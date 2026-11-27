@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-folding-bike-hanger-rack",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c6a16b"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b64641"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        10,
+        0,
+        0
+      ],
+      "to": [
+        21,
+        1,
+        21
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        2,
+        1
+      ],
+      "to": [
+        19,
+        4,
+        20
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        3,
+        16
+      ],
+      "to": [
+        11,
+        10,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        8,
+        15
+      ],
+      "to": [
+        12,
+        11,
+        20
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        3,
+        16
+      ],
+      "to": [
+        22,
+        10,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        15
+      ],
+      "to": [
+        23,
+        11,
+        20
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        3,
+        14
+      ],
+      "to": [
+        22,
+        5,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        5,
+        2
+      ],
+      "to": [
+        18,
+        5,
+        4
+      ],
+      "material": "brass"
+    }
+  ]
+}

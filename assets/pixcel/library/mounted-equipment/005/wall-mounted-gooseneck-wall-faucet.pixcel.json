@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-gooseneck-wall-faucet",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c6a16b"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        15,
+        0,
+        11
+      ],
+      "to": [
+        15,
+        2,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        0,
+        12
+      ],
+      "to": [
+        18,
+        2,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        0,
+        13
+      ],
+      "to": [
+        19,
+        2,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        0,
+        14
+      ],
+      "to": [
+        20,
+        2,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        0,
+        15
+      ],
+      "to": [
+        20,
+        2,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        0,
+        16
+      ],
+      "to": [
+        20,
+        2,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        0,
+        17
+      ],
+      "to": [
+        21,
+        2,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        0,
+        18
+      ],
+      "to": [
+        20,
+        2,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        0,
+        19
+      ],
+      "to": [
+        20,
+        2,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        0,
+        20
+      ],
+      "to": [
+        20,
+        2,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        0,
+        21
+      ],
+      "to": [
+        19,
+        2,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        0,
+        22
+      ],
+      "to": [
+        18,
+        2,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        0,
+        23
+      ],
+      "to": [
+        15,
+        2,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        2,
+        10
+      ],
+      "to": [
+        17,
+        10,
+        12
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        4,
+        12
+      ],
+      "to": [
+        17,
+        6,
+        22
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        6,
+        21
+      ],
+      "to": [
+        17,
+        10,
+        22
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        9,
+        16
+      ],
+      "to": [
+        17,
+        11,
+        22
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        9,
+        15
+      ],
+      "to": [
+        18,
+        11,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        1,
+        0
+      ],
+      "to": [
+        17,
+        4,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        1,
+        0
+      ],
+      "to": [
+        19,
+        6,
+        2
+      ],
+      "material": "brass"
+    }
+  ]
+}

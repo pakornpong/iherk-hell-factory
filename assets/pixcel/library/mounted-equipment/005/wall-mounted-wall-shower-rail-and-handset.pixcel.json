@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-wall-shower-rail-and-handset",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded8c9"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        13,
+        0,
+        0
+      ],
+      "to": [
+        18,
+        1,
+        27
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        1,
+        0
+      ],
+      "to": [
+        17,
+        6,
+        27
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        4,
+        13
+      ],
+      "to": [
+        18,
+        8,
+        15
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        6,
+        12
+      ],
+      "to": [
+        12,
+        8,
+        25
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        20
+      ],
+      "to": [
+        13,
+        10,
+        27
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        22
+      ],
+      "to": [
+        12,
+        11,
+        25
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        7,
+        13
+      ],
+      "to": [
+        11,
+        7,
+        2
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "line",
+      "from": [
+        11,
+        7,
+        2
+      ],
+      "to": [
+        15,
+        6,
+        0
+      ],
+      "material": "ink"
+    }
+  ]
+}

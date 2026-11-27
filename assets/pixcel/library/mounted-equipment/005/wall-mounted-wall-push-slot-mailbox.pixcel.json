@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-wall-push-slot-mailbox",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#ece9dc"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c6a16b"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#506b8c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        0,
+        2
+      ],
+      "to": [
+        24,
+        1,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        2,
+        0
+      ],
+      "to": [
+        25,
+        8,
+        19
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "slope",
+      "from": [
+        5,
+        1,
+        19
+      ],
+      "to": [
+        26,
+        10,
+        25
+      ],
+      "axis": "-Y",
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        15
+      ],
+      "to": [
+        23,
+        9,
+        16
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        6
+      ],
+      "to": [
+        20,
+        9,
+        9
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        9,
+        3
+      ],
+      "to": [
+        17,
+        9,
+        3
+      ],
+      "material": "brass"
+    }
+  ]
+}

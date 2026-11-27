@@ -1,6 +1,6 @@
 {
   "target": 10000,
-  "validated": 7410,
+  "validated": 7614,
   "approvedBatch": {
     "count": 20,
     "preview": "../review-batch-01/review-sheet.png"
@@ -307,6 +307,18 @@
       "preview": "metal-shops/001/preview.png"
     },
     {
+      "family": "mounted-decor",
+      "count": 100,
+      "index": "mounted-decor/index.json",
+      "preview": "mounted-decor/001/preview.png"
+    },
+    {
+      "family": "mounted-equipment",
+      "count": 100,
+      "index": "mounted-equipment/index.json",
+      "preview": "mounted-equipment/001/preview.png"
+    },
+    {
       "family": "music-stations",
       "count": 54,
       "index": "music-stations/index.json",
@@ -473,6 +485,12 @@
       "count": 58,
       "index": "waiting-lounges/index.json",
       "preview": "waiting-lounges/001/preview.png"
+    },
+    {
+      "family": "wall-accents-and-screens",
+      "count": 4,
+      "index": "wall-accents-and-screens/index.json",
+      "preview": "wall-accents-and-screens/001/preview.png"
     },
     {
       "family": "warehouse-equipment",

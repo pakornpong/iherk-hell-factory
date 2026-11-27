@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-hanging-brass-tube-wind-chime",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#765044"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ded6b4"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#caa05c"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#bd8a5a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        7,
+        0,
+        23
+      ],
+      "to": [
+        24,
+        3,
+        25
+      ]
+    },
+    {
+      "op": "line",
+      "material": "paper",
+      "from": [
+        8,
+        2,
+        18
+      ],
+      "to": [
+        8,
+        2,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        7,
+        3,
+        9
+      ],
+      "to": [
+        9,
+        5,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        8,
+        6,
+        9
+      ],
+      "to": [
+        8,
+        6,
+        9
+      ]
+    },
+    {
+      "op": "line",
+      "material": "paper",
+      "from": [
+        12,
+        2,
+        17
+      ],
+      "to": [
+        12,
+        2,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        11,
+        4,
+        6
+      ],
+      "to": [
+        13,
+        6,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        12,
+        7,
+        6
+      ],
+      "to": [
+        12,
+        7,
+        6
+      ]
+    },
+    {
+      "op": "line",
+      "material": "paper",
+      "from": [
+        17,
+        2,
+        16
+      ],
+      "to": [
+        17,
+        2,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        16,
+        3,
+        3
+      ],
+      "to": [
+        18,
+        5,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        17,
+        6,
+        3
+      ],
+      "to": [
+        17,
+        6,
+        3
+      ]
+    },
+    {
+      "op": "line",
+      "material": "paper",
+      "from": [
+        22,
+        2,
+        18
+      ],
+      "to": [
+        22,
+        2,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        21,
+        4,
+        8
+      ],
+      "to": [
+        23,
+        6,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        22,
+        7,
+        8
+      ],
+      "to": [
+        22,
+        7,
+        8
+      ]
+    },
+    {
+      "op": "line",
+      "material": "oak",
+      "from": [
+        16,
+        1,
+        0
+      ],
+      "to": [
+        16,
+        1,
+        23
+      ]
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-slotted-mail-sorting-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "pine": {
+      "kind": "wood",
+      "color": "#cda978"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        0
+      ],
+      "to": [
+        28,
+        10,
+        1
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        1
+      ],
+      "to": [
+        27,
+        1,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "slope",
+      "from": [
+        3,
+        1,
+        1
+      ],
+      "to": [
+        4,
+        10,
+        18
+      ],
+      "axis": "-Y",
+      "material": "pine"
+    },
+    {
+      "op": "slope",
+      "from": [
+        9,
+        1,
+        1
+      ],
+      "to": [
+        10,
+        10,
+        18
+      ],
+      "axis": "-Y",
+      "material": "pine"
+    },
+    {
+      "op": "slope",
+      "from": [
+        15,
+        1,
+        1
+      ],
+      "to": [
+        16,
+        10,
+        18
+      ],
+      "axis": "-Y",
+      "material": "pine"
+    },
+    {
+      "op": "slope",
+      "from": [
+        22,
+        1,
+        1
+      ],
+      "to": [
+        23,
+        10,
+        18
+      ],
+      "axis": "-Y",
+      "material": "pine"
+    },
+    {
+      "op": "slope",
+      "from": [
+        27,
+        1,
+        1
+      ],
+      "to": [
+        28,
+        10,
+        18
+      ],
+      "axis": "-Y",
+      "material": "pine"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        9,
+        1
+      ],
+      "to": [
+        28,
+        10,
+        4
+      ],
+      "material": "walnut"
+    }
+  ]
+}

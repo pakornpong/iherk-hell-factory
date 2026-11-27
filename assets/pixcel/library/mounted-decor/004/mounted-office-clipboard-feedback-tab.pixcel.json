@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-office-clipboard-feedback-tab",
+  "category": "office",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#292e3c"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#caa05c"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#606f80"
+    },
+    "coral": {
+      "kind": "matte",
+      "color": "#c16458"
+    },
+    "pearl": {
+      "kind": "matte",
+      "color": "#f6ebd3"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        9,
+        0,
+        1
+      ],
+      "to": [
+        23,
+        2,
+        26
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        11,
+        3,
+        3
+      ],
+      "to": [
+        21,
+        3,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        13,
+        4,
+        20
+      ],
+      "to": [
+        19,
+        6,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        13,
+        4,
+        7
+      ],
+      "to": [
+        19,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        13,
+        4,
+        11
+      ],
+      "to": [
+        19,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        13,
+        4,
+        15
+      ],
+      "to": [
+        19,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        13,
+        4,
+        18
+      ],
+      "to": [
+        19,
+        4,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "coral",
+      "from": [
+        19,
+        4,
+        0
+      ],
+      "to": [
+        26,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        20,
+        6,
+        3
+      ],
+      "to": [
+        25,
+        6,
+        3
+      ]
+    }
+  ]
+}

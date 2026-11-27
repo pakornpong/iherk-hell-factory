@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-potting-shelf-with-drip-tray",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#487d80"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        4
+      ],
+      "to": [
+        27,
+        1,
+        12
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        1
+      ],
+      "to": [
+        28,
+        11,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        2,
+        0
+      ],
+      "to": [
+        4,
+        11,
+        5
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        2,
+        0
+      ],
+      "to": [
+        28,
+        11,
+        5
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        10,
+        2
+      ],
+      "to": [
+        28,
+        11,
+        5
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        10
+      ],
+      "to": [
+        26,
+        8,
+        11
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        4,
+        10
+      ],
+      "to": [
+        9,
+        6,
+        11
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        4,
+        10
+      ],
+      "to": [
+        17,
+        6,
+        11
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        4,
+        10
+      ],
+      "to": [
+        24,
+        6,
+        11
+      ],
+      "material": null
+    }
+  ]
+}

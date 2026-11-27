@@ -1,0 +1,1238 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-relief-copper-lotus-bloom",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "clay": {
+      "kind": "matte",
+      "color": "#af6650"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#be7957"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#caa05c"
+    },
+    "moss": {
+      "kind": "matte",
+      "color": "#64764c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        10,
+        0,
+        4
+      ],
+      "to": [
+        10,
+        2,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        8,
+        0,
+        5
+      ],
+      "to": [
+        12,
+        2,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        8,
+        0,
+        6
+      ],
+      "to": [
+        12,
+        2,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        7,
+        0,
+        7
+      ],
+      "to": [
+        13,
+        2,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        7,
+        0,
+        8
+      ],
+      "to": [
+        13,
+        2,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        7,
+        0,
+        9
+      ],
+      "to": [
+        13,
+        2,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        6,
+        0,
+        10
+      ],
+      "to": [
+        14,
+        2,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        7,
+        0,
+        11
+      ],
+      "to": [
+        13,
+        2,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        7,
+        0,
+        12
+      ],
+      "to": [
+        13,
+        2,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        7,
+        0,
+        13
+      ],
+      "to": [
+        13,
+        2,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        8,
+        0,
+        14
+      ],
+      "to": [
+        12,
+        2,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        8,
+        0,
+        15
+      ],
+      "to": [
+        12,
+        2,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        10,
+        0,
+        16
+      ],
+      "to": [
+        10,
+        2,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        22,
+        0,
+        4
+      ],
+      "to": [
+        22,
+        3,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        20,
+        0,
+        5
+      ],
+      "to": [
+        24,
+        3,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        20,
+        0,
+        6
+      ],
+      "to": [
+        24,
+        3,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        19,
+        0,
+        7
+      ],
+      "to": [
+        25,
+        3,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        19,
+        0,
+        8
+      ],
+      "to": [
+        25,
+        3,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        19,
+        0,
+        9
+      ],
+      "to": [
+        25,
+        3,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        18,
+        0,
+        10
+      ],
+      "to": [
+        26,
+        3,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        19,
+        0,
+        11
+      ],
+      "to": [
+        25,
+        3,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        19,
+        0,
+        12
+      ],
+      "to": [
+        25,
+        3,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        19,
+        0,
+        13
+      ],
+      "to": [
+        25,
+        3,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        20,
+        0,
+        14
+      ],
+      "to": [
+        24,
+        3,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        20,
+        0,
+        15
+      ],
+      "to": [
+        24,
+        3,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        22,
+        0,
+        16
+      ],
+      "to": [
+        22,
+        3,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        12,
+        0,
+        9
+      ],
+      "to": [
+        12,
+        2,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        10,
+        0,
+        10
+      ],
+      "to": [
+        14,
+        2,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        10,
+        0,
+        11
+      ],
+      "to": [
+        14,
+        2,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        9,
+        0,
+        12
+      ],
+      "to": [
+        15,
+        2,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        9,
+        0,
+        13
+      ],
+      "to": [
+        15,
+        2,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        9,
+        0,
+        14
+      ],
+      "to": [
+        15,
+        2,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        8,
+        0,
+        15
+      ],
+      "to": [
+        16,
+        2,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        9,
+        0,
+        16
+      ],
+      "to": [
+        15,
+        2,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        9,
+        0,
+        17
+      ],
+      "to": [
+        15,
+        2,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        9,
+        0,
+        18
+      ],
+      "to": [
+        15,
+        2,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        10,
+        0,
+        19
+      ],
+      "to": [
+        14,
+        2,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        10,
+        0,
+        20
+      ],
+      "to": [
+        14,
+        2,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        12,
+        0,
+        21
+      ],
+      "to": [
+        12,
+        2,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        20,
+        0,
+        9
+      ],
+      "to": [
+        20,
+        3,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        18,
+        0,
+        10
+      ],
+      "to": [
+        22,
+        3,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        18,
+        0,
+        11
+      ],
+      "to": [
+        22,
+        3,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        17,
+        0,
+        12
+      ],
+      "to": [
+        23,
+        3,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        17,
+        0,
+        13
+      ],
+      "to": [
+        23,
+        3,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        17,
+        0,
+        14
+      ],
+      "to": [
+        23,
+        3,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        16,
+        0,
+        15
+      ],
+      "to": [
+        24,
+        3,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        17,
+        0,
+        16
+      ],
+      "to": [
+        23,
+        3,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        17,
+        0,
+        17
+      ],
+      "to": [
+        23,
+        3,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        17,
+        0,
+        18
+      ],
+      "to": [
+        23,
+        3,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        18,
+        0,
+        19
+      ],
+      "to": [
+        22,
+        3,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        18,
+        0,
+        20
+      ],
+      "to": [
+        22,
+        3,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        20,
+        0,
+        21
+      ],
+      "to": [
+        20,
+        3,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        16,
+        0,
+        11
+      ],
+      "to": [
+        16,
+        2,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        14,
+        0,
+        12
+      ],
+      "to": [
+        18,
+        2,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        14,
+        0,
+        13
+      ],
+      "to": [
+        18,
+        2,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        13,
+        0,
+        14
+      ],
+      "to": [
+        19,
+        2,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        13,
+        0,
+        15
+      ],
+      "to": [
+        19,
+        2,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        13,
+        0,
+        16
+      ],
+      "to": [
+        19,
+        2,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        13,
+        0,
+        17
+      ],
+      "to": [
+        19,
+        2,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        12,
+        0,
+        18
+      ],
+      "to": [
+        20,
+        2,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        13,
+        0,
+        19
+      ],
+      "to": [
+        19,
+        2,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        13,
+        0,
+        20
+      ],
+      "to": [
+        19,
+        2,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        13,
+        0,
+        21
+      ],
+      "to": [
+        19,
+        2,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        13,
+        0,
+        22
+      ],
+      "to": [
+        19,
+        2,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        14,
+        0,
+        23
+      ],
+      "to": [
+        18,
+        2,
+        23
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        14,
+        0,
+        24
+      ],
+      "to": [
+        18,
+        2,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        16,
+        0,
+        25
+      ],
+      "to": [
+        16,
+        2,
+        25
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        16,
+        4,
+        6
+      ],
+      "to": [
+        16,
+        6,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        4,
+        7
+      ],
+      "to": [
+        18,
+        6,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        13,
+        4,
+        8
+      ],
+      "to": [
+        19,
+        6,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        13,
+        4,
+        9
+      ],
+      "to": [
+        19,
+        6,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        13,
+        4,
+        10
+      ],
+      "to": [
+        19,
+        6,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        12,
+        4,
+        11
+      ],
+      "to": [
+        20,
+        6,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        13,
+        4,
+        12
+      ],
+      "to": [
+        19,
+        6,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        13,
+        4,
+        13
+      ],
+      "to": [
+        19,
+        6,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        13,
+        4,
+        14
+      ],
+      "to": [
+        19,
+        6,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        4,
+        15
+      ],
+      "to": [
+        18,
+        6,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        16,
+        4,
+        16
+      ],
+      "to": [
+        16,
+        6,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        13,
+        0,
+        0
+      ],
+      "to": [
+        18,
+        4,
+        0
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        11,
+        0,
+        1
+      ],
+      "to": [
+        20,
+        4,
+        1
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        9,
+        0,
+        2
+      ],
+      "to": [
+        22,
+        4,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        8,
+        0,
+        3
+      ],
+      "to": [
+        24,
+        4,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        6,
+        0,
+        4
+      ],
+      "to": [
+        26,
+        4,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        5,
+        0,
+        5
+      ],
+      "to": [
+        27,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        10,
+        0,
+        6
+      ],
+      "to": [
+        22,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        16,
+        0,
+        7
+      ],
+      "to": [
+        16,
+        4,
+        7
+      ]
+    }
+  ]
+}

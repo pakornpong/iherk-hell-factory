@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "id": "divider-open-oak-slat-screen",
+  "category": "room-divider",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#bc8750"
+    },
+    "endGrain": {
+      "kind": "wood",
+      "color": "#735136"
+    },
+    "iron": {
+      "kind": "matte",
+      "color": "#373e43"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c4a668"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        10,
+        6,
+        0
+      ],
+      "to": [
+        14,
+        25,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        13,
+        2
+      ],
+      "to": [
+        13,
+        18,
+        7
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        22,
+        2
+      ],
+      "to": [
+        13,
+        23,
+        2
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        6,
+        0
+      ],
+      "to": [
+        53,
+        25,
+        1
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        13,
+        2
+      ],
+      "to": [
+        52,
+        18,
+        7
+      ],
+      "material": "iron"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        22,
+        2
+      ],
+      "to": [
+        52,
+        23,
+        2
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        13,
+        7
+      ],
+      "to": [
+        59,
+        18,
+        10
+      ],
+      "material": "endGrain"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        15,
+        10
+      ],
+      "to": [
+        8,
+        16,
+        30
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        15,
+        10
+      ],
+      "to": [
+        14,
+        16,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        15,
+        10
+      ],
+      "to": [
+        20,
+        16,
+        33
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        15,
+        10
+      ],
+      "to": [
+        26,
+        16,
+        36
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        15,
+        10
+      ],
+      "to": [
+        32,
+        16,
+        36
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        15,
+        10
+      ],
+      "to": [
+        38,
+        16,
+        39
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        43,
+        15,
+        10
+      ],
+      "to": [
+        44,
+        16,
+        39
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        15,
+        10
+      ],
+      "to": [
+        50,
+        16,
+        39
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        15,
+        10
+      ],
+      "to": [
+        56,
+        16,
+        36
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        13,
+        29
+      ],
+      "to": [
+        57,
+        14,
+        30
+      ],
+      "material": "endGrain"
+    }
+  ],
+  "decals": []
+}

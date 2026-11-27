@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-jacket-hook-rail",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c6a16b"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#506b8c"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        0,
+        14
+      ],
+      "to": [
+        28,
+        1,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        1,
+        13
+      ],
+      "to": [
+        8,
+        4,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        4,
+        13
+      ],
+      "to": [
+        7,
+        9,
+        10
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        10
+      ],
+      "to": [
+        8,
+        10,
+        14
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        1,
+        13
+      ],
+      "to": [
+        16,
+        4,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        15,
+        4,
+        13
+      ],
+      "to": [
+        15,
+        9,
+        10
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        8,
+        10
+      ],
+      "to": [
+        16,
+        10,
+        14
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        1,
+        13
+      ],
+      "to": [
+        24,
+        4,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        4,
+        13
+      ],
+      "to": [
+        23,
+        9,
+        10
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        10
+      ],
+      "to": [
+        24,
+        10,
+        14
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        4,
+        0
+      ],
+      "to": [
+        10,
+        9,
+        11
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        5,
+        5
+      ],
+      "to": [
+        12,
+        9,
+        8
+      ],
+      "material": "blue"
+    }
+  ]
+}

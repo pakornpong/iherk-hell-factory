@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-rubber-covered-workshop-outlet",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#d9914b"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        10,
+        0,
+        0
+      ],
+      "to": [
+        21,
+        1,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        2,
+        3
+      ],
+      "to": [
+        22,
+        7,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        7,
+        7
+      ],
+      "to": [
+        15,
+        9,
+        7
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        7,
+        8
+      ],
+      "to": [
+        18,
+        9,
+        8
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        7,
+        9
+      ],
+      "to": [
+        19,
+        9,
+        9
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        7,
+        10
+      ],
+      "to": [
+        20,
+        9,
+        10
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        7,
+        11
+      ],
+      "to": [
+        20,
+        9,
+        11
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        7,
+        12
+      ],
+      "to": [
+        20,
+        9,
+        12
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        7,
+        13
+      ],
+      "to": [
+        21,
+        9,
+        13
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        7,
+        14
+      ],
+      "to": [
+        20,
+        9,
+        14
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        7,
+        15
+      ],
+      "to": [
+        20,
+        9,
+        15
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        7,
+        16
+      ],
+      "to": [
+        20,
+        9,
+        16
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        7,
+        17
+      ],
+      "to": [
+        19,
+        9,
+        17
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        7,
+        18
+      ],
+      "to": [
+        18,
+        9,
+        18
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        7,
+        19
+      ],
+      "to": [
+        15,
+        9,
+        19
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        5,
+        17
+      ],
+      "to": [
+        21,
+        8,
+        21
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        5,
+        0
+      ],
+      "to": [
+        18,
+        9,
+        4
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        10
+      ],
+      "to": [
+        18,
+        10,
+        10
+      ],
+      "material": "steel"
+    }
+  ]
+}

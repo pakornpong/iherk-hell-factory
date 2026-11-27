@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-office-tear-off-desk-calendar",
+  "category": "office",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "lapis": {
+      "kind": "matte",
+      "color": "#4066a7"
+    },
+    "pearl": {
+      "kind": "matte",
+      "color": "#f6ebd3"
+    },
+    "coral": {
+      "kind": "matte",
+      "color": "#c16458"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ded6b4"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#bbd4d8"
+    },
+    "ink": {
+      "kind": "matte",
+      "color": "#292e3c"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#bd8a5a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "lapis",
+      "from": [
+        8,
+        0,
+        0
+      ],
+      "to": [
+        23,
+        2,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        9,
+        3,
+        2
+      ],
+      "to": [
+        22,
+        4,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "coral",
+      "from": [
+        9,
+        5,
+        17
+      ],
+      "to": [
+        22,
+        5,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "paper",
+      "from": [
+        13,
+        5,
+        1
+      ],
+      "to": [
+        21,
+        5,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        11,
+        3,
+        19
+      ],
+      "to": [
+        12,
+        6,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        20,
+        3,
+        19
+      ],
+      "to": [
+        21,
+        6,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        14,
+        5,
+        13
+      ],
+      "to": [
+        14,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        13,
+        5,
+        12
+      ],
+      "to": [
+        14,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        14,
+        5,
+        11
+      ],
+      "to": [
+        14,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        14,
+        5,
+        10
+      ],
+      "to": [
+        14,
+        5,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        13,
+        5,
+        9
+      ],
+      "to": [
+        15,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        17,
+        5,
+        13
+      ],
+      "to": [
+        18,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        19,
+        5,
+        12
+      ],
+      "to": [
+        19,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        18,
+        5,
+        11
+      ],
+      "to": [
+        18,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        17,
+        5,
+        10
+      ],
+      "to": [
+        17,
+        5,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        17,
+        5,
+        9
+      ],
+      "to": [
+        19,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        11,
+        5,
+        5
+      ],
+      "to": [
+        20,
+        5,
+        5
+      ]
+    }
+  ]
+}

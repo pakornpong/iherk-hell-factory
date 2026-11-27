@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-dual-handle-shower-mixer",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c6a16b"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        1
+      ],
+      "to": [
+        8,
+        2,
+        1
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        2
+      ],
+      "to": [
+        11,
+        2,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        3
+      ],
+      "to": [
+        12,
+        2,
+        3
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        4
+      ],
+      "to": [
+        12,
+        2,
+        4
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        5
+      ],
+      "to": [
+        12,
+        2,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        0,
+        6
+      ],
+      "to": [
+        13,
+        2,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        7
+      ],
+      "to": [
+        12,
+        2,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        8
+      ],
+      "to": [
+        12,
+        2,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        9
+      ],
+      "to": [
+        12,
+        2,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        10
+      ],
+      "to": [
+        11,
+        2,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        11
+      ],
+      "to": [
+        8,
+        2,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        2,
+        4
+      ],
+      "to": [
+        9,
+        8,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        6
+      ],
+      "to": [
+        11,
+        8,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        3
+      ],
+      "to": [
+        9,
+        8,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        0,
+        1
+      ],
+      "to": [
+        23,
+        2,
+        1
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        0,
+        2
+      ],
+      "to": [
+        26,
+        2,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        0,
+        3
+      ],
+      "to": [
+        27,
+        2,
+        3
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        0,
+        4
+      ],
+      "to": [
+        27,
+        2,
+        4
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        0,
+        5
+      ],
+      "to": [
+        27,
+        2,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        0,
+        6
+      ],
+      "to": [
+        28,
+        2,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        0,
+        7
+      ],
+      "to": [
+        27,
+        2,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        0,
+        8
+      ],
+      "to": [
+        27,
+        2,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        0,
+        9
+      ],
+      "to": [
+        27,
+        2,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        0,
+        10
+      ],
+      "to": [
+        26,
+        2,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        0,
+        11
+      ],
+      "to": [
+        23,
+        2,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        2,
+        4
+      ],
+      "to": [
+        24,
+        8,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        8,
+        6
+      ],
+      "to": [
+        26,
+        8,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        8,
+        3
+      ],
+      "to": [
+        24,
+        8,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        4,
+        4
+      ],
+      "to": [
+        23,
+        5,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        4,
+        0
+      ],
+      "to": [
+        17,
+        11,
+        5
+      ],
+      "material": "steel"
+    }
+  ]
+}

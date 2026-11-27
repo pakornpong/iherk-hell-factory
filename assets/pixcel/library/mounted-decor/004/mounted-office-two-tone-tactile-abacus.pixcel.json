@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-office-two-tone-tactile-abacus",
+  "category": "office",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#765044"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#bd8a5a"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#bbd4d8"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#af6650"
+    },
+    "olive": {
+      "kind": "matte",
+      "color": "#9da674"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        4,
+        0,
+        0
+      ],
+      "to": [
+        7,
+        4,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        24,
+        0,
+        0
+      ],
+      "to": [
+        27,
+        4,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        5,
+        1,
+        0
+      ],
+      "to": [
+        26,
+        3,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        5,
+        1,
+        17
+      ],
+      "to": [
+        26,
+        3,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        7,
+        3,
+        6
+      ],
+      "to": [
+        24,
+        3,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        8,
+        4,
+        5
+      ],
+      "to": [
+        9,
+        6,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "olive",
+      "from": [
+        16,
+        4,
+        5
+      ],
+      "to": [
+        17,
+        6,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        18,
+        4,
+        5
+      ],
+      "to": [
+        19,
+        6,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "olive",
+      "from": [
+        20,
+        4,
+        5
+      ],
+      "to": [
+        21,
+        6,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        22,
+        4,
+        5
+      ],
+      "to": [
+        23,
+        6,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        7,
+        3,
+        10
+      ],
+      "to": [
+        24,
+        3,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        8,
+        4,
+        9
+      ],
+      "to": [
+        9,
+        6,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "olive",
+      "from": [
+        10,
+        4,
+        9
+      ],
+      "to": [
+        11,
+        6,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        18,
+        4,
+        9
+      ],
+      "to": [
+        19,
+        6,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "olive",
+      "from": [
+        20,
+        4,
+        9
+      ],
+      "to": [
+        21,
+        6,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        22,
+        4,
+        9
+      ],
+      "to": [
+        23,
+        6,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        7,
+        3,
+        14
+      ],
+      "to": [
+        24,
+        3,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        8,
+        4,
+        13
+      ],
+      "to": [
+        9,
+        6,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "olive",
+      "from": [
+        10,
+        4,
+        13
+      ],
+      "to": [
+        11,
+        6,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        12,
+        4,
+        13
+      ],
+      "to": [
+        13,
+        6,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "olive",
+      "from": [
+        20,
+        4,
+        13
+      ],
+      "to": [
+        21,
+        6,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        22,
+        4,
+        13
+      ],
+      "to": [
+        23,
+        6,
+        15
+      ]
+    }
+  ]
+}

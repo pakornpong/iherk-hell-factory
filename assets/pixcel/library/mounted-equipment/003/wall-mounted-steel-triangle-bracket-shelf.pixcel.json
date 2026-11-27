@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-steel-triangle-bracket-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        0
+      ],
+      "to": [
+        8,
+        1,
+        16
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        2,
+        0
+      ],
+      "to": [
+        6,
+        11,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        2,
+        0
+      ],
+      "to": [
+        7,
+        11,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        0,
+        0
+      ],
+      "to": [
+        26,
+        1,
+        16
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        2,
+        0
+      ],
+      "to": [
+        24,
+        11,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        25,
+        2,
+        0
+      ],
+      "to": [
+        25,
+        11,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        1,
+        14
+      ],
+      "to": [
+        29,
+        11,
+        15
+      ],
+      "material": "walnut"
+    }
+  ]
+}

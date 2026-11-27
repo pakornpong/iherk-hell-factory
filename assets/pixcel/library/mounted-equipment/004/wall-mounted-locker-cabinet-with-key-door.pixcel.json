@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-locker-cabinet-with-key-door",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#487d80"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        1
+      ],
+      "to": [
+        26,
+        1,
+        26
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        2,
+        0
+      ],
+      "to": [
+        27,
+        8,
+        27
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        1
+      ],
+      "to": [
+        26,
+        9,
+        25
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        3
+      ],
+      "to": [
+        18,
+        10,
+        23
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        3
+      ],
+      "to": [
+        24,
+        10,
+        23
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        18
+      ],
+      "to": [
+        15,
+        11,
+        18
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        20
+      ],
+      "to": [
+        15,
+        11,
+        20
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        22
+      ],
+      "to": [
+        15,
+        11,
+        22
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        11,
+        10
+      ],
+      "to": [
+        18,
+        11,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        11,
+        10
+      ],
+      "to": [
+        23,
+        11,
+        12
+      ],
+      "material": "steel"
+    }
+  ]
+}

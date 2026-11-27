@@ -15,6 +15,7 @@ import {
   SeatOwnerIdSchema,
   ThemeModeSchema,
   TilePermissionSchema,
+  WallMountPositionSchema,
   type WsServerMessage,
 } from "../shared/types.js";
 import { AntigravityWatcher } from "./antigravity-watcher.js";
@@ -51,6 +52,8 @@ const PlaceFurnitureBodySchema = z.object({
   lx: FurnitureCoordinateSchema.optional(),
   ly: FurnitureCoordinateSchema.optional(),
   manualPosition: z.boolean().optional(),
+  wallMountId: z.string().min(1).max(256).optional(),
+  wallMountPosition: WallMountPositionSchema.optional(),
   tx: FurnitureCoordinateSchema.optional(),
   ty: FurnitureCoordinateSchema.optional(),
   assetId: z.string().min(1),
@@ -64,6 +67,8 @@ const MoveFurnitureBodySchema = z.object({
   lx: FurnitureCoordinateSchema.optional(),
   ly: FurnitureCoordinateSchema.optional(),
   manualPosition: z.boolean().optional(),
+  wallMountId: z.string().min(1).max(256).optional(),
+  wallMountPosition: WallMountPositionSchema.optional(),
   tx: FurnitureCoordinateSchema.optional(),
   ty: FurnitureCoordinateSchema.optional(),
   direction: DirectionSchema.optional(),

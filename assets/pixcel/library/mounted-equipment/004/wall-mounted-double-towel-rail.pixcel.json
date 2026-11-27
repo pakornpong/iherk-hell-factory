@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-double-towel-rail",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#487d80"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a6c5cd"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        1
+      ],
+      "to": [
+        6,
+        1,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        15
+      ],
+      "to": [
+        6,
+        1,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        0,
+        1
+      ],
+      "to": [
+        26,
+        1,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        0,
+        15
+      ],
+      "to": [
+        26,
+        1,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        2
+      ],
+      "to": [
+        6,
+        9,
+        4
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        1,
+        2
+      ],
+      "to": [
+        26,
+        9,
+        4
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        16
+      ],
+      "to": [
+        6,
+        11,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        1,
+        16
+      ],
+      "to": [
+        26,
+        11,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        8,
+        2
+      ],
+      "to": [
+        26,
+        9,
+        4
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        16
+      ],
+      "to": [
+        26,
+        11,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        10,
+        0
+      ],
+      "to": [
+        16,
+        11,
+        18
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        11,
+        2
+      ],
+      "to": [
+        15,
+        11,
+        3
+      ],
+      "material": "glass"
+    }
+  ]
+}

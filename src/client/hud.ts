@@ -1,3 +1,4 @@
+import { isMountedAsset } from "../shared/wall-mounts.js";
 import type { RenderLayer, TilePermission } from "../shared/layers.js";
 import {
   AMENITY_THEME_META,
@@ -706,7 +707,7 @@ export class OfficeHud {
       const placeables = catalog
         .filter(
           (c) =>
-            (c.layer === "object" || c.layer === "tabletop" || c.layer === "floor") &&
+            (c.layer === "object" || c.layer === "tabletop" || c.layer === "floor" || isMountedAsset(c)) &&
             c.source !== "character" &&
             !c.id.endsWith("-back") &&
             !c.id.endsWith("-front") &&
@@ -734,6 +735,7 @@ export class OfficeHud {
         furniture: "🪑 Furn",
         tech: "⚡ Tech",
         decor: "🌿 Decor",
+        mounted: "ติดผนัง",
         architecture: "🧱 Arch",
       };
       const categoryOrder = [
@@ -755,10 +757,12 @@ export class OfficeHud {
         "furniture",
         "tech",
         "decor",
+        "mounted",
         "architecture",
       ];
       const availableCats = new Set(placeables.map((p) => p.category));
       if (placeables.some((item) => item.source === "library")) availableCats.add("library");
+      if (placeables.some(isMountedAsset)) availableCats.add("mounted");
       const filterEl = document.getElementById("catalog-filters");
       if (filterEl) {
         filterEl.innerHTML = "";
@@ -779,7 +783,9 @@ export class OfficeHud {
       }
 
       const scope = placeables.filter((item) => this.catalogCategory === "all" ||
-        (this.catalogCategory === "library" ? item.source === "library" : item.category === this.catalogCategory));
+        (this.catalogCategory === "library" && item.source === "library") ||
+        (this.catalogCategory === "mounted" && isMountedAsset(item)) ||
+        item.category === this.catalogCategory);
       const subcategories = Array.from(new Set(scope.map((item) => item.category)));
       this.catalogSubcategory = this.updateCatalogFilter(
         "catalog-subcategory", "ทุกหมวด", subcategories, this.catalogSubcategory, getCatalogCategoryLabel,
@@ -829,10 +835,11 @@ export class OfficeHud {
               <span class="cat-item-keywords">${escapeHtml([categoryLabel, ...tags.slice(0, 3)].join(" · "))}</span>
             </span>
           </span>
-          <span class="cat-tag">${item.source === "custom" ? "✨ Gemini" : item.layer === "floor" ? "🎨 Floor" : item.layer === "tabletop" ? "💡 Top" : `${item.footprintTiles[0]}×${item.footprintTiles[1]}`}</span>
+          <span class="cat-tag">${item.source === "custom" ? "✨ Gemini" : item.layer === "floor" ? "🎨 Floor" : isMountedAsset(item) ? "ติดผนัง" : item.layer === "tabletop" ? "💡 Top" : `${item.footprintTiles[0]}×${item.footprintTiles[1]}`}</span>
         `;
         btn.addEventListener("click", () => {
           this.decorate.selectAsset(item.id);
+          if (isMountedAsset(item)) this.showToast("คลิกผนังทึบหรือหน้าฉากกั้นเพื่อติดตั้ง");
           this.cb.onDecorateChanged();
           if (item.source === "library" && atlas) {
             void atlas.loadLibraryAsset(state.theme, item.id)

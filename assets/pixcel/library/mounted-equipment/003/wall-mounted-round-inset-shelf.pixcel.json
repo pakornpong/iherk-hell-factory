@@ -1,0 +1,786 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-round-inset-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "pine": {
+      "kind": "wood",
+      "color": "#cda978"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        15,
+        1,
+        0
+      ],
+      "to": [
+        15,
+        9,
+        0
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        1,
+        1
+      ],
+      "to": [
+        20,
+        9,
+        1
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        1,
+        2
+      ],
+      "to": [
+        21,
+        9,
+        2
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        1,
+        3
+      ],
+      "to": [
+        23,
+        9,
+        3
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        1,
+        4
+      ],
+      "to": [
+        24,
+        9,
+        4
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        5
+      ],
+      "to": [
+        25,
+        9,
+        5
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        6
+      ],
+      "to": [
+        25,
+        9,
+        6
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        1,
+        7
+      ],
+      "to": [
+        26,
+        9,
+        7
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        8
+      ],
+      "to": [
+        27,
+        9,
+        8
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        9
+      ],
+      "to": [
+        27,
+        9,
+        9
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        10
+      ],
+      "to": [
+        27,
+        9,
+        10
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        11
+      ],
+      "to": [
+        27,
+        9,
+        11
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        12
+      ],
+      "to": [
+        27,
+        9,
+        12
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        1,
+        13
+      ],
+      "to": [
+        28,
+        9,
+        13
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        14
+      ],
+      "to": [
+        27,
+        9,
+        14
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        15
+      ],
+      "to": [
+        27,
+        9,
+        15
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        16
+      ],
+      "to": [
+        27,
+        9,
+        16
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        17
+      ],
+      "to": [
+        27,
+        9,
+        17
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        18
+      ],
+      "to": [
+        27,
+        9,
+        18
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        1,
+        19
+      ],
+      "to": [
+        26,
+        9,
+        19
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        20
+      ],
+      "to": [
+        25,
+        9,
+        20
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        21
+      ],
+      "to": [
+        25,
+        9,
+        21
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        1,
+        22
+      ],
+      "to": [
+        24,
+        9,
+        22
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        1,
+        23
+      ],
+      "to": [
+        23,
+        9,
+        23
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        1,
+        24
+      ],
+      "to": [
+        21,
+        9,
+        24
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        1,
+        25
+      ],
+      "to": [
+        20,
+        9,
+        25
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        1,
+        26
+      ],
+      "to": [
+        15,
+        9,
+        26
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        1,
+        2
+      ],
+      "to": [
+        15,
+        9,
+        2
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        1,
+        3
+      ],
+      "to": [
+        19,
+        9,
+        3
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        1,
+        4
+      ],
+      "to": [
+        21,
+        9,
+        4
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        1,
+        5
+      ],
+      "to": [
+        22,
+        9,
+        5
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        1,
+        6
+      ],
+      "to": [
+        23,
+        9,
+        6
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        1,
+        7
+      ],
+      "to": [
+        24,
+        9,
+        7
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        1,
+        8
+      ],
+      "to": [
+        24,
+        9,
+        8
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        9
+      ],
+      "to": [
+        25,
+        9,
+        9
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        10
+      ],
+      "to": [
+        25,
+        9,
+        10
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        11
+      ],
+      "to": [
+        25,
+        9,
+        11
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        12
+      ],
+      "to": [
+        25,
+        9,
+        12
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        1,
+        13
+      ],
+      "to": [
+        26,
+        9,
+        13
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        14
+      ],
+      "to": [
+        25,
+        9,
+        14
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        15
+      ],
+      "to": [
+        25,
+        9,
+        15
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        16
+      ],
+      "to": [
+        25,
+        9,
+        16
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        17
+      ],
+      "to": [
+        25,
+        9,
+        17
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        1,
+        18
+      ],
+      "to": [
+        24,
+        9,
+        18
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        1,
+        19
+      ],
+      "to": [
+        24,
+        9,
+        19
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        1,
+        20
+      ],
+      "to": [
+        23,
+        9,
+        20
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        1,
+        21
+      ],
+      "to": [
+        22,
+        9,
+        21
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        1,
+        22
+      ],
+      "to": [
+        21,
+        9,
+        22
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        1,
+        23
+      ],
+      "to": [
+        19,
+        9,
+        23
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        1,
+        24
+      ],
+      "to": [
+        15,
+        9,
+        24
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        7
+      ],
+      "to": [
+        25,
+        10,
+        8
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        1,
+        16
+      ],
+      "to": [
+        26,
+        9,
+        17
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        1,
+        3
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        0,
+        24
+      ],
+      "to": [
+        16,
+        1,
+        26
+      ],
+      "material": "steel"
+    }
+  ]
+}

@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-art-city-dusk",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#292e3c"
+    },
+    "plum": {
+      "kind": "matte",
+      "color": "#794760"
+    },
+    "blush": {
+      "kind": "matte",
+      "color": "#db9a99"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#f3bf65"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        3,
+        0,
+        0
+      ],
+      "to": [
+        28,
+        2,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "plum",
+      "from": [
+        4,
+        3,
+        1
+      ],
+      "to": [
+        27,
+        3,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        4,
+        4,
+        1
+      ],
+      "to": [
+        7,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        5,
+        5,
+        3
+      ],
+      "to": [
+        6,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        5,
+        5,
+        6
+      ],
+      "to": [
+        6,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        5,
+        5,
+        9
+      ],
+      "to": [
+        6,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        9,
+        4,
+        1
+      ],
+      "to": [
+        12,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        10,
+        5,
+        3
+      ],
+      "to": [
+        11,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        14,
+        4,
+        1
+      ],
+      "to": [
+        17,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        15,
+        5,
+        3
+      ],
+      "to": [
+        16,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        15,
+        5,
+        6
+      ],
+      "to": [
+        16,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        15,
+        5,
+        9
+      ],
+      "to": [
+        16,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        15,
+        5,
+        12
+      ],
+      "to": [
+        16,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        19,
+        4,
+        1
+      ],
+      "to": [
+        22,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        20,
+        5,
+        3
+      ],
+      "to": [
+        21,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        20,
+        5,
+        6
+      ],
+      "to": [
+        21,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        24,
+        4,
+        1
+      ],
+      "to": [
+        27,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        25,
+        5,
+        3
+      ],
+      "to": [
+        26,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        25,
+        5,
+        6
+      ],
+      "to": [
+        26,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        25,
+        5,
+        9
+      ],
+      "to": [
+        26,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        22,
+        4,
+        13
+      ],
+      "to": [
+        22,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        21,
+        4,
+        14
+      ],
+      "to": [
+        23,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        20,
+        4,
+        15
+      ],
+      "to": [
+        24,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        21,
+        4,
+        16
+      ],
+      "to": [
+        23,
+        4,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        22,
+        4,
+        17
+      ],
+      "to": [
+        22,
+        4,
+        17
+      ]
+    }
+  ]
+}

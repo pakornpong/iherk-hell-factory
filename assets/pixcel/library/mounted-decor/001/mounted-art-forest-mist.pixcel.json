@@ -1,0 +1,676 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-art-forest-mist",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "olive": {
+      "kind": "matte",
+      "color": "#9da674"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#606f80"
+    },
+    "lagoon": {
+      "kind": "matte",
+      "color": "#2b6a70"
+    },
+    "ink": {
+      "kind": "matte",
+      "color": "#292e3c"
+    },
+    "moss": {
+      "kind": "matte",
+      "color": "#64764c"
+    },
+    "mint": {
+      "kind": "matte",
+      "color": "#92c8b2"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "olive",
+      "from": [
+        7,
+        0,
+        0
+      ],
+      "to": [
+        25,
+        2,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        8,
+        3,
+        1
+      ],
+      "to": [
+        24,
+        3,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        8,
+        4,
+        2
+      ],
+      "to": [
+        24,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        8,
+        4,
+        5
+      ],
+      "to": [
+        12,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        8,
+        4,
+        6
+      ],
+      "to": [
+        12,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        8,
+        4,
+        7
+      ],
+      "to": [
+        12,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        8,
+        4,
+        8
+      ],
+      "to": [
+        12,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        9,
+        4,
+        9
+      ],
+      "to": [
+        11,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        9,
+        4,
+        10
+      ],
+      "to": [
+        11,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        9,
+        4,
+        11
+      ],
+      "to": [
+        11,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        9,
+        4,
+        12
+      ],
+      "to": [
+        11,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        10,
+        4,
+        13
+      ],
+      "to": [
+        10,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        13,
+        4,
+        5
+      ],
+      "to": [
+        17,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        13,
+        4,
+        6
+      ],
+      "to": [
+        17,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        13,
+        4,
+        7
+      ],
+      "to": [
+        17,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        13,
+        4,
+        8
+      ],
+      "to": [
+        17,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        13,
+        4,
+        9
+      ],
+      "to": [
+        17,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        13,
+        4,
+        10
+      ],
+      "to": [
+        17,
+        5,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        14,
+        4,
+        11
+      ],
+      "to": [
+        16,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        14,
+        4,
+        12
+      ],
+      "to": [
+        16,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        14,
+        4,
+        13
+      ],
+      "to": [
+        16,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        14,
+        4,
+        14
+      ],
+      "to": [
+        16,
+        5,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        14,
+        4,
+        15
+      ],
+      "to": [
+        16,
+        5,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        15,
+        4,
+        16
+      ],
+      "to": [
+        15,
+        5,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        18,
+        4,
+        5
+      ],
+      "to": [
+        22,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        18,
+        4,
+        6
+      ],
+      "to": [
+        22,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        18,
+        4,
+        7
+      ],
+      "to": [
+        22,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        18,
+        4,
+        8
+      ],
+      "to": [
+        22,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        19,
+        4,
+        9
+      ],
+      "to": [
+        21,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        19,
+        4,
+        10
+      ],
+      "to": [
+        21,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        19,
+        4,
+        11
+      ],
+      "to": [
+        21,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        20,
+        4,
+        12
+      ],
+      "to": [
+        20,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        21,
+        4,
+        5
+      ],
+      "to": [
+        25,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        21,
+        4,
+        6
+      ],
+      "to": [
+        25,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        21,
+        4,
+        7
+      ],
+      "to": [
+        25,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        21,
+        4,
+        8
+      ],
+      "to": [
+        25,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        21,
+        4,
+        9
+      ],
+      "to": [
+        25,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        22,
+        4,
+        10
+      ],
+      "to": [
+        24,
+        5,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        22,
+        4,
+        11
+      ],
+      "to": [
+        24,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        22,
+        4,
+        12
+      ],
+      "to": [
+        24,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        22,
+        4,
+        13
+      ],
+      "to": [
+        24,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        22,
+        4,
+        14
+      ],
+      "to": [
+        24,
+        5,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        23,
+        4,
+        15
+      ],
+      "to": [
+        23,
+        5,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        8,
+        6,
+        7
+      ],
+      "to": [
+        18,
+        6,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        15,
+        6,
+        9
+      ],
+      "to": [
+        24,
+        6,
+        9
+      ]
+    }
+  ]
+}

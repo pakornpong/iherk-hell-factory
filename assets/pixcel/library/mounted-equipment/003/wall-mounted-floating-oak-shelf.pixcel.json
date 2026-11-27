@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-floating-oak-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "pine": {
+      "kind": "wood",
+      "color": "#cda978"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        0
+      ],
+      "to": [
+        27,
+        1,
+        5
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        1,
+        1
+      ],
+      "to": [
+        29,
+        11,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        11,
+        4
+      ],
+      "to": [
+        28,
+        11,
+        4
+      ],
+      "material": "pine"
+    }
+  ]
+}

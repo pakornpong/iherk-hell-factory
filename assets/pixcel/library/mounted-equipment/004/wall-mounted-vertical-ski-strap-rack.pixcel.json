@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-vertical-ski-strap-rack",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#ece9dc"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b64641"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#506b8c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        11
+      ],
+      "to": [
+        27,
+        1,
+        19
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        12
+      ],
+      "to": [
+        26,
+        5,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        6,
+        0
+      ],
+      "to": [
+        12,
+        7,
+        25
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        6,
+        25
+      ],
+      "to": [
+        11,
+        7,
+        26
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        13
+      ],
+      "to": [
+        13,
+        8,
+        15
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        7,
+        5
+      ],
+      "to": [
+        12,
+        10,
+        8
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        6,
+        0
+      ],
+      "to": [
+        21,
+        7,
+        26
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        6,
+        26
+      ],
+      "to": [
+        20,
+        7,
+        27
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        5,
+        13
+      ],
+      "to": [
+        22,
+        8,
+        15
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        7,
+        5
+      ],
+      "to": [
+        21,
+        10,
+        8
+      ],
+      "material": "gray"
+    }
+  ]
+}

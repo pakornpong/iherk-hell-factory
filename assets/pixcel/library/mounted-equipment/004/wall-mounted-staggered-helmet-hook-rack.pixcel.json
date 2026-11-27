@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-staggered-helmet-hook-rack",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#d9914b"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#506b8c"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        5
+      ],
+      "to": [
+        27,
+        1,
+        22
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        1,
+        5
+      ],
+      "to": [
+        10,
+        7,
+        7
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        4,
+        4
+      ],
+      "to": [
+        9,
+        9,
+        4
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        4,
+        5
+      ],
+      "to": [
+        12,
+        9,
+        5
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        6
+      ],
+      "to": [
+        13,
+        9,
+        6
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        7
+      ],
+      "to": [
+        13,
+        9,
+        7
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        8
+      ],
+      "to": [
+        13,
+        9,
+        8
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        9
+      ],
+      "to": [
+        14,
+        9,
+        9
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        10
+      ],
+      "to": [
+        13,
+        9,
+        10
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        11
+      ],
+      "to": [
+        13,
+        9,
+        11
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        12
+      ],
+      "to": [
+        13,
+        9,
+        12
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        4,
+        13
+      ],
+      "to": [
+        12,
+        9,
+        13
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        4,
+        14
+      ],
+      "to": [
+        9,
+        9,
+        14
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        5
+      ],
+      "to": [
+        13,
+        11,
+        6
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        7
+      ],
+      "to": [
+        11,
+        10,
+        7
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        1,
+        14
+      ],
+      "to": [
+        23,
+        7,
+        16
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        4,
+        13
+      ],
+      "to": [
+        22,
+        9,
+        13
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        4,
+        14
+      ],
+      "to": [
+        25,
+        9,
+        14
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        4,
+        15
+      ],
+      "to": [
+        26,
+        9,
+        15
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        4,
+        16
+      ],
+      "to": [
+        26,
+        9,
+        16
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        4,
+        17
+      ],
+      "to": [
+        26,
+        9,
+        17
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        4,
+        18
+      ],
+      "to": [
+        27,
+        9,
+        18
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        4,
+        19
+      ],
+      "to": [
+        26,
+        9,
+        19
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        4,
+        20
+      ],
+      "to": [
+        26,
+        9,
+        20
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        4,
+        21
+      ],
+      "to": [
+        26,
+        9,
+        21
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        4,
+        22
+      ],
+      "to": [
+        25,
+        9,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        4,
+        23
+      ],
+      "to": [
+        22,
+        9,
+        23
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        6,
+        14
+      ],
+      "to": [
+        26,
+        11,
+        15
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        16
+      ],
+      "to": [
+        24,
+        10,
+        16
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        2,
+        0
+      ],
+      "to": [
+        10,
+        3,
+        6
+      ],
+      "material": "gray"
+    }
+  ]
+}

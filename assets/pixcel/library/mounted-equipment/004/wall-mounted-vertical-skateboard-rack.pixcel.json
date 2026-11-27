@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-vertical-skateboard-rack",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#487d80"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "pine": {
+      "kind": "wood",
+      "color": "#cda978"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        0,
+        4
+      ],
+      "to": [
+        24,
+        1,
+        22
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        1,
+        9
+      ],
+      "to": [
+        8,
+        10,
+        14
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        1,
+        9
+      ],
+      "to": [
+        24,
+        10,
+        14
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        4,
+        11
+      ],
+      "to": [
+        24,
+        5,
+        12
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        6,
+        2
+      ],
+      "to": [
+        19,
+        7,
+        25
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        8,
+        5
+      ],
+      "to": [
+        21,
+        9,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        9,
+        4
+      ],
+      "to": [
+        11,
+        11,
+        7
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        9,
+        4
+      ],
+      "to": [
+        21,
+        11,
+        7
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        8,
+        22
+      ],
+      "to": [
+        21,
+        9,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        9,
+        21
+      ],
+      "to": [
+        11,
+        11,
+        24
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        9,
+        21
+      ],
+      "to": [
+        21,
+        11,
+        24
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        6,
+        0
+      ],
+      "to": [
+        18,
+        7,
+        27
+      ],
+      "material": "teal"
+    }
+  ]
+}

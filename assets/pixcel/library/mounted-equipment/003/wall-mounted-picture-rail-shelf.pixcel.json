@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-picture-rail-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "brass": {
+      "kind": "metal",
+      "color": "#c6a16b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        2,
+        0,
+        2
+      ],
+      "to": [
+        29,
+        1,
+        5
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        1,
+        0
+      ],
+      "to": [
+        29,
+        7,
+        1
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        2
+      ],
+      "to": [
+        5,
+        6,
+        8
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        5,
+        2
+      ],
+      "to": [
+        13,
+        6,
+        8
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        5,
+        2
+      ],
+      "to": [
+        22,
+        6,
+        8
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        5,
+        2
+      ],
+      "to": [
+        28,
+        6,
+        8
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        6,
+        6
+      ],
+      "to": [
+        28,
+        8,
+        7
+      ],
+      "material": "brass"
+    }
+  ]
+}

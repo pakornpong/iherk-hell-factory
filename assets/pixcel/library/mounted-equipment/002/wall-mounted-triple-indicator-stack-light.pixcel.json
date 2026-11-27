@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-triple-indicator-stack-light",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "red": {
+      "kind": "matte",
+      "color": "#b64641"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#d9914b"
+    },
+    "green": {
+      "kind": "matte",
+      "color": "#648765"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        10,
+        0,
+        1
+      ],
+      "to": [
+        21,
+        1,
+        10
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        1,
+        0
+      ],
+      "to": [
+        21,
+        10,
+        1
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        4,
+        2
+      ],
+      "to": [
+        18,
+        8,
+        26
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        3,
+        5
+      ],
+      "to": [
+        20,
+        10,
+        9
+      ],
+      "material": "green"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        3,
+        12
+      ],
+      "to": [
+        20,
+        10,
+        16
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        3,
+        19
+      ],
+      "to": [
+        20,
+        10,
+        23
+      ],
+      "material": "red"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        3,
+        25
+      ],
+      "to": [
+        18,
+        9,
+        27
+      ],
+      "material": "steel"
+    }
+  ]
+}

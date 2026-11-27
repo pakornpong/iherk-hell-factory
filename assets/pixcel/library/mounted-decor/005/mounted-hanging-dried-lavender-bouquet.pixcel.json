@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-hanging-dried-lavender-bouquet",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#bd8a5a"
+    },
+    "moss": {
+      "kind": "matte",
+      "color": "#64764c"
+    },
+    "violet": {
+      "kind": "matte",
+      "color": "#7d70a2"
+    },
+    "blush": {
+      "kind": "matte",
+      "color": "#db9a99"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ded6b4"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        12,
+        0,
+        2
+      ],
+      "to": [
+        19,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "line",
+      "material": "moss",
+      "from": [
+        16,
+        3,
+        0
+      ],
+      "to": [
+        8,
+        3,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "violet",
+      "from": [
+        7,
+        4,
+        20
+      ],
+      "to": [
+        9,
+        5,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        7,
+        4,
+        18
+      ],
+      "to": [
+        9,
+        5,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "violet",
+      "from": [
+        7,
+        4,
+        16
+      ],
+      "to": [
+        9,
+        5,
+        16
+      ]
+    },
+    {
+      "op": "line",
+      "material": "moss",
+      "from": [
+        16,
+        3,
+        0
+      ],
+      "to": [
+        13,
+        3,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "violet",
+      "from": [
+        12,
+        5,
+        27
+      ],
+      "to": [
+        14,
+        6,
+        27
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        12,
+        5,
+        25
+      ],
+      "to": [
+        14,
+        6,
+        25
+      ]
+    },
+    {
+      "op": "box",
+      "material": "violet",
+      "from": [
+        12,
+        5,
+        23
+      ],
+      "to": [
+        14,
+        6,
+        23
+      ]
+    },
+    {
+      "op": "line",
+      "material": "moss",
+      "from": [
+        16,
+        3,
+        0
+      ],
+      "to": [
+        17,
+        3,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "violet",
+      "from": [
+        16,
+        4,
+        24
+      ],
+      "to": [
+        18,
+        5,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        16,
+        4,
+        22
+      ],
+      "to": [
+        18,
+        5,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "violet",
+      "from": [
+        16,
+        4,
+        20
+      ],
+      "to": [
+        18,
+        5,
+        20
+      ]
+    },
+    {
+      "op": "line",
+      "material": "moss",
+      "from": [
+        16,
+        3,
+        0
+      ],
+      "to": [
+        21,
+        3,
+        23
+      ]
+    },
+    {
+      "op": "box",
+      "material": "violet",
+      "from": [
+        20,
+        5,
+        26
+      ],
+      "to": [
+        22,
+        6,
+        26
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        20,
+        5,
+        24
+      ],
+      "to": [
+        22,
+        6,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "violet",
+      "from": [
+        20,
+        5,
+        22
+      ],
+      "to": [
+        22,
+        6,
+        22
+      ]
+    },
+    {
+      "op": "line",
+      "material": "moss",
+      "from": [
+        16,
+        3,
+        0
+      ],
+      "to": [
+        25,
+        3,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "violet",
+      "from": [
+        24,
+        4,
+        20
+      ],
+      "to": [
+        26,
+        5,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        24,
+        4,
+        18
+      ],
+      "to": [
+        26,
+        5,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "violet",
+      "from": [
+        24,
+        4,
+        16
+      ],
+      "to": [
+        26,
+        5,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "paper",
+      "from": [
+        12,
+        6,
+        3
+      ],
+      "to": [
+        20,
+        7,
+        5
+      ]
+    }
+  ]
+}

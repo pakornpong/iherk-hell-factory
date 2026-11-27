@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-dual-antenna-wifi-router",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded8c9"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        2
+      ],
+      "to": [
+        23,
+        1,
+        12
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        2,
+        0
+      ],
+      "to": [
+        26,
+        9,
+        9
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        4,
+        1
+      ],
+      "to": [
+        25,
+        11,
+        4
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        2,
+        8
+      ],
+      "to": [
+        7,
+        3,
+        22
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        2,
+        8
+      ],
+      "to": [
+        26,
+        3,
+        25
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        11,
+        2
+      ],
+      "to": [
+        8,
+        11,
+        2
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        2
+      ],
+      "to": [
+        12,
+        11,
+        2
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        11,
+        2
+      ],
+      "to": [
+        16,
+        11,
+        2
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        11,
+        2
+      ],
+      "to": [
+        20,
+        11,
+        2
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        11,
+        2
+      ],
+      "to": [
+        24,
+        11,
+        2
+      ],
+      "material": "cyan"
+    }
+  ]
+}

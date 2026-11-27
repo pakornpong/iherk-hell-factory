@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-hexagon-cell-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        9,
+        1,
+        0
+      ],
+      "to": [
+        22,
+        10,
+        1
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        1,
+        22
+      ],
+      "to": [
+        22,
+        10,
+        23
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        1
+      ],
+      "to": [
+        9,
+        10,
+        1
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        0,
+        1
+      ],
+      "to": [
+        23,
+        10,
+        1
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        21
+      ],
+      "to": [
+        9,
+        10,
+        21
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        0,
+        21
+      ],
+      "to": [
+        23,
+        10,
+        21
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        2
+      ],
+      "to": [
+        9,
+        10,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        0,
+        2
+      ],
+      "to": [
+        23,
+        10,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        20
+      ],
+      "to": [
+        9,
+        10,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        0,
+        20
+      ],
+      "to": [
+        23,
+        10,
+        20
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        0,
+        3
+      ],
+      "to": [
+        8,
+        10,
+        3
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        0,
+        3
+      ],
+      "to": [
+        24,
+        10,
+        3
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        0,
+        19
+      ],
+      "to": [
+        8,
+        10,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        0,
+        19
+      ],
+      "to": [
+        24,
+        10,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        0,
+        4
+      ],
+      "to": [
+        8,
+        10,
+        4
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        0,
+        4
+      ],
+      "to": [
+        24,
+        10,
+        4
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        0,
+        18
+      ],
+      "to": [
+        8,
+        10,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        0,
+        18
+      ],
+      "to": [
+        24,
+        10,
+        18
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        0,
+        5
+      ],
+      "to": [
+        7,
+        10,
+        5
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        0,
+        5
+      ],
+      "to": [
+        25,
+        10,
+        5
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        0,
+        17
+      ],
+      "to": [
+        7,
+        10,
+        17
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        0,
+        17
+      ],
+      "to": [
+        25,
+        10,
+        17
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        0,
+        6
+      ],
+      "to": [
+        7,
+        10,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        0,
+        6
+      ],
+      "to": [
+        25,
+        10,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        0,
+        16
+      ],
+      "to": [
+        7,
+        10,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        0,
+        16
+      ],
+      "to": [
+        25,
+        10,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        7
+      ],
+      "to": [
+        6,
+        10,
+        7
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        0,
+        7
+      ],
+      "to": [
+        26,
+        10,
+        7
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        15
+      ],
+      "to": [
+        6,
+        10,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        0,
+        15
+      ],
+      "to": [
+        26,
+        10,
+        15
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        8
+      ],
+      "to": [
+        6,
+        10,
+        8
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        0,
+        8
+      ],
+      "to": [
+        26,
+        10,
+        8
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        14
+      ],
+      "to": [
+        6,
+        10,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        0,
+        14
+      ],
+      "to": [
+        26,
+        10,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        9
+      ],
+      "to": [
+        5,
+        10,
+        9
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        0,
+        9
+      ],
+      "to": [
+        27,
+        10,
+        9
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        13
+      ],
+      "to": [
+        5,
+        10,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        0,
+        13
+      ],
+      "to": [
+        27,
+        10,
+        13
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        10
+      ],
+      "to": [
+        5,
+        10,
+        10
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        0,
+        10
+      ],
+      "to": [
+        27,
+        10,
+        10
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        12
+      ],
+      "to": [
+        5,
+        10,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        0,
+        12
+      ],
+      "to": [
+        27,
+        10,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        10
+      ],
+      "to": [
+        5,
+        10,
+        12
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        0,
+        10
+      ],
+      "to": [
+        27,
+        10,
+        12
+      ],
+      "material": "oak"
+    }
+  ]
+}

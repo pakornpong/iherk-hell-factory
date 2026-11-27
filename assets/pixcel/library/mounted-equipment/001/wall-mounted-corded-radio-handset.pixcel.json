@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-corded-radio-handset",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "green": {
+      "kind": "matte",
+      "color": "#648765"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a6c5cd"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        0,
+        4
+      ],
+      "to": [
+        25,
+        1,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        2,
+        5
+      ],
+      "to": [
+        18,
+        7,
+        17
+      ],
+      "material": "green"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        3,
+        17
+      ],
+      "to": [
+        10,
+        4,
+        27
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        13
+      ],
+      "to": [
+        16,
+        8,
+        15
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        8,
+        7
+      ],
+      "to": [
+        15,
+        8,
+        11
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        2,
+        6
+      ],
+      "to": [
+        24,
+        7,
+        19
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        5,
+        8
+      ],
+      "to": [
+        20,
+        5,
+        0
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        5,
+        0
+      ],
+      "to": [
+        15,
+        5,
+        5
+      ],
+      "material": "ink"
+    }
+  ]
+}

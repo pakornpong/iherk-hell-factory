@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-under-screen-soundbar",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        0,
+        1
+      ],
+      "to": [
+        24,
+        1,
+        4
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        2,
+        1
+      ],
+      "to": [
+        29,
+        6,
+        6
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        8,
+        6
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        9,
+        2
+      ],
+      "to": [
+        25,
+        9,
+        5
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        2
+      ],
+      "to": [
+        9,
+        9,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        9,
+        2
+      ],
+      "to": [
+        13,
+        9,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        9,
+        2
+      ],
+      "to": [
+        19,
+        9,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        9,
+        2
+      ],
+      "to": [
+        23,
+        9,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        4
+      ],
+      "to": [
+        17,
+        10,
+        4
+      ],
+      "material": "cyan"
+    }
+  ]
+}

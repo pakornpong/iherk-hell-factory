@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-foot-pedal-sanitizer-dispenser",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#ece9dc"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#487d80"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a6c5cd"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        10,
+        0,
+        14
+      ],
+      "to": [
+        21,
+        1,
+        25
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        2,
+        15
+      ],
+      "to": [
+        20,
+        8,
+        25
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        3,
+        24
+      ],
+      "to": [
+        18,
+        7,
+        27
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        9,
+        19
+      ],
+      "to": [
+        18,
+        9,
+        23
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        4,
+        1
+      ],
+      "to": [
+        16,
+        5,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        1,
+        0
+      ],
+      "to": [
+        21,
+        11,
+        1
+      ],
+      "material": "gray"
+    }
+  ]
+}

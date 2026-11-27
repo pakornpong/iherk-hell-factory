@@ -56,6 +56,7 @@ export interface SyncPacketVisual {
 }
 
 export interface DecorateGhostInput {
+  wallMounted?: boolean;
   manualPosition?: boolean;
   tx: number;
   ty: number;
@@ -906,13 +907,16 @@ export class IsoRenderer {
     const foregroundAttachByTile = new Map<string, ForegroundAttach>();
 
     for (const f of campus.worldFurniture) {
-      const [drawTx, drawTy] = furnitureTile(f);
-      if (drawTx !== f.tx || drawTy !== f.ty) {
+      if (f.wallMountId && !f.wallMountPose) continue;
+      const pose = f.wallMountPose;
+      const [drawTx, drawTy] = pose ? [pose.tx, pose.ty] : furnitureTile(f);
+      const direction = pose?.direction ?? f.direction;
+      if (!pose && (drawTx !== f.tx || drawTy !== f.ty)) {
         chairAlignmentByTile.set(toTileKey(f.tx, f.ty), { position: [drawTx, drawTy], direction: f.direction });
       }
       const cfg = resolveAssetLayerConfig(f.assetId, f.layer, input.catalogById?.get(f.assetId));
       const frameName = animFrameForAsset(f.assetId);
-      const sprite = atlas.getFrame(theme, f.assetId, f.direction, frameName);
+      const sprite = atlas.getFrame(theme, f.assetId, direction, frameName);
       if (cfg.foregroundAssetId && (!cfg.foregroundDirections || cfg.foregroundDirections.includes(f.direction))) {
         const fw = sprite?.footprintTiles[0] ?? f.footprintTiles[0] ?? 1;
         const fd = sprite?.footprintTiles[1] ?? f.footprintTiles[1] ?? 1;
@@ -970,7 +974,9 @@ export class IsoRenderer {
         y: drawTy,
         footprintX: sprite.footprintTiles[0],
         footprintY: sprite.footprintTiles[1],
-        renderLayer: f.renderLayer ?? cfg.renderLayer,
+        renderLayer: pose
+          ? direction === "se" || direction === "ne" ? RENDER_LAYER.TABLETOP : RENDER_LAYER.BACK
+          : f.renderLayer ?? cfg.renderLayer,
         sprite,
         wx,
         wy,
@@ -1274,7 +1280,7 @@ export class IsoRenderer {
         ctx.fillStyle = ghost.valid ? "rgba(34, 197, 94, 0.24)" : "rgba(239, 68, 68, 0.28)";
         ctx.strokeStyle = ghost.valid ? "#22c55e" : "#ef4444";
         ctx.lineWidth = Math.max(1.5, zoom);
-        for (let dy = 0; dy < fd; dy++) {
+        for (let dy = 0; !ghost.wallMounted && dy < fd; dy++) {
           for (let dx = 0; dx < fw; dx++) {
             const [twx, rawTwy] = toAnchorWorld(ghostX + dx, ghostY + dy, 1, 1);
             const twy = rawTwy - liftY;
@@ -1295,7 +1301,7 @@ export class IsoRenderer {
         ctx.restore();
         if (sprite) {
           const [wx, rawWy] = toAnchorWorld(ghostX, ghostY, sprite.footprintTiles[0], sprite.footprintTiles[1]);
-          drawSprite(sprite, wx, rawWy - liftY, { alpha: 0.75 });
+          drawSprite(sprite, wx, rawWy - liftY, { alpha: ghost.wallMounted && !ghost.valid ? 0.35 : 0.75 });
         }
       }
     }

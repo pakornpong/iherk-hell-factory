@@ -1,0 +1,476 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-art-desert-arch",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#bd8a5a"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#d4ab72"
+    },
+    "pearl": {
+      "kind": "matte",
+      "color": "#f6ebd3"
+    },
+    "clay": {
+      "kind": "matte",
+      "color": "#af6650"
+    },
+    "denim": {
+      "kind": "matte",
+      "color": "#4b637d"
+    },
+    "copper": {
+      "kind": "metal",
+      "color": "#be7957"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        5,
+        0,
+        0
+      ],
+      "to": [
+        26,
+        2,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "sand",
+      "from": [
+        6,
+        3,
+        1
+      ],
+      "to": [
+        25,
+        3,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        11,
+        4,
+        12
+      ],
+      "to": [
+        11,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        10,
+        4,
+        13
+      ],
+      "to": [
+        12,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        9,
+        4,
+        14
+      ],
+      "to": [
+        13,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        10,
+        4,
+        15
+      ],
+      "to": [
+        12,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "pearl",
+      "from": [
+        11,
+        4,
+        16
+      ],
+      "to": [
+        11,
+        4,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        8,
+        4,
+        2
+      ],
+      "to": [
+        25,
+        4,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        8,
+        4,
+        3
+      ],
+      "to": [
+        25,
+        4,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        8,
+        4,
+        4
+      ],
+      "to": [
+        25,
+        4,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        8,
+        4,
+        5
+      ],
+      "to": [
+        25,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        9,
+        4,
+        6
+      ],
+      "to": [
+        25,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        9,
+        4,
+        7
+      ],
+      "to": [
+        25,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        9,
+        4,
+        8
+      ],
+      "to": [
+        25,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        10,
+        4,
+        9
+      ],
+      "to": [
+        25,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        11,
+        4,
+        10
+      ],
+      "to": [
+        25,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        12,
+        4,
+        11
+      ],
+      "to": [
+        24,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        13,
+        4,
+        12
+      ],
+      "to": [
+        23,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        14,
+        4,
+        13
+      ],
+      "to": [
+        22,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "clay",
+      "from": [
+        21,
+        4,
+        14
+      ],
+      "to": [
+        21,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        18,
+        5,
+        2
+      ],
+      "to": [
+        18,
+        5,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        16,
+        5,
+        3
+      ],
+      "to": [
+        20,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        15,
+        5,
+        4
+      ],
+      "to": [
+        21,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        15,
+        5,
+        5
+      ],
+      "to": [
+        21,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        14,
+        5,
+        6
+      ],
+      "to": [
+        22,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        15,
+        5,
+        7
+      ],
+      "to": [
+        21,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        15,
+        5,
+        8
+      ],
+      "to": [
+        21,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        16,
+        5,
+        9
+      ],
+      "to": [
+        20,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        18,
+        5,
+        10
+      ],
+      "to": [
+        18,
+        5,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        14,
+        5,
+        3
+      ],
+      "to": [
+        22,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "copper",
+      "from": [
+        7,
+        5,
+        2
+      ],
+      "to": [
+        24,
+        5,
+        2
+      ]
+    }
+  ]
+}

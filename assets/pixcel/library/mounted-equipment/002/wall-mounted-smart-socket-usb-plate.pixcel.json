@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-smart-socket-usb-plate",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded8c9"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#ece9dc"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        0
+      ],
+      "to": [
+        26,
+        1,
+        13
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        1,
+        1
+      ],
+      "to": [
+        25,
+        4,
+        12
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        4,
+        2
+      ],
+      "to": [
+        17,
+        6,
+        11
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        7,
+        4
+      ],
+      "to": [
+        10,
+        7,
+        7
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        7,
+        4
+      ],
+      "to": [
+        15,
+        7,
+        7
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        7,
+        8
+      ],
+      "to": [
+        13,
+        7,
+        9
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        5,
+        4
+      ],
+      "to": [
+        23,
+        8,
+        5
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        5,
+        8
+      ],
+      "to": [
+        23,
+        8,
+        9
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        5,
+        11
+      ],
+      "to": [
+        22,
+        5,
+        11
+      ],
+      "material": "cyan"
+    }
+  ]
+}

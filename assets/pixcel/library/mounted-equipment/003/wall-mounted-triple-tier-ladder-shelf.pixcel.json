@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-triple-tier-ladder-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "pine": {
+      "kind": "wood",
+      "color": "#cda978"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        0,
+        0
+      ],
+      "to": [
+        7,
+        1,
+        27
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        0,
+        0
+      ],
+      "to": [
+        25,
+        1,
+        27
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        1,
+        4
+      ],
+      "to": [
+        27,
+        11,
+        5
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        1,
+        13
+      ],
+      "to": [
+        25,
+        8,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        1,
+        22
+      ],
+      "to": [
+        24,
+        6,
+        23
+      ],
+      "material": "pine"
+    }
+  ]
+}

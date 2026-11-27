@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-infrared-bar-heater",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#d9914b"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        0,
+        5
+      ],
+      "to": [
+        24,
+        1,
+        9
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        1,
+        4
+      ],
+      "to": [
+        27,
+        4,
+        10
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        3,
+        1
+      ],
+      "to": [
+        29,
+        6,
+        3
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        3,
+        10
+      ],
+      "to": [
+        29,
+        8,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        4,
+        0
+      ],
+      "to": [
+        4,
+        10,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        4,
+        0
+      ],
+      "to": [
+        29,
+        10,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        4
+      ],
+      "to": [
+        26,
+        7,
+        4
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        7,
+        8
+      ],
+      "to": [
+        26,
+        7,
+        8
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        3
+      ],
+      "to": [
+        8,
+        9,
+        9
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        9,
+        3
+      ],
+      "to": [
+        13,
+        9,
+        9
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        9,
+        3
+      ],
+      "to": [
+        18,
+        9,
+        9
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        9,
+        3
+      ],
+      "to": [
+        23,
+        9,
+        9
+      ],
+      "material": "ink"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { getWallMountSurfaces, wallMountPose } from "../shared/wall-mounts.js";
 import {
   buildTilePermissionMap,
   crossesWallSegment,
@@ -278,6 +279,7 @@ export function computeCampusLayout(
       minAutoD = Math.max(minAutoD, HYPERSLEEP_ORIGIN.y + item.ly + fd);
     }
     for (const item of zoneOverrides?.["floor:0"] ?? []) {
+      if (item.wallMountId) continue;
       const [fw, fd] = getRotatedFootprint(
         catalogById.get(item.assetId)?.footprintTiles ??
           (item.assetId === "hypersleep-capsule" ? [1, 2] : [1, 1]),
@@ -435,6 +437,17 @@ export function computeCampusLayout(
       assetId: isWindow ? "wall-night-window" : "wall-slate-plain",
       edge: "nw",
     });
+  }
+
+  const mountSurfaces = new Map(getWallMountSurfaces({ walls, wallSegments, worldFurniture })
+    .map((surface) => [surface.id, surface]));
+  for (const item of worldFurniture) {
+    if (!item.wallMountId) continue;
+    const mount = mountSurfaces.get(item.wallMountId);
+    if (!mount) continue;
+    const placement = wallMountPose(mount, catalogById.get(item.assetId), item.wallMountPosition);
+    item.wallMountPose = placement.pose;
+    item.surfaceOffsetY = placement.lift;
   }
 
   const permMap = buildTilePermissionMap(
@@ -651,7 +664,7 @@ export function validateFurniturePlacement(
     ? [...neighbors, ...campus.worldFurniture.filter((item) => item.zoneId !== zone.zoneId)]
     : neighbors;
   const isFloorObstacle = (item: FurnitureInstance) =>
-    item.id !== candidate.ignoreInstanceId &&
+    item.id !== candidate.ignoreInstanceId && !item.wallMountId &&
     !isEdgeDividerAsset(item.assetId) &&
     !isTabletopAsset(item.assetId, item.layer, catalogById.get(item.assetId));
 

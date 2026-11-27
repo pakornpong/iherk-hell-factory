@@ -1,3 +1,4 @@
+import { getWallMountSurfaces, isMountedAsset, wallMountFits, wallMountOverlaps, wallMountPositionLimits } from "../shared/wall-mounts.js";
 import crypto from "node:crypto";
 import { EventEmitter } from "node:events";
 import path from "node:path";
@@ -7,6 +8,7 @@ import {
   type ActivityLogEntry,
   type AgentTelemetryEvent,
   type CatalogEntry,
+  type WallMountPosition,
   type ComputedCampus,
   type CustomZoneRecord,
   type CustomZoneRole,
@@ -922,6 +924,19 @@ export class OfficeEngine extends EventEmitter {
     throw new Error("Must provide either (zoneId, lx, ly) or world (tx, ty)");
   }
 
+  private resolveWallMount(mountId: string | undefined, asset: CatalogEntry | undefined, position?: WallMountPosition, ignoreId?: string) {
+    const surfaces = new Map(getWallMountSurfaces(this.campus).map((surface) => [surface.id, surface]));
+    const surface = mountId ? surfaces.get(mountId) : undefined;
+    if (!surface) throw new Error("เลือกผนังทึบหรือฉากกั้นก่อนติดตั้ง");
+    if (position && !wallMountFits(wallMountPositionLimits(surfaces.values(), surface, asset), position)) {
+      throw new Error("ของแต่งล้ำขอบผนังหรือฉากกั้น");
+    }
+    if (wallMountOverlaps(this.campus.worldFurniture, surfaces, this.catalogById, surface, asset, position, ignoreId)) {
+      throw new Error("ตำแหน่งนี้มีของติดอยู่แล้ว");
+    }
+    return surface;
+  }
+
   async placeFurniture(input: {
     zoneId?: string;
     tx?: number;
@@ -930,12 +945,37 @@ export class OfficeEngine extends EventEmitter {
     lx?: number;
     ly?: number;
     assetId: string;
+    wallMountId?: string;
+    wallMountPosition?: WallMountPosition;
     direction: Direction;
     placedBy: "user" | "gemini";
     ownerEmployeeId?: string;
   }): Promise<FurnitureInstance> {
     return this.runSerialized(async () => {
       this.assertNotDemoMode();
+      const asset = this.catalogById.get(input.assetId);
+      if (isMountedAsset(asset)) {
+        if (input.ownerEmployeeId !== undefined) throw new Error("Wall attachments do not support seat owners");
+        const surface = this.resolveWallMount(input.wallMountId, asset, input.wallMountPosition);
+        const instance: FurnitureInstance = {
+          id: `furn-${Date.now()}-${crypto.randomBytes(3).toString("hex")}`,
+          zoneId: "floor:0", lx: 0, ly: 0,
+          assetId: input.assetId, direction: surface.direction,
+          layer: "wall-decor", wallMountId: surface.id, wallMountPosition: input.wallMountPosition, placedBy: input.placedBy,
+        };
+        const list = this.getZoneFurnitureArray("floor:0")!;
+        list.push(instance);
+        try {
+          await this.persist();
+        } catch (error) {
+          list.pop();
+          throw error;
+        }
+        this.recomputeCampus();
+        this.emitSnapshot();
+        return instance;
+      }
+      if (input.wallMountId !== undefined || input.wallMountPosition !== undefined) throw new Error("Asset cannot be mounted");
       const { zoneId, lx, ly } = this.resolveTargetZoneCoord(input);
       const list = this.getZoneFurnitureArray(zoneId);
       if (!list) throw new Error(`Unknown zone "${zoneId}"`);
@@ -995,6 +1035,8 @@ export class OfficeEngine extends EventEmitter {
       lx?: number;
       ly?: number;
       direction?: Direction;
+      wallMountId?: string;
+      wallMountPosition?: WallMountPosition;
       renderLayer?: RenderLayer;
       ownerEmployeeId?: string | null;
     },
@@ -1003,6 +1045,31 @@ export class OfficeEngine extends EventEmitter {
       this.assertNotDemoMode();
       const found = this.findFurnitureById(instanceId);
       if (!found) throw new Error(`Furniture instance "${instanceId}" not found`);
+
+      if (found.item.wallMountId) {
+        if (input.ownerEmployeeId !== undefined || input.renderLayer !== undefined) {
+          throw new Error("Wall attachments do not support seat owners or render layer overrides");
+        }
+        const position = input.wallMountPosition ?? (input.wallMountId === undefined ? found.item.wallMountPosition : undefined);
+        const surface = this.resolveWallMount(input.wallMountId ?? found.item.wallMountId,
+          this.catalogById.get(found.item.assetId), position, instanceId);
+        const previous = {
+          wallMountId: found.item.wallMountId, wallMountPosition: found.item.wallMountPosition, direction: found.item.direction,
+        };
+        found.item.wallMountId = surface.id;
+        found.item.wallMountPosition = position;
+        found.item.direction = surface.direction;
+        try {
+          await this.persist();
+        } catch (error) {
+          Object.assign(found.item, previous);
+          throw error;
+        }
+        this.recomputeCampus();
+        this.emitSnapshot();
+        return structuredClone(found.item);
+      }
+      if (input.wallMountId !== undefined || input.wallMountPosition !== undefined) throw new Error("Asset cannot be mounted");
 
       if (input.ownerEmployeeId !== undefined) {
         this.validateSeatOwner(found.item, input.ownerEmployeeId);
@@ -1259,6 +1326,11 @@ export class OfficeEngine extends EventEmitter {
       const found = this.findFurnitureById(instanceId);
       if (!found) throw new Error(`Furniture instance "${instanceId}" not found`);
       const removed = found.item;
+      const surfaces = new Set(getWallMountSurfaces(this.campus)
+        .filter((surface) => surface.hostId === instanceId).map((surface) => surface.id));
+      if (this.campus.worldFurniture.some((item) => item.wallMountId && surfaces.has(item.wallMountId))) {
+        throw new Error("นำของที่ติดกับฉากกั้นออกก่อนลบฉาก");
+      }
       const removedCat = this.catalogById.get(removed.assetId);
       const wasHost =
         !isTabletopAsset(removed.assetId, removed.layer, removedCat) &&
@@ -1380,6 +1452,7 @@ export class OfficeEngine extends EventEmitter {
 
       const shrinkingW = nextW < curW;
       const shrinkingD = nextD < curD;
+      const previousWallMounts = new Set<string>();
 
       if (shrinkingW || shrinkingD) {
         let minOccupiedW = MIN_FLOOR_SIDE;
@@ -1387,11 +1460,16 @@ export class OfficeEngine extends EventEmitter {
         let blockerW: string | null = null;
         let blockerD: string | null = null;
 
+        const wallFaces = new Map(getWallMountSurfaces(this.campus).filter((surface) => surface.wall)
+          .map((surface) => [surface.id, surface]));
         const hasCustomHypersleep = this.state.zoneOverrides?.["hypersleep:0"] !== undefined;
         for (const wf of this.campus.worldFurniture) {
           if (!hasCustomHypersleep && wf.zoneId === "hypersleep:0") continue;
-          const endX = Math.ceil(wf.tx + wf.footprintTiles[0]);
-          const endY = Math.ceil(wf.ty + wf.footprintTiles[1]);
+          const face = wf.wallMountId ? wallFaces.get(wf.wallMountId) : undefined;
+          if (wf.wallMountId && !face) continue;
+          if (face) previousWallMounts.add(wf.id);
+          const endX = face ? Math.floor(face.tx) + 1 : Math.ceil(wf.tx + wf.footprintTiles[0]);
+          const endY = face ? Math.floor(face.ty) + 1 : Math.ceil(wf.ty + wf.footprintTiles[1]);
           if (endX > minOccupiedW) {
             minOccupiedW = endX;
             blockerW = `${wf.assetId} (${wf.tx},${wf.ty})`;
@@ -1433,6 +1511,23 @@ export class OfficeEngine extends EventEmitter {
       this.state.floorWidthTiles = nextW;
       this.state.floorDepthTiles = nextD;
       this.recomputeCampus();
+
+      if (previousWallMounts.size) {
+        const surfaces = new Map(getWallMountSurfaces(this.campus).map((surface) => [surface.id, surface]));
+        const lostMount = this.campus.worldFurniture.some((item) => {
+          if (!item.wallMountId || !previousWallMounts.has(item.id)) return false;
+          const face = surfaces.get(item.wallMountId);
+          return !face || (item.wallMountPosition !== undefined && !wallMountFits(
+            wallMountPositionLimits(surfaces.values(), face, this.catalogById.get(item.assetId)), item.wallMountPosition,
+          ));
+        });
+        if (lostMount) {
+          this.state.floorWidthTiles = prevW;
+          this.state.floorDepthTiles = prevD;
+          this.recomputeCampus();
+          throw new Error("ลดขนาดพื้นไม่ได้ เพราะของที่ติดผนังจะล้ำขอบพื้นที่");
+        }
+      }
 
       if ((shrinkingW || shrinkingD) && this.campus.widthTiles >= curW && this.campus.depthTiles >= curD) {
         this.state.floorWidthTiles = prevW;

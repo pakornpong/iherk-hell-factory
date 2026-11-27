@@ -1,0 +1,440 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-sign-lift-vertical-service",
+  "category": "signage",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "chrome": {
+      "kind": "metal",
+      "color": "#bbd4d8"
+    },
+    "denim": {
+      "kind": "matte",
+      "color": "#4b637d"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    },
+    "mint": {
+      "kind": "matte",
+      "color": "#92c8b2"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        9,
+        0,
+        0
+      ],
+      "to": [
+        22,
+        3,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        10,
+        4,
+        1
+      ],
+      "to": [
+        21,
+        4,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        8,
+        5,
+        8
+      ],
+      "to": [
+        8,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        8,
+        5,
+        7
+      ],
+      "to": [
+        8,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        8,
+        5,
+        6
+      ],
+      "to": [
+        8,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        8,
+        5,
+        5
+      ],
+      "to": [
+        8,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        8,
+        5,
+        4
+      ],
+      "to": [
+        10,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        12,
+        5,
+        8
+      ],
+      "to": [
+        14,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        13,
+        5,
+        7
+      ],
+      "to": [
+        13,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        13,
+        5,
+        6
+      ],
+      "to": [
+        13,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        13,
+        5,
+        5
+      ],
+      "to": [
+        13,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        12,
+        5,
+        4
+      ],
+      "to": [
+        14,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        16,
+        5,
+        8
+      ],
+      "to": [
+        18,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        16,
+        5,
+        7
+      ],
+      "to": [
+        16,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        16,
+        5,
+        6
+      ],
+      "to": [
+        17,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        16,
+        5,
+        5
+      ],
+      "to": [
+        16,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        16,
+        5,
+        4
+      ],
+      "to": [
+        16,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        20,
+        5,
+        8
+      ],
+      "to": [
+        22,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        21,
+        5,
+        7
+      ],
+      "to": [
+        21,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        21,
+        5,
+        6
+      ],
+      "to": [
+        21,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        21,
+        5,
+        5
+      ],
+      "to": [
+        21,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        21,
+        5,
+        4
+      ],
+      "to": [
+        21,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        11,
+        5,
+        12
+      ],
+      "to": [
+        19,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        11,
+        5,
+        13
+      ],
+      "to": [
+        19,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        12,
+        5,
+        14
+      ],
+      "to": [
+        18,
+        5,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        13,
+        5,
+        15
+      ],
+      "to": [
+        17,
+        5,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        14,
+        5,
+        16
+      ],
+      "to": [
+        16,
+        5,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        15,
+        5,
+        17
+      ],
+      "to": [
+        15,
+        5,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        15,
+        5,
+        9
+      ],
+      "to": [
+        15,
+        5,
+        13
+      ]
+    }
+  ]
+}

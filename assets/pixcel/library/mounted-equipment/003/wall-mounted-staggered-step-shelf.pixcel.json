@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-staggered-step-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        0
+      ],
+      "to": [
+        14,
+        11,
+        1
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        0,
+        0
+      ],
+      "to": [
+        15,
+        10,
+        9
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        1,
+        8
+      ],
+      "to": [
+        22,
+        11,
+        9
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        0,
+        8
+      ],
+      "to": [
+        23,
+        10,
+        17
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        1,
+        16
+      ],
+      "to": [
+        28,
+        11,
+        17
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        0,
+        1
+      ],
+      "to": [
+        7,
+        1,
+        3
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        0,
+        16
+      ],
+      "to": [
+        28,
+        1,
+        20
+      ],
+      "material": "walnut"
+    }
+  ]
+}

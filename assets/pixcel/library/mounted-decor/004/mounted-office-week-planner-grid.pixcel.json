@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-office-week-planner-grid",
+  "category": "office",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ash": {
+      "kind": "wood",
+      "color": "#d6b98a"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ded6b4"
+    },
+    "lagoon": {
+      "kind": "matte",
+      "color": "#2b6a70"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#bd8a5a"
+    },
+    "coral": {
+      "kind": "matte",
+      "color": "#c16458"
+    },
+    "moss": {
+      "kind": "matte",
+      "color": "#64764c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "ash",
+      "from": [
+        3,
+        0,
+        0
+      ],
+      "to": [
+        28,
+        2,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "paper",
+      "from": [
+        4,
+        3,
+        1
+      ],
+      "to": [
+        27,
+        3,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        4,
+        4,
+        15
+      ],
+      "to": [
+        27,
+        4,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        8,
+        4,
+        2
+      ],
+      "to": [
+        8,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        13,
+        4,
+        2
+      ],
+      "to": [
+        13,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        18,
+        4,
+        2
+      ],
+      "to": [
+        18,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        23,
+        4,
+        2
+      ],
+      "to": [
+        23,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        4,
+        4,
+        5
+      ],
+      "to": [
+        27,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        4,
+        4,
+        9
+      ],
+      "to": [
+        27,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        4,
+        4,
+        13
+      ],
+      "to": [
+        27,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "coral",
+      "from": [
+        5,
+        5,
+        11
+      ],
+      "to": [
+        6,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        10,
+        5,
+        7
+      ],
+      "to": [
+        11,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "coral",
+      "from": [
+        15,
+        5,
+        12
+      ],
+      "to": [
+        16,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        20,
+        5,
+        3
+      ],
+      "to": [
+        21,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "coral",
+      "from": [
+        25,
+        5,
+        10
+      ],
+      "to": [
+        26,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        15,
+        5,
+        4
+      ],
+      "to": [
+        16,
+        5,
+        5
+      ]
+    }
+  ]
+}

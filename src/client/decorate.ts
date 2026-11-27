@@ -1,10 +1,11 @@
 import { supportsHalfTilePlacement } from "../shared/layers.js";
+import type { WallMountSelection } from "../shared/wall-mounts.js";
 import type { Direction, FurnitureInstance, WorldFurnitureInstance } from "../shared/types.js";
 
 const DIR_ORDER: Direction[] = ["se", "sw", "nw", "ne"];
 
 export interface DecorateApiClient {
-  placeFurniture(req: {
+  placeFurniture(req: Partial<WallMountSelection> & {
     tx: number;
     ty: number;
     assetId: string;
@@ -13,7 +14,7 @@ export interface DecorateApiClient {
   }): Promise<FurnitureInstance>;
   moveFurniture?(
     instanceId: string,
-    req: { tx: number; ty: number; direction?: Direction; manualPosition?: boolean },
+    req: Partial<WallMountSelection> & { tx: number; ty: number; direction?: Direction; manualPosition?: boolean },
   ): Promise<FurnitureInstance>;
   removeFurniture(instanceId: string): Promise<void>;
   paintFloorTiles?(
@@ -33,6 +34,7 @@ type HistoryAction =
       toTx: number;
       toTy: number;
       toDir: Direction;
+      wallMount?: { before: WallMountSelection; after: WallMountSelection };
       manualPosition?: { before: boolean; after: boolean };
     }
   | {
@@ -46,6 +48,11 @@ export function isEditableFurniture(item?: FurnitureInstance): item is Furniture
 
 export function isFloorAssetId(assetId?: string | null): boolean {
   return Boolean(assetId && assetId.startsWith("floor-"));
+}
+
+function getWallMount(item: FurnitureInstance): WallMountSelection | undefined {
+  if (!item.wallMountId) return;
+  return { wallMountId: item.wallMountId, wallMountPosition: item.wallMountPosition };
 }
 
 export class DecorateController {
@@ -148,6 +155,7 @@ export class DecorateController {
     tx: number,
     ty: number,
     existingInstance?: FurnitureInstance | WorldFurnitureInstance,
+    wallMount?: WallMountSelection,
   ): Promise<void> {
     if (!this.active || this.tool === "owner") return;
 
@@ -176,11 +184,12 @@ export class DecorateController {
       this.movePending = true;
       try {
         await this.api.moveFurniture(picked.item.id, {
-          tx, ty, direction, ...(manualPosition !== undefined ? { manualPosition } : {}),
+          tx, ty, direction, ...wallMount, ...(manualPosition !== undefined ? { manualPosition } : {}),
         });
       } finally {
         this.movePending = false;
       }
+      const previousMount = getWallMount(picked.item);
       this.undoStack.push({
         kind: "move",
         itemId: picked.item.id,
@@ -190,6 +199,9 @@ export class DecorateController {
         toTx: tx,
         toTy: ty,
         toDir: direction,
+        ...(previousMount && wallMount
+          ? { wallMount: { before: previousMount, after: wallMount } }
+          : {}),
         ...(manualPosition !== undefined
           ? { manualPosition: { before: picked.item.manualPosition ?? false, after: manualPosition } }
           : {}),
@@ -205,6 +217,7 @@ export class DecorateController {
       ty,
       assetId: this.selectedAssetId,
       direction: this.direction,
+      ...wallMount,
       ...(this.selectedAssetId === "chair-office-swivel" ? { manualPosition: true } : {}),
     });
     this.undoStack.push({ kind: "place", item: created, tx, ty });
@@ -257,14 +270,17 @@ export class DecorateController {
         ty: action.ty,
         assetId: action.item.assetId,
         direction: action.item.direction,
+        ...getWallMount(action.item),
         ...(action.item.manualPosition !== undefined ? { manualPosition: action.item.manualPosition } : {}),
       });
+      this.remapHistoryId(action.item.id, recreated.id);
       this.redoStack.push({ ...action, item: recreated });
     } else if (action.kind === "move" && this.api.moveFurniture) {
       await this.api.moveFurniture(action.itemId, {
         tx: action.fromTx,
         ty: action.fromTy,
         direction: action.fromDir,
+        ...action.wallMount?.before,
         ...(action.manualPosition ? { manualPosition: action.manualPosition.before } : {}),
       });
       this.redoStack.push(action);
@@ -283,8 +299,10 @@ export class DecorateController {
         ty: action.ty,
         assetId: action.item.assetId,
         direction: action.item.direction,
+        ...getWallMount(action.item),
         ...(action.item.manualPosition !== undefined ? { manualPosition: action.item.manualPosition } : {}),
       });
+      this.remapHistoryId(action.item.id, recreated.id);
       this.undoStack.push({ ...action, item: recreated });
     } else if (action.kind === "remove") {
       await this.api.removeFurniture(action.item.id);
@@ -294,12 +312,39 @@ export class DecorateController {
         tx: action.toTx,
         ty: action.toTy,
         direction: action.toDir,
+        ...action.wallMount?.after,
         ...(action.manualPosition ? { manualPosition: action.manualPosition.after } : {}),
       });
       this.undoStack.push(action);
     } else if (action.kind === "floor" && this.api.paintFloorTiles) {
       await this.api.paintFloorTiles(action.changes.map((c) => ({ tx: c.tx, ty: c.ty, assetId: c.after })));
       this.undoStack.push(action);
+    }
+  }
+
+  private remapHistoryId(oldId: string, newId: string): void {
+    const remapHost = (mountId: string) => {
+      for (const kind of ["ef:", "panel:"]) {
+        const prefix = `${kind}${oldId}:`;
+        if (mountId.startsWith(prefix)) return `${kind}${newId}:${mountId.slice(prefix.length)}`;
+      }
+      return mountId;
+    };
+    for (const action of [...this.undoStack, ...this.redoStack]) {
+      if (action.kind === "move") {
+        if (action.itemId === oldId) action.itemId = newId;
+        if (action.wallMount) {
+          for (const mount of [action.wallMount.before, action.wallMount.after]) {
+            mount.wallMountId = remapHost(mount.wallMountId);
+          }
+        }
+      } else if (action.kind !== "floor") {
+        action.item = {
+          ...action.item,
+          id: action.item.id === oldId ? newId : action.item.id,
+          ...(action.item.wallMountId ? { wallMountId: remapHost(action.item.wallMountId) } : {}),
+        };
+      }
     }
   }
 }

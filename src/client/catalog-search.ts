@@ -1,3 +1,4 @@
+import { isMountedAsset } from "../shared/wall-mounts.js";
 import type { CatalogEntry } from "../shared/types.js";
 
 const categoryLabels = new Map<string, string>([
@@ -74,6 +75,8 @@ const tagRules: readonly TagRule[] = [
   { label: "โซฟา", terms: ["sofa", "couch", "loveseat", "chaise"], categories: ["sofas"] },
   { label: "ม้านั่ง", terms: ["bench"] },
   { label: "เตียง", terms: ["bed", "bunk"], categories: ["beds"] },
+  { label: "ชั้นวาง", terms: ["shelf", "shelving", "ledge", "rack", "bookcase"] },
+  { label: "เครื่องใช้ไฟฟ้า", terms: ["monitor", "speaker", "intercom", "control", "charger", "heater", "display", "fan", "thermostat", "sensor", "relay", "outlet", "dispenser"] },
   { label: "ตู้และชั้น", terms: ["cabinet", "locker", "shelf", "shelving", "drawer", "rack", "bookcase"], categories: ["storage"] },
   { label: "ฉากกั้น", terms: ["divider", "partition", "cubicle"], categories: ["room-divider", "room-dividers"] },
   { label: "ไฟ", terms: ["lamp", "light", "lantern", "lighting", "sconce", "chandelier"], categories: ["lighting"] },
@@ -111,6 +114,7 @@ export function getCatalogTags(item: CatalogEntry): string[] {
       categories?.includes(item.category) || terms.some((term) => tokens.has(term)),
     )
     .map(({ label }) => label);
+  if (isMountedAsset(item)) tags.unshift("ติดผนัง");
   return tags.length > 0 ? tags : [getCatalogCategoryLabel(item.category)];
 }
 

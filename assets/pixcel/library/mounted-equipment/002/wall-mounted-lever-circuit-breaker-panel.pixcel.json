@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-lever-circuit-breaker-panel",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded8c9"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#d9914b"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        0
+      ],
+      "to": [
+        27,
+        1,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        2
+      ],
+      "to": [
+        26,
+        7,
+        21
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        8,
+        5
+      ],
+      "to": [
+        24,
+        8,
+        18
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        8
+      ],
+      "to": [
+        11,
+        9,
+        16
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        9
+      ],
+      "to": [
+        11,
+        11,
+        12
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        7,
+        8
+      ],
+      "to": [
+        16,
+        9,
+        16
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        9,
+        9
+      ],
+      "to": [
+        16,
+        11,
+        12
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        7,
+        8
+      ],
+      "to": [
+        21,
+        9,
+        16
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        9,
+        9
+      ],
+      "to": [
+        21,
+        11,
+        12
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        6,
+        6
+      ],
+      "to": [
+        25,
+        10,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        9,
+        18
+      ],
+      "to": [
+        18,
+        9,
+        18
+      ],
+      "material": "orange"
+    }
+  ]
+}

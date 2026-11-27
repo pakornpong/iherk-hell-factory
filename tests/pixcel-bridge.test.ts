@@ -93,6 +93,9 @@ describe("PixcelBridge & Hell Factory voxel assets", () => {
       expect(catalog.find((asset) => asset.id === assetId)).toMatchObject({
         id: assetId, source: "library", category: "accessibility",
       });
+      expect(catalog.find((asset) => asset.id === "mounted-art-alpine-sunrise")).toMatchObject({
+        wallMountBounds: { left: 4, right: 28, bottom: 0, top: 17 },
+      });
       expect(await fs.readdir(outDir)).toEqual([]);
       expect(await bridge.getLibraryAtlas("../outside", "office")).toBeNull();
 

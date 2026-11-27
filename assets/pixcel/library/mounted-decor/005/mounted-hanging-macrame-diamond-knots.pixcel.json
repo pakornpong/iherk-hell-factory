@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-hanging-macrame-diamond-knots",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#bd8a5a"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ded6b4"
+    },
+    "pearl": {
+      "kind": "matte",
+      "color": "#f6ebd3"
+    },
+    "sand": {
+      "kind": "matte",
+      "color": "#d4ab72"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        5,
+        0,
+        22
+      ],
+      "to": [
+        27,
+        3,
+        24
+      ]
+    },
+    {
+      "op": "line",
+      "material": "paper",
+      "from": [
+        8,
+        3,
+        22
+      ],
+      "to": [
+        15,
+        3,
+        12
+      ]
+    },
+    {
+      "op": "line",
+      "material": "pearl",
+      "from": [
+        8,
+        4,
+        10
+      ],
+      "to": [
+        15,
+        4,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "paper",
+      "from": [
+        8,
+        2,
+        4
+      ],
+      "to": [
+        8,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "sand",
+      "from": [
+        7,
+        5,
+        9
+      ],
+      "to": [
+        9,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "line",
+      "material": "paper",
+      "from": [
+        12,
+        3,
+        22
+      ],
+      "to": [
+        16,
+        3,
+        12
+      ]
+    },
+    {
+      "op": "line",
+      "material": "pearl",
+      "from": [
+        12,
+        4,
+        10
+      ],
+      "to": [
+        16,
+        4,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "paper",
+      "from": [
+        12,
+        3,
+        2
+      ],
+      "to": [
+        12,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "sand",
+      "from": [
+        11,
+        5,
+        9
+      ],
+      "to": [
+        13,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "line",
+      "material": "paper",
+      "from": [
+        16,
+        3,
+        22
+      ],
+      "to": [
+        17,
+        3,
+        12
+      ]
+    },
+    {
+      "op": "line",
+      "material": "pearl",
+      "from": [
+        16,
+        4,
+        10
+      ],
+      "to": [
+        17,
+        4,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "paper",
+      "from": [
+        16,
+        2,
+        0
+      ],
+      "to": [
+        16,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "sand",
+      "from": [
+        15,
+        5,
+        9
+      ],
+      "to": [
+        17,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "line",
+      "material": "paper",
+      "from": [
+        20,
+        3,
+        22
+      ],
+      "to": [
+        15,
+        3,
+        12
+      ]
+    },
+    {
+      "op": "line",
+      "material": "pearl",
+      "from": [
+        20,
+        4,
+        10
+      ],
+      "to": [
+        15,
+        4,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "paper",
+      "from": [
+        20,
+        3,
+        2
+      ],
+      "to": [
+        20,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "sand",
+      "from": [
+        19,
+        5,
+        9
+      ],
+      "to": [
+        21,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "line",
+      "material": "paper",
+      "from": [
+        24,
+        3,
+        22
+      ],
+      "to": [
+        16,
+        3,
+        12
+      ]
+    },
+    {
+      "op": "line",
+      "material": "pearl",
+      "from": [
+        24,
+        4,
+        10
+      ],
+      "to": [
+        16,
+        4,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "paper",
+      "from": [
+        24,
+        2,
+        4
+      ],
+      "to": [
+        24,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "sand",
+      "from": [
+        23,
+        5,
+        9
+      ],
+      "to": [
+        25,
+        5,
+        11
+      ]
+    }
+  ]
+}

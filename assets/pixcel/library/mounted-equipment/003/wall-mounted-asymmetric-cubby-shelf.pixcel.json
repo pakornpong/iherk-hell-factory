@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-asymmetric-cubby-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "pine": {
+      "kind": "wood",
+      "color": "#cda978"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        0
+      ],
+      "to": [
+        28,
+        10,
+        1
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        9
+      ],
+      "to": [
+        28,
+        10,
+        10
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        23
+      ],
+      "to": [
+        28,
+        10,
+        24
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        0,
+        0
+      ],
+      "to": [
+        4,
+        10,
+        24
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        0,
+        0
+      ],
+      "to": [
+        15,
+        10,
+        23
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        0,
+        0
+      ],
+      "to": [
+        28,
+        10,
+        24
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        1,
+        18
+      ],
+      "to": [
+        27,
+        8,
+        19
+      ],
+      "material": "pine"
+    }
+  ]
+}

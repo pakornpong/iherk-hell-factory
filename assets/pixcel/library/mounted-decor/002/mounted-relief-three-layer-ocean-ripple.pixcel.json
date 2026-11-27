@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-relief-three-layer-ocean-ripple",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "lagoon": {
+      "kind": "matte",
+      "color": "#2b6a70"
+    },
+    "wave": {
+      "kind": "matte",
+      "color": "#4f8fa0"
+    },
+    "mint": {
+      "kind": "matte",
+      "color": "#92c8b2"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        21,
+        0,
+        0
+      ],
+      "to": [
+        21,
+        2,
+        0
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        15,
+        0,
+        1
+      ],
+      "to": [
+        24,
+        2,
+        1
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        3,
+        0,
+        2
+      ],
+      "to": [
+        26,
+        2,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        4,
+        0,
+        3
+      ],
+      "to": [
+        28,
+        2,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        5,
+        0,
+        4
+      ],
+      "to": [
+        28,
+        2,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        7,
+        0,
+        5
+      ],
+      "to": [
+        28,
+        2,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        8,
+        0,
+        6
+      ],
+      "to": [
+        28,
+        2,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        10,
+        0,
+        7
+      ],
+      "to": [
+        28,
+        2,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        25,
+        0,
+        8
+      ],
+      "to": [
+        28,
+        2,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        26,
+        0,
+        9
+      ],
+      "to": [
+        28,
+        2,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        28,
+        0,
+        10
+      ],
+      "to": [
+        28,
+        2,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        4,
+        1,
+        7
+      ],
+      "to": [
+        21,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        4,
+        1,
+        8
+      ],
+      "to": [
+        23,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        4,
+        1,
+        9
+      ],
+      "to": [
+        24,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        4,
+        1,
+        10
+      ],
+      "to": [
+        25,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        5,
+        1,
+        11
+      ],
+      "to": [
+        27,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        7,
+        1,
+        12
+      ],
+      "to": [
+        28,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        9,
+        1,
+        13
+      ],
+      "to": [
+        29,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        11,
+        1,
+        14
+      ],
+      "to": [
+        28,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        27,
+        1,
+        15
+      ],
+      "to": [
+        27,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        4,
+        0,
+        14
+      ],
+      "to": [
+        21,
+        5,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        4,
+        0,
+        15
+      ],
+      "to": [
+        23,
+        5,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        4,
+        0,
+        16
+      ],
+      "to": [
+        24,
+        5,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        4,
+        0,
+        17
+      ],
+      "to": [
+        25,
+        5,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        6,
+        0,
+        18
+      ],
+      "to": [
+        26,
+        5,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        8,
+        0,
+        19
+      ],
+      "to": [
+        27,
+        5,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        10,
+        0,
+        20
+      ],
+      "to": [
+        28,
+        5,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        12,
+        0,
+        21
+      ],
+      "to": [
+        29,
+        5,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        27,
+        0,
+        22
+      ],
+      "to": [
+        27,
+        5,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        11,
+        0,
+        3
+      ],
+      "to": [
+        13,
+        1,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        20,
+        0,
+        4
+      ],
+      "to": [
+        22,
+        1,
+        17
+      ]
+    }
+  ]
+}

@@ -1,0 +1,622 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-relief-arched-vanity-mirror",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#765044"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#bbd4d8"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#caa05c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        16,
+        0,
+        6
+      ],
+      "to": [
+        16,
+        3,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        13,
+        0,
+        7
+      ],
+      "to": [
+        19,
+        3,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        12,
+        0,
+        8
+      ],
+      "to": [
+        20,
+        3,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        11,
+        0,
+        9
+      ],
+      "to": [
+        21,
+        3,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        10,
+        0,
+        10
+      ],
+      "to": [
+        22,
+        3,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        10,
+        0,
+        11
+      ],
+      "to": [
+        22,
+        3,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        9,
+        0,
+        12
+      ],
+      "to": [
+        23,
+        3,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        9,
+        0,
+        13
+      ],
+      "to": [
+        23,
+        3,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        9,
+        0,
+        14
+      ],
+      "to": [
+        23,
+        3,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        9,
+        0,
+        15
+      ],
+      "to": [
+        23,
+        3,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        8,
+        0,
+        16
+      ],
+      "to": [
+        24,
+        3,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        9,
+        0,
+        17
+      ],
+      "to": [
+        23,
+        3,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        9,
+        0,
+        18
+      ],
+      "to": [
+        23,
+        3,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        9,
+        0,
+        19
+      ],
+      "to": [
+        23,
+        3,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        9,
+        0,
+        20
+      ],
+      "to": [
+        23,
+        3,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        10,
+        0,
+        21
+      ],
+      "to": [
+        22,
+        3,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        10,
+        0,
+        22
+      ],
+      "to": [
+        22,
+        3,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        11,
+        0,
+        23
+      ],
+      "to": [
+        21,
+        3,
+        23
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        12,
+        0,
+        24
+      ],
+      "to": [
+        20,
+        3,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        13,
+        0,
+        25
+      ],
+      "to": [
+        19,
+        3,
+        25
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        16,
+        0,
+        26
+      ],
+      "to": [
+        16,
+        3,
+        26
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        8,
+        0,
+        0
+      ],
+      "to": [
+        24,
+        3,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        4,
+        8
+      ],
+      "to": [
+        16,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        14,
+        4,
+        9
+      ],
+      "to": [
+        18,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        13,
+        4,
+        10
+      ],
+      "to": [
+        19,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        12,
+        4,
+        11
+      ],
+      "to": [
+        20,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        11,
+        4,
+        12
+      ],
+      "to": [
+        21,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        11,
+        4,
+        13
+      ],
+      "to": [
+        21,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        11,
+        4,
+        14
+      ],
+      "to": [
+        21,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        11,
+        4,
+        15
+      ],
+      "to": [
+        21,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        10,
+        4,
+        16
+      ],
+      "to": [
+        22,
+        4,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        11,
+        4,
+        17
+      ],
+      "to": [
+        21,
+        4,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        11,
+        4,
+        18
+      ],
+      "to": [
+        21,
+        4,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        11,
+        4,
+        19
+      ],
+      "to": [
+        21,
+        4,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        11,
+        4,
+        20
+      ],
+      "to": [
+        21,
+        4,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        12,
+        4,
+        21
+      ],
+      "to": [
+        20,
+        4,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        13,
+        4,
+        22
+      ],
+      "to": [
+        19,
+        4,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        14,
+        4,
+        23
+      ],
+      "to": [
+        18,
+        4,
+        23
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        4,
+        24
+      ],
+      "to": [
+        16,
+        4,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        10,
+        4,
+        2
+      ],
+      "to": [
+        22,
+        4,
+        16
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        12,
+        5,
+        6
+      ],
+      "to": [
+        19,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        9,
+        4,
+        0
+      ],
+      "to": [
+        23,
+        7,
+        1
+      ]
+    }
+  ]
+}

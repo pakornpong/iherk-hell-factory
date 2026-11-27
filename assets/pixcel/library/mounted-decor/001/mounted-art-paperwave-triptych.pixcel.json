@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-art-paperwave-triptych",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ash": {
+      "kind": "wood",
+      "color": "#d6b98a"
+    },
+    "paper": {
+      "kind": "matte",
+      "color": "#ded6b4"
+    },
+    "mint": {
+      "kind": "matte",
+      "color": "#92c8b2"
+    },
+    "wave": {
+      "kind": "matte",
+      "color": "#4f8fa0"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "ash",
+      "from": [
+        3,
+        0,
+        0
+      ],
+      "to": [
+        28,
+        2,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "paper",
+      "from": [
+        4,
+        3,
+        1
+      ],
+      "to": [
+        27,
+        3,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        5,
+        4,
+        2
+      ],
+      "to": [
+        10,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        5,
+        5,
+        3
+      ],
+      "to": [
+        10,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        5,
+        5,
+        4
+      ],
+      "to": [
+        10,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        5,
+        5,
+        5
+      ],
+      "to": [
+        10,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        5,
+        5,
+        6
+      ],
+      "to": [
+        10,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        5,
+        5,
+        7
+      ],
+      "to": [
+        10,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        6,
+        5,
+        8
+      ],
+      "to": [
+        10,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        7,
+        5,
+        9
+      ],
+      "to": [
+        9,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        8,
+        5,
+        10
+      ],
+      "to": [
+        8,
+        5,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        6,
+        6,
+        4
+      ],
+      "to": [
+        9,
+        6,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        13,
+        4,
+        3
+      ],
+      "to": [
+        18,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        18,
+        5,
+        3
+      ],
+      "to": [
+        18,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        13,
+        5,
+        4
+      ],
+      "to": [
+        18,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        13,
+        5,
+        5
+      ],
+      "to": [
+        18,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        13,
+        5,
+        6
+      ],
+      "to": [
+        18,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        14,
+        5,
+        7
+      ],
+      "to": [
+        18,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        15,
+        5,
+        8
+      ],
+      "to": [
+        17,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        16,
+        5,
+        9
+      ],
+      "to": [
+        16,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        14,
+        6,
+        4
+      ],
+      "to": [
+        17,
+        6,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        21,
+        4,
+        4
+      ],
+      "to": [
+        26,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        26,
+        5,
+        3
+      ],
+      "to": [
+        26,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        23,
+        5,
+        4
+      ],
+      "to": [
+        26,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        21,
+        5,
+        5
+      ],
+      "to": [
+        26,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        21,
+        5,
+        6
+      ],
+      "to": [
+        26,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        22,
+        5,
+        7
+      ],
+      "to": [
+        26,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        24,
+        5,
+        8
+      ],
+      "to": [
+        24,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        22,
+        6,
+        4
+      ],
+      "to": [
+        25,
+        6,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ash",
+      "from": [
+        11,
+        4,
+        1
+      ],
+      "to": [
+        12,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ash",
+      "from": [
+        19,
+        4,
+        1
+      ],
+      "to": [
+        20,
+        4,
+        14
+      ]
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-two-way-intercom",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded8c9"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a6c5cd"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        0,
+        1
+      ],
+      "to": [
+        24,
+        1,
+        22
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        1,
+        0
+      ],
+      "to": [
+        23,
+        5,
+        21
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        5,
+        1
+      ],
+      "to": [
+        13,
+        8,
+        18
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        1
+      ],
+      "to": [
+        14,
+        9,
+        5
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        15
+      ],
+      "to": [
+        14,
+        9,
+        19
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        6,
+        14
+      ],
+      "to": [
+        21,
+        6,
+        18
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        6,
+        5
+      ],
+      "to": [
+        17,
+        6,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        6,
+        5
+      ],
+      "to": [
+        20,
+        6,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        6,
+        5
+      ],
+      "to": [
+        23,
+        6,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        6,
+        8
+      ],
+      "to": [
+        17,
+        6,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        6,
+        8
+      ],
+      "to": [
+        20,
+        6,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        6,
+        8
+      ],
+      "to": [
+        23,
+        6,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        6,
+        11
+      ],
+      "to": [
+        17,
+        6,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        6,
+        11
+      ],
+      "to": [
+        20,
+        6,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        6,
+        11
+      ],
+      "to": [
+        23,
+        6,
+        12
+      ],
+      "material": "steel"
+    }
+  ]
+}

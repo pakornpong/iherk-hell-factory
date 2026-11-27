@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-fingerprint-time-clock",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#487d80"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#506b8c"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        4
+      ],
+      "to": [
+        23,
+        1,
+        22
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        1,
+        8
+      ],
+      "to": [
+        24,
+        5,
+        24
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        2,
+        0
+      ],
+      "to": [
+        21,
+        8,
+        9
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        6,
+        2
+      ],
+      "to": [
+        18,
+        10,
+        6
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        6,
+        15
+      ],
+      "to": [
+        21,
+        6,
+        22
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        7,
+        19
+      ],
+      "to": [
+        18,
+        7,
+        20
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        6,
+        10
+      ],
+      "to": [
+        11,
+        6,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        6,
+        10
+      ],
+      "to": [
+        16,
+        6,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        6,
+        10
+      ],
+      "to": [
+        21,
+        6,
+        11
+      ],
+      "material": "steel"
+    }
+  ]
+}

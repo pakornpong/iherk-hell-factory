@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-overhead-stemware-rack",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "glass": {
+      "kind": "glass",
+      "color": "#a6c5cd"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        0,
+        16
+      ],
+      "to": [
+        27,
+        1,
+        21
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        1,
+        18
+      ],
+      "to": [
+        28,
+        11,
+        19
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        3,
+        15
+      ],
+      "to": [
+        9,
+        9,
+        17
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        5,
+        8
+      ],
+      "to": [
+        7,
+        7,
+        15
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        4,
+        3
+      ],
+      "to": [
+        9,
+        8,
+        8
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        0
+      ],
+      "to": [
+        10,
+        9,
+        3
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        3,
+        15
+      ],
+      "to": [
+        17,
+        9,
+        17
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        5,
+        8
+      ],
+      "to": [
+        15,
+        7,
+        15
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        4,
+        3
+      ],
+      "to": [
+        17,
+        8,
+        8
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        3,
+        0
+      ],
+      "to": [
+        18,
+        9,
+        3
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        3,
+        15
+      ],
+      "to": [
+        25,
+        9,
+        17
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        5,
+        8
+      ],
+      "to": [
+        23,
+        7,
+        15
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        4,
+        3
+      ],
+      "to": [
+        25,
+        8,
+        8
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        3,
+        0
+      ],
+      "to": [
+        26,
+        9,
+        3
+      ],
+      "material": "glass"
+    }
+  ]
+}

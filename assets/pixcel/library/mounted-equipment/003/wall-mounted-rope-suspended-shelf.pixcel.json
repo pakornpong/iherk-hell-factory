@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-rope-suspended-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "brass": {
+      "kind": "metal",
+      "color": "#c6a16b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "pine": {
+      "kind": "wood",
+      "color": "#cda978"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        0
+      ],
+      "to": [
+        26,
+        11,
+        1
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        13
+      ],
+      "to": [
+        26,
+        10,
+        14
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        0,
+        21
+      ],
+      "to": [
+        18,
+        1,
+        27
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        3,
+        0
+      ],
+      "to": [
+        7,
+        3,
+        14
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        10,
+        0
+      ],
+      "to": [
+        7,
+        10,
+        14
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        3,
+        14
+      ],
+      "to": [
+        15,
+        1,
+        24
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        10,
+        14
+      ],
+      "to": [
+        15,
+        1,
+        24
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        3,
+        0
+      ],
+      "to": [
+        24,
+        3,
+        14
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        10,
+        0
+      ],
+      "to": [
+        24,
+        10,
+        14
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        3,
+        14
+      ],
+      "to": [
+        15,
+        1,
+        24
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        10,
+        14
+      ],
+      "to": [
+        15,
+        1,
+        24
+      ],
+      "material": "pine"
+    }
+  ]
+}

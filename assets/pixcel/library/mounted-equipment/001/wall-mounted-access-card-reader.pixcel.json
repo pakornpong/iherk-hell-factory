@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-access-card-reader",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c6a16b"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#487d80"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#506b8c"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        3
+      ],
+      "to": [
+        23,
+        1,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        1,
+        6
+      ],
+      "to": [
+        24,
+        5,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        2,
+        0
+      ],
+      "to": [
+        22,
+        7,
+        7
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        5,
+        4
+      ],
+      "to": [
+        19,
+        8,
+        5
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        6,
+        10
+      ],
+      "to": [
+        20,
+        6,
+        12
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        7,
+        12
+      ],
+      "to": [
+        18,
+        7,
+        13
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        2,
+        15
+      ],
+      "to": [
+        12,
+        2,
+        16
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        2,
+        15
+      ],
+      "to": [
+        21,
+        2,
+        16
+      ],
+      "material": "brass"
+    }
+  ]
+}

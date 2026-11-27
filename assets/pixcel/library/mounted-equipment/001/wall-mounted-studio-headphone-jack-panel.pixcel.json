@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-studio-headphone-jack-panel",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c6a16b"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        2
+      ],
+      "to": [
+        23,
+        1,
+        12
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        1,
+        0
+      ],
+      "to": [
+        22,
+        5,
+        11
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        5,
+        2
+      ],
+      "to": [
+        21,
+        7,
+        9
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        8,
+        4
+      ],
+      "to": [
+        12,
+        9,
+        4
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        5
+      ],
+      "to": [
+        13,
+        9,
+        5
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        8,
+        6
+      ],
+      "to": [
+        14,
+        9,
+        6
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        7
+      ],
+      "to": [
+        13,
+        9,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        8,
+        8
+      ],
+      "to": [
+        12,
+        9,
+        8
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        6
+      ],
+      "to": [
+        12,
+        10,
+        6
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        4
+      ],
+      "to": [
+        19,
+        9,
+        4
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        8,
+        5
+      ],
+      "to": [
+        20,
+        9,
+        5
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        8,
+        6
+      ],
+      "to": [
+        21,
+        9,
+        6
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        8,
+        7
+      ],
+      "to": [
+        20,
+        9,
+        7
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        8
+      ],
+      "to": [
+        19,
+        9,
+        8
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        10,
+        6
+      ],
+      "to": [
+        19,
+        10,
+        6
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        6,
+        0
+      ],
+      "to": [
+        17,
+        11,
+        1
+      ],
+      "material": "steel"
+    }
+  ]
+}

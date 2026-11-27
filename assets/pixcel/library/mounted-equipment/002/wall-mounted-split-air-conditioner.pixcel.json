@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-split-air-conditioner",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded8c9"
+    },
+    "white": {
+      "kind": "matte",
+      "color": "#ece9dc"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        0,
+        3
+      ],
+      "to": [
+        28,
+        1,
+        11
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        2,
+        1,
+        3
+      ],
+      "to": [
+        29,
+        7,
+        11
+      ],
+      "material": "white"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        5,
+        0
+      ],
+      "to": [
+        27,
+        9,
+        5
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        2
+      ],
+      "to": [
+        26,
+        10,
+        3
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        0
+      ],
+      "to": [
+        9,
+        10,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        0
+      ],
+      "to": [
+        13,
+        10,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        10,
+        0
+      ],
+      "to": [
+        17,
+        10,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        10,
+        0
+      ],
+      "to": [
+        21,
+        10,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        10,
+        0
+      ],
+      "to": [
+        25,
+        10,
+        2
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        8,
+        8
+      ],
+      "to": [
+        26,
+        8,
+        8
+      ],
+      "material": "cyan"
+    }
+  ]
+}

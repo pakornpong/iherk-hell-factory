@@ -1,0 +1,532 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-utility-electricity-meter",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded8c9"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a6c5cd"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        0,
+        0
+      ],
+      "to": [
+        24,
+        1,
+        23
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        1,
+        1
+      ],
+      "to": [
+        23,
+        5,
+        25
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        5,
+        7
+      ],
+      "to": [
+        15,
+        8,
+        7
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        5,
+        8
+      ],
+      "to": [
+        18,
+        8,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        5,
+        9
+      ],
+      "to": [
+        20,
+        8,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        5,
+        10
+      ],
+      "to": [
+        21,
+        8,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        5,
+        11
+      ],
+      "to": [
+        21,
+        8,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        12
+      ],
+      "to": [
+        22,
+        8,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        13
+      ],
+      "to": [
+        22,
+        8,
+        13
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        14
+      ],
+      "to": [
+        22,
+        8,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        5,
+        15
+      ],
+      "to": [
+        23,
+        8,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        16
+      ],
+      "to": [
+        22,
+        8,
+        16
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        17
+      ],
+      "to": [
+        22,
+        8,
+        17
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        18
+      ],
+      "to": [
+        22,
+        8,
+        18
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        5,
+        19
+      ],
+      "to": [
+        21,
+        8,
+        19
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        5,
+        20
+      ],
+      "to": [
+        21,
+        8,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        5,
+        21
+      ],
+      "to": [
+        20,
+        8,
+        21
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        5,
+        22
+      ],
+      "to": [
+        18,
+        8,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        5,
+        23
+      ],
+      "to": [
+        15,
+        8,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        9,
+        9
+      ],
+      "to": [
+        15,
+        9,
+        9
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        9,
+        10
+      ],
+      "to": [
+        18,
+        9,
+        10
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        11
+      ],
+      "to": [
+        19,
+        9,
+        11
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        9,
+        12
+      ],
+      "to": [
+        20,
+        9,
+        12
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        9,
+        13
+      ],
+      "to": [
+        20,
+        9,
+        13
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        9,
+        14
+      ],
+      "to": [
+        20,
+        9,
+        14
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        9,
+        15
+      ],
+      "to": [
+        21,
+        9,
+        15
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        9,
+        16
+      ],
+      "to": [
+        20,
+        9,
+        16
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        9,
+        17
+      ],
+      "to": [
+        20,
+        9,
+        17
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        9,
+        18
+      ],
+      "to": [
+        20,
+        9,
+        18
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        19
+      ],
+      "to": [
+        19,
+        9,
+        19
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        9,
+        20
+      ],
+      "to": [
+        18,
+        9,
+        20
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        9,
+        21
+      ],
+      "to": [
+        15,
+        9,
+        21
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        10,
+        15
+      ],
+      "to": [
+        19,
+        10,
+        17
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        16
+      ],
+      "to": [
+        18,
+        11,
+        16
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        5,
+        0
+      ],
+      "to": [
+        19,
+        7,
+        7
+      ],
+      "material": "gray"
+    }
+  ]
+}

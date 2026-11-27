@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-column-speaker",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        11,
+        0,
+        4
+      ],
+      "to": [
+        20,
+        1,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        2,
+        0
+      ],
+      "to": [
+        21,
+        7,
+        27
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        8,
+        2
+      ],
+      "to": [
+        20,
+        9,
+        25
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        5,
+        26
+      ],
+      "to": [
+        19,
+        8,
+        27
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        3
+      ],
+      "to": [
+        15,
+        10,
+        3
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        4
+      ],
+      "to": [
+        17,
+        10,
+        4
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        5
+      ],
+      "to": [
+        17,
+        10,
+        5
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        6
+      ],
+      "to": [
+        18,
+        10,
+        6
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        7
+      ],
+      "to": [
+        17,
+        10,
+        7
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        8
+      ],
+      "to": [
+        17,
+        10,
+        8
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        9
+      ],
+      "to": [
+        15,
+        10,
+        9
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        10
+      ],
+      "to": [
+        15,
+        10,
+        10
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        11
+      ],
+      "to": [
+        17,
+        10,
+        11
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        12
+      ],
+      "to": [
+        17,
+        10,
+        12
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        13
+      ],
+      "to": [
+        18,
+        10,
+        13
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        14
+      ],
+      "to": [
+        17,
+        10,
+        14
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        15
+      ],
+      "to": [
+        17,
+        10,
+        15
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        16
+      ],
+      "to": [
+        15,
+        10,
+        16
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        17
+      ],
+      "to": [
+        15,
+        10,
+        17
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        18
+      ],
+      "to": [
+        17,
+        10,
+        18
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        19
+      ],
+      "to": [
+        17,
+        10,
+        19
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        10,
+        20
+      ],
+      "to": [
+        18,
+        10,
+        20
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        21
+      ],
+      "to": [
+        17,
+        10,
+        21
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        10,
+        22
+      ],
+      "to": [
+        17,
+        10,
+        22
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        23
+      ],
+      "to": [
+        15,
+        10,
+        23
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        10,
+        2
+      ],
+      "to": [
+        16,
+        10,
+        2
+      ],
+      "material": "cyan"
+    }
+  ]
+}

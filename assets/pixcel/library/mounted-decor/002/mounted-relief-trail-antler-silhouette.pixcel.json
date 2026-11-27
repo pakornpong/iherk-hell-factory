@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-relief-trail-antler-silhouette",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "oak": {
+      "kind": "wood",
+      "color": "#bd8a5a"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#765044"
+    },
+    "ash": {
+      "kind": "wood",
+      "color": "#d6b98a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        16,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        4,
+        0
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        14,
+        0,
+        1
+      ],
+      "to": [
+        18,
+        4,
+        1
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        12,
+        0,
+        2
+      ],
+      "to": [
+        20,
+        4,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        11,
+        0,
+        3
+      ],
+      "to": [
+        21,
+        4,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        11,
+        0,
+        4
+      ],
+      "to": [
+        21,
+        4,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        11,
+        0,
+        5
+      ],
+      "to": [
+        21,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        11,
+        0,
+        6
+      ],
+      "to": [
+        21,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        11,
+        0,
+        7
+      ],
+      "to": [
+        21,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        11,
+        0,
+        8
+      ],
+      "to": [
+        21,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        11,
+        0,
+        9
+      ],
+      "to": [
+        21,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        11,
+        0,
+        10
+      ],
+      "to": [
+        21,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        11,
+        0,
+        11
+      ],
+      "to": [
+        21,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        11,
+        0,
+        12
+      ],
+      "to": [
+        21,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        12,
+        0,
+        13
+      ],
+      "to": [
+        20,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        13,
+        0,
+        14
+      ],
+      "to": [
+        19,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        14,
+        0,
+        15
+      ],
+      "to": [
+        18,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "oak",
+      "from": [
+        16,
+        0,
+        16
+      ],
+      "to": [
+        16,
+        4,
+        16
+      ]
+    },
+    {
+      "op": "line",
+      "material": "walnut",
+      "from": [
+        20,
+        1,
+        10
+      ],
+      "to": [
+        25,
+        1,
+        21
+      ]
+    },
+    {
+      "op": "line",
+      "material": "walnut",
+      "from": [
+        25,
+        1,
+        21
+      ],
+      "to": [
+        28,
+        1,
+        25
+      ]
+    },
+    {
+      "op": "line",
+      "material": "ash",
+      "from": [
+        24,
+        1,
+        18
+      ],
+      "to": [
+        22,
+        1,
+        24
+      ]
+    },
+    {
+      "op": "line",
+      "material": "ash",
+      "from": [
+        22,
+        2,
+        14
+      ],
+      "to": [
+        28,
+        2,
+        17
+      ]
+    },
+    {
+      "op": "line",
+      "material": "walnut",
+      "from": [
+        12,
+        1,
+        10
+      ],
+      "to": [
+        7,
+        1,
+        21
+      ]
+    },
+    {
+      "op": "line",
+      "material": "walnut",
+      "from": [
+        7,
+        1,
+        21
+      ],
+      "to": [
+        4,
+        1,
+        25
+      ]
+    },
+    {
+      "op": "line",
+      "material": "ash",
+      "from": [
+        8,
+        1,
+        18
+      ],
+      "to": [
+        10,
+        1,
+        24
+      ]
+    },
+    {
+      "op": "line",
+      "material": "ash",
+      "from": [
+        10,
+        2,
+        14
+      ],
+      "to": [
+        4,
+        2,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        15,
+        5,
+        2
+      ],
+      "to": [
+        17,
+        5,
+        5
+      ]
+    }
+  ]
+}

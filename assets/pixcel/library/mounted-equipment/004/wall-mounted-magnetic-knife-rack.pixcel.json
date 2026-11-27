@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-magnetic-knife-rack",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        0,
+        9
+      ],
+      "to": [
+        28,
+        1,
+        15
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        2,
+        10
+      ],
+      "to": [
+        27,
+        4,
+        14
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        4,
+        0
+      ],
+      "to": [
+        9,
+        6,
+        10
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "slope",
+      "from": [
+        7,
+        4,
+        10
+      ],
+      "to": [
+        11,
+        5,
+        22
+      ],
+      "axis": "+X",
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        4,
+        3
+      ],
+      "to": [
+        16,
+        6,
+        11
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "slope",
+      "from": [
+        14,
+        4,
+        11
+      ],
+      "to": [
+        18,
+        5,
+        23
+      ],
+      "axis": "+X",
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        4,
+        6
+      ],
+      "to": [
+        23,
+        6,
+        12
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "slope",
+      "from": [
+        21,
+        4,
+        12
+      ],
+      "to": [
+        25,
+        5,
+        24
+      ],
+      "axis": "+X",
+      "material": "steel"
+    }
+  ]
+}

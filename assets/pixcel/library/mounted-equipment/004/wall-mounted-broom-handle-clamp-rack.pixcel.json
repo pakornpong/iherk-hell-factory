@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-broom-handle-clamp-rack",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#487d80"
+    },
+    "pine": {
+      "kind": "wood",
+      "color": "#cda978"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        3,
+        0,
+        16
+      ],
+      "to": [
+        28,
+        1,
+        22
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        2,
+        17
+      ],
+      "to": [
+        27,
+        5,
+        21
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        4,
+        17
+      ],
+      "to": [
+        10,
+        9,
+        19
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        4,
+        17
+      ],
+      "to": [
+        18,
+        9,
+        19
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        4,
+        17
+      ],
+      "to": [
+        26,
+        9,
+        19
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        7
+      ],
+      "to": [
+        9,
+        8,
+        25
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        6,
+        0
+      ],
+      "to": [
+        12,
+        9,
+        7
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        3
+      ],
+      "to": [
+        24,
+        8,
+        27
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        6,
+        0
+      ],
+      "to": [
+        27,
+        9,
+        4
+      ],
+      "material": "gray"
+    }
+  ]
+}

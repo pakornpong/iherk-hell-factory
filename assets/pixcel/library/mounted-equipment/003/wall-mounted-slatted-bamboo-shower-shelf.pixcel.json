@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-slatted-bamboo-shower-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "pine": {
+      "kind": "wood",
+      "color": "#cda978"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        2
+      ],
+      "to": [
+        7,
+        11,
+        3
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        1,
+        2
+      ],
+      "to": [
+        13,
+        11,
+        3
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        1,
+        2
+      ],
+      "to": [
+        19,
+        11,
+        3
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        1,
+        2
+      ],
+      "to": [
+        25,
+        11,
+        3
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        0,
+        0
+      ],
+      "to": [
+        7,
+        1,
+        6
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        0,
+        0
+      ],
+      "to": [
+        25,
+        1,
+        6
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        2,
+        2
+      ],
+      "to": [
+        27,
+        3,
+        3
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        2
+      ],
+      "to": [
+        27,
+        11,
+        3
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        7
+      ],
+      "to": [
+        27,
+        11,
+        8
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        10,
+        3
+      ],
+      "to": [
+        5,
+        10,
+        7
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        10,
+        3
+      ],
+      "to": [
+        26,
+        10,
+        7
+      ],
+      "material": "ink"
+    }
+  ]
+}

@@ -1,0 +1,776 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-relief-beveled-diamond-mirror",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "slate": {
+      "kind": "matte",
+      "color": "#606f80"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#bbd4d8"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#caa05c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        16,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        2,
+        0
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        15,
+        0,
+        1
+      ],
+      "to": [
+        17,
+        2,
+        1
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        14,
+        0,
+        2
+      ],
+      "to": [
+        18,
+        2,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        13,
+        0,
+        3
+      ],
+      "to": [
+        19,
+        2,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        12,
+        0,
+        4
+      ],
+      "to": [
+        20,
+        2,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        11,
+        0,
+        5
+      ],
+      "to": [
+        21,
+        2,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        10,
+        0,
+        6
+      ],
+      "to": [
+        22,
+        2,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        9,
+        0,
+        7
+      ],
+      "to": [
+        23,
+        2,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        8,
+        0,
+        8
+      ],
+      "to": [
+        24,
+        2,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        7,
+        0,
+        9
+      ],
+      "to": [
+        25,
+        2,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        6,
+        0,
+        10
+      ],
+      "to": [
+        26,
+        2,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        5,
+        0,
+        11
+      ],
+      "to": [
+        27,
+        2,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        4,
+        0,
+        12
+      ],
+      "to": [
+        28,
+        2,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        4,
+        0,
+        13
+      ],
+      "to": [
+        28,
+        2,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        4,
+        0,
+        14
+      ],
+      "to": [
+        28,
+        2,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        5,
+        0,
+        15
+      ],
+      "to": [
+        27,
+        2,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        6,
+        0,
+        16
+      ],
+      "to": [
+        26,
+        2,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        7,
+        0,
+        17
+      ],
+      "to": [
+        25,
+        2,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        8,
+        0,
+        18
+      ],
+      "to": [
+        24,
+        2,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        9,
+        0,
+        19
+      ],
+      "to": [
+        23,
+        2,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        10,
+        0,
+        20
+      ],
+      "to": [
+        22,
+        2,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        11,
+        0,
+        21
+      ],
+      "to": [
+        21,
+        2,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        12,
+        0,
+        22
+      ],
+      "to": [
+        20,
+        2,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        13,
+        0,
+        23
+      ],
+      "to": [
+        19,
+        2,
+        23
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        14,
+        0,
+        24
+      ],
+      "to": [
+        18,
+        2,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        15,
+        0,
+        25
+      ],
+      "to": [
+        17,
+        2,
+        25
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        16,
+        0,
+        26
+      ],
+      "to": [
+        16,
+        2,
+        26
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        3,
+        3
+      ],
+      "to": [
+        16,
+        4,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        15,
+        3,
+        4
+      ],
+      "to": [
+        17,
+        4,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        14,
+        3,
+        5
+      ],
+      "to": [
+        18,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        13,
+        3,
+        6
+      ],
+      "to": [
+        19,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        12,
+        3,
+        7
+      ],
+      "to": [
+        20,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        11,
+        3,
+        8
+      ],
+      "to": [
+        21,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        10,
+        3,
+        9
+      ],
+      "to": [
+        22,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        9,
+        3,
+        10
+      ],
+      "to": [
+        23,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        8,
+        3,
+        11
+      ],
+      "to": [
+        24,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        7,
+        3,
+        12
+      ],
+      "to": [
+        25,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        7,
+        3,
+        13
+      ],
+      "to": [
+        25,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        7,
+        3,
+        14
+      ],
+      "to": [
+        25,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        8,
+        3,
+        15
+      ],
+      "to": [
+        24,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        9,
+        3,
+        16
+      ],
+      "to": [
+        23,
+        4,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        10,
+        3,
+        17
+      ],
+      "to": [
+        22,
+        4,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        11,
+        3,
+        18
+      ],
+      "to": [
+        21,
+        4,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        12,
+        3,
+        19
+      ],
+      "to": [
+        20,
+        4,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        13,
+        3,
+        20
+      ],
+      "to": [
+        19,
+        4,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        14,
+        3,
+        21
+      ],
+      "to": [
+        18,
+        4,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        15,
+        3,
+        22
+      ],
+      "to": [
+        17,
+        4,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        3,
+        23
+      ],
+      "to": [
+        16,
+        4,
+        23
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        11,
+        5,
+        11
+      ],
+      "to": [
+        19,
+        5,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        16,
+        3,
+        1
+      ],
+      "to": [
+        16,
+        5,
+        1
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        5,
+        3,
+        13
+      ],
+      "to": [
+        5,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        16,
+        3,
+        25
+      ],
+      "to": [
+        16,
+        5,
+        25
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        27,
+        3,
+        13
+      ],
+      "to": [
+        27,
+        5,
+        13
+      ]
+    }
+  ]
+}

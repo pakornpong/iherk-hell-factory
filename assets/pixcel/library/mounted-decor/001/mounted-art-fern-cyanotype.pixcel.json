@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-art-fern-cyanotype",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ash": {
+      "kind": "wood",
+      "color": "#d6b98a"
+    },
+    "lapis": {
+      "kind": "matte",
+      "color": "#4066a7"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    },
+    "mint": {
+      "kind": "matte",
+      "color": "#92c8b2"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#caa05c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "ash",
+      "from": [
+        7,
+        0,
+        0
+      ],
+      "to": [
+        24,
+        2,
+        25
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lapis",
+      "from": [
+        8,
+        3,
+        1
+      ],
+      "to": [
+        23,
+        3,
+        24
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        12,
+        4,
+        3
+      ],
+      "to": [
+        18,
+        4,
+        23
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        9,
+        4,
+        9
+      ],
+      "to": [
+        13,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "line",
+      "material": "mint",
+      "from": [
+        13,
+        4,
+        5
+      ],
+      "to": [
+        18,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        9,
+        4,
+        11
+      ],
+      "to": [
+        13,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "line",
+      "material": "mint",
+      "from": [
+        13,
+        4,
+        7
+      ],
+      "to": [
+        18,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        10,
+        4,
+        13
+      ],
+      "to": [
+        14,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "line",
+      "material": "mint",
+      "from": [
+        14,
+        4,
+        9
+      ],
+      "to": [
+        19,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        11,
+        4,
+        15
+      ],
+      "to": [
+        14,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "line",
+      "material": "mint",
+      "from": [
+        14,
+        4,
+        11
+      ],
+      "to": [
+        18,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        12,
+        4,
+        17
+      ],
+      "to": [
+        15,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "line",
+      "material": "mint",
+      "from": [
+        15,
+        4,
+        13
+      ],
+      "to": [
+        19,
+        4,
+        17
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        12,
+        4,
+        19
+      ],
+      "to": [
+        15,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "line",
+      "material": "mint",
+      "from": [
+        15,
+        4,
+        15
+      ],
+      "to": [
+        19,
+        4,
+        19
+      ]
+    },
+    {
+      "op": "line",
+      "material": "snow",
+      "from": [
+        14,
+        4,
+        21
+      ],
+      "to": [
+        16,
+        4,
+        17
+      ]
+    },
+    {
+      "op": "line",
+      "material": "mint",
+      "from": [
+        16,
+        4,
+        17
+      ],
+      "to": [
+        19,
+        4,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        9,
+        4,
+        24
+      ],
+      "to": [
+        22,
+        4,
+        24
+      ]
+    }
+  ]
+}

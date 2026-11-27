@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-split-temperature-controller",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "orange": {
+      "kind": "matte",
+      "color": "#d9914b"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#487d80"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#506b8c"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        5,
+        0,
+        0
+      ],
+      "to": [
+        26,
+        1,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        2,
+        4
+      ],
+      "to": [
+        26,
+        6,
+        16
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        4,
+        0
+      ],
+      "to": [
+        23,
+        5,
+        4
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        7,
+        8
+      ],
+      "to": [
+        15,
+        7,
+        14
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        7,
+        8
+      ],
+      "to": [
+        24,
+        7,
+        14
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        8,
+        11
+      ],
+      "to": [
+        13,
+        8,
+        12
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        8,
+        11
+      ],
+      "to": [
+        22,
+        8,
+        12
+      ],
+      "material": "orange"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        7,
+        5
+      ],
+      "to": [
+        9,
+        7,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        7,
+        5
+      ],
+      "to": [
+        14,
+        7,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        7,
+        5
+      ],
+      "to": [
+        19,
+        7,
+        6
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        23,
+        7,
+        5
+      ],
+      "to": [
+        24,
+        7,
+        6
+      ],
+      "material": "steel"
+    }
+  ]
+}

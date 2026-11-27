@@ -1,0 +1,708 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-sign-floor-two-illuminated-numeral",
+  "category": "signage",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "denim": {
+      "kind": "matte",
+      "color": "#4b637d"
+    },
+    "slate": {
+      "kind": "matte",
+      "color": "#606f80"
+    },
+    "litNumeral": {
+      "kind": "emissive",
+      "color": "#d9f8ee",
+      "glowRadius": 1,
+      "glowIntensity": 0.15
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#caa05c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        16,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        3,
+        0
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        13,
+        0,
+        1
+      ],
+      "to": [
+        19,
+        3,
+        1
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        12,
+        0,
+        2
+      ],
+      "to": [
+        20,
+        3,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        11,
+        0,
+        3
+      ],
+      "to": [
+        21,
+        3,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        10,
+        0,
+        4
+      ],
+      "to": [
+        22,
+        3,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        10,
+        0,
+        5
+      ],
+      "to": [
+        22,
+        3,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        9,
+        0,
+        6
+      ],
+      "to": [
+        23,
+        3,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        9,
+        0,
+        7
+      ],
+      "to": [
+        23,
+        3,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        9,
+        0,
+        8
+      ],
+      "to": [
+        23,
+        3,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        9,
+        0,
+        9
+      ],
+      "to": [
+        23,
+        3,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        9,
+        0,
+        10
+      ],
+      "to": [
+        23,
+        3,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        8,
+        0,
+        11
+      ],
+      "to": [
+        24,
+        3,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        9,
+        0,
+        12
+      ],
+      "to": [
+        23,
+        3,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        9,
+        0,
+        13
+      ],
+      "to": [
+        23,
+        3,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        9,
+        0,
+        14
+      ],
+      "to": [
+        23,
+        3,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        9,
+        0,
+        15
+      ],
+      "to": [
+        23,
+        3,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        9,
+        0,
+        16
+      ],
+      "to": [
+        23,
+        3,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        10,
+        0,
+        17
+      ],
+      "to": [
+        22,
+        3,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        10,
+        0,
+        18
+      ],
+      "to": [
+        22,
+        3,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        11,
+        0,
+        19
+      ],
+      "to": [
+        21,
+        3,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        12,
+        0,
+        20
+      ],
+      "to": [
+        20,
+        3,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        13,
+        0,
+        21
+      ],
+      "to": [
+        19,
+        3,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        16,
+        0,
+        22
+      ],
+      "to": [
+        16,
+        3,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        16,
+        4,
+        2
+      ],
+      "to": [
+        16,
+        4,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        14,
+        4,
+        3
+      ],
+      "to": [
+        18,
+        4,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        13,
+        4,
+        4
+      ],
+      "to": [
+        19,
+        4,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        12,
+        4,
+        5
+      ],
+      "to": [
+        20,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        12,
+        4,
+        6
+      ],
+      "to": [
+        20,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        11,
+        4,
+        7
+      ],
+      "to": [
+        21,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        11,
+        4,
+        8
+      ],
+      "to": [
+        21,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        11,
+        4,
+        9
+      ],
+      "to": [
+        21,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        11,
+        4,
+        10
+      ],
+      "to": [
+        21,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        10,
+        4,
+        11
+      ],
+      "to": [
+        22,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        11,
+        4,
+        12
+      ],
+      "to": [
+        21,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        11,
+        4,
+        13
+      ],
+      "to": [
+        21,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        11,
+        4,
+        14
+      ],
+      "to": [
+        21,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        11,
+        4,
+        15
+      ],
+      "to": [
+        21,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        12,
+        4,
+        16
+      ],
+      "to": [
+        20,
+        4,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        12,
+        4,
+        17
+      ],
+      "to": [
+        20,
+        4,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        13,
+        4,
+        18
+      ],
+      "to": [
+        19,
+        4,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        14,
+        4,
+        19
+      ],
+      "to": [
+        18,
+        4,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        16,
+        4,
+        20
+      ],
+      "to": [
+        16,
+        4,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "litNumeral",
+      "from": [
+        13,
+        5,
+        15
+      ],
+      "to": [
+        16,
+        6,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "litNumeral",
+      "from": [
+        17,
+        5,
+        13
+      ],
+      "to": [
+        18,
+        6,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "litNumeral",
+      "from": [
+        15,
+        5,
+        11
+      ],
+      "to": [
+        16,
+        6,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "litNumeral",
+      "from": [
+        13,
+        5,
+        9
+      ],
+      "to": [
+        14,
+        6,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "litNumeral",
+      "from": [
+        13,
+        5,
+        7
+      ],
+      "to": [
+        18,
+        6,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        15,
+        5,
+        3
+      ],
+      "to": [
+        17,
+        5,
+        3
+      ]
+    }
+  ]
+}

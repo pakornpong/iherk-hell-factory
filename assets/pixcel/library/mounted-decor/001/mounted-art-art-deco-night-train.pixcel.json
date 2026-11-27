@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-art-art-deco-night-train",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "brass": {
+      "kind": "metal",
+      "color": "#caa05c"
+    },
+    "ink": {
+      "kind": "matte",
+      "color": "#292e3c"
+    },
+    "denim": {
+      "kind": "matte",
+      "color": "#4b637d"
+    },
+    "amber": {
+      "kind": "matte",
+      "color": "#f3bf65"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#bbd4d8"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        2,
+        0,
+        0
+      ],
+      "to": [
+        29,
+        2,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        3,
+        3,
+        1
+      ],
+      "to": [
+        28,
+        3,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        5,
+        4,
+        4
+      ],
+      "to": [
+        26,
+        4,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        5,
+        4,
+        5
+      ],
+      "to": [
+        26,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        6,
+        4,
+        6
+      ],
+      "to": [
+        26,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        7,
+        4,
+        7
+      ],
+      "to": [
+        26,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        8,
+        4,
+        8
+      ],
+      "to": [
+        26,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        9,
+        4,
+        9
+      ],
+      "to": [
+        24,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        14,
+        4,
+        10
+      ],
+      "to": [
+        22,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        20,
+        4,
+        11
+      ],
+      "to": [
+        20,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "amber",
+      "from": [
+        14,
+        5,
+        7
+      ],
+      "to": [
+        24,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        8,
+        5,
+        5
+      ],
+      "to": [
+        11,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "line",
+      "material": "brass",
+      "from": [
+        5,
+        5,
+        2
+      ],
+      "to": [
+        26,
+        5,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        10,
+        5,
+        3
+      ],
+      "to": [
+        10,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        9,
+        5,
+        4
+      ],
+      "to": [
+        11,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        10,
+        5,
+        5
+      ],
+      "to": [
+        10,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        14,
+        5,
+        3
+      ],
+      "to": [
+        14,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        13,
+        5,
+        4
+      ],
+      "to": [
+        15,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        14,
+        5,
+        5
+      ],
+      "to": [
+        14,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        20,
+        5,
+        3
+      ],
+      "to": [
+        20,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        19,
+        5,
+        4
+      ],
+      "to": [
+        21,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        20,
+        5,
+        5
+      ],
+      "to": [
+        20,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        24,
+        5,
+        3
+      ],
+      "to": [
+        24,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        23,
+        5,
+        4
+      ],
+      "to": [
+        25,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        24,
+        5,
+        5
+      ],
+      "to": [
+        24,
+        5,
+        5
+      ]
+    }
+  ]
+}

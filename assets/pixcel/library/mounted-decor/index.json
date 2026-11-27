@@ -1,0 +1,702 @@
+[
+  {
+    "id": "mounted-art-alpine-sunrise",
+    "category": "wall-decor",
+    "file": "001/mounted-art-alpine-sunrise.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "mounted-art-moon-over-marsh",
+    "category": "wall-decor",
+    "file": "001/mounted-art-moon-over-marsh.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "mounted-art-desert-arch",
+    "category": "wall-decor",
+    "file": "001/mounted-art-desert-arch.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "mounted-art-rain-window",
+    "category": "wall-decor",
+    "file": "001/mounted-art-rain-window.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "mounted-art-woodblock-crane",
+    "category": "wall-decor",
+    "file": "001/mounted-art-woodblock-crane.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "mounted-art-koi-pond",
+    "category": "wall-decor",
+    "file": "001/mounted-art-koi-pond.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "mounted-art-harbor-sailboat",
+    "category": "wall-decor",
+    "file": "001/mounted-art-harbor-sailboat.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "mounted-art-forest-mist",
+    "category": "wall-decor",
+    "file": "001/mounted-art-forest-mist.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "mounted-art-city-dusk",
+    "category": "wall-decor",
+    "file": "001/mounted-art-city-dusk.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "mounted-art-wildflower-study",
+    "category": "wall-decor",
+    "file": "001/mounted-art-wildflower-study.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "mounted-art-fern-cyanotype",
+    "category": "wall-decor",
+    "file": "001/mounted-art-fern-cyanotype.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "mounted-art-orbital-map",
+    "category": "wall-decor",
+    "file": "001/mounted-art-orbital-map.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "mounted-art-coral-cross-section",
+    "category": "wall-decor",
+    "file": "001/mounted-art-coral-cross-section.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "mounted-art-paperwave-triptych",
+    "category": "wall-decor",
+    "file": "001/mounted-art-paperwave-triptych.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "mounted-art-botanical-pressed-ivy",
+    "category": "wall-decor",
+    "file": "001/mounted-art-botanical-pressed-ivy.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "mounted-art-lunar-phases",
+    "category": "wall-decor",
+    "file": "001/mounted-art-lunar-phases.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "mounted-art-topographic-ridge",
+    "category": "wall-decor",
+    "file": "001/mounted-art-topographic-ridge.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "mounted-art-ink-cat-portrait",
+    "category": "wall-decor",
+    "file": "001/mounted-art-ink-cat-portrait.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "mounted-art-harvest-still-life",
+    "category": "wall-decor",
+    "file": "001/mounted-art-harvest-still-life.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "mounted-art-art-deco-night-train",
+    "category": "wall-decor",
+    "file": "001/mounted-art-art-deco-night-train.pixcel.json",
+    "preview": "001/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "mounted-relief-brass-sunburst-mirror",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-brass-sunburst-mirror.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "mounted-relief-arched-vanity-mirror",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-arched-vanity-mirror.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "mounted-relief-beveled-diamond-mirror",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-beveled-diamond-mirror.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "mounted-relief-pebble-mirror-trio",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-pebble-mirror-trio.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "mounted-relief-folded-copper-ginkgo",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-folded-copper-ginkgo.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "mounted-relief-ceramic-fan-shell",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-ceramic-fan-shell.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "mounted-relief-geometric-owl-mask",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-geometric-owl-mask.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "mounted-relief-porcelain-sparrow-flight",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-porcelain-sparrow-flight.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "mounted-relief-beech-whale-tail",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-beech-whale-tail.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "mounted-relief-glazed-mountain-peaks",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-glazed-mountain-peaks.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "mounted-relief-interlocking-brass-rings",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-interlocking-brass-rings.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "mounted-relief-three-layer-ocean-ripple",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-three-layer-ocean-ripple.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "mounted-relief-forged-quadrant-rosette",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-forged-quadrant-rosette.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "mounted-relief-concrete-brutalist-blocks",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-concrete-brutalist-blocks.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "mounted-relief-lacquered-origami-fox",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-lacquered-origami-fox.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "mounted-relief-copper-lotus-bloom",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-copper-lotus-bloom.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "mounted-relief-trail-antler-silhouette",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-trail-antler-silhouette.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "mounted-relief-ceramic-constellation-dots",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-ceramic-constellation-dots.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "mounted-relief-round-tulip-ceramic-medallion",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-round-tulip-ceramic-medallion.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "mounted-relief-cast-metal-fan-impeller",
+    "category": "wall-decor",
+    "file": "002/mounted-relief-cast-metal-fan-impeller.pixcel.json",
+    "preview": "002/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "mounted-sign-exit-right-arrow",
+    "category": "signage",
+    "file": "003/mounted-sign-exit-right-arrow.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "mounted-sign-lobby-left-arrow",
+    "category": "signage",
+    "file": "003/mounted-sign-lobby-left-arrow.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "mounted-sign-stairs-octagonal",
+    "category": "signage",
+    "file": "003/mounted-sign-stairs-octagonal.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "mounted-sign-lift-vertical-service",
+    "category": "signage",
+    "file": "003/mounted-sign-lift-vertical-service.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "mounted-sign-meeting-room-double-door",
+    "category": "signage",
+    "file": "003/mounted-sign-meeting-room-double-door.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "mounted-sign-quiet-library-scroll",
+    "category": "signage",
+    "file": "003/mounted-sign-quiet-library-scroll.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "mounted-sign-washroom-pair",
+    "category": "signage",
+    "file": "003/mounted-sign-washroom-pair.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "mounted-sign-accessibility-blue-circle",
+    "category": "signage",
+    "file": "003/mounted-sign-accessibility-blue-circle.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "mounted-sign-recycle-clipped-bin-plaque",
+    "category": "signage",
+    "file": "003/mounted-sign-recycle-clipped-bin-plaque.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "mounted-sign-breakroom-coffee-cup",
+    "category": "signage",
+    "file": "003/mounted-sign-breakroom-coffee-cup.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "mounted-sign-front-desk-info",
+    "category": "signage",
+    "file": "003/mounted-sign-front-desk-info.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "mounted-sign-push-brass-door-bar",
+    "category": "signage",
+    "file": "003/mounted-sign-push-brass-door-bar.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "mounted-sign-pull-brushed-door-tab",
+    "category": "signage",
+    "file": "003/mounted-sign-pull-brushed-door-tab.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "mounted-sign-lab-safety-shield",
+    "category": "signage",
+    "file": "003/mounted-sign-lab-safety-shield.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "mounted-sign-first-aid-cross-plaque",
+    "category": "signage",
+    "file": "003/mounted-sign-first-aid-cross-plaque.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "mounted-sign-loading-dock-chevron",
+    "category": "signage",
+    "file": "003/mounted-sign-loading-dock-chevron.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "mounted-sign-floor-two-illuminated-numeral",
+    "category": "signage",
+    "file": "003/mounted-sign-floor-two-illuminated-numeral.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "mounted-sign-room-number-bay-13",
+    "category": "signage",
+    "file": "003/mounted-sign-room-number-bay-13.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "mounted-sign-studio-recording-status",
+    "category": "signage",
+    "file": "003/mounted-sign-studio-recording-status.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "mounted-sign-rest-zone-pennant",
+    "category": "signage",
+    "file": "003/mounted-sign-rest-zone-pennant.pixcel.json",
+    "preview": "003/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "mounted-office-corkboard-pinned-notes",
+    "category": "office",
+    "file": "004/mounted-office-corkboard-pinned-notes.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "mounted-office-whiteboard-flow-chart",
+    "category": "office",
+    "file": "004/mounted-office-whiteboard-flow-chart.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "mounted-office-felt-pinboard-photo-tickets",
+    "category": "office",
+    "file": "004/mounted-office-felt-pinboard-photo-tickets.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "mounted-office-sprint-kanban-rail-board",
+    "category": "office",
+    "file": "004/mounted-office-sprint-kanban-rail-board.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "mounted-office-week-planner-grid",
+    "category": "office",
+    "file": "004/mounted-office-week-planner-grid.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "mounted-office-magnetic-status-grid-board",
+    "category": "office",
+    "file": "004/mounted-office-magnetic-status-grid-board.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "mounted-office-drop-down-project-checklist",
+    "category": "office",
+    "file": "004/mounted-office-drop-down-project-checklist.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "mounted-office-three-card-swivel-clips",
+    "category": "office",
+    "file": "004/mounted-office-three-card-swivel-clips.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "mounted-office-tear-off-desk-calendar",
+    "category": "office",
+    "file": "004/mounted-office-tear-off-desk-calendar.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "mounted-office-monthly-grid-calendar",
+    "category": "office",
+    "file": "004/mounted-office-monthly-grid-calendar.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "mounted-office-presentation-pointer-alignment-guide",
+    "category": "office",
+    "file": "004/mounted-office-presentation-pointer-alignment-guide.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "mounted-office-room-booking-slider",
+    "category": "office",
+    "file": "004/mounted-office-room-booking-slider.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "mounted-office-visitor-attention-bell",
+    "category": "office",
+    "file": "004/mounted-office-visitor-attention-bell.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "mounted-office-workshop-clip-ruler",
+    "category": "office",
+    "file": "004/mounted-office-workshop-clip-ruler.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "mounted-office-team-shift-wheel",
+    "category": "office",
+    "file": "004/mounted-office-team-shift-wheel.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "mounted-office-presentation-paper-flip-pad",
+    "category": "office",
+    "file": "004/mounted-office-presentation-paper-flip-pad.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "mounted-office-magnet-idea-cluster",
+    "category": "office",
+    "file": "004/mounted-office-magnet-idea-cluster.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "mounted-office-organization-tree-board",
+    "category": "office",
+    "file": "004/mounted-office-organization-tree-board.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "mounted-office-clipboard-feedback-tab",
+    "category": "office",
+    "file": "004/mounted-office-clipboard-feedback-tab.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "mounted-office-two-tone-tactile-abacus",
+    "category": "office",
+    "file": "004/mounted-office-two-tone-tactile-abacus.pixcel.json",
+    "preview": "004/preview.png",
+    "cell": 20
+  },
+  {
+    "id": "mounted-hanging-macrame-diamond-knots",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-macrame-diamond-knots.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 1
+  },
+  {
+    "id": "mounted-hanging-indigo-chevron-runner",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-indigo-chevron-runner.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 2
+  },
+  {
+    "id": "mounted-hanging-patchwork-pocket-quilt",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-patchwork-pocket-quilt.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 3
+  },
+  {
+    "id": "mounted-hanging-pennant-mountain-club",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-pennant-mountain-club.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 4
+  },
+  {
+    "id": "mounted-hanging-signal-flags-bunting",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-signal-flags-bunting.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 5
+  },
+  {
+    "id": "mounted-hanging-paper-cranes-mobile",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-paper-cranes-mobile.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 6
+  },
+  {
+    "id": "mounted-hanging-pressed-leaves-on-string",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-pressed-leaves-on-string.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 7
+  },
+  {
+    "id": "mounted-hanging-crescent-and-stars-charm",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-crescent-and-stars-charm.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 8
+  },
+  {
+    "id": "mounted-hanging-brass-tube-wind-chime",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-brass-tube-wind-chime.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 9
+  },
+  {
+    "id": "mounted-hanging-beaded-rainbow-arch",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-beaded-rainbow-arch.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 10
+  },
+  {
+    "id": "mounted-hanging-willow-door-wreath",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-willow-door-wreath.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 11
+  },
+  {
+    "id": "mounted-hanging-dried-lavender-bouquet",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-dried-lavender-bouquet.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 12
+  },
+  {
+    "id": "mounted-hanging-woven-floor-plan-tapestry",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-woven-floor-plan-tapestry.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 13
+  },
+  {
+    "id": "mounted-hanging-gilded-framed-certificate",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-gilded-framed-certificate.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 14
+  },
+  {
+    "id": "mounted-hanging-enamel-medal-on-ribbon",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-enamel-medal-on-ribbon.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 15
+  },
+  {
+    "id": "mounted-hanging-regatta-rosette-and-ribbons",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-regatta-rosette-and-ribbons.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 16
+  },
+  {
+    "id": "mounted-hanging-antique-geographic-compass",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-antique-geographic-compass.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 17
+  },
+  {
+    "id": "mounted-hanging-painted-decorative-paddle",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-painted-decorative-paddle.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 18
+  },
+  {
+    "id": "mounted-hanging-mounted-miniature-longboard",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-mounted-miniature-longboard.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 19
+  },
+  {
+    "id": "mounted-hanging-three-vintage-record-sleeves",
+    "category": "wall-decor",
+    "file": "005/mounted-hanging-three-vintage-record-sleeves.pixcel.json",
+    "preview": "005/preview.png",
+    "cell": 20
+  }
+]

@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-fold-up-shower-seat",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "oak": {
+      "kind": "wood",
+      "color": "#b88758"
+    },
+    "pine": {
+      "kind": "wood",
+      "color": "#cda978"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        0,
+        4
+      ],
+      "to": [
+        7,
+        1,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        0,
+        4
+      ],
+      "to": [
+        25,
+        1,
+        23
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        2
+      ],
+      "to": [
+        26,
+        11,
+        3
+      ],
+      "material": "pine"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        1,
+        15
+      ],
+      "to": [
+        26,
+        3,
+        16
+      ],
+      "material": "oak"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        2,
+        0
+      ],
+      "to": [
+        7,
+        10,
+        3
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        2,
+        15
+      ],
+      "to": [
+        7,
+        9,
+        4
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        2,
+        0
+      ],
+      "to": [
+        23,
+        10,
+        3
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        2,
+        15
+      ],
+      "to": [
+        23,
+        9,
+        4
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        4,
+        2
+      ],
+      "to": [
+        25,
+        4,
+        3
+      ],
+      "material": null
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        7,
+        2
+      ],
+      "to": [
+        25,
+        7,
+        3
+      ],
+      "material": null
+    }
+  ]
+}

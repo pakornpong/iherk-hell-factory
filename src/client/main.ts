@@ -1,3 +1,5 @@
+import { getWallMountSurfaces, isMountedAsset, wallMountOverlaps, wallMountPose, type WallMountSurface } from "../shared/wall-mounts.js";
+import { pickWallMount } from "./view-scene.js";
 import {
   crossesWallSegment,
   expandEdgeDividerSegments,
@@ -653,11 +655,28 @@ async function bootstrap(): Promise<void> {
     }
     const [x, y] = camera.screenToTile(sx, sy);
     const matches = furniture.filter((item) =>
-      isEditableFurniture(item) && matchesItem(item) && !isEdgeDividerAsset(item.assetId) &&
+      isEditableFurniture(item) && !item.wallMountId && matchesItem(item) && !isEdgeDividerAsset(item.assetId) &&
       x >= item.tx && x < item.tx + item.footprintTiles[0] &&
       y >= item.ty && y < item.ty + item.footprintTiles[1],
     );
     return matches.find((item) => isTabletopAsset(item.assetId, item.layer, catalogById.get(item.assetId))) ?? matches[0];
+  };
+
+  let mountsCampus: OfficeSnapshotPayload["campus"] | undefined;
+  let mountSurfaces = new Map<string, WallMountSurface>();
+  const wallMountAt = (sx: number, sy: number, asset: CatalogEntry) => {
+    if (!snapshot) return;
+    if (mountsCampus !== snapshot.campus) {
+      mountsCampus = snapshot.campus;
+      mountSurfaces = new Map(getWallMountSurfaces(mountsCampus).map((surface) => [surface.id, surface]));
+    }
+    const [wx, wy] = camera.screenToWorld(sx, sy);
+    const hit = pickWallMount(mountSurfaces, camera.view, wx, wy, asset);
+    if (!hit) return;
+    const { mount, position, fits } = hit;
+    const overlaps = wallMountOverlaps(snapshot.campus.worldFurniture, mountSurfaces,
+      catalogById, mount, asset, position, decorate.movingItem?.item.id);
+    return { ...hit, ...wallMountPose(mount, asset, position), valid: fits && !overlaps };
   };
 
   canvas.addEventListener("mouseleave", () => { furniturePointer = null; });
@@ -860,14 +879,30 @@ async function bootstrap(): Promise<void> {
         return;
       }
       const wasHolding = Boolean(decorate.movingItem);
+      const assetId = decorate.tool === "place" ? decorate.selectedAssetId : decorate.movingItem?.item.assetId;
+      const asset = assetId ? catalogById.get(assetId) : undefined;
+      const needsMount = isMountedAsset(asset);
+      const targetMount = needsMount ? wallMountAt(sx, sy, asset) : undefined;
+      if (needsMount && !targetMount) {
+        hud.showToast("คลิกผนังทึบหรือหน้าฉากกั้นเพื่อติดตั้ง", true);
+        return;
+      }
+      if (targetMount && !targetMount.valid) {
+        hud.showToast(targetMount.fits ? "ตำแหน่งนี้มีของติดอยู่แล้ว" : "ของแต่งล้ำขอบผนังหรือฉากกั้น", true);
+        return;
+      }
       const [targetX, targetY] = decorate.getPointerPlacementTarget(tileX, tileY);
       void decorate
-        .handleTileClick(targetX, targetY, existing)
+        .handleTileClick(targetX, targetY, existing, targetMount && {
+          wallMountId: targetMount.mount.id, wallMountPosition: targetMount.position,
+        })
         .then(() => {
           if (!wasHolding && decorate.movingItem) {
             const assetId = decorate.movingItem.item.assetId;
             const step = supportsHalfTilePlacement(assetId) ? "½ tile" : "1 tile";
-            hud.showToast(`✋ Picked up ${assetId} — move by ${step} · click to place`);
+            hud.showToast(decorate.movingItem.item.wallMountId
+              ? "คลิกผนังทึบหรือหน้าฉากกั้นเพื่อย้าย"
+              : `✋ Picked up ${assetId} — move by ${step} · click to place`);
           }
           refreshHud();
         })
@@ -959,7 +994,7 @@ async function bootstrap(): Promise<void> {
       return;
     }
     const picked = decorate.active ? decorate.movingItem : null;
-    if (picked && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !ev.shiftKey) {
+    if (picked && !picked.item.wallMountId && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !ev.shiftKey) {
       const steps: Record<string, [number, number]> = {
         ArrowLeft: [-1, 0],
         ArrowRight: [1, 0],
@@ -1089,7 +1124,17 @@ async function bootstrap(): Promise<void> {
         ? decorate.getPointerPlacementTarget(...camera.screenToTile(...furniturePointer))
         : null;
       const placementTile = decorate.movingItem?.keyboardTarget ?? pointerTarget;
-      if (decorate.active && ghostAssetId && placementTile) {
+      const ghostAsset = ghostAssetId ? catalogById.get(ghostAssetId) : undefined;
+      if (decorate.active && ghostAssetId && isMountedAsset(ghostAsset)) {
+        const target = furniturePointer ? wallMountAt(...furniturePointer, ghostAsset) : undefined;
+        if (target) {
+          ghost = {
+            tx: target.pose.tx, ty: target.pose.ty, assetId: ghostAssetId,
+            direction: target.pose.direction, surfaceOffsetY: target.lift, wallMounted: true,
+            valid: target.valid,
+          };
+        }
+      } else if (decorate.active && ghostAssetId && placementTile) {
         const [tx, ty] = placementTile;
         const zone =
           snapshot.campus.zones.find(
@@ -1184,7 +1229,7 @@ async function bootstrap(): Promise<void> {
             if (hostVoxels > 0) surfaceOffsetY = surfaceVoxelsToWorldOffsetY(hostVoxels);
           } else {
             const floorFurn = zoneFurn.filter(
-              (f) => !isEdgeDividerAsset(f.assetId) && !isTabletopAsset(f.assetId, f.layer, catalogById.get(f.assetId)),
+              (f) => !f.wallMountId && !isEdgeDividerAsset(f.assetId) && !isTabletopAsset(f.assetId, f.layer, catalogById.get(f.assetId)),
             );
             const candidateFootprint = { assetId: ghostAssetId, direction: decorate.direction, tx, ty, footprintTiles: [fw, fd] as [number, number] };
             const collides = crossesWallSegment(snapshot.campus.wallSegments, tx, ty, fw, fd) ||

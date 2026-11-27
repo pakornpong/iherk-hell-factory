@@ -201,6 +201,12 @@ export type AgentTelemetryEvent = z.infer<typeof AgentTelemetryEventSchema>;
 
 export const FurnitureCoordinateSchema = z.number().multipleOf(0.5);
 
+export const WallMountPositionSchema = z.object({
+  offset: z.number().int().min(-32).max(32),
+  lift: z.number().int().min(0).max(96),
+}).strict();
+export type WallMountPosition = z.infer<typeof WallMountPositionSchema>;
+
 export const SeatOwnerIdSchema = z.string().min(1).max(256);
 
 export const FurnitureInstanceSchema = z.object({
@@ -215,6 +221,9 @@ export const FurnitureInstanceSchema = z.object({
   renderLayer: RenderLayerSchema.optional(),
   /** For tabletop props: optional host furniture id this prop sits on. */
   surfaceHostId: z.string().min(1).max(128).optional(),
+  wallMountId: z.string().min(1).max(256).optional(),
+  /** Host-local horizontal offset and lift above the floor, in voxels. */
+  wallMountPosition: WallMountPositionSchema.optional(),
   manualPosition: z.boolean().optional(),
   ownerEmployeeId: SeatOwnerIdSchema.optional(),
   placedBy: z.enum(["system", "user", "gemini"]).default("system"),
@@ -371,6 +380,12 @@ export const CatalogEntrySchema = z.object({
   renderLayer: RenderLayerSchema.optional(),
   tilePermission: TilePermissionSchema.optional(),
   surfaceHeightVoxels: z.number().int().min(0).max(64).optional(),
+  wallMountHeightVoxels: z.number().int().min(1).max(96).optional(),
+  /** Half-open measured geometry bounds in the asset's unrotated X/Z wall plane. */
+  wallMountBounds: z.object({
+    left: z.number().finite(), right: z.number().finite(),
+    bottom: z.number().finite(), top: z.number().finite(),
+  }).optional(),
   foregroundAssetId: z.string().min(1).max(128).optional(),
 });
 export type CatalogEntry = z.infer<typeof CatalogEntrySchema>;
@@ -433,6 +448,7 @@ export interface WorldFurnitureInstance extends FurnitureInstance {
   renderLayer?: RenderLayerValue;
   /** Vertical world-pixel lift above floor (e.g. for tabletop props sitting on a desk). */
   surfaceOffsetY?: number;
+  wallMountPose?: { tx: number; ty: number; direction: Direction; wall?: "nw" | "ne" };
 }
 
 export interface ComputedCampus {

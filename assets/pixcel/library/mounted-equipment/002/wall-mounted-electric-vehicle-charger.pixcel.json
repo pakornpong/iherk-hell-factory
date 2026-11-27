@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-electric-vehicle-charger",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "green": {
+      "kind": "matte",
+      "color": "#648765"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        9,
+        0,
+        6
+      ],
+      "to": [
+        22,
+        1,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        2,
+        7
+      ],
+      "to": [
+        22,
+        6,
+        26
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        5,
+        9
+      ],
+      "to": [
+        20,
+        8,
+        24
+      ],
+      "material": "green"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        9,
+        19
+      ],
+      "to": [
+        18,
+        9,
+        22
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        6,
+        8
+      ],
+      "to": [
+        25,
+        10,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        8,
+        8
+      ],
+      "to": [
+        23,
+        8,
+        1
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        8,
+        1
+      ],
+      "to": [
+        10,
+        8,
+        0
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        8,
+        0
+      ],
+      "to": [
+        7,
+        7,
+        4
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "line",
+      "from": [
+        7,
+        7,
+        4
+      ],
+      "to": [
+        9,
+        5,
+        8
+      ],
+      "material": "ink"
+    }
+  ]
+}

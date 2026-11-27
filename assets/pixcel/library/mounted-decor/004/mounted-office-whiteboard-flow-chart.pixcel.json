@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-office-whiteboard-flow-chart",
+  "category": "office",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "slate": {
+      "kind": "matte",
+      "color": "#606f80"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#bbd4d8"
+    },
+    "lapis": {
+      "kind": "matte",
+      "color": "#4066a7"
+    },
+    "coral": {
+      "kind": "matte",
+      "color": "#c16458"
+    },
+    "moss": {
+      "kind": "matte",
+      "color": "#64764c"
+    },
+    "ink": {
+      "kind": "matte",
+      "color": "#292e3c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "slate",
+      "from": [
+        3,
+        0,
+        2
+      ],
+      "to": [
+        28,
+        2,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        4,
+        3,
+        3
+      ],
+      "to": [
+        27,
+        3,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        4,
+        1,
+        0
+      ],
+      "to": [
+        27,
+        6,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lapis",
+      "from": [
+        6,
+        4,
+        12
+      ],
+      "to": [
+        10,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "coral",
+      "from": [
+        14,
+        4,
+        10
+      ],
+      "to": [
+        18,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "moss",
+      "from": [
+        21,
+        4,
+        6
+      ],
+      "to": [
+        25,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "line",
+      "material": "ink",
+      "from": [
+        10,
+        4,
+        13
+      ],
+      "to": [
+        14,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "line",
+      "material": "ink",
+      "from": [
+        18,
+        4,
+        11
+      ],
+      "to": [
+        21,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        18,
+        5,
+        2
+      ],
+      "to": [
+        22,
+        5,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "coral",
+      "from": [
+        22,
+        5,
+        2
+      ],
+      "to": [
+        23,
+        5,
+        2
+      ]
+    }
+  ]
+}

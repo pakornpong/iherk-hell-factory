@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-landline-telephone",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded8c9"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a6c5cd"
+    },
+    "walnut": {
+      "kind": "wood",
+      "color": "#77503a"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        0,
+        3
+      ],
+      "to": [
+        23,
+        1,
+        23
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        1,
+        4
+      ],
+      "to": [
+        22,
+        4,
+        22
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        4,
+        4
+      ],
+      "to": [
+        11,
+        7,
+        22
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        3
+      ],
+      "to": [
+        12,
+        8,
+        7
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        6,
+        19
+      ],
+      "to": [
+        12,
+        8,
+        23
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        5,
+        18
+      ],
+      "to": [
+        20,
+        5,
+        20
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        5,
+        8
+      ],
+      "to": [
+        15,
+        5,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        5,
+        8
+      ],
+      "to": [
+        18,
+        5,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        5,
+        8
+      ],
+      "to": [
+        21,
+        5,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        5,
+        11
+      ],
+      "to": [
+        15,
+        5,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        5,
+        11
+      ],
+      "to": [
+        18,
+        5,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        5,
+        11
+      ],
+      "to": [
+        21,
+        5,
+        12
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        5,
+        14
+      ],
+      "to": [
+        15,
+        5,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        5,
+        14
+      ],
+      "to": [
+        18,
+        5,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        5,
+        14
+      ],
+      "to": [
+        21,
+        5,
+        15
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        5,
+        4
+      ],
+      "to": [
+        10,
+        5,
+        0
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "line",
+      "from": [
+        10,
+        5,
+        0
+      ],
+      "to": [
+        17,
+        4,
+        4
+      ],
+      "material": "ink"
+    }
+  ]
+}

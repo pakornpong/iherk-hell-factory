@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-electric-kettle-dispenser",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded8c9"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a6c5cd"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        3
+      ],
+      "to": [
+        23,
+        1,
+        25
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        2,
+        7
+      ],
+      "to": [
+        22,
+        8,
+        25
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        1,
+        1
+      ],
+      "to": [
+        21,
+        2,
+        8
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        6,
+        20
+      ],
+      "to": [
+        19,
+        9,
+        26
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        7,
+        7
+      ],
+      "to": [
+        20,
+        9,
+        12
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        8,
+        6
+      ],
+      "to": [
+        17,
+        11,
+        8
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        1,
+        0
+      ],
+      "to": [
+        22,
+        11,
+        1
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        9,
+        16
+      ],
+      "to": [
+        18,
+        9,
+        20
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        10,
+        17
+      ],
+      "to": [
+        17,
+        10,
+        18
+      ],
+      "material": "cyan"
+    }
+  ]
+}

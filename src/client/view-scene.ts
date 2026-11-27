@@ -1,6 +1,10 @@
+import {
+  WALL_MOUNT_PIVOT_X, wallMountAssetBounds, wallMountFits, wallMountPositionLimits,
+  wallMountTangent, type WallMountSurface,
+} from "../shared/wall-mounts.js";
 import { expandEdgeDividerSegments, isEdgeDividerAsset, parseTileKey, toTileKey } from "../shared/layers.js";
 import type { CatalogEntry, ComputedCampus, OfficeState } from "../shared/types.js";
-import type { IsoView } from "./camera.js";
+import { tileToWorld, type IsoView } from "./camera.js";
 import type { DecorateGhostInput, RenderSceneInput } from "./iso-renderer.js";
 
 type WallSegment = ComputedCampus["wallSegments"][number];
@@ -37,12 +41,21 @@ function cutawayWalls(campus: ComputedCampus, width: number, depth: number, view
   // The decorative cutaway is drawn behind the floor from each camera angle.
   // Reuse the edge styles supplied by the campus, including windows and corner pillars.
   const { walls } = campus;
+  const physicalWalls = new Map<string, ComputedCampus["walls"][number]>();
+  for (const wall of walls) {
+    if (wall.edge === "corner") continue;
+    const [tx, ty] = view.toView(wall.tx, wall.ty);
+    const facing = view.toViewDirection(wall.edge === "nw" ? "ne" : "se");
+    if (facing !== "ne" && facing !== "se") continue;
+    const edge = facing === "ne" ? "nw" : "ne";
+    physicalWalls.set(`${edge}:${edge === "nw" ? ty : tx}`, { ...wall, tx, ty, edge });
+  }
   const corner = walls.filter((wall) => wall.edge === "corner").map((wall) => ({ ...wall, tx: 0, ty: 0 }));
   const makeEdge = (edge: "nw" | "ne", length: number) => {
     const sourceEdge = view.swapsAxes ? (edge === "nw" ? "ne" : "nw") : edge;
     const styles = walls.filter((wall) => wall.edge === sourceEdge);
     if (!styles.length) return [];
-    return Array.from({ length }, (_, i) => ({
+    return Array.from({ length }, (_, i) => physicalWalls.get(`${edge}:${i}`) ?? ({
       ...styles[i % styles.length],
       tx: edge === "ne" ? i : 0,
       ty: edge === "nw" ? i : 0,
@@ -50,6 +63,54 @@ function cutawayWalls(campus: ComputedCampus, width: number, depth: number, view
     }));
   };
   return [...corner, ...makeEdge("ne", width), ...makeEdge("nw", depth)];
+}
+
+export function isWallMountVisible(
+  mount: Pick<WallMountSurface, "wall" | "direction">,
+  view: IsoView,
+): boolean {
+  if (!mount.wall) return true;
+  const facing = view.toViewDirection(mount.direction);
+  return facing === "ne" || facing === "se";
+}
+
+export function projectWallMountOrigin(mount: WallMountSurface, view: IsoView): [number, number] {
+  const [tx, ty] = view.toView(mount.tx, mount.ty);
+  const [wx, wy] = tileToWorld(tx, ty);
+  // A 1×1 Pixcel sprite anchors at voxel (31,31,0) after rotation.
+  // Offsets are rotated coordinates of its mounting point (16,0,0) relative to that anchor.
+  const offsets = { se: [-15, -31], sw: [0, -15], nw: [-16, 0], ne: [-31, -16] };
+  const [x, y] = offsets[view.toViewDirection(mount.direction)];
+  return [wx + x - y, wy + Math.floor((x + y) / 2)];
+}
+
+export function pickWallMount(
+  surfaces: ReadonlyMap<string, WallMountSurface>, view: IsoView, wx: number, wy: number, asset: CatalogEntry,
+) {
+  let hit: { mount: WallMountSurface; offset: number; height: number; ground: number } | undefined;
+  for (const mount of surfaces.values()) {
+    const direction = view.toViewDirection(mount.direction);
+    if (direction !== "se" && direction !== "ne") continue;
+    const [originX, originY] = projectWallMountOrigin(mount, view);
+    const [dx, dy] = wallMountTangent(direction);
+    const offset = (wx - originX) / (dx - dy);
+    const ground = originY + offset * (dx + dy) / 2;
+    const height = ground - wy;
+    const { left, right, bottom, top } = mount.bounds;
+    if (offset < left || offset > right || height < bottom || height > top || (hit && ground < hit.ground)) continue;
+    hit = { mount, offset, height, ground };
+  }
+  if (!hit) return;
+  const { mount } = hit;
+  const model = wallMountAssetBounds(asset);
+  const limits = wallMountPositionLimits(surfaces.values(), mount, asset);
+  const offset = Math.round(hit.offset - (model.left + model.right) / 2 + WALL_MOUNT_PIVOT_X);
+  const lift = Math.round(hit.height - (model.bottom + model.top) / 2);
+  const position = {
+    offset: limits.left <= limits.right ? Math.max(limits.left, Math.min(offset, limits.right)) : offset,
+    lift: limits.bottom <= limits.top ? Math.max(limits.bottom, Math.min(lift, limits.top)) : lift,
+  };
+  return { mount, position, fits: wallMountFits(limits, position) };
 }
 
 export function rotateCampus(campus: ComputedCampus, view: IsoView): ComputedCampus {
@@ -85,9 +146,15 @@ export function rotateCampus(campus: ComputedCampus, view: IsoView): ComputedCam
       return [];
     }),
     wallSegments: campus.wallSegments.map((segment) => rotateWallSegment(segment, view)),
-    worldFurniture: campus.worldFurniture.map((furniture) => {
+    worldFurniture: campus.worldFurniture.flatMap((furniture) => {
+      const pose = furniture.wallMountPose;
+      if (pose && !isWallMountVisible(pose, view)) return [];
+      if (pose) {
+        const [tx, ty] = view.toView(pose.tx, pose.ty);
+        return [{ ...furniture, wallMountPose: { ...pose, tx, ty, direction: view.toViewDirection(pose.direction) } }];
+      }
       const [tx, ty, w, h] = view.rect(furniture.tx, furniture.ty, ...furniture.footprintTiles);
-      return { ...furniture, tx, ty, footprintTiles: [w, h], direction: view.toViewDirection(furniture.direction) };
+      return [{ ...furniture, tx, ty, footprintTiles: [w, h] as [number, number], direction: view.toViewDirection(furniture.direction) }];
     }),
   };
 }

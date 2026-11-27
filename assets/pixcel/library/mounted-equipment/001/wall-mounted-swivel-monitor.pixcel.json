@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-swivel-monitor",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "green": {
+      "kind": "matte",
+      "color": "#648765"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#506b8c"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a6c5cd"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        12,
+        0,
+        3
+      ],
+      "to": [
+        19,
+        1,
+        13
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        1,
+        7
+      ],
+      "to": [
+        17,
+        6,
+        9
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        3,
+        6,
+        0
+      ],
+      "to": [
+        28,
+        8,
+        16
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        2
+      ],
+      "to": [
+        26,
+        9,
+        15
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        11
+      ],
+      "to": [
+        18,
+        10,
+        12
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        8
+      ],
+      "to": [
+        14,
+        10,
+        9
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        9,
+        0
+      ],
+      "to": [
+        26,
+        9,
+        0
+      ],
+      "material": "green"
+    }
+  ]
+}

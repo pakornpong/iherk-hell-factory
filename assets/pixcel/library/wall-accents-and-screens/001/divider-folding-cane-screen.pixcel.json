@@ -1,0 +1,1505 @@
+{
+  "schemaVersion": 1,
+  "id": "divider-folding-cane-screen",
+  "category": "room-divider",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    2,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#694b3c"
+    },
+    "cane": {
+      "kind": "wood",
+      "color": "#ba925b"
+    },
+    "reed": {
+      "kind": "matte",
+      "color": "#dbb87b"
+    },
+    "hinge": {
+      "kind": "metal",
+      "color": "#d3aa64"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        7,
+        10,
+        7
+      ],
+      "to": [
+        7,
+        11,
+        30
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        10,
+        7
+      ],
+      "to": [
+        8,
+        11,
+        30
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        9,
+        11,
+        7
+      ],
+      "to": [
+        9,
+        12,
+        30
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        12,
+        7
+      ],
+      "to": [
+        10,
+        13,
+        30
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        13,
+        7
+      ],
+      "to": [
+        11,
+        14,
+        30
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        13,
+        7
+      ],
+      "to": [
+        12,
+        14,
+        30
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        14,
+        7
+      ],
+      "to": [
+        13,
+        15,
+        30
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        15,
+        7
+      ],
+      "to": [
+        14,
+        16,
+        30
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        16,
+        7
+      ],
+      "to": [
+        15,
+        17,
+        30
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        16,
+        16,
+        7
+      ],
+      "to": [
+        16,
+        17,
+        30
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        17,
+        17,
+        7
+      ],
+      "to": [
+        17,
+        18,
+        30
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        18,
+        18,
+        7
+      ],
+      "to": [
+        18,
+        19,
+        30
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        19,
+        19,
+        7
+      ],
+      "to": [
+        19,
+        20,
+        30
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        20,
+        19,
+        7
+      ],
+      "to": [
+        20,
+        20,
+        30
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        20,
+        7
+      ],
+      "to": [
+        21,
+        21,
+        30
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        7
+      ],
+      "to": [
+        21,
+        21,
+        7
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        10,
+        7
+      ],
+      "to": [
+        21,
+        23,
+        7
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        13
+      ],
+      "to": [
+        21,
+        21,
+        13
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        10,
+        13
+      ],
+      "to": [
+        21,
+        23,
+        13
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        19
+      ],
+      "to": [
+        21,
+        21,
+        19
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        10,
+        19
+      ],
+      "to": [
+        21,
+        23,
+        19
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        8,
+        25
+      ],
+      "to": [
+        21,
+        21,
+        25
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        6,
+        10,
+        25
+      ],
+      "to": [
+        21,
+        23,
+        25
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        8,
+        5
+      ],
+      "to": [
+        22,
+        21,
+        5
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        9,
+        5
+      ],
+      "to": [
+        22,
+        22,
+        5
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        8,
+        6
+      ],
+      "to": [
+        22,
+        21,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        9,
+        6
+      ],
+      "to": [
+        22,
+        22,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        8,
+        31
+      ],
+      "to": [
+        22,
+        21,
+        31
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        9,
+        31
+      ],
+      "to": [
+        22,
+        22,
+        31
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        8,
+        32
+      ],
+      "to": [
+        22,
+        21,
+        32
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        5,
+        9,
+        32
+      ],
+      "to": [
+        22,
+        22,
+        32
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        8,
+        0
+      ],
+      "to": [
+        6,
+        10,
+        32
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        21,
+        0
+      ],
+      "to": [
+        23,
+        23,
+        32
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        20,
+        7
+      ],
+      "to": [
+        24,
+        21,
+        36
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        25,
+        19,
+        7
+      ],
+      "to": [
+        25,
+        20,
+        36
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        26,
+        19,
+        7
+      ],
+      "to": [
+        26,
+        20,
+        36
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        27,
+        18,
+        7
+      ],
+      "to": [
+        27,
+        19,
+        36
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        28,
+        18,
+        7
+      ],
+      "to": [
+        28,
+        19,
+        36
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        29,
+        17,
+        7
+      ],
+      "to": [
+        29,
+        18,
+        36
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        30,
+        17,
+        7
+      ],
+      "to": [
+        30,
+        18,
+        36
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        31,
+        16,
+        7
+      ],
+      "to": [
+        31,
+        17,
+        36
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        32,
+        16,
+        7
+      ],
+      "to": [
+        32,
+        17,
+        36
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        33,
+        15,
+        7
+      ],
+      "to": [
+        33,
+        16,
+        36
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        34,
+        14,
+        7
+      ],
+      "to": [
+        34,
+        15,
+        36
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        35,
+        14,
+        7
+      ],
+      "to": [
+        35,
+        15,
+        36
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        36,
+        13,
+        7
+      ],
+      "to": [
+        36,
+        14,
+        36
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        37,
+        13,
+        7
+      ],
+      "to": [
+        37,
+        14,
+        36
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        38,
+        12,
+        7
+      ],
+      "to": [
+        38,
+        13,
+        36
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        39,
+        12,
+        7
+      ],
+      "to": [
+        39,
+        13,
+        36
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        40,
+        11,
+        7
+      ],
+      "to": [
+        40,
+        12,
+        36
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        11,
+        7
+      ],
+      "to": [
+        41,
+        12,
+        36
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        21,
+        7
+      ],
+      "to": [
+        41,
+        10,
+        7
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        23,
+        7
+      ],
+      "to": [
+        41,
+        12,
+        7
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        21,
+        13
+      ],
+      "to": [
+        41,
+        10,
+        13
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        23,
+        13
+      ],
+      "to": [
+        41,
+        12,
+        13
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        21,
+        19
+      ],
+      "to": [
+        41,
+        10,
+        19
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        23,
+        19
+      ],
+      "to": [
+        41,
+        12,
+        19
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        21,
+        25
+      ],
+      "to": [
+        41,
+        10,
+        25
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        23,
+        23,
+        25
+      ],
+      "to": [
+        41,
+        12,
+        25
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        21,
+        5
+      ],
+      "to": [
+        42,
+        10,
+        5
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        22,
+        5
+      ],
+      "to": [
+        42,
+        11,
+        5
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        21,
+        6
+      ],
+      "to": [
+        42,
+        10,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        22,
+        6
+      ],
+      "to": [
+        42,
+        11,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        21,
+        37
+      ],
+      "to": [
+        42,
+        10,
+        37
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        22,
+        37
+      ],
+      "to": [
+        42,
+        11,
+        37
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        21,
+        38
+      ],
+      "to": [
+        42,
+        10,
+        38
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        22,
+        22,
+        38
+      ],
+      "to": [
+        42,
+        11,
+        38
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        21,
+        0
+      ],
+      "to": [
+        23,
+        23,
+        38
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        10,
+        0
+      ],
+      "to": [
+        43,
+        12,
+        38
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        44,
+        11,
+        7
+      ],
+      "to": [
+        44,
+        12,
+        32
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        45,
+        12,
+        7
+      ],
+      "to": [
+        45,
+        13,
+        32
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        46,
+        13,
+        7
+      ],
+      "to": [
+        46,
+        14,
+        32
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        47,
+        13,
+        7
+      ],
+      "to": [
+        47,
+        14,
+        32
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        48,
+        14,
+        7
+      ],
+      "to": [
+        48,
+        15,
+        32
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        49,
+        14,
+        7
+      ],
+      "to": [
+        49,
+        15,
+        32
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        50,
+        15,
+        7
+      ],
+      "to": [
+        50,
+        16,
+        32
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        51,
+        16,
+        7
+      ],
+      "to": [
+        51,
+        17,
+        32
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        52,
+        16,
+        7
+      ],
+      "to": [
+        52,
+        17,
+        32
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        53,
+        17,
+        7
+      ],
+      "to": [
+        53,
+        18,
+        32
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        54,
+        18,
+        7
+      ],
+      "to": [
+        54,
+        19,
+        32
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        55,
+        18,
+        7
+      ],
+      "to": [
+        55,
+        19,
+        32
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "box",
+      "from": [
+        56,
+        19,
+        7
+      ],
+      "to": [
+        56,
+        20,
+        32
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "box",
+      "from": [
+        57,
+        19,
+        7
+      ],
+      "to": [
+        57,
+        20,
+        32
+      ],
+      "material": "cane"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        10,
+        7
+      ],
+      "to": [
+        57,
+        20,
+        7
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        12,
+        7
+      ],
+      "to": [
+        57,
+        22,
+        7
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        10,
+        13
+      ],
+      "to": [
+        57,
+        20,
+        13
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        12,
+        13
+      ],
+      "to": [
+        57,
+        22,
+        13
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        10,
+        19
+      ],
+      "to": [
+        57,
+        20,
+        19
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        12,
+        19
+      ],
+      "to": [
+        57,
+        22,
+        19
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        10,
+        25
+      ],
+      "to": [
+        57,
+        20,
+        25
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        43,
+        12,
+        25
+      ],
+      "to": [
+        57,
+        22,
+        25
+      ],
+      "material": "reed"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        10,
+        5
+      ],
+      "to": [
+        58,
+        20,
+        5
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        11,
+        5
+      ],
+      "to": [
+        58,
+        21,
+        5
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        10,
+        6
+      ],
+      "to": [
+        58,
+        20,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        11,
+        6
+      ],
+      "to": [
+        58,
+        21,
+        6
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        10,
+        33
+      ],
+      "to": [
+        58,
+        20,
+        33
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        11,
+        33
+      ],
+      "to": [
+        58,
+        21,
+        33
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        10,
+        34
+      ],
+      "to": [
+        58,
+        20,
+        34
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "line",
+      "from": [
+        42,
+        11,
+        34
+      ],
+      "to": [
+        58,
+        21,
+        34
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        10,
+        0
+      ],
+      "to": [
+        43,
+        12,
+        34
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        57,
+        20,
+        0
+      ],
+      "to": [
+        59,
+        22,
+        34
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        20,
+        10
+      ],
+      "to": [
+        23,
+        24,
+        11
+      ],
+      "material": "hinge"
+    },
+    {
+      "op": "box",
+      "from": [
+        21,
+        20,
+        27
+      ],
+      "to": [
+        23,
+        24,
+        28
+      ],
+      "material": "hinge"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        9,
+        10
+      ],
+      "to": [
+        43,
+        13,
+        11
+      ],
+      "material": "hinge"
+    },
+    {
+      "op": "box",
+      "from": [
+        41,
+        9,
+        27
+      ],
+      "to": [
+        43,
+        13,
+        28
+      ],
+      "material": "hinge"
+    }
+  ],
+  "decals": []
+}

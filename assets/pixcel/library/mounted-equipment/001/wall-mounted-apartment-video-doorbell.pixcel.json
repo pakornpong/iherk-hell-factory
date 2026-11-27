@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-apartment-video-doorbell",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "teal": {
+      "kind": "matte",
+      "color": "#487d80"
+    },
+    "cyan": {
+      "kind": "emissive",
+      "color": "#7ed5cf"
+    },
+    "glass": {
+      "kind": "glass",
+      "color": "#a6c5cd"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        11,
+        0,
+        0
+      ],
+      "to": [
+        20,
+        1,
+        24
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        1,
+        1
+      ],
+      "to": [
+        19,
+        4,
+        23
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        2,
+        23
+      ],
+      "to": [
+        21,
+        7,
+        25
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        5,
+        15
+      ],
+      "to": [
+        15,
+        6,
+        15
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        5,
+        16
+      ],
+      "to": [
+        17,
+        6,
+        16
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        5,
+        17
+      ],
+      "to": [
+        17,
+        6,
+        17
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        5,
+        18
+      ],
+      "to": [
+        18,
+        6,
+        18
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        5,
+        19
+      ],
+      "to": [
+        17,
+        6,
+        19
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        5,
+        20
+      ],
+      "to": [
+        17,
+        6,
+        20
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        5,
+        21
+      ],
+      "to": [
+        15,
+        6,
+        21
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        7,
+        17
+      ],
+      "to": [
+        15,
+        7,
+        17
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        7,
+        18
+      ],
+      "to": [
+        16,
+        7,
+        18
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        7,
+        19
+      ],
+      "to": [
+        15,
+        7,
+        19
+      ],
+      "material": "glass"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        5,
+        3
+      ],
+      "to": [
+        15,
+        5,
+        3
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        5,
+        4
+      ],
+      "to": [
+        17,
+        5,
+        4
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        5,
+        5
+      ],
+      "to": [
+        17,
+        5,
+        5
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        5,
+        6
+      ],
+      "to": [
+        18,
+        5,
+        6
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        5,
+        7
+      ],
+      "to": [
+        17,
+        5,
+        7
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        5,
+        8
+      ],
+      "to": [
+        17,
+        5,
+        8
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        5,
+        9
+      ],
+      "to": [
+        15,
+        5,
+        9
+      ],
+      "material": "teal"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        6,
+        5
+      ],
+      "to": [
+        15,
+        6,
+        5
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        6,
+        6
+      ],
+      "to": [
+        16,
+        6,
+        6
+      ],
+      "material": "cyan"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        6,
+        7
+      ],
+      "to": [
+        15,
+        6,
+        7
+      ],
+      "material": "cyan"
+    }
+  ]
+}

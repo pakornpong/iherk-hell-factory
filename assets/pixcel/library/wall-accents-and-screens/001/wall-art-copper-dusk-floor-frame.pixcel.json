@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-art-copper-dusk-floor-frame",
+  "category": "wall-decor",
+  "layer": "object",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#70503b"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#c69e5a"
+    },
+    "mat": {
+      "kind": "matte",
+      "color": "#ddd1ac"
+    },
+    "sky": {
+      "kind": "matte",
+      "color": "#ac6b50"
+    },
+    "sun": {
+      "kind": "matte",
+      "color": "#ffcc76"
+    },
+    "ridge": {
+      "kind": "matte",
+      "color": "#92534c"
+    },
+    "river": {
+      "kind": "matte",
+      "color": "#597a7a"
+    },
+    "shore": {
+      "kind": "matte",
+      "color": "#394f51"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        4,
+        3,
+        0
+      ],
+      "to": [
+        27,
+        13,
+        2
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        4,
+        2
+      ],
+      "to": [
+        24,
+        11,
+        4
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        8,
+        5,
+        4
+      ],
+      "to": [
+        9,
+        8,
+        14
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        22,
+        5,
+        4
+      ],
+      "to": [
+        23,
+        8,
+        14
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        4,
+        12
+      ],
+      "to": [
+        27,
+        8,
+        36
+      ],
+      "material": "walnut"
+    },
+    {
+      "op": "box",
+      "from": [
+        5,
+        9,
+        13
+      ],
+      "to": [
+        26,
+        9,
+        35
+      ],
+      "material": "brass"
+    },
+    {
+      "op": "box",
+      "from": [
+        6,
+        10,
+        14
+      ],
+      "to": [
+        25,
+        10,
+        34
+      ],
+      "material": "mat"
+    }
+  ],
+  "decals": [
+    {
+      "face": "+Y",
+      "origin": [
+        8,
+        11,
+        32
+      ],
+      "legend": {
+        ".": "sky",
+        "o": "sun",
+        "r": "ridge",
+        "~": "river",
+        "#": "shore"
+      },
+      "rows": [
+        "................",
+        "........oo......",
+        ".......oooo.....",
+        ".......oooo.....",
+        "......oooooo....",
+        "......oooooo....",
+        ".......oooo.....",
+        "....r..oooo.....",
+        "...rrr..oo....rr",
+        "..rrrrr......rrr",
+        "rrrrrrrr....rrrr",
+        "~~~~~rrr...rrrrr",
+        "##~~~~~~..rrrrrr",
+        "####~~~~~~~~~###",
+        "####~~~~~~~~####",
+        "###~~~~~~~######",
+        "##~~~~~~~~######"
+      ]
+    }
+  ]
+}

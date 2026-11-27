@@ -1,0 +1,1024 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-relief-cast-metal-fan-impeller",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "charcoal": {
+      "kind": "matte",
+      "color": "#49525f"
+    },
+    "chrome": {
+      "kind": "metal",
+      "color": "#bbd4d8"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#caa05c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        16,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        2,
+        0
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        12,
+        0,
+        1
+      ],
+      "to": [
+        20,
+        2,
+        1
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        10,
+        0,
+        2
+      ],
+      "to": [
+        22,
+        2,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        9,
+        0,
+        3
+      ],
+      "to": [
+        23,
+        2,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        8,
+        0,
+        4
+      ],
+      "to": [
+        24,
+        2,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        0,
+        5
+      ],
+      "to": [
+        25,
+        2,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        6,
+        0,
+        6
+      ],
+      "to": [
+        26,
+        2,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        6,
+        0,
+        7
+      ],
+      "to": [
+        26,
+        2,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        5,
+        0,
+        8
+      ],
+      "to": [
+        27,
+        2,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        5,
+        0,
+        9
+      ],
+      "to": [
+        27,
+        2,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        5,
+        0,
+        10
+      ],
+      "to": [
+        27,
+        2,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        5,
+        0,
+        11
+      ],
+      "to": [
+        27,
+        2,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        4,
+        0,
+        12
+      ],
+      "to": [
+        28,
+        2,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        5,
+        0,
+        13
+      ],
+      "to": [
+        27,
+        2,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        5,
+        0,
+        14
+      ],
+      "to": [
+        27,
+        2,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        5,
+        0,
+        15
+      ],
+      "to": [
+        27,
+        2,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        5,
+        0,
+        16
+      ],
+      "to": [
+        27,
+        2,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        6,
+        0,
+        17
+      ],
+      "to": [
+        26,
+        2,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        6,
+        0,
+        18
+      ],
+      "to": [
+        26,
+        2,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        7,
+        0,
+        19
+      ],
+      "to": [
+        25,
+        2,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        8,
+        0,
+        20
+      ],
+      "to": [
+        24,
+        2,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        9,
+        0,
+        21
+      ],
+      "to": [
+        23,
+        2,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        10,
+        0,
+        22
+      ],
+      "to": [
+        22,
+        2,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        12,
+        0,
+        23
+      ],
+      "to": [
+        20,
+        2,
+        23
+      ]
+    },
+    {
+      "op": "box",
+      "material": "charcoal",
+      "from": [
+        16,
+        0,
+        24
+      ],
+      "to": [
+        16,
+        2,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        15,
+        3,
+        12
+      ],
+      "to": [
+        15,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        7,
+        3,
+        13
+      ],
+      "to": [
+        15,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        6,
+        3,
+        14
+      ],
+      "to": [
+        15,
+        5,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        6,
+        3,
+        15
+      ],
+      "to": [
+        15,
+        5,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        5,
+        3,
+        16
+      ],
+      "to": [
+        15,
+        5,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        5,
+        3,
+        17
+      ],
+      "to": [
+        15,
+        5,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        6,
+        3,
+        18
+      ],
+      "to": [
+        15,
+        5,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        8,
+        3,
+        19
+      ],
+      "to": [
+        13,
+        5,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        10,
+        3,
+        20
+      ],
+      "to": [
+        10,
+        5,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        3,
+        13
+      ],
+      "to": [
+        16,
+        5,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        3,
+        14
+      ],
+      "to": [
+        20,
+        5,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        3,
+        15
+      ],
+      "to": [
+        24,
+        5,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        3,
+        16
+      ],
+      "to": [
+        25,
+        5,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        3,
+        17
+      ],
+      "to": [
+        25,
+        5,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        3,
+        18
+      ],
+      "to": [
+        25,
+        5,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        3,
+        19
+      ],
+      "to": [
+        25,
+        5,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        3,
+        20
+      ],
+      "to": [
+        25,
+        5,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        16,
+        3,
+        21
+      ],
+      "to": [
+        24,
+        5,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        17,
+        3,
+        22
+      ],
+      "to": [
+        23,
+        5,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        21,
+        3,
+        23
+      ],
+      "to": [
+        21,
+        5,
+        23
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        24,
+        3,
+        4
+      ],
+      "to": [
+        24,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        18,
+        3,
+        5
+      ],
+      "to": [
+        25,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        17,
+        3,
+        6
+      ],
+      "to": [
+        26,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        17,
+        3,
+        7
+      ],
+      "to": [
+        27,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        17,
+        3,
+        8
+      ],
+      "to": [
+        27,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        17,
+        3,
+        9
+      ],
+      "to": [
+        26,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        17,
+        3,
+        10
+      ],
+      "to": [
+        26,
+        5,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        17,
+        3,
+        11
+      ],
+      "to": [
+        25,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        17,
+        3,
+        12
+      ],
+      "to": [
+        17,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        8,
+        3,
+        2
+      ],
+      "to": [
+        8,
+        5,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        7,
+        3,
+        3
+      ],
+      "to": [
+        13,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        6,
+        3,
+        4
+      ],
+      "to": [
+        14,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        5,
+        3,
+        5
+      ],
+      "to": [
+        14,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        5,
+        3,
+        6
+      ],
+      "to": [
+        14,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        6,
+        3,
+        7
+      ],
+      "to": [
+        14,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        6,
+        3,
+        8
+      ],
+      "to": [
+        15,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        7,
+        3,
+        9
+      ],
+      "to": [
+        15,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        8,
+        3,
+        10
+      ],
+      "to": [
+        15,
+        5,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "chrome",
+      "from": [
+        15,
+        3,
+        11
+      ],
+      "to": [
+        15,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        16,
+        5,
+        9
+      ],
+      "to": [
+        16,
+        7,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        5,
+        10
+      ],
+      "to": [
+        18,
+        7,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        5,
+        11
+      ],
+      "to": [
+        18,
+        7,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        13,
+        5,
+        12
+      ],
+      "to": [
+        19,
+        7,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        5,
+        13
+      ],
+      "to": [
+        18,
+        7,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        14,
+        5,
+        14
+      ],
+      "to": [
+        18,
+        7,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "brass",
+      "from": [
+        16,
+        5,
+        15
+      ],
+      "to": [
+        16,
+        7,
+        15
+      ]
+    }
+  ]
+}

@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-hanging-paper-cranes-mobile",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#765044"
+    },
+    "brass": {
+      "kind": "metal",
+      "color": "#caa05c"
+    },
+    "mint": {
+      "kind": "matte",
+      "color": "#92c8b2"
+    },
+    "blush": {
+      "kind": "matte",
+      "color": "#db9a99"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        5,
+        0,
+        21
+      ],
+      "to": [
+        27,
+        2,
+        23
+      ]
+    },
+    {
+      "op": "line",
+      "material": "brass",
+      "from": [
+        8,
+        2,
+        11
+      ],
+      "to": [
+        8,
+        2,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        8,
+        3,
+        7
+      ],
+      "to": [
+        8,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        7,
+        3,
+        8
+      ],
+      "to": [
+        9,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        6,
+        3,
+        9
+      ],
+      "to": [
+        10,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        5,
+        3,
+        10
+      ],
+      "to": [
+        11,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        4,
+        3,
+        11
+      ],
+      "to": [
+        11,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        4,
+        3,
+        12
+      ],
+      "to": [
+        12,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        6,
+        3,
+        13
+      ],
+      "to": [
+        12,
+        4,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        12,
+        3,
+        14
+      ],
+      "to": [
+        12,
+        4,
+        14
+      ]
+    },
+    {
+      "op": "line",
+      "material": "brass",
+      "from": [
+        16,
+        2,
+        4
+      ],
+      "to": [
+        16,
+        2,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        16,
+        4,
+        0
+      ],
+      "to": [
+        16,
+        5,
+        0
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        15,
+        4,
+        1
+      ],
+      "to": [
+        17,
+        5,
+        1
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        14,
+        4,
+        2
+      ],
+      "to": [
+        18,
+        5,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        13,
+        4,
+        3
+      ],
+      "to": [
+        19,
+        5,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        12,
+        4,
+        4
+      ],
+      "to": [
+        19,
+        5,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        12,
+        4,
+        5
+      ],
+      "to": [
+        20,
+        5,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        14,
+        4,
+        6
+      ],
+      "to": [
+        20,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        20,
+        4,
+        7
+      ],
+      "to": [
+        20,
+        5,
+        7
+      ]
+    },
+    {
+      "op": "line",
+      "material": "brass",
+      "from": [
+        24,
+        2,
+        12
+      ],
+      "to": [
+        24,
+        2,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        24,
+        5,
+        8
+      ],
+      "to": [
+        24,
+        6,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        23,
+        5,
+        9
+      ],
+      "to": [
+        25,
+        6,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        22,
+        5,
+        10
+      ],
+      "to": [
+        26,
+        6,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        21,
+        5,
+        11
+      ],
+      "to": [
+        27,
+        6,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        20,
+        5,
+        12
+      ],
+      "to": [
+        27,
+        6,
+        12
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        20,
+        5,
+        13
+      ],
+      "to": [
+        28,
+        6,
+        13
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        22,
+        5,
+        14
+      ],
+      "to": [
+        28,
+        6,
+        14
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        28,
+        5,
+        15
+      ],
+      "to": [
+        28,
+        6,
+        15
+      ]
+    }
+  ]
+}

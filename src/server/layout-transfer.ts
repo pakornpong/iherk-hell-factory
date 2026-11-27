@@ -1,3 +1,4 @@
+import { getWallMountSurfaces, isMountedAsset, wallMountFits, wallMountOverlaps, wallMountPositionLimits } from "../shared/wall-mounts.js";
 import { expandEdgeDividerSegments, isEdgeDividerAsset, isInBossArea, isOwnableChair, supportsHalfTilePlacement } from "../shared/layers.js";
 import {
   OfficeLayoutFileSchema,
@@ -90,6 +91,10 @@ export function prepareOfficeLayoutImport(
       if (item.zoneId !== zoneId) throw new Error(`Furniture ${item.id} belongs to the wrong zone`);
       const asset = catalog.get(item.assetId);
       if (!asset) throw new Error(`Unknown furniture asset: ${item.assetId}`);
+      if (isMountedAsset(asset) !== Boolean(item.wallMountId) || (item.wallMountId && zoneId !== "floor:0") ||
+        (item.wallMountPosition && !item.wallMountId)) {
+        throw new Error(`Invalid wall attachment: ${item.id}`);
+      }
       if (asset.layer !== item.layer) {
         const legacy = previouslyStored.some((previous) =>
           previous.id === item.id && Object.keys(previous).length === Object.keys(item).length &&
@@ -167,7 +172,18 @@ export function prepareOfficeLayoutImport(
     if (count > Math.max(1, currentCounts.get(id) ?? 0)) throw new Error(`Duplicate furniture ID: ${id}`);
   }
 
+  const surfaces = new Map(getWallMountSurfaces(campus).map((surface) => [surface.id, surface]));
   for (const item of campus.worldFurniture) {
+    if (item.wallMountId) {
+      const surface = surfaces.get(item.wallMountId);
+      const asset = catalog.get(item.assetId);
+      if (!surface || (item.wallMountPosition &&
+        !wallMountFits(wallMountPositionLimits(surfaces.values(), surface, asset), item.wallMountPosition)) ||
+        wallMountOverlaps(campus.worldFurniture, surfaces, catalog, surface, asset, item.wallMountPosition, item.id)) {
+        throw new Error(`Unavailable wall attachment: ${item.wallMountId}`);
+      }
+      continue;
+    }
     // Generated Pods adapt to the recipient's employee count. Explicit placements are fixed.
     if (item.zoneId === "hypersleep:0" && layout.zoneOverrides["hypersleep:0"] === undefined) continue;
     const outside = isEdgeDividerAsset(item.assetId)

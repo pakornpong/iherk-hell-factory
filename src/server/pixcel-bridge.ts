@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { resolveAssetLayerConfig } from "../shared/layers.js";
+import { resolveAssetLayerConfig, TILE_PERM } from "../shared/layers.js";
 import { CatalogEntrySchema, type AssetLayer, type CatalogEntry, type Direction, type ThemeMode } from "../shared/types.js";
 
 export const CHARACTER_CLIPS = [
@@ -240,7 +240,10 @@ interface RGBAImageLike {
 
 interface PixcelCoreModules {
   PixcelAssetSchema: { parse: (v: unknown) => PixcelAssetLike };
-  compileAsset: (asset: PixcelAssetLike) => { frames: CompiledFrameLike[] };
+  compileAsset: (asset: PixcelAssetLike) => {
+    frames: CompiledFrameLike[];
+    baseGrid: { getBounds(): { minX: number; maxX: number; minZ: number; maxZ: number } | null };
+  };
   compileAssetAnimations: (asset: PixcelAssetLike) => Map<string, CompiledFrameLike[]>;
   buildCharacterAsset: (spec: CharacterBuilderSpec) => PixcelAssetLike;
   renderAssetFrame: (
@@ -833,6 +836,19 @@ export class PixcelBridge {
         }
         const layer = raw.category === "tabletop" ? "tabletop" : raw.layer;
         const cfg = resolveAssetLayerConfig(id, layer);
+        let wallMountBounds: CatalogEntry["wallMountBounds"];
+        if (layer === "wall-decor") {
+          const core = await this.loadCore();
+          const asset = core.PixcelAssetSchema.parse(raw);
+          const bounds = core.compileAsset(asset).baseGrid.getBounds();
+          const scale = raw.voxelsPerTile === 16 ? 2 : 1;
+          if (bounds) {
+            wallMountBounds = {
+              left: bounds.minX * scale, right: (bounds.maxX + 1) * scale,
+              bottom: bounds.minZ * scale, top: (bounds.maxZ + 1) * scale,
+            };
+          }
+        }
         const catalog = CatalogEntrySchema.parse({
           id,
           category: raw.category,
@@ -841,7 +857,9 @@ export class PixcelBridge {
           source: "library",
           frames: frameNames(raw),
           renderLayer: cfg.renderLayer,
-          tilePermission: cfg.tilePermission,
+          tilePermission: layer === "wall-decor" ? TILE_PERM.WALKABLE : cfg.tilePermission,
+          wallMountBounds,
+          wallMountHeightVoxels: wallMountBounds ? Math.min(96, wallMountBounds.top) : undefined,
           surfaceHeightVoxels: cfg.surfaceHeightVoxels,
           foregroundAssetId: cfg.foregroundAssetId,
         });

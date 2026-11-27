@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-dog-waste-bag-dispenser",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#222a32"
+    },
+    "ivory": {
+      "kind": "matte",
+      "color": "#ded8c9"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    },
+    "green": {
+      "kind": "matte",
+      "color": "#648765"
+    },
+    "blue": {
+      "kind": "matte",
+      "color": "#506b8c"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        8,
+        0,
+        6
+      ],
+      "to": [
+        23,
+        1,
+        20
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        7,
+        2,
+        4
+      ],
+      "to": [
+        24,
+        8,
+        17
+      ],
+      "material": "green"
+    },
+    {
+      "op": "slope",
+      "from": [
+        6,
+        1,
+        17
+      ],
+      "to": [
+        25,
+        9,
+        24
+      ],
+      "axis": "-Y",
+      "material": "green"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        9,
+        5
+      ],
+      "to": [
+        15,
+        10,
+        5
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        9,
+        6
+      ],
+      "to": [
+        18,
+        10,
+        6
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        7
+      ],
+      "to": [
+        19,
+        10,
+        7
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        8
+      ],
+      "to": [
+        19,
+        10,
+        8
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        9
+      ],
+      "to": [
+        19,
+        10,
+        9
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        10,
+        9,
+        10
+      ],
+      "to": [
+        20,
+        10,
+        10
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        11
+      ],
+      "to": [
+        19,
+        10,
+        11
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        12
+      ],
+      "to": [
+        19,
+        10,
+        12
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        11,
+        9,
+        13
+      ],
+      "to": [
+        19,
+        10,
+        13
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        9,
+        14
+      ],
+      "to": [
+        18,
+        10,
+        14
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        9,
+        15
+      ],
+      "to": [
+        15,
+        10,
+        15
+      ],
+      "material": "ivory"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        11,
+        7
+      ],
+      "to": [
+        15,
+        11,
+        7
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        11,
+        8
+      ],
+      "to": [
+        17,
+        11,
+        8
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        11,
+        9
+      ],
+      "to": [
+        17,
+        11,
+        9
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        11,
+        10
+      ],
+      "to": [
+        18,
+        11,
+        10
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        11,
+        11
+      ],
+      "to": [
+        17,
+        11,
+        11
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        13,
+        11,
+        12
+      ],
+      "to": [
+        17,
+        11,
+        12
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        15,
+        11,
+        13
+      ],
+      "to": [
+        15,
+        11,
+        13
+      ],
+      "material": "ink"
+    },
+    {
+      "op": "box",
+      "from": [
+        12,
+        8,
+        0
+      ],
+      "to": [
+        18,
+        10,
+        6
+      ],
+      "material": "blue"
+    },
+    {
+      "op": "box",
+      "from": [
+        14,
+        10,
+        4
+      ],
+      "to": [
+        16,
+        11,
+        9
+      ],
+      "material": "blue"
+    }
+  ]
+}

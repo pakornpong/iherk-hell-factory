@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-office-organization-tree-board",
+  "category": "office",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "walnut": {
+      "kind": "wood",
+      "color": "#765044"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    },
+    "plum": {
+      "kind": "matte",
+      "color": "#794760"
+    },
+    "ink": {
+      "kind": "matte",
+      "color": "#292e3c"
+    },
+    "mint": {
+      "kind": "matte",
+      "color": "#92c8b2"
+    },
+    "wave": {
+      "kind": "matte",
+      "color": "#4f8fa0"
+    },
+    "blush": {
+      "kind": "matte",
+      "color": "#db9a99"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "walnut",
+      "from": [
+        3,
+        0,
+        0
+      ],
+      "to": [
+        28,
+        2,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        4,
+        3,
+        1
+      ],
+      "to": [
+        27,
+        3,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "plum",
+      "from": [
+        13,
+        4,
+        15
+      ],
+      "to": [
+        18,
+        5,
+        19
+      ]
+    },
+    {
+      "op": "line",
+      "material": "ink",
+      "from": [
+        15,
+        4,
+        15
+      ],
+      "to": [
+        15,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "line",
+      "material": "ink",
+      "from": [
+        7,
+        4,
+        11
+      ],
+      "to": [
+        24,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "line",
+      "material": "ink",
+      "from": [
+        7,
+        4,
+        11
+      ],
+      "to": [
+        7,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        5,
+        4,
+        4
+      ],
+      "to": [
+        9,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "line",
+      "material": "ink",
+      "from": [
+        15,
+        4,
+        11
+      ],
+      "to": [
+        15,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        13,
+        4,
+        4
+      ],
+      "to": [
+        17,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "line",
+      "material": "ink",
+      "from": [
+        23,
+        4,
+        11
+      ],
+      "to": [
+        23,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "blush",
+      "from": [
+        21,
+        4,
+        4
+      ],
+      "to": [
+        25,
+        5,
+        8
+      ]
+    }
+  ]
+}

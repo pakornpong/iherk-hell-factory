@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "id": "wall-mounted-wire-basket-shelf",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "gray": {
+      "kind": "matte",
+      "color": "#68727a"
+    },
+    "steel": {
+      "kind": "metal",
+      "color": "#a6aeb1"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "from": [
+        6,
+        0,
+        0
+      ],
+      "to": [
+        7,
+        1,
+        14
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        24,
+        0,
+        0
+      ],
+      "to": [
+        25,
+        1,
+        14
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "line",
+      "from": [
+        4,
+        1,
+        0
+      ],
+      "to": [
+        4,
+        10,
+        0
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        4,
+        9,
+        0
+      ],
+      "to": [
+        4,
+        11,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        1,
+        0
+      ],
+      "to": [
+        8,
+        10,
+        0
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        8,
+        9,
+        0
+      ],
+      "to": [
+        8,
+        11,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        1,
+        0
+      ],
+      "to": [
+        12,
+        10,
+        0
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        12,
+        9,
+        0
+      ],
+      "to": [
+        12,
+        11,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        1,
+        0
+      ],
+      "to": [
+        16,
+        10,
+        0
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        16,
+        9,
+        0
+      ],
+      "to": [
+        16,
+        11,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        1,
+        0
+      ],
+      "to": [
+        20,
+        10,
+        0
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        20,
+        9,
+        0
+      ],
+      "to": [
+        20,
+        11,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        1,
+        0
+      ],
+      "to": [
+        24,
+        10,
+        0
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        24,
+        9,
+        0
+      ],
+      "to": [
+        24,
+        11,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        1,
+        0
+      ],
+      "to": [
+        27,
+        10,
+        0
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        9,
+        0
+      ],
+      "to": [
+        27,
+        11,
+        10
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        10,
+        4
+      ],
+      "to": [
+        27,
+        10,
+        4
+      ],
+      "material": "gray"
+    },
+    {
+      "op": "box",
+      "from": [
+        4,
+        11,
+        10
+      ],
+      "to": [
+        27,
+        11,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        4,
+        1,
+        11
+      ],
+      "to": [
+        4,
+        11,
+        11
+      ],
+      "material": "steel"
+    },
+    {
+      "op": "line",
+      "from": [
+        27,
+        1,
+        11
+      ],
+      "to": [
+        27,
+        11,
+        11
+      ],
+      "material": "steel"
+    }
+  ]
+}

@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 1,
+  "id": "mounted-art-moon-over-marsh",
+  "category": "wall-decor",
+  "layer": "wall-decor",
+  "outlineMode": "silhouette",
+  "tilePreset": "64x32",
+  "voxelsPerTile": 32,
+  "footprintTiles": [
+    1,
+    1
+  ],
+  "palette": "office-night",
+  "materials": {
+    "ink": {
+      "kind": "matte",
+      "color": "#292e3c"
+    },
+    "denim": {
+      "kind": "matte",
+      "color": "#4b637d"
+    },
+    "snow": {
+      "kind": "matte",
+      "color": "#e1f2ef"
+    },
+    "lagoon": {
+      "kind": "matte",
+      "color": "#2b6a70"
+    },
+    "olive": {
+      "kind": "matte",
+      "color": "#9da674"
+    },
+    "mint": {
+      "kind": "matte",
+      "color": "#92c8b2"
+    },
+    "wave": {
+      "kind": "matte",
+      "color": "#4f8fa0"
+    }
+  },
+  "ops": [
+    {
+      "op": "box",
+      "material": "ink",
+      "from": [
+        8,
+        0,
+        0
+      ],
+      "to": [
+        24,
+        2,
+        25
+      ]
+    },
+    {
+      "op": "box",
+      "material": "denim",
+      "from": [
+        9,
+        3,
+        1
+      ],
+      "to": [
+        23,
+        3,
+        24
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        19,
+        4,
+        15
+      ],
+      "to": [
+        19,
+        4,
+        15
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        18,
+        4,
+        16
+      ],
+      "to": [
+        20,
+        4,
+        16
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        17,
+        4,
+        17
+      ],
+      "to": [
+        21,
+        4,
+        17
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        17,
+        4,
+        18
+      ],
+      "to": [
+        21,
+        4,
+        18
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        16,
+        4,
+        19
+      ],
+      "to": [
+        22,
+        4,
+        19
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        17,
+        4,
+        20
+      ],
+      "to": [
+        21,
+        4,
+        20
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        17,
+        4,
+        21
+      ],
+      "to": [
+        21,
+        4,
+        21
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        18,
+        4,
+        22
+      ],
+      "to": [
+        20,
+        4,
+        22
+      ]
+    },
+    {
+      "op": "box",
+      "material": "snow",
+      "from": [
+        19,
+        4,
+        23
+      ],
+      "to": [
+        19,
+        4,
+        23
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        9,
+        4,
+        2
+      ],
+      "to": [
+        23,
+        4,
+        2
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        9,
+        4,
+        3
+      ],
+      "to": [
+        23,
+        4,
+        3
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        9,
+        4,
+        4
+      ],
+      "to": [
+        23,
+        4,
+        4
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        9,
+        4,
+        5
+      ],
+      "to": [
+        23,
+        4,
+        5
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        9,
+        4,
+        6
+      ],
+      "to": [
+        23,
+        4,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        9,
+        4,
+        7
+      ],
+      "to": [
+        23,
+        4,
+        7
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        9,
+        4,
+        8
+      ],
+      "to": [
+        23,
+        4,
+        8
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        9,
+        4,
+        9
+      ],
+      "to": [
+        23,
+        4,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        9,
+        4,
+        10
+      ],
+      "to": [
+        23,
+        4,
+        10
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        9,
+        4,
+        11
+      ],
+      "to": [
+        23,
+        4,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "lagoon",
+      "from": [
+        9,
+        4,
+        12
+      ],
+      "to": [
+        23,
+        4,
+        12
+      ]
+    },
+    {
+      "op": "line",
+      "material": "olive",
+      "from": [
+        10,
+        5,
+        2
+      ],
+      "to": [
+        10,
+        5,
+        8
+      ]
+    },
+    {
+      "op": "line",
+      "material": "olive",
+      "from": [
+        12,
+        5,
+        2
+      ],
+      "to": [
+        13,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "line",
+      "material": "olive",
+      "from": [
+        21,
+        5,
+        2
+      ],
+      "to": [
+        21,
+        5,
+        10
+      ]
+    },
+    {
+      "op": "line",
+      "material": "olive",
+      "from": [
+        23,
+        5,
+        2
+      ],
+      "to": [
+        24,
+        5,
+        11
+      ]
+    },
+    {
+      "op": "box",
+      "material": "mint",
+      "from": [
+        16,
+        5,
+        9
+      ],
+      "to": [
+        21,
+        5,
+        9
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        14,
+        5,
+        6
+      ],
+      "to": [
+        20,
+        5,
+        6
+      ]
+    },
+    {
+      "op": "box",
+      "material": "wave",
+      "from": [
+        16,
+        5,
+        3
+      ],
+      "to": [
+        22,
+        5,
+        3
+      ]
+    }
+  ]
+}
