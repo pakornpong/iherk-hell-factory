@@ -111,7 +111,8 @@ function isMeetingTool(toolName?: string): boolean {
 function isQuestionTool(toolName?: string): boolean {
   if (!toolName) return false;
   const t = toolName.toLowerCase();
-  return t === "ask_question";
+  // ask_question = Gemini Architect, clarify = Hermes
+  return t === "ask_question" || t === "clarify";
 }
 
 function isAssignTool(toolName?: string): boolean {
@@ -120,7 +121,7 @@ function isAssignTool(toolName?: string): boolean {
   return t === "agent" || t === "invoke_subagent" || t === "task";
 }
 
-const PROVIDER_LABEL: Record<Provider, string> = { claude: "Claude", gemini: "Gemini", codex: "Codex" };
+const PROVIDER_LABEL: Record<Provider, string> = { claude: "Claude", gemini: "Gemini", codex: "Codex", hermes: "Hermes" };
 
 const BOSS_GEOMETRY_KEYS = ["x", "y", "width", "height", "hubX", "hubY"] as const;
 function pickBossGeometry(boss?: BossOfficeRecord): Partial<BossOfficeRecord> {
@@ -363,12 +364,13 @@ export class OfficeEngine extends EventEmitter {
   }
 
   private providerBaseSprite(provider: Provider): string {
-    return provider === "codex" ? "agent-starter" : `agent-${provider}`;
+    // Codex and Hermes have no character set of their own yet
+    return provider === "codex" || provider === "hermes" ? "agent-starter" : `agent-${provider}`;
   }
 
   private providerVariantSprite(provider: Provider, variantIdx: number): string {
     const base = this.providerBaseSprite(provider);
-    if (variantIdx <= 0 || provider === "codex") return base;
+    if (variantIdx <= 0 || provider === "codex" || provider === "hermes") return base;
     return `${base}-v${((variantIdx - 1) % 3) + 1}`;
   }
 

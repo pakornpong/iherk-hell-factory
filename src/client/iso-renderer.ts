@@ -1542,7 +1542,9 @@ export class IsoRenderer {
             ? "#d97757"
             : emp.record.provider === "gemini"
               ? "#38bdf8"
-              : "#94a3b8";
+              : emp.record.provider === "hermes"
+                ? "#a78bfa"
+                : "#94a3b8";
         ctx.lineWidth = 1;
         ctx.strokeRect(left, top, Math.round(bw), bh);
         if (hasStatusDot) {

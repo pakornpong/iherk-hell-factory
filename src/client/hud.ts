@@ -673,6 +673,7 @@ export class OfficeHud {
       const hasClaude = team.some((e) => e.provider === "claude");
       const hasGemini = team.some((e) => e.provider === "gemini");
       const hasCodex = team.some((e) => e.provider === "codex");
+      const hasHermes = team.some((e) => e.provider === "hermes");
       const row = document.createElement("div");
       row.className = "bay-item";
       row.innerHTML = `
@@ -684,6 +685,7 @@ export class OfficeHud {
           ${hasClaude ? '<span class="badge claude">C</span>' : ""}
           ${hasGemini ? '<span class="badge gemini">G</span>' : ""}
           ${hasCodex ? '<span class="badge" title="Codex">CX</span>' : ""}
+          ${hasHermes ? '<span class="badge hermes" title="Hermes">H</span>' : ""}
           <span class="bay-count">${team.length}</span>
           <button class="bay-arch-btn" title="${bay.archived ? "Restore" : "Archive"}">${bay.archived ? "↩" : "×"}</button>
         </div>
@@ -1046,7 +1048,7 @@ export class OfficeHud {
           <div class="active-agent-badges">
             <span class="badge">${emp.isEphemeral ? "ชั่วคราว" : "ประจำ"}</span>
             ${roleMeta ? `<span class="role-badge" style="color:${roleMeta.color}">${roleMeta.shortLabel}</span>` : ""}
-            <span class="badge ${emp.provider ?? "starter"}">${emp.provider === "claude" ? "C" : emp.provider === "gemini" ? "G" : emp.provider === "codex" ? "CX" : "S"}</span>
+            <span class="badge ${emp.provider ?? "starter"}">${emp.provider === "claude" ? "C" : emp.provider === "gemini" ? "G" : emp.provider === "codex" ? "CX" : emp.provider === "hermes" ? "H" : "S"}</span>
           </div>
         </div>
         <div class="active-agent-meta">
@@ -1148,7 +1150,9 @@ export class OfficeHud {
             ? "#d97757"
             : v.record.provider === "gemini"
               ? "#38bdf8"
-              : "#94a3b8";
+              : v.record.provider === "hermes"
+                ? "#a78bfa"
+                : "#94a3b8";
       ctx.fillRect(Math.round(v.x * scaleX) - 2, Math.round(v.y * scaleY) - 2, 4, 4);
     }
   }

@@ -3,7 +3,7 @@ import { z } from "zod";
 export const DirectionSchema = z.enum(["se", "sw", "nw", "ne"]);
 export type Direction = z.infer<typeof DirectionSchema>;
 
-export const ProviderSchema = z.enum(["claude", "gemini", "codex"]);
+export const ProviderSchema = z.enum(["claude", "gemini", "codex", "hermes"]);
 export type Provider = z.infer<typeof ProviderSchema>;
 
 export const TelemetrySourceSchema = z.enum([
@@ -11,6 +11,7 @@ export const TelemetrySourceSchema = z.enum([
   "codex",
   "gemini-cli",
   "antigravity",
+  "hermes",
   "simulator",
 ]);
 export type TelemetrySource = z.infer<typeof TelemetrySourceSchema>;

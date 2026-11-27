@@ -10,6 +10,7 @@ import { createHellFactoryServer } from "../server/index.js";
 import { OfficeEngine } from "../server/office-engine.js";
 import { PixcelBridge } from "../server/pixcel-bridge.js";
 import { OfficeStore } from "../server/store.js";
+import { installHermesHooks } from "./install-hermes.js";
 import { installCodexHooks, installHooks, installMcp } from "./install-hooks.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -30,6 +31,7 @@ Usage:
   hell-factory build-assets
   hell-factory install-hooks [--dry-run] [--with-mcp]
   hell-factory install-codex-hooks [--dry-run]
+  hell-factory install-hermes-hooks [--dry-run] [--profile NAME] [--port 7140]
   hell-factory install-mcp [--dry-run]
 `);
 }
@@ -158,6 +160,27 @@ async function main(): Promise<void> {
         projectRoot: PROJECT_ROOT,
         runtimeOutDir: RUNTIME_ASSETS_DIR,
       });
+      break;
+    }
+
+    case "install-hermes-hooks": {
+      const { values } = parseArgs({
+        args: rest,
+        options: {
+          "dry-run": { type: "boolean", default: false },
+          profile: { type: "string" },
+          port: { type: "string", default: "7140" },
+        },
+      });
+      const report = await installHermesHooks({
+        serverUrl: `http://127.0.0.1:${Number(values.port)}`,
+        profile: values.profile,
+        dryRun: Boolean(values["dry-run"]),
+      });
+      console.log(JSON.stringify(report, null, 2));
+      if (!report.dryRun && report.action !== "unchanged") {
+        console.log("Hermes picks this up in new CLI sessions; restart the Hermes gateway/desktop app to apply it there.");
+      }
       break;
     }
 

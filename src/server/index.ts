@@ -19,6 +19,7 @@ import {
   type WsServerMessage,
 } from "../shared/types.js";
 import { AntigravityWatcher } from "./antigravity-watcher.js";
+import { HermesEventTranslator, type HermesWebhookPayload } from "./hermes-bridge.js";
 import type { OfficeEngine } from "./office-engine.js";
 import type { PixcelBridge } from "./pixcel-bridge.js";
 import type { OfficeStore } from "./store.js";
@@ -218,6 +219,7 @@ export async function createHellFactoryServer(opts: {
   demoController?: DemoControllerLike;
 }): Promise<HellFactoryServer> {
   const host = opts.host ?? "127.0.0.1";
+  const hermesTranslator = new HermesEventTranslator();
   const requestedPort = opts.port ?? 7140;
   const architectToken = await opts.store.ensureArchitectToken();
   const uiSessionToken = crypto.randomBytes(24).toString("hex");
@@ -363,6 +365,27 @@ export async function createHellFactoryServer(opts: {
         }
         await opts.engine.ingestEvent(ev);
         sendJson(res, 200, { ok: true });
+        return;
+      }
+
+      // 3b. Hermes Agent outbound webhooks (hooks.outbound) — translated into telemetry events.
+      // post_tool_call / pre_llm_call bodies carry tool results and history, so allow large bodies.
+      if (method === "POST" && pathname === "/api/events/hermes") {
+        const body = await readJsonBody(req, 64 * 1024 * 1024);
+        const events = hermesTranslator.translate(body as HermesWebhookPayload);
+        if (process.env.HELL_FACTORY_HERMES_LOG) {
+          // Debug trace of what Hermes sent (event + keys only, never tool inputs/results) and what it became
+          const payload = body as HermesWebhookPayload & { extra?: Record<string, unknown> };
+          const extra = payload.extra && typeof payload.extra === "object" ? payload.extra : {};
+          const line = JSON.stringify({
+            at: new Date().toISOString(), event: payload.hook_event_name, session: payload.session_id, tool: payload.tool_name,
+            extraKeys: Object.keys(extra), ids: Object.fromEntries(Object.entries(extra).filter(([k]) => /session|subagent|platform|choice|role/.test(k))),
+            emitted: events.map((e) => [e.eventType, e.agentId ?? null]),
+          });
+          await fs.appendFile(process.env.HELL_FACTORY_HERMES_LOG, `${line}\n`).catch(() => undefined);
+        }
+        for (const ev of events) await opts.engine.ingestEvent(ev);
+        sendJson(res, 200, { ok: true, events: events.length });
         return;
       }
 

@@ -40,7 +40,7 @@
 | `src/server/antigravity-watcher.ts` | Default-on transcript tail for Antigravity |
 | `src/server/demo-simulator.ts` | Looping 4-project scripted demo (AI-org roles) |
 | `src/mcp/architect-server.ts` | Gemini-only stdio MCP (falls back to editing state offline) |
-| `src/cli/index.ts`, `install-hooks.ts` | `start`, `demo`, `mcp`, `build-assets`, `install-hooks [--with-mcp]`, `install-codex-hooks`, `install-mcp` |
+| `src/cli/index.ts`, `install-hooks.ts` | `start`, `demo`, `mcp`, `build-assets`, `install-hooks [--with-mcp]`, `install-codex-hooks`, `install-hermes-hooks` (`install-hermes.ts`), `install-mcp` |
 | `src/client/main.ts` | Bootstrap, input, WS, ghost validation, export/import, seat-owner panel, render loop |
 | `src/client/sim.ts` | Goal selection per state, chair assignment, A* routing, clips & bubbles, adaptive FPS |
 | `src/client/iso-renderer.ts` | Layered topological sort, cached backdrop, foreground split sprites, emissive pass, overlays |
@@ -59,7 +59,7 @@
 - **Half-tile coordinates:** `FurnitureCoordinateSchema` is a multiple of `0.5`. Capsules and edge dividers stay whole-tile (`supportsHalfTilePlacement`). A fractional placement may touch but not cross a divider (`crossesWallSegment`).
 - **Chairs:** a 1×1 `chair-office-swivel` may overlap half a tile into a desk/table edge it faces (`isChairTuckedUnderDesk`). The client centres an un-moved chair on a 2-wide desk edge (`getCenteredChairTile`); `manualPosition: true` disables that.
 - **Bays and common wings:** still created and persisted per project folder (they drive roster, names, colours, archive), but **are no longer rendered as rooms**. Their furniture arrays are legacy data. `ensureBayDesksForTeam` is effectively a no-op because no `bay:*` zone exists.
-- **Providers:** `claude`, `gemini`, `codex`. Codex uses the `agent-starter` sprite and source `codex`.
+- **Providers:** `claude`, `gemini`, `codex`, `hermes`. Codex and Hermes use the `agent-starter` sprite (Hermes badge `H`, violet `#a78bfa`); `clarify` counts as a question tool like `ask_question`.
 - **Seat owner:** `FurnitureInstance.ownerEmployeeId` — only on ownable chairs (not Boss chair / visitor chairs), only permanent employees, one chair per employee. Set via `PATCH /api/architect/furniture/:id { ownerEmployeeId }` or the `👤 เจ้าของเก้าอี้` Decorate tool. Import drops owners that are not permanent employees in the target office.
 
 ## 4. Agent Routing (client `sim.ts`)
@@ -77,7 +77,7 @@ Server FSM timings: assign 2.5 s, rest cooldown 15 s after `turn_stop`/`session_
 
 ## 5. HTTP API
 
-Public (no auth): `GET /`, `/api/state`, `/api/catalog`, `/api/health`, `/api/library-assets/:id/:theme`, `/runtime-assets/*`, `POST /api/events`, WS `/ws`.
+Public (no auth): `GET /`, `/api/state`, `/api/catalog`, `/api/health`, `/api/library-assets/:id/:theme`, `/runtime-assets/*`, `POST /api/events`, `POST /api/events/hermes` (Hermes outbound webhooks, body limit 64 MB because `pre_llm_call`/`post_tool_call` carry history and results; `HELL_FACTORY_HERMES_LOG=<file>` writes a keys-only trace), WS `/ws`.
 
 Architect (token **or** UI cookie + `X-UI-Session` + local Origin/Host):
 
@@ -122,13 +122,16 @@ Not exposed via MCP yet: Boss zone size, zones, floor painting, floor resize/shr
 | Gemini CLI | `hooks/gemini-cli-hook.sh` | `install-hooks` → `~/.gemini/settings.json` | SessionStart, BeforeAgent, BeforeTool, AfterTool, AfterAgent, SessionEnd |
 | Antigravity | `hooks/antigravity-hook.sh` + watcher | `install-hooks` → `~/.gemini/config/hooks.json` | SessionStart, PreInvocation, Pre/PostToolUse, Stop |
 | Codex | `hooks/codex-hook.sh` | `install-codex-hooks` → `~/.codex/hooks.json` | SessionStart, UserPromptSubmit, Pre/PostToolUse, PermissionRequest, SubagentStart/Stop, Stop, Interrupt, SessionEnd |
+| Hermes Agent | none: Hermes `hooks.outbound` webhook → `POST /api/events/hermes`, translated by `src/server/hermes-bridge.ts` | `install-hermes-hooks [--profile NAME]` → `hermes config set hooks.outbound` (keeps other targets; needs a Hermes gateway/desktop restart) | on_session_start, pre_llm_call, pre/post_tool_call, on_human_input_request/resolved, subagent_start/stop, on_session_end, agent_loop_stopped, on_session_finalize (approval events are not used: smart approvals fire them with no human involved) |
+
+Hermes identity model (one bay per Hermes process cwd; the home dir and `~/.hermes/**` — where the desktop gateway runs — show as bay "Hermes"; gateway routing keys `agent:main:<platform>:dm:<chat>` are mapped back to the session id): the first busy top-level session is the persistent **Hermes Lead**; any other session busy at the same time (another chat, a Telegram/Discord bot, cron, kanban worker) is an ephemeral agent `s:<session>` named after its platform, started with `subagent_start` so the 60 s tombstone never hides its next turn; `delegate_task` children are ephemeral `d:<subagent id>` under their spawner (nested children get `parentAgentId`), their own tool events are routed by child session id, and late events from finished children are dropped. Deliveries are de-duplicated by `delivery_id`.
 
 All hooks exit 0 and use `curl --max-time 1`.
 
 ## 9. Verification Snapshot (2026-11-26, working tree)
 
 - `npm run typecheck`: pass.
-- `npm test`: 23 files, **126/126 pass** (`tests/boss-zone.test.ts`: sizing, hub shift, push-layout on resize, drawing/moving the corner with a pinned hub, persistence, export/import, shrink and overlap guards). `tests/seat-owner.test.ts` covers owner seating, doze at desk, subagent separation, the Boss-corner rule and server owner validation; layout/corridor tests now assert that no pods are spawned and place pods explicitly where they test pods.
+- `npm test`: 25 files, **145/145 pass** (live: the desktop gateway's own sessions, background sessions and approvals arrived at `/api/events/hermes` after `hermes plugins enable` reloaded the gateway hooks) (`tests/hermes-bridge.test.ts`: lifecycle mapping, dedupe, concurrent bot sessions, nested delegate children, engine integration, installer) (`tests/boss-zone.test.ts`: sizing, hub shift, push-layout on resize, drawing/moving the corner with a pinned hub, persistence, export/import, shrink and overlap guards). `tests/seat-owner.test.ts` covers owner seating, doze at desk, subagent separation, the Boss-corner rule and server owner validation; layout/corridor tests now assert that no pods are spawned and place pods explicitly where they test pods.
 - Live check on `:7140`: `PATCH /api/architect/furniture/:id { ownerEmployeeId }` sets and clears the owner; `boss:0-visitor-0` is rejected; `PATCH /api/architect/boss-zone` resizes depth, widening by 1 moved 360 of 445 items and narrowing back restored identical positions, zones and tile overrides.
 
 ## 10. Known Issues / Follow-ups

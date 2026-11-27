@@ -274,6 +274,11 @@ button.active {
   color: #dbeafe;
 }
 
+.badge.hermes {
+  background: #6d28d9;
+  color: #ede9fe;
+}
+
 .badge.starter {
   background: #475569;
   color: #f1f5f9;

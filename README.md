@@ -15,7 +15,7 @@
 
 </div>
 
-Every Claude Code, Gemini CLI, Antigravity and Codex session on this machine becomes an employee.
+Every Claude Code, Gemini CLI, Antigravity, Codex and Hermes Agent session on this machine becomes an employee.
 Prompts, tool calls, subagents and idle time drive where they walk and what they do: get a brief from
 the Boss, sit down and type, gather at the meeting table, or doze at their desk.
 
@@ -26,7 +26,7 @@ It is a monitor, not a controller. It never starts or prompts an agent, and it r
 
 | | |
 |---|---|
-| 🏢 **One office, every tool** | Claude Code, Gemini CLI, Antigravity and Codex report through small fail-silent hooks |
+| 🏢 **One office, every tool** | Claude Code, Gemini CLI, Antigravity and Codex report through small fail-silent hooks; Hermes Agent (chats, bots, cron and every subagent) through its outbound webhooks |
 | 👥 **Teams per project folder** | Each folder you work in gets its own roster, name and colour; subagents join as temps |
 | 🚶 **Agents that move** | A* pathfinding, six activity states, tool bubbles, glowing monitors |
 | 🪑 **Decorate Mode** | Place, move, rotate and erase furniture with undo/redo, half-tile placement and seat owners |
@@ -72,6 +72,7 @@ Open **http://127.0.0.1:7140**. No agents running yet? Press **▶ Demo Mode** i
 node dist/cli/index.js install-hooks --dry-run   # preview the changes
 node dist/cli/index.js install-hooks             # Claude Code, Gemini CLI, Antigravity
 node dist/cli/index.js install-codex-hooks       # Codex
+node dist/cli/index.js install-hermes-hooks      # Hermes Agent (then restart the Hermes gateway/desktop app)
 ```
 
 The installer backs up each settings file before editing it. Hooks always exit 0 and give up after
@@ -98,6 +99,7 @@ flowchart LR
     AG[Antigravity] --> H
     CX[Codex] --> H
     H["hooks/*.sh<br/>fail-silent"] -->|POST /api/events| E
+    HM[Hermes Agent] -->|"hooks.outbound<br/>POST /api/events/hermes"| E
     subgraph S["Server · 127.0.0.1:7140"]
         E["Office engine<br/>event → employee state"] --> ST[("data/<br/>office-state.json")]
         PX["Pixcel bridge<br/>sprite atlases"]
@@ -140,6 +142,7 @@ hell-factory mcp [--port 7140]
 hell-factory build-assets
 hell-factory install-hooks [--dry-run] [--with-mcp]
 hell-factory install-codex-hooks [--dry-run]
+hell-factory install-hermes-hooks [--dry-run] [--profile NAME] [--port 7140]
 hell-factory install-mcp [--dry-run]
 ```
 
