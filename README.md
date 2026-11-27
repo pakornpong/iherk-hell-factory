@@ -29,9 +29,9 @@ It is a monitor, not a controller. It never starts or prompts an agent, and it r
 | 🏢 **One office, every tool** | Claude Code, Gemini CLI, Antigravity and Codex report through small fail-silent hooks; Hermes Agent (chats, bots, cron and every subagent) through its outbound webhooks |
 | 👥 **Teams per project folder** | Each folder you work in gets its own roster, name and colour; subagents join as temps |
 | 🚶 **Agents that move** | A* pathfinding, six activity states, tool bubbles, glowing monitors |
-| 🪑 **Decorate Mode** | Place, move, rotate and erase furniture with undo/redo, half-tile placement and seat owners |
+| 🪑 **Decorate Mode** | Arrange furniture, assign seats and hang wall art, shelves and equipment with undo/redo |
 | 🗺️ **Your floor plan** | Resize the floor, paint tiles, draw custom zones, move the Boss corner, export/import layouts |
-| 🎨 **7,500+ pixel assets** | Starter set, 112 props and a 7,390-item library in 84 categories, searchable in Thai |
+| 🎨 **7,700+ pixel assets** | Starter assets, props and a searchable library of 7,594 items across 87 asset families |
 | 🌗 **Three themes** | Office, Night and Day, plus 90° view rotation and 1–4× zoom |
 | 🤖 **AI architect** | An MCP server lets Gemini (and only Gemini) rearrange furniture and craft new assets |
 
@@ -45,6 +45,8 @@ It is a monitor, not a controller. It never starts or prompts an agent, and it r
 <td align="center"><sub>Decorate Mode and the furniture catalog</sub></td>
 </tr>
 </table>
+
+[Watch the launch film in English](docs/video/hell-factory-promo-small.mp4) · [ชมวิดีโอแนะนำภาษาไทย](docs/video/hell-factory-promo-th-small.mp4)
 
 ## Quick start
 
@@ -75,8 +77,16 @@ node dist/cli/index.js install-codex-hooks       # Codex
 node dist/cli/index.js install-hermes-hooks      # Hermes Agent (then restart the Hermes gateway/desktop app)
 ```
 
-The installer backs up each settings file before editing it. Hooks always exit 0 and give up after
-one second, so your tools are unaffected when the office is not running.
+The shell hook installers back up settings files before changing them. The scripts run quietly
+and time out after one second if Hell Factory is unavailable.
+
+- **Codex** requires you to trust the installed Hell Factory hooks. In the desktop app, open
+  **Settings → Hooks** or **Review hooks**. In the CLI, use `/hooks`. Review entries that run
+  `hooks/codex-hook.sh`, then send a new prompt after trusting them.
+- **Hermes Agent** must have the `hermes` CLI on your PATH. The installer adds a webhook to
+  `hooks.outbound` and preserves other targets. Use `--profile NAME` for a named profile and
+  `--port PORT` when Hell Factory runs on a different port. Open a new Hermes CLI session or
+  restart the Hermes gateway or desktop app to load the change.
 
 ### Dev and production
 
@@ -133,6 +143,19 @@ flowchart LR
 | `Cmd/Ctrl + Z` | Undo in Decorate Mode (add `Shift` to redo) |
 | `Esc` | Leave the current mode |
 
+### Mount items on a wall or divider
+
+Open **Decorate → ติดผนัง** to browse 200 mountable items, including artwork, signs, shelves
+and electronics. Select an item, move the pointer left or right and up or down on a solid
+wall or supported divider face, then click to place it. The preview follows the pointer and
+shows where the item will sit.
+
+Use **Move** to reposition an existing item. Multiple items fit on the same face when they
+stay within the surface and do not overlap. Attachments move with their divider and retain
+their placement in exported layouts.
+
+[Wall decoration previews](assets/pixcel/library/mounted-decor/001/preview.png) · [Shelf previews](assets/pixcel/library/mounted-equipment/003/preview.png)
+
 ## CLI
 
 ```text
@@ -188,7 +211,7 @@ docs/         Design specs and the as-built architecture
 | `npm run dev` | Start from source with `tsx` |
 | `npm test` | Run the Vitest suites |
 | `npm run typecheck` | Type-check server and client |
-| `npm run assets:check-footprints` | Fail if a library asset has empty footprint tiles |
+| `npm run assets:check-footprints` | Check for library assets whose declared footprints exceed their voxel bounds |
 
 ## Documentation
 
